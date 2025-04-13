@@ -1,3 +1,6 @@
 go 1.23.2
 
-use ./genai
+use (
+	./genai
+	./yclient
+)
