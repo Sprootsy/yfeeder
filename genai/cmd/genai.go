@@ -20,7 +20,8 @@ const promptSummary = "Summarize this article. Write first a short description o
 var apiKey string
 var articleUrl *string 
 
-func printResponse(resp *genai.GenerateContentResponse) {
+// ReadResponse reads the reply from the model
+func ReadResponse(resp *genai.GenerateContentResponse) string {
 	msg := strings.Builder{}
 	if len(resp.Candidates) < 1 {
 		msg.WriteString("No reply received from model.")
@@ -30,11 +31,14 @@ func printResponse(resp *genai.GenerateContentResponse) {
 			for _, part := range cand.Content.Parts {
 				if s, ok := part.(genai.Text); ok {
 					msg.WriteString(string(s))
+				} else {
+					// for now just log if something else is returned
+					log.Println("Received a genai.Part which is not text; skipping.")
 				}
 			}
 		}
 	}
-	log.Println(msg.String())
+	return msg.String()
 }
 
 func init() {
@@ -75,6 +79,6 @@ func main() {
 		log.Fatalln(errResp)
 	}
 
-	printResponse(resp)
+	log.Println(ReadResponse(resp))
 	log.Println("Total token count:", resp.UsageMetadata.TotalTokenCount)
 }
