@@ -1,8 +1,17 @@
+<!DOCTYPE html>
 <html>
     <head>
-        <title>Sprootsy Yfeeder</title>
+        <title>Sprootsy's Yfeeder</title>
+
+        <script src="https://unpkg.com/htmx.org@2.0.4" 
+            integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+" 
+            crossorigin="anonymous"></script>
     </head>
     <body>
-        <h1>Hello!</h1>
+        <header>
+            <h1>Hello!</h1>
+        </header>
+        <section id="toc" hx-get="/toc/" hx-trigger="load">
+        </section>
     </body>
 </html>
