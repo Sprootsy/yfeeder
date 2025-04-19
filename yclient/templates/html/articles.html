@@ -1,0 +1,10 @@
+<section>
+    <ul>
+    {{ range . }}
+    <li>
+        <span>Points: {{ .Points }} Comments: {{ .NumComments }}</span>
+        <span><a href="">{{ .Title }}</a></span>
+    </li>
+    {{ end }}
+    </ul>
+<section>
