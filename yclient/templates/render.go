@@ -2,8 +2,8 @@ package templates
 
 import (
 	"bufio"
-	"context"
 	"embed"
+	"fmt"
 	"html/template"
 	"log"
 	"os"
@@ -14,42 +14,83 @@ import (
 //go:embed html/*
 var templatesFS embed.FS
 
-// Templates parsed templates
-var Templates *template.Template
+var (
+	templates *template.Template
+	// Files list of files that are loaded as templates
+	Files     = []string{"html/articles.html", "html/_article.ID_.html"}
+)
 
-var Names = []string{"html/articles.html"}
+type Renderable interface {
+	Render() error
+}
+
+type Rendering struct {
+	Name     string
+	Path     string
+	Template *template.Template
+}
+
+type ArticlesRendering struct {
+	Rendering
+	Data []model.Article
+}
+
+func (t ArticlesRendering) Render() error {
+	fileName := path.Join(t.Path, "articles.html")	
+	return Execute(t.Template, fileName, t.Data)
+}
+
+type SummariesRendering struct {
+	Rendering
+	Data	model.Article
+}
+
+func (r SummariesRendering) Render() error {
+	fileName := path.Join(r.Path, fmt.Sprintf("%s_summary.html", r.Data.ID))
+	return Execute(r.Template, fileName, r.Data)
+}
 
 func init() {
 	log.Println("Loading templates")
-	tmpls, errParseFS := template.ParseFS(templatesFS, Names...)
+
+	tmpls, errParseFS := template.ParseFS(templatesFS, Files...)
 	if errParseFS != nil {
 		log.Fatalln("Cannot parse templates. Error:", errParseFS)
 	}
-	Templates = tmpls
-	log.Println("Finished loading templates")
+	templates = tmpls
+	log.Println("Finished loading templates, found:", len(tmpls.Templates()))
 }
 
-func Render(ctx context.Context, outDir string, articles []model.Article) {
-	log.Println("Rendering templates in", outDir)
-	for _, n := range Names {
-		tn := path.Base(n)
-		t := Templates.Lookup(tn)
-		if t == nil {
-			log.Println("Template not found:", tn)
-		} else {
-			log.Println("Executing template:", tn)
-			f, errOpen := os.OpenFile(path.Join(outDir, tn), os.O_WRONLY|os.O_TRUNC|os.O_CREATE, 0754)
-			if errOpen != nil {
-				log.Println("Cannot open file for writing. Error:", errOpen)
-				continue
-			}
-			w := bufio.NewWriter(f)
-			if errTmpl := t.Execute(w, articles); errTmpl != nil {
-				log.Println("Cannot execute template. Error:", errTmpl)
-			}
-			w.Flush()
-			f.Close()
-		}
+// GetTemplate returns the template associated with the given file
+func GetTemplate(file string) *template.Template {
+	return templates.Lookup(path.Base(file))
+}
+
+// Execute executes the given template with the given `data`.
+// The output is written in `path`. Any error is returned
+func Execute(t *template.Template, path string, data any) error {
+	if t == nil {
+		return fmt.Errorf("Cannot execute template: nil pointer.")
 	}
-	log.Println("Done rendering templates")
+	log.Println("Executing", t.Name(), " in:", path)
+	fd, errOpen := os.OpenFile(path, os.O_CREATE|os.O_WRONLY|os.O_TRUNC, 0754)
+	if errOpen != nil {
+		return errOpen
+	}
+
+	w := bufio.NewWriter(fd)
+	if errEx := t.Execute(w, data); errEx != nil {
+		defer fd.Close()
+		return errEx
+	}
+	if errFlush := w.Flush(); errFlush != nil {
+		defer fd.Close()
+		return errFlush
+	}
+	if errClose := fd.Close(); errClose != nil {
+		return errClose
+	}
+
+	log.Println("Done executing", t.Name())
+	return nil
 }
