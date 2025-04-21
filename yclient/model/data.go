@@ -6,6 +6,7 @@ type Article struct {
 	URL         string `json:"url"`
 	Points      int    `json:"points"`
 	NumComments int    `json:"num_comments"`
+	Summary		string
 }
 
 type Hits struct {

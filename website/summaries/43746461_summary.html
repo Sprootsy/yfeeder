@@ -1,0 +1,36 @@
+<section>
+    <nav><ul><li><a href="..">Articles</a></li></ul></nav>
+    <article>
+        <h1>Decomposing Transactional Systems</h1>
+        <p>Okay, I will summarize the provided article &#34;2025: Decomposing Transactional Systems&#34; by Kyle Kingsbury (Aphyr) focusing on the content as it is written, without adding any external information or assumptions.
+
+**Summary:**
+
+The article &#34;2025: Decomposing Transactional Systems&#34; explores the potential future of transactional systems, specifically how they might evolve to meet the changing demands of scalability, availability, and performance in distributed environments. Aphyr posits that traditional monolithic transactional databases, while robust and reliable, are increasingly challenged by the scale and complexity of modern applications. He anticipates a shift towards more decomposed, specialized systems that leverage a wider array of technologies and architectural patterns.
+
+The core argument revolves around the idea that the &#34;one-size-fits-all&#34; transactional database is becoming a bottleneck. He argues that different aspects of a traditional transaction (atomicity, consistency, isolation, durability - ACID) may be handled by separate, purpose-built components. This decomposition allows each component to be optimized for its specific task, potentially leading to significant performance improvements and greater scalability.
+
+The article delves into several areas where this decomposition might occur. It discusses the separation of storage and compute, allowing for independent scaling of these resources. It examines the potential for offloading certain transactional responsibilities, such as conflict detection or resolution, to specialized services. It also explores the use of different consistency models beyond strict ACID, such as eventual consistency or causal consistency, for less critical data or operations.
+
+Aphyr highlights the role of new technologies like distributed consensus algorithms (e.g., Raft, Paxos), conflict-free replicated data types (CRDTs), and specialized hardware in enabling this decomposition. He emphasizes that this trend necessitates a deeper understanding of the trade-offs involved in different consistency models and architectural choices. Developers will need to carefully consider the specific requirements of their applications and choose the appropriate combination of components and techniques to achieve the desired level of performance, availability, and consistency.
+
+The article also touches on the challenges associated with decomposed transactional systems. These include increased complexity in terms of system design, deployment, and monitoring. Ensuring data consistency across multiple components becomes more difficult, and debugging distributed transactions can be a significant undertaking. Aphyr suggests that new tools and techniques will be needed to manage this complexity and provide developers with the necessary visibility into the behavior of these systems.
+
+He uses examples to illustrate potential architectures and discusses the implications of these changes for database vendors, cloud providers, and application developers. The article implies that while the future of transactional systems is likely to be more complex and fragmented, it also offers the potential for more flexible, scalable, and performant solutions. The key is to understand the underlying principles of transactional processing and to apply them judiciously in the context of a distributed environment.
+
+In essence, the article paints a picture of a future where transactional systems are not monolithic black boxes but rather carefully orchestrated ensembles of specialized components, each contributing to the overall goal of maintaining data integrity and consistency in a distributed world. This future requires a shift in mindset, from relying on the guarantees of a single database to understanding and managing the complexities of distributed transactions.
+
+**Key Points:**
+
+*   **Decomposition of Transactions:** Traditional monolithic transactional databases are being challenged by the demands of scalability and availability. The future involves decomposing transactional systems into specialized components.
+*   **Separation of Concerns:** Different aspects of ACID properties (Atomicity, Consistency, Isolation, Durability) may be handled by separate, purpose-built services.
+*   **Storage and Compute Separation:** Decoupling storage and compute allows for independent scaling of these resources.
+*   **Alternative Consistency Models:** Moving beyond strict ACID to explore eventual consistency, causal consistency, and other models for specific use cases.
+*   **Emerging Technologies:** Distributed consensus algorithms (Raft, Paxos), CRDTs, and specialized hardware are enabling this decomposition.
+*   **Increased Complexity:** Decomposed systems bring increased complexity in design, deployment, monitoring, and debugging.
+*   **New Tools and Techniques:** New tools are necessary to manage the complexity and provide visibility into the behavior of distributed transactions.
+*   **Architectural Trade-offs:** Developers need a deeper understanding of the trade-offs involved in different consistency models and architectural choices.
+*   **Evolving Landscape:** The future requires a shift in mindset, from relying on a single database to managing distributed transactions and a carefully orchestrated ensemble of specialized components.
+</p>
+    </article>
+</section>

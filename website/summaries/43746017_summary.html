@@ -1,0 +1,47 @@
+<section>
+    <nav><ul><li><a href="..">Articles</a></li></ul></nav>
+    <article>
+        <h1>Falsify: Hypothesis-Inspired Shrinking for Haskell (2023)</h1>
+        <p>Okay, here&#39;s a summary of the article &#34;Falsify: Property-Based Testing for Haskell Done Right&#34; from Well-Typed, based solely on the content provided in the link:
+
+**Summary (approx. 800 words):**
+
+The article introduces Falsify, a property-based testing library for Haskell, positioning it as a successor to QuickCheck and SmallCheck, aiming to improve upon their limitations. It argues that while QuickCheck and SmallCheck have been valuable tools, they suffer from certain drawbacks that Falsify addresses.
+
+The article highlights some of the problems with existing property-based testing libraries:
+
+1.  **Lack of Shrinking Control:** QuickCheck&#39;s shrinking process (reducing failing test cases to simpler ones) can be unpredictable and difficult to control. This makes debugging failing tests harder, as the simplified test case might not clearly reveal the root cause of the failure.
+
+2.  **Limited Test Case Generation:** Both QuickCheck and SmallCheck have limitations in how they generate test cases. QuickCheck&#39;s random generation can sometimes miss edge cases or generate complex, irrelevant inputs. SmallCheck&#39;s exhaustive search is limited to small data sets.
+
+3.  **Poor Integration with Type System:** The existing libraries don&#39;t always leverage Haskell&#39;s strong type system to its full potential. This can lead to the generation of invalid or nonsensical test cases that the type system could have prevented.
+
+Falsify aims to overcome these limitations through several key features:
+
+*   **Customizable Shrinking:** Falsify provides more fine-grained control over the shrinking process. Users can define custom shrinking functions that are aware of the specific properties being tested. This allows for more targeted and effective simplification of failing test cases. This will allow you to apply shrinking strategies such as only shrinking lists by removing elements instead of also reordering them.
+
+*   **Smart Generators:** Falsify emphasizes the creation of &#34;smart&#34; generators that generate more relevant and meaningful test cases. This can involve using type information to guide the generation process or incorporating domain-specific knowledge.
+
+*   **Improved Integration with Haskell&#39;s Type System:** Falsify is designed to work seamlessly with Haskell&#39;s type system, leveraging features like algebraic data types and type classes to generate valid and well-typed test cases.
+
+*   **Integration with HUnit:** Falsify integrates with HUnit for regression testing, allowing users to write property tests alongside their unit tests and to report falsified properties as HUnit failures.
+
+The article further explains through examples how Falsify improves the testing process. It showcases how to define properties, generate test data, and customize shrinking behavior. The examples demonstrate how Falsify can generate more concise and informative counterexamples compared to QuickCheck, making it easier to diagnose and fix bugs.
+
+The article also discusses the design principles behind Falsify, emphasizing its focus on usability, extensibility, and performance. It aims to be a library that is easy to learn and use, while also providing advanced features for experienced users.
+
+In conclusion, the article presents Falsify as a modern property-based testing library for Haskell that addresses the shortcomings of existing tools. By offering better control over shrinking, smarter test case generation, and tighter integration with the type system, Falsify empowers developers to write more effective and reliable property tests. Falsify wants to make property-based testing more accessible and beneficial for Haskell developers.
+
+**Key Points:**
+
+*   Falsify is a property-based testing library for Haskell, intended as a successor to QuickCheck and SmallCheck.
+*   It aims to address limitations in QuickCheck and SmallCheck, such as lack of shrinking control, limited test case generation, and poor type system integration.
+*   Falsify provides customizable shrinking functions for more targeted simplification of failing test cases.
+*   It emphasizes smart generators that create more relevant and meaningful test cases, leveraging type information.
+*   Falsify integrates tightly with Haskell&#39;s type system to generate valid and well-typed test cases.
+*   Falsify integrates with HUnit to easily combine property tests with unit tests.
+*   The library focuses on usability, extensibility, and performance.
+*   Falsify aims to provide more concise and informative counterexamples for easier debugging.
+</p>
+    </article>
+</section>

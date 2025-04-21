@@ -2,8 +2,9 @@
     <ul>
     {{ range . }}
     <li>
-        <span>Points: {{ .Points }} Comments: {{ .NumComments }}</span>
-        <span><a href="">{{ .Title }}</a></span>
+        <span>Points: {{ .Points }}</span>
+        <span>Comments: {{ .NumComments }}</span>
+        <span><a href="summaries/{{ .ID }}_summary.html">{{ .Title }}</a></span>
     </li>
     {{ end }}
     </ul>
