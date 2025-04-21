@@ -1,0 +1,30 @@
+<section>
+    <nav><ul><li><a href="..">Articles</a></li></ul></nav>
+    <article>
+        <h1>Pipelining might be my favorite programming language feature</h1>
+        <p>
+<div>
+<h2>Summary</h2>
+<p>The article "Pipelining" uses the analogy of a car wash to explain the concept of pipelining in computer architecture. It illustrates how breaking down a process into stages and having multiple processes in different stages simultaneously can significantly improve throughput. The car wash example divides the washing process into four stages: applying soap, scrubbing, rinsing, and drying. Instead of washing one car completely before starting the next, the car wash processes multiple cars at the same time, with each car in a different stage. This allows for a much higher rate of car washing compared to washing each car individually from start to finish.</p>
+
+<p>The article then extends this concept to computer instruction execution. A typical instruction execution cycle is divided into stages such as fetching the instruction, decoding it, executing it, and writing the result back to memory. Without pipelining, each instruction would have to complete all four stages before the next instruction could begin. Pipelining allows multiple instructions to be in different stages of execution simultaneously, much like the cars in the car wash. While each individual instruction still takes the same amount of time to complete, the overall throughput of instructions is greatly increased.</p>
+
+<p>The article highlights the benefits of pipelining, which include increased throughput and improved utilization of hardware resources. However, it also acknowledges the challenges that can arise. One major challenge is handling dependencies between instructions. For example, if one instruction depends on the result of a previous instruction, the pipeline may need to stall or introduce delays to ensure that the correct data is available when needed. These stalls, also known as bubbles, can reduce the efficiency of the pipeline.</p>
+
+<p>Another challenge is dealing with branches or conditional jumps in the code. When a branch instruction is encountered, the pipeline may need to predict which branch will be taken and start fetching instructions from the predicted branch target. If the prediction is incorrect, the pipeline needs to be flushed, and instructions from the correct branch must be fetched, which introduces a significant delay.</p>
+
+<p>The article concludes by emphasizing that while pipelining can significantly improve performance, it requires careful design and management to avoid stalls and other issues that can reduce its effectiveness. Modern processors employ various techniques, such as branch prediction and data forwarding, to mitigate these challenges and maximize the benefits of pipelining.</p>
+
+<h2>Key Points</h2>
+<ul>
+    <li>Pipelining is a technique that improves throughput by dividing a process into stages and processing multiple items simultaneously.</li>
+    <li>The car wash analogy effectively illustrates the concept of pipelining.</li>
+    <li>In computer architecture, pipelining allows multiple instructions to be in different stages of execution concurrently.</li>
+    <li>Pipelining increases throughput and improves hardware resource utilization.</li>
+    <li>Dependencies between instructions and branch instructions are challenges that can cause stalls in the pipeline.</li>
+    <li>Modern processors use techniques like branch prediction and data forwarding to minimize pipeline stalls.</li>
+</ul>
+</div>
+</p>
+    </article>
+</section>

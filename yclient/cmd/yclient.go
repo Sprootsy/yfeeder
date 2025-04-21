@@ -94,7 +94,7 @@ func main() {
 				"Error:", errAIS)
 		}
 		a.Summary = genai.ReadResponse(res)
-
+		log.Println("Response: ", a.Summary)
 		ctx, cancelFun = context.WithTimeout(context.Background(), 2*time.Second)
 		defer cancelFun()
 		sumRendering := templates.SummariesRendering{
