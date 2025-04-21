@@ -40,6 +40,11 @@ func (t ArticlesRendering) Render() error {
 	return Execute(t.Template, fileName, t.Data)
 }
 
+type Summary struct {
+	Title	 string
+	Summary  template.HTML
+}
+
 type SummariesRendering struct {
 	Rendering
 	Data	model.Article
@@ -47,7 +52,10 @@ type SummariesRendering struct {
 
 func (r SummariesRendering) Render() error {
 	fileName := path.Join(r.Path, fmt.Sprintf("%s_summary.html", r.Data.ID))
-	return Execute(r.Template, fileName, r.Data)
+	return Execute(r.Template, fileName, Summary{
+		Title: r.Data.Title,
+		Summary: template.HTML(r.Data.Summary),
+	})
 }
 
 func init() {

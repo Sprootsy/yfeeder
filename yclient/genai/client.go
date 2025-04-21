@@ -28,7 +28,7 @@ func NewClient(apiKey string) *Client {
 	}
 	model := client.GenerativeModel(modelName)
 	model.SetMaxOutputTokens(1000)
-	model.SystemInstruction = genai.NewUserContent(genai.Text("Report only what is written in the article, do not make anything up."))
+	model.SystemInstruction = genai.NewUserContent(genai.Text("Report only what is written in the article, do not make anything up. Print the answer in valid HTML, inside a <div> element. Don't include any conversation in the answer."))
 	return &Client{
 		model: model,
 	}
@@ -67,5 +67,7 @@ func ReadResponse(resp *genai.GenerateContentResponse) string {
 			}
 	}
 	log.Println("Done reading response")
-	return msg.String()
+	res, _ := strings.CutSuffix(msg.String(), "```")
+	res, _ = strings.CutPrefix(res, "```html")
+	return res
 }
