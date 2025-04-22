@@ -30,6 +30,7 @@ jobs:
 
     - uses: actions/upload-artifact@v4
       with:
+        name: yclient
         path: .build/yclient
         if-no-files-found: error
         overwrite: true
