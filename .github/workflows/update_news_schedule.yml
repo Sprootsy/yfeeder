@@ -1,9 +1,8 @@
 on:
   workflow_dispatch:
   schedule:
-    cron:
-      # at 5:00 AM
-      - "0 5 * * *"
+    # at 5:00 AM
+    - cron: "0 5 * * *"
 
 permissions:
   packages: read
@@ -12,6 +11,7 @@ permissions:
 
 jobs:
   update_news:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/download-artifact@v4
