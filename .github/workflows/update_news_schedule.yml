@@ -1,0 +1,32 @@
+name: Update News Articles
+on:
+  workflow_dispatch:
+  schedule:
+    # at 5:00 AM
+    - cron: "0 5 * * *"
+
+permissions:
+  packages: read
+  contents: write
+  pull-requests: write
+
+jobs:
+  update_news:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: yclient
+          run-id: 14605188616
+      - name: YClient
+        run: |
+          yclient -outDir ./website
+      - name: Commit and Push
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add ./website
+          git commit -m "feat: update news items"
+          git push
+          
