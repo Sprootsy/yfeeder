@@ -6,7 +6,7 @@ on:
     - cron: "0 5 * * *"
 
 permissions:
-  repo: read
+  actions: read
   packages: read
   contents: write
   pull-requests: write
