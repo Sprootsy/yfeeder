@@ -46,7 +46,7 @@ UPDATE_TIME=$(echo "$ARTIFACT_DATA" | cut -d ',' -f1)
 echo "Found artifact that was updated at $UPDATE_TIME"
 DOWNLOAD_URL=$(echo "$ARTIFACT_DATA" | cut -d ',' -f2)
 echo "Downloading artifact from $DOWNLOAD_URL"
-curl -f -H "$GH_AUTH_HEADER" -H "$GH_ACCEPT_HEADER" -H "$GH_API_VERSION_HEADER" \
+curl -fL -H "$GH_AUTH_HEADER" -H "$GH_ACCEPT_HEADER" -H "$GH_API_VERSION_HEADER" \
     "$DOWNLOAD_URL" -o "${ARTIFACT}.zip"
 chmod 0755 "${ARTIFACT}.zip"
 unzip "${ARTIFACT}.zip"
