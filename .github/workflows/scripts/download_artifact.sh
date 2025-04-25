@@ -33,8 +33,7 @@ GH_ACCEPT_HEADER="Accept: application/vnd.github+json"
 echo "Hello $OWNER! Owner of $REPO"
 
 echo "Searching for artifacts named $ARTIFACT"
-ARTIFACT_DATA=$( curl -f -H "$GH_AUTH_HEADER" -H "$GH_ACCEPT_HEADER" \
-    -H "$GH_API_VERSION_HEADER" \
+ARTIFACT_DATA=$( curl -f -H "$GH_AUTH_HEADER" -H "$GH_ACCEPT_HEADER" -H "$GH_API_VERSION_HEADER" \
     "https://api.github.com/repos/$OWNER/$REPO/actions/artifacts?name=$ARTIFACT" \
     | yq e '[ .artifacts.[] | {"download_url": .archive_download_url, "updated_at": .updated_at } ] | flatten |= sort_by(.updated_at) | .[0] | .updated_at + "," + .download_url' -
     )
@@ -47,5 +46,6 @@ UPDATE_TIME=$(echo "$ARTIFACT_DATA" | cut -d ',' -f1)
 echo "Found artifact that was updated at $UPDATE_TIME"
 DOWNLOAD_URL=$(echo "$ARTIFACT_DATA" | cut -d ',' -f2)
 echo "Downloading artifact from $DOWNLOAD_URL"
-curl -f "$DOWNLOAD_URL" -o "${ARTIFACT}.zip"
+curl -f -H "$GH_AUTH_HEADER" -H "$GH_ACCEPT_HEADER" -H "$GH_API_VERSION_HEADER" \
+    "$DOWNLOAD_URL" -o "${ARTIFACT}.zip"
 unzip ./"${ARTIFACT}.zip"
