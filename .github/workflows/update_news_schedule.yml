@@ -23,7 +23,7 @@ jobs:
       - name: YClient
         run: |
           cd .downloads
-          yclient -outDir ../website
+          ./yclient -outDir ../website
       - name: Commit and Push
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
