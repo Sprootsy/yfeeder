@@ -17,12 +17,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Download yclient
-        run: .github/workflows/scripts/download_artifact.sh Sprootsy yfeeder yclient
+        run: .github/workflows/scripts/download_artifact.sh Sprootsy yfeeder yclient .downloads
         env:
           GITHUB_TOKEN: ${{ github.token }}
       - name: YClient
         run: |
-          yclient -outDir ./website
+          cd .downloads
+          yclient -outDir ../website
       - name: Commit and Push
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"

@@ -5,12 +5,13 @@ set -eo pipefail
 
 usage() {
     echo """
-    ${0} OWNER REPO ARTIFACT
+    ${0} OWNER REPO ARTIFACT OUT_DIR
 
     Arguments:
         OWNER       Name of the repo owner.
         REPO        Name of the repository.
         ARTIFACT    Name of the artifact to download.
+        OUT_DIR     Path where the artifact should be saved.
 
     Env vars:
         GITHUB_TOKEN   Github authentication token.
@@ -20,8 +21,9 @@ usage() {
 OWNER="$1"
 REPO="$2"
 ARTIFACT="$3"
+OUT_DIR="$4"
 
-if [ -z "$GITHUB_TOKEN" ] || [ -z "$OWNER" ] || [ -z "$REPO" ] || [ -z "$ARTIFACT" ]; then
+if [ -z "$GITHUB_TOKEN" ] || [ -z "$OWNER" ] || [ -z "$REPO" ] || [ -z "$ARTIFACT" ] || [ -z "$OUT_DIR" ]; then
     usage
     exit 1
 fi
@@ -46,7 +48,9 @@ UPDATE_TIME=$(echo "$ARTIFACT_DATA" | cut -d ',' -f1)
 echo "Found artifact that was updated at $UPDATE_TIME"
 DOWNLOAD_URL=$(echo "$ARTIFACT_DATA" | cut -d ',' -f2)
 echo "Downloading artifact from $DOWNLOAD_URL"
+mkdir -p "$OUT_DIR"
 curl -fL -H "$GH_AUTH_HEADER" -H "$GH_ACCEPT_HEADER" -H "$GH_API_VERSION_HEADER" \
-    "$DOWNLOAD_URL" -o "${ARTIFACT}.zip"
-chmod 0755 "${ARTIFACT}.zip"
+    "$DOWNLOAD_URL" -o "$OUT_DIR/${ARTIFACT}.zip"
+chmod 0755 "$OUT_DIR/${ARTIFACT}.zip"
+pushd "$OUT_DIR"
 unzip "${ARTIFACT}.zip"
