@@ -18,9 +18,10 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           pattern: yclient
-          run-id: 14605188616
+          run-id: 14627451692
       - name: YClient
         run: |
+          unzip yclient.zip
           yclient -outDir ./website
       - name: Commit and Push
         run: |
