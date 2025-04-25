@@ -24,6 +24,8 @@ jobs:
         run: |
           cd .downloads
           ./yclient -outDir ../website
+        env:
+          GENAI_API_KEY: ${{ secrets.GEN_API_TOKEN }}
       - name: Commit and Push
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
