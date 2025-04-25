@@ -17,6 +17,8 @@ jobs:
       - uses: actions/checkout@v4
       - name: Download yclient
         run: .github/workflows/scripts/download_artifact.sh Sprootsy yfeeder yclient
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
       - name: YClient
         run: |
           yclient -outDir ./website

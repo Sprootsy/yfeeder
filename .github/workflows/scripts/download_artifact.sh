@@ -2,7 +2,6 @@
 # The GH download-artifact@v4 does not allow to download an artifact form
 # the latest run of a workflow, so I'm using this script.
 set -eo pipefail
-set -x
 
 usage() {
     echo """
