@@ -6,6 +6,7 @@ on:
     - cron: "0 5 * * *"
 
 permissions:
+  actions: read
   packages: read
   contents: write
   pull-requests: write
@@ -15,13 +16,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/download-artifact@v4
-        with:
-          pattern: yclient
-          run-id: 14605188616
+      - name: Download yclient
+        run: .github/workflows/scripts/download_artifact.sh Sprootsy yfeeder yclient .downloads
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
       - name: YClient
         run: |
-          yclient -outDir ./website
+          cd .downloads
+          ./yclient -outDir ../website
+        env:
+          GENAI_API_KEY: "${{ secrets.GENAI_API_TOKEN }}"
       - name: Commit and Push
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
