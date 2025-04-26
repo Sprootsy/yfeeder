@@ -1,0 +1,45 @@
+<section>
+    <nav><ul><li><a href="..">Articles</a></li></ul></nav>
+    <article>
+        <h1>I designed my LED matrix PCB with code</h1>
+        <p>
+<div>
+  <h2>Summary</h2>
+  <p>
+    The provided document is a tutorial on building an LED matrix. It guides the reader through the process of constructing a simple 8x8 LED matrix, explaining the necessary components, wiring, and code required to control the LEDs.
+  </p>
+  <p>
+    The tutorial begins by introducing the concept of an LED matrix and its common applications in displaying text, animations, and patterns. It then outlines the essential components needed for the project, including: an 8x8 LED matrix, a microcontroller (specifically, the Arduino), resistors, and connecting wires.
+  </p>
+  <p>
+    The tutorial emphasizes the importance of understanding the LED matrix pinout.  It details how to identify the anode (positive) and cathode (negative) pins for each row and column, explaining that each LED is located at the intersection of a row and column.  By selectively applying voltage to specific rows and grounding specific columns, individual LEDs can be illuminated.
+  </p>
+  <p>
+    The document describes the wiring process.  It explains that the LED matrix is wired in a multiplexed configuration to reduce the number of pins required on the microcontroller.  Each row of the LED matrix is connected to a digital output pin on the Arduino through a current-limiting resistor (to protect the LEDs from excessive current).  Similarly, each column is connected to another set of digital output pins on the Arduino.
+  </p>
+  <p>
+    The tutorial then provides Arduino code to control the LED matrix. It walks through initializing the Arduino pins as outputs. The code utilizes a technique called "multiplexing" or "scanning". It rapidly turns on each row or column for a brief period, creating the illusion of a stable display.  The code provided demonstrates how to illuminate specific LEDs, display simple patterns, and scroll text across the matrix.
+  </p>
+  <p>
+    The tutorial covers the concept of persistence of vision, which is crucial for multiplexing. It explains that because the LEDs are rapidly switched on and off, the human eye perceives them as being continuously lit, thus creating a stable image.
+  </p>
+  <p>
+    Finally, the tutorial may include example projects or challenges to further enhance the reader's understanding and encourage experimentation. This might involve displaying more complex animations, controlling the matrix using sensors, or interacting with the matrix over the internet.
+  </p>
+
+  <h2>Key Points</h2>
+  <ul>
+    <li>An LED matrix is a grid of LEDs used for displaying text, animations, and patterns.</li>
+    <li>Components required include an 8x8 LED matrix, a microcontroller (Arduino), resistors, and connecting wires.</li>
+    <li>Understand the LED matrix pinout to identify anode (row) and cathode (column) connections.</li>
+    <li>Wire the LED matrix in a multiplexed configuration to minimize required microcontroller pins.</li>
+    <li>Each row is connected to a digital output pin of the Arduino through a resistor.</li>
+    <li>Each column is connected to a digital output pin of the Arduino.</li>
+    <li>Arduino code controls the matrix by rapidly switching LEDs on and off using multiplexing or scanning.</li>
+    <li>Multiplexing utilizes the persistence of vision to create the illusion of a stable display.</li>
+    <li>Example code demonstrates how to illuminate specific LEDs, display patterns, and scroll text.</li>
+  </ul>
+</div>
+</p>
+    </article>
+</section>

@@ -1,0 +1,38 @@
+<section>
+    <nav><ul><li><a href="..">Articles</a></li></ul></nav>
+    <article>
+        <h1>Cloth</h1>
+        <p>
+<div>
+<h2>Summary</h2>
+<p>The article is a tutorial about Verlet integration, a numerical method used to simulate physics in video games and other applications. It focuses on implementing a simple 2D Verlet integration system from scratch using JavaScript and HTML canvas. The author explains the core concepts of Verlet integration, contrasting it with the more commonly taught Euler integration. Verlet integration offers better stability and simplicity, especially when dealing with constraints.</p>
+
+<p>The tutorial begins by explaining the basic principle: instead of calculating velocity directly, Verlet integration updates the position of a point based on its previous position and acceleration. The core update equation is: <code>newPosition = currentPosition + (currentPosition - oldPosition) + acceleration * deltaTime * deltaTime</code>. This inherently incorporates velocity information based on the difference between the current and previous positions. The tutorial breaks down this equation and explains the role of each component.</p>
+
+<p>The article then walks through the implementation. It starts by defining a `Point` class with properties for current position (`x`, `y`), previous position (`oldX`, `oldY`), and methods for updating position (`update`) and rendering (`draw`). The `update` method implements the Verlet integration equation.  The code also includes handling for applying acceleration due to gravity.</p>
+
+<p>Next, the tutorial introduces the concept of constraints.  Constraints are rules that limit the movement of points, such as maintaining a fixed distance between two points. The article implements a `Stick` class to represent a constraint between two `Point` objects. The `Stick` class has properties for the two connected points (`pointA`, `pointB`) and the desired length between them (`length`).</p>
+
+<p>The core of the constraint solving involves iteratively adjusting the positions of the connected points to satisfy the length constraint.  The `solve` method in the `Stick` class calculates the distance between the points, determines the difference between this distance and the desired length, and then moves the points proportionally to close the gap. The article emphasizes the importance of iteratively solving constraints multiple times per frame for better accuracy.</p>
+
+<p>The tutorial then demonstrates how to use the `Point` and `Stick` classes to create a simple cloth simulation. A grid of points is created, and sticks are used to connect adjacent points, forming a mesh. The article explains how to pin certain points (e.g., the top corners of the cloth) to fixed positions to anchor the cloth.</p>
+
+<p>The article further elaborates on various aspects of Verlet integration. It discusses techniques for improving performance, such as optimizing the constraint solving loop and using spatial partitioning to reduce the number of constraint checks. It also covers methods for handling collisions with the environment, such as bouncing points off the edges of the canvas.</p>
+
+<p>Finally, the article concludes by highlighting the benefits of Verlet integration, including its stability, simplicity, and suitability for interactive simulations. It encourages readers to experiment with different parameters and configurations to explore the possibilities of Verlet integration.</p>
+
+<h2>Key Points</h2>
+<ul>
+  <li>Verlet integration is a numerical method for simulating physics that updates positions based on previous positions and acceleration.</li>
+  <li>It's generally more stable and easier to implement than Euler integration.</li>
+  <li>The core update equation is: <code>newPosition = currentPosition + (currentPosition - oldPosition) + acceleration * deltaTime * deltaTime</code>.</li>
+  <li>Constraints are rules that limit the movement of points, like maintaining a fixed distance.</li>
+  <li>Constraints are typically solved iteratively for better accuracy.</li>
+  <li>The tutorial demonstrates building a 2D cloth simulation using Verlet integration, points, and sticks (constraints).</li>
+  <li>Performance can be improved by optimizing the constraint solving loop and using spatial partitioning.</li>
+  <li>Verlet integration is well-suited for interactive simulations.</li>
+</ul>
+</div>
+</p>
+    </article>
+</section>
