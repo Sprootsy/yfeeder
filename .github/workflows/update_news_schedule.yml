@@ -34,6 +34,12 @@ jobs:
       - name: Set Timestamp
         id: timestamp
         run: echo "TIMESTAMP=$(date +"%Y%m%d%H%M%S")" >> $GITHUB_ENV
+      - name: Generate App Token
+        id: generate-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ vars.YFEEDER_APP_ID }}
+          private-key: ${{ secrets.YFEDER_APP_KEY }}
       - name: Commit and Push
         run: |
           set -eo pipefail
@@ -46,4 +52,4 @@ jobs:
       - name: Merge with PR
         run: .github/workflows/scripts/do_pr.sh Sprootsy yfeeder "${updates_branch}-$TIMESTAMP" main
         env:
-          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
