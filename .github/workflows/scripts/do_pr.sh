@@ -1,7 +1,6 @@
 #!/bin/bash
 #
 set -eo pipefail
-set -x
 
 usage() {
     echo """
