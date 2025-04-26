@@ -29,13 +29,17 @@ jobs:
           ./yclient -outDir ../website
         env:
           GENAI_API_KEY: "${{ secrets.GENAI_API_TOKEN }}"
+      - name: Set Timestamp
+        id: timestamp
+        run: echo "TIMESTAMP=$(date +"%Y%m%d%H%M%S")" >> $GITHUB_ENV
       - name: Commit and Push
         run: |
           set -eo pipefail
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
+          git checkout -b "${updates_branch}-$TIMESTAMP"
           git add ./website
           git commit -m "feat: update news items"
-          git push origin "$updates_branch"
+          git push origin "${updates_branch}-$TIMESTAMP"
       - name: Merge with PR
-        run: .github/workflows/scripts/do_pr.sh Sprootsy yfeeder "${GITHUB_REF_NAME}"
+        run: .github/workflows/scripts/do_pr.sh Sprootsy yfeeder "${updates_branch}-$TIMESTAMP" main
