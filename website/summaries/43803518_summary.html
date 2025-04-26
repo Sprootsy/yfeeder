@@ -1,0 +1,41 @@
+<section>
+    <nav><ul><li><a href="..">Articles</a></li></ul></nav>
+    <article>
+        <h1>LLMs can see and hear without any training</h1>
+        <p>
+<div>
+<h2>Summary:</h2>
+
+The article is about MILS, short for Masked Image and Language Supervision, a new self-supervised learning approach developed by Facebook AI Research (FAIR). MILS is designed to learn visual representations from unlabeled images by jointly reasoning about masked image regions and associated text. The approach leverages both visual and textual information present in web-scale data to achieve improved performance in various downstream vision tasks.
+
+MILS operates on the principle of masking portions of an image and then predicting those masked regions using both the remaining visible image content and associated text. This forces the model to learn a rich, multimodal understanding of the visual world. The method involves training a vision transformer (ViT) model. The ViT is modified to handle masked image patches.
+
+The training process consists of:
+1.  **Image Masking:** Randomly masking a significant portion of the input image.
+2.  **Feature Extraction:** Extracting visual features from the unmasked image patches using the ViT encoder.
+3.  **Text Encoding:** Encoding the associated text using a text encoder (e.g., BERT).
+4.  **Masked Patch Prediction:** Predicting the masked image patches based on the extracted visual features and the encoded text. This prediction is done using a decoder network.
+5.  **Loss Calculation:** Computing a loss function that measures the difference between the predicted masked patches and the original masked patches. This loss function encourages the model to learn meaningful relationships between the visible image regions, the associated text, and the masked regions.
+
+The key idea behind MILS is that the text provides valuable semantic information that helps the model to better understand and reconstruct the masked image regions. By jointly reasoning about visual and textual information, MILS can learn more robust and generalizable visual representations compared to approaches that rely solely on visual data.
+
+The article presents experimental results demonstrating that MILS achieves state-of-the-art performance on a range of downstream vision tasks, including image classification, object detection, and semantic segmentation. The results also show that MILS is particularly effective when trained on large-scale datasets with noisy or incomplete text descriptions.
+
+In essence, MILS offers a powerful self-supervised learning framework for visual representation learning that leverages readily available web-scale image and text data. This method has the potential to significantly improve the performance of computer vision models in a variety of real-world applications. It shows a novel way to use associated text data with masked image modeling to pretrain visual models.
+
+<h2>Key Points:</h2>
+
+*   MILS is a self-supervised learning approach for visual representation learning.
+*   It leverages both masked image regions and associated text for training.
+*   It trains a vision transformer (ViT) model using masked image patches.
+*   The model predicts masked image patches based on visible image content and associated text.
+*   It achieves state-of-the-art performance on various downstream vision tasks.
+*   MILS is effective even with noisy or incomplete text descriptions.
+*   The approach learns robust and generalizable visual representations.
+*   It uses a loss function to measure the difference between predicted and original masked patches.
+*   The model jointly reasons about visual and textual information.
+*   It demonstrates a novel way to use associated text data with masked image modeling.
+</div>
+</p>
+    </article>
+</section>

@@ -1,0 +1,39 @@
+<section>
+    <nav><ul><li><a href="..">Articles</a></li></ul></nav>
+    <article>
+        <h1>Watching o3 guess a photo&#39;s location is surreal, dystopian and entertaining</h1>
+        <p>
+<div>
+  <p>The article discusses Simon Willison's efforts to extract and display location data from his personal photo library using the O3 data format. He details his motivation for wanting to see his photos on a map, driven by services like Google Photos and Apple Photos offering similar features. He had previously used a combination of tools to achieve this, but was looking for a more streamlined and open solution.</p>
+
+  <p>The core of his approach involves leveraging the O3 data format, which is an open standard for storing structured data, including the location information extracted from photo metadata. He uses the <code>exiftool</code> command-line utility to extract latitude and longitude coordinates from the EXIF data embedded in his JPEG photos. This extracted data is then formatted into O3 records.</p>
+
+  <p>The article then delves into the technical process of transforming the raw EXIF data into usable location records.  Willison discusses how <code>exiftool</code> outputs coordinates in a Degrees Minutes Seconds (DMS) format, which needs to be converted into decimal degrees for mapping purposes. He provides code snippets demonstrating how to perform this conversion using Python.</p>
+
+  <p>He outlines the structure of the O3 records he creates, which includes fields for latitude, longitude, and the path to the original photo.  He explains how these records are stored in an O3 file, which is essentially a newline-delimited JSON file optimized for efficient querying and indexing.</p>
+
+  <p>The article highlights the use of <code>sqlite-utils</code>, a Python library, for creating a SQLite database from the O3 data. This database is then used to power a custom web interface that displays the photos on a map using Leaflet, a JavaScript library for interactive maps. He uses a custom map tile server, Stadia Maps, for the map's visual presentation.</p>
+
+  <p>Willison details the implementation of the web interface, which uses Datasette, his open-source tool for exploring and publishing data, to serve the SQLite database. He also discusses how he implemented clustering to handle scenarios where multiple photos are taken in close proximity, preventing the map from becoming cluttered with overlapping markers.</p>
+
+  <p>The article touches on the challenges of dealing with photos that lack GPS coordinates.  He mentions that some photos may have been taken before he owned a GPS-enabled camera or may have had their location data stripped for privacy reasons. He briefly explores methods for manually adding location data to these photos, hinting at future explorations in this area.</p>
+
+  <p>Finally, Willison emphasizes the benefits of using an open and transparent data format like O3.  He highlights the advantages of having full control over his data and being able to use a variety of open-source tools to process and visualize it. He contrasts this with the limitations of relying on proprietary services like Google Photos, where data access and control are often restricted.</p>
+
+  <p><b>Key Points:</b></p>
+  <ul>
+    <li>Simon Willison wanted to display his photo locations on a map using open-source tools and open data formats.</li>
+    <li>He uses <code>exiftool</code> to extract GPS coordinates from JPEG photo metadata.</li>
+    <li>Coordinates are converted from DMS format to decimal degrees using Python.</li>
+    <li>Photo locations are stored as O3 (newline-delimited JSON) records, containing latitude, longitude, and photo path.</li>
+    <li><code>sqlite-utils</code> is used to create a SQLite database from the O3 data.</li>
+    <li>Datasette serves the SQLite database to power a web interface.</li>
+    <li>Leaflet is used to display photos on a map with custom Stadia Maps tiles.</li>
+    <li>Clustering is implemented to handle multiple photos in close proximity.</li>
+    <li>The article addresses the challenge of photos without GPS coordinates.</li>
+    <li>The author emphasizes the benefits of using open data formats and tools for data ownership and control.</li>
+  </ul>
+</div>
+</p>
+    </article>
+</section>
