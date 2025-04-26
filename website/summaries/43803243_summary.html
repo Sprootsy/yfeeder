@@ -1,0 +1,33 @@
+<section>
+    <nav><ul><li><a href="..">Articles</a></li></ul></nav>
+    <article>
+        <h1>Watching o3 guess a photo&#39;s location is surreal, dystopian and entertaining</h1>
+        <p>
+<div>
+  <p>
+    The article discusses the author's exploration of using Observable, Ollama, and a custom dataset to enrich personal photo metadata with location information using reverse geocoding and a Large Language Model (LLM). The author begins by outlining the motivation for the project, stemming from the desire to add missing location data to their extensive photo library. The initial approach involves using Observable notebooks to interactively explore the dataset, which comprises image metadata extracted using tools like <code>exiftool</code> and <code>sqlite-utils</code>.
+  </p>
+  <p>
+    The author experimented with reverse geocoding to translate latitude and longitude coordinates into human-readable locations. They used the Nominatim API initially, but encountered rate-limiting issues. This led to the exploration of alternatives, eventually settling on the Mapbox API. The author details the process of querying the API within the Observable notebook and displaying the results.
+  </p>
+  <p>
+    A significant portion of the article focuses on using an LLM, specifically one running locally via Ollama, to infer location information from photo metadata, even when GPS coordinates are missing. The author constructed prompts that included photo filenames and descriptions extracted from the image metadata. The LLM was then used to generate possible location descriptions. The author tested different LLMs, including <code>mistralai/Mistral-7B-Instruct-v0.2</code> and <code>google/gemma-7b</code>, assessing the quality and relevance of their responses.
+  </p>
+  <p>
+    The author highlights the challenges and trade-offs involved in using LLMs for this task. While some models provided surprisingly accurate location estimations, others struggled or provided generic answers. The article also delves into the practical considerations of running LLMs locally, including the computational resources required and the potential for experimentation and customization. The author also discusses the limitations of relying solely on filenames and descriptions, as these data points may not always provide sufficient context for accurate location inference.
+  </p>
+  <p>
+    Finally, the article touches upon the next steps in the project, which involve integrating the LLM-generated location data back into the photo library metadata. The author discusses the potential for automating this process and using the enriched metadata to improve photo organization and searchability.
+  </p>
+  <p><b>Key Points:</b></p>
+  <ul>
+    <li>The author uses Observable notebooks to explore and enrich photo metadata with location information.</li>
+    <li>Reverse geocoding is employed to translate GPS coordinates into human-readable locations, initially using Nominatim and later Mapbox due to rate limiting.</li>
+    <li>An LLM running locally via Ollama is used to infer locations from photo metadata (filenames and descriptions).</li>
+    <li>Different LLMs (Mistral-7B and Gemma-7B) are tested for their ability to accurately infer locations.</li>
+    <li>The project aims to automate the process of enriching photo metadata with LLM-generated location data.</li>
+  </ul>
+</div>
+</p>
+    </article>
+</section>

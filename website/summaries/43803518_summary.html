@@ -1,0 +1,30 @@
+<section>
+    <nav><ul><li><a href="..">Articles</a></li></ul></nav>
+    <article>
+        <h1>LLMs can see and hear without any training</h1>
+        <p>
+<div>
+<h2>Summary</h2>
+<p>The article describes MILS, which stands for Multi-Image Latent Space. MILS is a method developed by Facebook AI Research for learning a joint latent space from multiple images of the same scene. The core idea is to represent a scene by encoding multiple views of it into a shared latent space, which can then be used for novel view synthesis. This allows for generating new images of the scene from viewpoints not present in the input images.</p>
+
+<p>MILS utilizes an encoder-decoder architecture. The encoder takes multiple images of a scene as input and maps them into a latent space. The decoder then takes a point in this latent space, along with a specified camera pose (viewpoint), and generates a corresponding image of the scene from that viewpoint.  By learning to disentangle scene content from viewpoint in the latent space, MILS can generate realistic and consistent novel views.</p>
+
+<p>The method involves training the encoder and decoder networks in an end-to-end manner. During training, the model is presented with multiple images of a scene and their corresponding camera poses. The encoder learns to extract a representation of the scene that is invariant to viewpoint, while the decoder learns to render images from different viewpoints based on the latent representation and the specified camera pose.</p>
+
+<p>The article highlights the advantages of MILS over previous view synthesis techniques.  Traditional methods often rely on explicit 3D reconstruction or dense correspondence matching, which can be computationally expensive and prone to errors. MILS, on the other hand, learns an implicit representation of the scene in the latent space, avoiding the need for explicit 3D modeling. Furthermore, MILS can handle complex scenes with non-Lambertian surfaces and occlusions, which are challenging for traditional methods.</p>
+
+<p>The method can be applied to a wide range of applications, including virtual reality, augmented reality, and image-based rendering.  By learning a joint latent space from multiple images, MILS enables users to explore scenes from arbitrary viewpoints, creating immersive and interactive experiences.  The research also contributes to the broader field of computer vision by advancing the state-of-the-art in novel view synthesis and scene representation learning.</p>
+
+<h2>Key Points</h2>
+<ul>
+<li>MILS (Multi-Image Latent Space) is a method for learning a joint latent space from multiple images of the same scene.</li>
+<li>It uses an encoder-decoder architecture. The encoder maps multiple images into a latent space, and the decoder generates a novel view given a point in the latent space and a camera pose.</li>
+<li>MILS avoids explicit 3D reconstruction, learning an implicit scene representation.</li>
+<li>It can handle complex scenes with non-Lambertian surfaces and occlusions.</li>
+<li>Applications include virtual reality, augmented reality, and image-based rendering.</li>
+<li>The model is trained end-to-end using multiple images of a scene and their corresponding camera poses.</li>
+</ul>
+</div>
+</p>
+    </article>
+</section>
