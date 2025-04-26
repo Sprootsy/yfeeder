@@ -1,5 +1,7 @@
 #!/bin/bash
 #
+set -eo pipefail
+set -x
 
 usage() {
     echo """
@@ -21,7 +23,7 @@ REPO="$2"
 SOURCE="$3"
 TARGET="$4"
 
-if [ -z "$GITHUB_TOKEN" ] || [ -z "$OWNER" ] || [ -z "$REPO"] || [ -z "$SOURCE" ] || [ -z "$TARGET"]; then
+if [ -z "$GITHUB_TOKEN" ] || [ -z "$OWNER" ] || [ -z "$REPO" ] || [ -z "$SOURCE" ] || [ -z "$TARGET" ]; then
     usage
     exit 1
 fi
@@ -32,17 +34,27 @@ GH_ACCEPT_HEADER="Accept: application/vnd.github+json"
 
 echo "Hello ${OWNER}! Owner of $REPO"
 
-PR_BODY='{"title":"bot: daily news update","body":"","head":"'"$SOURCE"',"base":"'"$TARGET"'"}'
+PR_BODY='{"title":"bot: daily news update","head":"'"$SOURCE"'","base":"'"$TARGET"'"}'
 echo "Creating PR: $PR_BODY"
-MERGE_URL=$( curl -f -X POST -H "$GH_API_VERSION" -H "$GH_AUTH_HEADER" -H "$GH_ACCEPT_HEADER" \
-    "https://api.github.com/repos/$OWNER/$REPO/pulls" \
-    -d "$PR_BODY" \
-    yq e '.url' - )
 
+
+MERGE_URL=$( curl -f -X POST -H "$GH_API_VERSION" -H "$GH_AUTH_HEADER" -H "$GH_ACCEPT_HEADER" \
+             -d "$PR_BODY" \
+             "https://api.github.com/repos/$OWNER/$REPO/pulls" \
+             | tee | yq e '.url' - )
+if [ -z "$MERGE_URL" ]; then
+    echo "Cannot extract PR url from reply"
+    exit 2
+fi
 echo "Merging PR: $PR_URL"
 MERGE_BODY='{"title":"bot: daily news update","commit_message": "bot: daily news update", "merge_method": "squash" }'
-curl -f -XPUT -H "$GH_API_VERSION" -H "$GH_AUTH_HEADER" -H "$GH_ACCEPT_HEADER" \
+if curl -f -XPUT -H "$GH_API_VERSION" -H "$GH_AUTH_HEADER" -H "$GH_ACCEPT_HEADER" \
     -d "$MERGE_BODY" \
-    "$MERGE_URL/merge"
+    "$MERGE_URL/merge" ; then
+    echo "PR Merged"
+else
+    echo "Cannot merge PR!"
+    exit 10
+fi
 
 

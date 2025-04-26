@@ -45,3 +45,5 @@ jobs:
           git push origin "${updates_branch}-$TIMESTAMP"
       - name: Merge with PR
         run: .github/workflows/scripts/do_pr.sh Sprootsy yfeeder "${updates_branch}-$TIMESTAMP" main
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
