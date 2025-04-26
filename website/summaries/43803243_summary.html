@@ -1,0 +1,40 @@
+<section>
+    <nav><ul><li><a href="..">Articles</a></li></ul></nav>
+    <article>
+        <h1>Watching o3 guess a photo&#39;s location is surreal, dystopian and entertaining</h1>
+        <p>
+<div>
+  <p>
+    The article discusses a project by Simon Willison to extract and display the locations where photos were taken from a large personal photo library using open-source tools and technologies. The author details the process of using <code>exiftool</code> to read metadata from the photos, specifically GPS coordinates, and then storing this data in a SQLite database. He then leverages Datasette, a tool he created, to serve this data through a web interface, allowing for browsing photos by location on a map.
+  </p>
+  <p>
+    The motivation behind the project was to better explore and remember the places he had visited, prompted by the sheer volume of photos accumulating over time. Initially, the author explored using Google Photos but found it lacked the specific features he desired, such as displaying all photo locations on a map or filtering photos by location effectively.
+  </p>
+  <p>
+    The article describes in detail how the author utilized <code>exiftool</code> to extract latitude, longitude, and file paths from the photo collection. This data was then inserted into a SQLite database. Datasette was configured to provide a user-friendly interface, enabling users to view photos plotted on a map and filter them based on location.  Custom SQL queries were written within Datasette to enhance the user experience. The article also touches on reverse geocoding, using the Nominatim API to convert coordinates into human-readable place names and store these names in the database.
+  </p>
+  <p>
+    The author describes the technical steps involved, including how he handles missing or incomplete GPS data and how he structures the SQLite database. He also discusses the performance optimizations he implemented to ensure Datasette could efficiently handle the large number of photos and GPS coordinates.
+  </p>
+  <p>
+    The project resulted in a functional web application that allowed the author to visualize his photos on a map, filter them by location, and quickly browse through them. He also explains that while other commercial solutions exist, this project allowed him to have full control over his data, customize the experience to his liking, and learn new technologies along the way.
+  </p>
+  <p>
+    The article also addresses some of the challenges encountered, such as dealing with photos without GPS data and the need to optimize performance for a large dataset. The author also touches on potential future enhancements, such as incorporating time-based filtering and improving the reverse geocoding process.
+  </p>
+  <p>
+    In summary, the article details a personal project to organize and explore a photo library based on geographical location, highlighting the use of open-source tools and the benefits of building a custom solution for specific needs.
+  </p>
+  <p><b>Key Points:</b></p>
+  <ul>
+    <li>The author built a tool to visualize his photo locations on a map.</li>
+    <li><code>exiftool</code> was used to extract GPS coordinates from photo metadata.</li>
+    <li>A SQLite database was used to store the extracted data.</li>
+    <li>Datasette was used to create a web interface for browsing photos by location.</li>
+    <li>Reverse geocoding (Nominatim API) was implemented to translate coordinates into place names.</li>
+    <li>The project provided a customized solution for exploring photos, offering more control than commercial alternatives.</li>
+  </ul>
+</div>
+</p>
+    </article>
+</section>

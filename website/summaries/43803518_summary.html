@@ -1,0 +1,45 @@
+<section>
+    <nav><ul><li><a href="..">Articles</a></li></ul></nav>
+    <article>
+        <h1>LLMs can see and hear without any training</h1>
+        <p>
+<div>
+  <p>
+    The article describes MILS, which stands for Masked Image Localization and Selection, a self-supervised learning approach for visual representation learning. MILS is designed to learn representations by predicting the location of masked image patches and selecting the most relevant patches for a given image. This approach aims to capture both local and global contextual information within images, leading to robust and generalizable visual representations.
+  </p>
+  <p>
+    The MILS framework operates in two main stages: masked image localization and patch selection. In the masked image localization stage, random patches in an image are masked, and the model is trained to predict the location of these masked patches. This task forces the model to understand the spatial relationships between different parts of the image. The location prediction is typically achieved through a regression loss, where the model outputs coordinates or a heatmap indicating the probability of a masked patch being present at different locations.
+  </p>
+  <p>
+    The patch selection stage aims to identify and select the most informative patches in an image. This is done by training the model to discriminate between patches that are likely to be important for understanding the image content and those that are less relevant. The selection process can involve using attention mechanisms or other scoring functions to assign a relevance score to each patch. The model then learns to select a subset of patches based on these scores, effectively focusing on the most salient regions of the image.
+  </p>
+  <p>
+    By combining masked image localization and patch selection, MILS encourages the model to learn representations that are sensitive to both local details and global context. The localization task ensures that the model understands the spatial arrangement of objects and features within the image, while the patch selection task helps the model focus on the most important regions. This combination leads to more effective and robust visual representations compared to methods that only focus on one aspect.
+  </p>
+  <p>
+    The learned representations from MILS can then be used for various downstream tasks, such as image classification, object detection, and semantic segmentation. The self-supervised nature of MILS allows it to leverage large amounts of unlabeled data, which can be particularly useful when labeled data is scarce or expensive to obtain.
+  </p>
+  <p>
+    The key points of the MILS approach are:
+  </p>
+  <ul>
+    <li>
+      <b>Self-Supervised Learning:</b> MILS is a self-supervised learning method, meaning it does not require labeled data for pre-training.
+    </li>
+    <li>
+      <b>Masked Image Localization:</b> The model is trained to predict the location of masked image patches, encouraging it to learn spatial relationships within the image.
+    </li>
+    <li>
+      <b>Patch Selection:</b> The model learns to select the most informative patches in an image, focusing on the most salient regions.
+    </li>
+    <li>
+      <b>Local and Global Context:</b> MILS captures both local details and global context within images, leading to robust visual representations.
+    </li>
+    <li>
+      <b>Downstream Task Performance:</b> The learned representations can be transferred to various downstream tasks, such as image classification and object detection.
+    </li>
+  </ul>
+</div>
+</p>
+    </article>
+</section>
