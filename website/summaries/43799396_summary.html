@@ -1,0 +1,40 @@
+<section>
+    <nav><ul><li><a href="..">Articles</a></li></ul></nav>
+    <article>
+        <h1>Parallel ./configure</h1>
+        <p>
+<div>
+  <h2>Summary</h2>
+  <p>
+    The article "configure.html" by Tavian Barnes is a comprehensive guide on the historical context, usage, and potential future improvements of the <code>configure</code> script, a ubiquitous tool in the open-source software world, particularly within projects utilizing the GNU Build System (also known as Autotools). The author delves into the origins of <code>configure</code>, explaining its role in adapting source code to various Unix-like operating systems by probing the system for available libraries, headers, and other dependencies. This process generates a <code>Makefile</code> tailored to the specific environment, enabling the software to be compiled and installed correctly.
+  </p>
+  <p>
+    The article traces the evolution of <code>configure</code> scripts, highlighting their necessity in the diverse landscape of Unix systems during the late 20th century. It emphasizes the challenges faced by developers in ensuring portability across different platforms, each with its own variations in system calls, library locations, and compiler behavior. <code>configure</code> emerged as a solution to automate the detection of these differences, simplifying the build process for end-users.
+  </p>
+  <p>
+    Barnes meticulously dissects the typical operation of a <code>configure</code> script, outlining the various checks it performs. These include verifying the presence of essential tools like compilers (e.g., GCC), determining the system's architecture, and locating required libraries such as zlib or OpenSSL. The script then uses this information to create a <code>Makefile</code>, which contains instructions for compiling and linking the software. The article also discusses the common practice of generating header files (<code>config.h</code>) that define preprocessor macros based on the system configuration. These macros allow the source code to conditionally include or exclude certain features, further enhancing portability.
+  </p>
+  <p>
+    While acknowledging the widespread adoption and utility of <code>configure</code>, the author also critically examines its drawbacks. One major concern is the complexity of the Autotools suite (Autoconf, Automake, Libtool), which can be daunting for developers to learn and maintain. The article points out that generating <code>configure</code> scripts can be a time-consuming and error-prone process, often involving intricate M4 macro programming. Furthermore, <code>configure</code> scripts themselves can be slow to execute, especially on systems with slower storage or limited processing power.
+  </p>
+  <p>
+    The article explores alternative build systems that have emerged as potential replacements for Autotools. These include CMake, Meson, and SCons, each offering its own set of advantages and disadvantages. CMake, for example, uses a more modern and easier-to-learn scripting language compared to M4. Meson emphasizes speed and simplicity, while SCons utilizes Python for its build definitions, providing greater flexibility. Barnes evaluates these alternatives in terms of their ease of use, performance, and feature set, comparing them to the traditional Autotools approach.
+  </p>
+  <p>
+    Looking towards the future, the author speculates on the potential evolution of build systems in the context of modern software development practices. He anticipates a continued shift towards simpler, faster, and more maintainable tools. The rise of cross-compilation and containerization technologies like Docker may also influence the design of future build systems, potentially reducing the need for extensive system probing at build time. The article concludes by emphasizing the importance of choosing the right build system for a given project, considering factors such as project size, complexity, and target platforms. While <code>configure</code> and Autotools have served the open-source community well for many years, the author suggests that newer build systems may offer a more compelling solution for many projects in the years to come.
+  </p>
+
+  <h2>Key Points</h2>
+  <ul>
+    <li>The <code>configure</code> script is a crucial part of the GNU Build System (Autotools), used to adapt software to different Unix-like systems.</li>
+    <li>It probes the system for libraries, headers, and other dependencies, generating a <code>Makefile</code> tailored to the environment.</li>
+    <li><code>configure</code> was essential for portability across the diverse Unix landscape of the past.</li>
+    <li>The Autotools suite (Autoconf, Automake, Libtool) can be complex and difficult to maintain.</li>
+    <li>Generating <code>configure</code> scripts involves intricate M4 macro programming and can be time-consuming.</li>
+    <li><code>configure</code> scripts can be slow to execute.</li>
+    <li>Alternatives to Autotools include CMake, Meson, and SCons.</li>
+    <li>CMake uses a more modern scripting language.</li>
+    <li>Meson emphasizes speed and simplicity.</li>
+    <li>SCons utilizes Python for build definitions</p>
+    </article>
+</section>
