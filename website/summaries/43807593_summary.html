@@ -1,0 +1,51 @@
+<section>
+    <nav><ul><li><a href="..">Articles</a></li></ul></nav>
+    <article>
+        <h1>Anatomy of a SQL Engine</h1>
+        <p>
+<div>
+  <h2>Summary</h2>
+  <p>
+    The article "SQL Engine Anatomy" dissects the inner workings of a SQL engine, focusing on its key components and their interactions. It uses a simplified SQL engine called Dolt as a case study to illustrate these concepts. The article begins by outlining the classic architecture of a SQL engine, typically composed of a parser, analyzer, optimizer, and executor.
+  </p>
+  <p>
+    The parser is responsible for taking the raw SQL query string and transforming it into an Abstract Syntax Tree (AST), a structured representation of the query's syntax. The analyzer then validates the AST, checking for semantic correctness, such as ensuring that tables and columns referenced in the query exist and that data types are compatible.
+  </p>
+  <p>
+    Next, the optimizer takes the validated AST and transforms it into an execution plan, aiming to find the most efficient way to execute the query. This involves considering various query execution strategies, such as different join algorithms, index usage, and data access paths. The optimizer's goal is to minimize resource consumption and execution time.
+  </p>
+  <p>
+    Finally, the executor takes the optimized execution plan and executes it, retrieving data from storage, performing necessary operations (e.g., filtering, joining, aggregation), and returning the results to the user. The executor interacts with the underlying storage engine to read and write data.
+  </p>
+  <p>
+    The article then delves into specific aspects of Dolt's SQL engine. Dolt's parser is based on Vitess's SQL parser, which is modified to support Dolt-specific syntax and features. The analyzer in Dolt builds upon the standard SQL analysis process, adding Dolt-specific validation rules for features like branching, merging, and versioning.
+  </p>
+  <p>
+    Dolt's optimizer uses a cost-based approach, where different execution plans are evaluated based on their estimated cost, considering factors like I/O operations, CPU usage, and memory consumption. The optimizer chooses the plan with the lowest estimated cost.
+  </p>
+  <p>
+    The executor in Dolt interacts with Dolt's storage engine, which is a Git-like version-controlled storage system. The executor translates the execution plan into operations on Dolt's storage layer, such as reading data from specific versions of tables or applying changesets.
+  </p>
+  <p>
+    The article also touches on the challenges and trade-offs involved in building a SQL engine, such as balancing query optimization complexity with optimization time, and managing the interaction between the SQL engine and the underlying storage engine. It emphasizes that the design choices made in each component of the SQL engine can significantly impact its performance, scalability, and features.
+  </p>
+  <p>
+    In conclusion, the article provides a comprehensive overview of the anatomy of a SQL engine, illustrating the key components and their roles in processing SQL queries, using Dolt as a practical example.
+  </p>
+
+  <h2>Key Points</h2>
+  <ul>
+    <li>A SQL engine typically consists of a parser, analyzer, optimizer, and executor.</li>
+    <li>The parser transforms the SQL query string into an Abstract Syntax Tree (AST).</li>
+    <li>The analyzer validates the AST for semantic correctness.</li>
+    <li>The optimizer generates an efficient execution plan for the query.</li>
+    <li>The executor executes the plan and retrieves data from storage.</li>
+    <li>Dolt's SQL engine uses Vitess's SQL parser, modified for Dolt-specific syntax.</li>
+    <li>Dolt's optimizer uses a cost-based approach to select the best execution plan.</li>
+    <li>Dolt's executor interacts with Dolt's version-controlled storage engine.</li>
+    <li>Building a SQL engine involves trade-offs between optimization complexity and performance.</li>
+  </ul>
+</div>
+</p>
+    </article>
+</section>

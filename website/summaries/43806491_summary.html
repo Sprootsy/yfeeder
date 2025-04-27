@@ -1,0 +1,31 @@
+<section>
+    <nav><ul><li><a href="..">Articles</a></li></ul></nav>
+    <article>
+        <h1>Bill Gates&#39;s Personal Easter Eggs in 8 Bit BASIC (2008)</h1>
+        <p>
+<div>
+<p>This article is a blog post discussing the author's experience with using SQLite as an application file format, highlighting its advantages and disadvantages. The author initially encountered the idea through a presentation by Rich Hickey, the creator of Clojure, and was intrigued by the concept of leveraging a database for data storage and retrieval instead of custom file formats like JSON or XML.</p>
+
+<p>The author details several advantages of using SQLite. First, it allows applications to read and write to the same file simultaneously from multiple processes safely. Second, data integrity is robust due to SQLite's ACID properties (Atomicity, Consistency, Isolation, Durability). Third, SQLite provides a powerful query language (SQL) that simplifies data retrieval and manipulation. Fourth, schemas can evolve gracefully with the use of `ALTER TABLE` statements and pragmas like `user_version` to manage schema versions. Fifth, SQLite is a single, cross-platform file with no external dependencies, simplifying deployment. Sixth, SQLite offers good performance, with indexing enabling efficient data access. Finally, the author notes that SQLite's ecosystem is strong, with extensive tooling, libraries, and community support.</p>
+
+<p>Despite these benefits, the author also addresses potential downsides. One primary concern is the risk of data corruption if the SQLite file is modified by an application that doesn't understand its schema. The author suggests mitigating this risk by treating the SQLite file as an opaque blob and providing a well-defined API for data access and modification. This approach prevents direct manipulation of the database and ensures schema consistency. Another potential issue is the limited support for concurrent writes; SQLite allows only one writer at a time, which can be a bottleneck in write-heavy applications. Additionally, SQLite is not suitable for applications requiring very high concurrency or massive scalability.</p>
+
+<p>The author provides a basic example of creating a table, inserting data, and querying it using Python and the SQLite library. They emphasize the ease of setting up and interacting with an SQLite database. Furthermore, the author touches on performance considerations, stating that while SQLite is generally fast, performance can degrade with large datasets or complex queries. They recommend using indexes and optimizing queries to maintain good performance.</p>
+
+<p>The post also mentions alternative approaches for managing schema changes, such as using schema migrations or ORM (Object-Relational Mapping) tools. However, the author prefers a simpler approach of embedding schema versioning within the SQLite database itself and using `ALTER TABLE` statements to evolve the schema as needed.</p>
+
+<p>The author concludes by reiterating the suitability of SQLite as an application file format, especially for applications that need to store structured data, support multiple processes reading and writing to the same data, and require ACID properties. They emphasize the importance of treating the SQLite file as an opaque blob and providing a well-defined API to prevent data corruption. While acknowledging the limitations of SQLite, the author believes that its benefits often outweigh its drawbacks, making it a valuable tool for application development.</p>
+
+<h2>Key Points:</h2>
+<ul>
+  <li>SQLite can be used effectively as an application file format instead of custom formats like JSON or XML.</li>
+  <li>Advantages include: multi-process read/write safety, ACID properties, SQL querying, schema evolution, single file deployment, good performance, and a strong ecosystem.</li>
+  <li>A key disadvantage is the risk of data corruption by applications that don't understand the schema. Mitigation involves treating the file as an opaque blob and providing a well-defined API.</li>
+  <li>SQLite allows only one writer at a time, which can be a bottleneck for write-heavy applications.</li>
+  <li>Schema evolution can be managed with `ALTER TABLE` statements and schema versioning.</li>
+  <li>SQLite is well-suited for applications storing structured data with multiple processes needing simultaneous access and ACID properties, but might not be ideal for applications requiring very high concurrency or massive scalability.</li>
+</ul>
+</div>
+</p>
+    </article>
+</section>
