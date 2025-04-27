@@ -1,0 +1,38 @@
+<section>
+    <nav><ul><li><a href="..">Articles</a></li></ul></nav>
+    <article>
+        <h1>Bare metal printf – C standard library without OS</h1>
+        <p>
+<div>
+  <p>This article is a deep dive into implementing a minimal `printf` function for a bare-metal environment, focusing on embedded systems where standard library support is often absent. The author outlines the challenges of using standard `printf` in such environments due to its reliance on the operating system for output and memory management, which are unavailable in bare-metal settings.</p>
+
+  <p>The article begins by explaining the necessity of a custom `printf` implementation for sending formatted output to a serial port or other low-level communication interface. It emphasizes the importance of keeping the implementation small and efficient to minimize code size and resource usage, which are critical considerations in embedded systems.</p>
+
+  <p>The author then delves into the core components of a `printf` implementation, starting with argument parsing.  `printf` is a variadic function, meaning it accepts a variable number of arguments. The article explains how to access these arguments using the `stdarg.h` header file, specifically the `va_list`, `va_start`, `va_arg`, and `va_end` macros.  It describes how to iterate through the arguments based on the format string provided to `printf`.</p>
+
+  <p>The next major section addresses format specifier handling. The article covers the common format specifiers such as `%d` (integer), `%s` (string), `%x` (hexadecimal), and `%c` (character). For each specifier, it explains how to retrieve the corresponding argument from the variable argument list and how to convert it to a string representation suitable for output.  It details the algorithms for integer-to-string conversion, handling negative numbers, and converting to different bases (e.g., decimal, hexadecimal).</p>
+
+  <p>String handling and output are discussed next. The author explains how to iterate through the format string, identify format specifiers, and replace them with the converted argument values.  It emphasizes the need for a suitable output function, such as a function that writes characters to a serial port.  The article provides code examples demonstrating how to buffer characters and call the output function efficiently.</p>
+
+  <p>Optimization is a recurring theme throughout the article. The author stresses the importance of minimizing code size and execution time. Techniques such as using lookup tables for certain conversions, avoiding floating-point support (unless absolutely necessary), and optimizing string manipulation are discussed.</p>
+
+  <p>The article also covers error handling to some extent. While a minimal `printf` implementation might not include extensive error checking, the author suggests basic checks for invalid format specifiers or unexpected argument types.</p>
+
+  <p>Finally, the article provides example code snippets in C to illustrate the concepts discussed.  These snippets demonstrate how to parse the format string, handle different format specifiers, and generate output. The code examples are intended to be a starting point for creating a custom `printf` implementation tailored to a specific embedded system.</p>
+
+  <h2>Key Points:</h2>
+  <ul>
+    <li>Implementing a custom `printf` is often necessary in bare-metal embedded systems due to the absence of standard library support.</li>
+    <li>The implementation should be small, efficient, and avoid reliance on operating system services.</li>
+    <li>`stdarg.h` provides the macros for accessing variable arguments in `printf`.</li>
+    <li>Format specifiers like `%d`, `%s`, `%x`, and `%c` need to be parsed and handled individually.</li>
+    <li>Integer-to-string conversion is a key component, often requiring handling of negative numbers and different bases.</li>
+    <li>A low-level output function (e.g., for serial port communication) is essential for writing the formatted output.</li>
+    <li>Optimization is crucial to minimize code size and execution time.</li>
+    <li>Basic error handling can improve robustness.</li>
+    <li>The article provides example code snippets to illustrate the concepts and serve as a starting point for implementation.</li>
+  </ul>
+</div>
+</p>
+    </article>
+</section>
