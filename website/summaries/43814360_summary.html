@@ -1,0 +1,35 @@
+<section>
+    <nav><ul><li><a href="..">Articles</a></li></ul></nav>
+    <article>
+        <h1>How a single line of code could brick your iPhone</h1>
+        <p>
+<div>
+<p>
+This article discusses a hypothetical vulnerability in iOS that could be triggered by a single line of code, potentially rendering iPhones unusable. The article presents a scenario where a maliciously crafted webpage or application could exploit a flaw in the operating system's handling of color profiles, specifically related to the <code>UIColor</code> class in UIKit.
+</p>
+<p>
+The vulnerability revolves around how iOS manages and caches color profiles. The author suggests that by repeatedly allocating and releasing a large number of custom color profiles with unique identifiers, an attacker could exhaust the system's memory or trigger a kernel panic. This is based on the assumption that iOS might not be efficiently garbage-collecting these color profiles, leading to memory exhaustion or an overflow in a related data structure.
+</p>
+<p>
+The article explains that the <code>UIColor</code> class is fundamental for defining colors in iOS applications. While developers typically use standard colors or a limited set of custom colors, the system allows the creation of a vast number of unique color profiles. The author's hypothesis is that creating a large number of these unique color profiles in rapid succession could overwhelm the system.
+</p>
+<p>
+The single line of code that could trigger the issue is a loop that repeatedly instantiates <code>UIColor</code> objects with different color profile identifiers. The article emphasizes that this is a theoretical vulnerability and that the author has not confirmed its existence on a real device. It's presented as a potential attack vector based on understanding how iOS manages color profiles and memory.
+</p>
+<p>
+The article also touches on the potential impact of such a vulnerability. If successfully exploited, it could lead to a denial-of-service condition, requiring users to restore their iPhones to factory settings, resulting in data loss. The article concludes by urging Apple to investigate this potential vulnerability and implement appropriate safeguards to prevent such attacks.
+</p>
+
+<h3>Key Points:</h3>
+<ul>
+<li>A single line of code could potentially brick an iPhone due to a hypothetical vulnerability.</li>
+<li>The vulnerability is related to the handling of color profiles in the <code>UIColor</code> class in UIKit.</li>
+<li>Repeatedly allocating and releasing a large number of custom color profiles with unique identifiers could exhaust system memory or trigger a kernel panic.</li>
+<li>The article is based on a theoretical vulnerability and has not been confirmed on a real device.</li>
+<li>The exploit could lead to a denial-of-service condition, requiring users to restore their iPhones and potentially losing data.</li>
+<li>The article urges Apple to investigate and implement safeguards.</li>
+</ul>
+</div>
+</p>
+    </article>
+</section>
