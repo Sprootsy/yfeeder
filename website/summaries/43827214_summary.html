@@ -1,0 +1,25 @@
+<section>
+    <nav><ul><li><a href="..">Articles</a></li></ul></nav>
+    <article>
+        <h1>Why did Windows 7 log on slower for months if you had a solid color background?</h1>
+        <p>
+ <div>
+  <p>The article discusses the challenges of ensuring that a C++ class is fully constructed before its methods are called, especially in the presence of exceptions and inheritance. The author uses the example of a base class constructor calling a virtual function that is overridden in a derived class. If the derived class object is not fully constructed when the base class constructor calls the virtual function, it can lead to unexpected behavior and crashes.</p>
+  <p>The author presents a scenario where a base class <code>base</code> has a constructor that calls a virtual function <code>Method</code>. A derived class <code>derived</code> inherits from <code>base</code> and overrides the <code>Method</code> function. The problem arises because when an object of type <code>derived</code> is created, the <code>base</code> class constructor is called first. Inside the <code>base</code> class constructor, the virtual function <code>Method</code> is called. However, at this point, the <code>derived</code> class object is not fully constructed, so the overridden <code>Method</code> function might access uninitialized members of the <code>derived</code> class, leading to undefined behavior.</p>
+  <p>The article highlights that exceptions can further complicate this issue. If the <code>derived</code> class constructor throws an exception before the object is fully constructed, the destructor of the <code>base</code> class will still be called. This can lead to the <code>base</code> class destructor calling the virtual function <code>Method</code> again, potentially on a partially constructed object. This situation is even more dangerous because the object might be in an inconsistent state due to the exception.</p>
+  <p>The author illustrates the problem with code examples and demonstrates how the virtual function call during construction or destruction can access uninitialized or invalid data members of the derived class. This can result in crashes or other unpredictable behavior.</p>
+  <p>The article then mentions various mitigation strategies, but does not go in depth on them. However, the author implies that well-designed code should avoid calling virtual functions from constructors and destructors. Alternative approaches, such as using factory functions or initialization methods called after construction, can help ensure that objects are fully constructed before any methods are called. The author emphasizes the importance of careful design and awareness of the potential pitfalls of virtual function calls during construction and destruction to prevent unexpected behavior and crashes.</p>
+  <p><b>Key Points:</b></p>
+  <ul>
+   <li>Calling virtual functions from constructors or destructors in C++ can be problematic.</li>
+   <li>During construction of a derived class, the base class constructor is called first, and the derived class object is not yet fully constructed.</li>
+   <li>If the base class constructor calls a virtual function overridden in the derived class, the overridden function might access uninitialized members of the derived class.</li>
+   <li>Exceptions thrown during construction can lead to the base class destructor being called on a partially constructed object, potentially causing further issues.</li>
+   <li>Calling virtual functions from destructors can also be problematic if the derived class has already been partially destructed.</li>
+   <li>Avoid calling virtual functions from constructors and destructors to prevent unexpected behavior and crashes.</li>
+   <li>Consider alternative design patterns, such as factory functions or initialization methods, to ensure objects are fully constructed before methods are called.</li>
+  </ul>
+ </div>
+ </p>
+    </article>
+</section>
