@@ -2,15 +2,38 @@
 <html>
     <head>
         <title>Sprootsy's Yfeeder</title>
-
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
         <script src="https://unpkg.com/htmx.org@2.0.4" 
             integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+" 
             crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/beercss@3.10.8/dist/cdn/beer.min.css" rel="stylesheet">
+        <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.10.8/dist/cdn/beer.min.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
+        <link href="assets/styles.css" rel="stylesheet">
+        <script>
+            let basePath = "/";
+            if (document.URL.includes("/yfeeder")) {
+                basePath = "/yfeeder";
+            }
+            document.body.addEventListener('htmx:configRequest', function(evt) {
+                event.detail.path = `${basePath}/${event.detail.path}`
+            });
+        </script>
     </head>
     <body>
         <header>
-            <h1>Latest Articles</h1>
+            <nav>
+                <img class="round left-align s small" src="assets/favicon.png">
+                <img class="round left-align m l extra" src="assets/favicon.png">
+                <span class="max left-align" hx-get="/articles.html" hx-target="#toc">
+                    <h1 class="max left-align s small">Latest Articles</h1>
+                    <h1 class="max left-align m l large">Latest Articles</h1>
+                </span>
+            </nav>
         </header>
-        <div id="toc" hx-get="articles.html" hx-trigger="load"></div>
+        <div id="toc" hx-get="articles.html" hx-trigger="load">
+
+        </div>
     </body>
 </html>
