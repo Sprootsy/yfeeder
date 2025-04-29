@@ -1,0 +1,32 @@
+<article>
+    <h2>A single line of code cost $8000</h2>
+    <div>
+<div>
+<p>
+The article "One Line of Code That Did Cost $8000" by Piotr Pietrasiak recounts a costly error stemming from a seemingly minor oversight in a PHP codebase. The author details how a misplaced `exit;` statement, intended for debugging purposes during the development of a price update script, was inadvertently left in the production code. This line prematurely halted the execution of the script, leading to incomplete updates of product prices. As a consequence, prices for certain products remained outdated and significantly lower than intended.
+</p>
+<p>
+The problem remained undetected for a considerable period because the script in question was executed by a cron job, meaning there was no immediate feedback or error message visible to the administrators. The author highlights that the lack of monitoring and alerting mechanisms further exacerbated the issue, as no one was immediately notified about the premature termination of the price updates. The debugging line of code was accidentally committed and pushed to the repository and then deployed.
+</p>
+<p>
+The root cause was identified during a routine analysis of sales data. The business team noticed discrepancies between expected revenue and actual sales figures. Upon investigation, it was discovered that numerous products were being sold at significantly discounted prices. The subsequent analysis of the price update script revealed the rogue `exit;` statement as the culprit.
+</p>
+<p>
+The article emphasizes the importance of thorough code review processes, robust testing procedures, and comprehensive monitoring and alerting systems. It suggests that even seemingly insignificant lines of code can have severe consequences if not properly vetted and monitored in a production environment. The author calculates the financial impact of the error to be approximately $8,000, representing the lost revenue from products sold at the incorrect, lower prices before the issue was detected and resolved. The article serves as a cautionary tale, illustrating the potential pitfalls of neglecting quality assurance and proper deployment procedures in software development. The author also advocates for the use of more modern debugging techniques that do not involve modifying code directly in a way that could impact production environments.
+</p>
+
+<h2>Key Points:</h2>
+<ul>
+<li>A misplaced <code>exit;</code> statement, intended for debugging, was left in production code.</li>
+<li>The <code>exit;</code> statement caused premature termination of a price update script.</li>
+<li>Outdated and significantly lower product prices resulted from the incomplete updates.</li>
+<li>Lack of monitoring and alerting systems allowed the error to go unnoticed for a long time.</li>
+<li>The problem was discovered during sales data analysis due to revenue discrepancies.</li>
+<li>The financial impact was estimated to be $8,000 in lost revenue.</li>
+<li>The article highlights the importance of code reviews, testing, and monitoring.</li>
+<li>It serves as a cautionary tale about the potential consequences of neglecting quality assurance.</li>
+<li>Modern debugging techniques should be used to avoid code modification that could impact production.</li>
+</ul>
+</div>
+</div>
+</article>
