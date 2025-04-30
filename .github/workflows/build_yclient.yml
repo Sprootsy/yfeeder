@@ -1,15 +1,15 @@
-# This workflow will build a golang project
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-go
-
 name: Go
 
 on:
   push:
     branches: [ "main" ]
-    paths-ignore: ['website/**']
+    paths: ['yclient/**']
   pull_request:
     branches: [ "main" ]
-    paths-ignore: ['website/**']
+
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
 
