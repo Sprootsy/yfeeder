@@ -9,7 +9,7 @@ on:
     paths: ['yclient/**']
   pull_request:
     branches: [ "main" ]
-    paths-ignore: ['yclient/**']
+    paths: ['yclient/**']
 
 
 jobs:
