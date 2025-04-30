@@ -6,10 +6,11 @@ name: Go
 on:
   push:
     branches: [ "main" ]
-    paths-ignore: ['website/**']
+    paths: ['yclient/**']
   pull_request:
     branches: [ "main" ]
-    paths-ignore: ['website/**']
+    paths-ignore: ['yclient/**']
+
 
 jobs:
 
