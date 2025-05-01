@@ -1,0 +1,33 @@
+<article>
+    <h2>Mac app launches slowed by malware scan (2024)</h2>
+    <div>
+<div>
+  <p>The article is a blog post by Jeff Johnson of Lapcat Software discussing the complexities and inconsistencies of Safari's Private Click Measurement (PCM) feature, particularly focusing on its behavior regarding the conversion of IP addresses to network identifiers (Network.Domains) and how this impacts user privacy. The article explores several issues and edge cases related to PCM's implementation, revealing that it does not consistently respect user privacy settings and can expose more data than intended, potentially allowing for cross-site tracking despite the feature's privacy-focused design.</p>
+
+  <p>Johnson begins by outlining the basic principles of PCM, explaining that it's designed to attribute conversions (e.g., a purchase) to the ad click that led to them, without identifying individual users. PCM accomplishes this by using a limited amount of data (3 bits of source information and 3 bits of trigger information) and delaying the reporting of conversions. The author then delves into the specifics of how Safari handles IP addresses in relation to PCM. He notes that Safari is supposed to convert IP addresses to Network.Domains to further anonymize the data. Network.Domains are intended to represent a generalized network location rather than a specific IP address.</p>
+
+  <p>However, Johnson discovers several problematic scenarios. He finds that Safari often fails to convert IP addresses to Network.Domains, especially when the IP address is directly embedded in a URL. This is concerning because it can lead to the exposure of a user's actual IP address, or at least a less anonymized version of it, in PCM reports. He demonstrates how this can happen through various examples, including embedding IP addresses in URLs via redirects and using different URL encoding methods. The author emphasizes that this inconsistency defeats the purpose of using Network.Domains as a privacy-enhancing measure.</p>
+
+  <p>The article also explores the concept of "non-private browsing contexts," such as when a user opens a link from a third-party app into Safari. In these contexts, Safari may not apply the same privacy protections as it does in regular browsing sessions. This can result in IP addresses being included in PCM reports, even when the user has configured Safari to use Network.Domains. Johnson raises concerns about the lack of clarity and control users have over these non-private browsing contexts.</p>
+
+  <p>Furthermore, the author investigates the implications of using multiple IP addresses for a single Network.Domain. He suggests that this could allow for more precise tracking if an attacker controls multiple servers associated with the same Network.Domain. He also points out that the randomness introduced by Network.Domains may not be as effective as intended if the underlying IP address information is still accessible.</p>
+
+  <p>Johnson also notes that the behavior of PCM varies depending on whether the ad click and the conversion happen within the same "browsing session." He observes that when the click and conversion occur in separate sessions, Safari is more likely to use Network.Domains. However, in same-session scenarios, the IP address may be used directly, again bypassing the intended anonymization. He expresses concern that this inconsistency creates opportunities for privacy breaches.</p>
+
+  <p>The article concludes by highlighting the overall complexity and opacity of PCM's implementation. Johnson criticizes the lack of documentation and the unpredictable behavior of the feature, arguing that it makes it difficult for developers and users to understand and trust. He suggests that Apple needs to provide more transparency and control over PCM to ensure that it effectively protects user privacy without unintended consequences.</p>
+
+  <h2>Key Points</h2>
+  <ul>
+    <li>Safari's Private Click Measurement (PCM) aims to attribute conversions to ad clicks while preserving user privacy.</li>
+    <li>PCM is supposed to convert IP addresses to Network.Domains to anonymize user data.</li>
+    <li>Safari inconsistently converts IP addresses to Network.Domains, especially when IPs are embedded in URLs.</li>
+    <li>"Non-private browsing contexts" may bypass privacy protections and include IP addresses in PCM reports.</li>
+    <li>Multiple IP addresses for a single Network.Domain could enable more precise tracking.</li>
+    <li>PCM's behavior differs between same-session and separate-session ad clicks and conversions.</li>
+    <li>The complexity and lack of documentation of PCM make it difficult to understand and trust.</li>
+    <li>The inconsistencies in PCM's implementation raise concerns about potential privacy breaches.</li>
+    <li>Apple needs to provide more transparency and control over PCM to ensure effective user privacy protection.</li>
+  </ul>
+</div>
+</div>
+</article>
