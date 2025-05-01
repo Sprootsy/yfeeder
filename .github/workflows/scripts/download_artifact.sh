@@ -35,10 +35,11 @@ GH_ACCEPT_HEADER="Accept: application/vnd.github+json"
 echo "Hello $OWNER! Owner of $REPO"
 
 echo "Searching for artifacts named $ARTIFACT"
-ARTIFACT_DATA=$( curl -f -H "$GH_AUTH_HEADER" -H "$GH_ACCEPT_HEADER" -H "$GH_API_VERSION_HEADER" \
-    "https://api.github.com/repos/$OWNER/$REPO/actions/artifacts?name=$ARTIFACT" \
-    | yq e '[ .artifacts.[] | {"download_url": .archive_download_url, "updated_at": .updated_at } ] | flatten |= sort_by(.updated_at) | .[0] | .updated_at + "," + .download_url' -
-    )
+ARTIFACT_DATA=$( 
+    curl -f -H "$GH_AUTH_HEADER" -H "$GH_ACCEPT_HEADER" -H "$GH_API_VERSION_HEADER" \
+        "https://api.github.com/repos/$OWNER/$REPO/actions/artifacts?name=$ARTIFACT" \
+        | tee | yq e '.artifacts |= sort_by(.updated_at) | [ .artifacts.[] | {"download_url": .archive_download_url, "updated_at": .updated_at } ] | flatten | .[-1] | .updated_at + "," + .download_url' -
+)
 if [ -z "$ARTIFACT_DATA" ]; then
     echo "No artifact found!"
     exit 2
