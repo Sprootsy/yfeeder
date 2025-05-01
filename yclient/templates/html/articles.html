@@ -1,17 +1,17 @@
 <section id="articles">
-    <div style="padding: 12px">
-        <ul class="list">
+    <div style="padding: 8px">
+        <ul class="list border">
         {{ range . }}
-        <li>
-            <span class="chip small">Points: {{ .Points }}</span>
-            <span class="chip small" >Comments: {{ .NumComments }}</span>
-            <span>
-                <a hx-target="#articles" hx-get="summaries/{{ .ID }}_summary.html"
-                   href="summaries/{{ .ID }}_summary.html">
-                    {{ .Title }}
-                </a>
-            </span>
-        </li>
+            <li>
+                <span>Points: {{ .Points }}</span>
+                <span>Comments: {{ .NumComments }}</span>
+                <span>
+                    <a hx-target="#articles" hx-get="summaries/{{ .ID }}_summary.html"
+                       href="summaries/{{ .ID }}_summary.html">
+                        {{ .Title }}
+                    </a>
+                </span>
+            </li>
         {{ end }}
         </ul>
     </div>
