@@ -2,7 +2,6 @@ package main
 
 import (
 	"bufio"
-	"context"
 	"encoding/json"
 	"flag"
 	"fmt"
@@ -71,8 +70,6 @@ func main() {
 	log.Println(hits)
 
 	log.Println("Going to render articles list")
-	ctx, cancelFun := context.WithTimeout(context.Background(), 3*time.Second)
-	defer cancelFun()
 	articlesRendering := templates.ArticlesRendering{
 		Rendering: templates.Rendering{
 			Name:     "articles.html",
@@ -84,7 +81,6 @@ func main() {
 	if errAR := articlesRendering.Render(); errAR != nil {
 		log.Println("Cannot render articles. Error:", errAR)
 	}
-	ctx.Done()
 
 	aic := genai.NewClient(apiKey)
 	for _, a := range hits.Articles {
@@ -92,23 +88,21 @@ func main() {
 		if errAIS != nil {
 			log.Println("Cannot get a summary for article. Title:", a.Title,
 				"Error:", errAIS)
+		} else {
+			a.Summary = genai.ReadResponse(res)
+			log.Println("Response: ", a.Summary)
+			sumRendering := templates.SummariesRendering{
+				Rendering: templates.Rendering{
+					Name:     "Summaries",
+					Path:     path.Join(cli.OutDir, "summaries"),
+					Template: templates.GetTemplate(templates.Files[1]),
+				},
+				Data: a,
+			}
+			if errSR := sumRendering.Render(); errSR != nil {
+				log.Println("Cannot render summaries. Error:", errSR)
+			}
 		}
-		a.Summary = genai.ReadResponse(res)
-		log.Println("Response: ", a.Summary)
-		ctx, cancelFun = context.WithTimeout(context.Background(), 2*time.Second)
-		defer cancelFun()
-		sumRendering := templates.SummariesRendering{
-			Rendering: templates.Rendering{
-				Name:     "Summaries",
-				Path:     path.Join(cli.OutDir, "summaries"),
-				Template: templates.GetTemplate(templates.Files[1]),
-			},
-			Data: a,
-		}
-		if errSR := sumRendering.Render(); errSR != nil {
-			log.Println("Cannot render summaries. Error:", errSR)
-		}
-		ctx.Done()
 		log.Println("Pausing for rate limiting")
 		time.Sleep(5*time.Second)
 	}
