@@ -1,0 +1,33 @@
+<section>
+    <nav><ul><li><a href="..">Articles</a></li></ul></nav>
+    <article>
+        <h1>Windows RDP lets you log-in using revoked passwords. Microsoft is ok with that</h1>
+        <p>
+<div>
+<h2>Summary</h2>
+<p>A vulnerability exists in Windows Remote Desktop Protocol (RDP) that allows users to log in with revoked passwords. This security flaw stems from the way Windows handles password changes and cached credentials in RDP sessions.</p>
+
+<p>When a user changes their password, the system updates the user's new password and stores it in the Active Directory database. However, RDP sessions can sometimes rely on cached credentials, which might include the older, now revoked password. This is because RDP sessions use a security mechanism where the client stores the user's credentials to facilitate faster authentication in future sessions. If the user's password is changed after a cached credential is saved but before that cached credential is used, the RDP server might still authenticate the user using the outdated, revoked password.</p>
+
+<p>The authentication process in Windows RDP involves several stages. When a user attempts to connect via RDP, the server checks the provided credentials against the stored credentials. Under normal circumstances, the server would verify the password against the current password stored in Active Directory. However, if cached credentials are in play, the server might authenticate against these cached credentials, bypassing the check against the current password.</p>
+
+<p>Microsoft is aware of this behavior but considers it to be by design in certain scenarios. According to Microsoft, this is due to the need to maintain compatibility with legacy systems and the complexities involved in immediately invalidating all cached credentials across a network when a password is changed. The company argues that immediately invalidating all cached credentials could lead to significant disruption, especially in large enterprise environments.</p>
+
+<p>The primary risk associated with this vulnerability is that a malicious actor who has gained access to a user's old password—perhaps through a data breach or social engineering—could use RDP to log into the system, even after the user has changed their password. This could lead to unauthorized access to sensitive data, system compromise, or other malicious activities.</p>
+
+<p>The article suggests that while Microsoft may not be planning to address this behavior directly, organizations should implement additional security measures to mitigate the risk. These measures include multi-factor authentication (MFA), which adds an extra layer of security beyond just a password. Additionally, organizations should enforce strong password policies and regularly monitor RDP login activity for suspicious behavior.</p>
+
+<p>In conclusion, the vulnerability in Windows RDP that allows logins with revoked passwords is a nuanced issue stemming from the system's handling of cached credentials and password changes. While Microsoft considers it a design aspect, organizations should be aware of the risk and take proactive steps to protect their systems.</p>
+
+<h2>Key Points</h2>
+<ul>
+    <li>Windows RDP allows logins using revoked passwords due to cached credentials.</li>
+    <li>RDP sessions can authenticate using older, cached credentials even after a password change.</li>
+    <li>Microsoft is aware of this behavior but considers it to be by design for compatibility reasons.</li>
+    <li>The vulnerability poses a risk of unauthorized access if an attacker obtains a user's old password.</li>
+    <li>Organizations should implement MFA and monitor RDP activity to mitigate the risk.</li>
+</ul>
+</div>
+</p>
+    </article>
+</section>
