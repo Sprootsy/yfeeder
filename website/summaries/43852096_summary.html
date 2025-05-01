@@ -1,0 +1,42 @@
+<section>
+    <nav><ul><li><a href="..">Articles</a></li></ul></nav>
+    <article>
+        <h1>Pwning the Ladybird Browser</h1>
+        <p>
+<div>
+  <h2>Summary</h2>
+  <p>
+    The article "Pwning Ladybird's libjs" details the author's journey in finding and exploiting vulnerabilities in Ladybird's libjs, the JavaScript engine used in the SerenityOS web browser. The author focuses on improving the JavaScript engine's security by identifying and fixing bugs.
+  </p>
+  <p>
+    The author started by fuzzing the JavaScript engine using a custom fuzzer based on libFuzzer. Initial fuzzing quickly revealed several crashes, which were then investigated. A key vulnerability was found in the handling of TypedArrays, specifically when calling the `sort` method on a Float64Array. The issue stemmed from the comparison function passed to `sort` potentially modifying the array during the sorting process. This could lead to out-of-bounds access when the sorting algorithm attempts to access elements that no longer exist at the expected indices, causing a crash. The author provides a detailed explanation of how this vulnerability can be triggered and the consequences of the resulting memory corruption.
+  </p>
+  <p>
+    Another vulnerability was identified in the implementation of `String.prototype.replace` when used with a function as the replacement value. The issue occurs when the function modifies the string during the replacement process, resulting in unexpected behavior and potential crashes. The author explains how the internal string representation is updated during the replacement, and how modifications made by the replacement function can lead to inconsistencies and memory corruption.
+  </p>
+  <p>
+    The author also explored vulnerabilities related to the `Intl.DateTimeFormat` object, specifically in how it handles the `formatToParts` method. When provided with invalid or malformed input, the `formatToParts` method could trigger assertion failures and crashes due to incorrect parsing and formatting logic. These issues were often related to edge cases and boundary conditions not properly handled by the implementation.
+  </p>
+  <p>
+    Further investigation led to the discovery of a bug in the implementation of error handling within the JavaScript engine. When an error occurs during the execution of a JavaScript function, the engine needs to properly unwind the stack and handle the error propagation. The author found cases where the error handling logic was flawed, leading to crashes or incorrect program behavior when exceptions were thrown.
+  </p>
+  <p>
+    For each vulnerability, the author provides a detailed explanation of the root cause, along with a proof-of-concept exploit demonstrating how the vulnerability can be triggered. The article also outlines the steps taken to fix each bug, including code snippets illustrating the changes made to the JavaScript engine.
+  </p>
+  <p>
+    The author emphasizes the importance of fuzzing and thorough testing in identifying and mitigating security vulnerabilities in JavaScript engines. By proactively searching for and fixing bugs, the author contributes to the overall security and stability of the Ladybird browser. The article serves as a valuable resource for developers working on JavaScript engines or anyone interested in learning more about JavaScript security.
+  </p>
+  <h2>Key Points</h2>
+  <ul>
+    <li>The author fuzzed Ladybird's libjs to find vulnerabilities.</li>
+    <li>A vulnerability was found in `Float64Array.prototype.sort` due to potential array modification during sorting, leading to out-of-bounds access.</li>
+    <li>A vulnerability existed in `String.prototype.replace` when using a function as a replacement, allowing for string modification during the replacement process and potential memory corruption.</li>
+    <li>Bugs were found in `Intl.DateTimeFormat.prototype.formatToParts` due to incorrect handling of invalid input.</li>
+    <li>Issues were identified in the JavaScript engine's error handling logic, leading to crashes when exceptions were thrown.</li>
+    <li>The author provides detailed explanations, proof-of-concept exploits, and code fixes for each vulnerability.</li>
+    <li>Fuzzing and thorough testing are crucial for JavaScript engine security.</li>
+  </ul>
+</div>
+</p>
+    </article>
+</section>
