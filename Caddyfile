@@ -1,0 +1,7 @@
+:2015 {
+	handle_path /yfeeder/* {
+		root dev.website
+		file_server browse {
+		}
+	}
+}

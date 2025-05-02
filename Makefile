@@ -6,4 +6,6 @@ test:
 	go test -v ./yclient/...
 
 serve:
-	caddy file-server --listen :2015 --root ./website
+	caddy fmt --overwrite
+	caddy adapt
+	caddy run
