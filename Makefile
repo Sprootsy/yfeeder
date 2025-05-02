@@ -9,4 +9,3 @@ serve:
 	caddy fmt --overwrite
 	caddy adapt
 	caddy run
-#	caddy file-server --listen :2015 --root ./website
