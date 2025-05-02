@@ -113,3 +113,8 @@ a:visited {
     color: var(--eggplant);
 }
 
+.bottom-border {
+    border-bottom-style: solid;
+    border-bottom-color: var(--outline-variant);
+    border-bottom-width: 1px;
+}
