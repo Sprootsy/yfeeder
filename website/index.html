@@ -17,12 +17,15 @@
             if (document.URL.includes("/yfeeder")) {
                 basePath = "/yfeeder";
             }
-            document.body.addEventListener('htmx:configRequest', function(evt) {
-                event.detail.path = `${basePath}/${event.detail.path}`
-            });
+            function setHtmxRequestPath() {
+                console.log("base path: " + basePath);
+                document.body.addEventListener('htmx:configRequest', function(evt) {
+                    event.detail.path = `${basePath}/${event.detail.path}`
+                });
+            }
         </script>
     </head>
-    <body>
+    <body onload="setHtmxRequestPath()">
         <header>
             <nav>
                 <img class="round left-align s small" src="assets/favicon.png">
