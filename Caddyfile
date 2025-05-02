@@ -1,0 +1,5 @@
+:2015
+
+file_server browse {
+	root dev.website
+}
