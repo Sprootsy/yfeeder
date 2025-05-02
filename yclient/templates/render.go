@@ -81,7 +81,7 @@ func Execute(t *template.Template, path string, data any) error {
 		return fmt.Errorf("Cannot execute template: nil pointer.")
 	}
 	log.Println("Executing", t.Name(), " in:", path)
-	fd, errOpen := os.OpenFile(path, os.O_CREATE|os.O_WRONLY|os.O_TRUNC, 0754)
+	fd, errOpen := os.OpenFile(path, os.O_CREATE|os.O_WRONLY|os.O_TRUNC, 0544)
 	if errOpen != nil {
 		return errOpen
 	}
