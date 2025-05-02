@@ -1,0 +1,35 @@
+<article>
+    <h2>Show HN: Kubetail – Real-time log search for Kubernetes</h2>
+    <div>
+<div>
+  <p>Kubetail is a command-line tool designed to aggregate logs from multiple Kubernetes pods into a single stream. It simplifies the process of monitoring and debugging applications running in Kubernetes environments by allowing users to view logs from various pods simultaneously. The tool is particularly useful when dealing with microservices architectures or applications spread across multiple pods. Kubetail enhances observability by providing a unified log view, which can significantly reduce the time and effort required to diagnose issues.</p>
+
+  <p>The primary function of Kubetail is to tail logs from multiple Kubernetes pods that match a specified label selector. By default, it groups logs by pod, making it easier to differentiate between the output of different components. Kubetail supports filtering logs based on regular expressions, enabling users to focus on specific events or errors. It also allows users to specify the number of lines to display from each pod's log, which is helpful for quickly understanding the recent activity of each component.</p>
+
+  <p>Kubetail can be installed using various package managers, including Homebrew (for macOS), Apt (for Debian/Ubuntu), and Yum (for CentOS/RHEL). It can also be installed manually by downloading the binary from the GitHub releases page and placing it in a directory included in the system's PATH environment variable. This flexibility in installation makes it accessible to users with different operating systems and preferences.</p>
+
+  <p>Once installed, Kubetail is used via the command line, typically with a label selector that identifies the pods to monitor. For example, a command like `kubetail -l app=myapp` would tail logs from all pods with the label `app=myapp`. Kubetail supports various command-line options to customize its behavior, such as specifying the number of lines to show initially (`-n` or `--lines`) and filtering logs using regular expressions (`-r` or `--regex`).</p>
+
+  <p>Key features of Kubetail include:</p>
+  <ul>
+    <li><b>Log Aggregation:</b> Combines logs from multiple pods into a single stream.</li>
+    <li><b>Label Selector Support:</b> Targets pods based on Kubernetes labels.</li>
+    <li><b>Log Filtering:</b> Filters logs using regular expressions.</li>
+    <li><b>Customizable Output:</b> Allows users to specify the number of lines to display.</li>
+    <li><b>Easy Installation:</b> Can be installed via package managers or manual binary download.</li>
+  </ul>
+
+  <p>Kubetail aims to address the challenge of monitoring distributed applications in Kubernetes by providing a simple, efficient way to view and analyze logs from multiple sources simultaneously, thereby improving debugging and troubleshooting workflows.</p>
+
+  <h2>Key Points:</h2>
+  <ul>
+    <li>Kubetail aggregates logs from multiple Kubernetes pods into a single stream.</li>
+    <li>It uses label selectors to identify the pods to monitor.</li>
+    <li>Logs can be filtered using regular expressions.</li>
+    <li>The number of lines displayed from each pod can be customized.</li>
+    <li>It supports multiple installation methods, including package managers and manual binary download.</li>
+    <li>It simplifies monitoring and debugging in Kubernetes environments.</li>
+  </ul>
+</div>
+</div>
+</article>

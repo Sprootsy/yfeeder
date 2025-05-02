@@ -1,0 +1,29 @@
+<article>
+    <h2>C&#43;&#43;26: more constexpr in the standard library</h2>
+    <div>
+<div>
+<h3>Summary</h3>
+The article discusses the planned constexpr-related enhancements for the C++26 standard library. It focuses on the ability to use more standard library facilities within constexpr contexts (i.e., at compile time). The main goal is to extend compile-time programming capabilities in C++, enabling more complex logic to be evaluated during compilation, potentially leading to improved performance and code generation. The author highlights that constexpr support in the standard library has been growing steadily since C++11, with significant improvements in subsequent versions like C++14, C++17, C++20, and C++23. C++26 aims to further expand this support, making more algorithms, data structures, and utilities available for compile-time use.
+
+The article specifically notes the effort to make `std::format` constexpr. `std::format` allows for type-safe formatting of strings, and making it constexpr would allow the creation of formatted strings at compile time.
+
+The author also mentions the ongoing work to extend constexpr support to `std::string`, `std::vector`, and other containers. This involves ensuring that the operations on these containers, such as construction, modification, and access, can be performed within a constexpr context. The challenges include dealing with dynamic memory allocation, which traditionally has not been allowed in constexpr functions, although improvements and extensions in recent C++ standards now permit it under certain constrained circumstances (e.g., using `std::pmr::polymorphic_allocator` and its associated memory resources).
+
+Extending constexpr to IO streams is also discussed. The possibility of compile-time text processing and generation is significant. However, this is an area where the benefits and feasibility have to be carefully balanced against complexity and potential limitations.
+
+The article also touches upon the impact of constexpr on metaprogramming. With more library facilities available at compile time, metaprogramming techniques can become more powerful and easier to use. This can lead to more efficient and maintainable code, as complex computations can be performed during compilation rather than at runtime.
+
+Overall, the article paints a picture of C++26 as a standard that will significantly enhance compile-time programming capabilities by expanding constexpr support in the standard library, leading to more powerful metaprogramming and potentially better performance.
+
+<h3>Key Points</h3>
+<ul>
+<li>C++26 will extend constexpr support in the standard library.</li>
+<li>The goal is to enable more compile-time programming.</li>
+<li>Efforts are underway to make `std::format` constexpr.</li>
+<li>`std::string`, `std::vector`, and other containers are targeted for extended constexpr support.</li>
+<li>Compile-time IO streams are being considered.</li>
+<li>Expanded constexpr support enhances metaprogramming capabilities.</li>
+</ul>
+</div>
+</div>
+</article>

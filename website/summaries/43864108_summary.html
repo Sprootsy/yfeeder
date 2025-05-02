@@ -1,0 +1,36 @@
+<article>
+    <h2>The Day Anubis Saved Our Websites from a DDoS Attack</h2>
+    <div>
+ <div>
+ <h2>Summary</h2>
+ <p>
+ The article, written as a first-person account, describes a fictional incident in May 2025 where the author's company, which runs several websites, was hit by a massive Distributed Denial of Service (DDoS) attack. The attack originated from a botnet with unusual characteristics, specifically targeting WebSocket endpoints and bypassing traditional HTTP-based DDoS mitigation techniques. The company's existing defenses, including Cloudflare, proved ineffective because the attackers were exploiting persistent WebSocket connections, exhausting server resources even with relatively low bandwidth.
+ </p>
+ <p>
+ As the attack intensified, the team struggled to identify the source and nature of the problem, initially suspecting a bug in their WebSocket implementation. Traditional DDoS mitigation focused on rate-limiting and blocking IP addresses proved futile due to the botnet's sophisticated IP address rotation and the fact that legitimate users also relied on WebSocket connections.
+ </p>
+ <p>
+ The turning point came when a newly hired engineer, fresh out of university, suggested implementing a system called "Anubis." Anubis is described as a novel DDoS mitigation system based on the principle of "Computational Proof of Work" for WebSocket connections. It works by requiring each client connecting to a WebSocket endpoint to solve a cryptographic puzzle (specifically, finding a partial hash collision) before the server allocates resources to the connection. This makes it computationally expensive for attackers to establish a large number of connections, thereby mitigating the impact of the DDoS attack.
+ </p>
+ <p>
+ The team, initially skeptical due to the complexity and novelty of the approach, decided to implement Anubis as a last resort. The implementation involved integrating a JavaScript-based puzzle solver into the client-side code of their websites. Upon connecting to a WebSocket endpoint, the client would receive a puzzle from the server, solve it, and submit the solution back to the server, thus proving it had performed a certain amount of computation and was likely a legitimate user.
+ </p>
+ <p>
+ After deploying Anubis, the attack was effectively neutralized. The botnet, unable to efficiently solve the cryptographic puzzles at scale, was unable to maintain a large number of connections, and the server resources were freed up, restoring normal service for legitimate users.
+ </p>
+ <p>
+ The article concludes by highlighting the effectiveness of Computational Proof of Work as a DDoS mitigation technique, particularly for WebSocket-based attacks, and suggests that it may become a standard approach in the future. It also underscores the importance of being open to novel solutions and the value of fresh perspectives in addressing complex technical challenges.
+ </p>
+ <h2>Key Points</h2>
+ <ul>
+  <li>The company's websites were targeted by a sophisticated DDoS attack exploiting WebSocket connections.</li>
+  <li>Traditional DDoS mitigation techniques, including Cloudflare, were ineffective.</li>
+  <li>The attack utilized a botnet with advanced IP rotation capabilities.</li>
+  <li>"Anubis," a Computational Proof of Work system for WebSocket connections, was implemented as a solution.</li>
+  <li>Anubis requires clients to solve a cryptographic puzzle before establishing a WebSocket connection.</li>
+  <li>The implementation of Anubis successfully mitigated the DDoS attack by making it computationally expensive for the botnet to connect.</li>
+  <li>The article emphasizes the potential of Computational Proof of Work as a valuable DDoS mitigation strategy, especially for WebSocket-based attacks.</li>
+ </ul>
+ </div>
+ </div>
+</article>
