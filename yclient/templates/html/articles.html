@@ -1,18 +1,18 @@
 <section id="articles">
     <div style="padding: 8px">
-        <ul class="list border">
+        <div class="grid">
         {{ range . }}
-            <li>
-                <span>Points: {{ .Points }}</span>
-                <span>Comments: {{ .NumComments }}</span>
-                <span>
-                    <a hx-target="#articles" hx-get="summaries/{{ .ID }}_summary.html"
-                       href="summaries/{{ .ID }}_summary.html">
-                        {{ .Title }}
-                    </a>
-                </span>
-            </li>
+            <div class="l1"></div>
+            <div class="s4 m2 l1">Points: {{ .Points }}</div>
+            <div class="s6 m2 l1">Comments: {{ .NumComments }}</div>
+            <div class="s12 m8 l9">
+                <a hx-target="#articles" hx-get="summaries/{{ .ID }}_summary.html"
+                   href="summaries/{{ .ID }}_summary.html">
+                    {{ .Title }}
+                </a>
+            </div>
+            <div class="s12 bottom-border"></div>
         {{ end }}
-        </ul>
+        </div>
     </div>
 <section>
