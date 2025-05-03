@@ -2,34 +2,44 @@
     <h2>Building Burstables: CPU slicing with cgroups</h2>
     <div>
 <div>
-<h2>Summary</h2>
-The article discusses the implementation of burstable CPUs using cgroups (control groups) to provide a balance between guaranteed CPU resources and the ability to handle occasional spikes in demand. The author details the challenges and solutions involved in building a system where virtual machines (VMs) or containers can exceed their allocated CPU limits for short periods, improving overall performance and resource utilization.
+  <h2>Summary:</h2>
+  <p>
+    The article "Building Burstables: CPU Slicing with Cgroups" on Ubicloud's blog discusses how to implement burstable CPU allocation using cgroups (control groups) in Linux. This approach allows containerized workloads to exceed their initially allocated CPU resources for short periods, improving performance for applications with variable CPU demands, while still guaranteeing a minimum level of resources.
+  </p>
+  <p>
+    The article begins by explaining the problem of inefficient resource utilization in cloud environments.  Traditional fixed CPU allocation can lead to underutilization when workloads don't consistently require their maximum allocated resources.  Burstable CPU allocation addresses this by allowing containers to "burst" above their guaranteed CPU share when resources are available.
+  </p>
+  <p>
+    The article then provides a detailed explanation of cgroups, a Linux kernel feature used to limit, account, and isolate resource usage (CPU, memory, I/O, etc.) of process groups.  Specifically, it focuses on the CPU subsystem of cgroups, which allows for controlling CPU allocation.
+  </p>
+  <p>
+    The core concept revolves around using CPU shares to define the relative priority of different cgroups. A cgroup with a higher CPU share will receive a larger proportion of the available CPU time compared to a cgroup with a lower share. The author explains how to create cgroups, set CPU shares, and move processes into these cgroups using command-line tools like `cgcreate`, `cgset`, and `cgclassify`.
+  </p>
+  <p>
+    The article then delves into implementing burstable behavior. The key idea is to set a relatively low CPU share for a cgroup, representing the guaranteed minimum CPU allocation. However, when the system has idle CPU resources, the cgroup can utilize more than its proportional share, effectively "bursting" above its guaranteed level. This is possible because the CPU scheduler will distribute unused CPU time among the cgroups that are actively requesting it, regardless of their configured shares, as long as there are no other cgroups contending for those resources.
+  </p>
+  <p>
+    The article emphasizes that burstable CPU allocation doesn't guarantee sustained high CPU usage; it only allows for opportunistic utilization of available resources. If other cgroups start demanding CPU time, the burstable cgroup will be throttled back to its allocated share.
+  </p>
+  <p>
+    The article provides practical examples of creating and configuring cgroups for burstable workloads, including commands for setting CPU shares and moving processes into the created cgroups. It also outlines how to monitor the CPU usage of cgroups to observe the bursting behavior.
+  </p>
+  <p>
+    Finally, the article concludes by highlighting the benefits of using burstable CPU allocation for improving resource utilization and application performance in cloud environments. It allows for more efficient use of CPU resources, leading to cost savings and improved responsiveness for applications with fluctuating workloads. However, it also acknowledges the importance of careful monitoring and configuration to ensure fair resource allocation and prevent resource starvation.
+  </p>
 
-The article starts by explaining the concept of CPU bursting, where a workload can temporarily consume more CPU than its base allocation, utilizing idle CPU cycles from other resources. This is particularly useful for applications that experience infrequent but resource-intensive tasks.
-
-The author then delves into the technical aspects of using cgroups to achieve CPU bursting. Cgroups are a Linux kernel feature that allows for the isolation and management of system resources, including CPU, memory, and I/O. The article specifically focuses on the `cpu.cfs_quota_us` and `cpu.cfs_period_us` parameters within cgroups, which control the CPU time allocated to a group of processes.
-
-The primary challenge is that standard cgroup configurations typically enforce strict CPU limits, preventing workloads from exceeding their quota, even when spare CPU capacity is available. The author explores different approaches to overcome this limitation.
-
-One method discussed is dynamically adjusting the `cpu.cfs_quota_us` value based on system load and resource availability. This involves monitoring CPU utilization and increasing the quota when the system has spare capacity and decreasing it when resources become scarce. This dynamic adjustment requires careful consideration to avoid resource contention and ensure fairness among different workloads.
-
-Another approach involves using a credit-based system. Each workload is assigned a certain amount of "CPU credits," which are consumed when the workload exceeds its base CPU allocation. The credits are replenished over time, allowing for occasional bursts of activity. This system requires careful calibration of credit consumption and replenishment rates to achieve the desired bursting behavior.
-
-The article also addresses the importance of monitoring and observability. Accurate monitoring of CPU usage, cgroup parameters, and system load is crucial for effective CPU bursting. The author discusses the use of tools and techniques for collecting and analyzing this data.
-
-Furthermore, the author highlights the need for robust error handling and resource management. The system must be able to gracefully handle situations where resources become overcommitted or when workloads attempt to consume excessive CPU time. This involves implementing mechanisms for throttling or limiting CPU usage, as well as providing alerts and notifications to administrators.
-
-In conclusion, the article provides a comprehensive overview of the challenges and techniques involved in building a burstable CPU system using cgroups. It emphasizes the importance of dynamic resource allocation, credit-based systems, monitoring, and error handling for achieving optimal performance and resource utilization.
-<h2>Key Points</h2>
-<ul>
-  <li><b>CPU Bursting:</b> The concept of allowing workloads to temporarily exceed their allocated CPU limits to improve performance and utilize idle resources.</li>
-  <li><b>Cgroups:</b> Using Linux cgroups to manage and control CPU resources for VMs or containers.</li>
-  <li><b>`cpu.cfs_quota_us` and `cpu.cfs_period_us`:</b> Key cgroup parameters for controlling CPU time allocation.</li>
-  <li><b>Dynamic Quota Adjustment:</b> Adjusting `cpu.cfs_quota_us` based on system load to enable bursting when resources are available.</li>
-  <li><b>Credit-Based System:</b> Implementing a credit system where workloads consume CPU credits when exceeding their base allocation, with credits replenished over time.</li>
-  <li><b>Monitoring and Observability:</b> Importance of monitoring CPU usage, cgroup parameters, and system load for effective bursting.</li>
-  <li><b>Error Handling and Resource Management:</b> Handling overcommitted resources and excessive CPU consumption through throttling and alerts.</li>
-</ul>
+  <h2>Key Points:</h2>
+  <ul>
+    <li><b>Problem:</b> Fixed CPU allocation can lead to resource underutilization in cloud environments.</li>
+    <li><b>Solution:</b> Burstable CPU allocation allows containers to exceed their guaranteed CPU share when resources are available.</li>
+    <li><b>Cgroups:</b> Linux control groups (cgroups) are used to limit and account for resource usage, including CPU.</li>
+    <li><b>CPU Shares:</b> CPU shares define the relative priority of cgroups in accessing CPU time.</li>
+    <li><b>Implementation:</b> Set a low CPU share for the guaranteed minimum and allow bursting above that share when resources are idle.</li>
+    <li><b>Opportunistic:</b> Bursting is opportunistic and not guaranteed; cgroups will be throttled back to their share when contention arises.</li>
+    <li><b>Configuration:</b> Use `cgcreate`, `cgset`, and `cgclassify` to create, configure, and manage cgroups.</li>
+    <li><b>Monitoring:</b> Monitor CPU usage to observe bursting behavior and ensure fair resource allocation.</li>
+    <li><b>Benefits:</b> Improved resource utilization, cost savings, and improved responsiveness for variable workloads.</li>
+  </ul>
 </div>
 </div>
 </article>
