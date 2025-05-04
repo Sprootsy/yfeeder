@@ -1,0 +1,29 @@
+<article>
+    <h2>How LWN is faring in 2025</h2>
+    <div>
+<div>
+<p>This article from LWN.net discusses the ongoing discussion and challenges surrounding the adoption of Rust within the Linux kernel. It explores the complexities of integrating a new language into a large, established codebase like the Linux kernel, focusing on memory safety, performance considerations, and the availability of necessary abstractions.</p>
+
+<p>The article highlights the initial efforts to introduce Rust support for specific kernel subsystems, such as drivers. It notes the work being done to create Rust-compatible abstractions for common kernel functionalities, acknowledging the need to avoid direct, unsafe Rust code for most kernel development. The author emphasizes that while Rust offers memory safety advantages, it's not a simple drop-in replacement for C, and careful design is needed to ensure compatibility and maintainability.</p>
+
+<p>One significant point is the debate around the trade-offs between safety and performance. The author reports that while Rust can prevent certain types of memory errors common in C, achieving comparable performance often requires more complex code and careful attention to detail. There are concerns that poorly written Rust code could introduce new performance bottlenecks or increase the overall complexity of the kernel.</p>
+
+<p>The article also addresses the challenge of finding and training kernel developers proficient in both C and Rust. The learning curve for Rust, especially within the context of the kernel, is steep. Moreover, ensuring that Rust code adheres to kernel coding standards and interacts correctly with existing C code requires a deep understanding of both languages and the kernel's architecture.</p>
+
+<p>The long-term vision for Rust in the kernel involves gradually replacing or augmenting existing C code with safer Rust implementations. However, the article makes it clear that this is a multi-year project with many hurdles to overcome. Key challenges include building a comprehensive set of safe Rust abstractions, optimizing Rust code for performance, and training a sufficient number of developers to maintain and extend the Rust-based portions of the kernel.</p>
+
+<p>The author concludes by emphasizing that the integration of Rust into the Linux kernel is an ongoing experiment. While there is enthusiasm for the potential benefits of Rust, particularly in terms of memory safety, there is also a realistic understanding of the challenges involved. The success of this effort will depend on careful planning, collaboration between developers, and a willingness to adapt and learn as the project progresses.</p>
+
+<p><b>Key Points:</b></p>
+<ul>
+<li>The article discusses the complexities of integrating Rust into the Linux kernel.</li>
+<li>Rust aims to improve memory safety in the kernel, but it's not a simple replacement for C.</li>
+<li>Creating Rust-compatible abstractions for kernel functionalities is crucial.</li>
+<li>Performance considerations are important; Rust code must be optimized.</li>
+<li>Finding and training developers proficient in both C and Rust is a challenge.</li>
+<li>The long-term vision involves gradually replacing C code with Rust.</li>
+<li>The integration of Rust is an ongoing experiment with many hurdles.</li>
+</ul>
+</div>
+</div>
+</article>
