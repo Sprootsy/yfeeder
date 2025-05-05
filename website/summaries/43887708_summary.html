@@ -1,0 +1,41 @@
+<article>
+    <h2>Minimal Linux Bootloader (2018)</h2>
+    <div>
+<div>
+<h2>Summary</h2>
+
+The article is a detailed, commented assembly code for a simple bootloader. This bootloader is designed to be small enough to fit within the 512-byte limit imposed by the BIOS for boot sectors. It performs the fundamental task of loading the operating system kernel into memory and then transferring control to it.
+
+The bootloader begins with the standard BIOS identification signature (0x55, 0xaa) to be recognized as a bootable sector. The code is written for a 16-bit real mode environment, which is the mode the CPU is in when the BIOS hands over control.
+
+The bootloader starts by setting up the segment registers (CS, DS, ES, SS) to point to the address where the bootloader is loaded in memory (0x07c0). This is crucial for accessing data and code correctly. It then sets up the stack pointer (SP) to point to a safe location in memory.
+
+A key function of the bootloader is reading the kernel from the storage device (usually a hard drive or floppy disk). This involves using BIOS interrupt 0x13, specifically AH=0x02, to read sectors from the disk. The bootloader needs to set up the necessary registers before calling the interrupt. This includes specifying the number of sectors to read, the memory address to load the sectors into, and the starting sector number on the disk. The bootloader handles potential errors during the read operation by retrying a certain number of times. If the read operation consistently fails, the bootloader halts the system.
+
+Before reading the kernel, the bootloader prints a message to the screen to inform the user that it is loading the kernel. It uses BIOS interrupt 0x10 with AH=0x0e to print characters to the screen.
+
+The bootloader then loads the kernel into memory, typically starting at a predefined memory address (e.g., 0x10000). The kernel image on the disk is assumed to be contiguous.
+
+After successfully loading the kernel into memory, the bootloader jumps to the kernel's entry point. This involves setting up the code segment (CS) and instruction pointer (IP) registers to the address where the kernel starts. The bootloader does not set up a stack for the kernel. It is the kernel's responsibility to set up its own stack.
+
+The bootloader includes error handling routines. If the disk read operation fails repeatedly, an error message is displayed, and the system is halted.
+
+The code also includes some simple macros and equates to make the code more readable. For example, `BOOT_DRIVE` is defined to be the drive number assigned by the BIOS.
+
+The bootloader occupies the first 512 bytes of the boot sector, with the last two bytes being the boot signature.
+
+<h2>Key Points</h2>
+
+*   **Boot Sector Signature:** The bootloader includes the standard boot sector signature (0x55, 0xaa) at the end of the sector.
+*   **Real Mode:** The bootloader operates in 16-bit real mode.
+*   **Segment Registers Setup:** The bootloader initializes segment registers (CS, DS, ES, SS) to point to the bootloader's memory location.
+*   **Stack Setup:** The bootloader sets up the stack pointer (SP) to a safe address.
+*   **Disk Read:** The bootloader uses BIOS interrupt 0x13 to read the kernel from the disk.
+*   **Kernel Load Address:** The kernel is loaded into memory at a specific address (e.g., 0x10000).
+*   **Error Handling:** The bootloader includes error handling for disk read failures.
+*   **Message Output:** The bootloader displays a message to the screen before loading the kernel.
+*   **Kernel Jump:** The bootloader jumps to the kernel's entry point after loading it into memory.
+*   **Size Limit:** The bootloader must fit within the 512-byte boot sector limit.
+</div>
+</div>
+</article>
