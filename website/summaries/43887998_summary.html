@@ -1,0 +1,31 @@
+<article>
+    <h2>Typed Lisp, a Primer</h2>
+    <div>
+<div>
+<h2>Summary</h2>
+The article introduces Typed Lisp, an extension of Common Lisp that integrates static typing. It argues that while Common Lisp's dynamic typing provides flexibility, static typing offers benefits such as early error detection, improved code maintainability, and potential performance optimizations. Typed Lisp aims to provide a gradual typing system, allowing developers to mix statically and dynamically typed code within the same program. This approach enables leveraging the advantages of both typing paradigms.
+
+The core idea is to introduce type annotations to Lisp code, which the type checker then uses to verify the type safety of the program. The type system includes basic types like integers, strings, and booleans, as well as more advanced features such as parametric polymorphism (generics), dependent types, and refinement types. Parametric polymorphism allows writing code that works with multiple types without being specific to one. Dependent types enable types to depend on values, providing more precise type information. Refinement types allow restricting the values that a type can hold based on certain predicates, further enhancing type safety.
+
+The article emphasizes that Typed Lisp is designed to be a practical and usable extension of Common Lisp, not a complete replacement. It aims to maintain compatibility with existing Lisp code and libraries as much as possible. The type checker is designed to be sound, meaning that if the type checker accepts a program, it is guaranteed not to have type errors at runtime. However, it may not be complete, meaning that some valid programs might be rejected by the type checker.
+
+The article also discusses the implementation of Typed Lisp, including the type checker and the integration with the existing Common Lisp environment. It describes how the type checker works, including type inference, which automatically infers the types of expressions when they are not explicitly provided. The article highlights the challenges of integrating static typing into a dynamically typed language like Common Lisp and discusses the design decisions made to address these challenges.
+
+The benefits of using Typed Lisp include the ability to catch type errors at compile time, leading to more robust and reliable code. Static typing can also improve code maintainability by making the types of variables and expressions explicit, making it easier to understand and modify the code. Furthermore, static typing can enable performance optimizations by providing the compiler with more information about the types of data being manipulated, allowing it to generate more efficient machine code.
+
+Overall, Typed Lisp provides a powerful extension to Common Lisp that combines the flexibility of dynamic typing with the benefits of static typing. It offers a gradual typing system that allows developers to choose the level of type safety they need, making it a practical and usable tool for developing a wide range of applications.
+
+<h2>Key Points</h2>
+<ul>
+<li>Typed Lisp extends Common Lisp with static typing.</li>
+<li>It offers a gradual typing system, mixing static and dynamic typing.</li>
+<li>The type system includes basic types, parametric polymorphism, dependent types, and refinement types.</li>
+<li>It maintains compatibility with existing Lisp code.</li>
+<li>The type checker is sound but may not be complete.</li>
+<li>Type inference automatically infers types.</li>
+<li>Benefits include early error detection, improved maintainability, and potential performance optimizations.</li>
+<li>It aims to be a practical and usable extension for a wide range of applications.</li>
+</ul>
+</div>
+</div>
+</article>

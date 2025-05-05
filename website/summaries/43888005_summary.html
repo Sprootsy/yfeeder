@@ -1,0 +1,39 @@
+<article>
+    <h2>Load-Store Conflicts</h2>
+    <div>
+<div>
+  <p>
+    The article discusses load-store conflicts in the context of modern CPUs and their impact on performance. It begins by illustrating a scenario where reading a value from memory immediately after writing to the same memory location can lead to performance penalties, even if the read and write operations appear to be independent in the source code.
+  </p>
+  <p>
+    The author explains that modern CPUs employ out-of-order execution and speculative execution to improve performance. In out-of-order execution, instructions are not necessarily executed in the order they appear in the code. Speculative execution involves predicting the outcome of branches and executing instructions along the predicted path before the branch outcome is known for certain. Both techniques can lead to situations where a load operation is executed before a prior store operation to the same memory location.
+  </p>
+  <p>
+    To handle these situations, CPUs employ mechanisms to detect and resolve load-store conflicts. One such mechanism is store forwarding, where the CPU forwards the data from the store buffer (where recently written data is temporarily stored) to the load operation, avoiding the need to fetch the data from memory. However, store forwarding is not always possible, especially when the load and store operations are not perfectly aligned (i.e., they access different parts of the same cache line) or when the store data is not yet available in the store buffer.
+  </p>
+  <p>
+    When store forwarding cannot be used, the CPU must stall the load operation until the store operation completes and the data is written to the cache. This stall introduces a performance penalty. The article provides examples of code snippets that can lead to load-store conflicts, such as accessing fields within a structure or array elements that are close in memory.
+  </p>
+  <p>
+    The article also mentions that the compiler can sometimes reorder instructions in a way that increases the likelihood of load-store conflicts. The author recommends being aware of this possibility and considering the memory layout of data structures when writing performance-sensitive code.
+  </p>
+  <p>
+    The author suggests various techniques to mitigate load-store conflicts, including padding data structures to ensure that frequently accessed fields are not located close to each other in memory, and using appropriate memory alignment to improve the effectiveness of store forwarding. They also briefly mention the use of memory barriers or fences to enforce ordering constraints on memory operations, although they caution that these can have a significant performance impact.
+  </p>
+  <p>
+    In summary, the article highlights the importance of understanding load-store conflicts and their potential impact on performance in modern CPUs. It provides practical advice on how to identify and mitigate these conflicts through careful code design and data structure layout.
+  </p>
+
+  <h3>Key Points:</h3>
+  <ul>
+    <li>Load-store conflicts occur when a load operation attempts to read from a memory location shortly after a store operation has written to the same or overlapping location.</li>
+    <li>Modern CPUs use out-of-order execution and speculative execution, increasing the chance of load-store conflicts.</li>
+    <li>Store forwarding is a mechanism where the CPU forwards data from the store buffer to the load operation, avoiding a memory access.</li>
+    <li>Misaligned load and store operations, or stores whose data is not yet available, can prevent store forwarding and lead to stalls.</li>
+    <li>Compilers can reorder instructions, potentially increasing the likelihood of load-store conflicts.</li>
+    <li>Techniques to mitigate load-store conflicts include padding data structures and ensuring proper memory alignment.</li>
+    <li>Memory barriers can enforce ordering but can also degrade performance.</li>
+  </ul>
+</div>
+</div>
+</article>
