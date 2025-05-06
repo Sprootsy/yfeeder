@@ -1,0 +1,26 @@
+<article>
+    <h2>Replacing Kubernetes with systemd (2024)</h2>
+    <div>
+<div>
+  <p>The article "Replacing Kubernetes with Systemd" by Yaakov describes the author's journey of migrating away from Kubernetes to systemd for managing containerized applications in a small-scale environment. The author argues that Kubernetes, while powerful, introduces unnecessary complexity and overhead for projects that don't require its advanced features like autoscaling, complex networking, or multi-cloud deployment. The author highlights the operational burden of maintaining a Kubernetes cluster, including managing etcd, the control plane, and worker nodes, especially when the application itself is relatively simple. The article explains the author's decision to leverage systemd, a system and service manager, as a simpler alternative for deploying and managing Docker containers on a single server.</p>
+
+  <p>The author outlines the steps involved in transitioning from Kubernetes to systemd. This includes creating systemd unit files to define and manage the containers, using Docker Compose for building and managing multi-container applications, and employing tools like Ansible for automating the deployment process. The author emphasizes the ease of use and reduced operational overhead associated with systemd compared to Kubernetes. Systemd handles service dependencies, restarts on failure, and logging, providing a robust yet lightweight solution for managing containerized applications. The article also discusses the author's approach to handling configuration management using environment variables and Docker secrets, and implementing zero-downtime deployments by running multiple versions of the application behind a reverse proxy like nginx.</p>
+
+  <p>The author acknowledges that systemd is not a replacement for Kubernetes in all scenarios. Kubernetes remains a better choice for large-scale, distributed applications that require advanced features like auto-scaling, self-healing, and complex networking. However, for smaller projects with simpler requirements, systemd offers a viable and often more efficient alternative. The author presents systemd as a pragmatic choice for teams seeking to reduce complexity and operational overhead without sacrificing reliability or maintainability. The article provides a practical example of how to use systemd to manage Docker containers, including setting up dependencies, managing logs, and performing updates. It is written from the perspective of someone who has experienced the challenges of managing Kubernetes and found a simpler, more effective solution for their specific needs.</p>
+
+  <p><strong>Key Points:</strong></p>
+  <ul>
+    <li>Kubernetes can be overkill for small-scale projects with simple requirements due to its inherent complexity and operational overhead.</li>
+    <li>Systemd offers a simpler, more lightweight alternative for managing Docker containers on a single server.</li>
+    <li>Systemd handles service dependencies, restarts on failure, and logging, providing essential features for managing containerized applications.</li>
+    <li>Docker Compose simplifies the management of multi-container applications when using systemd.</li>
+    <li>Ansible can be used to automate the deployment process of Docker containers managed by systemd.</li>
+    <li>Configuration management can be handled using environment variables and Docker secrets.</li>
+    <li>Zero-downtime deployments can be achieved by running multiple versions of the application behind a reverse proxy like nginx.</li>
+    <li>Systemd is not a replacement for Kubernetes in all scenarios, but it is a viable option for smaller projects that do not require the advanced features of Kubernetes.</li>
+    <li>The article provides a practical example of migrating from Kubernetes to systemd for managing Docker containers.</li>
+    <li>Choosing systemd can significantly reduce operational complexity and overhead compared to Kubernetes in appropriate use cases.</li>
+  </ul>
+</div>
+</div>
+</article>

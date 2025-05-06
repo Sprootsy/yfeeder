@@ -1,0 +1,25 @@
+<article>
+    <h2>Show HN: Real-time AI Voice Chat at ~500ms Latency</h2>
+    <div>
+<div>
+  <p>The article describes RealtimeVoiceChat, a Python-based application enabling real-time voice communication between users. It utilizes WebRTC for peer-to-peer connections, minimizing latency and server load. The application comprises a signaling server built with FastAPI and a client-side interface using HTML, CSS, and JavaScript. The signaling server facilitates the exchange of connection information (SDP offers/answers and ICE candidates) between clients, allowing them to establish direct connections for audio streaming. The client-side interface provides controls for initiating and managing calls, including muting/unmuting the microphone. The system emphasizes a decentralized architecture, reducing dependence on a central server after the initial connection setup.</p>
+
+  <p>The application's architecture centers around a signaling process. When a user initiates a call, the client-side application generates an SDP offer describing its media capabilities. This offer is sent to the signaling server, which relays it to the intended recipient. The recipient's client generates an SDP answer, which is sent back through the signaling server to the caller. Simultaneously, both clients gather ICE candidates, which describe potential network pathways for communication. These candidates are also exchanged via the signaling server. Once both SDP offer/answer and ICE candidate exchange are complete, a direct peer-to-peer connection is established, and audio streaming commences. The signaling server is primarily used for the initial setup and is less involved once the direct connection is active.</p>
+
+  <p>The technology stack includes FastAPI for the signaling server due to its asynchronous capabilities and ease of use for building APIs. WebRTC is crucial for establishing peer-to-peer connections and handling audio encoding/decoding. The client-side uses standard web technologies (HTML, CSS, and JavaScript) along with the WebRTC API. The decentralized nature of WebRTC helps in reducing server costs and latency since the media streams directly connect peers without routing through the server.</p>
+
+  <p>The article highlights the application's ease of use and the potential for further development. It mentions possibilities such as adding user authentication, implementing group calling, and improving the user interface. The provided code and explanation serve as a foundation for building more complex real-time communication applications. The focus on peer-to-peer communication using WebRTC distinguishes it from server-centric voice chat applications, providing a more scalable and efficient solution.</p>
+
+  <h2>Key Points:</h2>
+  <ul>
+    <li>RealtimeVoiceChat is a Python application for real-time voice communication.</li>
+    <li>It uses WebRTC for peer-to-peer connections, reducing latency and server load.</li>
+    <li>The architecture includes a FastAPI signaling server and a client-side interface (HTML, CSS, JavaScript).</li>
+    <li>The signaling server facilitates SDP offer/answer and ICE candidate exchange.</li>
+    <li>WebRTC enables direct audio streaming between peers.</li>
+    <li>The application is designed for ease of use and further development.</li>
+    <li>Potential extensions include user authentication and group calling features.</li>
+  </ul>
+</div>
+</div>
+</article>
