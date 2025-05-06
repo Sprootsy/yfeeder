@@ -1,0 +1,45 @@
+<article>
+    <h2>A Tektronix TDS 684B Oscilloscope Uses CCD Analog Memory</h2>
+    <div>
+ <div>
+  <p>
+   The article is a detailed exploration of the memory system of the Tektronix TDS684B oscilloscope, specifically focusing on the custom CCD-based memory modules used for waveform storage. It delves into the reverse engineering process undertaken to understand the functionality and architecture of these modules.
+  </p>
+  <p>
+   The author begins by explaining the motivation behind the project: to gain a deeper understanding of the inner workings of the TDS684B and to potentially repair or replace faulty memory modules. The article highlights the challenges involved due to the age of the oscilloscope, the lack of readily available documentation, and the custom nature of the CCD memory.
+  </p>
+  <p>
+   The core of the article revolves around the analysis of the CCD memory module itself. The author meticulously examines the physical components, including the CCD chips, clock drivers, and supporting circuitry. Through a combination of visual inspection, datasheet research, and circuit tracing, the author pieces together the operational principles of the module.
+  </p>
+  <p>
+   A significant portion of the article is dedicated to explaining the role of the CCD chips in storing analog waveform data. The author describes how the input signal is sampled and converted into a series of charge packets, which are then shifted through the CCD array under the control of precisely timed clock signals. The clock drivers, which generate these clock signals, are also analyzed in detail.
+  </p>
+  <p>
+   The author identifies key components such as the Philips/Signetics 3244 quad CCD clock driver and examines its role in generating the necessary clock waveforms for the CCD. The reverse engineering process also involves understanding how the CCD memory module interfaces with the rest of the oscilloscope system, including the address and data buses.
+  </p>
+  <p>
+   The article further investigates the data organization within the CCD memory. The author explains how the analog samples are stored sequentially in the CCD array and how the addressing scheme allows the oscilloscope to access specific portions of the stored waveform. Timing diagrams and logic analyzer captures are used to illustrate the timing relationships between the various signals involved in memory read and write operations.
+  </p>
+  <p>
+   The author also discusses the challenges of working with obsolete components and the techniques used to overcome these challenges, such as sourcing replacement parts and reverse engineering datasheets. The article emphasizes the importance of careful measurement and analysis in understanding the behavior of the CCD memory module.
+  </p>
+  <p>
+   Finally, the article concludes with a summary of the findings and a discussion of potential future directions for the project, such as developing a modern replacement for the CCD memory module using more readily available technology. The author expresses hope that the information presented in the article will be useful to other enthusiasts and engineers working with vintage Tektronix equipment.
+  </p>
+  <p>
+   <b>Key Points:</b>
+  </p>
+  <ul>
+   <li>The article focuses on the reverse engineering of a custom CCD memory module from a Tektronix TDS684B oscilloscope.</li>
+   <li>The motivation is to understand the memory system and potentially repair or replace faulty modules.</li>
+   <li>The analysis involves examining the physical components, including CCD chips and clock drivers.</li>
+   <li>CCD chips store analog waveform data as charge packets shifted through the array.</li>
+   <li>The Philips/Signetics 3244 CCD clock driver is a key component in generating clock signals.</li>
+   <li>The article investigates the data organization and addressing scheme within the CCD memory.</li>
+   <li>Challenges include working with obsolete components and reverse engineering datasheets.</li>
+   <li>The article aims to provide useful information for others working with vintage Tektronix equipment.</li>
+   <li>Future directions include developing a modern replacement for the CCD memory module.</li>
+  </ul>
+ </div>
+ </div>
+</article>
