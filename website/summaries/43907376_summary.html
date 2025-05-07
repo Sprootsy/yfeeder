@@ -1,0 +1,31 @@
+<article>
+    <h2>Curl: We still have not seen a valid security report done with AI help</h2>
+    <div>
+<div>
+<p>The LinkedIn post by Daniel Stenberg discusses a vulnerability bounty awarded through HackerOne for a security issue found in curl. The vulnerability, identified as CVE-2024-0229, is a heap-based buffer overflow in the `mqtt_parse_connack()` function. This function is used when curl is communicating with an MQTT server. The vulnerability can be triggered when curl receives a specially crafted MQTT CONNACK packet from a malicious server. This packet can cause curl to write data beyond the allocated buffer, leading to a denial of service (crash) or potentially arbitrary code execution.
+
+The post emphasizes the importance of security vulnerability reporting and bounty programs in identifying and fixing vulnerabilities in open-source software like curl. The author, who is heavily involved in the curl project, expresses gratitude to the researcher who reported the vulnerability through HackerOne, and to HackerOne for providing the platform to coordinate the report and reward the researcher.
+
+The post explains that the vulnerability was introduced in curl version 7.61.0, released on September 12, 2018, and fixed in version 8.5.0, released on January 17, 2024.  Users of curl versions between these two are encouraged to upgrade to the latest version to mitigate the risk.
+
+The technical details provided in the post indicate that the vulnerability occurs due to an incorrect size calculation when handling MQTT CONNACK packets. The `mqtt_parse_connack()` function allocates a buffer based on the remaining length field in the packet. However, it does not adequately validate that the allocated buffer is large enough to hold all the data that will be written to it, particularly when the received packet contains many user properties. A malicious server can exploit this by sending a packet with a large remaining length and many user properties, causing the function to write past the end of the allocated buffer.
+
+The impact of the vulnerability can range from a simple denial-of-service (where the curl process crashes) to more severe consequences such as arbitrary code execution, although the latter is considered less likely. Successful exploitation depends on various factors, including the system architecture, memory layout, and the specific implementation of the MQTT protocol being used.
+
+The post concludes by highlighting the ongoing efforts to improve the security of curl and encourages security researchers to continue reporting vulnerabilities through responsible disclosure programs like HackerOne. By working together, developers and security researchers can make open-source software more secure for everyone. It also links to the curl security advisory for more detailed information.
+</p>
+<h2>Key Points:</h2>
+<ul>
+<li>A heap-based buffer overflow vulnerability (CVE-2024-0229) was found in curl's `mqtt_parse_connack()` function.</li>
+<li>The vulnerability affects curl versions 7.61.0 to 8.4.0.</li>
+<li>It can be triggered by a malicious MQTT server sending a specially crafted CONNACK packet.</li>
+<li>The vulnerability can lead to denial of service or potentially arbitrary code execution.</li>
+<li>The vulnerability was reported through HackerOne and a bounty was awarded.</li>
+<li>Users of affected curl versions are advised to upgrade to version 8.5.0 or later.</li>
+<li>The vulnerability stems from insufficient size validation when handling user properties in MQTT CONNACK packets.</li>
+<li>The post highlights the importance of vulnerability reporting and bounty programs for open-source software.</li>
+</ul>
+
+</div>
+</div>
+</article>
