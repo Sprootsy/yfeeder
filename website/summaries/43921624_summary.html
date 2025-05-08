@@ -1,0 +1,41 @@
+<article>
+    <h2>Yggdrasil is an experimental compact routing scheme that is fully decentralised</h2>
+    <div>
+<div>
+<h2>Summary</h2>
+<p>
+The Yggdrasil Network is an end-to-end encrypted IPv6 network. It is designed to provide secure, anonymous, and censorship-resistant communication. It aims to be a globally scalable network overlaying the existing internet, offering an alternative routing and addressing infrastructure.
+</p>
+<p>
+Yggdrasil operates as an overlay network, meaning it runs on top of existing internet infrastructure. Each node in the Yggdrasil network forms connections (peers) with other nodes. The network then utilizes these connections to forward traffic towards its destination. The routing algorithm uses a distributed hash table (DHT) to locate the optimal path between any two nodes, using shortest-path spanning tree routing. This ensures efficient and relatively low-latency communication across the network.
+</p>
+<p>
+A key feature of Yggdrasil is its end-to-end encryption. All communication between nodes is encrypted using curve25519, a modern and efficient elliptic curve cryptography algorithm. This encryption protects data from eavesdropping and tampering as it traverses the network. Each node generates a public/private key pair, and the public key is used as the basis for the node's IPv6 address.
+</p>
+<p>
+Yggdrasil uses a custom IPv6 addressing scheme. Addresses are derived from the node's public key. This cryptographic addressing provides inherent address ownership and prevents address spoofing. The structure allows for a large address space, facilitating the growth of the network to accommodate a large number of nodes.
+</p>
+<p>
+The network is designed to be censorship-resistant. Due to the distributed nature of the routing and the end-to-end encryption, it's difficult for any single entity to block or monitor communication on the network. The DHT routing allows traffic to be dynamically rerouted around blocked or censored nodes.
+</p>
+<p>
+Yggdrasil is implemented as a software package that can be installed on a variety of operating systems, including Linux, Windows, macOS, and Android. This allows users to easily join the network using their existing devices. The software handles the encryption, routing, and addressing automatically.
+</p>
+<p>
+Because Yggdrasil is an overlay network, it can coexist with the existing internet. Users can access both the regular internet and the Yggdrasil network simultaneously. This allows for a gradual transition to the Yggdrasil network without disrupting existing internet usage.
+</p>
+
+<h2>Key Points</h2>
+<ul>
+<li>Yggdrasil is an end-to-end encrypted IPv6 network.</li>
+<li>It is an overlay network that runs on top of the existing internet.</li>
+<li>It uses shortest-path spanning tree routing via a distributed hash table (DHT).</li>
+<li>All communication is encrypted using curve25519.</li>
+<li>IPv6 addresses are derived from node's public key.</li>
+<li>It is designed to be censorship-resistant.</li>
+<li>It can be installed on various operating systems (Linux, Windows, macOS, Android).</li>
+<li>It can coexist with the regular internet.</li>
+</ul>
+</div>
+</div>
+</article>

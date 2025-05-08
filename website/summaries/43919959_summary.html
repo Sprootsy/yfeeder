@@ -1,0 +1,26 @@
+<article>
+    <h2>How to Average in Prolog (2017)</h2>
+    <div>
+<div>
+<h2>Summary</h2>
+The article "How to Average in Prolog" on storytotell.org explains how to calculate the average of a list of numbers using Prolog. It details a step-by-step approach, starting with calculating the sum of the numbers in the list and then counting the number of elements. The article emphasizes the declarative nature of Prolog and how it differs from imperative programming languages.
+
+First, the article discusses calculating the sum of a list. It introduces the `sum_list/2` predicate, which takes a list of numbers as input and returns their sum. The base case for the recursion is when the list is empty, in which case the sum is zero. The recursive step involves taking the first element of the list, adding it to the sum of the rest of the list (calculated recursively), and returning the total sum.
+
+Next, the article explains how to count the number of elements in a list. It introduces the `length/2` predicate, which takes a list as input and returns its length. Similar to `sum_list/2`, `length/2` uses recursion. The base case is an empty list, where the length is zero. The recursive step increments the count by one and recursively calculates the length of the rest of the list.
+
+Finally, the article combines these two predicates to calculate the average. It defines an `average/2` predicate that takes a list of numbers as input and returns their average. This predicate first calculates the sum of the list using `sum_list/2` and then calculates the length of the list using `length/2`. It then divides the sum by the length to obtain the average.  Since Prolog performs integer division by default, the article emphasizes the need to convert either the sum or the length to a floating-point number to obtain a floating-point average. The article uses the `float/1` function to achieve this conversion.
+
+The article uses examples to illustrate the use of each predicate and provides a complete, working example of calculating the average of a list in Prolog. It highlights Prolog's ability to express solutions in a concise and declarative manner, focusing on *what* needs to be computed rather than *how* to compute it.
+
+<h2>Key Points</h2>
+<ul>
+<li><b>Calculating the Sum:</b> The `sum_list/2` predicate is used to recursively calculate the sum of a list of numbers. The base case is an empty list (sum is 0), and the recursive step adds the first element to the sum of the rest of the list.</li>
+<li><b>Calculating the Length:</b> The `length/2` predicate is used to recursively count the number of elements in a list. The base case is an empty list (length is 0), and the recursive step increments the count by one for each element.</li>
+<li><b>Calculating the Average:</b> The `average/2` predicate combines `sum_list/2` and `length/2` to calculate the average of a list.  It divides the sum of the elements by the number of elements.</li>
+<li><b>Floating-Point Conversion:</b> Since Prolog defaults to integer division, either the sum or the length must be converted to a floating-point number using `float/1` to obtain a floating-point average.</li>
+<li><b>Declarative Programming:</b> Prolog allows expressing solutions in a declarative manner, focusing on the logic of the problem rather than the step-by-step instructions.</li>
+</ul>
+</div>
+</div>
+</article>

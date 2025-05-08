@@ -1,0 +1,46 @@
+<article>
+    <h2>Proposal: Add bare metal support to Go</h2>
+    <div>
+<div>
+<h2>Summary:</h2>
+The GitHub issue "proposal: runtime: reduce RSS footprint by optimizing malloc layouts" (golang/go#73608) discusses a proposal to reduce the Resident Set Size (RSS) footprint of Go programs by optimizing the layouts of memory allocations managed by the Go runtime's memory allocator (malloc). The core idea is to improve memory density by reducing internal fragmentation and wasted space within the memory arena.
+
+The existing Go memory allocator, while generally efficient, can lead to situations where allocated memory blocks have significant amounts of unused space due to alignment requirements, size class granularity, and other factors. This unused space contributes to the overall RSS without providing any benefit to the application.  The proposal aims to modify the allocation strategy to pack data more tightly, reducing the amount of wasted memory and, consequently, the RSS.
+
+Several specific approaches are considered and discussed in the issue:
+
+1.  **Reordering memory layouts:**  Rearranging the order of fields within structs or objects can sometimes reduce padding inserted by the compiler for alignment.  The Go compiler already performs some layout optimizations, but there might be opportunities for further improvements.  This approach may involve changes to the `go vet` tool to provide recommendations on optimal struct layouts.
+
+2.  **Custom allocators for specific types:**  For certain frequently allocated types with known sizes and alignment requirements, a custom allocator could be used.  This custom allocator could be specifically designed to minimize wasted space for those types.  This is especially useful where a lot of instances of the same struct are allocated.
+
+3.  **Improving size class buckets:**  The Go memory allocator uses size classes to group allocations of similar sizes together.  The granularity of these size classes can impact memory efficiency.  Refining the size class buckets to better match common allocation sizes can reduce the amount of internal fragmentation.
+
+4.  **Exploring different memory allocation strategies:**  The issue also touches on the potential benefits and drawbacks of alternative memory allocation strategies, such as using a buddy allocator or a slab allocator for certain workloads.
+
+The discussion includes performance considerations. Any changes to the memory allocator must be carefully evaluated to ensure that they don't negatively impact allocation and garbage collection speeds.  The trade-off between memory usage and CPU performance is a central theme.
+
+Several commenters provide benchmark data and real-world examples of Go programs with large RSS footprints, illustrating the potential benefits of memory layout optimization. They share insights into allocation patterns and identify specific areas where improvements could have a significant impact.
+
+The issue also mentions the potential for integration with profiling tools to help developers identify memory inefficiencies in their applications. This would allow developers to target their optimization efforts more effectively.
+
+The conversation addresses the complexity of making changes to the Go runtime's memory allocator, as it is a core component with a global impact.  Thorough testing and careful consideration of backward compatibility are crucial. The proposal acknowledges the need for a phased approach, starting with targeted optimizations and careful benchmarking before making more widespread changes.
+
+In summary, the issue proposes exploring optimizations to the Go memory allocator to reduce RSS footprint, focusing on memory layout reordering, custom allocators, improved size class buckets, and exploring alternative allocation strategies while carefully balancing memory savings with performance.
+
+<h2>Key points:</h2>
+
+*   **Goal:** Reduce RSS (Resident Set Size) of Go programs by optimizing memory allocation layouts.
+*   **Problem:** The Go memory allocator can lead to internal fragmentation and wasted space.
+*   **Approaches:**
+    *   Reordering struct fields for better packing.
+    *   Custom allocators for frequently used types.
+    *   Refining size class buckets.
+    *   Exploring alternative allocation strategies.
+*   **Performance Trade-off:** Balancing memory savings with allocation/garbage collection speed.
+*   **Real-world Examples:**  Commenters provide data and examples of high RSS footprints.
+*   **Profiling Integration:** Mention of integrating with profiling tools to identify inefficiencies.
+*   **Complexity:** Changes to the memory allocator are complex and require careful testing.
+*   **Phased Approach:** Suggests a phased approach with targeted optimizations and benchmarks.
+</div>
+</div>
+</article>
