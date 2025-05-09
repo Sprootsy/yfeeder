@@ -1,0 +1,39 @@
+<article>
+    <h2>Static as a Server</h2>
+    <div>
+<div>
+  <p>
+    The article "Static as a Server" by Dan Abramov explores the concept of using static hosting platforms like Netlify or Vercel as comprehensive backends for web applications, challenging the traditional view of static hosting as merely serving pre-built files. Abramov argues that with the advent of serverless functions (like AWS Lambda), edge computing, and build-time data fetching, static hosting can handle dynamic content and complex logic previously reserved for traditional servers.
+  </p>
+  <p>
+    He begins by acknowledging the historical understanding of static sites, where content was generated once during deployment and served directly to the user. However, he points out that this model has evolved significantly. Modern "static" sites often incorporate dynamic elements through client-side JavaScript, fetching data from APIs. The core argument is that the location of these APIs is increasingly irrelevant. The backend logic can reside in serverless functions, triggered by client requests or even during the build process.
+  </p>
+  <p>
+    Abramov uses the analogy of a "server" to illustrate his point. Traditionally, a server implied a long-running process handling requests. However, with serverless functions, each request can trigger an isolated execution environment that handles the request and then shuts down. These functions, deployed to edge locations close to users, can achieve low latency. The article details how these serverless functions, combined with build-time data fetching, blur the lines between static and dynamic sites. Build-time data fetching allows generating static pages based on data retrieved during the build process, resulting in fast initial load times.
+  </p>
+  <p>
+    The article further discusses the benefits of this approach. First, the "backend" scales automatically and is cost-effective, as you only pay for the compute time you actually use. Second, the separation of concerns between the frontend (static files) and the backend (serverless functions) promotes better code organization and maintainability. Third, the use of edge computing leads to improved performance due to reduced network latency.
+  </p>
+  <p>
+    Abramov also addresses some potential drawbacks. Debugging serverless functions can be more complex than debugging traditional server-side code. Cold starts (the delay when a serverless function is invoked for the first time after a period of inactivity) can impact performance, although this is becoming less of an issue with improvements in serverless platforms. Furthermore, complex business logic might be challenging to implement within the limitations of serverless functions (e.g., execution time limits).
+  </p>
+  <p>
+    He emphasizes that this architecture isn't suitable for every application. Applications requiring persistent connections (e.g., real-time chat) or very long-running processes are better suited for traditional servers. However, for many common web applications, the static-as-a-server approach offers a compelling alternative with significant benefits in terms of scalability, performance, and cost.
+  </p>
+  <p>
+    The article concludes by highlighting that the term "static site" is becoming increasingly misleading. Modern static hosting platforms have evolved into powerful and versatile backends capable of handling a wide range of application logic. The key takeaway is to reconsider the traditional boundaries between static and dynamic architectures and to leverage the capabilities of modern static hosting platforms to build performant, scalable, and cost-effective web applications.
+  </p>
+
+  <h3>Key Points:</h3>
+  <ul>
+    <li>Static hosting platforms (Netlify, Vercel) can serve as complete backends using serverless functions and edge computing.</li>
+    <li>Serverless functions handle dynamic logic, triggered by client requests or during build time.</li>
+    <li>Build-time data fetching allows generating static pages with data retrieved during deployment, improving initial load times.</li>
+    <li>Benefits include automatic scaling, cost-effectiveness, better code organization, and improved performance due to edge computing.</li>
+    <li>Potential drawbacks include debugging complexity and possible cold start delays with serverless functions.</li>
+    <li>This architecture is not suitable for all applications (e.g., those requiring persistent connections).</li>
+    <li>The traditional definition of "static site" is evolving to include dynamic capabilities.</li>
+  </ul>
+</div>
+</div>
+</article>

@@ -1,0 +1,27 @@
+<article>
+    <h2>Reservoir Sampling</h2>
+    <div>
+<div>
+<h3>Summary</h3>
+<p>The article discusses Reservoir Sampling, a family of randomized algorithms for selecting a uniform random sample of <i>k</i> items from a data stream of unknown length <i>n</i>, where <i>n</i> may be very large or even infinite. The key constraint is that we can only iterate through the stream once. The article explains the problem, presents different Reservoir Sampling algorithms (Algorithm R, Algorithm L, and Algorithm A-Chao), and provides insights into their performance characteristics and practical considerations.</p>
+
+<p>The problem arises when we need to select a random subset of data from a large or continuous stream of data, such as network packets, search queries, or sensor readings, without knowing the total number of items in advance. This makes traditional random sampling methods, which require knowing <i>n</i> beforehand, inapplicable.</p>
+
+<p><b>Algorithm R</b>, also known as Algorithm R by Walker, is the fundamental Reservoir Sampling algorithm. It initializes a "reservoir" with the first <i>k</i> items of the stream. For each subsequent item <i>i</i>, it generates a random number <i>j</i> between 1 and <i>i</i>. If <i>j</i> is less than or equal to <i>k</i>, it replaces the <i>j</i>-th item in the reservoir with the <i>i</i>-th item from the stream. This ensures that after processing each item, the reservoir contains a uniform random sample of size <i>k</i> from the items seen so far.  The algorithm has a time complexity of O(n) and a space complexity of O(k).</p>
+
+<p><b>Algorithm L</b> optimizes Algorithm R by calculating how many items can be skipped before a replacement is likely to occur. Instead of checking each item individually, it calculates a skip value based on a geometric distribution. This significantly reduces the number of random number generations and comparisons, especially when <i>n</i> is much larger than <i>k</i>. It relies on the property that the probability of an item being replaced decreases as the stream progresses. The skip value is calculated such that the probability of selecting any of the skipped items is acceptably low. By skipping ahead, Algorithm L achieves significant performance gains in practice. The trade-off is increased code complexity due to the geometric distribution calculations.</p>
+
+<p><b>Algorithm A-Chao</b> is another optimization of Algorithm R that focuses on reducing the number of random number generations. It calculates the probability <i>v</i> of replacing an element in the reservoir. It then generates a random number <i>U</i> from a uniform distribution. If <i>U</i> is less than <i>v</i>, a random element in the reservoir is selected and replaced with the current element in the stream. Then <i>v</i> is updated. This approach reduces the number of random number generations because only one random number is generated per item, as opposed to Algorithm R where a random number is generated for each element to see if it is within the reservoir sample range. This optimization works well when the stream size is large, and reduces computational overhead.</p>
+
+<p>The article also discusses practical considerations, such as the choice of random number generator (RNG). A high-quality RNG is crucial for ensuring the uniformity of the sample. The article also mentions that Reservoir Sampling can be extended to handle weighted samples, where each item has a different probability of being selected. This is useful in scenarios where some items are more important than others.</p>
+
+<p>In summary, Reservoir Sampling provides a suite of efficient algorithms for selecting a uniform random sample from a data stream of unknown length. Algorithm R serves as the base implementation, while Algorithm L and Algorithm A-Chao offer optimizations to reduce the number of random number generations and comparisons, leading to improved performance, especially for large streams. The choice of algorithm depends on the specific requirements of the application and the trade-offs between code complexity and performance.</p>
+
+<h3>Key Points</h3>
+<ul>
+<li>Reservoir Sampling allows selecting a uniform random sample of <i>k</i> items from a stream of unknown length <i>n</i> in a single pass.</li>
+<li><b>Algorithm R</b> is the basic algorithm: it replaces a random element in the reservoir (initially filled with the first <i>k</i> elements) with the current element from the stream with probability <i>k/i</i>, where <i>i</i> is the index of the current element.</li>
+<li><b>Algorithm L</b> optimizes Algorithm R by calculating a skip value using a geometric distribution, reducing the number of iterations when the stream is much larger than the reservoir size.</li>
+<li><b>Algorithm A-Chao</b> is another optimization that focuses on reducing the number of random number generations by calculating a probability of replacement and updating it iteratively.</li>
+<li>The choice of RNG is important for the</div>
+</article>

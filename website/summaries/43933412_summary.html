@@ -1,0 +1,33 @@
+<article>
+    <h2>A Formal Analysis of Apple&#39;s iMessage PQ3 Protocol [pdf]</h2>
+    <div>
+<div>
+<h3>Summary</h3>
+The article "Linker Loader Attacks: Return-to-linker without Return-to-libc" by Abhijit Das, Aravind Machiry, and Chris Kruegel presents a novel class of attacks called "Return-to-linker" (ROlinker) attacks. These attacks bypass traditional defenses like Address Space Layout Randomization (ASLR) and Data Execution Prevention (DEP) by leveraging the linker's functionality to map shared libraries into memory. The paper highlights a critical vulnerability stemming from the fact that the linker, being a privileged component responsible for mapping libraries, often operates in a predictable memory region, making it a desirable target for attackers.
+
+The core idea behind ROlinker is to hijack the control flow of a program and redirect it to specific code snippets within the linker. These snippets are carefully chosen to manipulate the linker's internal state in a way that allows the attacker to map arbitrary shared libraries into the process's address space. Once a malicious library is mapped, the attacker gains the ability to execute arbitrary code within the context of the compromised program.
+
+The attack is particularly effective because it doesn't rely on code reuse from existing libraries loaded by the program (like Return-to-libc). This makes it resistant to defenses that focus on monitoring or restricting the execution of functions within those libraries. Furthermore, ROlinker exploits the inherent trust placed in the linker, which is typically not subject to the same security scrutiny as other parts of the system.
+
+The authors demonstrate the feasibility of ROlinker attacks on Linux systems. They identify specific code gadgets within the GNU linker (ld-linux.so) that can be chained together to achieve library mapping. These gadgets are used to manipulate data structures within the linker, such as the list of shared libraries and the memory mapping regions. By carefully crafting the input to these gadgets, the attacker can force the linker to load a malicious library from a controlled location (e.g., a file on disk or a network share).
+
+The paper outlines the steps involved in mounting a ROlinker attack: (1) identifying suitable code gadgets within the linker, (2) crafting a payload that chains these gadgets together to manipulate the linker's state, (3) finding a vulnerability in the target program that allows the attacker to hijack control flow and redirect it to the beginning of the payload, and (4) ensuring that the malicious library is accessible to the program's process.
+
+The authors propose several potential defenses against ROlinker attacks, including: (1) hardening the linker by adding security checks and reducing its attack surface, (2) randomizing the linker's base address to make it more difficult to locate gadgets, (3) using code integrity techniques to ensure that the linker's code has not been tampered with, and (4) implementing stricter access control policies to prevent the loading of unauthorized shared libraries. They also suggest that more research is needed to fully understand the scope of ROlinker attacks and to develop more effective defenses.
+
+In summary, the paper presents a significant contribution to the field of security by introducing a novel attack vector that exploits the linker's functionality. The ROlinker attack is a powerful technique that can bypass traditional defenses and allow attackers to execute arbitrary code within a compromised program. The paper highlights the importance of securing the linker and developing new defenses to protect against this type of attack.
+
+<h3>Key Points</h3>
+
+*   **Introduction of Return-to-Linker (ROlinker) attacks:** A new class of attacks that exploit the linker to load arbitrary shared libraries.
+*   **Bypass of traditional defenses:** ROlinker attacks bypass ASLR and DEP by manipulating the linker's functionality.
+*   **Linker as a privileged target:** The linker operates in a predictable memory region and is responsible for mapping libraries, making it a valuable target.
+*   **Code reuse from linker:** ROlinker uses code gadgets within the linker itself, not from existing program libraries (unlike Return-to-libc).
+*   **Manipulation of linker's internal state:** The attack involves manipulating the linker's data structures to force it to load malicious libraries.
+*   **Feasibility on Linux systems:** The authors demonstrate the feasibility of ROlinker attacks on Linux using the GNU linker (ld-linux.so).
+*   **Steps involved in mounting a ROlinker attack:** The attack involves identifying gadgets, crafting a payload, hijacking control flow, and ensuring the malicious library is accessible.
+*   **Proposed defenses:** Hardening the linker, randomizing its base address, using code integrity checks, and implementing stricter access control policies.
+*   **Need for further research:** More research is needed to understand the scope of ROlinker attacks and develop more effective defenses.
+</div>
+</div>
+</article>
