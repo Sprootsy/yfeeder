@@ -1,0 +1,44 @@
+<article>
+    <h2>Past, present, and future of Sorbet type syntax</h2>
+    <div>
+<div>
+  <p>
+    The article "History of Sorbet Syntax" on jez.io details the evolution of Sorbet's syntax, the gradual typing system for Ruby, from its inception to its current form. It explains the reasoning behind the syntax choices made, focusing on balancing familiarity for Ruby developers with the needs of a static type checker. The blog post emphasizes the pragmatic approach taken by the Sorbet team, prioritizing adoption and usability within the existing Ruby ecosystem.
+  </p>
+  <p>
+    Initially, Sorbet aimed for minimal syntax changes, but as the project evolved, more sophisticated type annotations became necessary. Early prototypes experimented with various syntax options, influenced by languages like Ceylon and Scala. The early syntax was quite verbose, using constructs like `sig { params(x: Integer).returns(String) }`. These designs allowed for expressing type constraints, but they were also quite different from standard Ruby code, potentially hindering adoption.
+  </p>
+  <p>
+    A key consideration was backward compatibility and interoperability with existing Ruby code. Sorbet needed to work in codebases that were not fully typed, so it couldn't enforce strict typing everywhere at once. This requirement led to the adoption of gradual typing, where some parts of the code could be typed while others remained untyped.
+  </p>
+  <p>
+    The blog post highlights specific syntax choices, such as using `T.let` for declaring variables with types. This was chosen because it integrates well with existing Ruby idioms and is less verbose than other alternatives. Similarly, the `sig` block syntax evolved to support various type annotations, including parameters, return types, and type variables.
+  </p>
+  <p>
+    One of the turning points in Sorbet's syntax was the introduction of type aliases using `T.type_alias`. This allowed for defining reusable type names, improving code readability and maintainability. The article also discusses the use of generics and how they are expressed in Sorbet, emphasizing the importance of making these features accessible and understandable to Ruby developers.
+  </p>
+  <p>
+    The author reflects on the challenges of designing a typing system for a dynamic language like Ruby, where metaprogramming and duck typing are prevalent. Sorbet's syntax aims to strike a balance between expressiveness and simplicity, enabling developers to gradually add types to their code without drastically changing their coding style.
+  </p>
+  <p>
+    The article also touches on the tooling aspects of Sorbet, such as the type checker and the language server. These tools provide feedback to developers as they add types to their code, helping them catch errors and improve the overall quality of their software. The evolution of Sorbet's syntax is closely tied to the capabilities of these tools, as the syntax needs to be both human-readable and machine-processable.
+  </p>
+  <p>
+    Finally, the blog post emphasizes the ongoing nature of Sorbet's development. The syntax is continually refined based on user feedback and practical experience. The goal is to make Sorbet as seamless and intuitive as possible, allowing Ruby developers to benefit from the advantages of static typing without sacrificing the flexibility and expressiveness of Ruby.
+  </p>
+
+  <h3>Key Points:</h3>
+  <ul>
+    <li>Sorbet's syntax has evolved to balance static typing with Ruby's dynamic nature.</li>
+    <li>Early syntax experiments were more verbose and less Ruby-like.</li>
+    <li>Gradual typing is a key aspect, allowing for partial typing in codebases.</li>
+    <li>`T.let` and `sig` blocks are central to Sorbet's type annotation syntax.</li>
+    <li>Type aliases (`T.type_alias`) improve code readability.</li>
+    <li>The syntax is designed to be expressive yet accessible to Ruby developers.</li>
+    <li>Tooling (type checker, language server) is crucial for providing feedback.</li>
+    <li>Sorbet's syntax is continuously refined based on user feedback.</li>
+    <li>The goal is to provide the benefits of static typing without sacrificing Ruby's flexibility.</li>
+  </ul>
+</div>
+</div>
+</article>
