@@ -1,0 +1,35 @@
+<article>
+    <h2>Vision Now Available in Llama.cpp</h2>
+    <div>
+<div>
+  <h2>Summary</h2>
+  <p>
+    The article is a guide to enabling and using multimodal capabilities with llama.cpp, allowing the model to process images alongside text. It primarily focuses on integrating the CLIP (Contrastive Language-Image Pre-training) model for image embedding and processing within the llama.cpp framework.
+  </p>
+  <p>
+    To enable multimodal support, llama.cpp needs to be rebuilt with the <code>LLAMA_AVX2=1</code> build flag, along with the <code>LLAMA_CPP=1</code> flag when building <code>clip.cpp</code>. The article details the necessary steps for building the CLIP model using <code>make</code> and compiling it into a usable format for llama.cpp. It provides example commands and scripts to facilitate this process. The guide mentions the requirement for <code>ffmpeg</code> for image processing and outlines how to install it on different operating systems.
+  </p>
+  <p>
+    Once the CLIP model is built, it can be integrated with llama.cpp. The article explains how to specify the CLIP model path using the <code>--mmproj</code> command-line argument when running <code>main</code>.  It describes how to input images for processing, either by directly specifying image paths using the <code>--image</code> argument or by including image tags (<code>&lt;image&gt;</code>) within the prompt. When using image tags, the model will attempt to extract image paths from the following text.  The article also mentions the <code>llava-1.5</code> prompt format.
+  </p>
+  <p>
+    The article discusses the use of the <code>process-image.py</code> script for converting images into a format suitable for CLIP, which might be necessary for certain image types or preprocessing requirements. This script resizes and converts images to RGB format, saving them as PNG files. It also describes how to specify a custom prompt prefix using the <code>--prompt-prefix</code> argument in <code>main</code>.
+  </p>
+  <p>
+    The article includes an example showcasing the usage of multimodal input. It demonstrates how to pass an image path and a text prompt to the model, prompting it to describe the image. It also details the expected output format, including the prompt prefix.
+  </p>
+
+  <h2>Key Points</h2>
+  <ul>
+    <li>Multimodal support in llama.cpp requires building with <code>LLAMA_AVX2=1</code>.</li>
+    <li>CLIP model needs to be built separately using <code>make</code> and integrated.</li>
+    <li><code>ffmpeg</code> is required for image processing.</li>
+    <li>Specify the CLIP model path with the <code>--mmproj</code> argument in <code>main</code>.</li>
+    <li>Images can be input using <code>--image</code> or <code>&lt;image&gt;</code> tags in the prompt.</li>
+    <li>The <code>process-image.py</code> script can be used for image preprocessing.</li>
+    <li><code>--prompt-prefix</code> allows customization of the prompt prefix.</li>
+    <li>Supports the <code>llava-1.5</code> prompt format.</li>
+  </ul>
+</div>
+</div>
+</article>

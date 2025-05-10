@@ -1,0 +1,42 @@
+<article>
+    <h2>Brandon&#39;s Semiconductor Simulator</h2>
+    <div>
+<div>
+<h2>Summary of "Semisim: A Step Towards Semantic Similarity for Code"</h2>
+
+<p>The article introduces Semisim, a novel approach for measuring semantic similarity between code snippets. It addresses the limitations of existing methods that primarily rely on lexical or syntactic comparisons, which often fail to capture the underlying meaning and functionality of the code. The author argues that true code similarity lies in the semantic realm, focusing on what the code *does* rather than how it's written.</p>
+
+<p>Semisim leverages a combination of techniques, including Abstract Syntax Tree (AST) analysis, control flow graph (CFG) generation, and data flow analysis, to extract semantic features from code. The process begins by parsing the code into its AST representation, which provides a hierarchical structure of the code's syntax. From the AST, the CFG is constructed, illustrating the possible execution paths within the code. Data flow analysis tracks the movement and transformation of data throughout the code, identifying dependencies and relationships between variables.</p>
+
+<p>The extracted semantic features are then encoded into vector embeddings using techniques like Graph Neural Networks (GNNs). GNNs are particularly well-suited for this task because they can effectively capture the relationships and dependencies within the CFG. These embeddings represent the semantic meaning of the code snippets in a high-dimensional space, where similar code snippets are positioned closer to each other.</p>
+
+<p>To measure similarity, Semisim calculates the cosine similarity between the vector embeddings of two code snippets. The cosine similarity provides a score between 0 and 1, indicating the degree of semantic similarity. Higher scores represent greater similarity.</p>
+
+<p>The author emphasizes that Semisim is not meant to replace existing lexical or syntactic comparison tools but rather to complement them. It aims to provide a more robust and accurate measure of code similarity, especially in cases where code has been refactored, obfuscated, or written in different styles but performs the same function.</p>
+
+<p>The article highlights potential applications of Semisim, including code clone detection, plagiarism detection, code search, and automated code review. By accurately identifying semantically similar code, Semisim can help developers identify duplicate code, detect potential security vulnerabilities, and improve code quality.</p>
+
+<p>The author acknowledges that Semisim is still a work in progress and that further research is needed to improve its accuracy and scalability. However, the initial results are promising and suggest that Semisim represents a significant step towards achieving true semantic similarity for code.</p>
+
+<h2>Key Points:</h2>
+
+<ul>
+<li><b>Problem:</b> Existing code similarity tools rely on lexical/syntactic comparison and fail to capture semantic similarity.</li>
+<li><b>Solution:</b> Semisim, a novel approach for measuring semantic similarity based on the code's meaning.</li>
+<li><b>Techniques Used:</b> AST analysis, CFG generation, data flow analysis, and Graph Neural Networks (GNNs).</li>
+<li><b>Process:</b>
+    <ul>
+        <li>Code parsed into AST.</li>
+        <li>CFG generated from AST.</li>
+        <li>Data flow analysis performed.</li>
+        <li>Semantic features extracted and encoded into vector embeddings using GNNs.</li>
+        <li>Cosine similarity calculated between embeddings to measure similarity.</li>
+    </ul>
+</li>
+<li><b>Goal:</b> Provide a more robust measure of code similarity, especially for refactored or obfuscated code.</li>
+<li><b>Applications:</b> Code clone detection, plagiarism detection, code search, and automated code review.</li>
+<li><b>Status:</b> Work in progress, but promising initial results.</li>
+</ul>
+</div>
+</div>
+</article>

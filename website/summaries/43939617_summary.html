@@ -1,0 +1,19 @@
+<article>
+    <h2>New Tool: lsds – List All Linux Block Devices and Settings in One Place</h2>
+    <div>
+<div>
+<p>The article by Tanel Poder discusses how to list Linux block devices and their configurations using various tools and methods. It covers listing block devices with `lsblk`, understanding the output format and different columns, and how to interpret the information provided. It also delves into examining the configuration details of individual block devices using `udevadm info`, including device properties, attributes, and environment variables. The article further explains how to use `cat /sys/block/<device>/uevent` to view a subset of the device's properties and how to combine `udevadm info` with `grep` to filter and search for specific properties. Additionally, the author explores using `hdparm` to retrieve ATA identification information for disk drives. The article provides practical examples and explanations for each method, making it a comprehensive guide for system administrators and developers who need to understand and manage block devices on Linux systems.</p>
+
+<h3>Key Points:</h3>
+<ul>
+  <li><b>Listing Block Devices with `lsblk`:</b> The `lsblk` command is used to list available block devices in a tree-like format. It shows device names, major/minor numbers, removable status, size, read-only status, type, and mount points.</li>
+  <li><b>Understanding `lsblk` Output:</b> Each column in the `lsblk` output provides specific information about the block device. For example, NAME shows the device name (e.g., sda, sdb1), MAJ:MIN shows the major and minor device numbers, RM indicates whether the device is removable, SIZE shows the device size, RO indicates read-only status, TYPE shows the device type (disk, partition, LVM, etc.), and MOUNTPOINT shows where the device is mounted.</li>
+  <li><b>Examining Device Configuration with `udevadm info`:</b> The `udevadm info` command is used to retrieve detailed information about a block device, including its properties, attributes, and environment variables.</li>
+  <li><b>Using `udevadm info` for Detailed Device Information:</b> The output of `udevadm info` includes various sections, such as looking at the udev database or probing the device directly.  It displays key-value pairs that define the device's characteristics.</li>
+  <li><b>Viewing Device Properties with `/sys/block/<device>/uevent`:</b> The `/sys/block/<device>/uevent` file provides a subset of device properties in a simple key-value format. This is useful for quickly checking specific attributes.</li>
+  <li><b>Filtering `udevadm info` Output with `grep`:</b> The output of `udevadm info` can be piped to `grep` to search for specific properties or attributes, making it easier to find relevant information.</li>
+  <li><b>Retrieving ATA Identification with `hdparm`:</b> The `hdparm` command is used to retrieve ATA identification information for disk drives, including model number, serial number, and firmware version.  This command is more specific to disk drives compared to generic block device information.</li>
+</ul>
+</div>
+</div>
+</article>
