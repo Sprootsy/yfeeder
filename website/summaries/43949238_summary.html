@@ -1,0 +1,31 @@
+<article>
+    <h2>Sierpiński Triangle? In My Bitwise and?</h2>
+    <div>
+<div>
+<h2>Summary</h2>
+<p>The article, titled "Sierpiński Triangle in My Bitwise Heart," is a blog post by lcamtuf exploring the generation of Sierpiński triangles using bitwise operations, specifically XOR. The author recounts their initial fascination with the Sierpiński triangle and its recursive nature, and how they rediscovered an efficient, non-recursive method for generating it using bitwise operations. The core idea revolves around the observation that the triangle's pattern can be derived from the XOR of the x and y coordinates of each point. A pixel is "on" (e.g., white) if x XOR y is zero, and "off" (e.g., black) otherwise.</p>
+
+<p>The author details the mathematical reasoning behind this phenomenon, explaining that the Sierpiński triangle can be defined by points (x, y) where the binomial coefficient C(x, y) is odd. They connect this to Pascal's triangle, where the Sierpiński triangle emerges when odd numbers are represented by one color and even numbers by another. Furthermore, the article clarifies that a binomial coefficient C(x, y) is odd if and only if the bitwise AND of x and y is equal to y. This condition leads to the x XOR y approach for generating the triangle.</p>
+
+<p>The post provides code snippets in C that implement the Sierpiński triangle generation using the x XOR y method. It showcases the simplicity and efficiency of this approach compared to recursive methods. The author explores various optimizations, such as using bitwise operations to improve performance and generating multiple pixels at once. The article also discusses variations and extensions of the basic Sierpiński triangle generation, including the creation of animated versions and the exploration of different bitwise conditions.</p>
+
+<p>The author further experiments with different bitwise operations beyond XOR, revealing alternative patterns and related fractals that can be produced by manipulating bits. This includes exploring AND, OR, and other combinations to create visual outputs that are mathematically similar to, but distinct from, the standard Sierpiński triangle.</p>
+
+<p>The post also delves into the historical context, touching upon the use of Cellular Automata, specifically Rule 90, as another method for generating the Sierpiński triangle pattern. It notes the connection between Cellular Automata and bitwise operations, illustrating how simple rules applied iteratively can lead to complex fractal structures.</p>
+
+<p>Finally, the author reflects on the broader implications of this exploration, emphasizing the beauty and elegance of how simple bitwise operations can give rise to complex and visually appealing fractal patterns like the Sierpiński triangle. The article serves as a testament to the power of understanding fundamental mathematical principles and applying them creatively in the realm of computer graphics and programming.</p>
+
+<h2>Key Points</h2>
+<ul>
+<li>The Sierpiński triangle can be efficiently generated using the bitwise XOR operation between x and y coordinates.</li>
+<li>A point (x, y) belongs to the Sierpiński triangle if and only if the bitwise AND of x and y is equal to y. This is equivalent to x XOR y being equal to 0.</li>
+<li>The approach avoids recursion and offers significant performance benefits.</li>
+<li>The author provides C code examples demonstrating the implementation and optimization techniques.</li>
+<li>Variations and extensions involve using different bitwise operations (AND, OR, etc.) to create related fractal patterns.</li>
+<li>The article connects the Sierpiński triangle to Pascal's triangle and the binomial coefficient.</li>
+<li>Cellular Automata, specifically Rule 90, provides an alternative method for generating the same pattern.</li>
+<li>The post emphasizes the elegance and beauty of generating complex patterns from simple bitwise operations.</li>
+</ul>
+</div>
+</div>
+</article>

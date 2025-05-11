@@ -1,0 +1,26 @@
+<article>
+    <h2>Reverse engineering the 386 processor&#39;s prefetch queue circuitry</h2>
+    <div>
+<div>
+<h2>Summary:</h2>
+<p>The article is a reverse engineering analysis of the prefetch circuitry of the Intel 386 microprocessor. It delves into the intricate details of how the 386 attempted to improve performance by fetching instructions before they were needed. The author reverse engineers the silicon of the 386 chip to understand the prefetch circuitry, which aims to keep the instruction pipeline full by fetching instructions in advance.</p>
+
+<p>The prefetch unit operates by fetching instructions from memory and storing them in an internal queue. This allows the processor to access instructions more quickly than if it had to fetch them from memory each time. The article explains how the prefetch unit is designed to handle various scenarios, such as instruction alignment, branch instructions, and cache misses. It describes the prefetch circuitry's logic, registers, and control signals, revealing how it interacts with other parts of the processor, such as the instruction decoder and the bus interface unit.</p>
+
+<p>The analysis covers the hardware implementation of the prefetch queue, the address generation logic, and the branch prediction mechanisms, highlighting the design choices made by Intel engineers to optimize performance and efficiency. The article also discusses the limitations of the 386's prefetch implementation and compares it to prefetch techniques used in later processors.</p>
+
+<p>Through detailed examination of the chip's layout, the author uncovers the specific gates, transistors, and interconnections that implement the prefetch logic. The reverse engineering process involves carefully tracing the signals and logic flows to understand the function of each circuit block. The article provides detailed diagrams and explanations of the key components of the prefetch circuitry, including the address incrementers, the queue management logic, and the branch prediction logic.</p>
+
+<h2>Key Points:</h2>
+<ul>
+<li>The article reverse engineers the prefetch circuitry of the Intel 386 microprocessor.</li>
+<li>The 386 used a prefetch queue to store instructions fetched from memory in advance.</li>
+<li>The prefetch unit improves performance by reducing the need to access memory for each instruction.</li>
+<li>The reverse engineering reveals the specific gates and transistors used to implement the prefetch logic.</li>
+<li>The analysis covers the address generation logic, queue management, and branch prediction mechanisms.</li>
+<li>The article discusses the design choices made by Intel engineers to optimize prefetch performance.</li>
+<li>The 386 prefetch implementation had limitations compared to later processors.</li>
+</ul>
+</div>
+</div>
+</article>
