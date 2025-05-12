@@ -1,0 +1,33 @@
+<article>
+    <h2>LSP client in Clojure in 200 lines of code</h2>
+    <div>
+<div>
+<p>This article presents a simplified implementation of a Language Server Protocol (LSP) client in approximately 200 lines of Java code. The author aims to demonstrate the core concepts of an LSP client without the complexities of a full-fledged IDE integration. The client connects to a language server (in this case, a JSON language server), sends initialization messages, and then interacts with the server to provide basic code completion functionality based on the user's input in a text area. The main goal is to provide a small, self-contained example to illustrate the fundamental principles of LSP interaction, rather than building a robust and feature-rich client.</p>
+
+<p>The article begins by explaining the Language Server Protocol and its purpose: to standardize the communication between development tools (clients) and language-specific intelligence providers (servers).  The core idea is to enable code completion, error checking, go-to-definition, and other language-aware features in a text editor or IDE by outsourcing the language-specific processing to a separate server process. The LSP defines a JSON-based protocol for these interactions.</p>
+
+<p>The code is structured around a `LanguageClient` class, which manages the connection to the language server and handles the communication. The client creates a `Process` to start the language server executable (specified by a path). It then establishes input and output streams to communicate with the server using JSON-RPC.  The implementation focuses on asynchronous message handling using a separate thread to read messages from the server's output stream and a queue to serialize requests to the server.</p>
+
+<p>The key functionalities implemented in the client are initialization and code completion. The client sends an `initialize` request to the server with information about the client capabilities and the workspace. After receiving the `initialized` notification from the server, the client starts listening for changes in the document. When the user types in the text area, the client sends a `textDocument/didChange` notification to the server, informing it about the changes to the document's content.  When the user presses Ctrl+Space, the client sends a `textDocument/completion` request to the server, indicating that it needs code completion suggestions at the current cursor position. The server responds with a list of completion items, which the client then displays in a popup menu.</p>
+
+<p>The example uses Java Swing to create a basic text area where the user can type code.  The client listens for key presses in the text area and triggers code completion when Ctrl+Space is pressed. The completion items received from the server are displayed in a `JPopupMenu`, allowing the user to select one of the suggestions.  Selecting an item inserts the corresponding text into the text area.</p>
+
+<p>The article also touches upon important considerations such as JSON serialization and deserialization.  It mentions using a simple JSON library (likely Jackson or Gson) to convert Java objects to JSON strings and vice versa, which is essential for communicating with the language server. The client also needs to handle the asynchronous nature of the protocol using threads and queues to ensure that messages are sent and received correctly.</p>
+
+<p>The author acknowledges that the implemented client is a simplified example and lacks many features of a real-world LSP client. For example, it only supports basic code completion and does not handle error checking, go-to-definition, or other advanced features.  Furthermore, the error handling is rudimentary, and the client might not be robust enough to handle all possible scenarios. However, the code provides a valuable starting point for understanding how an LSP client works and can be extended to support more features and language servers.</p>
+
+<p>In conclusion, the article offers a practical demonstration of implementing a basic LSP client in Java, highlighting the essential components and communication mechanisms involved in interacting with a language server. It serves as a concise and understandable guide for developers who want to learn about the Language Server Protocol and how to build their own clients or integrate LSP support into existing tools.</p>
+
+<h2>Key Points:</h2>
+<ul>
+<li>The article demonstrates a minimal LSP client implementation in Java (around 200 lines of code).</li>
+<li>The client connects to a language server, initializes the connection, and provides code completion.</li>
+<li>It uses JSON-RPC to communicate with the server, sending requests and receiving responses.</li>
+<li>The client handles `textDocument/didChange` notifications and `textDocument/completion` requests.</li>
+<li>A basic text area is implemented using Java Swing to simulate user input and display completion suggestions.</li>
+<li>The example highlights the core concepts of LSP interaction, including message handling, JSON serialization, and asynchronous communication.</li>
+<li>The implementation is simplified and lacks features found in full-fledged LSP clients.</li>
+</ul>
+</div>
+</div>
+</article>
