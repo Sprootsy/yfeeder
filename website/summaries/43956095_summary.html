@@ -1,0 +1,28 @@
+<article>
+    <h2>Why not object capability languages?</h2>
+    <div>
+<div>
+<p>The article explores why capability-based security, a security model considered superior to traditional access control lists (ACLs), has not seen widespread adoption in programming languages. Capability-based security operates on the principle that access to resources is granted only if a program possesses an unforgeable token (a "capability") that represents that access right. The author argues that while capability systems offer theoretical advantages, practical considerations and historical context have hindered their broader implementation.</p>
+
+<p>One major obstacle is the performance overhead associated with capability checking. Every access to a resource requires verification that the program holds the appropriate capability, which can be computationally expensive, especially in languages designed for speed. The author notes that hardware support could mitigate this, but such support is not yet commonplace. Another issue is the complexity of managing capabilities, particularly in large and intricate software systems. The distribution, revocation, and tracking of capabilities can become a significant burden on developers, increasing the potential for errors. The author suggests that languages with strong static typing and ownership systems, like Rust, could help manage this complexity, but adoption remains limited.</p>
+
+<p>The article also delves into the historical context, arguing that the initial rise of operating systems like Unix, with their simpler ACL-based security models, created a path dependency that has been difficult to overcome. These systems, despite their security flaws, were "good enough" for many use cases and became deeply entrenched in the software ecosystem. Furthermore, the author argues that security is often a secondary concern compared to factors like performance, ease of development, and compatibility, especially in the early stages of language and operating system design. The focus was on getting systems to work efficiently, and security concerns were often addressed later through patching and ad-hoc solutions. The author also posits that the security benefits of capability systems may not be immediately obvious to many developers. The improved security offered by capability systems requires a shift in thinking about how programs interact with resources, and developers accustomed to ACL-based models may not see the immediate value of making this transition.</p>
+
+<p>The article concludes by suggesting that while capability languages may not be the dominant paradigm today, ongoing research and experimentation with languages like Pony and projects exploring microkernels that leverage capabilities indicate a continued interest in this approach. As security threats become more sophisticated and the cost of vulnerabilities increases, capability-based security might become more attractive, particularly if advancements in hardware and software make it more practical and easier to use. The author emphasizes that there is no single solution to security challenges and that a combination of techniques, including capability-based security, is likely to be necessary to create more secure systems.</p>
+
+<h2>Key Points:</h2>
+
+<ul>
+<li>Capability-based security offers stronger security guarantees than traditional ACL-based systems.</li>
+<li>Performance overhead associated with capability checking is a significant obstacle.</li>
+<li>Complexity of capability management, including distribution, revocation, and tracking, poses challenges.</li>
+<li>Historical path dependency favors simpler ACL-based systems like Unix.</li>
+<li>Security is often a secondary concern compared to performance and ease of development.</li>
+<li>Benefits of capability systems may not be immediately apparent to developers.</li>
+<li>Languages like Rust and Pony offer potential for better capability management.</li>
+<li>Ongoing research and experimentation suggest continued interest in capability-based security.</li>
+<li>A combination of security techniques, including capabilities, is likely needed for robust security.</li>
+</ul>
+</div>
+</div>
+</article>
