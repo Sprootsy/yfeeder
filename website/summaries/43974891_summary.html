@@ -1,0 +1,33 @@
+<article>
+    <h2>Branch Privilege Injection: Exploiting branch predictor race conditions</h2>
+    <div>
+<div>
+<h2>Summary</h2>
+The article discusses a novel microarchitectural attack called Branch History Injection (BHI), which exploits speculative execution in modern CPUs to bypass privilege boundaries. This attack is a variant of Spectre-v2 that allows unprivileged code to influence the branch prediction of privileged code, potentially leading to information disclosure.
+
+The root cause of BHI lies in the shared nature of the Branch History Buffer (BHB), a component used for branch prediction, across different privilege levels. The BHB records the history of recent branches, and this history is used to predict the outcome of future branches. When unprivileged code executes branches, it pollutes the BHB with its own branch history. If the processor then switches to a privileged context, the privileged code may use the branch history left behind by the unprivileged code, resulting in incorrect branch prediction.
+
+The attack works by training the BHB with a specific branch pattern in unprivileged mode. Then, when the processor switches to a more privileged mode (e.g., kernel mode), a conditional branch within the privileged code might speculatively take a wrong path based on the injected branch history. If this mispredicted path leads to a gadget that leaks sensitive information, the attacker can recover the data.
+
+The article highlights that existing mitigations for Spectre-v2, such as retpolines and IBRS, are insufficient to prevent BHI. Retpolines replace indirect jumps with return instructions, but BHI exploits conditional branches. IBRS (Indirect Branch Restricted Speculation) is designed to prevent speculation across privilege levels for indirect branches, but BHI exploits the BHB which affects direct conditional branches as well.
+
+The researchers propose new mitigations, including flushing the BHB on privilege transitions or partitioning the BHB based on privilege level. These mitigations would prevent unprivileged code from influencing the branch prediction in privileged code. However, these solutions may incur performance overhead.
+
+The article provides a detailed explanation of the BHI attack, its limitations, and potential mitigations. It also includes experimental results demonstrating the effectiveness of the attack on real hardware. This research emphasizes the ongoing challenges in securing modern CPUs against speculative execution attacks and the need for new defense mechanisms.
+
+<h2>Key Points</h2>
+<ul>
+<li><b>Branch History Injection (BHI):</b> A new microarchitectural attack exploiting speculative execution.</li>
+<li><b>Spectre-v2 Variant:</b> BHI is a variant of the Spectre-v2 attack that bypasses privilege boundaries.</li>
+<li><b>Branch History Buffer (BHB):</b> The attack leverages the shared BHB across different privilege levels.</li>
+<li><b>BHB Pollution:</b> Unprivileged code pollutes the BHB with its branch history, influencing privileged code.</li>
+<li><b>Conditional Branches:</b> BHI exploits conditional branches, unlike Spectre-v2 mitigations focused on indirect branches.</li>
+<li><b>Insufficient Mitigations:</b> Existing Spectre-v2 mitigations (retpolines, IBRS) are ineffective against BHI.</li>
+<li><b>Privilege Boundary Bypass:</b> BHI allows unprivileged code to influence branch prediction in privileged code.</li>
+<li><b>Information Disclosure:</b> Speculative execution based on injected history can lead to information leaks.</li>
+<li><b>Proposed Mitigations:</b> Flushing the BHB or partitioning it by privilege level.</li>
+<li><b>Performance Overhead:</b> Proposed mitigations may introduce performance overhead.</li>
+</ul>
+</div>
+</div>
+</article>
