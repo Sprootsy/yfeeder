@@ -1,0 +1,32 @@
+<article>
+    <h2>Don&#39;t unwrap options: There are better ways (2024)</h2>
+    <div>
+<div>
+<p>This article on corrode.dev discusses best practices for handling `Option` types in Rust. The `Option` type is Rust's way of representing the possibility of a value being absent. The article emphasizes clarity, explicitness, and avoiding common pitfalls when working with `Option` to write safer and more maintainable Rust code.</p>
+
+<p>The article begins by highlighting the importance of being explicit when dealing with `Option`. It advises against implicitly unwrapping `Option` values using `.unwrap()` or `.expect()` without careful consideration, as these can lead to panics if the `Option` is `None`. Instead, it advocates for using methods like `.map()`, `.and_then()`, `.or()`, and `.unwrap_or()` to handle both the `Some` and `None` cases explicitly and safely.</p>
+
+<p>The use of `.map()` is recommended for transforming the value inside a `Some` variant, while `.and_then()` (also known as `flat_map` in other languages) is suggested for chaining operations that themselves return `Option` values, preventing nested `Option` types (`Option<Option<T>>`). The article explains how `.or()` and `.unwrap_or()` provide ways to provide a default value when the `Option` is `None`.</p>
+
+<p>Pattern matching with `match` or `if let` is also presented as a powerful and explicit way to handle `Option` types. Pattern matching forces the programmer to consider both the `Some` and `None` variants, leading to more robust code. `if let` provides a concise way to handle the `Some` variant while ignoring the `None` case when appropriate.</p>
+
+<p>The article warns against using `.unwrap()` and `.expect()` unless the programmer is absolutely certain that the `Option` will always be `Some`. If these methods are used, a clear and informative panic message should be provided with `.expect()` to aid in debugging.</p>
+
+<p>The article further discusses the use of `Option` in struct fields. It suggests using `Option` when a field is truly optional and can be absent.  When a field needs to be initialized later but should always be present after initialization, `Option` can be used initially, with the expectation of being populated before use.  The article briefly touches on using `take()` to move a value out of an `Option` field, replacing it with `None`.</p>
+
+<p>Finally, the article touches on error handling with `Result<T, E>`, which can be combined with `Option` when a function might either return a value, return an error, or return nothing. Using `Result<Option<T>, E>` or `Option<Result<T, E>>` allows for the explicit handling of each of these possible outcomes.</p>
+
+<h2>Key Points:</h2>
+<ul>
+<li><b>Avoid Implicit Unwrapping:</b> Don't use `.unwrap()` or `.expect()` without careful consideration, as they can cause panics.</li>
+<li><b>Use `.map()` for Transformations:</b> Use `.map()` to transform the value inside a `Some` variant.</li>
+<li><b>Use `.and_then()` for Chaining `Option` Returning Operations:</b> Use `.and_then()` to chain operations that return `Option` values, avoiding nested `Option` types.</li>
+<li><b>Use `.or()` and `.unwrap_or()` for Default Values:</b> Use `.or()` and `.unwrap_or()` to provide default values when the `Option` is `None`.</li>
+<li><b>Use Pattern Matching:</b> Use `match` or `if let` for explicit and robust handling of `Option` types.</li>
+<li><b>Be Cautious with `.unwrap()` and `.expect()`:</b> If you must use them, ensure the `Option` is always `Some` and provide informative panic messages with `.expect()`.</li>
+<li><b>Use `Option` in Structs When Appropriate:</b> Use `Option` for truly optional fields that can be absent.</li>
+<li><b>Consider `Result` and `Option` Combinations for Error Handling:</b> Use combinations like `Result<Option<T>, E>` or `Option<Result<T, E>>` to handle the possibility of a value, an error, or nothing.</li>
+</ul>
+</div>
+</div>
+</article>
