@@ -1,0 +1,33 @@
+<article>
+    <h2>Migrating to Postgres</h2>
+    <div>
+<div>
+  <p>The article discusses a company's experience migrating its backend data store from MongoDB to PostgreSQL. It highlights the challenges, reasons for the change, and the implementation process. Initially, the company used MongoDB for its flexibility and speed of development, particularly during the early stages of the product. However, as the application matured and the need for complex querying, data integrity, and transactional support grew, MongoDB's limitations became more apparent. The lack of robust relational features made certain queries inefficient and difficult to optimize, and the absence of ACID transactions increased the risk of data inconsistencies.
+  </p>
+  <p>
+  The decision to migrate to PostgreSQL was driven by the need for a more reliable, scalable, and maintainable database system capable of handling the increasing complexity of the application. PostgreSQL's strong support for relational data, ACID transactions, and complex queries made it a suitable choice. The migration process was carefully planned and executed in phases. First, the company conducted a thorough analysis of the existing data model and designed a new schema optimized for PostgreSQL. This involved normalizing the data and defining relationships between different entities.
+  </p>
+  <p>
+  Next, the company developed a data migration strategy that involved writing scripts to extract data from MongoDB, transform it into the new schema, and load it into PostgreSQL. This process was iterative, with ongoing testing and refinement to ensure data accuracy and completeness. The team also implemented a dual-write approach, where new data was written to both MongoDB and PostgreSQL, allowing them to validate the new system while minimizing downtime.
+  </p>
+  <p>
+  During the migration, the company encountered several challenges, including differences in data types, handling of nested documents, and ensuring consistency across the two databases. The team addressed these challenges by writing custom data transformation scripts, implementing robust validation checks, and closely monitoring the migration process. After the data migration was complete, the company gradually switched over the application to use PostgreSQL as the primary data store. This involved updating the application code to use PostgreSQL's query language and APIs. The company also invested in performance tuning and optimization to ensure that the new system could handle the expected workload.
+  </p>
+  <p>
+  The migration to PostgreSQL resulted in several benefits, including improved data integrity, better query performance, and increased scalability. The company was also able to leverage PostgreSQL's advanced features, such as stored procedures and triggers, to simplify the application logic and improve maintainability. The article emphasizes the importance of careful planning, thorough testing, and close collaboration between the development and operations teams during a database migration project.
+  </p>
+
+  <h3>Key Points:</h3>
+  <ul>
+    <li>The company initially used MongoDB for its flexibility and rapid development capabilities.</li>
+    <li>As the application matured, MongoDB's limitations in terms of complex querying, data integrity, and transactional support became a concern.</li>
+    <li>The company decided to migrate to PostgreSQL due to its robust relational features, ACID transactions, and support for complex queries.</li>
+    <li>The migration process involved careful planning, data modeling, and the development of data transformation scripts.</li>
+    <li>A dual-write approach was used to minimize downtime and validate the new system.</li>
+    <li>Challenges encountered during the migration included data type differences, handling nested documents, and ensuring consistency.</li>
+    <li>The migration resulted in improved data integrity, better query performance, and increased scalability.</li>
+    <li>The article highlights the importance of planning, testing, and collaboration during database migration projects.</li>
+  </ul>
+</div>
+</div>
+</article>
