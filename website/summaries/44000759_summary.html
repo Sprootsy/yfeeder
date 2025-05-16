@@ -1,0 +1,49 @@
+<article>
+    <h2>Teal – A statically-typed dialect of Lua</h2>
+    <div>
+<div>
+<h2>Summary</h2>
+<p>
+The article introduces Teal, a statically typed dialect of Lua. Teal is designed to be a superset of Lua 5.4, meaning that any valid Lua 5.4 code is also valid Teal code. However, Teal adds static typing to Lua's dynamic nature, enabling early error detection, improved code maintainability, and better performance in some cases.
+</p>
+<p>
+One of Teal's primary goals is to provide optional static typing. This allows developers to gradually introduce types into their Lua codebases, starting with the most critical or error-prone sections. Type annotations are added using a specific syntax, and the Teal compiler uses these annotations to perform type checking. If type errors are found, the compiler will report them, preventing runtime errors that might otherwise occur in standard Lua.
+</p>
+<p>
+Teal code is typically written in files with the <code>.tl</code> extension. These files are then compiled into standard Lua 5.4 code using the Teal compiler, <code>tl</code>. The generated Lua code can then be executed by any Lua 5.4 interpreter or LuaJIT. This compilation step allows Teal to leverage the existing Lua ecosystem, including libraries and tools.
+</p>
+<p>
+The article emphasizes that Teal aims to enhance, not replace, Lua. It retains Lua's flexibility and ease of use while adding the benefits of static typing where desired. Teal supports various type annotations, including basic types (number, string, boolean), tables, functions, user data, and custom types. It also provides features like generics, unions, and intersections to enable more complex type definitions.
+</p>
+<p>
+Furthermore, Teal is designed to interoperate seamlessly with existing Lua code. Teal code can call Lua code, and Lua code can call Teal code (after it has been compiled to Lua). This interoperability is crucial for projects that want to adopt Teal incrementally.
+</p>
+<p>
+The article also highlights the performance implications of using Teal. While static typing doesn't automatically guarantee performance improvements, it allows the compiler to perform certain optimizations that are not possible in dynamically typed Lua. Additionally, catching type errors early can prevent unexpected runtime behavior that might lead to performance issues.
+</p>
+<p>
+The Teal compiler, <code>tl</code>, is a command-line tool used to compile <code>.tl</code> files into <code>.lua</code> files. It supports various options, such as specifying the output file, enabling or disabling type checking, and including debug information. The compiler itself is written in Lua and is designed to be fast and efficient.
+</p>
+<p>
+The documentation also mentions the Teal Language Server (TLS), which provides IDE integration features such as autocompletion, go-to-definition, and type checking. This integration further enhances the development experience with Teal.
+</p>
+<p>
+In conclusion, Teal offers a practical approach to adding static typing to Lua, allowing developers to improve code quality, maintainability, and potentially performance while retaining the flexibility and ease of use of Lua. Its seamless interoperability with existing Lua code makes it a viable option for both new and existing projects.
+</p>
+
+<h2>Key Points</h2>
+<ul>
+<li>Teal is a statically typed dialect of Lua 5.4.</li>
+<li>It is a superset of Lua 5.4; valid Lua code is also valid Teal code.</li>
+<li>Teal provides optional static typing through type annotations.</li>
+<li>Teal code (<code>.tl</code> files) is compiled to Lua 5.4 code (<code>.lua</code> files) using the <code>tl</code> compiler.</li>
+<li>Teal aims to enhance, not replace, Lua, retaining its flexibility.</li>
+<li>It supports various type annotations, including basic types, tables, functions, and custom types.</li>
+<li>Teal supports generics, unions, and intersections for complex type definitions.</li>
+<li>Teal code can interoperate seamlessly with existing Lua code.</li>
+<li>Static typing in Teal can enable compiler optimizations and prevent runtime type errors.</li>
+<li>The Teal Language Server (TLS) provides IDE integration features.</li>
+</ul>
+</div>
+</div>
+</article>
