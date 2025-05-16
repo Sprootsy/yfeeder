@@ -1,0 +1,24 @@
+<article>
+    <h2>Initialization in C&#43;&#43; is bonkers (2017)</h2>
+    <div>
+ <div>
+  <p>This article discusses the complexities and subtleties of initialization in C++, highlighting how seemingly straightforward concepts can become surprisingly intricate. It delves into various forms of initialization, such as default initialization, value initialization, zero initialization, and copy initialization, explaining how they differ and when they are applied. The author emphasizes that the rules governing initialization are complex and often unintuitive, leading to potential confusion and unexpected behavior.</p>
+  <p>The article begins by noting that the term "initialization" itself can be misleading, as it encompasses a wide range of behaviors depending on the context. It points out that variables in C++ are not automatically initialized unless specifically told to, and that uninitialized variables contain indeterminate values, which can lead to undefined behavior if used. The article goes into detail about default initialization, which occurs when a variable is declared without an initializer. For fundamental types like `int`, default initialization leaves the variable with an indeterminate value. For class types, default initialization involves calling the default constructor if one exists. If a class has no default constructor, then default initialization is not possible. This behavior changes under value initialization, which is triggered in scenarios such as initializing an array without specifying initializers for all elements. Value initialization behaves differently for fundamental types, it will initialize the variable to zero. For class types with default constructors, value initialization calls the default constructor.</p>
+  <p>Zero initialization is also discussed, this initialization sets memory to zero, and occurs in specific situations, such as before value initialization in some cases, or for static storage duration variables. The article further explores copy initialization, which occurs when an object is initialized using an equals sign (=) and another object. Copy initialization can involve either a copy constructor or a move constructor, depending on whether the source object is an rvalue or an lvalue. If a copy or move constructor is not available, the code will fail to compile. The author also addresses list initialization (using curly braces `{}`), which offers some advantages, such as preventing narrowing conversions. List initialization can invoke constructors, aggregate initialization or initialize individual elements.</p>
+  <p>The article emphasizes the importance of understanding these different types of initialization to write correct and predictable C++ code. It uses numerous examples to illustrate the nuances of each type and highlights potential pitfalls that developers should be aware of. The author also touches upon the concept of aggregate initialization, which applies to arrays and certain classes/structs without user-provided constructors, private or protected non-static data members, base classes, or virtual functions. Aggregate initialization allows initializing members directly using an initializer list.</p>
+  <p>Furthermore, the article implicitly suggests that a thorough understanding of initialization is essential for avoiding bugs and ensuring that C++ programs behave as expected. It serves as a warning against making assumptions about how variables are initialized and encourages developers to be explicit and deliberate in their initialization practices.</p>
+  <p><b>Key Points:</b></p>
+  <ul>
+   <li>C++ initialization is complex and has several forms (default, value, zero, copy, list, aggregate).</li>
+   <li>Variables are not automatically initialized and may contain indeterminate values if not explicitly initialized.</li>
+   <li>Default initialization leaves fundamental types uninitialized and calls the default constructor for class types.</li>
+   <li>Value initialization zero-initializes fundamental types and calls the default constructor for class types.</li>
+   <li>Zero initialization sets the memory to zero.</li>
+   <li>Copy initialization uses copy/move constructors or assignment operators.</li>
+   <li>List initialization (using `{}`) offers advantages like preventing narrowing.</li>
+   <li>Aggregate initialization applies to arrays and certain classes/structs, allowing direct member initialization.</li>
+   <li>Understanding initialization is crucial for writing correct and predictable C++ code.</li>
+  </ul>
+ </div>
+ </div>
+</article>
