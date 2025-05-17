@@ -1,0 +1,20 @@
+<article>
+    <h2>Show HN: SQL-tString a t-string SQL builder in Python</h2>
+    <div>
+<div>
+  <p>The article discusses the <code>sql-tstring</code> library, a Python library that provides a safer and more convenient way to construct SQL queries. It addresses the common problem of SQL injection vulnerabilities that can arise when building SQL queries using string concatenation or formatting. The library introduces the <code>SQLString</code> class, which overloads the string formatting operators (<code>%</code>) and provides methods for safely embedding values directly into SQL queries, automatically escaping or quoting them as needed. This prevents potential SQL injection attacks. The library supports various database systems, including PostgreSQL, MySQL, and SQLite. It uses the appropriate quoting and escaping mechanisms for each database to ensure compatibility and security. <code>sql-tstring</code> also handles different data types correctly, such as strings, integers, floats, dates, and booleans, ensuring they are properly represented in the generated SQL. Additionally, the library includes features for handling lists or tuples of values, which are automatically expanded into comma-separated lists with the necessary quoting for use in <code>IN</code> clauses or similar constructs. The library's design emphasizes ease of use, allowing developers to write SQL queries in a natural and readable way while still maintaining a high level of security. The article also presents several examples of how to use the <code>SQLString</code> class to construct SQL queries with different types of values and data structures, highlighting the benefits of the library in terms of both security and code clarity. Overall, the <code>sql-tstring</code> library provides a valuable tool for Python developers who work with databases, offering a safer and more convenient alternative to traditional string formatting techniques for building SQL queries.</p>
+
+  <h2>Key Points:</h2>
+  <ul>
+    <li><code>sql-tstring</code> is a Python library designed to prevent SQL injection vulnerabilities.</li>
+    <li>It provides the <code>SQLString</code> class, which overloads string formatting operators to safely embed values into SQL queries.</li>
+    <li>The library automatically escapes or quotes values as needed, depending on the data type and database system.</li>
+    <li>It supports various database systems, including PostgreSQL, MySQL, and SQLite.</li>
+    <li>It handles different data types correctly, such as strings, integers, floats, dates, and booleans.</li>
+    <li>The library provides features for handling lists or tuples of values, automatically expanding them into comma-separated lists with appropriate quoting.</li>
+    <li><code>sql-tstring</code> aims to make building SQL queries more secure and readable.</li>
+    <li>It offers a safer alternative to traditional string formatting techniques.</li>
+  </ul>
+</div>
+</div>
+</article>
