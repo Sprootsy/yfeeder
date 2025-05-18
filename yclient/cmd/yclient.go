@@ -11,6 +11,7 @@ import (
 	"net/http"
 	"os"
 	"path"
+	"sort"
 	"strings"
 	"time"
 	"yclient/genai"
@@ -26,6 +27,7 @@ type CLI struct {
 	Tags        []string
 	Age         time.Duration
 	OutDir      string
+	MaxArticles int
 }
 
 var allowedTags = map[string]bool{
@@ -67,6 +69,15 @@ func main() {
 	if errDecode := dec.Decode(hits); errDecode != nil {
 		log.Fatalln("Cannot parse api response.", errDecode)
 	}
+	
+	sort.Slice(hits.Articles, func(i, j int) bool {
+		return hits.Articles[i].Points < hits.Articles[j].Points
+	})
+	if cli.MaxArticles > 0 && cli.MaxArticles < len(hits.Articles) {
+		log.Println("Got", len(hits.Articles), "resizing to", cli.MaxArticles)
+		hits.Articles = hits.Articles[:cli.MaxArticles]
+	}
+
 	log.Println(hits)
 
 	log.Println("Going to render articles list")
@@ -116,6 +127,7 @@ func parseFlags() {
 	a := flag.Duration("age", 24*time.Hour, "Set the age of the article in time. Valid units are: ns, us, ms, s, m and h")
 	outDir := flag.String("outDir", ".", "Path to the directory where the output must be written")
 	ak := flag.String("apiKeyFile", "", "Path to a file where the gen ai api key can be found")
+	mArts := flag.Int("maxArticles", 0, "Set the max number of articles")
 	flag.Parse()
 
 	errMsgs := []string{}
@@ -173,6 +185,7 @@ func parseFlags() {
 		Tags:        t,
 		Age:         *a,
 		OutDir:      o,
+		MaxArticles: *mArts,
 	}
 }
 

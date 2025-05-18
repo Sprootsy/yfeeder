@@ -13,7 +13,7 @@ import (
 )
 
 const modelName = "gemini-2.0-flash"
-const promptSummary = "Summarize this article. Write first a short description of maximum 800 words, then the key points."
+const promptSummary = "Summarize this article like you are the author. Write first a short description of maximum 700 words, then the key points."
 
 type Client struct {
 	model   *genai.GenerativeModel
@@ -40,7 +40,7 @@ func (c Client) GenerateSummaryFromURL(u string) (*genai.GenerateContentResponse
 	if _, errUrl := url.Parse(u); errUrl != nil {
 		return nil, errUrl
 	}
-	inputPrompt := fmt.Sprintf("%s %s", promptSummary, u)
+	inputPrompt := fmt.Sprintf("%s Link to the article: %s", promptSummary, u)
 	ctx, cancFunc := context.WithTimeout(context.Background(), 30*time.Second)
 	defer cancFunc()
 	log.Println("Done generating summary for url:", u)
