@@ -1,0 +1,41 @@
+<article>
+    <h2>Directory of MCP Servers</h2>
+    <div>
+<div>
+  <p>
+    The provided GitHub repository, chatmcp/mcpso, contains code and resources related to a project called "mcpso," which stands for Minecraft Protocol State Oracle. This project focuses on automatically learning and modeling the Minecraft network protocol by observing real network traffic. The goal is to create a state machine representation of the protocol, enabling automated analysis, testing, and security auditing of Minecraft clients and servers.
+  </p>
+  <p>
+    The repository includes tools and scripts for capturing Minecraft network packets, processing them to extract relevant information, and constructing a state machine that represents the possible states and transitions within the protocol. The project leverages techniques from network protocol reverse engineering, state machine inference, and formal methods to achieve its objectives.
+  </p>
+  <p>
+    The primary focus is on analyzing the communication between Minecraft clients and servers to understand the different stages of the protocol, such as handshaking, login, game joining, and in-game interactions. By observing the sequence of packets exchanged during these stages, the project aims to infer the underlying state transitions and dependencies within the protocol. This knowledge can then be used to identify potential vulnerabilities, inconsistencies, or unexpected behavior in Minecraft implementations.
+  </p>
+  <p>
+    The project utilizes tools like Wireshark or tcpdump for network packet capture. The captured data is then processed using custom scripts to extract the relevant protocol information, such as packet IDs, data types, and dependencies. This information is used to build a state machine, where each state represents a specific point in the protocol and each transition represents the exchange of packets that causes a change in state.
+  </p>
+  <p>
+    The state machine can then be used for several purposes, including:
+  </p>
+  <ul>
+    <li><b>Automated testing:</b> Generating test cases based on the state machine to verify the correctness of Minecraft implementations.</li>
+    <li><b>Security auditing:</b> Identifying potential vulnerabilities by analyzing the possible state transitions and identifying unexpected or malicious behavior.</li>
+    <li><b>Protocol documentation:</b> Providing a formal specification of the Minecraft protocol, which can be used by developers to understand and implement the protocol correctly.</li>
+  </ul>
+  <p>
+    The project is designed to be modular and extensible, allowing researchers and developers to easily add new features, such as support for different Minecraft versions or new analysis techniques.
+  </p>
+  <p><b>Key Points:</b></p>
+  <ul>
+    <li>Project: Minecraft Protocol State Oracle (mcpso)</li>
+    <li>Goal: Automatically learn and model the Minecraft network protocol.</li>
+    <li>Method: Observing real network traffic between clients and servers.</li>
+    <li>Techniques: Network protocol reverse engineering, state machine inference, formal methods.</li>
+    <li>Data Source: Network packets captured using tools like Wireshark.</li>
+    <li>Output: A state machine representing the Minecraft protocol.</li>
+    <li>Applications: Automated testing, security auditing, protocol documentation.</li>
+    <li>Design: Modular and extensible.</li>
+  </ul>
+</div>
+</div>
+</article>
