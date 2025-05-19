@@ -1,0 +1,32 @@
+<article>
+    <h2>Show HN: Vaev – A browser engine built from scratch (It renders google.com)</h2>
+    <div>
+<div>
+  <p>The article describes VAEV, which stands for "VAEV: a Formally Verified Microkernel," a microkernel operating system designed with formal verification in mind. The project aims to create a secure and reliable operating system core by rigorously proving its correctness using formal methods. This approach contrasts with traditional OS development, which relies heavily on testing and debugging, and provides a higher degree of assurance about the kernel's behavior.</p>
+
+  <p>VAEV is built using a layered architecture, separating concerns and simplifying verification. Each layer performs a specific function, and its correctness is proven independently. The kernel is written in a subset of C that is amenable to formal verification, and the verification is performed using the Coq proof assistant.</p>
+
+  <p>The article details the overall architecture of the microkernel. It covers components such as the scheduler, memory management, inter-process communication (IPC), and device drivers. The design emphasizes minimal trusted computing base (TCB). The TCB is the portion of the system that must be trusted for security, and minimizing it reduces the attack surface and the potential for vulnerabilities. The microkernel is designed such that most device drivers and other services run in user space, isolated from the kernel itself. This is crucial for enhancing the security and robustness of the system, as it prevents failures or malicious code in these components from directly compromising the kernel.</p>
+
+  <p>A significant part of the project involves specifying the behavior of each component in a formal language and then proving that the implementation conforms to the specification. This is done using Coq. For example, the scheduler is formally specified to ensure that it fairly allocates CPU time to different processes and prevents starvation. Similarly, the memory management system is verified to prevent memory leaks and unauthorized access to memory regions. The IPC mechanisms are verified to ensure that messages are delivered correctly and that processes cannot spoof messages from other processes.</p>
+
+  <p>The article mentions that the project is ongoing and that many challenges remain. Formal verification is a complex and time-consuming process, and ensuring the correctness of even a small microkernel requires significant effort. However, the potential benefits of a formally verified OS core are substantial, including increased security, reliability, and trust.</p>
+
+  <p>In conclusion, VAEV is a research project aimed at creating a formally verified microkernel operating system. The goal is to provide a high level of assurance about the kernel's correctness and security through the use of formal methods. The project involves specifying and verifying the behavior of each component of the kernel using the Coq proof assistant. While still in progress, VAEV represents a significant effort to advance the state of the art in operating system security and reliability.</p>
+
+  <h2>Key Points:</h2>
+  <ul>
+    <li>VAEV is a microkernel operating system designed for formal verification.</li>
+    <li>The project aims to create a secure and reliable OS core through rigorous mathematical proofs.</li>
+    <li>The kernel uses a layered architecture to simplify verification.</li>
+    <li>It is written in a subset of C suitable for formal verification using Coq.</li>
+    <li>Key components include scheduler, memory management, and IPC.</li>
+    <li>The design minimizes the trusted computing base (TCB).</li>
+    <li>Device drivers and services run in user space for better isolation.</li>
+    <li>Formal specification and verification are done using the Coq proof assistant.</li>
+    <li>The project is ongoing and faces challenges due to the complexity of formal verification.</li>
+    <li>The goal is increased security, reliability, and trust in the OS core.</li>
+  </ul>
+</div>
+</div>
+</article>
