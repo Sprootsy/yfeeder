@@ -1,0 +1,35 @@
+<article>
+    <h2>Kilo: A text editor in less than 1000 LOC with syntax highlight and search</h2>
+    <div>
+<div>
+  <p>
+    The article is a tutorial, and a single C source code file, describing how to build a simple text editor from scratch, named Kilo, in approximately 1000 lines of C code. The author, antirez, aims to provide a practical and understandable guide for learning systems programming concepts. The tutorial emphasizes simplicity and clarity over advanced features or performance optimizations. The editor is intended to be a basic, yet functional, tool that can be used for simple text editing tasks.
+  </p>
+  <p>
+    The tutorial starts by outlining the basic requirements for the editor: handling keyboard input, displaying text on the screen, and allowing the user to move the cursor. It then dives into the technical details, covering topics such as terminal raw mode, which allows the program to receive individual keystrokes without waiting for a newline; terminal window size detection, which enables the editor to adapt to different screen sizes; and screen refreshing, which involves clearing the screen and redrawing the text buffer.
+  </p>
+  <p>
+    The editor's data structures are kept simple: a buffer to store the text being edited and variables to track the cursor position and screen offset. The core functionality includes reading keyboard input, handling cursor movement (up, down, left, right, home, end, page up, page down), inserting and deleting characters, and scrolling the screen.
+  </p>
+  <p>
+    The code uses ANSI escape sequences extensively to control the terminal, such as clearing the screen, moving the cursor, and setting text colors. Error handling is present but kept to a minimum to avoid cluttering the code. The tutorial explains the purpose of each function and variable, making it easier for beginners to understand the code.
+  </p>
+  <p>
+    The author makes it clear that Kilo is not intended to be a replacement for more sophisticated text editors like Vim or Emacs. Instead, it serves as a learning tool for understanding the fundamentals of text editor implementation and systems programming in general. The tutorial encourages readers to experiment with the code, add new features, and improve the editor. It provides a solid foundation for those interested in exploring more advanced text editing concepts. The single file approach makes the entire codebase easily accessible and understandable. The project is licensed under the BSD 2-Clause License.
+  </p>
+
+  <h3>Key Points:</h3>
+  <ul>
+    <li><strong>Purpose:</strong> The project is a tutorial and a functional simple text editor written in C, designed to be a learning resource for systems programming.</li>
+    <li><strong>Simplicity:</strong> The editor is intentionally kept simple and easy to understand, prioritizing clarity over advanced features or performance.</li>
+    <li><strong>Raw Mode:</strong> The editor uses terminal raw mode to capture individual keystrokes directly from the keyboard.</li>
+    <li><strong>Screen Handling:</strong> The code handles screen clearing, cursor positioning, and text drawing using ANSI escape sequences.</li>
+    <li><strong>Basic Functionality:</strong> Implements basic text editing features like cursor movement, character insertion/deletion, and scrolling.</li>
+    <li><strong>Data Structures:</strong> Employs simple data structures to store the text buffer and track cursor position.</li>
+    <li><strong>Error Handling:</strong> Includes basic error handling for robustness.</li>
+    <li><strong>Single File:</strong> The entire editor is contained within a single C source file for easy access and comprehension.</li>
+    <li><strong>Learning Tool:</strong> It is primarily intended as a learning tool, not a replacement for more advanced editors.</li>
+  </ul>
+</div>
+</div>
+</article>
