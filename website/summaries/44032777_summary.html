@@ -1,0 +1,39 @@
+<article>
+    <h2>Claude Code SDK</h2>
+    <div>
+<div>
+  <h2>Summary</h2>
+  <p>
+    The provided document is a guide to using Anthropic's Claude API via their Python and Javascript SDKs. It outlines the steps for setting up the environment, installing the SDK, and authenticating with the Claude API using an API key. The guide showcases how to use the SDKs to interact with Claude, including sending prompts, streaming responses, and managing conversation history through system prompts and context windows.
+  </p>
+  <p>
+    The document first introduces the concept of Claude as a conversational AI and highlights the use of system prompts for providing instructions and context to the model.  It then delves into the specifics of using the Python and Javascript SDKs to interact with the API, emphasizing how to create a Claude client using an API key. This API key, which is a secret and should be kept confidential, is essential for authenticating requests to the Claude models.
+  </p>
+  <p>
+    A core function detailed in the documentation is the `messages.create` function, which allows users to send prompts to Claude. The guide illustrates how to construct the prompt using a list of messages, where each message has a role (either "user" or "assistant") and content. The "user" role represents the user's input, while the "assistant" role represents Claude's responses.  It covers how to utilize the system prompt within these messages to influence Claude’s behavior.
+  </p>
+  <p>
+    The document explains how to handle the response from Claude. The response is a message object containing the model's generated text. It also demonstrates how to engage in multi-turn conversations by maintaining a list of messages and sending the entire history with each new prompt. This mechanism is crucial for Claude to maintain context and provide coherent responses. The size limitations of the context window, that is, the total number of tokens accepted in each call, are discussed, suggesting keeping the conversation within this limit to ensure proper functioning.
+  </p>
+  <p>
+    Additionally, the document describes how to stream responses from Claude. Instead of waiting for the entire response to be generated, streaming allows the application to receive the response incrementally as it's produced. This can improve the user experience by providing more immediate feedback. The SDK provides functionality to handle these streamed responses and process them in real-time.
+  </p>
+  <p>
+    Finally, the documentation emphasizes the importance of managing the context window.  It explains that Claude uses the provided message history to generate responses, and it is up to the developer to manage the length of this history to prevent exceeding the context window limit. The document also points to where to find specific language support within the SDKs.
+  </p>
+
+  <h2>Key Points</h2>
+  <ul>
+    <li><b>Claude API Access:</b>  The document describes how to interact with the Claude API using Python and Javascript SDKs.</li>
+    <li><b>API Key Authentication:</b> Authentication requires an API key, which needs to be kept secret.</li>
+    <li><b>`messages.create` Function:</b> The primary function for sending prompts to Claude.</li>
+    <li><b>Message Structure:</b> Prompts are structured as a list of messages with "user" and "assistant" roles.</li>
+    <li><b>System Prompts:</b> System prompts are used to provide instructions and context to Claude.</li>
+    <li><b>Multi-turn Conversations:</b>  Maintaining conversation history is essential for coherent responses.</li>
+    <li><b>Context Window Management:</b> The length of the conversation history must be managed to stay within the context window limit.</li>
+    <li><b>Streaming Responses:</b> The SDK supports streaming responses for a more interactive experience.</li>
+    <li><b>SDK Specifics:</b> References where to find language-specific implementation of the SDKs.</li>
+  </ul>
+</div>
+</div>
+</article>
