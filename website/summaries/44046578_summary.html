@@ -1,0 +1,36 @@
+<article>
+    <h2>“ZLinq”, a Zero-Allocation LINQ Library for .NET</h2>
+    <div>
+<div>
+  <h3>Summary</h3>
+  <p>
+    The article introduces ZLinq, a .NET library designed to provide LINQ (Language Integrated Query) functionality without allocating memory on the heap. The author highlights the performance implications of memory allocations in .NET, particularly in high-throughput or real-time applications where garbage collection pauses can be detrimental. Traditional LINQ operations often create intermediate collections, leading to memory allocation and increased garbage collection overhead.
+  </p>
+  <p>
+    ZLinq addresses this issue by implementing LINQ-like operators as extension methods that operate on collections and structs directly, avoiding the creation of new collections. It leverages `ref struct` (ReadOnlySpan) and other techniques to work directly with memory without allocating new memory blocks. The library aims to be a drop-in replacement for LINQ in many scenarios, offering similar functionality with significantly reduced memory overhead.
+  </p>
+  <p>
+    The article explains how ZLinq achieves zero allocation through several key design choices. Firstly, it utilizes `ref struct` (ReadOnlySpan), which allows it to work directly with memory regions without copying data. Secondly, it avoids boxing of value types by using generic structs and specialized implementations for different types. Thirdly, ZLinq implements stateful iterators as structs which avoids allocating memory on the heap, unlike standard LINQ which utilizes iterators implemented as classes. The author provides code examples to demonstrate the usage of ZLinq and compares its performance against standard LINQ. The performance comparison shows that ZLinq can significantly reduce memory allocations and improve execution speed in certain scenarios.
+  </p>
+  <p>
+    The article also discusses the limitations of ZLinq. Because it relies on `ref struct`, it has restrictions on its usage in asynchronous methods and certain other contexts. The author acknowledges that ZLinq is not a universal replacement for LINQ and is best suited for performance-critical code paths where allocation reduction is paramount.
+  </p>
+  <p>
+    The author emphasizes that ZLinq is an open-source project and encourages contributions from the .NET community. The goal is to provide a performant and efficient alternative to LINQ for scenarios where memory allocation is a major concern. The article concludes by highlighting the benefits of ZLinq in terms of reduced garbage collection pressure and improved application performance, making it a valuable tool for .NET developers working on performance-sensitive applications.
+  </p>
+  <h3>Key Points</h3>
+  <ul>
+    <li>ZLinq is a .NET library that provides zero-allocation LINQ-like functionality.</li>
+    <li>Traditional LINQ operations often result in memory allocations due to the creation of intermediate collections.</li>
+    <li>ZLinq avoids memory allocation by using `ref struct` (ReadOnlySpan) to work directly with memory regions and implementing stateful iterators as structs.</li>
+    <li>ZLinq aims to be a drop-in replacement for LINQ in many scenarios, offering similar functionality with reduced memory overhead.</li>
+    <li>The library utilizes extension methods that operate on collections and structs directly.</li>
+    <li>ZLinq avoids boxing of value types by using generic structs and specialized implementations.</li>
+    <li>Performance comparisons demonstrate that ZLinq can significantly reduce memory allocations and improve execution speed.</li>
+    <li>ZLinq has limitations due to its reliance on `ref struct`, restricting its usage in asynchronous methods and certain other contexts.</li>
+    <li>ZLinq is best suited for performance-critical code paths where allocation reduction is essential.</li>
+    <li>ZLinq is an open-source project and encourages community contributions.</li>
+  </ul>
+</div>
+</div>
+</article>
