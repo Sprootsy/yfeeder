@@ -1,0 +1,28 @@
+<article>
+    <h2>Should I Block ICMP?</h2>
+    <div>
+<div>
+<h3>Summary</h3>
+<p>The article on shouldiblockicmp.com addresses the common question of whether Internet Control Message Protocol (ICMP) traffic should be blocked on a network. It argues that blocking all ICMP traffic is generally a bad practice and can lead to various network problems. The author explains that ICMP serves essential functions, including error reporting, network discovery, and path MTU discovery (PMTUD). Blocking ICMP can prevent network devices from communicating vital information about network conditions, leading to connectivity issues, performance degradation, and troubleshooting difficulties.</p>
+<p>The article details several ICMP message types and their importance. For example, Destination Unreachable messages inform the sender when a destination is unreachable due to network issues, and Time Exceeded messages indicate when a packet's TTL (Time To Live) has expired, often pointing to routing loops. Blocking these messages deprives network administrators of valuable diagnostic information.</p>
+<p>Furthermore, the article highlights the role of ICMP in Path MTU Discovery. PMTUD allows a sender to determine the largest packet size that can be transmitted across a network path without fragmentation. Blocking ICMP Type 3 Code 4 (Fragmentation Needed and Don't Fragment was Set) disrupts PMTUD, potentially causing connectivity problems, especially with protocols like TCP that rely on it for efficient data transfer. This can manifest as connections appearing to hang or fail intermittently.</p>
+<p>The author also discusses the security concerns associated with ICMP, acknowledging that certain ICMP message types can be used for malicious purposes, such as ICMP flood attacks or information gathering. However, the article advocates for a more nuanced approach than simply blocking all ICMP. Instead, it recommends selectively filtering ICMP traffic, allowing essential message types while blocking or rate-limiting potentially harmful ones.</p>
+<p>The article suggests that best practices involve allowing ICMP echo request (ping) and echo reply for basic connectivity testing while monitoring for ICMP flood attacks. It also emphasizes the importance of allowing Destination Unreachable and Time Exceeded messages for troubleshooting and PMTUD. The author notes that modern firewalls and intrusion detection/prevention systems (IDS/IPS) can be configured to detect and mitigate ICMP-based attacks without completely disabling ICMP.</p>
+<p>In summary, the article argues that blocking all ICMP traffic is a blunt instrument that can cause more harm than good. It encourages network administrators to understand the role of different ICMP message types and to implement intelligent filtering strategies that balance security with network functionality. The author posits that a well-configured network should allow essential ICMP traffic while protecting against potential abuse.</p>
+
+<h3>Key Points</h3>
+<ul>
+<li>Blocking all ICMP traffic is generally a bad practice.</li>
+<li>ICMP serves essential functions like error reporting, network discovery, and PMTUD.</li>
+<li>Destination Unreachable messages are important for informing senders of network issues.</li>
+<li>Time Exceeded messages help identify routing loops.</li>
+<li>Blocking ICMP Type 3 Code 4 disrupts Path MTU Discovery, leading to connectivity problems.</li>
+<li>While ICMP can be used for malicious purposes, selectively filtering ICMP is better than blocking all of it.</li>
+<li>Allow ICMP echo request/reply for connectivity testing, but monitor for flood attacks.</li>
+<li>Allow Destination Unreachable and Time Exceeded messages for troubleshooting and PMTUD.</li>
+<li>Use modern firewalls and IDS/IPS to detect and mitigate ICMP-based attacks.</li>
+<li>Implement intelligent filtering strategies to balance security with network functionality.</li>
+</ul>
+</div>
+</div>
+</article>
