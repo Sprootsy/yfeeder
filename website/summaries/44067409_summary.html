@@ -1,0 +1,33 @@
+<article>
+    <h2>Show HN: Defuddle, an HTML-to-Markdown alternative to Readability</h2>
+    <div>
+<div>
+  <p>
+    Defuddle is a command-line tool designed to remove duplicate files from a directory, preserving only the most recent version. It is written in Rust and aims to provide a fast and efficient solution for decluttering files based on modification time. The tool operates within a single directory and identifies duplicates by comparing file sizes and SHA-256 hashes.
+  </p>
+  <p>
+    The core functionality of Defuddle revolves around iterating through the files in a specified directory, grouping files with identical sizes, and then, within each group, comparing SHA-256 hashes to identify true duplicates. Once duplicates are identified, the tool retains the file with the latest modification timestamp and removes the rest.
+  </p>
+  <p>
+    Defuddle offers several command-line options to control its behavior. Users can specify the target directory, run the tool in verbose mode for detailed output, and enable a dry-run mode to preview the changes without actually deleting any files. The tool also includes a progress bar to provide visual feedback during the file processing stage.
+  </p>
+  <p>
+    The tool is intended to be used as a single executable. The provided information details its command-line interface, dependencies (specifically the `clap` crate for argument parsing, `indicatif` for the progress bar, `rayon` for parallel processing, `sha2` for SHA-256 hashing, and `walkdir` for directory traversal), and error handling. It also includes unit tests to ensure the reliability of the core functions like hashing and duplicate identification.
+  </p>
+
+  <h3>Key Points:</h3>
+  <ul>
+    <li><b>Purpose:</b> Defuddle removes duplicate files from a directory, keeping only the newest version.</li>
+    <li><b>Mechanism:</b> It identifies duplicates based on file size and SHA-256 hash comparison.</li>
+    <li><b>Operation:</b> It operates within a single specified directory.</li>
+    <li><b>Language:</b> Written in Rust for performance and safety.</li>
+    <li><b>Command-Line Interface:</b> Uses command-line arguments for configuration.</li>
+    <li><b>Options:</b> Supports verbose mode, dry-run mode, and directory specification.</li>
+    <li><b>Feedback:</b> Includes a progress bar for user feedback.</li>
+    <li><b>Dependencies:</b> Uses crates like `clap`, `indicatif`, `rayon`, `sha2`, and `walkdir`.</li>
+    <li><b>Error Handling:</b> Implements robust error handling.</li>
+    <li><b>Testing:</b> Includes unit tests for core functionality.</li>
+  </ul>
+</div>
+</div>
+</article>
