@@ -1,0 +1,27 @@
+<article>
+    <h2>The Future of Flatpak</h2>
+    <div>
+<div>
+<p>This article discusses the ongoing discussion and development surrounding Bcachefs, a next-generation Linux filesystem, as presented at the 2024 Linux Storage, Memory & Filesystem (LSM) Summit. Kent Overstreet, the creator of Bcachefs, provided an update on the filesystem's progress and future plans. A significant portion of the discussion revolved around the challenges and potential solutions for achieving a stable on-disk format, a crucial step towards wider adoption.</p>
+
+<p>One major point of discussion was the "btree bomb," a scenario where a small number of changes can trigger a cascade of updates throughout the B-tree structure, leading to significant write amplification and potential performance issues. Overstreet has been working on solutions to mitigate this problem, including improved B-tree balancing and restructuring techniques. The article mentions potential approaches like storing more data in the leaf nodes, although this might impact read performance, and exploring alternative B-tree implementations, which would be a major undertaking.</p>
+
+<p>Another key topic was the trade-off between stability and performance. Freezing the on-disk format too early could hinder future optimizations and limit the filesystem's ability to adapt to evolving storage technologies. However, delaying stability indefinitely would discourage users from adopting Bcachefs due to concerns about data migration and potential compatibility issues. The consensus seemed to lean towards finding a balance, potentially freezing the core format while allowing for extensions or optional features that could be added later without breaking compatibility.</p>
+
+<p>The discussion also touched upon the importance of robust tooling for tasks like data recovery and repair. Having reliable tools is essential for users to trust and rely on the filesystem in production environments. The development of these tools is ongoing, and contributions from the community are welcomed.</p>
+
+<p>Finally, the article highlights the overall positive sentiment surrounding Bcachefs's potential. While challenges remain, the community recognizes its innovative features and the potential benefits it could offer in terms of performance, flexibility, and advanced storage management capabilities. The path to stability and wider adoption requires careful consideration of design choices, thorough testing, and ongoing collaboration between developers and users.</p>
+
+<h2>Key Points:</h2>
+<ul>
+<li>Bcachefs is a next-generation Linux filesystem under development.</li>
+<li>A stable on-disk format is a major goal for wider adoption.</li>
+<li>The "btree bomb" issue (write amplification) is a significant challenge.</li>
+<li>Solutions to the "btree bomb" include improved B-tree balancing and restructuring.</li>
+<li>There is a trade-off between format stability and future optimization.</li>
+<li>Robust tooling for data recovery and repair is essential.</li>
+<li>The community is generally positive about Bcachefs's potential.</li>
+</ul>
+</div>
+</div>
+</article>
