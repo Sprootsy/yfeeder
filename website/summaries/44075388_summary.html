@@ -1,0 +1,37 @@
+<article>
+    <h2>Emacs dired-mode as a file manager</h2>
+    <div>
+<div>
+<h2>Summary</h2>
+
+<p>The article discusses the author's journey in creating a file manager within Emacs using Guix, a functional package manager. The author, after struggling with existing Emacs file managers like `dired` and `ranger.el`, decided to build a custom solution tightly integrated with their existing Emacs and Guix setup. The primary motivation was to leverage Guix's declarative and reproducible environment management to simplify the often complex task of installing and managing external dependencies required by file managers, such as image viewers, archive extractors, and media players.</p>
+
+<p>The author outlines the challenges faced with traditional methods of managing external dependencies in Emacs, highlighting the issues of global state, potential conflicts between packages, and the difficulty of ensuring reproducibility across different systems. They emphasize the benefits of using Guix to create isolated and reproducible environments for Emacs, ensuring that the file manager and its dependencies are self-contained and independent of the system's global state.</p>
+
+<p>The article details the process of setting up a Guix environment specifically for Emacs, including the creation of a Guix package definition for Emacs that includes all the necessary dependencies for the custom file manager. This approach allows the author to specify exactly which versions of external tools are needed and ensures that these tools are available within the Emacs environment without affecting the rest of the system.</p>
+
+<p>The author then describes the key features of their custom file manager, focusing on its ability to display previews of various file types, including images, videos, and documents. This functionality is achieved by leveraging external tools like `ffmpegthumbnailer`, `imagemagick`, and `pdfinfo`, which are managed through Guix. The file manager also supports common file operations such as copying, moving, renaming, and deleting files, as well as more advanced features like archiving and unarchiving files using tools like `tar` and `unzip`.</p>
+
+<p>The article also touches on the challenges of integrating external tools with Emacs, particularly the need to handle asynchronous processes and capture their output. The author discusses the use of Emacs's `async-shell-command` function to execute external commands in the background and display the results in Emacs buffers.</p>
+
+<p>Furthermore, the article covers the importance of testing and debugging the file manager within the Guix environment. The author emphasizes the benefits of using Guix's facilities for creating isolated testing environments, ensuring that the file manager behaves as expected in different scenarios.</p>
+
+<p>In conclusion, the article presents a compelling case for using Guix to manage the dependencies of Emacs-based file managers. By leveraging Guix's declarative and reproducible environment management capabilities, the author demonstrates how to create a custom file manager that is both powerful and easy to maintain. The article provides a valuable resource for Emacs users who are looking for a more robust and reproducible way to manage their file management tools and their dependencies.</p>
+
+<h2>Key Points</h2>
+<ul>
+<li>The article describes the creation of a custom Emacs file manager using Guix.</li>
+<li>It addresses the challenges of managing external dependencies for Emacs file managers.</li>
+<li>Guix is used to create isolated and reproducible environments for Emacs.</li>
+<li>A Guix package definition for Emacs is created, including all necessary dependencies.</li>
+<li>The file manager supports previews of various file types (images, videos, documents).</li>
+<li>External tools like `ffmpegthumbnailer`, `imagemagick`, and `pdfinfo` are managed through Guix.</li>
+<li>Common file operations (copying, moving, renaming, deleting) are supported.</li>
+<li>Archiving and unarchiving functionality is implemented using `tar` and `unzip`.</li>
+<li>`async-shell-command` is used for asynchronous process execution.</li>
+<li>Testing and debugging are performed within the Guix environment.</li>
+<li>Guix provides a robust and reproducible way to manage file management tools and their dependencies.</li>
+</ul>
+</div>
+</div>
+</article>

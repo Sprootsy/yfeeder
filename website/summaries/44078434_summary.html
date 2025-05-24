@@ -1,0 +1,40 @@
+<article>
+    <h2>Why Algebraic Effects?</h2>
+    <div>
+<div>
+<h2>Summary</h2>
+The article "Why Effects?" by Neel Krishnaswami discusses the importance of tracking computational effects in programming languages. It argues that while pure functional programming offers advantages like referential transparency and easier reasoning, it often falls short when dealing with real-world applications that inherently involve side effects such as I/O, state management, exceptions, and concurrency.
+
+The article explains that explicitly managing effects allows programmers to regain control and reason more effectively about code that interacts with the external world. It contrasts two main approaches: one based on monads (popularized by Haskell) and another based on algebraic effects.
+
+Monads provide a way to sequence computations with effects, ensuring that the order of operations is well-defined. However, the author points out that monads can sometimes lead to complex type signatures and boilerplate code, making it harder to understand the actual logic of the program. They also complicate equational reasoning because monadic code is not as easily rearranged as pure code.
+
+Algebraic effects, on the other hand, offer a more direct way to represent and handle effects. They separate the *description* of an effect from its *implementation*. An effect is declared as an operation, and the code that raises the effect doesn't need to know how it will be handled. This separation of concerns makes code more modular and easier to test. Handlers, which are defined separately, provide the interpretation for these effects. This allows for different interpretations in different contexts, such as running real I/O in production and mocking I/O during testing.
+
+The article further discusses the benefits of algebraic effects, including:
+
+*   **Improved modularity:** Effects can be added or changed without modifying the code that raises them.
+*   **Easier testing:** Effects can be intercepted and mocked during testing.
+*   **Increased expressiveness:** Algebraic effects can handle a wider range of effectful computations compared to traditional approaches.
+*   **Better composability:** Handlers can be stacked and composed to combine different effects.
+
+Krishnaswami also touches on the performance aspects of algebraic effects, noting that while early implementations faced performance challenges, recent advances in compiler technology have made it possible to implement them efficiently.
+
+The author then addresses potential criticisms of algebraic effects, such as the learning curve associated with understanding the concept of handlers and the potential for implicit control flow. They argue that the benefits of explicit effect management outweigh these drawbacks, especially in complex systems.
+
+In conclusion, the article advocates for the use of effect tracking, particularly through algebraic effects, as a way to write more robust, maintainable, and testable code in the presence of side effects. It emphasizes that by making effects explicit, programmers can regain control over their programs and reason more effectively about their behavior.
+
+<h2>Key Points</h2>
+<ul>
+<li>Pure functional programming is limited when dealing with real-world side effects.</li>
+<li>Explicitly managing effects improves control and reasoning about code.</li>
+<li>Monads are one approach to effect management but can lead to complex code.</li>
+<li>Algebraic effects separate the description of an effect from its implementation.</li>
+<li>Algebraic effects improve modularity, testing, expressiveness, and composability.</li>
+<li>Handlers provide interpretations for effects, allowing for different behaviors in different contexts.</li>
+<li>Performance concerns regarding algebraic effects have been largely addressed.</li>
+<li>Explicit effect management, particularly through algebraic effects, leads to more robust and maintainable code.</li>
+</ul>
+</div>
+</div>
+</article>
