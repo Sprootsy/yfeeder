@@ -1,0 +1,23 @@
+<article>
+    <h2>Tachy0n: The Last 0day Jailbreak</h2>
+    <div>
+<div>
+<p>The article is a detailed technical write-up about a vulnerability and its exploitation in Apple's macOS operating system. It focuses on a kernel vulnerability present in the XNU kernel's `mach_voucher` code, specifically within the handling of IO Ports and their associated memory regions. The author, Siguza, explains the intricate details of how `mach_voucher`s are used to manage resources and permissions across different processes, particularly concerning graphics-related operations using IOKit. The vulnerability allows a malicious process to gain unauthorized access to memory belonging to other processes, potentially leading to privilege escalation and arbitrary code execution within the kernel.</p>
+
+<p>The core issue stems from the incorrect management of IO Ports, which are essentially handles to memory regions managed by IOKit drivers. These IO Ports are associated with `mach_voucher`s to control access rights. The vulnerability arises when a process can manipulate the reference count of an IO Port's memory region such that it becomes zero while still in use by another process. This leads to the premature deallocation of the memory region. The vulnerability allows an attacker to free the memory region associated with an IO Port while it's still mapped into another process's address space. This creates a use-after-free condition. By carefully crafting the sequence of events, the attacker can cause the kernel to reuse the freed memory region for other purposes. Then when the original process attempts to access the memory region, it's now accessing attacker-controlled data.</p>
+
+<p>The author describes how they triggered this vulnerability by manipulating the voucher ports and triggering the premature deallocation. The author provides an explanation on how to gain control of the freed memory and gain arbitrary read/write capability.</p>
+
+<p>The write-up includes in-depth code snippets, kernel debugging information, and explanations of the relevant data structures involved. It also discusses the challenges encountered during the exploitation process, such as dealing with kernel address space layout randomization (KASLR) and kernel code signing enforcement.</p>
+
+<p><b>Key Points:</b></p>
+<ul>
+<li><b>Vulnerability Location:</b> XNU kernel's `mach_voucher` subsystem, specifically in the management of IO Ports associated with IOKit drivers.</li>
+<li><b>Vulnerability Type:</b> Use-after-free vulnerability due to incorrect reference counting of IO Port memory regions.</li>
+<li><b>Root Cause:</b> A process can manipulate the reference count of an IO Port's memory region, leading to premature deallocation while the region is still in use by another process.</li>
+<li><b>Exploitation Mechanism:</b> By triggering the vulnerability, an attacker can free memory, and then reallocate the now freed memory area with attacker-controlled content.</li>
+<li><b>Impact:</b> Arbitrary kernel read/write access, potentially leading to privilege escalation and arbitrary code execution.</li>
+</ul>
+</div>
+</div>
+</article>

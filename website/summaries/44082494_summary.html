@@ -1,0 +1,47 @@
+<article>
+    <h2>It is time to stop teaching frequentism to non-statisticians (2012)</h2>
+    <div>
+<div>
+  <p>
+    This article, titled "ImageNet Classification with Deep Convolutional Neural Networks," details a deep convolutional neural network (CNN) architecture that achieved state-of-the-art results in the ImageNet Large Scale Visual Recognition Challenge (ILSVRC) 2010 and 2012. The paper addresses the challenge of object recognition, a long-standing problem in computer vision, by leveraging the power of deep learning and the availability of large datasets.
+  </p>
+  <p>
+    The authors highlight the resurgence of interest in CNNs due to factors like the availability of larger datasets (such as ImageNet), advancements in GPU technology, and the development of improved training techniques. They emphasize that training large CNNs on massive datasets can lead to significantly better performance compared to traditional machine learning approaches.
+  </p>
+  <p>
+    The core of the paper lies in the description of their CNN architecture, which consists of eight learned layers – five convolutional layers and three fully-connected layers. They detail the use of Rectified Linear Units (ReLUs) as the activation function, which they found to accelerate training compared to traditional saturating activation functions like tanh or sigmoid. The architecture also incorporates max-pooling layers after some convolutional layers to reduce dimensionality and provide translational invariance.
+  </p>
+  <p>
+    A key aspect of their training methodology is the use of data augmentation techniques. They employ two main forms of data augmentation: translation and horizontal reflections of the images, and altering the intensity of the RGB channels using Principal Component Analysis (PCA). These techniques artificially increase the size of the training dataset, which helps to reduce overfitting and improve the generalization ability of the model.
+  </p>
+  <p>
+    To further combat overfitting, the authors implemented dropout in the fully connected layers. Dropout randomly sets the output of some neurons to zero during training, which forces the network to learn more robust features.
+  </p>
+  <p>
+    The network was trained using stochastic gradient descent with momentum. The authors describe the specific values used for the learning rate, momentum, and weight decay.  They also mention training the network on two GPUs to speed up the process.
+  </p>
+  <p>
+    The paper presents the results of the model on the ILSVRC-2010 and ILSVRC-2012 datasets. The model significantly outperformed previous approaches, achieving top-1 and top-5 error rates that were substantially lower than the next best results.  The authors also demonstrate that ensembling multiple trained networks further improved performance.
+  </p>
+  <p>
+    The authors perform qualitative analysis by visualizing the learned features in the first convolutional layer. These visualizations reveal that the network learned filters that resemble Gabor filters and color blobs, suggesting that the network is learning useful low-level features.
+  </p>
+  <p>
+    In conclusion, the paper demonstrates the effectiveness of deep CNNs for image classification, particularly when trained on large datasets and utilizing techniques like ReLUs, data augmentation, and dropout. The groundbreaking results achieved in the ImageNet competition highlighted the potential of deep learning for computer vision and spurred significant advancements in the field.
+  </p>
+
+  <h3>Key Points:</h3>
+  <ul>
+    <li>Introduces a deep CNN architecture for image classification.</li>
+    <li>Achieved state-of-the-art results on the ImageNet ILSVRC-2010 and ILSVRC-2012 datasets.</li>
+    <li>Employs Rectified Linear Units (ReLUs) for faster training.</li>
+    <li>Utilizes data augmentation techniques to reduce overfitting.</li>
+    <li>Implements dropout in fully connected layers to improve generalization.</li>
+    <li>Trains the network using stochastic gradient descent with momentum.</li>
+    <li>Demonstrates the effectiveness of ensembling multiple trained networks.</li>
+    <li>Visualizes learned features in the first convolutional layer.</li>
+    <li>Highlights the importance of large datasets and deep learning for computer vision tasks.</li>
+  </ul>
+</div>
+</div>
+</article>

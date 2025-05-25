@@ -1,0 +1,28 @@
+<article>
+    <h2>I used o3 to find a remote zeroday in the Linux SMB implementation</h2>
+    <div>
+<div>
+  <p><strong>Summary:</strong></p>
+  <p>The article is a detailed account of how the author, Sean Heelan, discovered and exploited a zero-day vulnerability (CVE-2025-37899) in the Linux kernel's Server Message Block (SMB) implementation. Heelan explains his methodology, which involved using the open-source static analysis tool O3 to identify potential issues within the kernel's code. He focuses on the SMBDirect protocol, a feature that enables direct memory access over RDMA-capable network adapters, aiming to find memory corruption vulnerabilities.</p>
+
+  <p>Heelan began by analyzing the `ksmbd` code, the in-kernel SMB server, and identifying interesting code patterns that could lead to vulnerabilities. He used O3 to perform static analysis, focusing on areas where user-controlled data influenced memory operations. One particular area of interest was the handling of SMBDirect messages, specifically the data structures used for Scatter/Gather Lists (SGLs), which describe memory regions for data transfer.</p>
+
+  <p>Through static analysis, Heelan discovered a potential out-of-bounds write vulnerability within the `ksmbd_direct_send` function. This function processes SGL entries, and the vulnerability arises because the code increments a counter based on user-supplied data without properly validating if the counter exceeds the allocated buffer size. Specifically, the `offset` and `length` fields in the SGL entries were added to a `bytes_written` counter without a size check against the buffer that would be written to.</p>
+
+  <p>To confirm the vulnerability, Heelan crafted a malicious SMBDirect message containing carefully chosen `offset` and `length` values within the SGL entries. This crafted message triggered an integer overflow in the `bytes_written` counter and subsequently caused an out-of-bounds write when the accumulated value exceeded the buffer size. This allowed him to overwrite kernel memory.</p>
+
+  <p>Heelan demonstrated the exploit's impact by overwriting the `cred->uid` field of the current process’s credentials structure, thereby escalating the process’s privileges to root. The article provides snippets of the vulnerable code, the crafted SMBDirect message structure, and the steps taken to trigger the exploit. Heelan responsibly disclosed the vulnerability to the Linux kernel security team, and it was subsequently patched. The article serves as a practical example of how static analysis tools like O3 can be used to find critical vulnerabilities in complex software systems like the Linux kernel.</p>
+
+  <p><strong>Key Points:</strong></p>
+  <ul>
+    <li>The author discovered a zero-day remote code execution vulnerability (CVE-2025-37899) in the Linux kernel's SMB implementation (ksmbd).</li>
+    <li>The vulnerability is an out-of-bounds write in the `ksmbd_direct_send` function, triggered by a crafted SMBDirect message with malicious SGL entries.</li>
+    <li>The vulnerability occurs because the code adds user-controlled `offset` and `length` values from SGL entries to a `bytes_written` counter without proper bounds checking.  An integer overflow allows this counter to wrap around and trigger out-of-bounds access.</li>
+    <li>The author used the static analysis tool O3 to identify the potential vulnerability in the ksmbd code.</li>
+    <li>The exploit involved overwriting the `cred->uid` field of the current process, escalating privileges to root.</li>
+    <li>The vulnerability was responsibly disclosed to the Linux kernel security team and subsequently patched.</li>
+    <li>The article highlights the effectiveness of static analysis tools in uncovering critical security flaws in complex systems.</li>
+  </ul>
+</div>
+</div>
+</article>
