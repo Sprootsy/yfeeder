@@ -1,0 +1,33 @@
+<article>
+    <h2>Writing a Self-Mutating x86_64 C Program (2013)</h2>
+    <div>
+<div>
+<p>The article describes how to write a self-mutating x86-64 C program on Linux. Self-modifying code is code that alters its own instructions during execution. This technique, though sometimes used for obfuscation, optimization, or dynamic code generation, introduces complexities and potential security risks.</p>
+
+<p>The author starts by outlining the basic principle: the program needs to modify its own memory space where the executable code resides. Since modern operating systems typically mark code segments as read-only, the program must first change the memory protection of the code segment to allow writing. This is achieved using the `mprotect` system call, which modifies memory protection flags.</p>
+
+<p>The article then goes through the practical steps. First, the program determines the start address and size of the code segment that needs to be modified. This can be achieved by reading the `/proc/self/maps` file, which contains information about the program's memory mappings. The program parses this file to extract the relevant details of the executable's code segment, including the starting memory address and the size of the segment. Alternatively, inline assembly can be used to obtain the required memory addresses directly.</p>
+
+<p>Once the address and size are known, the `mprotect` system call is invoked. This call requires the start address, the length of the memory region, and the desired protection flags as arguments. The flags must be set to allow writing, typically by using `PROT_READ | PROT_WRITE | PROT_EXEC`. The `mprotect` call may fail if the address or length is invalid or if the system does not allow the modification of the memory protection.</p>
+
+<p>After successfully changing the memory protection, the program can directly modify its own code. The author demonstrates this with a simple example: replacing a `mov` instruction with a `nop` (no operation) instruction. The program calculates the address of the instruction to be modified, which requires understanding the layout of the code in memory, and overwrites the bytes representing the original instruction with the bytes representing the new instruction.</p>
+
+<p>The author uses inline assembly (`asm`) to insert specific assembly instructions into the C code, which allows for fine-grained control over the generated machine code. This is essential for self-modification, as the program needs to manipulate raw bytes to alter instructions directly.</p>
+
+<p>The author also discusses considerations regarding instruction caches. After modifying the code in memory, the CPU's instruction cache might contain stale copies of the old instructions. Therefore, it is necessary to flush the instruction cache to ensure that the CPU fetches the updated instructions from memory. This can be achieved using the `syscall` function to invoke the `cacheflush` system call (although cache flushing can be architecture and implementation specific). However, the author notes that in some cases, this may not be strictly necessary, as the CPU may automatically detect and handle the cache coherence issue.</p>
+
+<p>Finally, the article cautions against the dangers and complexities of self-modifying code. It highlights that self-modifying code can be difficult to debug, maintain, and secure. It should be used sparingly and with careful consideration of its implications. Modern compilers and operating systems employ various security features, such as address space layout randomization (ASLR) and data execution prevention (DEP), which can make self-modifying code more challenging to implement and more prone to errors. The article also notes that such programs can be flagged as suspicious by security software.</p>
+
+<h2>Key Points:</h2>
+<ul>
+<li>Self-modifying code alters its own instructions during runtime.</li>
+<li>The code segment's memory protection must be changed to allow writing using `mprotect`.</li>
+<li>The `/proc/self/maps` file can be parsed to determine the code segment's address and size.</li>
+<li>Inline assembly is used to inject specific machine instructions.</li>
+<li>The instruction cache may need to be flushed after modifying the code.</li>
+<li>Self-modifying code is complex, hard to debug, and potentially insecure.</li>
+<li>Modern security features like ASLR and DEP make self-modification more difficult.</li>
+</ul>
+</div>
+</div>
+</article>
