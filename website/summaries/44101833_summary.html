@@ -1,0 +1,105 @@
+<article>
+    <h2>Highlights from the Claude 4 system prompt</h2>
+    <div>
+<div>
+  <p>
+    This article is a blog post by Simon Willison discussing his experience
+    experimenting with the system prompt of Anthropic's Claude 4 model. He
+    focuses on how different system prompts can significantly influence the
+    model's behavior and output.
+  </p>
+  <p>
+    Willison starts by highlighting the importance of the system prompt in
+    modern large language models (LLMs), noting that it acts as a set of
+    instructions and constraints that guide the model's responses. He describes
+    how he used the Claude 4 API via the Bedrock API to test different system
+    prompts.
+  </p>
+  <p>
+    One of his initial experiments involved instructing Claude 4 to act as a
+    helpful assistant but to always output the first three lines of the poem
+    "The Raven" by Edgar Allan Poe before responding to the user's query. He
+    observed that Claude 4 successfully followed these instructions,
+    demonstrating the power of the system prompt in controlling the model's
+    behavior.
+  </p>
+  <p>
+    Willison then explores more complex system prompts, focusing on using Claude
+    4 to answer questions about data stored in a SQLite database. He provides
+    Claude 4 with a detailed schema of the database, along with specific
+    instructions on how to interact with it (e.g., using SQL queries to
+    retrieve information). He shares examples of prompts that define the
+    database structure and instruct Claude to only answer questions based on
+    the database contents.
+  </p>
+  <p>
+    He experimented with different ways of representing the database schema,
+    trying both a textual description and a more structured JSON format. He
+    found that both formats worked, but the JSON representation seemed to be
+    more reliable. He also experimented with a Python format for the schema.
+    The key was to allow the prompt to clearly describe the tables, the columns
+    in each table, and what the primary keys were, and whether the fields
+    contained other table's primary keys as foreign keys.
+  </p>
+  <p>
+    Willison also discusses the importance of including specific instructions
+    to prevent the model from "hallucinating" answers that are not present in
+    the database. He emphasizes the need to explicitly tell the model to
+    respond with "I do not know" or a similar phrase if it cannot find the
+    answer in the database.
+  </p>
+  <p>
+    Another area of experimentation involved instructing the model to provide
+    the SQL query it used to answer the question, along with the final answer.
+    This allows users to verify the model's reasoning and ensure that it is
+    correctly accessing the database.
+  </p>
+  <p>
+    Willison also touches on the limitations of the system prompt. He notes
+    that while it can significantly influence the model's behavior, it is not
+    a foolproof method. The model can still sometimes deviate from the
+    instructions, especially when dealing with complex queries or ambiguous
+    questions.
+  </p>
+  <p>
+    He concludes by highlighting the potential of system prompts for building
+    powerful applications that leverage LLMs to interact with structured data.
+    He emphasizes the importance of careful prompt engineering and iterative
+    testing to achieve the desired results. He also expresses his excitement
+    about the future of LLMs and their ability to understand and interact with
+    databases.
+  </p>
+  <p><b>Key points:</b></p>
+  <ul>
+    <li>
+      System prompts are crucial for controlling the behavior of LLMs like
+      Claude 4.
+    </li>
+    <li>
+      System prompts can be used to instruct the model to follow specific
+      formats, constraints, and guidelines.
+    </li>
+    <li>
+      LLMs can be instructed on the schemas of databases to allow them to
+      answer questions based on that data.
+    </li>
+    <li>
+      Preventing "hallucinations" by instructing the model to admit when it
+      doesn't know the answer is important.
+    </li>
+    <li>
+      Having the model output the SQL query it used provides transparency and
+      allows for verification.
+    </li>
+    <li>
+      System prompts are not perfect, and LLMs can still deviate from
+      instructions.
+    </li>
+    <li>
+      Careful prompt engineering is essential for building reliable applications
+      that use LLMs to interact with structured data.
+    </li>
+  </ul>
+</div>
+</div>
+</article>
