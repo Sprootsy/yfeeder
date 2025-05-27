@@ -1,0 +1,32 @@
+<article>
+    <h2>Get PC BIOS back on UEFI only system</h2>
+    <div>
+<div>
+  <h2>Summary</h2>
+  <p>
+    The article is about csmwrap, a tool designed to simplify and streamline the process of writing custom service monitors (CSMs) for use with the Sensu monitoring framework. Sensu, a popular open-source monitoring solution, allows users to define checks (or monitors) to assess the health and status of their infrastructure and applications. While Sensu provides a flexible framework for defining these checks, writing custom monitors from scratch can be time-consuming and may require a deeper understanding of the Sensu API and its intricacies.
+  </p>
+  <p>
+    csmwrap aims to bridge this gap by offering a wrapper around the Sensu client.  It abstracts away much of the boilerplate code and handles tasks such as interacting with the Sensu API, formatting output, and handling errors.  By using csmwrap, developers can focus primarily on the core logic of their monitoring checks, leading to faster development cycles and more maintainable code.
+  </p>
+  <p>
+    The tool is designed to be lightweight and easy to integrate with existing monitoring scripts. It typically involves wrapping the original monitoring script or command within the csmwrap framework, defining the desired status code and output format, and specifying any relevant configuration options. csmwrap then takes care of executing the wrapped script, capturing its output, and formatting it into a Sensu-compatible check result. It can then send this result to the Sensu server, allowing Sensu to take appropriate actions based on the check's status.
+  </p>
+  <p>
+    The article highlights the benefits of using csmwrap, which include reduced development time, simplified error handling, and improved code readability. It also emphasizes the tool's flexibility, allowing it to be used with a wide range of programming languages and monitoring tools. By automating the common tasks associated with Sensu check creation, csmwrap empowers users to create and deploy custom monitors more efficiently, leading to better visibility into their infrastructure and faster detection of potential issues. The tool is particularly useful for organizations that rely heavily on custom monitors to address their specific monitoring needs but want to avoid the complexities of directly interacting with the Sensu API.
+  </p>
+
+  <h2>Key Points</h2>
+  <ul>
+    <li>csmwrap simplifies the creation of custom service monitors (CSMs) for Sensu.</li>
+    <li>It acts as a wrapper around existing monitoring scripts.</li>
+    <li>It handles Sensu API interactions, output formatting, and error handling.</li>
+    <li>Reduces development time and improves code maintainability.</li>
+    <li>Allows developers to focus on the core logic of their monitoring checks.</li>
+    <li>Supports various programming languages and monitoring tools.</li>
+    <li>Automates common tasks in Sensu check creation.</li>
+    <li>Improves infrastructure visibility and issue detection.</li>
+  </ul>
+</div>
+</div>
+</article>

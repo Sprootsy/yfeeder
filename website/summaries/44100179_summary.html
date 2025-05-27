@@ -1,0 +1,30 @@
+<article>
+    <h2>Lossless video compression using Bloom filters</h2>
+    <div>
+<div>
+  <p>This document describes a novel approach to Bloom filters, dubbed the "New Bloom Filter," which aims to improve space efficiency and performance compared to traditional Bloom filters, especially when dealing with high false positive rates. The core idea revolves around replacing the traditional bit array with a learned component, specifically a small neural network, to approximate the Bloom filter's membership function. By leveraging the generalization capabilities of neural networks, the New Bloom Filter can potentially represent the same information with fewer bits and faster lookups.</p>
+
+  <p>The document highlights the limitations of standard Bloom filters, particularly their fixed space-false positive rate tradeoff. As the desired false positive rate decreases, the size of the bit array increases linearly, leading to diminishing returns. The New Bloom Filter attempts to overcome this limitation by learning the underlying data distribution and using the neural network to predict whether an element is likely to be a member of the set. This approach allows for a more compact representation, especially when the data exhibits patterns or correlations that the neural network can exploit.
+</p>
+  <p>The key innovation lies in the training process. First, a standard Bloom filter is constructed for the target set. This initial Bloom filter acts as a teacher, providing labels for training the neural network. The neural network is trained to mimic the behavior of the Bloom filter, aiming to output a value close to 1 for elements that are likely to be in the set and a value close to 0 for elements that are likely to be outside the set. The neural network's output, along with a small supplemental Bloom filter (or other data structure), is then used to determine membership.</p>
+
+  <p>The article suggests that the New Bloom Filter offers several potential advantages: (1) Improved space efficiency, especially at high false positive rates. The neural network can learn patterns in the data, allowing it to represent the same information with fewer bits than a traditional Bloom filter. (2) Faster lookups. Evaluating the neural network can potentially be faster than performing multiple hash lookups in a large bit array. (3) Adaptability to data distributions. The learned component can adapt to the specific characteristics of the data, leading to better performance than a one-size-fits-all approach.
+</p>
+  <p>The document acknowledges that the New Bloom Filter also has limitations. The training process requires computational resources and time. The performance depends on the complexity of the data and the ability of the neural network to learn the underlying distribution. Furthermore, the neural network introduces a potential point of failure, as its accuracy directly impacts the overall false positive rate. The supplemental Bloom filter is used to compensate for the errors made by the neural network.
+</p>
+  <p>The overall goal of the New Bloom Filter is to provide a more efficient and flexible alternative to traditional Bloom filters, especially for applications where space and lookup speed are critical, and the data exhibits patterns that can be exploited by a learned component. The document serves as an introduction to the concept and its potential benefits and drawbacks.</p>
+
+  <h2>Key Points:</h2>
+  <ul>
+    <li>Introduces a "New Bloom Filter" using a neural network to improve space efficiency and performance.</li>
+    <li>Addresses limitations of standard Bloom filters, particularly their space-false positive rate tradeoff.</li>
+    <li>Replaces the bit array with a learned neural network to approximate the membership function.</li>
+    <li>Trains the neural network using a standard Bloom filter as a teacher.</li>
+    <li>Potential advantages: Improved space efficiency, faster lookups, and adaptability to data distributions.</li>
+    <li>Potential limitations: Training overhead, dependence on data complexity, and the introduction of a neural network as a potential point of failure.</li>
+    <li>Uses a supplemental Bloom filter to compensate for the errors made by the neural network.</li>
+    <li>Aims to be a more efficient alternative for applications where space and lookup speed are critical.</li>
+  </ul>
+</div>
+</div>
+</article>
