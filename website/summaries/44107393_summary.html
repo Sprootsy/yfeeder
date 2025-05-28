@@ -1,0 +1,52 @@
+<article>
+    <h2>Show HN: Malai – securely share local TCP services (database/SSH) with others</h2>
+    <div>
+<div>
+  <h2>Summary</h2>
+  <p>
+    The article "Hello, TCP" by Malaika Maheshwari provides a comprehensive yet accessible explanation of the Transmission Control Protocol (TCP), a fundamental protocol of the internet. It breaks down the complexities of TCP into manageable concepts, starting with its role in reliable data transmission. The author emphasizes that TCP ensures data is delivered in order, without errors, and without loss, which is crucial for many applications.
+  </p>
+  <p>
+    The article begins by illustrating the problem TCP solves: the unreliable nature of the underlying Internet Protocol (IP). IP packets can be lost, reordered, or corrupted. TCP sits on top of IP and handles these issues, providing a reliable stream of data between applications.
+  </p>
+  <p>
+    The author then delves into the core mechanisms of TCP, including:
+  </p>
+  <ul>
+    <li>
+      <b>Connection Establishment (Three-Way Handshake):</b> The article meticulously describes the SYN, SYN-ACK, and ACK packets exchanged between client and server to establish a TCP connection. It explains the purpose of sequence numbers and acknowledgment numbers in this process.
+    </li>
+    <li>
+      <b>Data Transfer:</b> The process of segmenting data into TCP packets, assigning sequence numbers, and using acknowledgment numbers to confirm receipt of data.
+    </li>
+    <li>
+      <b>Reliable Data Delivery:</b> This section elaborates on how TCP uses sequence numbers and acknowledgment numbers to ensure reliable data transfer. It explains the concept of sliding windows, which allows the sender to transmit multiple packets before waiting for an acknowledgment, improving efficiency.
+    </li>
+    <li>
+      <b>Flow Control:</b> The article discusses how TCP prevents a sender from overwhelming a receiver by using a receive window, which indicates the amount of buffer space available at the receiver. This mechanism ensures that the receiver can process the data as it arrives.
+    </li>
+    <li>
+      <b>Congestion Control:</b> The explanation of how TCP manages network congestion by adjusting the sending rate based on network conditions. This includes the slow start algorithm and congestion avoidance mechanisms. The article mentions how TCP Reno responds to packet loss as a sign of congestion.
+    </li>
+    <li>
+      <b>Connection Termination (Four-Way Handshake):</b> The process of gracefully closing a TCP connection using FIN and ACK packets. It explains the TIME-WAIT state and its purpose in preventing delayed packets from interfering with future connections.
+    </li>
+  </ul>
+  <p>
+    Throughout the article, Malaika uses clear diagrams and analogies to illustrate complex concepts, making it easier for readers to understand the inner workings of TCP. The article is geared towards readers with some networking knowledge but is presented in a way that is still accessible to those with less experience. By the end of the article, the reader should have a solid understanding of how TCP works and its importance in modern networking.
+  </p>
+
+  <h2>Key Points</h2>
+  <ul>
+    <li>TCP provides reliable, ordered, and error-free data transfer over the unreliable IP protocol.</li>
+    <li>TCP uses a three-way handshake (SYN, SYN-ACK, ACK) to establish connections.</li>
+    <li>Sequence numbers and acknowledgment numbers are crucial for reliable data delivery and reassembly.</li>
+    <li>Sliding windows improve efficiency by allowing multiple packets to be sent before waiting for acknowledgments.</li>
+    <li>Flow control prevents the sender from overwhelming the receiver using a receive window.</li>
+    <li>Congestion control mechanisms, like slow start and congestion avoidance, manage network congestion by adjusting the sending rate.</li>
+    <li>TCP connections are terminated using a four-way handshake (FIN, ACK).</li>
+    <li>The TIME-WAIT state prevents delayed packets from interfering with future connections.</li>
+  </ul>
+</div>
+</div>
+</article>
