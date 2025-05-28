@@ -1,0 +1,31 @@
+<article>
+    <h2>Running GPT-2 in WebGL: Rediscovering the Lost Art of GPU Shader Programming</h2>
+    <div>
+<div>
+<h3>Summary:</h3>
+<p>The article is a comprehensive introduction to GPU shader programming, focusing on the fundamental concepts and practical aspects of writing shaders. It starts by explaining what shaders are, describing them as small programs that run on the GPU to determine how objects are rendered. The article emphasizes that shaders are essential for modern graphics rendering, enabling effects and techniques beyond the capabilities of fixed-function pipelines.</p>
+<p>The author introduces the rendering pipeline, detailing the stages a vertex goes through from input to final pixel color on the screen. These stages include the Vertex Shader, which processes vertex data (position, normals, texture coordinates), the Rasterization stage, which converts vector data into fragments (potential pixels), and the Fragment Shader (also known as Pixel Shader), which determines the final color of each fragment.</p>
+<p>The article then dives into the specifics of shader languages, primarily focusing on GLSL (OpenGL Shading Language). It discusses GLSL's syntax, data types (like `float`, `vec2`, `vec3`, `mat4`), and control structures (like `if`, `for` loops). The importance of vectors and matrices for representing spatial data and transformations is highlighted.</p>
+<p>Uniforms, attributes, and varyings are explained as crucial mechanisms for passing data to and from shaders. Uniforms are global variables that can be set by the CPU and are constant during a draw call. Attributes are vertex-specific data passed to the Vertex Shader. Varyings are used to pass data from the Vertex Shader to the Fragment Shader, with the values being interpolated across the rendered primitive.</p>
+<p>The author also provides practical examples of shader code. It starts with a simple vertex shader that transforms vertex positions using a model-view-projection matrix and a basic fragment shader that outputs a fixed color. The examples progress to more complex shaders that implement lighting calculations, texture mapping, and normal mapping. Each example is accompanied by explanations of the underlying concepts and how the shader code achieves the desired effect.</p>
+<p>The article covers common shader techniques, such as:</p>
+<ul>
+<li><strong>Transforming coordinates:</strong> Demonstrating how to use matrices to translate, rotate, and scale objects in 3D space.</li>
+<li><strong>Lighting:</strong> Explaining the basics of diffuse, specular, and ambient lighting models, including the importance of normal vectors and light directions.</li>
+<li><strong>Texture mapping:</strong> Describing how to sample textures in the Fragment Shader to add detail to surfaces.</li>
+<li><strong>Normal mapping:</strong> Showing how to use normal maps to simulate high-resolution surface details without increasing the polygon count.</li>
+</ul>
+<p>Additionally, the article emphasizes the importance of optimization when writing shaders. It discusses techniques for improving shader performance, such as minimizing the use of conditional statements, reducing the number of texture lookups, and utilizing built-in functions and hardware-accelerated features.</p>
+<p>The author concludes by encouraging readers to experiment with shader code and explore more advanced topics such as shadows, post-processing effects, and geometry shaders. The article serves as a solid foundation for anyone looking to get started with GPU shader programming and provides a clear understanding of the core concepts and techniques involved.</p>
+<h3>Key Points:</h3>
+<ul>
+<li>Shaders are small programs executed on the GPU, crucial for modern graphics rendering.</li>
+<li>The rendering pipeline consists of Vertex Shader, Rasterization, and Fragment Shader stages.</li>
+<li>GLSL is a common shader language with C-like syntax, supporting data types like `float`, `vec2`, `vec3`, and `mat4`.</li>
+<li>Uniforms pass global data to shaders, attributes pass vertex-specific data to the Vertex Shader, and varyings pass interpolated data from the Vertex Shader to the Fragment Shader.</li>
+<li>Common shader techniques include coordinate transformations, lighting calculations (diffuse, specular, ambient), texture mapping, and normal mapping.</li>
+<li>Optimization is important for shader performance, involving minimizing conditionals and texture lookups.</li>
+</ul>
+</div>
+</div>
+</article>

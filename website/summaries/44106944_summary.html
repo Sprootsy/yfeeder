@@ -1,0 +1,47 @@
+<article>
+    <h2>Why Cline doesn&#39;t index your codebase</h2>
+    <div>
+<div>
+  <h2>Summary</h2>
+  <p>
+    The article explains why Cline, a code search tool, does not index codebases. It argues that indexing, while seemingly beneficial for speed, introduces significant drawbacks in terms of accuracy, resource consumption, and complexity. The core thesis is that a non-indexed, "search-as-you-go" approach offers a superior balance between speed, accuracy, and practicality, especially for modern software development workflows.
+  </p>
+  <p>
+    The author begins by acknowledging the common perception that indexing is essential for fast code search. Traditional search tools often rely on indexing to pre-compute and store information about code, allowing for quick retrieval of results. However, the article contends that this approach is fundamentally flawed in the context of rapidly evolving codebases.
+  </p>
+  <p>
+    One of the main arguments against indexing is the inherent challenge of maintaining an accurate and up-to-date index. Codebases are constantly changing, with frequent commits, branches, and merges. An index must be continuously updated to reflect these changes, which can be resource-intensive and time-consuming. Moreover, there's always a delay between code changes and index updates, leading to a period where the index is out of sync with the actual codebase. This can result in inaccurate search results, which can be misleading and frustrating for developers.
+  </p>
+  <p>
+    The article highlights that indexing also struggles with handling different versions of code. Developers often work on multiple branches simultaneously, each with its own unique code state. An index typically represents only a single version of the code, making it difficult to search across different branches or historical versions. This limitation can be particularly problematic when debugging or trying to understand the evolution of a particular piece of code.
+  </p>
+  <p>
+    Furthermore, indexing can be computationally expensive. Building and maintaining an index requires significant processing power and storage space, especially for large codebases. This can strain resources and slow down development workflows.
+  </p>
+  <p>
+    In contrast, Cline adopts a "search-as-you-go" approach. Instead of pre-computing an index, Cline directly searches the codebase in real-time. This ensures that search results are always up-to-date and accurate, reflecting the current state of the code. While this approach might seem slower at first glance, the author argues that modern hardware and efficient search algorithms can make it surprisingly fast.
+  </p>
+  <p>
+    The article emphasizes that the "search-as-you-go" approach avoids the overhead and complexity associated with indexing. There's no need to worry about index maintenance, synchronization, or storage. This simplifies the development process and reduces the risk of errors.
+  </p>
+  <p>
+    The author also notes that the speed difference between indexed and non-indexed search is often less significant than people think, especially with optimized search tools. Cline utilizes techniques such as parallel processing and intelligent filtering to improve search performance without relying on an index.
+  </p>
+  <p>
+    Finally, the article concludes that the "search-as-you-go" approach is particularly well-suited for modern software development practices, which emphasize agility and rapid iteration. By avoiding the limitations of indexing, Cline offers a more reliable, efficient, and developer-friendly code search experience.
+  </p>
+
+  <h2>Key Points</h2>
+  <ul>
+    <li>Cline does not index codebases, opting for a "search-as-you-go" approach.</li>
+    <li>Indexing can lead to inaccurate search results due to delays in index updates after code changes.</li>
+    <li>Indexing struggles with handling multiple versions of code, such as different branches.</li>
+    <li>Indexing can be computationally expensive, requiring significant resources for building and maintenance.</li>
+    <li>Cline's "search-as-you-go" approach ensures up-to-date and accurate search results.</li>
+    <li>The "search-as-you-go" approach avoids the overhead and complexity of index management.</li>
+    <li>Cline utilizes techniques like parallel processing to optimize search speed without indexing.</li>
+    <li>The "search-as-you-go" approach is well-suited for agile software development practices.</li>
+  </ul>
+</div>
+</div>
+</article>
