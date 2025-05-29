@@ -1,0 +1,25 @@
+<article>
+    <h2>HTAP Databases Are Dead</h2>
+    <div>
+<div>
+  <p>The article "HTAP is Dead" argues that the concept of Hybrid Transactional/Analytical Processing (HTAP) as a single, unified database system is largely a failed or misleading concept. It begins by outlining the initial promise of HTAP, which aimed to combine the functionalities of Online Transaction Processing (OLTP) and Online Analytical Processing (OLAP) into a single database. The idea was to enable real-time analytics on transactional data without the need for Extract, Transform, Load (ETL) processes, reducing latency and complexity.</p>
+  <p>However, the article contends that true HTAP systems are rare and often involve significant compromises. It identifies two main categories of systems that are often mislabeled as HTAP: those that are primarily OLTP databases with some analytical capabilities, and those that are primarily OLAP databases that can handle some transactional workloads. In the first case, the analytical performance often suffers due to the transactional focus, while in the second case, the transactional performance is limited by the analytical design.</p>
+  <p>The author explains that OLTP and OLAP workloads have fundamentally different requirements. OLTP systems are optimized for high concurrency, low-latency reads and writes of small amounts of data, and strong consistency. OLAP systems, on the other hand, are optimized for complex queries that process large volumes of data, often with relaxed consistency requirements. Trying to combine these opposing requirements in a single system inevitably leads to trade-offs.</p>
+  <p>The article also discusses the challenges of achieving true HTAP due to architectural constraints. OLTP systems typically use row-oriented storage for efficient updates, while OLAP systems often use column-oriented storage for efficient analytical queries. Managing both storage formats in a single system adds significant complexity. Moreover, the need to balance resources between transactional and analytical workloads can lead to performance bottlenecks.</p>
+  <p>Instead of pursuing the elusive goal of a single HTAP system, the article advocates for a more pragmatic approach that involves using specialized databases for OLTP and OLAP workloads, and then integrating them using data streaming or other real-time data movement techniques. This approach allows each database to be optimized for its specific workload, leading to better overall performance and scalability. Furthermore, modern data streaming technologies have significantly reduced the latency associated with data movement, making this approach more viable than in the past.</p>
+  <p>The author acknowledges that some databases have made progress in blurring the lines between OLTP and OLAP, but argues that these systems still require careful tuning and workload management to avoid performance degradation. Moreover, they may not be suitable for all use cases, particularly those that require extremely high transactional throughput or complex analytical queries.</p>
+  <p>The article concludes by suggesting that the term "HTAP" has become more of a marketing buzzword than a reflection of actual database capabilities. While the idea of real-time analytics is valuable, the pursuit of a single, unified HTAP system is often not the most effective way to achieve it. A more practical approach involves using specialized databases and modern data integration techniques.</p>
+
+  <h2>Key Points</h2>
+  <ul>
+    <li>HTAP, the concept of a single database for both transactional (OLTP) and analytical (OLAP) workloads, is largely a failed concept.</li>
+    <li>Systems labeled as HTAP are often primarily OLTP or OLAP databases with limited capabilities in the other area.</li>
+    <li>OLTP and OLAP have fundamentally different requirements (concurrency vs. large-scale analytics).</li>
+    <li>Architectural constraints (row vs. column storage) make true HTAP difficult to achieve without compromises.</li>
+    <li>A more practical approach involves using specialized databases for OLTP and OLAP, integrated with data streaming.</li>
+    <li>Modern data streaming technologies reduce latency of data movement, making specialized databases a viable solution.</li>
+    <li>"HTAP" has become a marketing term, and a specialized approach is often more effective for real-time analytics.</li>
+  </ul>
+</div>
+</div>
+</article>

@@ -1,0 +1,35 @@
+<article>
+    <h2>A toy RTOS inside Super Mario Bros. using emulator save states</h2>
+    <div>
+<div>
+  <h2>Summary</h2>
+  <p>
+    The article, titled "What Threads Are (Part 2)," delves into the intricacies of threads in computer programming, building upon the foundational concepts likely established in a preceding "Part 1." It aims to provide a deeper understanding of how threads operate, their benefits, and the potential challenges they introduce. The author likely explores the mechanisms threads use to share resources within a process, emphasizing the advantages of concurrency and parallelism that threads enable. This could involve discussing how multiple threads can execute seemingly simultaneously, potentially leading to significant performance improvements in certain types of applications.
+  </p>
+  <p>
+    A significant portion of the article is probably dedicated to the complexities that arise from sharing resources between threads. This typically involves discussions on race conditions, where the outcome of a program depends on the unpredictable order in which threads access shared data. The author likely explains how these race conditions can lead to unexpected and erroneous results. To mitigate these issues, the article likely introduces synchronization primitives such as locks, mutexes, semaphores, and condition variables. These tools allow programmers to control access to shared resources, ensuring that only one thread can modify a critical section of code at any given time.
+  </p>
+  <p>
+    The article likely explores different threading models, such as user-level threads and kernel-level threads. User-level threads are managed by a user-level library, offering fast context switching but limited parallelism due to the operating system's unawareness of their existence. Kernel-level threads, on the other hand, are managed by the operating system, providing true parallelism but incurring higher overhead for context switching. The choice between these models depends on the specific requirements of the application.
+  </p>
+  <p>
+    Furthermore, the article may address the concept of thread pools, which are collections of pre-initialized threads that can be used to execute tasks as they arrive. Thread pools can improve performance by reducing the overhead of creating and destroying threads for each task. The author might also touch upon the challenges of debugging multithreaded applications, which can be significantly more complex than debugging single-threaded applications due to the non-deterministic nature of thread execution. Techniques for identifying and resolving deadlocks, livelocks, and other concurrency-related issues are probably discussed.
+  </p>
+  <p>
+    In addition to the technical aspects, the article likely discusses the practical considerations of using threads in real-world applications. This may include examples of scenarios where multithreading is particularly beneficial, such as in web servers, GUI applications, and scientific simulations. The author might also provide guidance on how to design and implement thread-safe code, emphasizing the importance of careful planning and thorough testing.
+  </p>
+
+  <h2>Key Points</h2>
+  <ul>
+    <li>Threads enable concurrency and parallelism, potentially improving application performance.</li>
+    <li>Sharing resources between threads can lead to race conditions and data corruption.</li>
+    <li>Synchronization primitives (locks, mutexes, semaphores) are used to control access to shared resources and prevent race conditions.</li>
+    <li>User-level threads and kernel-level threads offer different trade-offs in terms of performance and parallelism.</li>
+    <li>Thread pools can improve performance by reusing existing threads.</li>
+    <li>Debugging multithreaded applications is challenging due to their non-deterministic nature.</li>
+    <li>Careful design and thorough testing are crucial for developing thread-safe code.</li>
+    <li>Multithreading is beneficial in various applications, including web servers, GUI applications, and scientific simulations.</li>
+  </ul>
+</div>
+</div>
+</article>
