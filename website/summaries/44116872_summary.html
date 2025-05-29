@@ -1,0 +1,31 @@
+<article>
+    <h2>LLM codegen go brrr – Parallelization with Git worktrees and tmux</h2>
+    <div>
+<div>
+  <p>
+    This article discusses a setup using Git worktrees, SSH agent forwarding, and Tmux to streamline development workflows, particularly when working on multiple related projects or dealing with long-running processes. The author presents a practical approach for managing different branches and tasks simultaneously without the need to constantly switch branches in a single repository.
+  </p>
+  <p>
+    The core concept revolves around Git worktrees, which allow you to check out multiple branches of a Git repository into separate directories. This eliminates the need to stash or commit changes when switching between tasks or branches. Each worktree acts as an independent working directory linked to the main repository, enabling parallel development on different features or bug fixes.
+  </p>
+  <p>
+    The article highlights the convenience of combining Git worktrees with SSH agent forwarding and Tmux. SSH agent forwarding allows you to use your local SSH keys within the worktree sessions, simplifying authentication when interacting with remote repositories or servers. Tmux, a terminal multiplexer, enables you to create and manage multiple terminal sessions within a single window. This is particularly useful for running long-running processes, such as tests or builds, in separate Tmux panes without interrupting your main development workflow.
+  </p>
+  <p>
+    The author describes their personal setup, which involves creating a dedicated directory for each project and then creating worktrees within that directory for different branches or tasks. They then use Tmux to create sessions for each worktree, with panes for different purposes, such as editing code, running tests, or interacting with a REPL. This setup allows them to easily switch between different tasks and branches without losing context or interrupting long-running processes.
+  </p>
+  <p>
+    The article emphasizes the benefits of this setup in terms of increased productivity and reduced cognitive load. By using Git worktrees, the author can avoid the need to constantly stash or commit changes when switching between tasks. SSH agent forwarding simplifies authentication, and Tmux allows for easy management of multiple terminal sessions. This combination of tools creates a streamlined and efficient development environment that allows the author to focus on their work without being distracted by the complexities of managing Git branches, SSH keys, and terminal sessions.
+  </p>
+
+  <h3>Key Points:</h3>
+  <ul>
+    <li><b>Git Worktrees:</b> Allow checking out multiple branches of a Git repository into separate directories, enabling parallel development on different features or bug fixes.</li>
+    <li><b>SSH Agent Forwarding:</b> Enables using local SSH keys within worktree sessions for simplified authentication with remote repositories or servers.</li>
+    <li><b>Tmux:</b> A terminal multiplexer that allows creating and managing multiple terminal sessions within a single window, useful for running long-running processes in separate panes.</li>
+    <li><b>Streamlined Workflow:</b> Combining Git worktrees, SSH agent forwarding, and Tmux creates a more efficient and productive development environment.</li>
+    <li><b>Reduced Cognitive Load:</b> Avoids the need to constantly stash or commit changes, simplifying authentication, and facilitating easy management of terminal sessions.</li>
+  </ul>
+</div>
+</div>
+</article>

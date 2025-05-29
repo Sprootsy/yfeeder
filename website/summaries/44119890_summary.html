@@ -1,0 +1,39 @@
+<article>
+    <h2>What does “Undecidable” mean, anyway</h2>
+    <div>
+<div>
+<p>The article, "What Does Undecidable Mean Anyway?" by Hillel Wayne, explores the concept of undecidability in the context of computation and mathematics, particularly focusing on its implications rather than the technical details of its proofs. The author aims to demystify the term "undecidable" by illustrating what it means for a problem to be undecidable and dispelling common misconceptions.
+</p>
+<p>
+The article begins by contrasting decidable and undecidable problems. A decidable problem is one for which an algorithm can always produce a correct "yes" or "no" answer in a finite amount of time. An undecidable problem, on the other hand, is one for which no such algorithm exists. The author clarifies that undecidability does not mean that the answer is unknown or unknowable; rather, it means there is no general procedure that can reliably determine the answer for all possible inputs.
+</p>
+<p>
+A key concept discussed is the difference between undecidability and not being able to find an answer in practice. Just because a problem is computationally hard (e.g., NP-hard) and takes a very long time to solve does not make it undecidable. Undecidability is a more fundamental limitation, implying the absence of any algorithm, regardless of how much time or computational resources are available.
+</p>
+<p>
+The author then uses the Halting Problem as a central example to illustrate undecidability. The Halting Problem asks whether it is possible to determine, given a program and its input, whether the program will eventually halt (finish running) or run forever. The article explains that the Halting Problem is undecidable, meaning there is no universal algorithm that can correctly predict whether any given program will halt. The usual proof involves assuming such an algorithm exists and then constructing a paradoxical program that does the opposite of what the algorithm predicts, leading to a contradiction.
+</p>
+<p>
+The article emphasizes that undecidability results have significant practical implications. For instance, it highlights that it is impossible to create a perfect bug-finding tool that can detect all infinite loops in programs. Since detecting infinite loops is essentially a variant of the Halting Problem, the undecidability of the Halting Problem implies the impossibility of a perfect bug detector. Similarly, there can be no perfect virus scanner that catches all possible viruses, as virus detection is also reducible to the Halting Problem.
+</p>
+<p>
+Furthermore, the article discusses the limitations of formal verification. While formal verification aims to prove the correctness of software, undecidability implies that it is impossible to fully automate this process for all programs. There will always be programs for which it is impossible to prove correctness or incorrectness algorithmically.
+</p>
+<p>
+The article addresses common misunderstandings about undecidability, such as the belief that it is due to limitations in current technology or programming languages. The author stresses that undecidability is a mathematical property independent of specific tools or hardware. It is a fundamental limit on what computation can achieve.
+</p>
+<p>
+In summary, the article offers a high-level understanding of undecidability by explaining what it means for a problem to be undecidable, using the Halting Problem as a prime example, and discussing its practical consequences in areas like bug detection, virus scanning, and formal verification. It clarifies that undecidability represents a fundamental limitation on the power of computation, rather than a temporary obstacle that can be overcome with better technology.
+</p>
+
+<h2>Key Points</h2>
+<ul>
+<li><b>Decidable vs. Undecidable:</b> A decidable problem has an algorithm that always gives a correct "yes" or "no" answer. An undecidable problem has no such algorithm.</li>
+<li><b>Undecidability is not Practical Difficulty:</b> Undecidability is different from a problem being computationally hard. It means no algorithm exists, regardless of available resources.</li>
+<li><b>Halting Problem:</b> The Halting Problem (determining if a program halts) is a classic example of an undecidable problem.</li>
+<li><b>Practical Implications:</b> Undecidability limits the possibility of perfect bug detectors, virus scanners, and fully automated formal verification tools.</li>
+<li><b>Fundamental Limitation:</b> Undecidability is a mathematical property, not a technological limitation. It's a limit on what computation can achieve.</li>
+</ul>
+</div>
+</div>
+</article>
