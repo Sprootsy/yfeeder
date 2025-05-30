@@ -1,0 +1,38 @@
+<article>
+    <h2>The radix 2^51 trick</h2>
+    <div>
+<div>
+  <p>
+    The article discusses a clever optimization technique referred to as the "radix-2.51 trick" for speeding up calculations involving large numbers, particularly in the context of elliptic curve cryptography. This optimization focuses on reducing the number of multiplications required when computing scalar multiplication, which is the dominant operation in elliptic curve cryptography.
+  </p>
+  <p>
+    Scalar multiplication involves multiplying a point on an elliptic curve by a large integer (the scalar). A naive approach would involve repeated addition of the point to itself, but this is highly inefficient. More sophisticated algorithms, such as double-and-add, are used to decompose the scalar into its binary representation and perform a series of doublings and additions based on the bits of the scalar. However, even with double-and-add, the number of operations can still be substantial for very large scalars.
+  </p>
+  <p>
+    The radix-2.51 trick exploits the fact that representing the scalar in a higher radix (a base other than 2) can potentially reduce the number of non-zero digits, thereby reducing the number of additions required. However, increasing the radix arbitrarily is not always beneficial, as it introduces the need for precomputed multiples of the point for each possible digit value. The radix-2.51 trick strikes a balance by using a radix that is slightly higher than 2, specifically chosen to minimize the overall computational cost.
+  </p>
+  <p>
+    The core idea is to represent the scalar in a form that allows for efficient computation of multiples of the point. The article explores representing the scalar 'k' as k = k0 + k1 * 2.51^1 + k2 * 2.51^2 + .... where each ki is a digit in the chosen radix. This representation can be massaged to avoid the need to calculate fractional powers directly. A key element of the method is selecting appropriate precomputed multiples of the base point. The article details how to choose these multiples and how they interact with the modified radix representation.
+  </p>
+  <p>
+    The benefit of the radix-2.51 trick comes from trading off precomputation (calculating and storing a few multiples of the point) for a reduction in the number of point additions during the scalar multiplication. By carefully selecting the precomputed multiples and using a radix slightly larger than 2, the overall number of operations can be reduced, leading to a performance improvement.
+  </p>
+  <p>
+    The article delves into the specifics of how to represent the scalar in the chosen radix, how to efficiently compute the required multiples, and how to adapt the double-and-add algorithm to work with this representation. It also touches on the importance of choosing the right set of precomputed multiples to optimize performance. Furthermore, it emphasizes how to optimize the choices of multiples to reduce Hamming Weight (number of non-zero digits in the representation).
+  </p>
+  <p>
+    In essence, the radix-2.51 trick is a fine-tuned optimization technique that leverages a non-standard radix representation to minimize the number of operations required for scalar multiplication in elliptic curve cryptography, thereby improving the efficiency of cryptographic operations.
+  </p>
+
+  <h3>Key Points:</h3>
+  <ul>
+    <li>The radix-2.51 trick is an optimization for scalar multiplication in elliptic curve cryptography.</li>
+    <li>It aims to reduce the number of point additions by using a higher radix representation of the scalar.</li>
+    <li>It uses a radix slightly larger than 2 (approximately 2.51) to balance the cost of precomputation and the reduction in additions.</li>
+    <li>Precomputed multiples of the base point are used to avoid costly calculations during scalar multiplication.</li>
+    <li>Careful selection of precomputed multiples and radix representation is crucial for optimal performance.</li>
+    <li>The trick improves efficiency by trading off precomputation for a reduction in the number of point additions.</li>
+  </ul>
+</div>
+</div>
+</article>
