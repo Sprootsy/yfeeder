@@ -1,0 +1,35 @@
+<article>
+    <h2>Show HN: W&#43;&#43; – A Python-style scripting language for .NET with NuGet support</h2>
+    <div>
+<div>
+<p>The article is a GitHub repository README for a project called WPlusPlus, described as a "tiny embeddable web server written in C++". It appears to be designed for integration into other applications, allowing them to expose web-based interfaces or APIs.</p>
+
+<p>The README outlines the server's key features, including support for HTTP/1.1, HTTPS (using mbedTLS), asynchronous request handling via epoll (on Linux) or IOCP (on Windows), and integration with the Jinja2 template engine for dynamic content generation. It highlights the server's minimal dependencies, requiring only a C++17 compiler, CMake, and optionally mbedTLS for HTTPS support.</p>
+
+<p>The documentation covers usage, detailing how to integrate WPlusPlus into a C++ project, define routes, handle requests, and serve both static files and dynamically generated content.  It explains how to define request handlers (using lambdas or function objects), access request parameters (headers, query parameters, POST data), and send responses with custom headers and status codes.  The README also shows how to use Jinja2 templates to generate HTML or other text-based content from C++ data structures.</p>
+
+<p>There are examples illustrating how to create a basic HTTP server, add routes to handle different URLs, serve static files from a directory, and use Jinja2 templates to render dynamic web pages. The examples are designed to be concise and easy to understand, demonstrating the core functionality of the WPlusPlus library.</p>
+
+<p>The README touches on HTTPS configuration, describing how to generate and configure SSL certificates for secure communication.  It provides instructions on specifying the certificate and private key files when creating the server instance.</p>
+
+<p>Further, the README contains sections on building the library using CMake, running example programs, and generating documentation using Doxygen. It also lists the project's license (MIT License) and encourages contributions.</p>
+
+<p>In essence, WPlusPlus aims to provide a lightweight and easy-to-embed web server solution for C++ applications, enabling developers to quickly add web-based functionality without relying on complex or heavyweight frameworks.</p>
+
+<h2>Key Points:</h2>
+<ul>
+<li>WPlusPlus is a small, embeddable web server library written in C++.</li>
+<li>It supports HTTP/1.1 and HTTPS (via mbedTLS).</li>
+<li>It uses asynchronous request handling (epoll/IOCP).</li>
+<li>It integrates with the Jinja2 template engine.</li>
+<li>It has minimal dependencies (C++17, CMake, optional mbedTLS).</li>
+<li>The library allows defining routes and handling requests with lambdas or function objects.</li>
+<li>It supports serving static files and dynamic content.</li>
+<li>It allows access to request parameters (headers, query parameters, POST data).</li>
+<li>It allows sending responses with custom headers and status codes.</li>
+<li>HTTPS configuration requires SSL certificates.</li>
+<li>The project is licensed under the MIT License.</li>
+</ul>
+</div>
+</div>
+</article>
