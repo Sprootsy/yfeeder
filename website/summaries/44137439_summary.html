@@ -1,0 +1,32 @@
+<article>
+    <h2>De Bruijn notation, and why it&#39;s useful</h2>
+    <div>
+<div>
+<h2>Summary</h2>
+The article provides an explanation of De Bruijn indices, a method for representing lambda expressions that avoids the need for explicit variable names. The author motivates the use of De Bruijn indices by highlighting the challenges associated with variable naming and alpha equivalence in lambda calculus. Specifically, the article points out that alpha equivalence (renaming bound variables) is necessary to determine if two lambda expressions are semantically identical, but this process can be cumbersome and error-prone.
+
+De Bruijn indices offer a solution by replacing variable names with numerical indices that indicate the variable's binding depth. Instead of referring to a variable by its name, a De Bruijn index counts the number of binders (lambda abstractions) between the variable's occurrence and its point of binding. The innermost binder has an index of 0, the next 1, and so on. Free variables are represented by indices that point beyond the outermost binder.
+
+The article illustrates the concept with examples, demonstrating how lambda expressions with named variables are converted to their De Bruijn index representation. For example, `λx. λy. x y` becomes `λ. λ. 1 0` in De Bruijn notation. Here, `y` which is bound by the inner lambda has an index of 0, and `x` which is bound by the outer lambda has an index of 1 (since there is one lambda in between).
+
+The advantages of De Bruijn indices include:
+
+*   **Alpha equivalence becomes trivial:** Two lambda expressions are alpha-equivalent if and only if their De Bruijn representations are identical. This simplifies comparison and manipulation of lambda expressions.
+*   **No need for alpha conversion during reduction:** During beta reduction (function application), no alpha conversion is needed because variable names are not involved. Substitution simply involves replacing a De Bruijn index with another expression, adjusting the indices in the substituted expression as necessary.
+*   **Uniqueness:** Each lambda expression has a unique De Bruijn representation, making it easier to compare and optimize.
+
+The article also touches upon the implementation of De Bruijn indices, explaining how to perform substitution during beta reduction. It describes the process of adjusting De Bruijn indices in the substituted expression to account for the new binding context. This adjustment involves incrementing free variables to avoid capture and decrementing bound variables which become free.
+
+In summary, the article provides a clear and concise introduction to De Bruijn indices, explaining their motivation, representation, advantages, and basic implementation principles. It shows how De Bruijn indices simplify the handling of variables in lambda calculus by eliminating the need for explicit variable names and making alpha equivalence trivial.
+
+<h2>Key Points</h2>
+
+*   De Bruijn indices are a way to represent lambda expressions without using variable names.
+*   They use numerical indices to indicate a variable's binding depth. The index represents the number of lambdas between the variable and its binding lambda.
+*   Alpha equivalence becomes trivial: two lambda expressions are equivalent if their De Bruijn representations are identical.
+*   No alpha conversion is needed during beta reduction.
+*   De Bruijn indices provide a unique representation for each lambda expression.
+*   Substitution during beta reduction involves adjusting the De Bruijn indices of the substituted expression.
+</div>
+</div>
+</article>
