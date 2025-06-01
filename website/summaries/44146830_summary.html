@@ -1,0 +1,34 @@
+<article>
+    <h2>Oniux: Kernel-level Tor isolation for any Linux app</h2>
+    <div>
+<div>
+<p>The article introduces Oniux, a new approach to isolating Tor within a Linux system using Linux namespaces. Oniux aims to enhance security and privacy by preventing applications from bypassing Tor and connecting directly to the internet, as well as limiting the potential damage if an application is compromised.</p>
+
+<p>The article highlights the limitations of existing methods of Tor isolation. Traditional approaches, such as using firewalls (like iptables) or proxy settings, can be complex to configure and maintain, and they might not always be effective against sophisticated attacks or misconfigured applications. Virtual machines (VMs) offer stronger isolation, but they consume significant system resources and can be cumbersome to manage for simple Tor usage.</p>
+
+<p>Oniux leverages Linux namespaces to create isolated network environments for applications. Each application runs within its own namespace, which has its own network stack and routing table. This means that an application within a namespace can only access the internet through Tor, and it cannot directly connect to any other network interface on the host system. Oniux automates the creation and management of these namespaces, simplifying the process of isolating Tor for individual applications. The goal is to provide a balance between the strong isolation of VMs and the lightweight nature of traditional firewall-based approaches.</p>
+
+<p>The article describes the design and implementation of Oniux. It explains how Oniux sets up the network namespaces, configures Tor within a dedicated namespace, and routes traffic from the application namespaces through Tor.  It also discusses how Oniux handles DNS resolution to prevent DNS leaks, and how it manages user IDs and permissions to ensure that applications within the namespaces run with appropriate privileges.</p>
+
+<p>The authors outline the benefits of Oniux, including improved security, simplified configuration, and reduced resource overhead compared to VMs. By isolating applications within namespaces, Oniux minimizes the risk of applications circumventing Tor and leaking traffic. It also makes it easier to manage Tor isolation for multiple applications, as each application can be isolated independently.</p>
+
+<p>The article presents examples of how to use Oniux to isolate different types of applications, such as web browsers and instant messaging clients. It demonstrates how to configure Oniux to launch applications within namespaces and route their traffic through Tor. It also provides guidance on how to customize Oniux to suit different needs and environments.</p>
+
+<p>Finally, the article concludes by discussing future directions for Oniux, including plans to integrate it with other security tools and to improve its ease of use and performance. The authors encourage users to try Oniux and provide feedback to help improve the project.</p>
+
+<h2>Key Points:</h2>
+<ul>
+<li>Oniux uses Linux namespaces for Tor isolation.</li>
+<li>It aims to prevent applications from bypassing Tor.</li>
+<li>Traditional Tor isolation methods (firewalls, proxy settings) have limitations.</li>
+<li>VMs provide strong isolation but are resource-intensive.</li>
+<li>Oniux creates isolated network environments for each application.</li>
+<li>Each application runs in its own network namespace.</li>
+<li>Oniux automates namespace creation and management.</li>
+<li>Oniux handles DNS resolution to prevent leaks.</li>
+<li>It offers improved security and simplified configuration.</li>
+<li>It reduces resource overhead compared to VMs.</li>
+</ul>
+</div>
+</div>
+</article>

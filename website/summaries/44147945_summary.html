@@ -1,0 +1,39 @@
+<article>
+    <h2>Progressive JSON</h2>
+    <div>
+<div>
+  <p>
+    The article "Progressive JSON" by Dan Abramov discusses the challenges of working with JSON data in JavaScript, particularly when dealing with large or deeply nested JSON structures. It highlights the performance issues that can arise from eagerly parsing and accessing all the data at once, leading to slow initial load times and sluggish user interactions.
+  </p>
+  <p>
+    The article proposes a "progressive" approach to handling JSON, which involves parsing and processing only the necessary parts of the JSON data as needed. This lazy evaluation technique aims to improve performance by reducing the initial parsing overhead and minimizing unnecessary data access.
+  </p>
+  <p>
+    The author introduces the concept of a `createAccessor` function that generates accessor functions for specific properties within the JSON structure. These accessor functions, when called, parse only the required portion of the JSON string, effectively deferring the parsing of other parts until they are explicitly accessed. This approach contrasts with the traditional method of parsing the entire JSON string upfront using `JSON.parse`.
+  </p>
+  <p>
+    The article provides a practical example of how to implement progressive JSON parsing using JavaScript's `JSON.parse` method with the `reviver` parameter. The `reviver` function allows for intercepting and transforming values during the parsing process, enabling the creation of accessor functions on demand.
+  </p>
+  <p>
+    The author also addresses the issue of type safety when using progressive JSON. Because the structure of the JSON data may not be fully known until parts of it are parsed, TypeScript's type system can pose challenges. The article suggests using techniques like generics and type assertions to provide type hints and ensure type correctness.
+  </p>
+  <p>
+    Furthermore, the article touches upon the trade-offs involved in using progressive JSON. While it can improve performance for large JSON structures, it also introduces complexity and requires careful management of the parsing process. The author emphasizes the importance of considering the specific use case and weighing the benefits against the added complexity.
+  </p>
+  <p>
+    The article concludes by suggesting that progressive JSON can be a valuable technique for optimizing the performance of JavaScript applications that work with large JSON datasets. By selectively parsing and accessing data only when needed, developers can reduce initial load times, improve responsiveness, and enhance the overall user experience.
+  </p>
+  <br/>
+  <p><b>Key Points:</b></p>
+  <ul>
+    <li>Traditional JSON parsing with `JSON.parse` can be inefficient for large or deeply nested structures due to eager parsing.</li>
+    <li>Progressive JSON parsing defers parsing of JSON data until it is actually needed.</li>
+    <li>The `createAccessor` function can be used to generate accessor functions that parse specific parts of the JSON on demand.</li>
+    <li>JavaScript's `JSON.parse` with the `reviver` parameter enables the creation of accessor functions during parsing.</li>
+    <li>Type safety in TypeScript can be challenging with progressive JSON but can be managed with generics and type assertions.</li>
+    <li>Progressive JSON involves trade-offs between performance gains and added complexity.</li>
+    <li>Progressive JSON is a valuable technique for optimizing applications that work with large JSON datasets by reducing initial load times and improving responsiveness.</li>
+  </ul>
+</div>
+</div>
+</article>
