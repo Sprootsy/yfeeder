@@ -1,0 +1,38 @@
+<article>
+    <h2>Sguaba: Hard-to-misuse rigid body transforms for engineers</h2>
+    <div>
+<div>
+  <p>
+    The article introduces SGUABA, a Rust crate designed to provide a safe and easy-to-use API for working with rigid body transformations (rotations and translations) in engineering applications. The author highlights the difficulties and potential for misuse associated with existing libraries and conventional mathematical representations like rotation matrices, Euler angles, and quaternions. These difficulties stem from issues like gimbal lock, non-uniqueness of representations, and the challenges of ensuring mathematical correctness when composing transformations.
+  </p>
+  <p>
+    SGUABA aims to address these issues by providing a more intuitive and robust interface. It leverages the underlying mathematical structure of screw groups (specifically SE(3), the group of rigid body motions in 3D space) to prevent common errors. The core idea is that users should not need to manipulate the internal representation of transformations directly, which greatly reduces the risk of producing invalid or nonsensical results.
+  </p>
+  <p>
+    The crate offers data types such as `Rotation` (representing orientations), `Translation` (representing displacements), and `Transform` (representing a combination of both). These types are designed to be immutable and support a fluent API that encourages chaining operations. SGUABA emphasizes correctness by design. For example, it avoids Euler angles entirely and makes it difficult to create non-unit quaternions (which represent invalid rotations).
+  </p>
+  <p>
+    The article provides several examples of how to use SGUABA for common tasks such as creating rotations from various representations (axis-angle, rotation vectors), composing transformations, and transforming points. It showcases the crate's ability to handle complex transformation chains while maintaining mathematical validity. A key point is the ease with which transformations can be inverted and composed correctly.
+  </p>
+  <p>
+    SGUABA is also designed for performance. While correctness is the primary goal, the crate minimizes overhead and utilizes efficient mathematical operations when possible. The author mentions that while a detailed benchmark isn't presented, the crate is optimized for practical use.
+  </p>
+  <p>
+    The article concludes by emphasizing that SGUABA allows engineers to focus on their specific application logic without getting bogged down in the intricacies and potential pitfalls of rigid body transformations. It is designed to be a reliable tool that "just works," enabling users to build robust and accurate engineering simulations and applications.
+  </p>
+
+  <h2>Key Points:</h2>
+  <ul>
+    <li>SGUABA is a Rust crate for safe and easy manipulation of rigid body transformations.</li>
+    <li>It addresses the issues and potential for misuse found in other libraries and conventional representations (rotation matrices, Euler angles, quaternions).</li>
+    <li>It uses the mathematical structure of screw groups (SE(3)) to ensure correctness and prevent errors.</li>
+    <li>The API is designed to be intuitive and prevents direct manipulation of internal representations.</li>
+    <li>Key data types include `Rotation`, `Translation`, and `Transform`, all designed for immutability and a fluent API.</li>
+    <li>SGUABA avoids Euler angles and makes it difficult to create invalid quaternions.</li>
+    <li>The crate provides convenient methods for creating, composing, inverting, and applying transformations.</li>
+    <li>Performance is considered, with optimizations for efficiency in practical applications.</li>
+    <li>The goal is to allow engineers to focus on application logic rather than the complexities of rigid body transformations.</li>
+  </ul>
+</div>
+</div>
+</article>
