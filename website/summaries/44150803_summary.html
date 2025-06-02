@@ -1,0 +1,34 @@
+<article>
+    <h2>Root shell on a credit card terminal</h2>
+    <div>
+<div>
+<p>The article is a detailed account of a security vulnerability discovered in Yomani payment terminals, specifically those used in Switzerland. The author, Stefan Gloor, describes how he and a colleague, while working on a project involving these terminals, uncovered a critical flaw that allowed them to gain unauthorized access and control over the devices. The vulnerability stemmed from a combination of factors, including weak default configurations, insecure protocols, and a lack of proper security updates.</p>
+
+<p>Gloor explains that the Yomani terminals, widely used for processing credit and debit card payments, relied on a network setup that, by default, used unencrypted Telnet connections. This meant that anyone on the same network could potentially eavesdrop on the communication between the terminal and the central server. Furthermore, the terminals often came with default usernames and passwords that were either unchanged or easily guessable. This combination of factors created a significant security risk.</p>
+
+<p>The author details the steps they took to exploit the vulnerability. They were able to connect to the terminals using Telnet, log in with default credentials, and then access sensitive configuration files. These files contained information such as the terminal's ID, network settings, and even encryption keys used for securing payment transactions. With this level of access, they could potentially modify the terminal's behavior, intercept payment data, or even install malicious software.</p>
+
+<p>Gloor emphasizes the severity of the vulnerability, pointing out that it could have been exploited by malicious actors to steal credit card information, commit fraud, or disrupt payment processing. He also notes that the problem was not limited to a small number of terminals but affected a large number of devices across Switzerland.</p>
+
+<p>The article further describes the author's efforts to responsibly disclose the vulnerability to the relevant parties, including the terminal vendor (Wordline) and the Swiss payment processor (SIX). He outlines the challenges they faced in getting the issue addressed promptly and effectively. Despite initial delays and communication difficulties, the vulnerability was eventually acknowledged and patched through an update. However, Gloor expresses concerns about the slow pace of the response and the lack of transparency in the process.</p>
+
+<p>In addition to the technical details of the vulnerability, the article also raises broader questions about the security of payment systems and the responsibilities of vendors and service providers. It highlights the importance of strong default configurations, secure communication protocols, regular security updates, and effective vulnerability disclosure programs. Gloor argues that the Yomani case serves as a reminder that even widely used and seemingly secure payment terminals can be vulnerable to attack if proper security measures are not in place.</p>
+
+<p>Finally, the author provides recommendations for improving the security of payment terminals, including disabling Telnet, enforcing strong passwords, implementing encryption, and establishing clear communication channels for reporting vulnerabilities.</p>
+
+<h2>Key Points:</h2>
+<ul>
+    <li>A security vulnerability was discovered in Yomani payment terminals in Switzerland.</li>
+    <li>The vulnerability allowed unauthorized access and control over the terminals.</li>
+    <li>Weak default configurations (Telnet, default credentials) were a major contributing factor.</li>
+    <li>Sensitive information, including encryption keys, could be accessed.</li>
+    <li>The vulnerability could have been exploited for fraud and data theft.</li>
+    <li>Responsible disclosure was made to the vendor (Worldline) and payment processor (SIX).</li>
+    <li>The response to the vulnerability was slow and lacked transparency.</li>
+    <li>The issue was eventually patched through an update.</li>
+    <li>The case highlights the importance of strong security measures in payment systems.</li>
+    <li>Recommendations for improvement include disabling Telnet, enforcing strong passwords, and implementing encryption.</li>
+</ul>
+</div>
+</div>
+</article>
