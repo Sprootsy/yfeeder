@@ -1,0 +1,31 @@
+<article>
+    <h2>Why DeepSeek is cheap at scale but expensive to run locally</h2>
+    <div>
+<div>
+  <p><b>Summary:</b></p>
+  <p>The article discusses inference batching, a technique used to improve the throughput of deep learning models during inference, particularly in scenarios with high request rates and relatively small model sizes. It addresses the challenge of inefficient GPU utilization when serving individual requests sequentially, leading to low Queries Per Second (QPS) and high latency. The core idea of inference batching is to combine multiple independent requests into a single batch that is then processed together by the model. This approach leverages the parallel processing capabilities of GPUs, resulting in significantly higher throughput and reduced latency compared to processing requests individually.</p>
+
+  <p>The author highlights the trade-offs involved in inference batching, primarily the balance between increased throughput and potential latency increases for individual requests. While batching improves overall efficiency, each request within the batch must wait for the entire batch to be processed before receiving a response. Therefore, careful consideration must be given to batch size selection to minimize the impact on individual request latency.</p>
+
+  <p>The article uses the DeepSeek model as a practical example to demonstrate the benefits of inference batching. It illustrates how batching can significantly increase the QPS for the DeepSeek model compared to non-batched inference. It also touches on the importance of using efficient tensor manipulation libraries and optimized hardware (like GPUs) to maximize the performance gains from batching.</p>
+
+  <p>Furthermore, the article implicitly suggests that the effectiveness of inference batching depends on several factors, including the model architecture, the size of the model, the hardware used, and the characteristics of the request stream (e.g., request rate and distribution of request sizes). It also hints at the potential for more sophisticated batching strategies, such as dynamic batching, where the batch size is adjusted dynamically based on the incoming request rate and latency requirements.</p>
+
+  <p>In essence, the article provides a concise overview of inference batching as a crucial optimization technique for deploying deep learning models in production environments where high throughput and low latency are essential.</p>
+
+  <p><b>Key Points:</b></p>
+  <ul>
+    <li>Inference batching is a technique to increase throughput during deep learning model inference.</li>
+    <li>It combines multiple independent requests into a single batch for processing on the GPU.</li>
+    <li>Batching improves GPU utilization and QPS compared to sequential processing.</li>
+    <li>There's a trade-off between throughput and individual request latency.</li>
+    <li>Selecting the right batch size is crucial to minimize latency.</li>
+    <li>The DeepSeek model is used as an example to demonstrate the benefits of batching.</li>
+    <li>Efficient tensor manipulation and optimized hardware enhance batching performance.</li>
+    <li>The effectiveness of batching depends on the model, hardware, and request stream characteristics.</li>
+    <li>Dynamic batching can be used to adjust batch sizes based on request rate and latency needs.</li>
+    <li>Inference batching is important for production deployments requiring high throughput and low latency.</li>
+  </ul>
+</div>
+</div>
+</article>
