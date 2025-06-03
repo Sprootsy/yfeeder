@@ -1,0 +1,36 @@
+<article>
+    <h2>CVE 2025 31200</h2>
+    <div>
+<div>
+  <h2>Summary</h2>
+  <p>
+    The article is a detailed technical write-up about CVE-2024-31200, a vulnerability discovered in the `wp-graphql` plugin for WordPress. This plugin exposes WordPress data via GraphQL. The vulnerability allows unauthenticated users to bypass authentication and authorization checks and execute arbitrary GraphQL queries, potentially leading to sensitive data exposure or even modification.
+  </p>
+  <p>
+    The root cause of the vulnerability lies in the inadequate handling of persisted queries within the `wp-graphql` plugin. Persisted queries are GraphQL queries that are stored on the server and can be executed by referencing their unique ID, rather than sending the entire query string. This is meant to improve performance. However, the plugin did not correctly validate whether the user was authorized to execute a specific persisted query before executing it.
+  </p>
+  <p>
+    The author thoroughly explains how they discovered the vulnerability through a process of code review and experimentation. They identified that the plugin was attempting to retrieve persisted queries without properly checking user capabilities. By crafting a malicious request that referenced a specific persisted query, they were able to execute it even without proper authentication or authorization.
+  </p>
+  <p>
+    The author outlines the steps they took to reproduce the vulnerability, including setting up a vulnerable WordPress environment with the `wp-graphql` plugin installed, identifying a persisted query that could be exploited, and crafting a request to execute that query without authentication. The article also provides the specific details of the vulnerable code, including the relevant function calls and data structures involved.
+  </p>
+  <p>
+    Furthermore, the author describes the potential impact of the vulnerability, explaining how an attacker could use it to access sensitive data such as user information, posts, and other content stored in the WordPress database. They also mention the possibility of modifying data, depending on the specific persisted queries that are available and accessible through the vulnerability.
+  </p>
+  <p>
+    The article concludes by providing information on how the vulnerability was patched and how users can protect themselves by updating to the latest version of the `wp-graphql` plugin. The author emphasizes the importance of secure coding practices, particularly when handling user input and implementing authentication and authorization mechanisms.
+  </p>
+
+  <h2>Key Points</h2>
+  <ul>
+    <li><b>Vulnerability:</b> CVE-2024-31200 is an authentication bypass vulnerability in the `wp-graphql` plugin for WordPress.</li>
+    <li><b>Root Cause:</b> Insufficient validation of user capabilities when executing persisted GraphQL queries.</li>
+    <li><b>Impact:</b> Unauthenticated users can execute arbitrary GraphQL queries, potentially leading to data exposure or modification.</li>
+    <li><b>Exploitation:</b> By crafting malicious requests referencing specific persisted queries, attackers can bypass authentication.</li>
+    <li><b>Mitigation:</b> Update the `wp-graphql` plugin to the latest version.</li>
+    <li><b>Persisted Queries:</b> The vulnerability revolves around the improper handling of persisted GraphQL queries, which are queries stored on the server and executed by referencing their ID.</li>
+  </ul>
+</div>
+</div>
+</article>

@@ -1,0 +1,43 @@
+<article>
+    <h2>Reducing Cargo target directory size with -Zno-embed-metadata</h2>
+    <div>
+<div>
+  <p>
+    The article discusses a method to significantly reduce the size of the <code>target</code> directory in Rust projects, which often becomes very large due to the accumulation of build artifacts, especially metadata. The author focuses on the impact of embedded metadata within Rust binaries and libraries and introduces a technique to avoid embedding it. This is achieved by using the <code>-Z no-embed-metadata</code> flag.
+  </p>
+  <p>
+    The article begins by highlighting the problem: large <code>target</code> directories consume significant disk space, slow down build times, and complicate deployment processes. The primary culprit identified is the extensive metadata that Rustc embeds into compiled artifacts, including debug information, symbol tables, and other data necessary for linking and debugging. This metadata contributes substantially to the size of the final binaries and libraries, particularly when dealing with numerous dependencies.
+  </p>
+  <p>
+    The author explains that Rustc, by default, embeds metadata into the compiled artifacts to facilitate various development-time activities. This metadata includes information about the crate's dependencies, features, and other build-related details. While this is beneficial during development, it is often unnecessary in production deployments, where the binaries are intended to run without the need for debugging or recompilation.
+  </p>
+  <p>
+    The core solution proposed in the article involves using the <code>-Z no-embed-metadata</code> flag during compilation. This flag instructs Rustc to omit the embedding of metadata into the compiled artifacts. By doing so, the size of the resulting binaries and libraries can be dramatically reduced. The author provides practical examples demonstrating the reduction in the <code>target</code> directory size when using this flag.
+  </p>
+  <p>
+    The article also addresses the potential drawbacks and considerations associated with using the <code>-Z no-embed-metadata</code> flag. One key consideration is that binaries compiled without embedded metadata may not be easily debuggable or linkable with other Rust code that expects metadata to be present. Therefore, the author recommends using this flag selectively, primarily for release builds or production deployments where the benefits of reduced size outweigh the potential loss of debugging capabilities.
+  </p>
+  <p>
+    Furthermore, the article discusses how to integrate the <code>-Z no-embed-metadata</code> flag into a Cargo build process. This can be achieved by adding the flag to the <code>RUSTFLAGS</code> environment variable or by configuring it directly in the <code>.cargo/config.toml</code> file. The author provides specific examples of how to set this up for different build profiles (e.g., release vs. debug).
+  </p>
+  <p>
+    The author shares benchmarks and real-world examples showcasing the impact of using <code>-Z no-embed-metadata</code> on the size of the <code>target</code> directory. These examples illustrate that significant space savings can be achieved, particularly in large projects with many dependencies. The author also advises on when and how to use the flag most effectively to balance size reduction with debugging and linking requirements.
+  </p>
+  <p>
+    In conclusion, the article provides a practical guide to reducing the size of the <code>target</code> directory in Rust projects by using the <code>-Z no-embed-metadata</code> flag. It outlines the benefits, drawbacks, and usage considerations, enabling developers to make informed decisions about when and how to apply this technique in their Rust projects.
+  </p>
+
+  <h2>Key points:</h2>
+  <ul>
+    <li>Large <code>target</code> directories in Rust projects are a common problem due to accumulated build artifacts and metadata.</li>
+    <li>Rustc embeds metadata into compiled artifacts by default, which contributes significantly to the size of binaries and libraries.</li>
+    <li>The <code>-Z no-embed-metadata</code> flag can be used to prevent Rustc from embedding metadata, resulting in smaller binaries and libraries.</li>
+    <li>Using <code>-Z no-embed-metadata</code> can significantly reduce the size of the <code>target</code> directory.</li>
+    <li>Binaries compiled without embedded metadata may be less debuggable and linkable.</li>
+    <li>The <code>-Z no-embed-metadata</code> flag can be integrated into the Cargo build process using the <code>RUSTFLAGS</code> environment variable or the <code>.cargo/config.toml</code> file.</li>
+    <li>The flag should be used selectively, primarily for release builds where the benefits of reduced size outweigh the potential loss of debugging capabilities.</li>
+    <li>Significant space savings can be achieved, particularly in large projects with many dependencies.</li>
+  </ul>
+</div>
+</div>
+</article>
