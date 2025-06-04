@@ -1,0 +1,46 @@
+<article>
+    <h2>CVE-2024-47081: Netrc credential leak in PSF requests library</h2>
+    <div>
+<div>
+  <p>The article is a security advisory regarding multiple vulnerabilities found in OpenClinic GA version 5.91. OpenClinic GA is a web-based hospital information system written in PHP. The advisory details several critical security flaws, including SQL injection, cross-site scripting (XSS), and arbitrary file upload vulnerabilities, which could allow attackers to gain unauthorized access to sensitive patient data, execute arbitrary code on the server, or deface the application.</p>
+
+  <p><b>Detailed Vulnerabilities:</b></p>
+
+  <ul>
+    <li><b>SQL Injection:</b> The advisory highlights multiple SQL injection vulnerabilities present in different parts of the application. These vulnerabilities exist because the application fails to properly sanitize user-supplied input before using it in SQL queries. An attacker could exploit these vulnerabilities to bypass authentication, retrieve sensitive data from the database (including patient records, medical history, and administrative credentials), modify data, or even execute arbitrary SQL commands on the database server. Specific vulnerable parameters and scripts are identified within the OpenClinic GA codebase.</li>
+    <li><b>Cross-Site Scripting (XSS):</b> The advisory describes both persistent (stored) and reflected XSS vulnerabilities. These vulnerabilities allow an attacker to inject malicious JavaScript code into the application, which is then executed by other users' browsers. An attacker could exploit these vulnerabilities to steal user session cookies, redirect users to phishing websites, deface the application, or perform other malicious actions on behalf of the user. The advisory pinpoints the vulnerable parameters and scripts where XSS injections are possible.</li>
+    <li><b>Arbitrary File Upload:</b> The advisory discloses an arbitrary file upload vulnerability. This vulnerability allows an attacker to upload malicious files, such as PHP scripts or other executable files, to the server. If the server is configured to execute these files, the attacker could gain complete control over the server, execute arbitrary code, and potentially compromise the entire system. The advisory details the specific file upload functionality that is vulnerable.</li>
+  </ul>
+
+  <p><b>Impact:</b></p>
+
+  <p>The combination of these vulnerabilities presents a significant security risk to organizations using OpenClinic GA. Successful exploitation of these flaws could lead to:</p>
+
+  <ul>
+    <li><b>Data Breach:</b> Unauthorized access to sensitive patient data, including medical records, personal information, and financial details.</li>
+    <li><b>System Compromise:</b> Complete control of the server hosting the OpenClinic GA application, allowing attackers to execute arbitrary code and potentially compromise other systems on the network.</li>
+    <li><b>Reputation Damage:</b> Loss of trust and confidence from patients and stakeholders due to the security breach.</li>
+    <li><b>Financial Loss:</b> Costs associated with incident response, data recovery, legal fees, and potential fines for regulatory non-compliance.</li>
+  </ul>
+
+  <p><b>Recommendations:</b></p>
+
+  <p>The advisory strongly recommends that users of OpenClinic GA upgrade to a patched version of the software or apply the necessary security fixes to address these vulnerabilities. If an immediate upgrade is not possible, the advisory suggests implementing temporary mitigations, such as:</p>
+
+  <ul>
+    <li><b>Input Validation:</b> Implement strict input validation and sanitization for all user-supplied data to prevent SQL injection and XSS attacks.</li>
+    <li><b>File Upload Restrictions:</b> Restrict the types of files that can be uploaded to the server and ensure that uploaded files are not executable.</li>
+    <li><b>Web Application Firewall (WAF):</b> Deploy a web application firewall to detect and block malicious requests targeting the identified vulnerabilities.</li>
+  </ul>
+
+  <p><b>Key Points:</b></p>
+
+  <ul>
+    <li>Multiple critical vulnerabilities exist in OpenClinic GA version 5.91.</li>
+    <li>Vulnerabilities include SQL injection, XSS, and arbitrary file upload.</li>
+    <li>Exploitation could lead to data breaches, system compromise, and financial loss.</li>
+    <li>Immediate patching or mitigation is strongly recommended.</li>
+  </ul>
+</div>
+</div>
+</article>
