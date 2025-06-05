@@ -1,0 +1,20 @@
+<article>
+    <h2>The iPhone 15 Pro’s Depth Maps</h2>
+    <div>
+<div>
+<p>This article discusses how the iPhone 15 Pro and Pro Max capture depth information along with photos using the HEIC format, enabling computational photography features and post-capture editing capabilities. It explains that these iPhones record a depth map, also known as a disparity map, which stores the distance to objects in the scene. This depth data is embedded within the HEIC image file, adhering to the ISO standard. The article delves into the technical aspects, including the use of the Near disparity key and related metadata like Baseline and FocalLength35mm. It clarifies that while the depth map is stored in the HEIC file, it's not directly visible as a grayscale image; instead, it's a structured set of data. The author provides code examples using Python and the Pillow library to access and visualize the depth data as a grayscale image. The code extracts the disparity image from the HEIC file, converts it to a floating-point representation, and scales it for visualization. The article also addresses the limitations of the depth map, noting that the quality is not as high as a dedicated depth sensor like LiDAR. The depth map's accuracy is best in the focused areas and decreases in out-of-focus regions. Moreover, it mentions that the depth map is only available when shooting in Photo mode, not in other modes like Night mode or when using certain camera settings. The ability to extract and utilize this depth information opens opportunities for developers to create innovative applications, such as 3D effects, advanced image editing tools, and augmented reality experiences. The article highlights the trade-offs between depth map quality and file size, indicating that Apple has optimized for a balance suitable for mobile photography.</p>
+
+<h2>Key Points:</h2>
+<ul>
+<li>The iPhone 15 Pro and Pro Max capture depth maps (disparity maps) alongside regular photos, embedding this data within the HEIC image file.</li>
+<li>The depth data is stored according to the ISO standard within the HEIC file, accessible through metadata keys like 'Near' disparity.</li>
+<li>The depth map is not a directly viewable grayscale image but a structured data set representing distances to objects in the scene.</li>
+<li>Python code using the Pillow library can be used to extract and visualize the depth map as a grayscale image for analysis.</li>
+<li>The quality of the depth map is not as high as LiDAR; accuracy is best in focused areas and decreases in out-of-focus regions.</li>
+<li>Depth maps are only available when shooting in Photo mode and may not be present in other modes or with certain camera settings.</li>
+<li>Access to depth information enables developers to create advanced photo editing tools, 3D effects, and AR applications.</li>
+<li>Apple balances depth map quality and file size to optimize for mobile photography needs.</li>
+</ul>
+</div>
+</div>
+</article>

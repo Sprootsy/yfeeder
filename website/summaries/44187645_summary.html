@@ -1,0 +1,43 @@
+<article>
+    <h2>Show HN: I made a 3D SVG Renderer that projects textures without rasterization</h2>
+    <div>
+<div>
+  <p>
+    The article is a blog post by Seve describing their project of creating a 3D SVG renderer that projects SVG elements onto a 3D model. The author details the motivation behind the project, which stemmed from a desire to create interactive and visually appealing 3D graphics on the web without relying on heavy JavaScript libraries like Three.js. They wanted a more declarative approach using SVG, a familiar and well-established web standard.
+  </p>
+  <p>
+    The blog post outlines the technical challenges and solutions encountered during the development process. Initially, the author experimented with various libraries and approaches, including using CSS 3D transforms and custom WebGL shaders. However, these methods proved either too cumbersome or not flexible enough for the desired level of control.
+  </p>
+  <p>
+    The core of the solution involves calculating the 3D coordinates of each point in the SVG and projecting those coordinates onto the surface of a 3D model. The author uses Blender to create the 3D model and exports it in a format suitable for processing. The rendering pipeline consists of reading the SVG data, extracting paths and shapes, and then mapping these 2D elements onto the 3D surface. This mapping requires calculating the corresponding 3D positions for each SVG point based on the model's geometry and the desired projection method.
+  </p>
+  <p>
+    One significant challenge was dealing with curved SVG paths (beziers). The author describes using an iterative method to approximate the curves with line segments, ensuring a smooth appearance when projected onto the 3D model. They also discuss the importance of optimizing the number of line segments to balance rendering performance and visual fidelity.
+  </p>
+  <p>
+    The post explains how the author handles different SVG attributes, such as fill colors, strokes, and transformations. These attributes are parsed and applied to the projected 3D elements, allowing for complex and stylized visuals. The author also mentions the use of a custom data structure to efficiently store and manage the 3D geometry and associated SVG properties.
+  </p>
+  <p>
+    The renderer is implemented using JavaScript and leverages the browser's native SVG parsing capabilities. The author emphasizes the importance of performance and explores techniques to optimize the rendering process, such as caching intermediate results and minimizing the number of DOM manipulations.
+  </p>
+  <p>
+    The article also touches upon the interactive aspects of the renderer. The author describes how they implemented mouse interaction, allowing users to click on the projected SVG elements and trigger events. This interactivity opens up possibilities for creating engaging and interactive 3D experiences directly within the browser.
+  </p>
+  <p>
+    The blog post concludes with a demonstration of the 3D SVG renderer, showcasing its capabilities and potential applications. The author reflects on the challenges overcome and expresses excitement about the future possibilities of this approach. They also provide a link to the source code, encouraging others to explore and contribute to the project.
+  </p>
+
+  <h3>Key points:</h3>
+  <ul>
+    <li>The project aims to create a 3D SVG renderer that projects SVG elements onto a 3D model.</li>
+    <li>The motivation is to enable interactive 3D graphics on the web using a declarative SVG approach, avoiding reliance on heavy JS libraries.</li>
+    <li>The rendering process involves calculating 3D coordinates for SVG points and projecting them onto the 3D model's surface.</li>
+    <li>Blender is used to create the 3D model.</li>
+    <li>Curved SVG paths are approximated with line segments.</li>
+    <li>SVG attributes like fill, stroke, and transformations are parsed and applied to the projected elements.</li>
+    <li>The renderer is implemented in JavaScript and optimized for performance.</li>
+    <li>Mouse interaction is implemented, allowing users to interact with the projected SVG elements.</li>
+  </ul>
+</div>
+</div>
+</article>

@@ -1,0 +1,32 @@
+<article>
+    <h2>A proposal to restrict sites from accessing a users’ local network</h2>
+    <div>
+<div>
+  <p>This document explains how to enable websites to access resources on a user's local network in a secure manner, addressing the security risks associated with such access. Historically, techniques like DNS rebinding and NAT Slipstreaming have been exploited to bypass security measures, potentially exposing internal services to malicious actors. The proposed solution leverages the Private Network Access permission mechanism to mitigate these risks.
+
+The core of this mechanism involves a permission request that the browser presents to the user, allowing them to explicitly grant or deny a website's access to the local network. This permission prompt is triggered when a website attempts to connect to a private network endpoint.
+
+To understand the Private Network Access mechanism, it's essential to differentiate between public, local, and private network IP addresses. Public addresses are routable on the internet, local addresses are in the 169.254.0.0/16 range, and private addresses fall within the ranges of 10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16. The local and private network addresses are non-routable on the public internet and are typically used within home or organization networks.
+
+The Private Network Access permission request distinguishes between subresource requests and worker requests. Subresource requests, like those for images or stylesheets, require a CORS preflight request to the target server on the private network. This preflight request uses the `Access-Control-Request-Private-Network: true` header. The target server must respond with the `Access-Control-Allow-Private-Network: true` header to signal its consent to the cross-origin request. For worker requests (initiated by web workers or service workers), a permission prompt is shown to the user directly, requesting their consent to allow the worker to access the private network.
+
+The document outlines the steps involved in implementing the Private Network Access checks. Firstly, the browser determines the target IP address type (public, local, or private). If the target is a private network IP address, and the request is a subresource request, the browser initiates a CORS preflight request with the `Access-Control-Request-Private-Network: true` header. If the target server responds with the `Access-Control-Allow-Private-Network: true` header, the actual request proceeds. Otherwise, the request fails. If the target is a private network IP address and the request is a worker request, the browser presents a permission prompt to the user. If the user grants permission, the request proceeds; otherwise, it fails.
+
+Furthermore, the document discusses how to handle different network configurations, including situations where the server resides on the same device as the browser (localhost). It suggests that localhost should be treated as a "potentially trustworthy" network context, often bypassing the need for CORS preflight or permission prompts.
+
+The document also emphasizes the importance of user privacy. Accessing the local network can expose information about the user's devices and services to the website. The permission mechanism aims to give users control over this access, allowing them to make informed decisions about whether to grant or deny access based on their understanding of the website and its purpose.
+
+Finally, the document addresses the implications for developers. Developers need to implement the appropriate CORS headers on their private network servers to respond correctly to preflight requests. They also need to be mindful of the user experience when requesting access to the private network, ensuring that the request is justified and clearly explained to the user.
+</p>
+
+  <h2>Key Points:</h2>
+  <ul>
+    <li>The Private Network Access permission mechanism secures access to resources on a user's local network.</li>
+    <li>It mitigates risks associated with techniques like DNS rebinding and NAT Slipstreaming.</li>
+    <li>Access to private network IP addresses (10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16) and local addresses (169.254.0.0/16) is controlled.</li>
+    <li>Subresource requests (e.g., images, stylesheets) require a CORS preflight request with `Access-Control-Request-Private-Network: true`.</li>
+    <li>The target server must respond with `Access-Control-Allow-Private-Network: true` to allow the cross-origin request.</li>
+    <li>Worker requests (from web workers or service workers) trigger a permission prompt for user consent.</li>
+    <li>Localhost is often treated as "potentially trustworthy" and may bypass CORS preflight or permission prompts.</li>
+    <li>User privacy is paramount; the permission mechanism gives users control over network access.</li></div>
+</article>
