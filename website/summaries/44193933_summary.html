@@ -1,0 +1,40 @@
+<article>
+    <h2>Show HN: Container Use for Agents</h2>
+    <div>
+<div>
+  <p>
+    The article "container-use" from the Dagger GitHub repository outlines a streamlined approach to executing tasks within containers using Dagger. Dagger is described as a programmable CI/CD engine that runs pipelines inside containers. The `container.use` function allows developers to interact with containers as if they were local processes. This offers flexibility and control over the container environment for various tasks such as running tests, building artifacts, or executing custom commands.
+  </p>
+  <p>
+    The article highlights the benefits of using `container.use`. It allows developers to define custom entrypoints or override existing ones. It enables seamless integration with existing toolchains by using containers as execution environments. Furthermore, it enables complex workflows by chaining multiple `container.use` calls together.
+  </p>
+  <p>
+    The document showcases different scenarios and examples, illustrating how to define custom entrypoints, override existing ones, and chain multiple `container.use` calls for complex workflows. It emphasizes the ability to execute shell commands within containers and access the results programmatically. This is achieved through features like specifying entrypoints, setting working directories, defining environment variables, and mounting volumes.
+  </p>
+  <p>
+    The article also explains how to retrieve the output of commands executed within the container. It focuses on accessing the standard output (stdout) and standard error (stderr) streams, as well as accessing files created or modified within the container's filesystem. The ability to mount volumes enables developers to share data between the host system and the container, facilitating the exchange of input data and output results.
+  </p>
+  <p>
+    The document provides practical examples of using `container.use` to perform tasks such as running a Go test suite inside a container, building a static website with Hugo, and generating documentation using MkDocs. These examples demonstrate how Dagger can simplify and automate complex workflows by leveraging containers as isolated and reproducible execution environments.
+  </p>
+  <p>
+    In essence, the article promotes `container.use` as a powerful tool for orchestrating container-based workflows within Dagger, offering flexibility, control, and seamless integration with existing toolchains. It emphasizes the ability to define custom entrypoints, execute commands, access outputs, and mount volumes, thereby enabling developers to build and automate complex CI/CD pipelines with ease.
+  </p>
+  <p>
+    <b>Key Points:</b>
+    <ul>
+      <li>`container.use` in Dagger allows interacting with containers as local processes.</li>
+      <li>It enables defining custom entrypoints for containers.</li>
+      <li>It supports overriding existing container entrypoints.</li>
+      <li>It facilitates chaining multiple `container.use` calls for complex workflows.</li>
+      <li>Shell commands can be executed within containers.</li>
+      <li>Standard output and standard error streams are accessible.</li>
+      <li>Files created or modified within the container's filesystem can be accessed.</li>
+      <li>Volumes can be mounted to share data between the host and the container.</li>
+      <li>Examples include running Go tests, building websites with Hugo, and generating documentation with MkDocs.</li>
+      <li>Dagger simplifies and automates complex CI/CD pipelines using containers.</li>
+    </ul>
+  </p>
+</div>
+</div>
+</article>
