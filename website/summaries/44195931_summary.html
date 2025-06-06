@@ -1,0 +1,31 @@
+<article>
+    <h2>APL Interpreter – An implementation of APL, written in Haskell (2024)</h2>
+    <div>
+<div>
+  <p>The article describes the author's journey of building an APL (A Programming Language) interpreter from scratch. It details the motivations behind the project, the challenges encountered, and the solutions implemented. The author, driven by a desire to deeply understand APL's mechanics and the intricacies of language implementation, embarked on this project as a learning experience. The goal wasn't to create a production-ready interpreter but rather to explore the inner workings of a complex and unique language.</p>
+
+  <p>The author initially faced the challenge of understanding APL's syntax and semantics, particularly its reliance on symbols rather than keywords and its right-to-left execution order. The implementation involved several stages, starting with a basic parser to convert APL code into an abstract syntax tree (AST). This AST represented the structure of the APL program in a way that the interpreter could understand. The next step was to implement the core APL operators and functions, including scalar operations, array manipulation, and control structures. A key aspect of APL is its ability to operate on entire arrays at once, which required careful consideration in the interpreter's design.</p>
+
+  <p>Memory management was another significant hurdle. APL's dynamic nature and its ability to create large arrays required efficient memory allocation and garbage collection. The author implemented a simple garbage collector to automatically reclaim unused memory, preventing memory leaks and ensuring the interpreter's stability. Furthermore, handling errors and exceptions in APL, such as domain errors or index errors, required a robust error-handling mechanism. The interpreter was designed to catch these errors and provide informative error messages to the user.</p>
+
+  <p>The author also delved into the implementation of APL's more advanced features, such as user-defined functions and operators. This involved creating a symbol table to store variables and function definitions, as well as implementing the logic for function calls and operator precedence. The article highlights the challenges of implementing APL's unique features, such as its tacit programming style (defining functions without explicit arguments) and its ability to create custom operators.</p>
+
+  <p>Throughout the project, the author emphasized the importance of testing and debugging. A comprehensive test suite was developed to ensure that the interpreter correctly implemented the APL language specification. Debugging tools were also essential for identifying and fixing errors in the interpreter's code. The author used a combination of manual testing and automated testing to validate the interpreter's functionality.</p>
+
+  <p>The author reflects on the lessons learned during the project, emphasizing the value of hands-on experience in understanding complex software systems. The process of building the APL interpreter provided a deep understanding of language design, parsing, interpretation, memory management, and error handling. While the resulting interpreter may not be a production-ready system, it serves as a valuable learning tool and a testament to the author's dedication to understanding the intricacies of APL.</p>
+
+  <h2>Key Points:</h2>
+  <ul>
+    <li>The author built an APL interpreter from scratch as a learning experience.</li>
+    <li>The project aimed to understand APL's inner workings, not to create a production-ready interpreter.</li>
+    <li>Implementation involved parsing APL code into an AST.</li>
+    <li>Core APL operators and functions, including array manipulation, were implemented.</li>
+    <li>Memory management and garbage collection were crucial for handling dynamic arrays.</li>
+    <li>A robust error-handling mechanism was implemented to catch and report errors.</li>
+    <li>Advanced features like user-defined functions and operators were also implemented.</li>
+    <li>Testing and debugging were essential for ensuring the interpreter's correctness.</li>
+    <li>The project provided valuable insights into language design, parsing, interpretation, and memory management.</li>
+  </ul>
+</div>
+</div>
+</article>
