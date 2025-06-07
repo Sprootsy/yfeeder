@@ -1,0 +1,44 @@
+<article>
+    <h2>Falsehoods programmers believe about aviation</h2>
+    <div>
+<div>
+<h3>Summary</h3>
+<p>
+The article "Falsehoods Programmers Believe About Aviation" on FlightAware's engineering blog humorously and informatively addresses common misconceptions that software engineers often have when working with aviation data and systems. The piece highlights the complexities and nuances within the aviation industry that are not immediately apparent and can lead to flawed assumptions in software development.
+</p>
+<p>
+The article covers a wide array of aviation-related topics, including:
+</p>
+<ul>
+<li><b>Aircraft Identification:</b> It debunks the idea that aircraft always have unique, unchanging identifiers. Tail numbers can change, and aircraft can operate under different callsigns.</li>
+<li><b>Airport Codes:</b> It explains that airport codes are not necessarily unique globally and that different systems (IATA, ICAO) use different codes. Additionally, airport codes don't always logically correspond to the airport's name or location.</li>
+<li><b>Flight Numbers:</b> These are not unique and can be reused. A flight number is only unique within the context of a specific airline and date.</li>
+<li><b>Time:</b> The article emphasizes the importance of using UTC (Coordinated Universal Time) to avoid ambiguity caused by time zones and daylight saving time. It also discusses the complications introduced by historical time zone changes.</li>
+<li><b>Location:</b> Representing location accurately is difficult. The earth isn't flat, GPS coordinates are not perfect, and altitude is relative. The article also notes that aircraft don't always follow the shortest path and flight paths are often complex.</li>
+<li><b>Aircraft Types:</b> Aircraft types are more varied than one might think. There are many different models and configurations, and the type designation itself can be complex.</li>
+<li><b>Airline Names:</b> Airlines can have different names in different contexts (e.g., legal name vs. marketing name).</li>
+<li><b>Routes:</b> Assumed consistency and linearity in flight routes are incorrect. Routes can change dynamically due to weather, air traffic control, and other factors.</li>
+<li><b>Airspace:</b> The article emphasizes the complexity of airspace management and the numerous constraints and rules governing flight paths.</li>
+<li><b>Data Accuracy and Completeness:</b> It warns against assuming that aviation data is always accurate or complete. Data sources can have errors, latency, and gaps.</li>
+</ul>
+<p>
+The author uses a lighthearted tone and provides practical examples to illustrate each point. The overall message is that aviation is a complex and highly regulated domain, and developers should avoid making simplistic assumptions when building aviation-related software. A thorough understanding of the underlying principles and data is crucial for creating reliable and accurate systems. The article serves as a cautionary tale, encouraging programmers to be mindful of the numerous potential pitfalls and to consult with domain experts when necessary. It promotes robust software design that accounts for the inherent variability and uncertainty in aviation data.
+</p>
+
+<h3>Key Points</h3>
+<ul>
+<li>Aircraft identifiers (tail numbers) are not always unique or permanent.</li>
+<li>Airport codes are not globally unique, and different coding systems exist (IATA, ICAO).</li>
+<li>Flight numbers are unique only within a specific airline and date.</li>
+<li>Use UTC (Coordinated Universal Time) to avoid time zone-related issues.</li>
+<li>Representing location accurately is challenging due to the earth's curvature, GPS inaccuracies, and relative altitude.</li>
+<li>Aircraft types are diverse, with many models and configurations.</li>
+<li>Airline names can vary depending on the context.</li>
+<li>Flight routes are dynamic and subject to change.</li>
+<li>Airspace management is complex and heavily regulated.</li>
+<li>Aviation data is not always accurate or complete.</li>
+<li>Avoid simplistic assumptions when developing aviation software.</li>
+</ul>
+</div>
+</div>
+</article>
