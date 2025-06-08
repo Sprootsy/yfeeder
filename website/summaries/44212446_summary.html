@@ -1,0 +1,33 @@
+<article>
+    <h2>Convert photos to Atkinson dithering</h2>
+    <div>
+<div>
+<h2>Summary</h2>
+
+The article is a web page demonstrating and explaining the Atkinson dithering algorithm applied to images using the HTML5 canvas element. It provides an interactive demonstration where users can upload an image and adjust parameters like the dithering threshold and color palette to see the effect of Atkinson dithering in real-time.
+
+The article begins by introducing dithering as a technique to simulate more colors than are actually available in a limited palette by strategically arranging pixels of different colors. It specifically focuses on the Atkinson dithering algorithm, named after its creator Bill Atkinson, which was used in early Macintosh computers.
+
+The core of the article is a JavaScript implementation of the Atkinson dithering algorithm that operates on the pixel data of an image loaded into a canvas. The algorithm works by iterating through each pixel of the image and comparing its color value to a threshold. Based on this comparison, the pixel is set to either the closest color in the limited palette that is higher or lower than the original pixel's value. The "error," or the difference between the original color and the chosen color, is then distributed to neighboring pixels.
+
+Atkinson dithering differs from other dithering algorithms, such as Floyd-Steinberg, in how it distributes the error. Atkinson dithering distributes the error to four neighboring pixels: the pixel to the right, the pixel two positions to the right, the pixel below, and the pixel diagonally down and to the left. Crucially, it distributes only 1/8th of the error to each of these pixels, which results in a brighter and less noisy image compared to algorithms that distribute a larger portion of the error. This characteristic made it suitable for the early Macintosh displays, which could appear muddy with more aggressive dithering methods.
+
+The interactive demonstration allows users to upload their own images and experiment with the threshold value, which determines the point at which a pixel is rounded up or down to the nearest color in the palette. Lowering the threshold generally results in a darker image, while increasing it results in a brighter image. The demonstration also provides options for using different color palettes, such as grayscale, CGA (Color Graphics Adapter), and EGA (Enhanced Graphics Adapter) palettes, allowing users to see how the algorithm performs with different color restrictions.
+
+The article includes code snippets that illustrate the key parts of the JavaScript implementation, such as the functions for loading the image data, applying the Atkinson dithering algorithm, and updating the canvas with the dithered image. The code also includes a function for limiting the colors of the image to a specific palette.
+
+Finally, the article concludes by highlighting the visual characteristics of Atkinson dithering, emphasizing its tendency to produce images with a brighter and less noisy appearance due to its conservative error distribution.
+
+<h2>Key Points</h2>
+
+*   **Introduction to Dithering:** Explains dithering as a technique to simulate a wider range of colors with a limited palette.
+*   **Atkinson Dithering Algorithm:** Focuses on the Atkinson dithering algorithm, known for its use in early Macintosh computers.
+*   **Error Distribution:** Describes the specific error distribution method of the Atkinson algorithm, where 1/8th of the error is distributed to four neighboring pixels.
+*   **Brighter and Less Noisy Images:** Highlights the visual characteristics of Atkinson dithering, resulting in brighter and less noisy images.
+*   **Interactive Demonstration:** Provides an interactive demonstration allowing users to upload images and adjust parameters like threshold and color palettes.
+*   **JavaScript Implementation:** Includes JavaScript code snippets that illustrate the core functions of the algorithm.
+*   **Color Palette Options:** Offers options for using different color palettes, such as grayscale, CGA, and EGA.
+*   **Threshold Adjustment:** Explains the effect of adjusting the threshold value on the brightness of the resulting image.
+</div>
+</div>
+</article>
