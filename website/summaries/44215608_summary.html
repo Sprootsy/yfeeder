@@ -1,0 +1,45 @@
+<article>
+    <h2>Why not use DNS over HTTPS (DoH)?</h2>
+    <div>
+ <div>
+  <p>This article on bsdhowto.ch discusses the implementation of DNS over HTTPS (DoH) on FreeBSD. It explains how DoH enhances privacy and security by encrypting DNS queries between a client and a DNS resolver, preventing eavesdropping and manipulation of DNS data. The article provides a step-by-step guide to setting up DoH using the `cloudflared` tunnel application, which acts as a proxy between the local machine and a DoH-compliant DNS server, such as Cloudflare's 1.1.1.1.
+ 
+
+ The guide begins with installing the `cloudflared` package via `pkg install cloudflared`. Next, it details the configuration of `cloudflared` through its configuration file, typically located at `/usr/local/etc/cloudflared/config.yml`. This file specifies the DoH server to use (e.g., `https://1.1.1.1/dns-query`), the address to listen on (`127.0.0.1`), and the port (`5053`).
+ 
+
+ To ensure `cloudflared` starts automatically on boot, the article instructs users to enable it in `/etc/rc.conf` by adding `cloudflared_enable="YES"`. The service can then be started with `service cloudflared start`.
+ 
+
+ After setting up `cloudflared`, the article describes how to configure the local system to use the DoH proxy for DNS resolution. This involves modifying `/etc/resolv.conf` to include `nameserver 127.0.0.1` and `port 5053`. However, it notes that `/etc/resolv.conf` is often dynamically generated, so changes might not persist.
+ 
+
+ To make the changes permanent, the article suggests modifying `/etc/rc.conf` to set the `resolvconf` settings. Specifically, setting `resolvconf=NO` disables the automatic management of `/etc/resolv.conf`, and `static_domain_search="YES"` allows the use of `static_search_list` and `static_domain_name`.  The `static_nameserver` variable should then be set to `127.0.0.1` and the `static_nameserver_port` set to `5053`.
+ 
+
+ For testing the DoH setup, the article recommends using `tcpdump` to monitor network traffic and verify that DNS queries are indeed going through HTTPS. The command `tcpdump -i any -n port 53` can be used to check for standard DNS traffic on port 53; if DoH is working correctly, there should be no such traffic.  The article also links to online tools such as Cloudflare's browser check to confirm that the DNS queries are being resolved through Cloudflare.
+ 
+
+ Additionally, the article touches on running `cloudflared` as a non-root user for enhanced security. This involves creating a dedicated user (e.g., `cloudflared`) and group, changing the ownership of the `cloudflared` configuration directory, and adjusting the `cloudflared` startup script to run the service as the new user.
+ 
+
+ Finally, the article briefly discusses potential issues, such as DNS leaks, and suggests using firewall rules to prevent applications from bypassing the DoH proxy and making direct DNS queries.
+ 
+
+ </p>
+ 
+
+ <h2>Key Points:</h2>
+ <ul>
+  <li><b>Purpose of DoH:</b> Enhances privacy and security by encrypting DNS queries.</li>
+  <li><b>Tool Used:</b> `cloudflared` is used as a proxy to handle DoH.</li>
+  <li><b>Installation:</b> Install `cloudflared` using `pkg install cloudflared`.</li>
+  <li><b>Configuration:</b> Configure `cloudflared` via `/usr/local/etc/cloudflared/config.yml` to specify the DoH server and listening address/port.</li>
+  <li><b>Automatic Startup:</b> Enable `cloudflared` in `/etc/rc.conf` with `cloudflared_enable="YES"`.</li>
+  <li><b>DNS Resolution:</b> Configure the system to use the DoH proxy by modifying `/etc/resolv.conf` and `/etc/rc.conf`.</li>
+  <li><b>Testing:</b> Use `tcpdump` to verify that DNS traffic is going through HTTPS and online tools to confirm DNS resolution via Cloudflare.</li>
+  <li><b>Security:</b> Run `cloudflared` as a non-root user and implement firewall rules to prevent DNS leaks.</li>
+ </ul>
+ </div>
+ </div>
+</article>
