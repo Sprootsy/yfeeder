@@ -1,0 +1,33 @@
+<article>
+    <h2>Binfmtc – binfmt_misc C scripting interface</h2>
+    <div>
+<div>
+  <p>The article discusses <code>binfmtc</code>, a user-space command designed to register binary formats with the Linux kernel's <code>binfmt_misc</code> facility. The <code>binfmt_misc</code> facility allows the kernel to recognize and execute binary files based on their content rather than just their file extension. This is particularly useful for executing files from different operating systems or architectures on a Linux system. <code>binfmtc</code> simplifies the process of registering these binary formats, which would otherwise require direct interaction with the <code>/proc/sys/fs/binfmt_misc/register</code> file.</p>
+
+  <p>The article begins by explaining the core functionality of <code>binfmt_misc</code> and how it enables the execution of foreign binaries. It details the format used for registering binary formats through the <code>/proc</code> interface, which involves specifying a magic number (a sequence of bytes at the beginning of the file) and a corresponding interpreter to execute the file.  It highlights the complexity of manually crafting these registration strings and the potential for errors.</p>
+
+  <p><code>binfmtc</code> is presented as a solution to this problem. It provides a command-line interface that simplifies the registration process. Instead of manually constructing the registration string, users can use <code>binfmtc</code> to specify the magic number, mask (which specifies which bits of the magic number are relevant), and the interpreter. <code>binfmtc</code> then constructs the correct registration string and writes it to the appropriate <code>/proc</code> file. The article provides examples of how to use <code>binfmtc</code> to register various binary formats, such as Java class files and DOS executables.</p>
+
+  <p>The article also discusses the use of offset values in the magic number matching process. By specifying an offset, <code>binfmt_misc</code> can examine bytes at a specific location within the file, rather than just at the beginning. This is useful for formats where the magic number is located further into the file. The mask value allows for more flexible matching, where only certain bits of the magic number need to match.</p>
+
+  <p>The author emphasizes that <code>binfmtc</code> aims to be a small and simple utility that reduces the chance of errors when registering binary formats. It handles the complexities of constructing the registration strings, allowing users to focus on specifying the correct magic number, mask, and interpreter. The article also touches on the error handling capabilities of <code>binfmtc</code>, such as checking for valid hexadecimal characters in the magic number and mask, and verifying the existence of the specified interpreter.</p>
+
+  <p>Furthermore, the document mentions security considerations. Because registering a binary format effectively tells the kernel to execute a specific file with a specific interpreter, care must be taken to ensure that the interpreter is trustworthy and that the magic number and mask are specific enough to avoid unintended execution of other file types.  Incorrectly configured <code>binfmt_misc</code> entries can potentially lead to security vulnerabilities.</p>
+
+  <p>In essence, <code>binfmtc</code> offers a user-friendly interface to the powerful but potentially complex <code>binfmt_misc</code> kernel feature, making it easier to run binaries of various types on a Linux system by automating the registration process.</p>
+
+  <h2>Key Points:</h2>
+  <ul>
+    <li><code>binfmt_misc</code> allows the Linux kernel to recognize and execute different binary formats based on file content (magic number).</li>
+    <li>Manually registering binary formats via <code>/proc/sys/fs/binfmt_misc/register</code> is complex and error-prone.</li>
+    <li><code>binfmtc</code> is a command-line tool that simplifies the registration of binary formats with <code>binfmt_misc</code>.</li>
+    <li><code>binfmtc</code> takes the magic number, mask, and interpreter as input and constructs the correct registration string.</li>
+    <li>Magic numbers can be specified with an offset to check bytes at specific locations within the file.</li>
+    <li>The mask allows for flexible matching, where only certain bits of the magic number need to match.</li>
+    <li><code>binfmtc</code> includes error checking to prevent invalid registrations.</li>
+    <li>Proper configuration of <code>binfmt_misc</code> entries is crucial for system security.</li>
+    <li><code>binfmtc</code> aims to be a small, simple, and reliable utility.</li>
+  </ul>
+</div>
+</div>
+</article>
