@@ -1,0 +1,40 @@
+<article>
+    <h2>A bit more on Twitter/X&#39;s new encrypted messaging</h2>
+    <div>
+<div>
+  <p>
+    The article is a blog post discussing the security of Twitter/X's new encrypted messaging feature. It delves into various aspects of the feature, starting with its reliance on the Signal protocol, a well-regarded standard in secure messaging. The post highlights that while the protocol itself is solid, its implementation and the surrounding infrastructure significantly impact the overall security.
+  </p>
+  <p>
+    One critical area of focus is key management. The author emphasizes that the security of encrypted messaging hinges on securely generating, storing, and exchanging cryptographic keys. The post questions how Twitter/X handles these keys, particularly the private keys, which must be protected from unauthorized access. If Twitter/X stores these keys on their servers, it introduces a potential vulnerability: a compromise of Twitter/X's systems could expose users' private messages. The author suggests that a more secure approach would involve end-users managing their own keys, although this introduces usability challenges.
+  </p>
+  <p>
+    The post also examines the threat model of Twitter/X's encrypted messaging. It discusses who the feature is designed to protect against. If the goal is to protect against surveillance by nation-states or sophisticated attackers, the security requirements are much higher than if the goal is simply to protect against casual eavesdropping. The author implies that the current implementation may not be sufficient to withstand attacks from well-resourced adversaries, especially if Twitter/X retains access to users' encryption keys.
+  </p>
+  <p>
+    Another point raised is the issue of metadata. Even with end-to-end encryption, certain metadata associated with messages (such as sender, receiver, and timestamp) may still be visible to Twitter/X and potentially to third parties. This metadata can reveal a great deal of information about users' communication patterns, even if the content of the messages remains confidential. The article suggests that minimizing metadata leakage is crucial for ensuring strong privacy.
+  </p>
+  <p>
+    The author further explores the possibility of side-channel attacks. Even if the encryption is theoretically sound, vulnerabilities in the implementation or the surrounding system could allow attackers to extract information about the encryption keys or the message content. Examples include timing attacks or power analysis attacks. The post emphasizes the importance of thorough security testing and code review to mitigate these risks.
+  </p>
+  <p>
+    The article also touches upon the topic of trust. Users must trust that Twitter/X has implemented the encryption correctly and that they are not surreptitiously undermining the security. This trust can be difficult to establish, especially given Twitter/X's history of security incidents and changes in ownership. The author suggests that open-source implementations and independent audits can help to build trust.
+  </p>
+  <p>
+    Finally, the post acknowledges that encrypted messaging is a complex field and that there are inherent trade-offs between security, usability, and performance. The author suggests that Twitter/X should be transparent about the security properties of their encrypted messaging feature and that users should carefully consider the risks and benefits before using it.
+  </p>
+
+  <h2>Key Points:</h2>
+  <ul>
+    <li>Twitter/X's encrypted messaging uses the Signal protocol, a generally secure standard.</li>
+    <li>Key management is critical; how Twitter/X handles private keys is a major security concern. Storing keys server-side creates a vulnerability.</li>
+    <li>The threat model matters: the feature's security level should match the intended protection (e.g., casual eavesdropping vs. nation-state surveillance).</li>
+    <li>Metadata leakage can reveal significant information even with encryption.</li>
+    <li>Side-channel attacks are a potential threat, requiring thorough security testing.</li>
+    <li>Trust in Twitter/X's implementation is essential but potentially challenging to establish.</li>
+    <li>There are trade-offs between security, usability, and performance in encrypted messaging.</li>
+    <li>Transparency about the security properties of the feature is crucial.</li>
+  </ul>
+</div>
+</div>
+</article>
