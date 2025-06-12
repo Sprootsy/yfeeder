@@ -1,0 +1,29 @@
+<article>
+    <h2>Bypassing GitHub Actions policies in the dumbest way possible</h2>
+    <div>
+<div>
+<h3>Summary</h3>
+<p>The article discusses a significant vulnerability in GitHub Actions related to policy enforcement, specifically how easily these policies can be bypassed. It highlights that while GitHub offers policy features to restrict what actions can be used in a repository or organization, these policies are often ineffective due to a simple oversight: the ability to use actions from specific commit SHAs or Docker images directly, rather than relying on the recommended tag-based versioning.</p>
+
+<p>The author explains that GitHub Actions policies are designed to control which actions are allowed to run, intending to prevent the use of potentially malicious or unapproved code. These policies can be configured to permit only actions from trusted sources or specific, approved actions. However, the article demonstrates that by referencing an action through its full commit SHA or by using a Docker image reference, users can bypass these policies entirely. This is because GitHub's policy engine typically checks against the action's name or tag, not the underlying commit or container image.</p>
+
+<p>The article provides a practical example to illustrate this bypass. It shows how a policy might block the use of a specific action referenced by its tag (e.g., `actions/checkout@v3`), but the same action can still be executed if referenced by its commit SHA (e.g., `actions/checkout@<commit-sha>`). Similarly, if an action is packaged as a Docker image, referencing the image directly will also bypass the policy checks.</p>
+
+<p>The author argues that this loophole renders GitHub Actions policies largely useless, as malicious actors can easily circumvent the intended restrictions. This is particularly concerning in environments where security and compliance are critical. The article emphasizes the importance of addressing this vulnerability to ensure that policies can effectively protect against unauthorized or risky actions.</p>
+
+<p>The piece concludes by calling for GitHub to improve its policy enforcement mechanisms to consider the underlying commit SHAs and Docker image references, thereby closing this significant bypass. Without such improvements, the author suggests that organizations should be wary of relying solely on GitHub Actions policies for security and compliance purposes.</p>
+
+<h3>Key Points</h3>
+<ul>
+    <li>GitHub Actions policies can be bypassed by referencing actions using commit SHAs or Docker image references instead of tags.</li>
+    <li>GitHub's policy engine primarily checks action names or tags, neglecting the underlying commit or container image.</li>
+    <li>This bypass makes GitHub Actions policies largely ineffective, as malicious actors can easily circumvent intended restrictions.</li>
+    <li>Referencing an action by its commit SHA (e.g., `actions/checkout@<commit-sha>`) bypasses policies that block the action's tag (e.g., `actions/checkout@v3`).</li>
+    <li>Using a Docker image reference for an action also bypasses policy checks.</li>
+    <li>The vulnerability is concerning for environments where security and compliance are critical.</li>
+    <li>GitHub needs to improve its policy enforcement mechanisms to consider commit SHAs and Docker image references.</li>
+    <li>Organizations should be cautious about relying solely on GitHub Actions policies for security due to this bypass.</li>
+</ul>
+</div>
+</div>
+</article>
