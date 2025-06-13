@@ -1,0 +1,48 @@
+<article>
+    <h2>Solving LinkedIn Queens with SMT</h2>
+    <div>
+<div>
+  <h3>Summary:</h3>
+  <p>
+    The article, "Solving LinkedIn Queens With SMT," by Hillel Wayne, discusses using Satisfiability Modulo Theories (SMT) solvers to solve the N-Queens puzzle, a classic problem in computer science. The author explains how he encountered the problem on LinkedIn and decided to tackle it using SMT.
+  </p>
+  <p>
+    The article begins by introducing the N-Queens problem: placing N chess queens on an N×N chessboard so that no two queens threaten each other. This means no two queens can share the same row, column, or diagonal.
+  </p>
+  <p>
+    The author then describes the manual, brute-force approach to solving the puzzle, highlighting its limitations, especially as N increases. He contrasts this with constraint satisfaction problems (CSPs), where the goal is to find a solution that satisfies a set of constraints. He positions the N-Queens problem as a CSP and introduces SMT solvers as a tool for solving such problems.
+  </p>
+  <p>
+    The core of the article is the explanation of how to encode the N-Queens problem for an SMT solver. This involves defining the variables and constraints that represent the problem. The author chooses to represent the board as a set of variables, where each variable corresponds to the column position of the queen in each row. The constraints are then formulated to ensure that no two queens share a column or diagonal.
+  </p>
+  <p>
+    The author describes how to express these constraints in a logical format that an SMT solver can understand. He uses Z3, a popular SMT solver, and its Python bindings to implement the solution. The code provided defines functions to create variables and constraints, and then uses the solver to find a satisfying assignment of variables, which represents a solution to the N-Queens problem.
+  </p>
+  <p>
+    The article details the encoding of the constraints. The constraints ensure that:
+  </p>
+  <ol>
+    <li>No two queens are in the same column.</li>
+    <li>No two queens are on the same diagonal (both positive and negative diagonals).</li>
+  </ol>
+  <p>
+    These constraints are expressed using logical operators such as 'Not' and 'Implies' to ensure the SMT solver understands the problem's rules.
+  </p>
+  <p>
+    The author then discusses the performance of the SMT solver, mentioning that it can quickly find solutions for relatively small values of N. He acknowledges that as N increases, the complexity of the problem grows, and the solver may take longer to find a solution. He also notes that for very large N, other specialized algorithms might be more efficient.
+  </p>
+  <p>
+    The article concludes by reflecting on the experience of solving the N-Queens problem with an SMT solver. The author highlights the benefits of using SMT solvers for constraint satisfaction problems, particularly their ability to automatically search for solutions based on a logical encoding of the problem. He also notes the potential for using SMT solvers in other domains where constraint satisfaction is important.
+  </p>
+  <h3>Key Points:</h3>
+  <ul>
+    <li>The N-Queens problem is a classic constraint satisfaction problem.</li>
+    <li>SMT solvers can be used to solve the N-Queens problem by encoding it as a set of logical constraints.</li>
+    <li>The encoding involves defining variables to represent the queen positions and constraints to ensure no two queens threaten each other.</li>
+    <li>Z3 is a popular SMT solver that can be used with Python.</li>
+    <li>The constraints ensure that no two queens share the same column, or diagonals.</li>
+    <li>SMT solvers can efficiently solve the N-Queens problem for small N, but performance may degrade for larger N.</li>
+  </ul>
+</div>
+</div>
+</article>

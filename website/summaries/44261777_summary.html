@@ -1,0 +1,30 @@
+<article>
+    <h2>Frequent reauth doesn&#39;t make you more secure</h2>
+    <div>
+<div>
+<h3>Summary:</h3>
+<p>The article discusses the security implications and trade-offs of frequent reauthentication (reath) in the context of Tailscale, a mesh VPN. It begins by outlining the common security advice to frequently reauthenticate users, typically employed to mitigate the risk of stolen or compromised credentials. The author questions the universal applicability of this advice, especially in scenarios where the cure might be worse than the disease. The core argument is that while frequent reauthentication can reduce the window of opportunity for attackers using stolen credentials, it can also introduce usability issues that lead to users adopting less secure behaviors, thereby increasing overall risk.</p>
+
+<p>The article uses the analogy of seatbelts in cars. While seatbelts undeniably improve safety, excessively tight or uncomfortable seatbelts might deter users from wearing them at all, resulting in a net decrease in safety. Similarly, frequent reauthentication can frustrate users, leading them to write down passwords, reuse passwords, or disable security features altogether.</p>
+
+<p>The author then explores the specific context of Tailscale. Tailscale operates on a model where devices are authenticated and authorized to access a network. The initial authentication establishes a persistent connection, which is then re-keyed periodically in the background. The author argues that Tailscale's architecture already provides a strong level of security without requiring excessively frequent reauthentication prompts for users. Tailscale leverages short-lived keys and automatic key rotation to minimize the impact of a compromised key. Additionally, Tailscale's control plane performs continuous authorization checks, ensuring that even with a valid key, a device's access can be revoked immediately if necessary.</p>
+
+<p>The author also points out that frequent reauthentication prompts can be disruptive and reduce user trust in the system. Users who are constantly prompted to reauthenticate may become desensitized to the prompts and may be more likely to mindlessly click through them, potentially falling victim to phishing attacks or other social engineering tactics.</p>
+
+<p>The article also addresses the potential for "evil maid" attacks, where an attacker gains physical access to a device and compromises its security. While frequent reauthentication can theoretically mitigate this risk, the author argues that other security measures, such as full-disk encryption and strong device passwords, are more effective and less disruptive.</p>
+
+<p>The conclusion is that frequent reauthentication is not a universally beneficial security practice and that its effectiveness depends heavily on the specific context and implementation. In the case of Tailscale, the author argues that the existing security architecture, with its short-lived keys, automatic key rotation, and continuous authorization checks, provides a strong level of security without the need for disruptive and potentially counterproductive frequent reauthentication prompts.</p>
+
+<h3>Key Points:</h3>
+<ul>
+    <li>Frequent reauthentication is a common security recommendation, but it's not universally beneficial.</li>
+    <li>Excessive reauthentication can lead to usability problems, causing users to adopt less secure behaviors.</li>
+    <li>Tailscale's architecture already provides strong security with short-lived keys, automatic key rotation, and continuous authorization checks.</li>
+    <li>Frequent reauthentication prompts can be disruptive, reduce user trust, and potentially increase susceptibility to phishing attacks.</li>
+    <li>Other security measures, like full-disk encryption and strong device passwords, are more effective against "evil maid" attacks.</li>
+    <li>The effectiveness of frequent reauthentication depends on the specific context and implementation.</li>
+    <li>Tailscale prioritizes a balance between security and usability, avoiding unnecessary reauthentication prompts.</li>
+</ul>
+</div>
+</div>
+</article>

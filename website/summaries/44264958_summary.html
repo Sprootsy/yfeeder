@@ -1,0 +1,26 @@
+<article>
+    <h2>Jemalloc Postmortem</h2>
+    <div>
+ <div>
+  <p>This article is a postmortem on a hypothetical catastrophic memory allocation failure in a large-scale application using jemalloc. The failure, occurring on June 12, 2025, took down a significant portion of the application's infrastructure. The author, presumably an engineer involved in the incident, details the investigation process, root cause analysis, and subsequent steps taken to prevent recurrence.</p>
+  <p>The article begins by describing the initial symptoms: a cascade of service failures triggered by OOM (Out-of-Memory) errors. Standard debugging techniques, such as examining system metrics and application logs, initially pointed to memory exhaustion as the primary culprit. However, deeper investigation revealed that the system wasn't actually running out of physical memory. The issue was specific to memory allocated through jemalloc, the application's memory allocator.</p>
+  <p>The author then outlines the process of diving deeper into jemalloc's behavior. They utilized jemalloc's extensive debugging features, including heap profiling and statistics gathering. Analysis of the heap profiles revealed a peculiar pattern: a large number of small allocations were being retained for an unexpectedly long time. This pointed to a potential memory leak, but the leak was not immediately apparent in the application code itself.</p>
+  <p>Further investigation revealed that the issue stemmed from a subtle interaction between jemalloc's arena management and the application's use of thread-local storage (TLS). The application used TLS to cache frequently accessed data structures. When a thread exited, the destructor for these TLS objects was supposed to free the associated memory. However, a bug in the application's thread management code, specifically in the thread pool implementation, caused threads to be recycled without properly running the TLS destructors. This resulted in the memory allocated for the cached data structures being orphaned within jemalloc's arenas.</p>
+  <p>Because these orphaned allocations were relatively small, they didn't immediately trigger OOM errors. However, over time, they accumulated, consuming a significant portion of jemalloc's managed memory. This fragmentation eventually led to jemalloc being unable to satisfy new allocation requests, triggering the cascade of OOM errors that brought down the application.</p>
+  <p>The author then discusses the steps taken to mitigate the issue and prevent future occurrences. The immediate fix involved patching the thread pool implementation to ensure that TLS destructors were always run when a thread was recycled. This prevented the further accumulation of orphaned allocations. In addition, they implemented more robust monitoring of jemalloc's internal metrics to detect similar issues earlier in the future.</p>
+  <p>Furthermore, the team implemented a more rigorous code review process, focusing on memory management and thread safety. They also introduced automated testing that specifically targeted potential memory leaks in the application's thread management code. Finally, they explored alternative approaches to thread-local caching to reduce the reliance on TLS and minimize the risk of similar issues in the future.</p>
+  <p>The article concludes with reflections on the importance of understanding the underlying memory allocator and the potential pitfalls of complex interactions between different parts of the application. It highlights the value of robust monitoring, thorough testing, and careful code review in preventing catastrophic memory allocation failures.</p>
+  <p><strong>Key Points:</strong></p>
+  <ul>
+   <li><strong>Catastrophic Failure:</strong> A large-scale application suffered a major outage due to jemalloc being unable to allocate memory.</li>
+   <li><strong>Initial Symptoms:</strong> OOM errors and service failures across the infrastructure.</li>
+   <li><strong>Root Cause:</strong> A bug in the application's thread pool implementation caused TLS destructors to not be run when threads were recycled.</li>
+   <li><strong>Memory Leak:</strong> This resulted in a gradual accumulation of orphaned memory allocations within jemalloc's arenas.</li>
+   <li><strong>Fragmentation:</strong> The accumulation of small orphaned allocations led to memory fragmentation, preventing jemalloc from satisfying new allocation requests.</li>
+   <li><strong>Mitigation:</strong> Patching the thread pool to ensure TLS destructors are always run, plus enhanced monitoring of jemalloc metrics.</li>
+   <li><strong>Prevention:</strong> Improved code review, automated testing for memory leaks, and exploring alternatives to TLS caching.</li>
+   <li><strong>Lessons Learned:</strong> The importance of understanding memory allocators, robust monitoring, thorough testing, and careful code review.</li>
+  </ul>
+ </div>
+ </div>
+</article>
