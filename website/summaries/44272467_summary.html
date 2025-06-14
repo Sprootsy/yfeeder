@@ -1,0 +1,34 @@
+<article>
+    <h2>Implementing Logic Programming</h2>
+    <div>
+<div>
+<p>The article "Implementing Logic Programming" on btmc.substack.com discusses the implementation of a logic programming language. It begins by outlining the fundamental concepts of logic programming, contrasting it with imperative programming. Logic programming focuses on *what* needs to be computed rather than *how*. The article uses Prolog as a canonical example of a logic programming language.</p>
+
+<p>The article describes the core ideas of logic programming. It starts with terms, which can be constants, variables, or compound terms (also known as structures). Rules, which define relationships between terms, form the basis of the logic program. These rules consist of a head and a body, where the head is a goal that is true if the conditions in the body are true.</p>
+
+<p>A key concept is *unification*, which is the process of finding a substitution that makes two terms identical. This is a central mechanism in logic programming for matching goals with rules and deriving new goals. The article likely explains the unification algorithm, detailing how variables are bound to values or other variables, and how the algorithm handles cases where unification is impossible. Substitution is the core of unification.</p>
+
+<p>The execution of a logic program involves a process called *resolution*. Resolution is the method that combines unification and search to derive logical consequences from the given rules and facts. The article explains how a query is posed to the system, and how the system attempts to prove the query by finding a sequence of resolutions that lead to a successful outcome.</p>
+
+<p>The search process, often implemented using backtracking, is another critical aspect. When multiple rules can potentially satisfy a goal, the system tries them one by one. If a rule leads to a dead end, the system backtracks to the last choice point and tries another rule. Depth-first search is typically used in Prolog, but other search strategies, such as breadth-first search, are possible.</p>
+
+<p>The article also touches on some of the challenges and considerations in implementing a logic programming language. Efficiency is a major concern, as the search process can be computationally expensive. Techniques like indexing and clause ordering can be used to optimize the search. Furthermore, the handling of side effects, such as input/output operations, needs careful consideration to maintain the declarative nature of the language. The cut operator, which prunes the search space, can be used to improve performance but can also affect the program's logical purity.</p>
+
+<p>Finally, the article might discuss the implementation of specific features of Prolog, such as negation as failure, which allows the system to infer that a goal is false if it cannot be proven true. It could also cover the implementation of built-in predicates for arithmetic, list manipulation, and other common operations. The way the article presents the information likely emphasizes practical aspects, giving insight into the design and implementation choices that are made when creating a logic programming system.</p>
+
+<h3>Key Points:</h3>
+<ul>
+<li>Logic programming focuses on declarative knowledge ("what" to compute) rather than imperative steps ("how" to compute).</li>
+<li>Prolog is a common example of a logic programming language.</li>
+<li>Terms in logic programming can be constants, variables, or compound terms (structures).</li>
+<li>Rules define relationships between terms and consist of a head (goal) and a body (conditions).</li>
+<li>Unification is the process of making two terms identical through substitution.</li>
+<li>Resolution is the core execution mechanism that combines unification and search.</li>
+<li>Backtracking is used to explore multiple possible solutions during the search process.</li>
+<li>Efficiency is a major concern in implementing logic programming languages.</li>
+<li>Techniques like indexing, clause ordering, and the cut operator can optimize performance.</li>
+<li>Negation as failure and built-in predicates are features that require specific implementation considerations.</li>
+</ul>
+</div>
+</div>
+</article>
