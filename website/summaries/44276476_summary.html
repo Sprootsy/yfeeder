@@ -1,0 +1,32 @@
+<article>
+    <h2>I have reimplemented Stable Diffusion 3.5 from scratch in pure PyTorch</h2>
+    <div>
+<div>
+  <p>
+    The article on GitHub describes miniDiffusion, a minimalistic implementation of the Stable Diffusion text-to-image model using PyTorch. The repository aims to provide a simplified and understandable version of the complex Stable Diffusion architecture, making it easier for researchers and developers to learn about and experiment with diffusion models. The project prioritizes clarity and conciseness over performance, offering a distilled view of the core components and processes involved in generating images from textual descriptions.
+  </p>
+  <p>
+    The implementation covers the key elements of Stable Diffusion, including:
+  </p>
+  <ol>
+    <li><b>The Variational Autoencoder (VAE):</b>  This component is responsible for encoding the input image into a lower-dimensional latent space and decoding it back into the pixel space.  The encoder part of the VAE compresses the image into a more compact representation, while the decoder reconstructs the image from this compressed representation. This allows the diffusion process to operate in a lower-dimensional space, reducing computational requirements.</li>
+    <li><b>The U-Net:</b>  This is the core component of the diffusion model. It is a neural network architecture that iteratively denoises a latent representation of an image. It takes as input the noisy latent representation and a timestep and predicts the noise that was added. The U-Net consists of an encoder part that progressively downsamples the input, a bottleneck layer, and a decoder part that progressively upsamples the feature maps to reconstruct the original size. Skip connections are used to connect the encoder and decoder parts at corresponding resolutions, which helps to preserve fine-grained details and improve the quality of the generated images.</li>
+    <li><b>The Text Encoder (CLIP):</b> This encodes the input text prompt into a latent representation that can be used to condition the diffusion process.  The CLIP model is pre-trained on a large dataset of image-text pairs and is capable of capturing the semantic meaning of the text. The encoded text representation is then used to guide the denoising process in the U-Net, ensuring that the generated image is consistent with the text prompt.</li>
+    <li><b>The Diffusion Process:</b>  This involves gradually adding noise to an image over a series of timesteps.  Starting with a clean image, Gaussian noise is progressively added until the image is completely random. The U-Net is then trained to reverse this process, i.e., to remove noise from a noisy image and reconstruct the original image. During inference, the diffusion process starts with random noise, and the U-Net iteratively removes noise to generate a coherent image.</li>
+    <li><b>DDPM (Denoising Diffusion Probabilistic Models) sampling:</b> The repository implements DDPM sampling, a method for generating samples from a diffusion model. It involves iteratively denoising a randomly initialized latent vector using the U-Net.</li>
+  </ol>
+  <p>
+    The repository likely provides code examples demonstrating how to train and use the miniDiffusion model.  Due to the "mini" nature of the project, the expectation is that training would still require significant computational resources, but the codebase should be easier to understand and modify than full-scale implementations. The simplified design makes it a good starting point for understanding the underlying principles of Stable Diffusion and other diffusion models.
+  </p>
+
+  <h2>Key Points:</h2>
+  <ul>
+    <li>miniDiffusion is a simplified PyTorch implementation of Stable Diffusion.</li>
+    <li>It prioritizes readability and understandability over performance.</li>
+    <li>It includes implementations of the VAE, U-Net, CLIP text encoder, and diffusion process.</li>
+    <li>It demonstrates DDPM sampling.</li>
+    <li>It's intended as an educational resource for learning about diffusion models.</li>
+  </ul>
+</div>
+</div>
+</article>
