@@ -1,0 +1,37 @@
+<article>
+    <h2>Q-learning is not yet scalable</h2>
+    <div>
+ <div>
+  <h2>Summary</h2>
+  <p>
+   The article "Q-Learning Is Not Yet Scalable" by Seo Hong discusses the limitations of Q-learning, a reinforcement learning algorithm, in addressing real-world, complex problems. It highlights the scalability issues that arise when dealing with large state and action spaces, which are common in practical applications. The author explains how Q-learning, in its basic form, relies on maintaining a Q-table to store and update Q-values for each state-action pair. As the number of states and actions grows, the size of the Q-table increases exponentially, leading to memory constraints and computational challenges.
+  </p>
+  <p>
+   The article begins by introducing Q-learning and its fundamental concepts, emphasizing its model-free nature and its ability to learn optimal policies through trial and error. However, it quickly transitions to discussing the curse of dimensionality, a significant obstacle in reinforcement learning. The curse of dimensionality refers to the exponential growth in the state and action spaces, which makes it infeasible to explore and learn the Q-values for every possible state-action pair.
+  </p>
+  <p>
+   The author points out that in many real-world scenarios, the state space is continuous or has a high number of discrete states, making it impossible to represent the Q-table explicitly. For example, in robotics, the state of a robot arm might be defined by the angles of its joints, which can take on a continuous range of values. Similarly, in games like Go, the number of possible board configurations is astronomically large.
+  </p>
+  <p>
+   To address the scalability issues of Q-learning, the article mentions several techniques that have been developed. One common approach is to use function approximation methods, such as neural networks, to estimate the Q-values. Instead of storing Q-values in a table, a neural network is trained to map state-action pairs to their corresponding Q-values. This allows for generalization across similar states and actions, reducing the memory requirements and improving learning efficiency.
+  </p>
+  <p>
+   Another technique discussed is the use of hierarchical reinforcement learning, where complex tasks are broken down into smaller, more manageable subtasks. By learning policies for these subtasks, the overall learning process becomes more scalable. Additionally, the article touches on the use of experience replay, a technique where past experiences are stored and reused during training to improve the stability and convergence of Q-learning.
+  </p>
+  <p>
+   Despite these advancements, the author argues that Q-learning still faces challenges in truly complex environments. Fine-tuning function approximation methods can be difficult, and hierarchical reinforcement learning requires careful design of the subtasks. The article concludes by suggesting that while Q-learning has been successful in some domains, further research is needed to develop more scalable reinforcement learning algorithms that can handle the complexities of real-world problems effectively. The author emphasizes that the quest for truly scalable reinforcement learning remains an active area of research.
+  </p>
+  <h2>Key Points</h2>
+  <ul>
+   <li>Q-learning is a model-free reinforcement learning algorithm that learns optimal policies through trial and error.</li>
+   <li>Q-learning suffers from scalability issues due to the curse of dimensionality, where the state and action spaces grow exponentially.</li>
+   <li>The exponential growth makes it infeasible to store and update Q-values for every possible state-action pair in a Q-table.</li>
+   <li>Function approximation methods, such as neural networks, can be used to estimate Q-values and generalize across similar states and actions.</li>
+   <li>Hierarchical reinforcement learning breaks down complex tasks into smaller subtasks to improve scalability.</li>
+   <li>Experience replay improves the stability and convergence of Q-learning by reusing past experiences during training.</li>
+   <li>Despite these advancements, Q-learning still faces challenges in truly complex environments, and further research is needed.</li>
+   <li>The quest for truly scalable reinforcement learning remains an active area of research.</li>
+  </ul>
+ </div>
+ </div>
+</article>

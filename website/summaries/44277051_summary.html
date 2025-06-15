@@ -1,0 +1,53 @@
+<article>
+    <h2>Inside the Apollo “8-Ball” FDAI (Flight Director / Attitude Indicator)</h2>
+    <div>
+ <div>
+  <p>
+   Ken Shirriff's blog post delves into the intricate workings of the Apollo Guidance Computer's (AGC) Floating Divide and Arctangent (FDAI) routine, specifically focusing on the implementation details from Luminary 210, the software version used during the Apollo 11 mission. The article provides a deep dive into the code, revealing the computational techniques employed to perform division and arctangent calculations with limited hardware resources.
+  </p>
+  <p>
+   The FDAI routine is crucial because the AGC lacks native floating-point division and arctangent functions, essential for navigation calculations. Shirriff elucidates how the FDAI subroutine cleverly implements these functions using iterative algorithms and fixed-point arithmetic, optimized for the AGC's unique architecture. He explains that the division is performed using a restoring division algorithm, which involves repeated subtraction and shifting. This method estimates the quotient bit by bit.
+  </p>
+  <p>
+   For the arctangent calculation, the routine employs a Coordinate Rotation Digital Computer (CORDIC) algorithm, specifically tailored for the AGC. The CORDIC algorithm iteratively rotates a vector until it aligns with the x-axis; the angle of rotation then represents the arctangent of the original vector's y/x ratio. Shirriff describes how the AGC's implementation uses a lookup table of arctangent values for specific angles, allowing it to perform the rotations efficiently. The arctangent function accepts two inputs (X and Y) that represent a 2D vector. The goal is to find the angle of this vector, i.e. the arctangent of Y/X. To do this, the algorithm progressively rotates the vector (X, Y) until Y becomes very close to zero. With each rotation, the algorithm keeps track of the rotation angle, and the sum of these angles will become the arctangent of the original vector.
+  </p>
+  <p>
+   The article meticulously examines the AGC's assembly code, highlighting key instructions and memory locations used by the FDAI routine. It explains how the code handles special cases, such as division by zero and input values that could lead to inaccuracies. Shirriff also discusses the optimizations implemented to minimize execution time, considering the AGC's limited processing power.
+  </p>
+  <p>
+   Furthermore, the blog post emphasizes the importance of precision in the FDAI routine. Given the critical nature of navigation during the Apollo missions, even small errors in division or arctangent calculations could have significant consequences. Shirriff points out how the AGC's programmers carefully balanced accuracy and performance to meet the mission's requirements. He also notes the challenges faced by the programmers in working with the AGC's fixed-point arithmetic and limited memory, necessitating clever coding techniques to achieve the desired functionality.
+  </p>
+  <p>
+   The article also explains the memory layout and data structures used by the FDAI routine, providing insight into how the AGC's programmers organized the code and data to optimize performance. It details the use of registers and memory locations to store intermediate results and lookup tables.
+  </p>
+  <p>
+   Finally, Shirriff's analysis sheds light on the ingenuity and skill of the Apollo-era programmers who developed the FDAI routine and the broader AGC software. Their ability to create complex mathematical functions within the constraints of the AGC's hardware is a testament to their expertise and dedication. The article serves as a valuable resource for those interested in the history of computing, embedded systems, and the Apollo program.
+  </p>
+  <p>
+   <b>Key Points:</b>
+  </p>
+  <ul>
+   <li>
+    The article explores the inner workings of the Apollo Guidance Computer's (AGC) Floating Divide and Arctangent (FDAI) routine from the Luminary 210 software.
+   </li>
+   <li>
+    The FDAI routine implemented division using a restoring division algorithm involving repeated subtraction and shifting.
+   </li>
+   <li>
+    Arctangent calculation was performed using a tailored Coordinate Rotation Digital Computer (CORDIC) algorithm.
+   </li>
+   <li>
+    The CORDIC algorithm iteratively rotated a vector, using a lookup table of arctangent values, until it aligned with the x-axis to determine the arctangent of the original vector.
+   </li>
+   <li>
+    The article analyzes the AGC's assembly code, highlighting key instructions and memory locations.
+   </li>
+   <li>
+    The code handled special cases like division by zero and optimized for the AGC's limited processing power.
+   </li>
+   <li>
+    Precision was crucial in the FDAI routine for accurate navigation, balancing accuracy and performance.
+   </li>
+   <li>
+    The article details the memory layout and data structures</div>
+</article>
