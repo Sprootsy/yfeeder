@@ -1,0 +1,35 @@
+<article>
+    <h2>Modifying an HDMI dummy plug&#39;s EDID using a Raspberry Pi</h2>
+    <div>
+<div>
+<h3>Summary</h3>
+<p>The article describes how to modify the EDID (Extended Display Identification Data) of an HDMI dummy plug using a Raspberry Pi. An HDMI dummy plug is a small device that simulates a connected display, useful for situations where a physical monitor isn't available or practical, such as remote desktop access or cryptocurrency mining. The standard EDID data embedded in these plugs may not always provide the desired resolution or refresh rate, which can lead to limitations or issues with the simulated display.</p>
+
+<p>The process involves using a Raspberry Pi to read the EDID data from the dummy plug, modify it to specify the desired resolution and refresh rate, and then reprogram the dummy plug with the modified EDID. The author utilizes the <code>cec-utils</code> package on the Raspberry Pi to read the EDID. Specifically, the <code>read-edid</code> command is used to extract the EDID data from the HDMI port where the dummy plug is connected.</p>
+
+<p>The extracted EDID data is typically in a binary format, which is then converted into a human-readable format using a tool like a hex editor. The author uses a hex editor to examine the EDID data and identify the sections that need modification. Key parameters to adjust include the preferred resolution, supported resolutions, and refresh rates.</p>
+
+<p>Once the EDID data is modified, it needs to be written back to the dummy plug. The article outlines a method of flashing the EDID data using the Raspberry Pi’s I2C interface. This involves connecting the Raspberry Pi's GPIO pins (specifically the I2C SDA and SCL pins) to the corresponding pins on the HDMI dummy plug. The author emphasizes the importance of identifying the correct pins on the dummy plug, which may require referencing the device's datasheet or using a multimeter.</p>
+
+<p>To write the EDID data, the author uses I2C tools on the Raspberry Pi. The process involves setting the correct I2C address for the dummy plug and then using I2C write commands to send the modified EDID data to the plug's EEPROM (Electrically Erasable Programmable Read-Only Memory). The article highlights the importance of verifying that the write operation is successful, often by reading back the EDID data after the write to confirm that the changes have been applied correctly.</p>
+
+<p>The article also mentions the potential risks involved in modifying the EDID, such as bricking the dummy plug if the process is interrupted or if incorrect data is written. It recommends backing up the original EDID data before making any modifications to allow for restoring the original configuration if necessary.</p>
+
+<p>Finally, the article concludes by emphasizing the benefits of customizing the EDID of an HDMI dummy plug, which includes achieving specific resolutions and refresh rates that may not be supported by the default EDID, thus enhancing the utility of the dummy plug in various applications.</p>
+
+<h3>Key Points</h3>
+<ul>
+    <li>HDMI dummy plugs simulate a connected display and are useful for remote access and other applications.</li>
+    <li>The EDID data of a dummy plug can be modified to specify desired resolutions and refresh rates.</li>
+    <li>A Raspberry Pi can be used to read, modify, and reprogram the EDID data.</li>
+    <li>The <code>cec-utils</code> package is used to read the EDID data.</li>
+    <li>A hex editor can be used to examine and modify the EDID data in a human-readable format.</li>
+    <li>The I2C interface on the Raspberry Pi is used to write the modified EDID data back to the dummy plug's EEPROM.</li>
+    <li>Correctly identifying and connecting the I2C pins on the dummy plug and Raspberry Pi is crucial.</li>
+    <li>It's important to back up the original EDID data before making any changes.</li>
+    <li>Modifying the EDID can improve the utility of the dummy plug by enabling specific resolutions and refresh rates.</li>
+    <li>There are risks involved, such as potentially bricking the dummy plug if the process is not followed carefully.</li>
+</ul>
+</div>
+</div>
+</article>

@@ -1,0 +1,47 @@
+<article>
+    <h2>Datalog in miniKanren</h2>
+    <div>
+<div>
+  <p>
+    The article discusses the design and implementation of a Datalog system within the Dynamicland environment. Dynamicland is a computational environment where physical objects can be computationally active, and the Datalog system is designed to manage and reason about the relationships between these objects.
+  </p>
+  <p>
+    The core idea is to use Datalog, a declarative logic programming language, to represent and query the state of the physical world in Dynamicland. This allows developers to express rules and relationships between physical objects, and the Datalog engine automatically infers new relationships based on these rules and the current state of the environment.
+  </p>
+  <p>
+    The article highlights the challenges of adapting Datalog to a real-world, dynamic environment like Dynamicland. Traditional Datalog systems are typically designed for static datasets, while Dynamicland requires continuous updates and reasoning about a constantly changing world. The key challenge is to efficiently manage and propagate changes to the Datalog database as the physical world changes.
+  </p>
+  <p>
+    The system utilizes a custom Datalog engine that is designed to handle incremental updates. This means that when a change occurs in the physical world (e.g., an object is moved), the Datalog engine only needs to recompute the affected parts of the database, rather than recomputing the entire database from scratch. This is crucial for performance in a dynamic environment.
+  </p>
+  <p>
+    The article describes the data representation used in the Datalog system. Physical objects are represented as entities in the Datalog database, and their properties and relationships are represented as facts. For example, a fact might represent the location of an object, or the fact that two objects are touching.
+  </p>
+  <p>
+    The article also discusses the integration of the Datalog system with the rest of the Dynamicland software stack. The Datalog engine is exposed as a service that other components of the system can use to query the state of the world and trigger actions based on the results. For example, a visual application might use the Datalog system to determine which objects are currently visible and then render them on the screen.
+  </p>
+  <p>
+    The article gives examples of how the Datalog system can be used to implement various applications in Dynamicland, such as automatically highlighting objects that satisfy certain criteria, or triggering actions when certain conditions are met. For instance, the system can be used to detect when a particular arrangement of objects is present and then display a relevant message or trigger a specific action.
+  </p>
+  <p>
+    One of the key advantages of using Datalog is its declarative nature. Developers can focus on describing the relationships between objects, rather than having to write procedural code to manage the state of the world. This makes it easier to develop and maintain complex applications in Dynamicland.
+  </p>
+  <p>
+    The article further mentions the use of a graph database to represent the relationships between objects. This allows for efficient querying of complex relationships and patterns. The graph database is integrated with the Datalog engine, allowing developers to use Datalog rules to query and manipulate the graph.
+  </p>
+  <p>
+    In conclusion, the article describes the design and implementation of a Datalog system for Dynamicland, highlighting the challenges of adapting Datalog to a dynamic environment and the benefits of using a declarative approach for managing the state of the physical world. The system uses a custom Datalog engine with incremental updates and integrates with a graph database to efficiently represent and query relationships between physical objects.
+  </p>
+
+  <h3>Key Points:</h3>
+  <ul>
+    <li>Dynamicland uses a Datalog system to manage and reason about the state of the physical world.</li>
+    <li>The Datalog system represents physical objects and their relationships as facts and rules.</li>
+    <li>A custom Datalog engine handles incremental updates to efficiently manage changes in the dynamic environment.</li>
+    <li>The Datalog system is integrated with the rest of the Dynamicland software stack, allowing other components to query the state of the world.</li>
+    <li>Datalog's declarative nature simplifies the development and maintenance of complex applications.</li>
+    <li>A graph database is used to represent relationships between objects and is integrated with the Datalog engine.</li>
+  </ul>
+</div>
+</div>
+</article>

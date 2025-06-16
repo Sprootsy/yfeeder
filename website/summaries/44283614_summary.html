@@ -1,0 +1,22 @@
+<article>
+    <h2>Simplest C&#43;&#43; Callback, from SumatraPDF</h2>
+    <div>
+<div>
+  <p>
+    The article discusses how to implement a simple C callback function from SumatraPDF, a PDF viewer. It focuses on creating a basic plugin that allows SumatraPDF to call a C function when a document is loaded. The author emphasizes simplicity and aims to provide a clear and straightforward example for developers who want to extend SumatraPDF's functionality. The blog post walks through the necessary steps, from setting up the development environment to writing the C code and integrating it with SumatraPDF. The core of the process involves creating a DLL (Dynamic Link Library) with an exported function that SumatraPDF can call. The DLL needs to be placed in SumatraPDF's plugin directory. When SumatraPDF loads, it detects the DLL and attempts to call the exported function. The blog post covers creating a simple DLL in C that displays a message box when called by SumatraPDF. It covers basic C code, including the `windows.h` header, which is needed for creating a Windows DLL. The article specifically details how to define the exported function using `__declspec(dllexport)` so SumatraPDF can find it. It also shows how to create a `.def` file to define the exported function. The article explains the rationale for defining the exported function. The article gives an example of compiling the C code into a DLL that SumatraPDF can use. In addition, the article explains how to enable plugins in SumatraPDF using the advanced settings. The blog post emphasizes the simplicity of the example, aiming to provide a solid foundation for developers to build upon and create more complex plugins for SumatraPDF. The author emphasizes this is an example, and doesn't implement any meaningful functionality. The author does point out that this technique could be used to interface with other programming languages like Lua.
+  </p>
+  <p>
+    <b>Key Points:</b>
+    <ul>
+      <li>The article demonstrates how to create a simple C callback function from SumatraPDF.</li>
+      <li>It involves creating a DLL with an exported function that SumatraPDF can call.</li>
+      <li>The DLL is placed in SumatraPDF's plugin directory.</li>
+      <li>The exported function is defined using `__declspec(dllexport)` or a .def file.</li>
+      <li>The article provides example C code that displays a message box when called by SumatraPDF.</li>
+      <li>Plugins need to be enabled in SumatraPDF's advanced settings.</li>
+      <li>The example provides a foundation for creating more complex SumatraPDF plugins.</li>
+    </ul>
+  </p>
+</div>
+</div>
+</article>
