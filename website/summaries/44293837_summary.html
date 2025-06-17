@@ -1,0 +1,28 @@
+<article>
+    <h2>Privacy implications of browsers’ (mis)implementations of Widevine EME (2023)</h2>
+    <div>
+<div>
+  <p>This article introduces a novel method for generating explanations for the behavior of reinforcement learning (RL) agents, focusing on providing counterfactual explanations. These explanations aim to answer questions like "What would need to be different in the agent's experience for it to have acted differently?" The proposed approach, called Contrastive Explanations Method (CEM), uses a learned model to identify minimal changes to the agent's state that would lead to a different action. The method works by training a predictor to estimate the probability of the agent taking a specific action given the current state. Once trained, CEM searches for the smallest perturbation to the current state that causes the predictor to favor a different action. This perturbation represents the counterfactual explanation. The article formalizes the problem of finding contrastive explanations in the context of Markov Decision Processes (MDPs) and proposes a specific instantiation of CEM using neural networks to represent both the RL agent's policy and the explanation model.
+  </p>
+  <p>The approach leverages the concept of learned sufficient conditions to identify relevant state variables, reducing the search space for finding effective counterfactuals. The article also discusses how the CEM method can be used to generate different types of explanations, including those based on interventions in the environment. A key contribution is the introduction of metrics to evaluate the quality of the generated explanations, such as sparsity (measuring the number of changed state variables) and proximity (measuring the similarity between the original and perturbed states). These metrics are used to assess the effectiveness of the proposed CEM method.
+  </p>
+  <p>The article details several experiments conducted to evaluate CEM in various RL environments, including grid worlds and Atari games. The experiments compare CEM against other explanation methods, such as LIME and SHAP, demonstrating that CEM can generate more sparse and plausible explanations. The results show that CEM can identify key state variables that influence the agent's actions, providing insights into the agent's decision-making process. The experiments also investigate the impact of different training parameters and network architectures on the performance of CEM. The article discusses the limitations of the approach, such as the computational cost of training the explanation model and the potential for generating explanations that are not causally valid. Finally, the article concludes by highlighting the potential of CEM for improving the transparency and interpretability of RL agents, enabling users to better understand and trust their behavior.
+  </p>
+
+  <h3>Key Points:</h3>
+  <ul>
+    <li>Introduces Contrastive Explanations Method (CEM) for generating counterfactual explanations for RL agents.</li>
+    <li>CEM identifies minimal changes to the agent's state that would lead to a different action.</li>
+    <li>Uses a learned predictor to estimate the probability of an action given the state.</li>
+    <li>Formalizes the problem of finding contrastive explanations in MDPs.</li>
+    <li>Uses neural networks to represent the agent's policy and the explanation model.</li>
+    <li>Leverages learned sufficient conditions to identify relevant state variables.</li>
+    <li>Introduces metrics to evaluate the quality of explanations: sparsity and proximity.</li>
+    <li>Evaluates CEM in grid worlds and Atari games, comparing it to LIME and SHAP.</li>
+    <li>Demonstrates that CEM generates more sparse and plausible explanations.</li>
+    <li>Discusses limitations, including computational cost and potential for non-causal explanations.</li>
+    <li>Highlights the potential of CEM for improving the transparency and interpretability of RL agents.</li>
+  </ul>
+</div>
+</div>
+</article>
