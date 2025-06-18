@@ -1,0 +1,28 @@
+<article>
+    <h2>Bzip2 crate switches from C to 100% Rust</h2>
+    <div>
+<div>
+<p>The article discusses the transition of the <code>bzip2</code> crate, a Rust library for working with the bzip2 compression algorithm, from using a C implementation to a pure Rust implementation. The <code>bzip2</code> crate provides both compression and decompression functionalities. Historically, it relied on the libbzip2 C library for its core operations. However, the crate maintainers decided to migrate to a Rust-based implementation.</p>
+
+<p>The primary motivation behind this switch was to eliminate the complexities and potential risks associated with C dependencies. C code introduces challenges like platform-specific build configurations, potential security vulnerabilities (e.g., memory safety issues), and difficulties in cross-compilation. By using pure Rust, the crate could become more secure, easier to build, and more portable.</p>
+
+<p>The rewrite to Rust was a complex undertaking, as it involved reimplementing the bzip2 compression and decompression algorithms from scratch. The article mentions that they used a state machine. One significant challenge was ensuring that the new Rust implementation was fully compatible with the existing bzip2 format. To achieve this, a large suite of test vectors was created, which consisted of outputs from the old C library being used as inputs for the Rust library to see if it matched correctly. These tests verified the correctness of the new implementation against the established standard.</p>
+
+<p>The article also addresses performance considerations. The initial Rust implementation was significantly slower than the C version. To improve performance, the maintainers employed various optimization techniques. They used Rust's profiling tools to identify performance bottlenecks. These improvements brought the performance of the Rust implementation closer to that of the C implementation. The article points out that while the Rust version might not always be faster, the benefits of safety and ease of use outweigh the small performance difference. Benchmarking was used to measure the speed improvements and find the bottlenecks in the code. It also goes into detail of which specific changes increased the overall speed. Using things like `likely()` and `unlikely()` from the compiler made the code faster, which resulted in faster loops and function calls.</p>
+
+<p>The author also discusses the trade-offs between safety and speed. The original C implementation was known to be very fast, but it also had a history of security vulnerabilities. The Rust implementation is slower but is also much safer. The author argues that the trade-off is worth it, as the benefits of safety outweigh the small performance difference. The article concludes by emphasizing the benefits of a pure Rust implementation, including improved security, simplified build processes, and enhanced portability.</p>
+
+<h2>Key Points</h2>
+<ul>
+<li>The <code>bzip2</code> crate was rewritten from C to Rust.</li>
+<li>The primary motivation was to eliminate C dependencies for security, build simplicity, and portability.</li>
+<li>The rewrite involved reimplementing the bzip2 compression and decompression algorithms in Rust.</li>
+<li>Extensive testing was performed to ensure compatibility with the existing bzip2 format.</li>
+<li>Initial Rust implementation was slower, requiring optimization.</li>
+<li>Rust's profiling tools helped identify and address performance bottlenecks.</li>
+<li>The Rust implementation offers improved safety and ease of use compared to the C version.</li>
+<li>Compiler hints, such as `likely()` and `unlikely()`, were used to optimize code execution.</li>
+</ul>
+</div>
+</div>
+</article>
