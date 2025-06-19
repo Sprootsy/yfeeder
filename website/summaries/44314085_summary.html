@@ -1,0 +1,29 @@
+<article>
+    <h2>Show HN: Unregistry – “docker push” directly to servers without a registry</h2>
+    <div>
+<div>
+  <p>The article discusses "unregistry," a proposal aimed at enhancing the security and efficiency of package management ecosystems, particularly focusing on npm. The author, Paul Szulc Viderski, highlights vulnerabilities inherent in the current registry model where malicious actors can compromise packages and inject malicious code, affecting a wide range of dependent projects. This is because all packages in the registry rely on the security of a single central point. Unregistry suggests a decentralized and verifiable approach using Content-Addressable Storage (CAS) and cryptographic signatures.</p>
+
+  <p>The core idea behind unregistry is to move away from mutable package references (like version numbers) to immutable content hashes. Instead of fetching a package based on its name and version from a central registry, packages would be identified and retrieved based on the cryptographic hash of their content. This ensures that the package received is exactly the one intended, preventing tampering. Furthermore, package integrity is guaranteed by requiring package authors to digitally sign their packages. Clients would then verify these signatures against a public key infrastructure to ensure the package's authenticity and provenance.</p>
+
+  <p>The article addresses several key aspects of implementing such a system. First, it explains how package references can be based on content hashes (e.g., using SHA-256). Second, it discusses the use of cryptographic signatures to verify package authenticity. Third, it explores the challenges of discoverability in a decentralized system, suggesting that decentralized package discovery mechanisms could be built on top of existing technologies like Distributed Hash Tables (DHTs) or blockchains, allowing users to find packages without relying on a single, centralized registry. The author also describes how content addressed package repositories are immutable, and introduces the concept of content graphs, where packages can depend on specific versions of other packages based on their content hashes.</p>
+
+  <p>Viderski acknowledges challenges related to the adoption of such a system. Migration from existing mutable package references to content hashes requires significant changes to package management tooling. He also points out the need for a robust key management infrastructure to ensure that public keys are reliably associated with package authors. Further problems are the distribution of packages in a peer to peer way, the size of the content hashes, the integration with existing tooling, and the handling of vulnerabilities. The proposal describes some solutions to these problems. A hybrid approach, where a central registry coexists with content-addressed storage, could facilitate a gradual transition. The adoption of standards like Sigstore for key management could simplify the process of verifying package signatures.</p>
+
+  <p>In essence, unregistry aims to eliminate the single point of failure in current package management systems by leveraging cryptographic guarantees and decentralized technologies. This could lead to a more secure and resilient ecosystem where package integrity is verifiable and less susceptible to malicious attacks.</p>
+
+  <h2>Key Points:</h2>
+  <ul>
+    <li><strong>Problem:</strong> Current package registries (like npm) are vulnerable to attacks due to their centralized nature and mutable package references.</li>
+    <li><strong>Solution:</strong> unregistry proposes using Content-Addressable Storage (CAS) and cryptographic signatures for package management.</li>
+    <li><strong>Content Hashes:</strong> Packages are identified by the cryptographic hash of their content, ensuring immutability.</li>
+    <li><strong>Digital Signatures:</strong> Package authors digitally sign their packages, allowing clients to verify authenticity and provenance.</li>
+    <li><strong>Decentralized Discovery:</strong> Decentralized technologies (DHTs, blockchains) can be used for package discovery without relying on a central registry.</li>
+    <li><strong>Content Graphs:</strong> Packages can depend on other packages based on their content hashes.</li>
+    <li><strong>Challenges:</strong> Migration from existing systems, key management, discoverability, package distribution, content hash size, tooling integration, vulnerability handling.</li>
+    <li><strong>Mitigation:</strong> Hybrid approach (central registry + CAS), adoption of Sigstore.</li>
+    <li><strong>Goal:</strong> Enhance security and resilience of package management ecosystems by eliminating the single point of failure.</li>
+  </ul>
+</div>
+</div>
+</article>
