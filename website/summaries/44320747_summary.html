@@ -1,0 +1,37 @@
+<article>
+    <h2>Homegrown Closures for Uxn</h2>
+    <div>
+ <div>
+   <p>
+     The article is a tutorial on implementing closures in the Uxntal assembly language for the Uxn virtual machine. It details how to create a system where functions can capture and retain variables from their surrounding scope, allowing for more flexible and dynamic programming. The tutorial begins by explaining the basic concept of closures: functions that "close over" their environment, retaining access to variables from the scope in which they were defined, even after that scope has exited.
+   </p>
+   <p>
+     The author then demonstrates the implementation using Uxntal. The core challenge addressed is that Uxntal is a stack-based language without built-in support for closures, necessitating a manual approach. The article outlines the process of creating what the author calls "homegrown closures" by manually managing the stack and memory. This involves allocating memory to store the captured variables and then creating a pointer or reference to this memory that the function can use.
+   </p>
+   <p>
+     The tutorial provides a step-by-step guide, starting with defining the structure of a closure, which includes a pointer to the code to be executed and a pointer to the captured variables. The author explains how to create a function that, when called, allocates memory on the heap, copies the relevant variables from the current stack frame into that memory, and then constructs the closure object, which contains pointers to both the allocated memory and the function's code.
+   </p>
+   <p>
+     The author illustrates how to call these closures. This involves pushing the closure object onto the stack and then executing a special instruction that retrieves the code pointer and the captured variables pointer from the closure object. Before calling the closure's code, the captured variables are copied from the allocated memory onto the stack, effectively making them available to the function. After the function executes, the stack is cleaned up, and the allocated memory on the heap is released to prevent memory leaks.
+   </p>
+   <p>
+     The article also touches on managing the captured variables themselves, including how to access and modify them within the closure. This involves using the pointer to the captured variables to read and write to the allocated memory. The author emphasizes the importance of careful memory management to avoid issues such as dangling pointers or memory leaks.
+   </p>
+   <p>
+     The author concludes with a discussion of the limitations and trade-offs of this approach. Since it is manually implemented, creating closures in Uxntal requires a deep understanding of the stack and memory management. The process adds complexity to the code and can be error-prone. However, it enables more advanced programming patterns that would otherwise be impossible in a stack-based language like Uxntal. The code snippets illustrate the technical details of how closures can be built from the ground up in Uxntal.
+   </p>
+   <p>
+     <b>Key Points:</b>
+   </p>
+   <ul>
+     <li>Closures allow functions to retain access to variables from their surrounding scope.</li>
+     <li>Uxntal doesn't natively support closures, requiring manual implementation.</li>
+     <li>Homegrown closures involve allocating memory to store captured variables.</li>
+     <li>A closure object contains a pointer to the code and a pointer to the captured variables' memory.</li>
+     <li>Calling a closure involves pushing the closure object, retrieving the code and variable pointers, copying the variables to the stack, executing the code, and cleaning up the stack and memory.</li>
+     <li>Careful memory management is crucial to avoid memory leaks and other issues.</li>
+     <li>Manual closure implementation adds complexity but enables more advanced programming in Uxntal.</li>
+   </ul>
+ </div>
+ </div>
+</article>
