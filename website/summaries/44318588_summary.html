@@ -1,0 +1,36 @@
+<article>
+    <h2>Show HN: A DOS-like hobby OS written in Rust and x86 assembly</h2>
+    <div>
+<div>
+  <p>The provided URL points to a GitHub repository named "rou2exOS" by user "krustowski." This repository appears to be dedicated to an experimental operating system (exOS) written in the Rust programming language. The repository's description indicates that the exOS is designed to run on the RISC-V architecture, specifically the RV64GC configuration. </p>
+
+  <p>From the file structure and names, the exOS likely includes several core components. The "kernel" directory probably contains the essential OS functions, such as memory management, process scheduling, interrupt handling, and device drivers. The presence of a "loader" suggests a mechanism for loading the kernel and potentially other programs into memory at boot time. "Userland" indicates the environment where user applications will execute, separate from the privileged kernel space.</p>
+
+  <p>The presence of files like "Cargo.toml" suggests that Rust's build system, Cargo, is used to manage dependencies and build the exOS. The use of Rust implies a focus on memory safety and concurrency, which are often desirable features for operating system development.</p>
+
+  <p>The "Makefile" suggests a build process that compiles the Rust code, links the necessary components, and potentially creates an image that can be loaded and executed on a RISC-V system (either real hardware or an emulator like QEMU). The documentation will likely detail how to set up the build environment, compile the OS, and run it. </p>
+
+  <p>The "Documentation" directory contains documentation about the project and its usage. There is documentation about the following:</p>
+  <ul>
+    <li>Building (explains build requirements, running in QEMU, debugging)</li>
+    <li>Structure (high-level view of what the OS consists of)</li>
+    <li>QEMU (troubleshooting, how to set up the environment)</li>
+    <li>Boot process</li>
+  </ul>
+
+  <p>Given that the project is described as "experimental," it is likely still under active development and may not be feature-complete or production-ready. However, it provides a valuable resource for learning about operating system development in Rust and on the RISC-V architecture.</p>
+
+  <p><strong>Key Points:</strong></p>
+  <ul>
+    <li>Project Name: rou2exOS</li>
+    <li>Language: Rust</li>
+    <li>Architecture: RISC-V (RV64GC)</li>
+    <li>Type: Experimental Operating System (exOS)</li>
+    <li>Key Components: Kernel, Loader, Userland</li>
+    <li>Build System: Cargo (Rust's package manager) and Make</li>
+    <li>Focus: Memory safety and concurrency (due to Rust)</li>
+    <li>Status: Under development, not production-ready</li>
+  </ul>
+</div>
+</div>
+</article>

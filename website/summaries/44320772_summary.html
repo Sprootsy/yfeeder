@@ -1,0 +1,25 @@
+<article>
+    <h2>Show HN: EnrichMCP – A Python ORM for Agents</h2>
+    <div>
+<div>
+<h2>Summary</h2>
+The article on GitHub describes EnrichMCP, a tool developed by Featureform for enriching Monte Carlo Policy Gradient (MCP) training data with contextual information. MCP is a reinforcement learning technique used to train agents by simulating episodes and then using the outcomes to update the agent's policy. The challenge with MCP is that it can be data-inefficient, requiring many simulations to learn effectively. EnrichMCP addresses this by augmenting the training data with additional features that describe the context of each state encountered during the simulations.
+
+The core idea behind EnrichMCP is that by providing the model with more information about the state, it can learn a more accurate and efficient policy. This is achieved by extracting relevant features from the environment and adding them to the training data alongside the standard state representation and reward signals. These features could include things like distances to key objects, the agent's velocity, or other relevant environmental parameters.
+
+The repository provides code and examples for implementing EnrichMCP. It includes components for defining the features to be extracted, the environment in which the agent operates, and the MCP training loop. The examples demonstrate how to integrate EnrichMCP into existing reinforcement learning workflows.
+
+By enriching the training data, EnrichMCP aims to reduce the number of simulations needed to achieve a desired level of performance, leading to faster training times and more effective policies. The tool is designed to be flexible and adaptable to different environments and tasks, allowing users to customize the feature extraction process to suit their specific needs. The documentation and examples provided in the repository make it easier for users to understand and implement EnrichMCP in their own projects.
+
+<h2>Key Points</h2>
+<ul>
+<li>EnrichMCP is a tool for enriching Monte Carlo Policy Gradient (MCP) training data.</li>
+<li>It addresses the data inefficiency of MCP by adding contextual features to the training data.</li>
+<li>The tool extracts relevant features from the environment to provide more information to the model.</li>
+<li>It aims to reduce the number of simulations needed for training.</li>
+<li>The repository includes code, examples, and documentation for implementing EnrichMCP.</li>
+<li>It is designed to be flexible and adaptable to different environments and tasks.</li>
+</ul>
+</div>
+</div>
+</article>
