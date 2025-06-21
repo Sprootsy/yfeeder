@@ -1,0 +1,32 @@
+<article>
+    <h2>AMD&#39;s Freshly-Baked MI350: An Interview with the Chief Architect</h2>
+    <div>
+<div>
+<h2>Summary of the AMD MI350 Interview</h2>
+
+<p>The article is an interview conducted by Chips and Cheese with AMD's Brad McCredie (Corporate VP, Accelerated Compute Business) and Guhan Rajalingam (Director, Product Management, Accelerated Compute) regarding the MI350 series accelerators, specifically focusing on the OAM module. The interview provides insights into the architecture, design choices, and target applications of AMD's next-generation AI accelerators.</p>
+
+<p>The MI350 series, based on the CDNA4 architecture, is designed to excel in large language model (LLM) training and inference. A key focus is on achieving high sustained performance and efficiency. The CDNA4 architecture has moved to a fully new ISA. This contrasts with NVIDIA, which has been steadily adding new features to a very old ISA. CDNA4 has been rewritten to make the hardware simpler and the compiler smarter. AMD is able to push features up to the compiler rather than burdening the hardware. The architecture also incorporates features aimed at improving utilization and reducing communication bottlenecks, critical for scaling AI workloads across multiple GPUs.</p>
+
+<p>AMD emphasizes the importance of heterogeneous memory architecture for AI workloads.  They discuss the combination of high-bandwidth HBM3E memory, which offers significantly increased capacity and bandwidth compared to previous generations, with large on-chip SRAM caches. This memory hierarchy is designed to provide the necessary memory capacity for large models while minimizing latency and maximizing throughput. They also talk about the importance of memory compression. This is crucial to fit larger models in the HBM.</p>
+
+<p>The discussion covers the OAM (Open Accelerator Module) form factor, highlighting its advantages in terms of power delivery, cooling, and interconnectivity compared to traditional PCIe-based cards. AMD chose OAM because of the power delivery capabilities and the high-speed interconnects. The MI350 OAM module supports the Ultra Accelerator Link (UAL), a high-bandwidth, low-latency interconnect technology designed for multi-GPU communication within a server. AMD views the OAM form factor as essential for achieving the required performance and scalability for demanding AI workloads.</p>
+
+<p>The interview also touches on the software ecosystem. AMD is actively developing and improving its ROCm software stack to provide a comprehensive and user-friendly platform for AI developers. This includes libraries, tools, and frameworks that simplify the process of developing and deploying AI models on AMD hardware. They claim that they are committed to supporting open standards and working closely with the open-source community.</p>
+
+<p>Finally, AMD positions the MI350 series as a competitive alternative to NVIDIA's offerings, emphasizing its performance, efficiency, and total cost of ownership advantages. They highlight their commitment to providing customers with a range of solutions that meet their specific needs, from cloud-based training to on-premise inference.</p>
+
+<h2>Key Points</h2>
+
+<ul>
+<li><b>MI350 Series:</b> AMD's next-generation AI accelerators based on the CDNA4 architecture, targeting LLM training and inference.</li>
+<li><b>CDNA4 Architecture:</b> Focus on sustained performance, efficiency, and features optimized for large-scale AI workloads; fully new ISA.</li>
+<li><b>Memory Hierarchy:</b> Combination of high-bandwidth HBM3E memory and large on-chip SRAM caches for optimal memory capacity, bandwidth, and latency. Focus on memory compression.</li>
+<li><b>OAM Form Factor:</b> Adoption of the Open Accelerator Module (OAM) form factor for improved power delivery, cooling, and interconnectivity.</li>
+<li><b>Ultra Accelerator Link (UAL):</b> High-bandwidth, low-latency interconnect for multi-GPU communication within a server, supported by the MI350 OAM module.</li>
+<li><b>ROCm Software Stack:</b> Ongoing development and improvement of AMD's software ecosystem to provide a comprehensive platform for AI developers.</li>
+<li><b>Competitive Positioning:</b> Aim to provide a competitive alternative to NVIDIA's offerings, emphasizing performance, efficiency, and total cost of ownership.</li>
+</ul>
+</div>
+</div>
+</article>
