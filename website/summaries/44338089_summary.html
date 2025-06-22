@@ -1,0 +1,32 @@
+<article>
+    <h2>Behind the scenes: Redpanda Cloud&#39;s response to the GCP outage</h2>
+    <div>
+<div>
+  <h2>Summary</h2>
+  <p>
+    The article discusses the Google Cloud Platform (GCP) outage that occurred in June and its impact on Redpanda Cloud, a real-time data streaming platform. The outage, which lasted for several hours, was caused by a cascading failure triggered by a faulty software update to a critical networking service. This failure led to packet loss and connectivity issues across multiple GCP regions, including those where Redpanda Cloud clusters were running.
+  </p>
+  <p>
+    The article explains how Redpanda Cloud was affected by the GCP outage. While Redpanda Cloud clusters are designed with redundancy and fault tolerance to withstand infrastructure failures, the severity and widespread nature of the GCP outage presented significant challenges. The primary impact was on the control plane, which is responsible for managing and orchestrating Redpanda clusters. The control plane experienced connectivity issues, which hindered the ability to perform certain operations, such as scaling clusters or creating new topics. Data plane operations, such as producing and consuming data, were largely unaffected due to Redpanda's distributed architecture.
+  </p>
+  <p>
+    The Redpanda team actively monitored the situation and worked to mitigate the impact on customers. They communicated proactively with customers through status pages and support channels, providing updates on the outage and estimated time to resolution. The team also implemented temporary workarounds to address specific issues, such as manually scaling clusters in some cases.
+  </p>
+  <p>
+    The article emphasizes the importance of multi-cloud and multi-region deployments for building resilient data streaming applications. While Redpanda Cloud is designed to be resilient to infrastructure failures within a single cloud provider, the GCP outage highlighted the risk of relying solely on one cloud provider. By distributing workloads across multiple cloud providers or regions, organizations can reduce the impact of outages and ensure business continuity.
+  </p>
+  <p>
+    The article also discusses lessons learned from the GCP outage and how Redpanda is taking steps to improve its resilience and fault tolerance. These steps include enhancing monitoring and alerting, improving control plane redundancy, and further testing disaster recovery procedures. The goal is to minimize the impact of future cloud outages and ensure that Redpanda Cloud remains a reliable and available data streaming platform.
+  </p>
+  <h2>Key Points</h2>
+  <ul>
+    <li>A Google Cloud Platform (GCP) outage in June, caused by a faulty software update, impacted Redpanda Cloud.</li>
+    <li>The outage primarily affected the Redpanda Cloud control plane, hindering management operations like scaling.</li>
+    <li>Data plane operations (producing and consuming data) were largely unaffected.</li>
+    <li>The Redpanda team actively monitored the situation, communicated with customers, and implemented workarounds.</li>
+    <li>The article stresses the importance of multi-cloud and multi-region deployments for resilience.</li>
+    <li>Redpanda is taking steps to improve its resilience, including enhanced monitoring and control plane redundancy.</li>
+  </ul>
+</div>
+</div>
+</article>
