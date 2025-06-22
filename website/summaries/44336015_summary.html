@@ -1,0 +1,22 @@
+<article>
+    <h2>Scaling our observability platform by embracing wide events and replacing OTel</h2>
+    <div>
+<div>
+  <h2>Summary</h2>
+  <p>
+    The article discusses ClickHouse's capabilities for handling observability data at extreme scale, specifically addressing challenges related to OpenTelemetry (OTel). It highlights how ClickHouse can replace or augment OTel, particularly for scenarios demanding high ingestion rates, low query latency, and cost-effectiveness when dealing with massive datasets (beyond 100PB). The post details how ClickHouse is used to analyze wide events – a common problem in modern observability.  Wide events can occur when logs or traces contain many attributes that might have to be indexed, causing scaling issues. The article contrasts the traditional approach of relying solely on OTel collectors and backend storage with a solution that leverages ClickHouse's analytical power directly. This approach shifts the focus from pre-aggregation and sampling to ingesting raw, detailed observability data, enabling more comprehensive and flexible analysis. The benefits of this strategy, include more granular insights, faster root cause analysis, and the ability to ask novel questions of the data without being constrained by pre-defined metrics or aggregations. The author claims that this alternative provides benefits that are difficult to obtain by only relying on OTel. The article outlines practical considerations for implementing ClickHouse in an observability pipeline, including schema design, data ingestion strategies, and query optimization techniques. It also shows performance benchmarks that demonstrate ClickHouse's ability to outperform other solutions in terms of ingestion speed and query latency, while maintaining cost efficiency. Overall, the article positions ClickHouse as a viable and powerful alternative or complement to OTel for organizations dealing with very large-scale observability data, offering improved performance, flexibility, and cost savings.
+  </p>
+
+  <h2>Key Points</h2>
+  <ul>
+    <li>ClickHouse can handle observability data at scales exceeding 100PB, addressing limitations of traditional OTel-centric approaches.</li>
+    <li>It facilitates the analysis of wide events, overcoming scaling issues associated with numerous attributes.</li>
+    <li>ClickHouse enables ingestion of raw, detailed observability data instead of relying solely on pre-aggregation and sampling.</li>
+    <li>This approach offers more granular insights, faster root cause analysis, and flexible querying.</li>
+    <li>The article describes schema design, data ingestion strategies, and query optimization within ClickHouse for observability.</li>
+    <li>ClickHouse demonstrates superior performance in ingestion speed and query latency compared to other solutions.</li>
+    <li>ClickHouse is presented as a cost-effective alternative or complement to OTel for large-scale observability data.</li>
+  </ul>
+</div>
+</div>
+</article>
