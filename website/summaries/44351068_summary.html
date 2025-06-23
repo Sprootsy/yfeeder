@@ -1,0 +1,35 @@
+<article>
+    <h2>Finding a billion factorials in 60 ms with SIMD</h2>
+    <div>
+<div>
+  <p>The article is a comprehensive guide on combinatorics, specifically tailored for competitive programming. It begins by defining combinatorics as the branch of mathematics concerned with counting, arrangements, and selections of objects. It then introduces fundamental counting principles, including the rule of sum (if there are 'm' ways to do one thing and 'n' ways to do another, and these cannot be done at the same time, then there are 'm + n' ways to do either) and the rule of product (if there are 'm' ways to do one thing and 'n' ways to do another, then there are 'm * n' ways to do both).
+
+  The article proceeds to cover core concepts of permutations and combinations. Permutations refer to the arrangement of objects in a specific order. The number of permutations of 'n' distinct objects taken 'r' at a time is denoted as P(n, r) or nPr and is calculated as n! / (n - r)!. The article clarifies the cases when the objects are not distinct, and some are identical. In this case, the formula for permutation is n! / (n1! * n2! * ... * nk!), where n1, n2, ..., nk are the counts of each identical object. Combinations, on the other hand, refer to the selection of objects without regard to order. The number of combinations of 'n' distinct objects taken 'r' at a time is denoted as C(n, r) or nCr and is calculated as n! / (r! * (n - r)!).
+
+  The blog post dives into variations of combinations, namely combinations with repetitions (also known as multichoose). It addresses the scenario where you can select the same object multiple times. The formula for combinations with repetitions is C(n + r - 1, r).
+
+  It presents common techniques used to solve combinatorics problems. One such technique is stars and bars, especially useful for problems involving distributing identical objects into distinct containers.
+
+  The article delves into more advanced topics, including the inclusion-exclusion principle, which is crucial for counting objects that belong to at least one of several sets. It states that to find the number of elements in the union of several sets, you add the sizes of the individual sets, subtract the sizes of all pairwise intersections, add the sizes of all three-way intersections, and so on.
+
+  It also covers Catalan numbers, which appear in many combinatorial problems related to balanced structures (e.g., balanced parentheses, binary trees). The nth Catalan number is given by the formula Cn = (1 / (n + 1)) * C(2n, n).
+
+  The author then discusses how to calculate binomial coefficients efficiently, especially when dealing with large numbers, using modular arithmetic. Techniques like using modular inverses with Fermat's Little Theorem or Extended Euclidean Algorithm are described.
+
+  Throughout the post, the author emphasizes the importance of understanding the underlying principles rather than just memorizing formulas and encourages readers to practice solving problems to solidify their understanding. Several example problems are provided (though not solved in detail) to give a flavor of the types of combinatorics problems that frequently appear in competitive programming contests. The article concludes by highlighting the widespread applicability of combinatorics in solving real-world problems and in various areas of computer science.
+  </p>
+  <h2>Key Points:</h2>
+  <ul>
+    <li><b>Combinatorics Fundamentals:</b> Introduces basic counting principles like the rule of sum and rule of product.</li>
+    <li><b>Permutations:</b> Explains permutations with and without repetitions.</li>
+    <li><b>Combinations:</b> Covers combinations with and without repetitions (multichoose).</li>
+    <li><b>Stars and Bars:</b> Introduces stars and bars technique for distribution problems.</li>
+    <li><b>Inclusion-Exclusion Principle:</b> Explains how to count elements in the union of multiple sets.</li>
+    <li><b>Catalan Numbers:</b> Defines Catalan numbers and their applications.</li>
+    <li><b>Binomial Coefficient Calculation:</b> Discusses efficient computation of binomial coefficients, including modular arithmetic and modular inverses.</li>
+    <li><b>Emphasis on Understanding:</b> Stresses the importance of understanding concepts over memorization.</li>
+    <li><b>Applications:</b> Highlights the real-world and computer science applications of combinatorics.</li>
+  </ul>
+</div>
+</div>
+</article>

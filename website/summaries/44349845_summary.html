@@ -1,0 +1,29 @@
+<article>
+    <h2>Why do all browsers&#39; user agents start with &#34;Mozilla/&#34;? (2008)</h2>
+    <div>
+<div>
+  <h2>Summary</h2>
+  <p>
+    The Stack Overflow question "Why do all browsers' User-Agents start with Mozilla?" explores the historical reason behind the seemingly misleading "Mozilla" token present in virtually all browser User-Agent strings. The explanation traces back to the early days of the web and the browser wars between Netscape Navigator (which identified as "Mozilla") and Microsoft's Internet Explorer.
+  </p>
+  <p>
+    When Internet Explorer started gaining prominence, websites began implementing browser-specific features, often targeting Netscape Navigator because it was the dominant browser at the time. To ensure compatibility and avoid being blocked or served a broken experience, Internet Explorer began to identify itself as "Mozilla" in its User-Agent string. This allowed it to be recognized as a "Mozilla-compatible" browser by websites performing browser detection.
+  </p>
+  <p>
+    As other browsers emerged, they adopted a similar strategy to maintain compatibility with websites designed for either Netscape Navigator or Internet Explorer. They included "Mozilla" in their User-Agent strings to avoid being treated as an unknown or unsupported browser. Over time, this practice became a standard, leading to the situation where almost all browsers, regardless of their underlying engine or origin, claim to be "Mozilla" in their User-Agent string.
+  </p>
+  <p>
+    The continued presence of "Mozilla" is thus a historical artifact stemming from browser compatibility hacks. While the original reason for its inclusion is no longer as relevant due to the adoption of web standards, the token persists to avoid breaking older websites that still rely on User-Agent sniffing for browser detection. The User-Agent string has evolved into a complex and often unreliable method for identifying browsers, and modern web development practices generally discourage its use in favor of feature detection and progressive enhancement.
+  </p>
+
+  <h2>Key Points</h2>
+  <ul>
+    <li>All browsers include "Mozilla" in their User-Agent string for historical compatibility reasons.</li>
+    <li>Internet Explorer initially included "Mozilla" to be recognized as a Netscape Navigator-compatible browser and avoid broken website experiences.</li>
+    <li>Other browsers followed suit to ensure compatibility with websites targeting Netscape Navigator or Internet Explorer.</li>
+    <li>The "Mozilla" token is now largely a historical artifact and doesn't accurately reflect the underlying browser engine or origin.</li>
+    <li>User-Agent sniffing is generally discouraged in modern web development in favor of feature detection and progressive enhancement.</li>
+  </ul>
+</div>
+</div>
+</article>
