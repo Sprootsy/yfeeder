@@ -1,0 +1,45 @@
+<article>
+    <h2>The Last of Us Part II – Seattle Locations Tour</h2>
+    <div>
+ <div>
+  <h3>Summary</h3>
+  <p>
+   The document is a comprehensive guide about the development and deployment of a Large Language Model (LLM) application using Vertex AI, focusing on a question-answering application based on provided context. It details the process from data preparation to model evaluation, highlighting key considerations for each stage.
+  </p>
+  <p>
+   The guide starts by introducing the concept of Retrieval Augmented Generation (RAG), a technique that enhances LLMs by grounding them with external knowledge. RAG enables LLMs to provide more accurate and contextually relevant answers by retrieving information from a knowledge base and incorporating it into the prompt.
+  </p>
+  <p>
+   The document walks through the setup process, including installing necessary libraries (like Vertex AI SDK, Langchain, and PyPDF2), and configuring Google Cloud project settings. It emphasizes the importance of using Vertex AI for its scalable infrastructure and managed services.
+  </p>
+  <p>
+   A significant portion of the guide is dedicated to data preparation. It explains how to load data from PDF files, split the text into manageable chunks, and create embeddings (vector representations of the text) using Vertex AI's embedding models. These embeddings are stored in a vector database (matching engine) for efficient retrieval. The document elaborates on choosing appropriate chunk sizes and embedding models for optimal performance.
+  </p>
+  <p>
+   Next, the guide covers prompt engineering, which involves crafting effective prompts that instruct the LLM to answer questions based on the retrieved context. It provides examples of prompt templates and discusses strategies for improving prompt effectiveness, such as including clear instructions and context delimiters.
+  </p>
+  <p>
+   The document then delves into building the question-answering chain using Langchain, a framework for building LLM-powered applications. It demonstrates how to connect the vector database, LLM (PaLM 2 in this case), and prompt template to create a pipeline that retrieves relevant context, injects it into the prompt, and generates an answer.  The guide explains how to configure the LLM with parameters like temperature and max output tokens to control the output.
+  </p>
+  <p>
+   Model evaluation is also discussed. The guide presents methods for evaluating the quality of the generated answers, including metrics like faithfulness (how well the answer is supported by the context) and answer relevance. It emphasizes the importance of human evaluation and provides strategies for identifying and addressing common issues like hallucinations.
+  </p>
+  <p>
+   Finally, the document touches upon deploying the application using Vertex AI Endpoints, allowing the model to be accessed via an API. It outlines the steps for creating an endpoint and deploying the model to it.
+  </p>
+  <h3>Key Points</h3>
+  <ul>
+   <li><b>Retrieval Augmented Generation (RAG):</b> Using external knowledge to improve LLM accuracy and relevance.</li>
+   <li><b>Vertex AI:</b> Leveraging Google Cloud's managed services for LLM development and deployment.</li>
+   <li><b>Data Preparation:</b> Loading, chunking, and embedding data for efficient retrieval.</li>
+   <li><b>Vector Database (Matching Engine):</b> Storing and retrieving text embeddings.</li>
+   <li><b>Prompt Engineering:</b> Crafting effective prompts to guide the LLM.</li>
+   <li><b>Langchain:</b> Using Langchain to build the question-answering pipeline.</li>
+   <li><b>Model Evaluation:</b> Assessing the quality of generated answers (faithfulness, relevance).</li>
+   <li><b>Deployment:</b> Deploying the application using Vertex AI Endpoints.</li>
+   <li><b>PaLM 2:</b> Utilizing PaLM 2 as the Large Language Model for question answering.</li>
+   <li><b>Context Chunking:</b> Splitting documents into smaller segments to optimize context retrieval.</li>
+  </ul>
+ </div>
+ </div>
+</article>
