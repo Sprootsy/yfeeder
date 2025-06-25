@@ -1,0 +1,26 @@
+<article>
+    <h2>Ancient X11 scaling technology</h2>
+    <div>
+<div>
+  <p>This article delves into the history and technical details of scaling in the X Window System (X11), specifically focusing on a little-known scaling mechanism that predates modern compositing window managers and the XRandR extension. The author recounts their experience reverse-engineering this older method, which was used primarily to support high-resolution displays on systems with limited video memory. The approach worked by rendering the X11 desktop at a smaller resolution and then using the video hardware to scale the output to the native resolution of the monitor. This technique effectively traded image quality for improved performance on older hardware.</p>
+
+  <p>The author explains how the scaling was controlled through obscure X11 settings, often buried within the server's configuration files or command-line options. They also highlight the challenges in understanding and manipulating these settings due to the lack of proper documentation and the age of the code involved. The article explores the implementation details, including the use of specific video hardware registers and memory locations to control the scaling process.</p>
+
+  <p>Furthermore, the author discusses the limitations and drawbacks of this scaling approach. The image quality was generally poor, with noticeable blurring and artifacts, especially when scaling by significant factors. Additionally, the scaling was typically a global setting, affecting the entire X11 display rather than individual windows or applications.</p>
+
+  <p>The article concludes by noting that this ancient scaling technology is largely obsolete due to the advent of compositing window managers and extensions like XRandR, which offer more flexible and higher-quality scaling solutions. However, the author emphasizes the historical significance of this method and the insights gained from reverse-engineering it, providing a valuable glimpse into the evolution of graphics technology in the X Window System.</p>
+
+  <h2>Key Points:</h2>
+  <ul>
+    <li>The article discusses an old, obscure scaling method in X11 that predates modern compositing and XRandR.</li>
+    <li>This method was used to support high-resolution displays on older hardware with limited video memory.</li>
+    <li>It involved rendering the desktop at a lower resolution and then using video hardware to scale the output.</li>
+    <li>The scaling was controlled through undocumented X11 settings and hardware registers.</li>
+    <li>The image quality was poor, with blurring and artifacts.</li>
+    <li>The scaling was a global setting, affecting the entire display.</li>
+    <li>This technology is now obsolete due to newer scaling solutions.</li>
+    <li>Reverse-engineering it provides historical insights into X11 graphics technology.</li>
+  </ul>
+</div>
+</div>
+</article>

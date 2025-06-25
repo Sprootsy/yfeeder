@@ -1,0 +1,32 @@
+<article>
+    <h2>Subsecond: A runtime hotpatching engine for Rust hot-reloading</h2>
+    <div>
+<div>
+<p>The <code>subsecond</code> crate in Rust provides enhanced time handling capabilities, focusing on representing and manipulating fractional seconds with high precision. It allows developers to work with timestamps and durations that go beyond the standard integer-based second granularity, enabling nanosecond-level accuracy and beyond.</p>
+
+<p>The crate introduces several key types and features to achieve this:</p>
+
+<ul>
+  <li><b><code>Second</code>:</b> Represents a whole number of seconds, similar to standard time units.</li>
+  <li><b><code>Subsecond</code>:</b> Represents a fractional part of a second. It is the core type for dealing with time at a higher resolution than whole seconds. It allows for nanosecond or even finer granularity.</li>
+  <li><b>Arithmetic Operations:</b>  The crate provides overloaded operators enabling seamless arithmetic operations between <code>Second</code> and <code>Subsecond</code> types, such as addition, subtraction, multiplication, and division. This makes it easy to perform time calculations with fractional seconds without needing to manually handle the conversion between different units.</li>
+  <li><b>Conversion:</b>  It allows conversion between <code>Second</code>, <code>Subsecond</code>, and other time-related types for interoperability. This might involve converting to and from integer types representing nanoseconds or other fractional units.</li>
+  <li><b>Formatting and Parsing:</b>  The crate offers support for formatting <code>Subsecond</code> values into human-readable strings and parsing them back from strings. This is particularly useful for logging, displaying timestamps, and interacting with external systems that require string-based time representations.</li>
+  <li><b>Integration with <code>chrono</code>:</b>  The <code>subsecond</code> crate can integrate with the widely used <code>chrono</code> crate for more complex date and time handling. This enables combining high-precision subsecond time with calendrical information, time zones, and other features provided by <code>chrono</code>.</li>
+</ul>
+
+<p>The <code>subsecond</code> crate addresses the limitations of standard time types when very high precision is required. By using the provided types and features, developers can write applications that need to measure, store, and manipulate time with nanosecond or even higher resolution accuracy. This can be crucial in areas like high-frequency trading, scientific simulations, real-time data processing, and embedded systems where precise timing is paramount.</p>
+
+<h2>Key Points:</h2>
+
+<ul>
+  <li>Provides <code>Second</code> and <code>Subsecond</code> types for representing whole and fractional seconds, respectively.</li>
+  <li>Enables arithmetic operations between <code>Second</code> and <code>Subsecond</code>.</li>
+  <li>Supports conversion between <code>Second</code>, <code>Subsecond</code> and other time representations.</li>
+  <li>Offers formatting and parsing capabilities for <code>Subsecond</code> values.</li>
+  <li>Can be integrated with the <code>chrono</code> crate for advanced date and time manipulations.</li>
+  <li>Allows for nanosecond-level or finer time precision in Rust applications.</li>
+</ul>
+</div>
+</div>
+</article>
