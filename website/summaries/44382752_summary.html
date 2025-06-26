@@ -1,0 +1,44 @@
+<article>
+    <h2>Define policy forbidding use of AI code generators</h2>
+    <div>
+<div>
+<p>This commit introduces a new CPU model, "Intel Sapphire Rapids (SPR) X86", to the QEMU emulator. This model incorporates several new features and architectural updates found in Intel's Sapphire Rapids processors. The primary updates include:</p>
+
+<ul>
+<li><strong>AVX-512 FP16 support:</strong> Adds support for the AVX-512 FP16 instruction set, enabling efficient processing of half-precision floating-point numbers.</li>
+<li><strong>Advanced Matrix Extensions (AMX):</strong> Implements support for AMX, which includes:
+<ul>
+<li><strong>Tile architecture:</strong> Provides a tile-based architecture for matrix operations.</li>
+<li><strong>Tile configuration registers (TMM):</strong> Includes registers for configuring tiles and managing matrix operations.</li>
+<li><strong>New instructions:</strong> Introduces new instructions specific to AMX, enhancing matrix computation capabilities.</li>
+</ul>
+</li>
+<li><strong>User-Mode Interrupts (UMI):</strong> Introduces User-Mode Interrupts, which allow user-level applications to handle interrupts directly.</li>
+<li><strong>SGX modifications:</strong> Updates related to Software Guard Extensions (SGX), aligning with the Sapphire Rapids architecture.</li>
+</ul>
+
+<p>The commit details the necessary code modifications to incorporate these features into the QEMU x86 emulation environment. This includes:</p>
+
+<ul>
+<li>Adding new CPU definitions and feature flags.</li>
+<li>Implementing the behavior of new instructions.</li>
+<li>Updating relevant control and status registers.</li>
+<li>Modifying the instruction decoding logic to recognize and handle the new instructions.</li>
+</ul>
+
+<p>The overall goal of this commit is to provide a more accurate and feature-complete emulation of Intel Sapphire Rapids processors within QEMU, enabling developers to test and optimize software for this architecture. The changes ensure that QEMU can correctly execute code that utilizes the new features available in Sapphire Rapids, such as AVX-512 FP16 and AMX.</p>
+
+<h2>Key Points:</h2>
+
+<ul>
+<li>Adds "Intel Sapphire Rapids (SPR) X86" CPU model to QEMU.</li>
+<li>Implements support for AVX-512 FP16.</li>
+<li>Introduces Advanced Matrix Extensions (AMX) including tile architecture, TMM registers, and new instructions.</li>
+<li>Adds User-Mode Interrupts (UMI) support.</li>
+<li>Includes SGX modifications.</li>
+<li>Updates CPU definitions, feature flags, and instruction decoding logic.</li>
+<li>Enhances QEMU's ability to emulate Intel Sapphire Rapids processors accurately.</li>
+</ul>
+</div>
+</div>
+</article>

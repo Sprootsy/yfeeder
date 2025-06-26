@@ -1,0 +1,18 @@
+<article>
+    <h2>Information has been permanently deleted, for small values of permanently</h2>
+    <div>
+ <div>
+  <p>The article discusses a scenario where a program was creating a bitmap in a non-standard pixel format (specifically, 16-bit grayscale) and then attempting to use <code>CreateDIBSection</code> to create a device-independent bitmap (DIB) section backed by the program's memory. The problem was that <code>CreateDIBSection</code> failed with the error <code>ERROR_INVALID_PARAMETER</code>.</p>
+  <p>The author explains that <code>CreateDIBSection</code> has specific requirements for the <code>BITMAPINFO</code> structure passed to it, particularly concerning the <code>biBitCount</code> and <code>biCompression</code> members. For a DIB section to be created successfully, the pixel format must be one that the system supports directly. In this case, a 16-bit grayscale format with <code>BI_RGB</code> compression is not a standard supported format. The documentation states that 16-bit formats must use <code>BI_BITFIELDS</code> compression. The author had to specify the color masks for the red, green, and blue color channels (even though they were all the same). The sample code demonstrates how to create a 16-bit grayscale bitmap that works with <code>CreateDIBSection</code> by using <code>BI_BITFIELDS</code> compression and specifying appropriate color masks.</p>
+  <p>The core issue is that <code>CreateDIBSection</code> validates the <code>BITMAPINFO</code> structure against the supported formats. Using a non-standard or unsupported format will cause the function to fail. The solution involves adhering to the documented requirements for <code>biCompression</code> and providing the necessary color masks when using <code>BI_BITFIELDS</code> compression.</p>
+  <p><b>Key Points:</b></p>
+  <ul>
+   <li><code>CreateDIBSection</code> requires specific pixel formats.</li>
+   <li>16-bit grayscale with <code>BI_RGB</code> compression is not a standard supported format for <code>CreateDIBSection</code>.</li>
+   <li>For 16-bit formats, use <code>BI_BITFIELDS</code> compression.</li>
+   <li>When using <code>BI_BITFIELDS</code>, provide color masks for red, green, and blue.</li>
+   <li>Failing to meet these requirements results in <code>ERROR_INVALID_PARAMETER</code>.</li>
+  </ul>
+ </div>
+ </div>
+</article>

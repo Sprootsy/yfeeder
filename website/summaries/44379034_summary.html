@@ -1,0 +1,39 @@
+<article>
+    <h2>Getting ready to issue IP address certificates</h2>
+    <div>
+<div>
+  <h3>Summary</h3>
+  <p>
+    The Let's Encrypt community forum post discusses the upcoming ability to issue TLS certificates for IP addresses. Currently, Let's Encrypt only issues certificates for domain names. The post outlines the plans, limitations, and considerations for this new feature, which aims to support use cases where domain names are impractical or impossible, such as in certain IoT or internal network scenarios.
+  </p>
+  <p>
+    The plan involves adhering to CA/Browser Forum guidelines, which require IP address certificate issuance to be carefully controlled. Let's Encrypt will initially only issue certificates for IPv4 and IPv6 addresses that the applicant can demonstrate control over, using similar ACME challenge methods as domain validation (HTTP-01, DNS-01, and TLS-ALPN-01).
+  </p>
+  <p>
+    A key limitation is that Let's Encrypt will not issue certificates for private, reserved, or locally assigned IP addresses (e.g., 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, fd00::/8, 127.0.0.0/8, 169.254.0.0/16, ::1, 0.0.0.0/8). This restriction is in place because publicly trusted CAs are prohibited from issuing certificates for these address ranges. Issuance will also be limited to explicitly specified IP addresses; range validation will not be supported.
+  </p>
+  <p>
+    The author emphasizes that users should still prefer using domain names whenever feasible, as they offer greater flexibility and manageability. IP address certificates are intended for specific situations where domain names are not a viable option.
+  </p>
+  <p>
+    The post also covers technical details such as the expected Subject Alternative Name (SAN) format in the certificate (dNSName, not iPAddress). Staging environment will be available for testing purposes.
+  </p>
+  <p>
+    The forum post invites feedback and discussion from the community regarding use cases, potential challenges, and implementation details. The goal is to ensure that the implementation meets the needs of users while adhering to security best practices and CA/Browser Forum requirements.
+  </p>
+
+  <h3>Key Points</h3>
+  <ul>
+    <li>Let's Encrypt plans to issue TLS certificates for public IPv4 and IPv6 addresses.</li>
+    <li>This is intended for use cases where domain names are not practical.</li>
+    <li>Certificates will only be issued for IP addresses the applicant proves they control, using ACME challenges.</li>
+    <li>Certificates will not be issued for private, reserved, or locally assigned IP addresses.</li>
+    <li>Range validation will not be supported, only explicit IP addresses.</li>
+    <li>The preferred solution remains using domain names when possible.</li>
+    <li>SAN format will be dNSName (not iPAddress).</li>
+    <li>A staging environment will be available for testing.</li>
+    <li>Community feedback is requested.</li>
+  </ul>
+</div>
+</div>
+</article>

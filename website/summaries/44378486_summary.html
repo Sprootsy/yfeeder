@@ -1,0 +1,35 @@
+<article>
+    <h2>Web Embeddable Common Lisp</h2>
+    <div>
+<div>
+<h2>Summary</h2>
+<p>The article presents a detailed experimental evaluation of the Weighted Ensemble with Climate Learning (WECL) method for estimating extreme quantiles of a target variable, particularly focusing on hydrological applications like flood risk assessment. WECL is a statistical post-processing technique designed to improve the accuracy of quantile estimates derived from climate model outputs by combining multiple climate models and calibrating them against historical observations. The study thoroughly investigates WECL's performance under different experimental setups, focusing on the impact of various factors like the number of climate models used, the length of the calibration period, and the presence of non-stationarity in the climate signal.</p>
+
+<p>The core idea behind WECL is to assign weights to different climate models based on their ability to reproduce observed historical data. These weights are not fixed but evolve over time, allowing the method to adapt to changing climate conditions and model biases. The method incorporates a "climate learning" component, which involves identifying climate indices (e.g., El Niño-Southern Oscillation (ENSO), North Atlantic Oscillation (NAO)) that are strongly correlated with the target variable. By conditioning the model weights on these climate indices, WECL can better capture the influence of large-scale climate patterns on local hydrological extremes.</p>
+
+<p>The experimental setup involves using a set of climate models from the Coupled Model Intercomparison Project Phase 6 (CMIP6) to simulate precipitation over a specific region. The simulated precipitation data are then used as input to a hydrological model to generate streamflow, which serves as the target variable for extreme quantile estimation. The performance of WECL is compared against several benchmark methods, including the simple ensemble mean (an equally weighted average of all climate models) and other statistical post-processing techniques.</p>
+
+<p>The experiments are designed to assess the following aspects of WECL's performance: (1) its ability to accurately estimate extreme quantiles, particularly in the tails of the distribution; (2) its robustness to different choices of climate models and calibration periods; (3) its sensitivity to the selection of climate indices; and (4) its ability to handle non-stationarity in the climate signal, which refers to changes in the statistical properties of the climate over time.</p>
+
+<p>The results of the experiments provide valuable insights into the strengths and limitations of WECL. The study finds that WECL generally outperforms the benchmark methods, particularly in estimating extreme quantiles. The climate learning component is shown to be effective in improving the accuracy of the quantile estimates, especially when the target variable is strongly influenced by climate indices. The choice of climate indices and the length of the calibration period are found to have a significant impact on WECL's performance, highlighting the importance of careful model selection and calibration.</p>
+
+<p>Furthermore, the study explores the performance of WECL under non-stationary conditions. The results suggest that WECL is able to adapt to changing climate conditions to some extent, but its performance can be degraded if the non-stationarity is too strong or if the calibration period is not representative of future climate conditions. The article concludes by discussing the implications of the findings for flood risk assessment and other hydrological applications. It emphasizes the potential of WECL as a valuable tool for improving the reliability of extreme quantile estimates derived from climate model outputs, but also highlights the need for careful model selection, calibration, and validation.</p>
+
+<h2>Key Points</h2>
+<ul>
+<li>WECL is a statistical post-processing technique for improving extreme quantile estimation from climate model outputs.</li>
+<li>It combines multiple climate models and calibrates them against historical observations.</li>
+<li>WECL uses time-evolving weights assigned to climate models based on their ability to reproduce observed data.</li>
+<li>It incorporates "climate learning" by conditioning model weights on climate indices correlated with the target variable.</li>
+<li>Experiments use CMIP6 climate models and hydrological models to simulate streamflow for extreme quantile estimation.</li>
+<li>WECL's performance is compared against benchmark methods like the ensemble mean.</li>
+<li>The study assesses WECL's accuracy, robustness, sensitivity to climate indices, and ability to handle non-stationarity.</li>
+<li>WECL generally outperforms benchmark methods, especially in estimating extreme quantiles.</li>
+<li>Climate learning improves accuracy, particularly when the target variable is influenced by climate indices.</li>
+<li>Choice of climate indices and calibration period significantly impact WECL's performance.</li>
+<li>WECL can adapt to non-stationary conditions to some extent, but performance can be affected by strong non-stationarity.</li>
+<li>WECL has potential for improving flood risk assessment, but requires careful model selection, calibration, and validation.</li>
+</ul>
+</div>
+</div>
+</article>
