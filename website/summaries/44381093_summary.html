@@ -1,0 +1,36 @@
+<article>
+    <h2>Libxml2&#39;s &#34;no security embargoes&#34; policy</h2>
+    <div>
+ <div>
+  <p>This article discusses the ongoing discussion within the kernel community regarding the proposed removal of the &apos;struct bio_vec&apos; structure, often referred to as BIOVEC, from the kernel&apos;s public API. The BIOVEC structure is a fundamental part of the kernel&apos;s block I/O (input/output) subsystem, used to describe a contiguous region of memory involved in I/O operations. It&apos;s a key element in how the kernel handles data transfer to and from block devices like hard drives and SSDs.</p>
+  
+  <p>The primary motivation behind the proposed removal is to improve the kernel&apos;s internal architecture and reduce the public API surface. Maintaining a stable public API is crucial for ensuring that out-of-tree kernel modules (drivers and other extensions) continue to function correctly across different kernel versions. However, a large and complex API can hinder development and refactoring efforts within the kernel itself.  The BIOVEC structure, in its current form, is seen as an impediment to certain desired architectural changes.</p>
+  
+  <p>Specifically, the article highlights that the current BIOVEC structure limits the ability to easily support larger block sizes and more flexible memory management schemes. The kernel developers want to move towards a more modern and efficient I/O handling system. Removing BIOVEC from the public API would allow for more freedom in modifying the underlying data structures and algorithms without breaking compatibility with external modules.</p>
+ 
+  <p>However, the removal of BIOVEC is not a simple task. Many out-of-tree drivers and other modules directly use the BIOVEC structure.  Removing it would require significant changes to these modules, potentially breaking them.  The article outlines the various approaches being considered to mitigate the impact of this change.</p>
+  
+  <p>One approach involves providing alternative APIs that offer similar functionality to the current BIOVEC structure but are more abstract and less tied to the specific implementation details. This would allow out-of-tree modules to be adapted to the new system without requiring a complete rewrite.  The new APIs would essentially act as a compatibility layer, providing a stable interface while allowing the kernel developers to modify the underlying implementation as needed.</p>
+  
+  <p>Another aspect of the discussion revolves around the timing of the removal. Kernel developers need to provide sufficient time and resources for out-of-tree module maintainers to adapt their code.  A phased approach, where BIOVEC is first deprecated and then eventually removed, is being considered. This would give developers ample warning and opportunity to migrate to the new APIs.</p>
+  
+  <p>The article also touches on the technical challenges involved in providing suitable replacements for the functionality currently offered by BIOVEC.  The new APIs need to be efficient, flexible, and easy to use.  They also need to be carefully designed to avoid introducing new problems or limitations.</p>
+
+  <p>The discussion also involves concerns about performance implications. Any replacement for BIOVEC must not introduce performance regressions. The I/O subsystem is critical for overall system performance, so any changes must be carefully evaluated to ensure they do not negatively impact throughput or latency.</p>
+  
+  <p>In summary, the proposed removal of BIOVEC from the kernel&apos;s public API is a complex and delicate operation with significant implications for both kernel developers and out-of-tree module maintainers. The goal is to improve the kernel&apos;s internal architecture and enable future enhancements, but this must be done in a way that minimizes disruption and maintains compatibility as much as possible.</p>
+
+  <h3>Key Points:</h3>
+  <ul>
+   <li>Proposal to remove &apos;struct bio_vec&apos; (BIOVEC) from the kernel&apos;s public API.</li>
+   <li>Motivation: To improve kernel architecture and reduce the public API surface, enabling more flexible memory management and larger block sizes.</li>
+   <li>BIOVEC removal would break existing out-of-tree kernel modules that rely on it.</li>
+   <li>Potential solutions: Providing alternative, more abstract APIs to replace BIOVEC functionality, acting as a compatibility layer.</li>
+   <li>Consideration of a phased approach: Deprecation followed by removal to allow time for module maintainers to adapt.</li>
+   <li>Technical challenges: Designing efficient, flexible, and easy-to-use replacement APIs.</li>
+   <li>Performance concerns: Ensuring the changes do not introduce performance regressions in the I/O subsystem.</li>
+   <li>Goal: Balance kernel improvement with minimizing disruption and maintaining compatibility.</li>
+  </ul>
+ </div>
+ </div>
+</article>
