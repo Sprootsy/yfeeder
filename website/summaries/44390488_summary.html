@@ -1,0 +1,26 @@
+<article>
+    <h2>“Why is the Rust compiler so slow?”</h2>
+    <div>
+<div>
+  <p>The article "Why is the Rust Compiler Slow?" by Sharnoff explores the reasons behind the Rust compiler's reputation for being slow, despite its performance benefits at runtime. It attributes the slowness to several factors related to the language's design, its focus on safety and correctness, and the compilation process itself.</p>
+
+  <p>One major reason is Rust's emphasis on zero-cost abstractions. This means that Rust strives to provide high-level features without incurring runtime overhead. To achieve this, much of the work is pushed to compile time, where the compiler performs extensive analysis and optimization. This includes monomorphization, where generic code is specialized for each concrete type it's used with, leading to code bloat but also enabling aggressive optimization.  The borrow checker, a core feature ensuring memory safety without garbage collection, performs complex static analysis to track object lifetimes and prevent data races.  This analysis is computationally intensive, adding to compilation time.</p>
+
+  <p>The article also discusses the impact of LLVM, the compiler backend used by Rust. While LLVM is powerful and capable of generating highly optimized code, it's also known to be slow, particularly during the optimization phase. Rust leverages LLVM's capabilities to achieve its performance goals, but this comes at the cost of increased compilation time.</p>
+
+  <p>Furthermore, the article mentions the impact of incremental compilation. Rust's incremental compilation system aims to speed up compilation by only recompiling parts of the code that have changed. While it can be effective, it can also be complex and sometimes ineffective, especially with significant code changes or complex dependencies.</p>
+
+  <p>Finally, the article touches upon the ongoing efforts to improve Rust's compilation speed. The Rust community is actively working on various optimizations, including improving the borrow checker's performance, optimizing LLVM usage, and enhancing incremental compilation. The article suggests that while Rust compilation may remain slower than some other languages due to its inherent design goals, continuous improvements are being made to mitigate the issue.</p>
+
+  <h3>Key Points:</h3>
+  <ul>
+    <li>Rust's focus on zero-cost abstractions shifts work to compile time.</li>
+    <li>Monomorphization of generics leads to code bloat but enables optimization.</li>
+    <li>The borrow checker performs complex static analysis for memory safety, increasing compilation time.</li>
+    <li>LLVM, while powerful, is a slow compiler backend.</li>
+    <li>Incremental compilation aims to speed up compilation but can be complex and sometimes ineffective.</li>
+    <li>The Rust community is actively working on improving compilation speed through various optimizations.</li>
+  </ul>
+</div>
+</div>
+</article>
