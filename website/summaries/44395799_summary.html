@@ -1,0 +1,33 @@
+<article>
+    <h2>My Lights Run on Bash</h2>
+    <div>
+<div>
+  <p>
+    The article "My Lights Run on Bash" describes the author's home lighting system, which is controlled using Bash scripts and a Raspberry Pi. The author details how they transitioned from using smart bulbs with a cloud-dependent app to a more locally controlled and customizable system. This new system utilizes inexpensive RGB LED strips connected to the Raspberry Pi's GPIO pins.
+  </p>
+  <p>
+    The core of the system revolves around Bash scripts that directly manipulate the GPIO pins to control the LEDs' colors and brightness. The author explains the circuit setup, including the use of transistors as switches to handle the current required by the LEDs, as the Raspberry Pi's GPIO pins can't directly supply enough current. The article also delves into the software aspects, explaining how the Bash scripts use the `gpio` command (from the `wiringpi` library) to set the pins' states.
+  </p>
+  <p>
+    The author provides code snippets illustrating how to set specific colors by controlling the red, green, and blue channels individually. They also describe how they've implemented features like fading effects and color cycling using simple loops and delays within the Bash scripts. A crucial aspect of the system is its integration with Home Assistant, an open-source home automation platform. The author exposes the Bash scripts as shell commands within Home Assistant, allowing them to control the lights through the Home Assistant interface, voice commands, or automated routines.
+  </p>
+  <p>
+    The article highlights the benefits of this DIY approach, emphasizing the increased control, privacy, and cost-effectiveness compared to commercially available smart lighting solutions. By using Bash scripts, the author achieves a high degree of customization and avoids reliance on cloud services or proprietary software. The article also touches on the learning experience gained from building the system, including understanding electronics, scripting, and home automation concepts.
+  </p>
+  <p>
+    The author uses a Raspberry Pi, RGB LED strips, transistors, resistors, and jumper wires. The software components include Bash scripting and the `wiringpi` library to manipulate the GPIO pins, and Home Assistant for overall system integration and control.
+  </p>
+
+  <h3>Key Points:</h3>
+  <ul>
+    <li>The author created a home lighting system controlled by Bash scripts.</li>
+    <li>The system uses RGB LED strips connected to a Raspberry Pi.</li>
+    <li>Transistors are used as switches to control the LED strips.</li>
+    <li>Bash scripts manipulate the GPIO pins to control color and brightness.</li>
+    <li>The system integrates with Home Assistant for control via the interface and automation.</li>
+    <li>The author values control, privacy, and cost-effectiveness.</li>
+    <li>The project involved learning electronics, scripting, and home automation.</li>
+  </ul>
+</div>
+</div>
+</article>

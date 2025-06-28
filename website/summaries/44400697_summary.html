@@ -1,0 +1,23 @@
+<article>
+    <h2>Rust in the Linux kernel: part 2</h2>
+    <div>
+<div>
+<p>The article discusses the ongoing efforts to improve the Btrfs filesystem, focusing on recent developments and discussions from the 2024 Btrfs developers' meeting. Josef Bacik provided an update on the progress of the new async discard code, which aims to address performance issues related to deleting large files or directories. The original synchronous discard operation could cause significant delays, especially on slower devices, leading to system unresponsiveness. The new asynchronous implementation moves the discard operations to a separate thread, preventing them from blocking other filesystem operations. While the initial implementation showed promise, it introduced new challenges, including lock contention and performance regressions in certain scenarios. Bacik outlined the steps taken to mitigate these issues, such as optimizing lock usage and introducing a discard extent cache to reduce the frequency of metadata lookups. Further improvements are planned, including better integration with the zoned block device (ZBD) functionality in Btrfs, which could allow for more efficient handling of discard operations on ZBDs.</p>
+
+<p>Another topic covered was the effort to optimize the handling of metadata checksums. Currently, Btrfs calculates checksums for all metadata blocks, which can be computationally expensive, especially on systems with limited resources. There's ongoing work to identify and eliminate redundant checksum calculations, such as when a metadata block is known to be immutable. By reducing the number of checksum operations, the overall performance of the filesystem can be improved. The discussion also touched upon the challenges of ensuring data integrity while minimizing the overhead of checksum calculations.</p>
+
+<p>The article also mentions improvements to the send/receive functionality in Btrfs. This feature allows for creating incremental backups of Btrfs subvolumes by sending only the changes between two snapshots. Recent work has focused on optimizing the performance of the send operation, particularly when dealing with large files or directories. One area of improvement has been in the handling of deleted files. Previously, the send operation would need to traverse the entire filesystem to identify and exclude deleted files, which could be time-consuming. New optimizations aim to reduce the amount of work required to identify deleted files, making the send operation faster and more efficient.</p>
+
+<p>Furthermore, the article notes that compression is getting more attention. There is a push to support Zstandard compression (Zstd) natively within Btrfs. Zstd offers a good balance between compression ratio and speed, making it an attractive alternative to existing compression algorithms like LZO and zlib. Native Zstd support in Btrfs would eliminate the need for userspace compression tools, simplifying the process of compressing and decompressing data. Additionally, it's mentioned that RAID5/6 performance continues to be an area of focus and improvement.</p>
+
+<p><b>Key Points:</b></p>
+<ul>
+<li><b>Async Discard:</b> Significant progress has been made on the asynchronous discard code, which aims to improve performance when deleting large files or directories. Issues like lock contention and performance regressions have been addressed through optimizations like improved lock usage and a discard extent cache. Integration with ZBDs is planned for further improvements.</li>
+<li><b>Metadata Checksums:</b> Efforts are underway to optimize metadata checksum calculations by identifying and eliminating redundant operations, which can improve performance, especially on resource-constrained systems.</li>
+<li><b>Send/Receive Optimizations:</b> The send/receive functionality in Btrfs is being optimized, particularly for handling deleted files. These optimizations reduce the time required to identify deleted files, making the send operation faster and more efficient.</li>
+<li><b>Zstandard Compression:</b> There is a push to add native Zstandard compression support within Btrfs, which would provide a good balance between compression ratio and speed.</li>
+<li><b>RAID5/6:</b> RAID5/6 performance continues to be an area of focus and improvement.</li>
+</ul>
+</div>
+</div>
+</article>

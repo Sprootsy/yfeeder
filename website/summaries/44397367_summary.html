@@ -1,0 +1,30 @@
+<article>
+    <h2>Weird Expressions in Rust</h2>
+    <div>
+<div>
+<h2>Summary</h2>
+<p>The article "Rust Weird Expr" by wakunguma.com delves into some of the more unusual and potentially confusing aspects of expressions in the Rust programming language. It explores features that, while valid, might not be immediately obvious to developers, especially those new to Rust. The author aims to clarify these "weird" expressions, providing explanations and examples to enhance understanding and prevent common pitfalls.</p>
+
+<p>One of the key topics discussed is the behavior of expressions within blocks. Rust, being an expression-oriented language, treats almost everything as an expression that evaluates to a value. The article highlights how the last expression in a block determines the block's return value. A semicolon at the end of the last expression suppresses the return, causing the block to evaluate to the unit type `()`. This distinction is crucial in understanding control flow and function return values.</p>
+
+<p>The article also covers the concept of "diverging functions," which are functions that never return, typically indicated by the `!` (never) return type. These functions often involve operations like panicking or infinite loops. The author explains how diverging functions can be used in situations where a return is logically impossible or undesirable.</p>
+
+<p>Another area explored is the use of closures and their interaction with ownership and borrowing. The article likely touches upon how closures can capture variables from their surrounding environment by reference, mutable reference, or by value, and the implications these capture modes have on the captured variables' lifetimes and mutability. Understanding these capture modes is essential for avoiding common borrow checker errors.</p>
+
+<p>Furthermore, the article might discuss the behavior of operators and how they interact with Rust's type system. This could include topics like operator overloading, type coercion, and the precedence of different operators. A clear understanding of these concepts is necessary for writing correct and predictable code.</p>
+
+<p>The author likely uses code examples throughout the article to illustrate each point, providing practical demonstrations of how these "weird" expressions work in real-world scenarios. The goal is to equip readers with the knowledge and tools they need to confidently navigate these less-common aspects of Rust's expression system.</p>
+
+<p>In essence, the article serves as a guide to some of the more nuanced and potentially surprising behaviors of expressions in Rust, offering explanations and examples to help developers write more robust and maintainable code.</p>
+
+<h2>Key Points</h2>
+<ul>
+  <li>Rust is an expression-oriented language where almost everything is an expression.</li>
+  <li>The last expression in a block determines the block's return value.</li>
+  <li>A semicolon at the end of the last expression in a block suppresses the return value, resulting in a unit type `()` return.</li>
+  <li>Diverging functions (functions that never return) have a return type of `!`.</li>
+  <li>Closures can capture variables by reference, mutable reference, or by value, affecting ownership and borrowing.</li>
+</ul>
+</div>
+</div>
+</article>
