@@ -1,0 +1,37 @@
+<article>
+    <h2>Solving `Passport Application` with Haskell</h2>
+    <div>
+<div>
+<p>The article is a comprehensive guide to Passport, an authentication middleware for Node.js. It explains Passport's role in simplifying the implementation of authentication strategies for web applications. Passport abstracts away the complexities of dealing with session management, user lookup, and various authentication protocols, allowing developers to focus on the core logic of their applications.</p>
+
+<p>The document begins by defining authentication as the process of verifying a user's identity and authorization as the process of determining what resources a user has access to. It highlights that Passport handles authentication, leaving authorization to the application developer. The core concept is that Passport uses configurable "strategies" to authenticate requests. Each strategy represents a different method of authentication, such as username/password, OAuth (e.g., Google, Facebook), OpenID, or others. Passport itself doesn't implement these strategies; instead, it relies on community-contributed or custom-built modules.</p>
+
+<p>The guide then walks through a detailed setup of Passport using a username/password strategy. It demonstrates how to install Passport and the `passport-local` strategy using npm. It outlines the steps involved in configuring the strategy, which includes providing a "verify callback" function. This function is responsible for finding the user in the database based on the provided username and password, and then validating the password. If the credentials are valid, the callback returns the user object; otherwise, it returns an error or `null`.</p>
+
+<p>The article then delves into session management, a crucial aspect of authentication. Since HTTP is stateless, sessions are used to maintain user authentication across multiple requests. Passport serializes and deserializes user objects to and from the session. The `passport.serializeUser()` function determines which data from the user object should be stored in the session (typically just the user ID), and `passport.deserializeUser()` retrieves the user object from the database based on the ID stored in the session. These functions are essential for maintaining the user's authenticated state.</p>
+
+<p>The guide provides code snippets illustrating how to integrate Passport into an Express application. This includes setting up middleware to initialize Passport, use Passport's session management, and make the user object available in the request object (`req.user`). It shows how to protect routes by using `passport.authenticate()` middleware, which ensures that only authenticated users can access specific parts of the application.</p>
+
+<p>Furthermore, the document explains how to handle different authentication outcomes, such as successful login, failed login, or redirection to other pages. It provides examples of rendering different views based on the authentication status.</p>
+
+<p>The article touches on the importance of security considerations when implementing authentication. It emphasizes the need to use strong password hashing algorithms (like bcrypt) to store passwords securely. It also briefly mentions the importance of protecting against common web vulnerabilities such as cross-site scripting (XSS) and cross-site request forgery (CSRF).</p>
+
+<p>Finally, the guide points out that Passport is highly extensible and supports a wide range of authentication strategies. It encourages readers to explore the available strategies and choose the ones that best fit their application's needs.</p>
+
+<h3>Key Points:</h3>
+<ul>
+    <li>Passport is authentication middleware for Node.js.</li>
+    <li>It simplifies the implementation of authentication strategies.</li>
+    <li>Passport uses configurable "strategies" (e.g., username/password, OAuth) to authenticate requests.</li>
+    <li>Developers configure a "verify callback" within a strategy to validate user credentials.</li>
+    <li>Passport handles session management by serializing and deserializing user objects.</li>
+    <li>`passport.serializeUser()` stores user data in the session.</li>
+    <li>`passport.deserializeUser()` retrieves user data from the session.</li>
+    <li>Passport integrates with Express using middleware.</li>
+    <li>`passport.authenticate()` middleware protects routes.</li>
+    <li>Security considerations include strong password hashing.</li>
+    <li>Passport is extensible and supports various authentication strategies.</li>
+</ul>
+</div>
+</div>
+</article>

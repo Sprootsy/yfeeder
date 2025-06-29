@@ -1,0 +1,36 @@
+<article>
+    <h2>Life of an inference request (vLLM V1): How LLMs are served efficiently at scale</h2>
+    <div>
+<div>
+<h2>Summary</h2>
+The article, "Life of an Inference Request: vLLM v1," delves into the inner workings of the vLLM (version 1) inference engine, explaining the end-to-end process of how it handles a request to generate text. It offers insights into vLLM's architecture and optimizations that enable it to achieve high throughput and low latency in serving large language models (LLMs).
+
+The article begins by outlining the initial steps, where a user submits a prompt to the vLLM server. This prompt is then preprocessed, involving tokenization, which converts the text into numerical representations that the LLM can understand. The tokenized prompt is then added to a request queue.
+
+vLLM's core optimization lies in its utilization of Paged Attention. Instead of allocating contiguous memory blocks for the entire sequence of tokens for each request (which can lead to memory fragmentation and inefficiency), vLLM divides the key-value cache (KV cache) into fixed-size pages. These pages are allocated dynamically as needed, allowing for more efficient memory management and reduced memory wastage. The article elucidates how this paged attention mechanism enables vLLM to handle a larger number of concurrent requests and longer sequences without running out of memory.
+
+The scheduler plays a crucial role in managing the execution of requests. It prioritizes requests based on factors like priority and length, and assigns them to available GPU resources. The scheduler also handles preemption, where lower-priority requests might be temporarily paused to allow higher-priority requests to proceed. This ensures that important requests are processed promptly.
+
+The execution of the LLM happens within the GPU kernels. The article details how vLLM optimizes these kernels for efficient computation. Techniques like tensor parallelism, where the model is split across multiple GPUs, and optimized matrix multiplication routines are used to accelerate the inference process. The use of CUDA graphs further reduces overhead by precompiling and optimizing the sequence of GPU operations.
+
+During the decoding phase, the LLM generates one token at a time. vLLM uses techniques like speculative decoding to speed up this process. Speculative decoding involves generating multiple candidate tokens in parallel, and then verifying them against the actual LLM output. This reduces the number of expensive LLM forward passes required.
+
+The generated tokens are then post-processed, which includes converting them back into human-readable text (detokenization). The generated text is then returned to the user.
+
+The article also touches upon the system-level optimizations that contribute to vLLM's performance. These include efficient data transfer between the CPU and GPU, optimized memory allocation, and careful management of GPU resources.
+
+In essence, the article provides a comprehensive overview of the various stages involved in processing an inference request within vLLM, highlighting the key optimizations that contribute to its speed and efficiency. It emphasizes the importance of Paged Attention, the scheduler, optimized GPU kernels, and speculative decoding in achieving high performance when serving LLMs.
+
+<h2>Key Points</h2>
+<ul>
+<li><b>Prompt Processing:</b> User prompts are tokenized and added to a request queue.</li>
+<li><b>Paged Attention:</b> vLLM uses Paged Attention to manage the KV cache efficiently, avoiding memory fragmentation by dynamically allocating fixed-size pages.</li>
+<li><b>Scheduler:</b> The scheduler prioritizes and manages requests, assigning them to GPU resources and handling preemption.</li>
+<li><b>GPU Kernels:</b> Optimized GPU kernels, including tensor parallelism and CUDA graphs, accelerate the inference process.</li>
+<li><b>Speculative Decoding:</b> vLLM uses speculative decoding to generate multiple candidate tokens in parallel, speeding up the decoding phase.</li>
+<li><b>Post-processing:</b> Generated tokens are detokenized and returned to the user.</li>
+<li><b>System-Level Optimizations:</b> Efficient data transfer, memory allocation, and GPU resource management contribute to overall performance.</li>
+</ul>
+</div>
+</div>
+</article>
