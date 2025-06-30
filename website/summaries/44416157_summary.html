@@ -1,0 +1,41 @@
+<article>
+    <h2>Error handling in Rust</h2>
+    <div>
+<div>
+  <p>
+    The article is a comprehensive guide to error handling in Rust, emphasizing the language's commitment to explicitness and safety. It begins by highlighting Rust's lack of exceptions, which forces developers to handle errors explicitly rather than relying on implicit control flow changes. The author argues that this approach leads to more robust and maintainable code.
+  </p>
+  <p>
+    The primary mechanism for error handling in Rust is the <code>Result&lt;T, E&gt;</code> type. This enum represents either a successful outcome (<code>Ok(T)</code>) containing a value of type <code>T</code> or an error outcome (<code>Err(E)</code>) containing an error value of type <code>E</code>. The article demonstrates how to use <code>Result</code> effectively in various scenarios.
+  </p>
+  <p>
+    The author discusses the importance of choosing appropriate error types. Simple errors can be represented by basic enums or strings, while more complex scenarios benefit from custom error types that implement the <code>Error</code> trait. This trait allows for error chaining, providing detailed context about the origin of an error. The article also covers the <code>anyhow</code> crate, a popular choice for quickly prototyping error handling and reducing boilerplate.
+  </p>
+  <p>
+    The article also delves into error propagation, explaining how to bubble errors up the call stack using the <code>?</code> operator (formerly <code>try!</code> macro). This operator simplifies error handling by automatically returning an error from a function if a <code>Result</code> contains an <code>Err</code> value. The author emphasizes the importance of ensuring that error types are compatible when propagating errors across different function boundaries, and demonstrates the use of the <code>From</code> trait for automatic error conversion.
+  </p>
+  <p>
+    The concept of "error context" is explored in detail. The author advocates for adding context to errors as they propagate up the call stack, providing valuable information for debugging. This can be achieved using methods like <code>map_err</code> or crates like <code>anyhow</code>, which provide convenient ways to add contextual information to errors.
+  </p>
+  <p>
+    The article also addresses error handling in specific scenarios, such as working with iterators. It shows how to use methods like <code>collect&lt;Result&lt;Vec&lt;T&gt;, E&gt;&gt;()</code> to handle potential errors during iteration and collect the results into a single <code>Result</code>.
+  </p>
+  <p>
+    Finally, the author touches upon the <code>failure</code> crate (now largely superseded by <code>thiserror</code> and <code>anyhow</code>) and the <code>thiserror</code> crate, which provides a derive macro for easily creating custom error types. The article concludes by reiterating the importance of explicit error handling in Rust and providing practical advice for writing robust and maintainable code.
+  </p>
+
+  <h2>Key Points:</h2>
+  <ul>
+    <li>Rust does not have exceptions, requiring explicit error handling.</li>
+    <li>The <code>Result&lt;T, E&gt;</code> type is the primary mechanism for error handling, representing either success (<code>Ok(T)</code>) or failure (<code>Err(E)</code>).</li>
+    <li>Choose appropriate error types: simple enums/strings for basic errors, custom types implementing the <code>Error</code> trait for complex scenarios.</li>
+    <li>The <code>?</code> operator simplifies error propagation by automatically returning errors.</li>
+    <li>Use the <code>From</code> trait for automatic error conversion when propagating errors across function boundaries.</li>
+    <li>Add context to errors as they propagate up the call stack to aid debugging.</li>
+    <li>Handle errors when working with iterators using methods like <code>collect&lt;Result&lt;Vec&lt;T&gt;, E&gt;&gt;()</code>.</li>
+    <li>The <code>thiserror</code> crate provides a derive macro for easily creating custom error types.</li>
+    <li>Explicit error handling leads to more robust and maintainable code.</li>
+  </ul>
+</div>
+</div>
+</article>
