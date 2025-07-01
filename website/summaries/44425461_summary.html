@@ -1,0 +1,22 @@
+<article>
+    <h2>I write type-safe generic data structures in C</h2>
+    <div>
+ <div>
+  <p>The article discusses the challenges of creating generic data structures in C while maintaining type safety. C's lack of built-in generics forces developers to use techniques like void pointers and casting, which can lead to runtime errors and obscure type information. The author explores different approaches to implement type-safe generic data structures in C, focusing on a dynamically sized array (vector) as an example.</p>
+  <p>The first approach involves using `void*` to store elements of any type within the vector. This method offers flexibility but sacrifices type safety, as the compiler cannot verify the correctness of the data being stored or retrieved. It requires manual casting, which can introduce errors if the wrong type is assumed.  The author demonstrates this with a basic vector implementation using `void*` and functions for initialization, appending elements, and accessing elements.</p>
+  <p>Next, the author presents a solution using macros to generate type-specific vector implementations. This approach involves defining macros that create functions and structures tailored to a specific data type. By using macros, the code is generated at compile time, allowing for type checking and eliminating the need for manual casting. The author provides examples of macros for defining vector types (e.g., `VECTOR_OF(int)`), appending elements (`VECTOR_APPEND(int)`), and accessing elements (`VECTOR_GET(int)`). This approach improves type safety and performance but can lead to code duplication if many different vector types are needed.</p>
+  <p>The article further explores an alternative macro-based approach that aims to reduce code duplication by leveraging a single set of functions and structures, but still providing type safety through macro expansion.  This involves creating a generic vector implementation with placeholders for the data type and then using macros to "instantiate" specific vector types. The author demonstrates this by defining generic vector functions (e.g., `vector_init`, `vector_append`, `vector_get`) that operate on a generic `vector_t` structure. Macros are then used to define type-specific functions that call the generic functions with the correct type information. This approach offers a balance between type safety and code reuse.</p>
+  <p>The author then touches on the use of function pointers as a potential mechanism for creating more flexible data structures.  By storing function pointers for operations like copying and comparing elements, the data structure can be customized to work with different types without requiring explicit type information. However, the author notes that this approach can be more complex to implement and may introduce runtime overhead due to function call indirection. This method is not explored in depth.</p>
+  <p>The article concludes by acknowledging the limitations of implementing generic data structures in C and highlighting the trade-offs between type safety, code reuse, and performance. While C lacks built-in generics, the techniques discussed provide ways to create type-safe data structures to varying degrees, often with increased complexity and verbosity compared to languages with native generics support.</p>
+  <h2>Key Points:</h2>
+  <ul>
+   <li>C lacks native generics, making type-safe generic data structures challenging to implement.</li>
+   <li>Using `void*` provides flexibility but sacrifices type safety, requiring manual casting and potentially leading to runtime errors.</li>
+   <li>Macros can be used to generate type-specific data structure implementations, improving type safety and performance but potentially leading to code duplication.</li>
+   <li>A hybrid approach combining generic functions and macros can balance type safety and code reuse.</li>
+   <li>Function pointers offer a potential mechanism for customization but can increase complexity and runtime overhead.</li>
+   <li>Implementing generic data structures in C involves trade-offs between type safety, code reuse, and performance.</li>
+  </ul>
+ </div>
+ </div>
+</article>

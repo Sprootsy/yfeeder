@@ -1,0 +1,40 @@
+<article>
+    <h2>They don&#39;t make &#39;em like that any more: Sony DTC-700 audio DAT player/recorder</h2>
+    <div>
+ <div>
+  <p>
+   The article is a detailed guide on building a simple, direct-conversion (DTC) receiver using a 74HC4066 analog switch. It explains the principles behind DTC receivers, their advantages, and disadvantages, and provides a step-by-step construction guide.
+  </p>
+  <p>
+   The article starts by explaining the concept of direct conversion, where the received RF signal is directly mixed with a local oscillator (LO) signal at the same frequency, resulting in an audio-frequency output. This eliminates the need for intermediate frequency (IF) stages, simplifying the receiver's design. The author discusses the benefits of DTC receivers, such as simplicity, low component count, and the ability to receive SSB (single-sideband) signals effectively. However, it also mentions drawbacks like sensitivity to LO leakage and DC offsets, which can cause issues like the "phantom carrier" effect.
+  </p>
+  <p>
+   The core of the receiver design revolves around the 74HC4066 analog switch IC, used as a mixer. The author explains how the switch rapidly alternates the signal path, effectively multiplying the RF signal by a square wave LO signal.  The author details how the LO signal is generated using a simple oscillator circuit. The article provides guidance on selecting appropriate components for the LO, including the crystal frequency, to tune to a specific desired frequency.
+  </p>
+  <p>
+   The guide covers the construction process, including building the LO, input bandpass filter, and audio amplifier stages. The importance of a good bandpass filter to reject unwanted signals and prevent LO leakage is emphasized. Component selection for the filter is explained, along with the calculation of capacitor and inductor values for the desired frequency range.
+  </p>
+  <p>
+   For the audio amplifier, the author suggests using a simple LM386-based amplifier. The article describes how to connect the amplifier to the mixer output, including using a potentiometer for volume control.
+  </p>
+  <p>
+   The article provides practical advice on troubleshooting and testing the receiver. It suggests using an oscilloscope to examine the signals at various points in the circuit, such as the LO output and the mixer output. It also mentions common issues and their solutions, like adjusting the LO frequency for optimal reception. The importance of shielding to minimize interference and LO leakage is also highlighted.
+  </p>
+  <p>
+   Finally, the article concludes with suggestions for further experimentation, like using different analog switches, improving the bandpass filter, and experimenting with different audio amplifier designs. It also briefly touches on using software-defined radios (SDRs) and their advantages for more advanced receiver designs.
+  </p>
+  <h3>Key Points:</h3>
+  <ul>
+   <li>Direct Conversion Receiver (DTC): RF signal is directly converted to audio frequency, eliminating IF stages.</li>
+   <li>Advantages: Simple design, low component count, good for SSB reception.</li>
+   <li>Disadvantages: Sensitive to LO leakage, DC offsets, "phantom carrier" effect.</li>
+   <li>74HC4066 Analog Switch: Used as a mixer to multiply the RF signal by the LO signal.</li>
+   <li>Local Oscillator (LO): Generates the signal for mixing; frequency determines the receiving frequency.</li>
+   <li>Bandpass Filter: Essential for rejecting unwanted signals and LO leakage.</li>
+   <li>Audio Amplifier: Amplifies the audio output from the mixer (e.g., LM386).</li>
+   <li>Troubleshooting: Use an oscilloscope to check signals, adjust LO frequency, shield against interference.</li>
+   <li>Experimentation: Try different analog switches, improve the bandpass filter, explore SDRs.</li>
+  </ul>
+ </div>
+ </div>
+</article>
