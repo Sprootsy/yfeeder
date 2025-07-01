@@ -1,0 +1,19 @@
+<article>
+    <h2>The hidden JTAG in a Qualcomm/Snapdragon device’s USB port</h2>
+    <div>
+<div>
+  <p><strong>Summary:</strong></p>
+  <p>The article discusses the discovery and utilization of a hidden JTAG interface accessible through the USB port on Qualcomm Snapdragon processors. JTAG (Joint Test Action Group) is a hardware interface typically used for debugging and low-level access to a device's system-on-a-chip (SoC). While JTAG is often exposed through dedicated pins, this article details how researchers found it could be accessed via the USB connection on certain Snapdragon devices. This hidden JTAG interface provides significant control over the device, allowing for tasks like memory access, debugging, and even potentially bypassing security measures. The researchers reverse-engineered the necessary protocols and commands to interact with this hidden JTAG, creating tools and techniques to leverage its capabilities. The process involved identifying the specific USB descriptors and endpoints used for JTAG communication, understanding the Qualcomm Sahara and Firehose protocols involved in the initial device boot process, and crafting custom commands to execute JTAG operations. The article highlights the implications of this discovery for device security, reverse engineering, and custom firmware development. The discovery allows security researchers to gain deeper insights into the Snapdragon's internal workings, potentially uncovering vulnerabilities and security flaws. For reverse engineers and developers, it provides a powerful tool for debugging, analyzing, and customizing Snapdragon-based devices. However, it also poses a security risk, as malicious actors could exploit this interface to compromise devices and bypass security mechanisms. The article likely goes into technical detail about the specific commands, protocols, and tools used to access and interact with the hidden JTAG interface, providing valuable information for researchers and developers interested in exploring this capability.</p>
+
+  <p><strong>Key Points:</strong></p>
+  <ul>
+    <li>Discovery of a hidden JTAG interface on Qualcomm Snapdragon processors accessible via USB.</li>
+    <li>JTAG interface allows low-level access and control over the device's SoC.</li>
+    <li>Reverse engineering of USB protocols (Sahara, Firehose) required to access the JTAG interface.</li>
+    <li>Custom commands and tools developed to interact with the hidden JTAG.</li>
+    <li>Implications for device security, reverse engineering, and custom firmware development.</li>
+    <li>Potential for both beneficial uses (debugging, analysis) and malicious exploitation (security bypass).</li>
+  </ul>
+</div>
+</div>
+</article>
