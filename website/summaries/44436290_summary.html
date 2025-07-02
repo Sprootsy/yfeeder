@@ -1,0 +1,35 @@
+<article>
+    <h2>What should a native DOM templating API look like?</h2>
+    <div>
+<div>
+  <p>The article "What Should a DOM Templating API Look Like?" by Justin Fagnani explores the design considerations for a modern DOM templating API in JavaScript. It discusses the shortcomings of existing templating solutions and proposes a new approach that prioritizes performance, expressiveness, and integration with web components.</p>
+
+  <p>Fagnani begins by outlining the problems with current templating libraries, such as their reliance on string-based templates, which can be inefficient and prone to security vulnerabilities like XSS attacks. He argues that string-based templates also make it difficult to leverage the full power of JavaScript and the DOM. Additionally, many libraries introduce their own custom syntax and semantics, which can be cumbersome for developers to learn and use.</p>
+
+  <p>The author emphasizes the importance of a templating API that directly manipulates the DOM, offering better performance and avoiding the overhead of parsing and interpreting strings. He suggests leveraging JavaScript's tagged template literals as a foundation for the API, allowing developers to embed expressions directly within the template. These expressions can then be used to dynamically generate and update DOM elements.</p>
+
+  <p>Fagnani proposes a design where templates are represented as functions that take data as input and return a DOM tree. These functions can be cached and reused, further improving performance. The API should also provide mechanisms for efficiently updating the DOM when the data changes, avoiding unnecessary re-rendering. He suggests using techniques like diffing and patching to minimize the number of DOM operations required.</p>
+
+  <p>The article highlights the benefits of integrating the templating API with web components. Web components provide a natural encapsulation boundary for templates and data, making it easier to build reusable and maintainable UI components. The templating API should allow developers to easily define the template for a web component and bind it to the component's data.</p>
+
+  <p>Furthermore, Fagnani discusses the importance of supporting features like event handling, conditional rendering, and list rendering. The API should provide concise and expressive ways to handle these common UI patterns. He suggests using directives or custom elements to extend the API with new functionality.</p>
+
+  <p>The author also touches upon the need for good tooling support, such as syntax highlighting, code completion, and debugging. He argues that the templating API should be designed in a way that makes it easy to build these tools.</p>
+
+  <p>In conclusion, the article advocates for a new DOM templating API that is performant, expressive, and well-integrated with web components. It emphasizes the importance of avoiding string-based templates and leveraging JavaScript's capabilities to directly manipulate the DOM. The proposed API aims to provide a more efficient and developer-friendly way to build dynamic web applications.</p>
+
+  <h2>Key Points:</h2>
+  <ul>
+    <li>Current templating solutions often rely on inefficient and insecure string-based templates.</li>
+    <li>A DOM-based templating API offers better performance by directly manipulating the DOM.</li>
+    <li>Tagged template literals can be used to embed expressions within templates.</li>
+    <li>Templates should be represented as functions that return a DOM tree.</li>
+    <li>Efficient DOM updates can be achieved through diffing and patching techniques.</li>
+    <li>Integration with web components promotes reusability and maintainability.</li>
+    <li>The API should support event handling, conditional rendering, and list rendering.</li>
+    <li>Good tooling support is crucial for developer productivity.</li>
+    <li>The goal is a performant, expressive, and developer-friendly templating API.</li>
+  </ul>
+</div>
+</div>
+</article>
