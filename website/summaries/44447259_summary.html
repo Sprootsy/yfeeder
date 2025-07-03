@@ -1,0 +1,33 @@
+<article>
+    <h2>A Higgs-Bugson in the Linux Kernel</h2>
+    <div>
+<div>
+<h3>Summary</h3>
+The Jane Street blog post "A Higgs-Bugson in the Linux Kernel" details an investigation into a performance regression observed in an application after a Linux kernel upgrade. The post describes how a seemingly innocuous change in the kernel's scheduler, specifically the PI-futex implementation, led to significant performance degradation in a multithreaded OCaml application using Lwt (a concurrency library).
+
+The investigation began after noticing that a specific application, which relies heavily on concurrent tasks managed by Lwt, experienced a substantial slowdown after upgrading the kernel from version 5.15 to a newer version. Initial attempts to identify the cause, such as profiling the application, proved inconclusive, as they didn't reveal any obvious bottlenecks or resource contention.
+
+The breakthrough came when the author started examining the kernel changelogs and identified a change in the PI-futex (Priority Inheritance futex) implementation. PI-futexes are used for synchronization between processes or threads, and the change involved altering how the scheduler handles priority inheritance when a thread is blocked waiting on a futex.
+
+The original implementation used a "wake-all" approach, where all threads waiting on the futex were woken up when the futex was released. The changed implementation switched to a "wake-one" approach, where only one waiting thread is woken up. The rationale behind this change was to improve fairness and reduce unnecessary context switching.
+
+However, the author hypothesized that this "wake-one" approach, while generally beneficial, could introduce inefficiencies in scenarios with frequent contention on the futex. In the Lwt application, the frequent scheduling and context switching between Lwt threads meant that the "wake-one" approach could lead to situations where the scheduler would wake up a thread, but that thread would immediately go back to sleep waiting for the same futex, only to be woken up again shortly after. This rapid cycle of waking and sleeping, termed a "Higgs-Bugson" (a playful reference to the Higgs boson particle that rapidly appears and disappears), could lead to significant overhead and performance degradation.
+
+To confirm this hypothesis, the author devised a test case using `perf` to measure the number of context switches occurring in the application. The results showed a dramatic increase in context switches after the kernel upgrade, supporting the theory that the "wake-one" approach was indeed causing excessive context switching.
+
+To mitigate the issue, the author experimented with different kernel configurations, including reverting the PI-futex change. This confirmed that the "wake-one" approach was the root cause of the performance regression. As a workaround, they explored using `pthread_mutexes` instead of futexes for synchronization within Lwt.
+
+The blog post concludes by emphasizing the importance of understanding the subtle interactions between the kernel scheduler and user-space concurrency libraries. It also highlights the challenges of diagnosing performance regressions caused by seemingly innocuous kernel changes, especially in complex, multithreaded applications. The investigation ultimately led to a deeper understanding of the PI-futex implementation and its potential impact on certain types of workloads.
+
+<h3>Key Points</h3>
+
+*   **Performance Regression:** A significant performance slowdown was observed in an OCaml application using Lwt after a Linux kernel upgrade.
+*   **PI-Futex Change:** The investigation traced the regression to a change in the kernel's PI-futex implementation, specifically switching from a "wake-all" to a "wake-one" approach.
+*   **Excessive Context Switching:** The "wake-one" approach led to a dramatic increase in context switches, particularly in scenarios with frequent contention on the futex.
+*   **Higgs-Bugson:** The rapid cycle of waking and sleeping threads was termed a "Higgs-Bugson" due to its fleeting nature.
+*   **Workaround:** The author explored using `pthread_mutexes` instead of futexes for synchronization within Lwt as a potential workaround.
+*   **Importance of Understanding Kernel Interactions:** The post highlights the importance of understanding the subtle interactions between the kernel scheduler and user-space concurrency libraries.
+*   **Challenges of Diagnosis:** Diagnosing performance regressions caused by seemingly innocuous kernel changes can be challenging, especially in complex, multithreaded applications.
+</div>
+</div>
+</article>

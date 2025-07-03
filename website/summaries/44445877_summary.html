@@ -1,0 +1,29 @@
+<article>
+    <h2>Features of D That I Love</h2>
+    <div>
+<div>
+<p>The article is a personal account by Bradley Chatha detailing the features of the D programming language that he appreciates most. He emphasizes that while D might not be perfect, it offers a compelling combination of features that make it a worthwhile language to consider, especially for those coming from C++. He structures his praise around several key aspects of the language.</p>
+
+<p>First, the author highlights the <b>memory management</b> capabilities of D. While D supports manual memory management similar to C and C++, it also includes automatic garbage collection (GC). He appreciates that the GC is mostly non-intrusive and can be disabled on a per-need basis, providing a middle ground between complete manual control and fully automatic management. He mentions techniques like scope-based allocators and the `std.experimental.allocator` module for advanced memory management scenarios, also highlighting the `@nogc` attribute that allows to ensure certain sections of code do not allocate memory on the GC heap. He believes this offers a flexible approach to managing memory, suitable for various performance requirements.</p>
+
+<p>Next, Chatha praises D's <b>compile-time execution</b> (CTFE) capabilities. He describes CTFE as the ability to execute D code during compilation. This allows calculations, data structure generation, and other tasks to be performed at compile time, resulting in optimized and faster runtime execution. CTFE allows reducing runtime overhead and ensures that errors are caught early, which can significantly improve the reliability and performance of D programs. It's also useful for metaprogramming tasks, generating code based on compile-time information.</p>
+
+<p>Another important aspect that the author loves is D's <b>metaprogramming</b> capabilities. D offers powerful metaprogramming features like templates, mixins, and string mixins. These features allows generating code at compile time, customizing code based on specific needs, and performing compile-time reflection. He highlights how these features can simplify complex tasks and make the code more maintainable. This allows for writing generic code that can adapt to different types and situations without sacrificing performance.</p>
+
+<p>The author then discusses D's <b>contract programming</b> features. D supports design-by-contract principles through `in`, `out`, and `invariant` blocks. These allows specifying preconditions, postconditions, and class invariants that are checked during runtime. This helps to ensure that the code behaves as expected, and to catch bugs early in the development process. He appreciates this feature for improving code reliability and simplifying debugging, noting that while these checks can be disabled in production builds for performance, they are invaluable during development.</p>
+
+<p>Chatha also mentions D's <b>ranges</b> as a feature he finds valuable. D's ranges provide a composable and efficient way to work with sequences of data. Ranges are similar to iterators in other languages, but they offer a more powerful and flexible approach to data processing. He describes how ranges enable expressive and efficient data manipulation through concepts like input ranges, output ranges, and bidirectional ranges, and allow composing complex data processing pipelines using functional-style operations.</p>
+
+<p>The author also acknowledges D's <b>UFCS (Uniform Function Call Syntax)</b> feature, which allows calling functions as if they were methods of an object. This feature improves code readability and allows extending existing types with new functionality without modifying their original definitions. It allows for a more natural and expressive syntax, especially when working with functional programming paradigms.</p>
+
+<p>Finally, the author highlights D's <b>"better C"</b> capabilities, emphasizing its ability to be used for low-level programming tasks traditionally done in C. He appreciates the fact that D is compatible with C ABI and can be used to write high-performance code that interacts with existing C libraries. D's low-level features, combined with its higher-level abstractions, make it a versatile language for a wide range of applications, including systems programming and embedded systems.</p>
+
+<p>In summary, the author appreciates D for its blend of manual and automatic memory management, powerful compile-time execution and metaprogramming, contract programming, ranges, UFCS, and its suitability as a "better C."</p>
+
+<h3>Key Points:</h3>
+<ul>
+<li><b>Memory Management:</b> D offers both manual control and automatic garbage collection, providing flexibility. The GC can be disabled, and techniques like scope-based allocators are available.</li>
+<li><b>Compile-Time Execution (CTFE):</b> D code can be executed at compile time, enabling optimization and early error detection.</li>
+<li><b>Metaprogramming:</b> D has strong metaprogramming capabilities through templates, mixins, and string mixins.</li>
+<li><b>Contract Programming:</b> `in`, `out`, and `invariant</div>
+</article>
