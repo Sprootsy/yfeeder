@@ -1,0 +1,48 @@
+<article>
+    <h2>Poor Man&#39;s Back End-as-a-Service (BaaS), Similar to Firebase/Supabase/Pocketbase</h2>
+    <div>
+<div>
+  <p>Pennybase is a lightweight, in-memory embedded key-value store written in pure Go. It is designed for scenarios where persistence is not a primary concern, such as caching, session management, or temporary data storage. The entire database resides in memory, offering fast read and write operations. The library is implemented in a single Go file, making it easy to integrate into existing projects with minimal dependencies.</p>
+
+  <p>The design emphasizes simplicity and ease of use. It provides basic CRUD operations (Create, Read, Update, Delete) through a straightforward API. Data is stored as byte arrays, providing flexibility in handling various data types. The key-value store utilizes a hash map for efficient lookups and provides basic concurrency control using a mutex to protect against race conditions. It offers a simple and effective solution for in-memory data management without the complexity of more robust database systems.</p>
+
+  <p>Pennybase does not offer features such as data persistence, transactions, indexing, or complex query capabilities. It is primarily intended for scenarios where data loss is acceptable or where data can be easily reconstructed from other sources. The focus is on performance and simplicity, making it a suitable choice for applications where a lightweight, in-memory key-value store is sufficient.</p>
+
+  <p>Key features include:</p>
+  <ul>
+    <li>In-memory storage: All data resides in memory for fast access.</li>
+    <li>Simple API: Easy-to-use CRUD operations.</li>
+    <li>Concurrency-safe: Uses a mutex for basic concurrency control.</li>
+    <li>Lightweight: Implemented in a single Go file with minimal dependencies.</li>
+    <li>Flexible data storage: Stores data as byte arrays.</li>
+  </ul>
+
+  <p>Pennybase is suitable for:</p>
+  <ul>
+    <li>Caching</li>
+    <li>Session management</li>
+    <li>Temporary data storage</li>
+    <li>Scenarios where data loss is acceptable</li>
+  </ul>
+
+  <p>Limitations include:</p>
+  <ul>
+    <li>No data persistence</li>
+    <li>No transactions</li>
+    <li>No indexing</li>
+    <li>No complex query capabilities</li>
+  </ul>
+
+  <h2>Key Points</h2>
+  <ul>
+    <li>Pennybase is an in-memory key-value store written in Go.</li>
+    <li>It is designed for speed and simplicity, prioritizing in-memory performance over persistence.</li>
+    <li>It uses a hash map for storage and a mutex for basic concurrency control.</li>
+    <li>The API provides basic CRUD operations.</li>
+    <li>It is suitable for caching, session management, and temporary data storage.</li>
+    <li>It lacks features like persistence, transactions, indexing, and complex queries.</li>
+    <li>It is implemented in a single Go file, making it lightweight and easy to integrate.</li>
+  </ul>
+</div>
+</div>
+</article>
