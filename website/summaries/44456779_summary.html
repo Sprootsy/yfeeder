@@ -1,0 +1,27 @@
+<article>
+    <h2>AV1@Scale: Film Grain Synthesis, The Awakening</h2>
+    <div>
+ <div>
+ 
+
+  <h2>Summary:</h2>
+  <p>The Netflix Tech Blog article "AV1 Scale Film Grain Synthesis: The Awakening" discusses Netflix's work on improving the viewing experience, especially for content with film grain, by leveraging the AV1 video codec's film grain synthesis tools. The article highlights how film grain, while aesthetically pleasing to some, can be problematic for video compression. Traditional codecs often struggle to efficiently encode film grain, leading to increased bandwidth consumption and potential artifacts. The AV1 codec offers a solution through its built-in film grain synthesis feature, which allows the encoder to describe the grain pattern rather than encoding it directly, significantly improving compression efficiency.</p>
+  <p>Netflix's approach involves analyzing source content to determine the characteristics of the film grain. This analysis informs the parameters used for the AV1 film grain synthesis. By accurately modeling the grain, the decoder can then reconstruct a similar grain pattern, preserving the artistic intent of the content creators. The team focuses on scaling film grain synthesis which allows to reduce the bitrate by describing the grain pattern instead of encoding it directly. The grain synthesis parameters are computed at the original resolution of the video, and then scaled down to the encoding resolution. In the decoder, the synthesized grain is scaled back up to the original resolution before being added to the decoded video.</p>
+  <p>The blog post details the technical challenges and solutions involved in implementing effective film grain synthesis at scale. It discusses the need for careful parameter selection to avoid introducing unwanted artifacts or altering the intended look of the content. The post also touches upon the importance of subjective testing to ensure that the synthesized grain is visually similar to the original. The system uses a compute cluster to encode films and the scaling grain process is automatic using the content's original resolution and target resolution. The authors share insights into the trade-offs between compression efficiency and visual fidelity, and how they fine-tuned their approach to achieve the best possible results.</p>
+  <p>The "awakening" in the title likely refers to the realization and implementation of film grain synthesis at scale within Netflix's encoding pipeline. The work presented is aimed at improving the quality and efficiency of streaming content, especially for films and shows where preserving the texture and look of film grain is important. By using AV1's film grain synthesis, Netflix is able to deliver high-quality video with lower bandwidth requirements, enhancing the viewing experience for its subscribers.</p>
+ 
+
+  <h2>Key Points:</h2>
+  <ul>
+  <li>Film grain is a challenge for video compression.</li>
+  <li>AV1 codec offers film grain synthesis as a solution.</li>
+  <li>Netflix is implementing AV1 film grain synthesis at scale.</li>
+  <li>The process involves analyzing and modeling film grain characteristics.</li>
+  <li>Scaling grain synthesis allows reducing the bitrate by describing the grain pattern instead of encoding it directly.</li>
+  <li>Careful parameter selection is crucial to avoid artifacts.</li>
+  <li>Subjective testing is used to validate visual fidelity.</li>
+  <li>The goal is to improve compression efficiency without sacrificing visual quality.</li>
+  </ul>
+ </div>
+ </div>
+</article>
