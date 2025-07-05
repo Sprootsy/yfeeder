@@ -1,0 +1,23 @@
+<article>
+    <h2>Compression Dictionary Transport</h2>
+    <div>
+ <div>
+  <p>This article discusses HTTP compression using "compression dictionaries," specifically focusing on the Shared Brotli (Shared Brotli Static Dictionary) approach. It explains how this technique improves compression ratios, especially for small resources commonly found on the web, by leveraging a pre-defined dictionary known to both the server and the client.</p>
+  <p>Traditional compression algorithms like Gzip and Brotli work by identifying and replacing repeating patterns within a single resource. However, their effectiveness is limited for smaller files because the overhead of the compression metadata (like the Huffman table) becomes a significant portion of the compressed size. Compression dictionaries address this limitation by allowing the compressor to refer to strings within the pre-defined dictionary, effectively expanding the range of patterns that can be matched and compressed.</p>
+  <p>The Shared Brotli approach utilizes a static dictionary that is known in advance by both the server and the client (typically the browser). This eliminates the need to transmit the dictionary itself as part of the compressed response, reducing overhead and improving the compression ratio, particularly for small resources. The article uses the term "Shared Brotli Static Dictionary" and sometimes "Shared Brotli" interchangeably.</p>
+  <p>The article highlights that using a compression dictionary is especially beneficial for compressing many small, similar files, a very common scenario in web development. These files might be small JavaScript snippets, CSS rules, or configuration files that share common words, identifiers, or patterns. By using the static dictionary, such similarities between the small files can be leveraged to compress them much more efficiently. Resources need to indicate that they are compressed with Shared Brotli and also what dictionary is being used, so browsers and other HTTP clients can correctly decompress them. The `Content-Encoding` HTTP header is used to declare the compression method, and a `Content-Encoding` parameter is necessary to specify the dictionary being used. For example, the value `Content-Encoding: br; dict=example.dict` indicates the resource is Brotli-compressed using the dictionary identified as `example.dict`.</p>
+  <p>The article emphasizes that the adoption of compression dictionaries in browsers and web servers is still evolving. The described shared Brotli Static Dictionary is not yet universally supported, but it shows great promise for improving web performance, especially in reducing the size and improving the loading speed of websites and web applications with many small resources. The use of static dictionaries represents a trade-off. The client must already have the dictionary; this removes some flexibility in exchange for improved compression and reduced resource size.</p>
+  <p>The main benefit is improved compression ratio, which directly translates to faster download times and improved website performance, especially on slower networks. While the article doesn't delve into specific implementation details, it provides a high-level overview of the concept and its potential benefits for web developers and server administrators looking to optimize their websites.</p>
+  <p><b>Key Points:</b></p>
+  <ul>
+   <li>Compression dictionaries improve compression ratios, particularly for small resources.</li>
+   <li>Shared Brotli uses a pre-defined, static dictionary known to both the server and the client.</li>
+   <li>This eliminates the need to transmit the dictionary, reducing overhead.</li>
+   <li>Beneficial for compressing many small, similar files (JavaScript, CSS, config files).</li>
+   <li>The `Content-Encoding` header with `dict` parameter signals use of Shared Brotli (e.g., `Content-Encoding: br; dict=example.dict`).</li>
+   <li>Adoption is still evolving, but promising for web performance.</li>
+   <li>It enables improved compression by referencing strings within the static dictionary.</li>
+  </ul>
+ </div>
+ </div>
+</article>

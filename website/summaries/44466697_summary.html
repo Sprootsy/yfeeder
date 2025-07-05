@@ -1,0 +1,32 @@
+<article>
+    <h2>How to Incapacitate Google Tag Manager and Why You Should (2022)</h2>
+    <div>
+<div>
+  <p>The article on backlit.neocities.org discusses methods for preventing Google Tag Manager (GTM) from executing on a website. It focuses on techniques to block GTM, thereby avoiding the tracking and data collection it facilitates.</p>
+
+  <p>The author outlines several approaches, ranging from simple to more complex, to effectively "incapacitate" GTM. A basic method involves utilizing browser extensions designed to block tracking scripts, including GTM. These extensions typically maintain lists of known tracking domains and prevent requests to those domains, thus stopping GTM from loading. However, the article points out that determined website operators may attempt to circumvent these simple blocking methods.</p>
+
+  <p>More advanced techniques involve manipulating the website's code or server configuration to prevent GTM from loading. One method described is modifying the website's Content Security Policy (CSP) to restrict the domains from which scripts can be loaded. By explicitly excluding the GTM domain, the browser will refuse to execute the GTM script. This approach requires some technical knowledge and control over the website's server or code.</p>
+
+  <p>Another technique is to interfere with the loading of the GTM container itself. This can be done by injecting JavaScript code into the page that redefines or removes the functions and variables that GTM relies on. For example, the code could redefine the `dataLayer` object, which GTM uses to store and retrieve data, before the GTM script has a chance to load. This effectively breaks GTM's functionality without directly blocking the script from loading.</p>
+
+  <p>The author also mentions the possibility of using a proxy server or VPN to intercept and modify network requests, preventing the GTM script from ever reaching the browser. This approach is more complex and requires technical expertise to set up and maintain.</p>
+
+  <p>The article emphasizes that the effectiveness of each method may vary depending on the specific implementation of GTM on the website and the level of effort the website operator puts into circumventing blocking attempts. Some websites may implement measures to detect and counteract attempts to block GTM, such as using server-side tagging or obfuscating the GTM script.</p>
+
+  <p>Ultimately, the article suggests that while it is possible to block GTM, it may require a combination of techniques and ongoing vigilance to ensure that it remains effectively disabled. The specific approach that is most effective will depend on the individual circumstances and the technical capabilities of the user.</p>
+
+  <h2>Key Points:</h2>
+  <ul>
+    <li>Google Tag Manager (GTM) can be blocked to prevent tracking and data collection.</li>
+    <li>Simple methods include using browser extensions designed to block tracking scripts.</li>
+    <li>More advanced techniques involve modifying the website's Content Security Policy (CSP) to restrict script domains.</li>
+    <li>JavaScript code can be injected to redefine or remove functions and variables that GTM relies on (e.g., redefining the `dataLayer` object).</li>
+    <li>Proxy servers or VPNs can be used to intercept and modify network requests, preventing the GTM script from loading.</li>
+    <li>Effectiveness depends on the website's GTM implementation and efforts to circumvent blocking.</li>
+    <li>Websites might use server-side tagging or obfuscation to counter blocking attempts.</li>
+    <li>Blocking GTM may require a combination of techniques and ongoing vigilance.</li>
+  </ul>
+</div>
+</div>
+</article>
