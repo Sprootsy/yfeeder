@@ -1,0 +1,42 @@
+<article>
+    <h2>Serving 200M requests per day with a CGI-bin</h2>
+    <div>
+<div>
+  <p>
+    This article is a detailed exploration of the performance characteristics of CGI (Common Gateway Interface) scripts, particularly when implemented using languages like Python. Simon Willison delves into the historical context of CGI, contrasting it with modern web application architectures, and highlights the performance bottlenecks inherent in the CGI model.
+  </p>
+  <p>
+    The author begins by outlining the fundamental concept of CGI: each HTTP request triggers the web server to spawn a new process to execute the CGI script. This process initialization overhead—loading the interpreter, importing necessary libraries, and initializing the application—occurs for every single request. This is in stark contrast to modern web frameworks, where the application typically loads once and then handles multiple requests concurrently within the same process, thus avoiding the repeated initialization cost.
+  </p>
+  <p>
+    To illustrate the performance implications, Willison conducts a series of experiments using a simple Python CGI script that performs a computationally lightweight task (calculating the square root of a number). He compares the performance of this CGI script against a functionally equivalent implementation using ASGI (Asynchronous Server Gateway Interface) with the Uvicorn server, representing a more modern approach.
+  </p>
+  <p>
+    The experiments reveal a significant performance disparity. The CGI script exhibits a much higher latency and lower throughput compared to the ASGI application. The author attributes this difference primarily to the overhead of process creation for each CGI request.  He uses tools like `hey` to benchmark the applications and provides concrete metrics demonstrating the performance gap.
+  </p>
+  <p>
+    Further investigation involves profiling the CGI script using `cProfile` to identify the time spent in different parts of the execution. The profiling results confirm that a substantial portion of the execution time is dedicated to interpreter startup and module import.
+  </p>
+  <p>
+    The article also touches on potential optimizations for CGI, such as using a pre-forking web server like Apache's `mod_wsgi` in daemon mode.  This approach keeps a pool of Python processes ready to handle requests, mitigating the process creation overhead to some extent. However, even with such optimizations, CGI is generally considered less efficient than modern application servers.
+  </p>
+  <p>
+    Willison also discusses the security implications of CGI, particularly the risk of exposing the interpreter's configuration to the outside world through environment variables. He provides an example of how a carefully crafted HTTP request can reveal sensitive information about the Python environment running the CGI script.
+  </p>
+  <p>
+    In summary, the article argues that while CGI was a foundational technology for dynamic web content, its performance limitations and security vulnerabilities make it largely unsuitable for modern web applications. Modern alternatives like ASGI and WSGI offer superior performance, scalability, and security through process reuse and more controlled execution environments. The author uses benchmarking and profiling to provide empirical evidence supporting this conclusion.
+  </p>
+
+  <h3>Key Points:</h3>
+  <ul>
+    <li>CGI spawns a new process for each HTTP request, leading to significant overhead due to interpreter startup, module import, and application initialization for every request.</li>
+    <li>Modern web application architectures like ASGI and WSGI reuse processes to handle multiple requests, avoiding the repeated initialization cost and improving performance.</li>
+    <li>Benchmarking demonstrates that CGI scripts exhibit much higher latency and lower throughput compared to equivalent applications implemented using ASGI.</li>
+    <li>Profiling confirms that a large portion of CGI script execution time is spent on interpreter startup and module import.</li>
+    <li>While optimizations like pre-forking web servers can mitigate CGI performance issues to some extent, they generally do not match the efficiency of modern application servers.</li>
+    <li>CGI can expose sensitive information about the interpreter's configuration through environment variables, posing a security risk.</li>
+    <li>Modern alternatives like ASGI and WSGI offer superior performance, scalability, and security compared to CGI.</li>
+  </ul>
+</div>
+</div>
+</article>
