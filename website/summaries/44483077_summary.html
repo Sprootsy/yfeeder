@@ -1,0 +1,25 @@
+<article>
+    <h2>Micro Common Lisp</h2>
+    <div>
+<div>
+  <p>The article describes the Markov Cluster Algorithm (MCL), a fast and scalable unsupervised learning algorithm for graph clustering. It simulates random walks within a graph to discover cluster structure. The core idea is that random walks on a graph tend to get trapped within dense clusters. MCL iteratively transforms the graph's adjacency matrix using two operators: expansion and inflation. Expansion corresponds to taking powers of the matrix (simulating multiple steps in random walks), and inflation corresponds to applying a column-wise normalization followed by raising each element to a power (simulating a competition process). Expansion makes the flow of information possible in more areas of the graph, and inflation strengthens the strong flows and weakens the weak flows. Repeated application of these operators causes the graph to evolve until it partitions into a set of clusters, where each cluster is characterized by high intra-cluster connectivity and low inter-cluster connectivity.</p>
+
+  <p>The algorithm starts with the adjacency matrix of the graph, where each entry represents the edge weight between two nodes. The matrix is then normalized to create a stochastic matrix, where each column sums to one, representing the probabilities of transitioning from one node to another in a single step of a random walk. The expansion operator is applied by taking the matrix power (typically the square), which effectively simulates multiple steps of a random walk. This has the effect of diffusing flow throughout the graph, allowing connections between nodes in the same cluster to become more apparent. The inflation operator is then applied, which involves raising each element of the matrix to a power (typically greater than one) and then renormalizing each column. This operator strengthens strong connections and weakens weak connections, effectively reinforcing the boundaries between clusters. The expansion and inflation steps are repeated iteratively until the matrix converges, meaning that the cluster structure stabilizes. At convergence, the matrix represents a hard clustering, where each node belongs to exactly one cluster. This is represented by the columns of the matrix becoming nearly or exactly zero everywhere, except for one entry which is nearly or exactly one. The nodes corresponding to the non-zero entries in a column form a cluster.</p>
+
+  <p>MCL has several advantages, including its speed, scalability, and ability to automatically determine the number of clusters. It is also relatively robust to noise and variations in edge weights. The algorithm has been applied to a wide range of applications, including protein function prediction, gene expression analysis, community detection in social networks, and image segmentation. The algorithm's performance is influenced by the choice of the inflation parameter (γ), which controls the granularity of the clustering. Higher values of γ tend to produce more fine-grained clusters, while lower values tend to produce more coarse-grained clusters. The choice of γ is often determined empirically based on the specific application and dataset.</p>
+
+  <p>The article also provides a mathematical description of the algorithm, including the definitions of the expansion and inflation operators, and a discussion of the convergence properties of the algorithm. It also discusses the relationship between MCL and other clustering algorithms, such as k-means and hierarchical clustering. Furthermore, it mentions implementations of MCL in various programming languages.</p>
+
+  <h2>Key Points:</h2>
+  <ul>
+    <li>MCL is a fast and scalable unsupervised graph clustering algorithm.</li>
+    <li>It simulates random walks on a graph to identify dense clusters.</li>
+    <li>The algorithm iteratively applies expansion (matrix powers) and inflation (element-wise exponentiation and renormalization) operators to the graph's adjacency matrix.</li>
+    <li>Expansion diffuses flow throughout the graph, while inflation strengthens strong connections and weakens weak connections.</li>
+    <li>The algorithm converges to a hard clustering, where each node belongs to a single cluster.</li>
+    <li>The inflation parameter (γ) controls the granularity of the clustering.</li>
+    <li>MCL is used in many applications, including bioinformatics, social network analysis, and image segmentation.</li>
+  </ul>
+</div>
+</div>
+</article>

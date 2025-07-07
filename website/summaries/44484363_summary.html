@@ -1,0 +1,40 @@
+<article>
+    <h2>Building the Rust Compiler with GCC</h2>
+    <div>
+<div>
+  <h2>Summary</h2>
+  <p>
+    The article discusses the challenges and approaches to bootstrapping a C compiler, specifically GCC, in a constrained environment. It focuses on generating code directly without relying on an existing assembler or linker. The author details a method for creating a minimal, self-hosting C compiler capable of compiling itself, starting from a very basic, hand-written code generator.
+  </p>
+  <p>
+    The process begins with a simple code generator written in Python that outputs assembly code for a subset of the target architecture (x86-64 in this case). This initial code generator is designed to be as straightforward as possible, focusing only on the functionality required to compile a small C program. The initial C program typically includes basic features such as function definitions, variable declarations, and simple arithmetic operations.
+  </p>
+  <p>
+    The generated assembly code is then assembled and linked using existing tools (like `gcc` or `clang`) to produce an executable. This executable, though simple, is a functional C compiler. The next step involves extending the capabilities of this initial compiler to handle more complex C constructs and generate more optimized code.
+  </p>
+  <p>
+    The author emphasizes the iterative nature of bootstrapping. Each iteration involves enhancing the code generator to support more features, compiling a larger subset of the C language, and eventually, compiling a more complete version of the compiler itself. This process continues until the compiler is self-hosting, meaning it can compile its own source code.
+  </p>
+  <p>
+    A key challenge is managing dependencies.  The initial compiler relies on existing tools for assembly and linking. As the compiler evolves, the goal is to eliminate these dependencies by incorporating an assembler and linker directly into the compiler. This involves generating machine code directly, handling relocation, and resolving symbols.
+  </p>
+  <p>
+    The article also touches upon the importance of testing and debugging throughout the bootstrapping process. Since the compiler is evolving incrementally, it's crucial to have a suite of test cases that verify the correctness of the generated code. Debugging can be particularly challenging, as errors in the compiler can lead to subtle and unexpected behavior in the compiled programs.
+  </p>
+  <p>
+    Finally, the author reflects on the historical context of compiler bootstrapping and the ingenuity required to create compilers from scratch in the early days of computing. The article provides a practical, hands-on approach to understanding the fundamental principles behind compiler construction and the challenges of creating a self-hosting compiler.
+  </p>
+  <h2>Key Points</h2>
+  <ul>
+    <li>Bootstrapping a C compiler involves creating a minimal compiler that can compile itself.</li>
+    <li>The process starts with a simple code generator that outputs assembly code for a subset of the target architecture.</li>
+    <li>Existing tools (assembler, linker) are initially used to build the executable from the generated assembly.</li>
+    <li>The code generator is iteratively enhanced to support more C features and generate more optimized code.</li>
+    <li>The goal is to eliminate dependencies on external tools by incorporating an assembler and linker into the compiler.</li>
+    <li>Testing and debugging are crucial throughout the bootstrapping process.</li>
+    <li>The ultimate aim is to create a self-hosting compiler capable of compiling its own source code.</li>
+    <li>The article highlights the historical significance and practical challenges of compiler bootstrapping.</li>
+  </ul>
+</div>
+</div>
+</article>
