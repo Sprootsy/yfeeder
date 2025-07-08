@@ -1,0 +1,25 @@
+<article>
+    <h2>LookingGlass: Generative Anamorphoses via Laplacian Pyramid Warping</h2>
+    <div>
+<div>
+  <p>The article discusses a novel method for creating generative anamorphoses, specifically designed for display on Looking Glass-type displays. Anamorphosis is an artistic technique that creates a distorted image which appears normal only when viewed from a specific vantage point. The challenge lies in automatically generating these distorted images tailored to the unique multi-view nature of light field displays like the Looking Glass, which presents different perspectives of a scene to multiple viewers simultaneously.</p>
+
+  <p>The core of the proposed technique is a Laplacian pyramid warping approach. This leverages the multi-resolution structure of the Laplacian pyramid to efficiently manage the complex distortions required for anamorphosis. The Laplacian pyramid decomposes an image into a series of bandpass filtered images at different scales, allowing for scale-dependent warping. The warping process is guided by a set of 3D control points and their corresponding 2D projections onto each viewpoint of the Looking Glass display. These control points define the desired transformation from the 3D scene to the 2D views. A thin-plate spline (TPS) interpolation is used to smoothly deform the Laplacian pyramid levels based on the control point correspondences. Finer details are handled at higher levels of the pyramid, while coarser structures are deformed at lower levels, allowing for efficient and plausible distortions.</p>
+
+  <p>The method takes a 3D scene as input and generates a 2D image optimized for the Looking Glass display. This 2D image, when viewed through the display, produces a perceptually correct 3D rendering of the original scene. The algorithm involves several key steps: First, control points are defined in the 3D scene and projected onto the different viewpoints of the Looking Glass. Then, a Laplacian pyramid representation of the target image is computed.  Next, the control point correspondences are used to calculate the warping transformations at each level of the Laplacian pyramid using thin-plate splines. Finally, the warped Laplacian pyramid levels are collapsed to reconstruct the final anamorphic image.</p>
+
+  <p>The authors address the challenges of generating high-quality anamorphoses by carefully considering the specific characteristics of light field displays. Their Laplacian pyramid warping approach enables precise control over the distortion process, resulting in images that exhibit minimal artifacts and a convincing 3D illusion when viewed on the Looking Glass. The research also explores how the control point selection influences the final result, providing guidelines for optimizing the placement of control points to achieve desired artistic effects. The method could be very useful in generating immersive 3D art and interactive experiences in holographic displays.</p>
+
+  <p><b>Key Points:</b></p>
+  <ul>
+    <li>Presents a method for generating anamorphoses specifically for Looking Glass-type light field displays.</li>
+    <li>Uses a Laplacian pyramid warping technique to efficiently manage complex image distortions.</li>
+    <li>Employs 3D control points and their 2D projections to guide the warping process.</li>
+    <li>Utilizes thin-plate spline interpolation for smooth and plausible deformations at different scales.</li>
+    <li>Takes a 3D scene as input and outputs a 2D anamorphic image optimized for the Looking Glass display.</li>
+    <li>The method aims to produce high-quality anamorphoses with minimal artifacts.</li>
+    <li>Discusses the impact of control point placement on the final anamorphic image.</li>
+  </ul>
+</div>
+</div>
+</article>
