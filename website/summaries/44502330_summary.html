@@ -1,0 +1,31 @@
+<article>
+    <h2>Breaking Git with a carriage return and cloning RCE</h2>
+    <div>
+<div>
+<h2>Summary</h2>
+The article discusses a critical security vulnerability (CVE-2025-48384) in Git that arises during the cloning of repositories containing submodules. The vulnerability stems from Git's insufficient validation of submodule names, allowing a malicious repository to inject configuration settings into a user's `.git/config` file. This injection occurs when Git recursively clones submodules, a process triggered by the `--recurse-submodules` option or the `submodule.recurse` configuration setting.
+
+Specifically, a specially crafted `.gitmodules` file within a malicious repository can define a submodule with a name that includes newline characters. When Git parses this file, it interprets the portion of the name after the newline as a separate configuration command. This allows the attacker to inject arbitrary Git configurations into the user's global `.git/config` file, bypassing intended security boundaries.
+
+The injected configurations can then be used to execute arbitrary commands on the victim's machine when certain Git commands are run within any Git repository on the system. This occurs because Git applies settings from the global configuration file before those in the local repository, so the malicious settings take precedence. The author showcases how to perform remote code execution (RCE).
+
+The article provides a demonstration of the exploit. By creating a malicious repository with a crafted `.gitmodules` file, the author injects a configuration that executes a `touch` command. When a user clones this repository with the `--recurse-submodules` option, the injected configuration is added to their global Git configuration. Subsequently, running almost any Git command in any repository triggers the injected command.
+
+The author also notes that while the exploit requires the user to clone the repository with submodules recursively, this is a fairly common practice, especially in projects that rely heavily on submodules. Additionally, the `submodule.recurse` configuration option can be enabled globally, making the user vulnerable whenever they clone a repository with submodules, even if they don't explicitly use the `--recurse-submodules` option.
+
+The article advises users to apply provided patches immediately to mitigate this vulnerability, it can also be mitigated through configuration.
+
+<h2>Key Points</h2>
+<ul>
+<li>CVE-2025-48384 is a critical security vulnerability in Git related to submodule cloning.</li>
+<li>The vulnerability allows malicious repositories to inject configuration settings into a user's `.git/config` file via crafted submodule names.</li>
+<li>The vulnerability is triggered when cloning repositories with the `--recurse-submodules` option or when `submodule.recurse` is enabled.</li>
+<li>Injected configurations can execute arbitrary commands on the victim's machine when Git commands are run.</li>
+<li>The exploit involves crafting a `.gitmodules` file with newline characters in the submodule name to inject configuration commands.</li>
+<li>The injected commands reside in the global `.git/config` file.</li>
+<li>The vulnerability can lead to remote code execution (RCE).</li>
+<li>Users should apply patches immediately.</li>
+</ul>
+</div>
+</div>
+</article>

@@ -1,0 +1,45 @@
+<article>
+    <h2>Supabase MCP can leak your entire SQL database</h2>
+    <div>
+<div>
+<h2>Summary</h2>
+<p>
+The article is a comprehensive guide on setting up and deploying a Supabase project using Managed Cloud Provider (MCP) infrastructure, specifically focusing on Amazon Web Services (AWS). It provides a detailed, step-by-step walkthrough of the entire process, starting from the initial infrastructure setup using Terraform to the final deployment and configuration of Supabase.
+</p>
+<p>
+The author emphasizes the benefits of using MCPs like AWS for hosting Supabase, highlighting the increased control, scalability, and customization options compared to Supabase's managed platform. The article caters to developers and teams seeking a more hands-on approach to managing their Supabase deployment.
+</p>
+<p>
+The guide begins with setting up the necessary AWS resources using Terraform, including a Virtual Private Cloud (VPC), subnets, security groups, an EC2 instance, and a PostgreSQL database (RDS). It covers the configuration of these resources to ensure proper network connectivity and security. The article then walks through installing Docker and Docker Compose on the EC2 instance, which are crucial for running Supabase.
+</p>
+<p>
+Next, the article details the process of configuring Supabase using environment variables and the `.env` file. This includes setting up the database connection, API keys, and other essential parameters. The author provides guidance on customizing these settings to fit specific project requirements.
+</p>
+<p>
+The guide then explains how to run Supabase using Docker Compose, bringing up all the necessary Supabase services, such as the API server, database, and storage. It also covers how to access the Supabase dashboard and API endpoints.
+</p>
+<p>
+Furthermore, the article addresses important considerations for production deployments, such as setting up a reverse proxy (NGINX) for handling SSL/TLS termination and routing traffic to the Supabase services. It includes configurations for NGINX and instructions on obtaining and installing SSL certificates using Let's Encrypt.
+</p>
+<p>
+The guide also discusses setting up backups for the PostgreSQL database to ensure data protection and disaster recovery. It provides instructions on configuring automated backups and restoring the database from backups.
+</p>
+<p>
+Finally, the article touches upon monitoring the Supabase deployment using tools like Prometheus and Grafana. It outlines how to collect metrics from the Supabase services and visualize them in Grafana dashboards to gain insights into the performance and health of the system.
+</p>
+
+<h2>Key Points</h2>
+<ul>
+<li><b>MCP Deployment Benefits:</b> Highlights the advantages of deploying Supabase on MCPs like AWS, including increased control, scalability, and customization.</li>
+<li><b>Terraform Infrastructure Setup:</b> Provides a detailed guide to setting up the necessary AWS infrastructure using Terraform, including VPC, subnets, security groups, EC2 instance, and RDS PostgreSQL database.</li>
+<li><b>Docker and Docker Compose:</b> Emphasizes the use of Docker and Docker Compose for running Supabase and provides instructions on installing and configuring them on the EC2 instance.</li>
+<li><b>Supabase Configuration:</b> Covers the configuration of Supabase using environment variables and the `.env` file, including database connection settings and API keys.</li>
+<li><b>Running Supabase:</b> Explains how to run Supabase using Docker Compose and access the Supabase dashboard and API endpoints.</li>
+<li><b>Reverse Proxy Setup:</b> Details the setup of a reverse proxy (NGINX) for handling SSL/TLS termination and routing traffic to the Supabase services.</li>
+<li><b>SSL Certificate Installation:</b> Provides instructions on obtaining and installing SSL certificates using Let's Encrypt.</li>
+<li><b>Database Backups:</b> Discusses setting up backups for the PostgreSQL database to ensure data protection and disaster recovery.</li>
+<li><b>Monitoring:</b> Touches upon monitoring the Supabase deployment using tools like Prometheus and Grafana.</li>
+</ul>
+</div>
+</div>
+</article>
