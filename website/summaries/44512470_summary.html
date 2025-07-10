@@ -1,0 +1,33 @@
+<article>
+    <h2>Configuring Split Horizon DNS with Pi-Hole and Tailscale</h2>
+    <div>
+<div>
+<p>This article describes how to configure Pi-hole to serve different DNS records to different clients on a network. The author begins by outlining the default Pi-hole behavior, which is to provide the same DNS records to all clients by default. The article then introduces the concept of using DNSMasq's conditional forwarding and address assignment capabilities to achieve client-specific DNS resolution.</p>
+
+<p>The primary method detailed involves modifying Pi-hole's DNSMasq configuration files. The author emphasizes that directly editing the main configuration file is discouraged because Pi-hole's updates can overwrite it. Instead, the recommended approach is to create custom configuration files in the `/etc/dnsmasq.d/` directory. These custom files will persist across Pi-hole updates.</p>
+
+<p>The article provides several examples. The first example explains how to assign a specific hostname to a particular client based on its MAC address. This is achieved using the `dhcp-host` directive in a custom DNSMasq configuration file. The author illustrates how to find a client's MAC address and then create a configuration file (e.g., `20-static-devices.conf`) containing the `dhcp-host` directive along with the client's MAC address, desired hostname, and IP address.</p>
+
+<p>The second example shows how to serve different DNS records based on the client's IP address. This involves using the `address` and `interface` directives. The `interface` directive tells DNSMasq to only apply the following rule to the specified interface. The `address` directive then allows setting the IP address that will be returned when a specific hostname is requested, but only when the request comes from an IP address on the stated interface.</p>
+
+<p>The author then describes the use of the `ipset` command. `ipset` allows creating a set of IP addresses and matching on the set, rather than having to list many individual IP addresses. This is achieved by using the `ipset` command to create a named set of IP addresses, and then using the `iptables` command to create firewall rules that add matching packets to the `ipset`. An appropriate `dnsmasq` configuration is then set.</p>
+
+<p>Finally, the article covers the use of DNSMasq's `tag` and `tag-if` directives. These can be used in conjunction with other rules to allow more complicated logic to be applied. For example, DHCP requests matching certain parameters can be tagged, and then only requests with the tag are sent to a specific DNS server.</p>
+
+<p>The author also includes cautions. He states that a full restart of the Pi-hole is not always necessary; usually, only restarting the DNS resolver (`pihole restartdns`) is sufficient. He also warns that incorrect configuration can lead to DNS resolution issues, so testing and careful configuration are important. The author also mentions that other tools like `dnsmasq-utils` can be used to debug.</p>
+
+<h2>Key Points:</h2>
+<ul>
+<li>Pi-hole, by default, provides the same DNS records to all clients on the network.</li>
+<li>Client-specific DNS resolution can be achieved by modifying DNSMasq configuration files.</li>
+<li>Custom configuration files should be placed in `/etc/dnsmasq.d/` to persist across Pi-hole updates.</li>
+<li>The `dhcp-host` directive can assign specific hostnames to clients based on their MAC addresses.</li>
+<li>The `address` and `interface` directives allow serving different DNS records based on the client's IP address.</li>
+<li>The `ipset` and `iptables` commands can be used to match on a set of IP addresses.</li>
+<li>The `tag` and `tag-if` directives can be used in conjunction with other rules to allow more complicated logic to be applied.</li>
+<li>Restarting the DNS resolver (`pihole restartdns`) is usually sufficient after making configuration changes.</li>
+<li>Incorrect configuration can cause DNS resolution issues, so careful testing is important.</li>
+</ul>
+</div>
+</div>
+</article>

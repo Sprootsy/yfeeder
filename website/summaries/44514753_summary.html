@@ -1,0 +1,53 @@
+<article>
+    <h2>Show HN: MCP server for searching and downloading documents from Anna&#39;s Archive</h2>
+    <div>
+<div>
+  <p>
+    This document describes Anna's Message Catalog Protocol (AMCP), a protocol designed for efficient and scalable message catalog distribution and management. Anna's MCP allows clients to query, retrieve, and subscribe to message catalogs, facilitating the dynamic update of application messages, translations, and other localized content. The protocol aims to minimize bandwidth usage and provide robust mechanisms for handling updates and versioning.
+  </p>
+  <p>
+    AMCP is designed to be a client-server protocol, where a server manages and serves message catalogs, and clients consume them. The protocol relies on a simple request-response model over TCP/IP connections. Clients initiate requests, and the server responds with the requested data or status information. The core components of AMCP include:
+  </p>
+  <ul>
+    <li><b>Catalog Identification:</b> Each message catalog is uniquely identified by a catalog ID. Clients use these IDs to specify which catalogs they are interested in.</li>
+    <li><b>Versioning:</b> AMCP uses version numbers to track changes to catalogs. Clients can request specific versions or subscribe to updates when new versions become available.</li>
+    <li><b>Delta Transfer:</b> To minimize bandwidth, AMCP supports delta transfers, where only the changes between two catalog versions are transmitted. This is particularly useful for frequently updated catalogs.</li>
+    <li><b>Compression:</b> AMCP supports data compression to further reduce the size of transferred data. Common compression algorithms such as gzip are used.</li>
+    <li><b>Subscription:</b> Clients can subscribe to catalogs to receive automatic updates whenever a new version is published. This allows applications to stay up-to-date without constantly polling the server.</li>
+  </ul>
+  <p>
+    The protocol defines several key message types:
+  </p>
+  <ul>
+    <li><b>GET_CATALOG:</b> Requests a specific version of a catalog.</li>
+    <li><b>GET_DELTA:</b> Requests the difference between two versions of a catalog.</li>
+    <li><b>SUBSCRIBE:</b> Subscribes to a catalog for updates.</li>
+    <li><b>UNSUBSCRIBE:</b> Cancels a subscription.</li>
+    <li><b>CATALOG_DATA:</b> Contains the catalog data in response to a GET_CATALOG or as a push notification for a subscription.</li>
+    <li><b>DELTA_DATA:</b> Contains the delta data in response to a GET_DELTA request.</li>
+    <li><b>ERROR:</b> Indicates an error condition.</li>
+  </ul>
+  <p>
+    AMCP aims to be efficient and scalable. Delta transfers and compression reduce bandwidth usage, while the subscription mechanism allows clients to receive updates without constant polling, reducing server load. The protocol is designed to be easily implementable in various programming languages and platforms. The use of simple request-response messages over TCP ensures compatibility and ease of integration.
+  </p>
+  <p>
+    The document also covers security considerations. While AMCP itself does not specify any particular security mechanisms, it recommends using transport-layer security (TLS) to encrypt the communication channel and authenticate the server. Additional security measures, such as client authentication and access control, can be implemented at the application layer.
+  </p>
+  <p>
+    In summary, Anna's Message Catalog Protocol provides a robust and efficient way to manage and distribute message catalogs. Its key features include versioning, delta transfers, compression, and subscription, all designed to minimize bandwidth usage and reduce server load. The protocol's simplicity and flexibility make it suitable for a wide range of applications that require dynamic message updates and localization.
+  </p>
+
+  <h2>Key Points:</h2>
+  <ul>
+    <li>AMCP is a client-server protocol for distributing and managing message catalogs.</li>
+    <li>Catalogs are uniquely identified and versioned.</li>
+    <li>Delta transfers minimize bandwidth usage by sending only changes between versions.</li>
+    <li>Compression further reduces data transfer sizes.</li>
+    <li>Clients can subscribe to catalogs to receive automatic updates.</li>
+    <li>The protocol defines message types for requesting catalogs, deltas, and subscriptions.</li>
+    <li>Security can be enhanced using TLS and application-level authentication.</li>
+    <li>AMCP is designed for efficiency, scalability, and easy implementation.</li>
+  </ul>
+</div>
+</div>
+</article>
