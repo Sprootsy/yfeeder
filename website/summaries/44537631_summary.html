@@ -1,0 +1,32 @@
+<article>
+    <h2>Faking a JPEG</h2>
+    <div>
+<div>
+<h3>Summary</h3>
+<p>
+The article is a blog post about a peculiar issue encountered while trying to display a JPEG image in a web browser. The author found that a specific JPEG file failed to render correctly in Firefox, appearing as a broken image, despite seemingly being a valid JPEG according to various tools.
+</p>
+<p>
+The author details the steps taken to investigate the problem. Initially, they suspected corruption but the file appeared sound when opened in other image viewers and editors. They also attempted to re-encode the image, which temporarily fixed the issue but was not a satisfactory solution.
+</p>
+<p>
+Deeper analysis using command-line tools revealed that the JPEG file contained an unusual feature: a large amount of "padding" or "junk data" at the end of the file, after the End of Image (EOI) marker. This padding, comprising zero bytes, was significantly larger than expected, and although technically valid according to the JPEG standard, it seemed to confuse Firefox's rendering engine.
+</p>
+<p>
+The author experimented by removing the excessive padding, which resolved the rendering problem in Firefox. This suggested that Firefox had a bug or unexpected behavior related to handling JPEGs with substantial amounts of trailing data.
+</p>
+<p>
+The blog post concludes by noting that while the JPEG file was technically valid, its unusual structure exposed a potential issue in Firefox's JPEG decoding implementation. The author speculates that this might be a security concern, if the large amount of trailing data could be exploited to cause a denial-of-service or other vulnerabilities.
+</p>
+<h3>Key Points</h3>
+<ul>
+<li>A JPEG image failed to display correctly in Firefox, appearing as a broken image.</li>
+<li>The image appeared valid in other image viewers and editors.</li>
+<li>The JPEG file contained a large amount of padding (zero bytes) after the End of Image (EOI) marker.</li>
+<li>Removing the padding fixed the rendering issue in Firefox.</li>
+<li>Firefox may have a bug or unexpected behavior related to handling JPEGs with excessive trailing data.</li>
+<li>The author suggests a potential security concern related to the large amount of trailing data.</li>
+</ul>
+</div>
+</div>
+</article>
