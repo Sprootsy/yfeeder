@@ -1,0 +1,39 @@
+<article>
+    <h2>Zig&#39;s New Async I/O</h2>
+    <div>
+<div>
+  <p>
+    The article "Zig's New Async I/O" by Kristoff discusses the new asynchronous I/O capabilities introduced in the Zig programming language, contrasting them with traditional approaches and highlighting their benefits. The author explains how Zig's approach differs significantly from common async implementations found in languages like Go, Rust, and C#.
+  </p>
+  <p>
+    Traditional async I/O often relies on concepts like async functions, await keywords, and runtime schedulers to manage concurrent operations. The author argues that these abstractions, while simplifying development in many cases, can obscure the underlying system behavior and introduce overhead. In contrast, Zig aims for more explicit and predictable control over asynchronous operations, avoiding hidden runtime mechanics.
+  </p>
+  <p>
+    Zig's approach centers around the use of `async` functions that return a "frame," which is essentially a struct containing the function's state.  When an `async` function needs to wait for an I/O operation, it can `suspend`, returning control to the caller along with the frame. This allows the caller, typically a user-defined event loop or scheduler, to manage the execution and resumption of the asynchronous task.  Crucially, Zig's async/await is stackless, meaning that when an `async` function suspends, the stack is unwound, avoiding stack exhaustion issues common in traditional threading models.
+  </p>
+  <p>
+    The article delves into how Zig's `async` functions interact with I/O operations, specifically using the example of reading from a file. Instead of the OS directly resuming the `async` function after an I/O operation completes, Zig relies on a user-provided event loop to monitor I/O events (e.g., using `epoll` on Linux, `kqueue` on BSD, or IOCP on Windows). When the event loop detects that the I/O operation is ready, it can resume the associated `async` function by calling the `resume` function associated with the frame. This allows for complete control over the scheduling and execution of asynchronous tasks.
+  </p>
+  <p>
+    The author illustrates this process with code examples, showing how to define an `async` function for reading a file, how the `suspend` keyword is used to yield control when waiting for I/O, and how an event loop can be implemented to manage the resumption of these suspended functions. The code demonstrates the explicit nature of Zig's async I/O, where the programmer is responsible for managing the state of the asynchronous tasks and scheduling their execution.
+  </p>
+  <p>
+    A significant advantage of Zig's approach, as highlighted in the article, is the avoidance of a built-in runtime scheduler. This allows developers to tailor the scheduling behavior to their specific application needs, whether it's a simple single-threaded event loop or a more complex multi-threaded scheduler. This flexibility is crucial for applications where performance and resource usage are critical, as it eliminates the overhead and constraints imposed by a general-purpose runtime.
+  </p>
+  <p>
+    The article emphasizes that Zig's approach gives the programmer low-level control over asynchronous operations.  The trade-off is that it requires a deeper understanding of how async I/O works and more manual effort in managing the execution of asynchronous tasks. However, for developers who need fine-grained control and predictability, Zig's approach offers a powerful alternative to more abstracted async I/O implementations.
+  </p>
+  <p>
+    The article concludes by noting that Zig's new async I/O is a relatively recent addition to the language and is still evolving. The author suggests exploring the official Zig documentation and examples to gain a deeper understanding of this powerful feature.
+  </p>
+
+  <h3>Key Points:</h3>
+  <ul>
+    <li>Zig's async I/O differs significantly from traditional async implementations in languages like Go, Rust, and C#.</li>
+    <li>Zig's approach prioritizes explicit control and predictability over automatic scheduling.</li>
+    <li>`async` functions in Zig return a "frame" containing the function's state.</li>
+    <li>The `suspend` keyword allows an `async` function to yield control back to the caller when waiting for I/O.</li>
+    <li>Zig uses stackless async/await, avoiding stack exhaustion.</li>
+    <li>I/O operations don't directly resume `async` functions; a user-provided event loop manages this.</li>
+    <li>The event loop monitors I/O events (e.g., using `epoll`, `kqueue`, or IOCP) and resumes the associated `async` function.</li></div>
+</article>

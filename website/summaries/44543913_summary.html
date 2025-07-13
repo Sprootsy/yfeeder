@@ -1,0 +1,23 @@
+<article>
+    <h2>A better Ghidra MCP server – GhidrAssistMCP</h2>
+    <div>
+<div>
+  <p>GhidrAssistMCP is a collection of scripts designed to enhance the reverse engineering workflow in Ghidra, specifically targeting projects involving microcontrollers (MCUs), particularly those from STM32. It offers a suite of tools to automate and streamline tasks such as memory map reconstruction, peripheral identification, and register definition import. The scripts aim to reduce the manual effort required to analyze firmware images and interact with emulated MCU environments.</p>
+
+  <p>The toolset includes functionalities like automatic memory map parsing from linker scripts (either .ld or .s files), which drastically speeds up the initial setup of a Ghidra project. By processing the linker script, the tool can identify and define memory regions such as Flash, RAM, and peripherals, saving significant time and effort compared to manual definition. It also features peripheral detection and definition import. By analyzing the memory map and identifying likely peripheral base addresses, GhidrAssistMCP can automatically import relevant peripheral register definitions from System View Description (SVD) files. This allows reverse engineers to quickly understand and interact with the MCU's hardware components within Ghidra.</p>
+
+  <p>Furthermore, GhidrAssistMCP incorporates scripts to facilitate interaction with emulated MCU environments. This involves features for reading and writing memory in the emulated environment directly from Ghidra, allowing for dynamic analysis and debugging. The provided example script `ghidra_script/ghidra_mem_rw.py` offers basic memory read/write capabilities that can be extended and customized to communicate with different emulators or debugging interfaces. GhidrAssistMCP supports different architectures, exemplified through the support of SVD files for STM32 MCUs. The modular design allows users to adapt and extend the scripts to other microcontroller architectures. The scripts are written in Python and leverage Ghidra's scripting API. This enables integration with other Ghidra tools and workflows, providing a flexible and customizable solution for MCU firmware analysis. The tool provides the necessary libraries to make HTTP requests for peripheral information. By simplifying tasks such as memory map reconstruction, peripheral identification, and emulator interaction, GhidrAssistMCP enhances the efficiency and effectiveness of reverse engineering efforts on embedded systems.</p>
+
+  <h2>Key Points:</h2>
+  <ul>
+    <li><b>Automated Memory Map Reconstruction:</b> Parses linker scripts (.ld or .s) to automatically define memory regions (Flash, RAM, peripherals) in Ghidra.</li>
+    <li><b>Peripheral Identification and Definition Import:</b> Detects peripherals based on memory map analysis and imports register definitions from SVD files.</li>
+    <li><b>Emulator Interaction:</b> Provides scripts for reading and writing memory in emulated MCU environments directly from Ghidra.</li>
+    <li><b>STM32 Focus:</b> Specifically targets STM32 microcontrollers with SVD file support, but can be adapted to other architectures.</li>
+    <li><b>Python-Based:</b> Scripts are written in Python, leveraging Ghidra's scripting API for integration and customization.</li>
+    <li><b>HTTP Support:</b> Includes libraries for making HTTP requests to retrieve peripheral information.</li>
+    <li><b>Enhanced Reverse Engineering Workflow:</b> Aims to streamline and automate common tasks in MCU firmware analysis.</li>
+  </ul>
+</div>
+</div>
+</article>

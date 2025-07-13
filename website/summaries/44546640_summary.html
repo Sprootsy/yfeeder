@@ -1,0 +1,33 @@
+<article>
+    <h2>Hacking Coroutines into C</h2>
+    <div>
+<div>
+<h3>Summary</h3>
+The article "Hacking Coroutines into C" explores the implementation of coroutines in C using a combination of techniques involving assembly code, setjmp/longjmp, and a custom stack management system. The author details a method to achieve cooperative multitasking, where coroutines voluntarily yield control to each other, allowing for more efficient execution in certain scenarios compared to traditional threading.
+
+The core idea revolves around manipulating the stack pointer and instruction pointer to switch between different execution contexts. The `save_context` function uses inline assembly to capture the current state of the stack pointer and registers, storing them in a `Context` struct. The `switch_context` function, also implemented with assembly, restores the saved state, effectively resuming the execution of the coroutine.
+
+To prevent stack overflow, the author employs a stack pool, allocating separate stack regions for each coroutine. This isolates the stack space, ensuring that one coroutine's stack usage doesn't interfere with others. The article describes how the stack pointer is adjusted when creating a new coroutine to point to the allocated stack region.
+
+The `setjmp` and `longjmp` functions are used as a higher-level abstraction over the assembly code, providing a more portable way to save and restore the execution context. The article demonstrates how these functions can be used to create a basic coroutine system.
+
+The author also discusses the challenges of debugging coroutines, as traditional debugging tools may not be well-suited for this style of programming. Special techniques may be required to inspect the state of each coroutine and track the flow of execution.
+
+Furthermore, the article covers the topic of passing arguments to coroutines. This involves carefully placing the arguments on the stack before switching to the coroutine's context. The author provides an example of how to pass arguments using assembly code.
+
+Finally, the article touches upon the limitations of this approach, such as the lack of preemption and the potential for stack exhaustion if a coroutine consumes too much stack space. Despite these limitations, the author argues that coroutines can be a useful tool in certain situations, particularly when dealing with I/O-bound tasks or when fine-grained control over execution is required.
+
+<h3>Key Points</h3>
+<ul>
+<li>Coroutines can be implemented in C using assembly code, setjmp/longjmp, and custom stack management.</li>
+<li>The `save_context` and `switch_context` functions are crucial for saving and restoring the execution context of a coroutine.</li>
+<li>A stack pool is used to allocate separate stack regions for each coroutine, preventing stack overflow.</li>
+<li>`setjmp` and `longjmp` provide a more portable way to save and restore context compared to raw assembly.</li>
+<li>Debugging coroutines can be challenging and may require specialized techniques.</li>
+<li>Arguments can be passed to coroutines by placing them on the stack before switching contexts.</li>
+<li>This approach has limitations, including the lack of preemption and the potential for stack exhaustion.</li>
+<li>Coroutines can be useful for I/O-bound tasks and situations requiring fine-grained control over execution.</li>
+</ul>
+</div>
+</div>
+</article>
