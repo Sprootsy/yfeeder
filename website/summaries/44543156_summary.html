@@ -1,0 +1,32 @@
+<article>
+    <h2>Show HN: BinaryRPC – Lightweight WebSocket-based RPC framework in modern C&#43;&#43;</h2>
+    <div>
+<div>
+  <p>The article is a README file for the BinaryRPC framework, a C++ framework designed to simplify the creation of RPC (Remote Procedure Call) services. It focuses on high performance, low overhead, and ease of use. The framework uses a binary protocol for efficient data serialization and deserialization, aiming to minimize network bandwidth and CPU usage. It supports various transport layers, including TCP sockets. The framework emphasizes asynchronous communication to improve scalability and responsiveness.</p>
+
+  <p>The README outlines the core concepts and components of the BinaryRPC framework, including:</p>
+
+  <ul>
+    <li><strong>Service Definition:</strong> Using Protocol Buffers (.proto files) to define the service interface, messages, and methods.</li>
+    <li><strong>Code Generation:</strong> Generating C++ code from the .proto files using the Protocol Buffer compiler (protoc) and the BinaryRPC plugin. This generated code provides the necessary classes and functions for implementing the service and client stubs.</li>
+    <li><strong>Server Implementation:</strong> Creating a server class that inherits from the generated service class and implements the service methods. The server listens for incoming requests and dispatches them to the appropriate method handlers.</li>
+    <li><strong>Client Implementation:</strong> Creating a client object that uses the generated client stub to make RPC calls to the server. The client serializes the request data, sends it to the server, and deserializes the response data.</li>
+    <li><strong>Transport Layer:</strong> The framework supports different transport layers, such as TCP sockets, for communication between the client and server.</li>
+    <li><strong>Asynchronous Communication:</strong> The framework provides asynchronous API for non-blocking RPC calls, allowing clients to perform other tasks while waiting for the server to respond.</li>
+  </ul>
+
+  <p>The README also provides examples of how to define a service using Protocol Buffers, generate the corresponding C++ code, implement a server, and create a client. It also provides some performance results, although the conditions under which those were achieved are not explicitely stated.</p>
+
+  <p><strong>Key Points:</strong></p>
+  <ul>
+    <li>BinaryRPC is a C++ framework for building RPC services.</li>
+    <li>It prioritizes high performance and low overhead.</li>
+    <li>It uses Protocol Buffers for service definition and message serialization.</li>
+    <li>Code is generated from .proto files to create server and client stubs.</li>
+    <li>It supports asynchronous communication.</li>
+    <li>It supports TCP sockets.</li>
+    <li>It provides examples of service definition, code generation, server implementation, and client creation.</li>
+  </ul>
+</div>
+</div>
+</article>
