@@ -1,0 +1,48 @@
+<article>
+    <h2>Let&#39;s Learn x86-64 Assembly (2020)</h2>
+    <div>
+<div>
+<h3>Summary</h3>
+<p>
+The article is a tutorial on assembly language programming, specifically targeting the x86-64 architecture. It aims to provide a practical, hands-on introduction to assembly, focusing on understanding how code works at a low level and how to interact with the operating system. It emphasizes learning by doing, encouraging readers to write and experiment with code.
+</p>
+<p>
+The tutorial starts by explaining the basic structure of an assembly program, the role of the assembler (specifically NASM is used), and the linker. It covers the fundamental concepts like sections (.text, .data, .bss), which dictate where the code, initialized data, and uninitialized data are placed in memory.
+</p>
+<p>
+The article introduces essential assembly instructions for data manipulation, such as `mov` (move data), `add` (addition), `sub` (subtraction), `imul` (integer multiplication), `idiv` (integer division), and other arithmetic and logical operations. It explains how to use these instructions with different operand types (registers, memory locations, immediate values). It details the significance of registers (e.g., rax, rbx, rcx, rdx, rsi, rdi, rsp, rbp, r8-r15) and how they are used for storing and processing data. The tutorial underscores the importance of understanding data sizes (byte, word, dword, qword) and how they affect assembly instructions.
+</p>
+<p>
+Memory addressing is a critical topic covered, explaining how to access data stored in memory using various addressing modes, including direct addressing, register indirect addressing, and base-plus-offset addressing. It delves into the stack, its role in function calls, and how to manipulate it using `push` and `pop` instructions.
+</p>
+<p>
+The tutorial explains control flow instructions such as `jmp` (jump), `je` (jump if equal), `jne` (jump if not equal), `jg` (jump if greater), `jl` (jump if less), etc. It describes how to use these instructions to create loops and conditional statements in assembly code. It highlights the significance of the `cmp` (compare) instruction for setting flags that determine the outcome of conditional jumps.
+</p>
+<p>
+Function calls are explained in detail, covering the calling convention (how arguments are passed to functions and how return values are returned), the use of the stack for saving and restoring registers, and how to create and call functions in assembly.  It covers the standard System V AMD64 ABI calling convention used on Linux.
+</p>
+<p>
+The tutorial provides practical examples, such as writing a simple "Hello, World!" program that interacts with the operating system using system calls. It explains how to use system calls to perform tasks like writing to the console or exiting the program, detailing the required registers and their roles.
+</p>
+<p>
+Overall, the article serves as a foundational guide to assembly language programming on the x86-64 architecture, providing the reader with the necessary knowledge and practical examples to start writing and understanding assembly code. It emphasizes the importance of understanding low-level details of how programs interact with the hardware and the operating system.
+</p>
+
+<h3>Key Points</h3>
+<ul>
+<li>Introduction to assembly language programming for x86-64 architecture.</li>
+<li>Use of NASM assembler and linker.</li>
+<li>Sections in assembly programs: .text, .data, .bss.</li>
+<li>Basic assembly instructions: mov, add, sub, imul, idiv, etc.</li>
+<li>Registers: rax, rbx, rcx, rdx, rsi, rdi, rsp, rbp, r8-r15.</li>
+<li>Data sizes: byte, word, dword, qword.</li>
+<li>Memory addressing modes.</li>
+<li>Stack operations: push, pop.</li>
+<li>Control flow instructions: jmp, je, jne, jg, jl, cmp.</li>
+<li>Function calls and calling conventions (System V AMD64 ABI).</li>
+<li>System calls for interacting with the operating system (e.g., writing to the console, exiting).</li>
+<li>Practical example: "Hello, World!" program.</li>
+</ul>
+</div>
+</div>
+</article>
