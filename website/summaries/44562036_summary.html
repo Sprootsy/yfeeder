@@ -1,0 +1,38 @@
+<article>
+    <h2>Embedding user-defined indexes in Apache Parquet</h2>
+    <div>
+<div>
+  <h2>Summary</h2>
+  <p>
+   The article discusses a new feature in Apache DataFusion that allows users to define custom indexes for Parquet files, significantly improving query performance. This feature addresses the limitations of traditional data skipping techniques, like min/max statistics, which are often ineffective for complex queries or skewed data. User-defined indexes enable developers to specify exactly how data should be indexed based on the specific query patterns, offering much finer-grained control.
+  </p>
+  <p>
+   The key idea is to allow users to write their own indexing functions in Rust. These functions take a Parquet row group as input and generate index entries. The index is stored as a separate Parquet file alongside the original data. When a query is executed, DataFusion uses these indexes to efficiently filter out irrelevant row groups, reducing the amount of data that needs to be read and processed.
+  </p>
+  <p>
+   The article highlights the benefits of this approach, including improved query performance, reduced I/O costs, and greater flexibility in indexing strategies. It also describes the technical details of how user-defined indexes are implemented in DataFusion. This includes how the index definitions are registered, how the indexes are created, and how the query planner uses the indexes to optimize query execution.
+  </p>
+  <p>
+   The article presents a detailed walkthrough, illustrating how to define an index using Rust. This includes writing a function that extracts the relevant data from the row group and generates the index entries, and then registering this function with DataFusion. Then, the index can be created on the target Parquet file. The article includes examples of how to use the index in queries to filter data based on the indexed values.
+  </p>
+  <p>
+   The article then discusses the implications of this feature, its current state, and future directions. It mentions current limitations of the feature and areas of active development.
+  </p>
+
+  <h2>Key Points</h2>
+  <ul>
+   <li>Introduces user-defined indexes for Parquet files in Apache DataFusion.</li>
+   <li>Addresses limitations of traditional data skipping techniques (e.g., min/max statistics).</li>
+   <li>Allows users to define custom indexing functions in Rust.</li>
+   <li>Index is stored as a separate Parquet file.</li>
+   <li>Improves query performance by filtering out irrelevant row groups.</li>
+   <li>Reduces I/O costs.</li>
+   <li>Provides greater flexibility in indexing strategies.</li>
+   <li>Details how index definitions are registered and created.</li>
+   <li>Explains how the query planner uses indexes to optimize query execution.</li>
+   <li>Includes a walkthrough demonstrating how to define and use indexes with Rust.</li>
+   <li>Discusses limitations and future development.</li>
+  </ul>
+</div>
+</div>
+</article>

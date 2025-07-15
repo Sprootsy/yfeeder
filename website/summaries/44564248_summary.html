@@ -1,0 +1,32 @@
+<article>
+    <h2>Context Rot: How increasing input tokens impacts LLM performance</h2>
+    <div>
+<div>
+  <h2>Summary</h2>
+  <p>
+    The article discusses the phenomenon of "context rot" in Retrieval-Augmented Generation (RAG) systems, where the performance of a language model (LLM) degrades over time due to outdated or irrelevant information in the context it receives. The author identifies three main causes of context rot: <b>stale context</b>, where the information used becomes outdated or inaccurate; <b>irrelevant context</b>, where the retrieved information is not pertinent to the user's query and can mislead the LLM; and <b>noise accumulation</b>, where repeated cycles of retrieval and generation introduce errors and inconsistencies that compound over time. The article then explores several mitigation strategies. For <b>stale context</b>, the recommendation involves implementing a robust knowledge update pipeline that continuously monitors and refreshes the information stored in the vector database. This includes using techniques like change detection, scheduled updates, and real-time data ingestion. To address <b>irrelevant context</b>, the article suggests improving retrieval accuracy through query optimization, semantic reranking, and context filtering. Query optimization involves refining the search query to better match the user's intent, while semantic reranking uses more sophisticated models to reorder the retrieved documents based on their relevance. Context filtering aims to remove irrelevant passages from the retrieved context before passing it to the LLM. Finally, to combat <b>noise accumulation</b>, the author recommends techniques such as iterative refinement and confidence weighting. Iterative refinement involves repeatedly querying the LLM and refining the context based on its responses. Confidence weighting assigns weights to different parts of the context based on their reliability and relevance, allowing the LLM to focus on the most trustworthy information. The article emphasizes that context rot is an ongoing challenge in RAG systems and requires continuous monitoring and improvement of both the retrieval and generation components. It also discusses the importance of adapting mitigation strategies to the specific use case and data characteristics.
+  </p>
+
+  <h2>Key Points</h2>
+  <ul>
+    <li><b>Context Rot</b>: The degradation of LLM performance in RAG systems due to outdated, irrelevant, or noisy information in the context.</li>
+    <li><b>Causes of Context Rot</b>:
+      <ul>
+        <li><b>Stale Context</b>: Information becomes outdated or inaccurate.</li>
+        <li><b>Irrelevant Context</b>: Information is not pertinent to the user's query.</li>
+        <li><b>Noise Accumulation</b>: Errors and inconsistencies compound over time through repeated retrieval and generation cycles.</li>
+      </ul>
+    </li>
+    <li><b>Mitigation Strategies</b>:
+      <ul>
+        <li><b>Stale Context</b>: Implement a knowledge update pipeline with change detection, scheduled updates, and real-time data ingestion.</li>
+        <li><b>Irrelevant Context</b>: Improve retrieval accuracy through query optimization, semantic reranking, and context filtering.</li>
+        <li><b>Noise Accumulation</b>: Use iterative refinement and confidence weighting techniques.</li>
+      </ul>
+    </li>
+    <li><b>Continuous Monitoring and Improvement</b>: Context rot is an ongoing challenge requiring constant monitoring and improvement of retrieval and generation components.</li>
+    <li><b>Adaptation</b>: Mitigation strategies should be adapted to the specific use case and data characteristics.</li>
+  </ul>
+</div>
+</div>
+</article>
