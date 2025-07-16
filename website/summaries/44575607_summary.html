@@ -1,0 +1,39 @@
+<article>
+    <h2>The FIPS 140-3 Go Cryptographic Module</h2>
+    <div>
+<div>
+  <h2>Summary</h2>
+  <p>
+    The Go blog post announces that Go 1.22 will include support for FIPS 140-2 validated cryptography, specifically targeting compliance with U.S. government regulations. This is achieved by integrating the Go standard library's <code>crypto/*</code> packages with a separately compiled and validated module based on BoringCrypto. The post clarifies that Go itself is not FIPS 140-2 validated, but rather it can now be used to build applications that utilize FIPS 140-2 validated cryptography.
+  </p>
+  <p>
+    The core of the solution involves a new build mode, <code>buildmode=c-archive</code>, which compiles the Go <code>crypto/*</code> packages into a C archive. This archive is then linked against a FIPS 140-2 validated version of BoringCrypto (Google's fork of OpenSSL), ensuring that all cryptographic operations within the Go application rely on the validated module. The post emphasizes that this approach avoids the complexities and performance overhead often associated with dynamically linked cryptographic libraries.
+  </p>
+  <p>
+    To utilize FIPS 140-2 validated cryptography in a Go application, developers need to build their code with the <code>GOEXPERIMENT=boringcrypto</code> and <code>buildmode=c-archive</code> options. This process generates a C archive containing the Go cryptographic code. Subsequently, this archive is linked with the validated BoringCrypto module and any other necessary C/C++ code to create the final executable.
+  </p>
+  <p>
+    The blog post details the supported platforms for this feature, which initially include Linux (amd64 and arm64) and macOS (amd64 and arm64) with plans to expand to other platforms in the future.  It also outlines specific version requirements for the Go toolchain (Go 1.22 or later), the external C/C++ toolchain (including a C++17 compiler), and the validated BoringCrypto module itself.
+  </p>
+  <p>
+    The authors acknowledge that this approach introduces some complexities for developers, such as the need for a C/C++ toolchain and the requirement to link the Go code with the validated BoringCrypto module. However, they believe that the benefits of using FIPS 140-2 validated cryptography outweigh these challenges, particularly for applications that must comply with U.S. government regulations. The post also mentions that enabling <code>GOEXPERIMENT=boringcrypto</code> will switch certain standard library packages to use BoringCrypto even without <code>buildmode=c-archive</code>, albeit without FIPS 140-2 validation in that case.
+  </p>
+  <p>
+    The post concludes by providing links to resources for obtaining the validated BoringCrypto module and for building Go applications with FIPS 140-2 validated cryptography. The authors invite feedback and contributions from the Go community as they continue to improve and expand this feature.
+  </p>
+
+  <h2>Key Points</h2>
+  <ul>
+    <li>Go 1.22 introduces support for FIPS 140-2 validated cryptography via BoringCrypto.</li>
+    <li>Go itself is not FIPS 140-2 validated; this feature allows building applications that *use* validated cryptography.</li>
+    <li>A new <code>buildmode=c-archive</code> compiles the Go <code>crypto/*</code> packages into a C archive.</li>
+    <li>This archive is then linked with a FIPS 140-2 validated BoringCrypto module.</li>
+    <li>Building with <code>GOEXPERIMENT=boringcrypto</code> and <code>buildmode=c-archive</code> is required to enable the feature.</li>
+    <li>Supported platforms initially include Linux (amd64, arm64) and macOS (amd64, arm64).</li>
+    <li>Requires Go 1.22 or later, a C/C++ toolchain, and a validated BoringCrypto module.</li>
+    <li>Enabling <code>GOEXPERIMENT=boringcrypto</code> switches certain stdlib packages to use BoringCrypto, even without FIPS 140-2 validation when not using <code>buildmode=c-archive</code>.</li>
+    <li>The blog post provides links to resources and encourages community feedback.</li>
+  </ul>
+</div>
+</div>
+</article>
