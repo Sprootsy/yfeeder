@@ -1,0 +1,30 @@
+<article>
+    <h2>Encrypting files with passkeys and age</h2>
+    <div>
+<div>
+<h3>Summary</h3>
+<p>The article "Passkey Encryption" by Filippo Valsorda explores the possibility of using passkeys, a modern and secure authentication method, for encrypting data. It begins by outlining the fundamental difference between authentication and encryption: authentication verifies identity, while encryption protects confidentiality. The author then discusses how existing encryption methods rely on shared secrets (like passwords) or key pairs, and examines the challenges associated with each. Shared secrets are vulnerable to compromise and require careful management, while key pairs demand robust key management infrastructure. The article proposes leveraging passkeys, which are based on public-key cryptography but offer a user-friendly authentication experience, for encryption purposes.</p>
+
+<p>The core idea is to derive an encryption key from a user's passkey. The article details different approaches to achieve this. One involves using the passkey as a basis for generating an ephemeral key pair, where the private key is used for encryption and the corresponding public key is shared with authorized recipients. Another approach involves using the passkey directly to derive a symmetric encryption key. The author also addresses the challenges of securely deriving encryption keys from passkeys, emphasizing the need for robust key derivation functions (KDFs) to prevent key compromise. The article acknowledges potential security implications, such as the risk of data loss if the user loses access to their passkey and the lack of forward secrecy if an attacker gains access to the passkey in the future.</p>
+
+<p>The piece also discusses the practicality and usability considerations of passkey encryption. The author highlights the advantage of passkey encryption being tied to user identity, offering a natural and intuitive way to manage access control. The potential downsides, like data loss if a passkey is lost, are addressed, and mitigating strategies, such as key recovery mechanisms or the use of multiple passkeys, are suggested. The article also explores scenarios where passkey encryption could be particularly beneficial, such as in securing cloud storage or protecting sensitive data on personal devices. It further touches on the implementation complexities and the need for standardization to ensure interoperability across different platforms and devices.</p>
+
+<p>The article concludes by highlighting the potential of passkey encryption as a more user-friendly and secure alternative to traditional encryption methods. The author posits that passkey encryption can simplify key management, enhance security, and improve user experience. The article also calls for further research and development in this area to address the remaining challenges and unlock the full potential of passkey encryption. It ends by noting that passkey encryption, while not a panacea, can fill a gap in the landscape of encryption solutions, particularly in user-centric applications.</p>
+
+<h3>Key Points</h3>
+<ul>
+  <li>Passkeys, typically used for authentication, could potentially be used for encryption.</li>
+  <li>Traditional encryption methods rely on shared secrets (passwords) or key pairs, each with their own security and management challenges.</li>
+  <li>Passkey encryption involves deriving an encryption key from a user's passkey.</li>
+  <li>Different approaches exist, including using the passkey to generate an ephemeral key pair or deriving a symmetric encryption key directly.</li>
+  <li>Robust key derivation functions (KDFs) are crucial for securely deriving encryption keys from passkeys.</li>
+  <li>Potential security implications include data loss if a passkey is lost and lack of forward secrecy if a passkey is compromised.</li>
+  <li>Passkey encryption offers a user-friendly and identity-centric approach to access control.</li>
+  <li>Mitigation strategies, such as key recovery or multiple passkeys, can address the risk of data loss.</li>
+  <li>Passkey encryption could be beneficial in securing cloud storage or protecting sensitive data on personal devices.</li>
+  <li>Standardization is necessary for interoperability across platforms.</li>
+  <li>Further research and development are needed to address remaining challenges and fully realize the potential of passkey encryption.</li>
+</ul>
+</div>
+</div>
+</article>

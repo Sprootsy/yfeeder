@@ -1,0 +1,41 @@
+<article>
+    <h2>Cloudflare 1.1.1.1 Incident on July 14, 2025</h2>
+    <div>
+ <div>
+  <h2>Summary</h2>
+  <p>
+   On July 14, 2025, Cloudflare experienced a significant incident affecting its 1.1.1.1 public DNS resolver service. The incident stemmed from a software bug introduced during a routine deployment of a new code version to the 1.1.1.1 infrastructure. This bug caused a critical failure in the DNS resolution process, leading to widespread connectivity issues for users relying on Cloudflare's 1.1.1.1 resolver.
+  </p>
+  <p>
+   The root cause was traced to an unhandled exception in the new code related to processing certain types of DNS queries. Specifically, the software failed to properly manage queries involving a particular combination of DNS record types and query flags. This failure resulted in the 1.1.1.1 resolvers entering a degraded state, characterized by increased latency, packet loss, and, in some cases, complete resolution failures.
+  </p>
+  <p>
+   Cloudflare's monitoring systems detected the anomaly shortly after the deployment. The on-call engineering team was immediately alerted and initiated the incident response procedure. Initial investigations focused on identifying the scope and impact of the issue, confirming that it was isolated to the 1.1.1.1 resolver service and did not affect other Cloudflare services.
+  </p>
+  <p>
+   The team then began analyzing recent code changes to pinpoint the source of the problem. Through a process of elimination and detailed code review, they identified the faulty code segment responsible for the unhandled exception. A fix was developed, tested, and prepared for deployment.
+  </p>
+  <p>
+   To mitigate the immediate impact, Cloudflare engineers implemented a temporary workaround by temporarily disabling the problematic code path. This allowed the 1.1.1.1 resolvers to resume normal operation for most users. Simultaneously, the corrected code was deployed in a phased rollout to minimize risk. The deployment was closely monitored to ensure the fix resolved the issue without introducing new problems.
+  </p>
+  <p>
+   Throughout the incident, Cloudflare maintained transparent communication with its users, providing regular updates on the incident's status, the actions being taken to resolve it, and the expected time to full recovery. These updates were disseminated through the Cloudflare status page, social media channels, and email notifications.
+  </p>
+  <p>
+   Following the resolution of the incident, Cloudflare conducted a thorough post-mortem analysis to understand how the bug was introduced and how similar incidents could be prevented in the future. This analysis identified several areas for improvement, including enhanced pre-deployment testing, more robust error handling in the code, and improved monitoring and alerting capabilities. As a result, Cloudflare implemented changes to its development and deployment processes to reduce the likelihood of future incidents.
+  </p>
+  <h2>Key Points</h2>
+  <ul>
+   <li>Incident: Cloudflare 1.1.1.1 DNS resolver service experienced a significant outage.</li>
+   <li>Cause: A software bug introduced during a routine code deployment.</li>
+   <li>Root Cause: Unhandled exception in the code related to specific DNS query types.</li>
+   <li>Impact: Increased latency, packet loss, and resolution failures for 1.1.1.1 users.</li>
+   <li>Detection: Cloudflare's monitoring systems detected the anomaly quickly.</li>
+   <li>Mitigation: Temporary workaround implemented to restore service while a fix was deployed.</li>
+   <li>Resolution: Corrected code deployed in a phased rollout.</li>
+   <li>Communication: Transparent communication with users throughout the incident.</li>
+   <li>Post-Mortem: Thorough analysis conducted to prevent future incidents, leading to improvements in testing, error handling, and monitoring.</li>
+  </ul>
+ </div>
+ </div>
+</article>
