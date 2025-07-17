@@ -1,0 +1,33 @@
+<article>
+    <h2>Mkosi – Build Bespoke OS Images</h2>
+    <div>
+<div>
+<h3>Summary</h3>
+<p>mkosi is a tool designed for creating operating system images. It aims to simplify and automate the process of building customized OS images from scratch, primarily targeting systemd-based distributions. It allows users to define the desired state of the OS image through simple configuration files, specifying the packages to install, files to include, systemd services to enable, and other customizations. mkosi then takes these configurations and builds a complete OS image that can be used for various purposes, such as deploying to cloud environments, creating container images, or installing on physical hardware.</p>
+
+<p>The core principle behind mkosi is to provide a reproducible and declarative way to build OS images. Rather than manually performing the steps to set up an OS, mkosi allows you to describe the desired end-state in a configuration file. This approach ensures that the image creation process is consistent and repeatable. Changes to the image can be easily tracked and managed through version control.</p>
+
+<p>mkosi leverages several existing technologies to achieve its goals. It uses systemd-nspawn for creating lightweight containers in which the image build process takes place, and utilizes package managers like apt or yum, depending on the specified distribution, to install software. It can also integrate with other tools like dracut to create bootable initramfs images. The modular nature of mkosi makes it adaptable to different base operating systems and customization needs.</p>
+
+<p>mkosi supports various output formats, including raw disk images, qcow2 images, and container images (e.g., Docker or OCI). This flexibility allows users to create images suitable for their specific deployment environment. It also includes features for signing images, generating checksums, and embedding metadata to enhance security and manageability.</p>
+
+<p>Use cases for mkosi include: creating custom OS images for embedded devices, building container images for deploying applications, creating bootable installation media for bare-metal deployments, and generating cloud images for platforms like AWS or Google Cloud. It is especially useful when you need to have total control over the contents and configuration of the OS image.</p>
+
+<p>The configuration files used by mkosi are typically written in a simple text-based format, making them easy to understand and modify. These files allow you to specify details such as: the target architecture, the base distribution to use, the packages to install, the files to copy into the image, the systemd services to enable or disable, and any other custom commands to execute during the image build process. mkosi provides a set of command-line tools for building images from these configuration files.</p>
+
+<h3>Key points</h3>
+<ul>
+<li><b>Automated OS Image Creation:</b> mkosi automates the building of customized operating system images from configuration files.</li>
+<li><b>Reproducibility:</b> It ensures consistent and repeatable builds.</li>
+<li><b>Declarative Configuration:</b> Image configurations are defined declaratively, specifying the desired OS state.</li>
+<li><b>Systemd-centric:</b> Designed primarily for systemd-based distributions.</li>
+<li><b>Technology Leverage:</b> Utilizes systemd-nspawn, package managers (apt, yum), and dracut.</li>
+<li><b>Multiple Output Formats:</b> Supports raw disk images, qcow2 images, and container images.</li>
+<li><b>Use Cases:</b> Suitable for embedded devices, container images, bare-metal deployments, and cloud images.</li>
+<li><b>Simple Configuration:</b> Uses simple text-based configuration files.</li>
+<li><b>Customization:</b> Allows specifying packages, files, systemd services, and custom commands.</li>
+<li><b>Command-Line Tools:</b> Provides command-line tools for building images.</li>
+</ul>
+</div>
+</div>
+</article>

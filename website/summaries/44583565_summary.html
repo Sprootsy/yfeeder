@@ -1,0 +1,37 @@
+<article>
+    <h2>Mill: A better build tool for Java, Scala, and Kotlin</h2>
+    <div>
+<div>
+<p>The article describes Mill, a new instruction set architecture (ISA) designed to address the limitations of current ISAs like x86 and ARM, which were developed decades ago. Mill aims to improve performance and energy efficiency in modern computing environments by departing from the traditional load-store architecture and embracing a dataflow-oriented approach. The primary goal of Mill is to extract more parallelism from programs, reduce code size, and simplify compiler design, all while maintaining binary compatibility through translation. This is achieved through several key innovations:</p>
+
+<p><strong>Belt Architecture:</strong> Mill uses a "belt" of registers instead of a traditional register file. Instructions operate on values flowing through the belt, with operations consuming and producing values as they move along the belt. This allows for implicit data dependencies and eliminates the need for explicit register allocation, simplifying compiler optimization.</p>
+
+<p><strong>Predication:</strong> Mill employs extensive predication, allowing instructions to be conditionally executed based on the result of a predicate expression. This reduces the need for branch instructions, which can cause pipeline stalls and reduce performance.</p>
+
+<p><strong>Memory Streaming:</strong> Mill implements a memory streaming mechanism that allows for efficient data transfer between memory and the processor, reducing memory latency and improving performance for memory-bound applications.</p>
+
+<p><strong>Variable-Length Instructions:</strong> Mill uses variable-length instructions to optimize code density and reduce memory footprint. This allows for more efficient use of instruction cache and reduces the overhead of instruction fetch.</p>
+
+<p><strong>Zero-Overhead Loops:</strong> Mill provides hardware support for zero-overhead loops, which eliminates the need for loop counter maintenance and branch instructions within the loop, improving performance for loop-intensive applications.</p>
+
+<p><strong>Hardware Acceleration:</strong> Mill is designed to be easily extensible with custom hardware accelerators, allowing for specialized processing of specific workloads, such as multimedia or cryptography.</p>
+
+<p><strong>Binary Translation:</strong> Mill supports binary translation, allowing existing x86 and ARM code to be run on Mill processors. This ensures backward compatibility and allows users to gradually transition to the new architecture.</p>
+
+<p>The Mill architecture offers several potential benefits, including improved performance, reduced energy consumption, simplified compiler design, and binary compatibility. However, it also faces challenges, such as the need for new compilers and tools, as well as the potential for increased hardware complexity. The article positions Mill as a promising alternative to existing ISAs and a potential foundation for future computing systems.</p>
+
+<h3>Key Points:</h3>
+<ul>
+    <li>Mill is a new instruction set architecture (ISA) designed to overcome the limitations of existing ISAs like x86 and ARM.</li>
+    <li>It uses a belt-based architecture instead of a traditional register file, enabling implicit data dependencies and simplifying compiler optimization.</li>
+    <li>Extensive predication reduces the need for branch instructions, improving performance.</li>
+    <li>Memory streaming enhances data transfer between memory and the processor, reducing memory latency.</li>
+    <li>Variable-length instructions optimize code density and reduce memory footprint.</li>
+    <li>Zero-overhead loops eliminate loop counter maintenance and branch instructions within loops.</li>
+    <li>It is designed to be extensible with custom hardware accelerators.</li>
+    <li>Binary translation allows existing x86 and ARM code to run on Mill processors, ensuring backward compatibility.</li>
+    <li>Mill aims to improve performance, reduce energy consumption, and simplify compiler design.</li>
+</ul>
+</div>
+</div>
+</article>
