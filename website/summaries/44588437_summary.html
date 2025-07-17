@@ -1,0 +1,33 @@
+<article>
+    <h2>I was wrong about robots.txt</h2>
+    <div>
+<div>
+<h3>Summary</h3>
+<p>The article "I Was Wrong About Robots.txt" by Evgenii Pendragon discusses the author's evolving understanding and misconceptions about the robots.txt file. Initially, the author perceived robots.txt as a simple mechanism to control which parts of a website search engines could crawl, viewing it as a straightforward directive for web crawlers to follow. However, through experience and deeper analysis, the author realized the limitations and potential pitfalls of relying solely on robots.txt for access control and security.</p>
+
+<p>The author highlights that robots.txt is merely a set of suggestions, not mandatory rules. Well-behaved crawlers, like those from reputable search engines (Google, Bing, DuckDuckGo), generally respect the directives specified in robots.txt. However, malicious bots or those with specific data-scraping objectives may ignore the file entirely. This creates a false sense of security if robots.txt is the only mechanism used to protect sensitive information.</p>
+
+<p>The article emphasizes the public nature of robots.txt. Because it's typically located at the root of a website (e.g., example.com/robots.txt), it is easily accessible to anyone. This accessibility inadvertently reveals the directory structure and potentially sensitive areas of a website that the administrator intends to hide from search engines. Malicious actors can use this information to target those specific areas for vulnerabilities or data extraction.</p>
+
+<p>A significant portion of the article is dedicated to illustrating how robots.txt should not be used as a security measure. The author warns against using it to protect private or sensitive data, as determined adversaries will simply bypass the directives. Instead, the author advocates for robust authentication and authorization mechanisms to control access to sensitive resources. These methods ensure that only authorized users or services can access specific parts of the website, regardless of whether they adhere to robots.txt directives.</p>
+
+<p>The author further elaborates on the appropriate uses of robots.txt. Its primary function is to manage crawl traffic, prevent overloading a server with excessive requests from search engine bots, and guide crawlers to the most important sections of a website. By strategically disallowing unimportant or duplicate content, robots.txt can help improve the efficiency of crawling and indexing, leading to better search engine rankings for the pages that matter most.</p>
+
+<p>The article also touches on the nuances of robots.txt syntax and common mistakes. It is important to understand the proper usage of `User-agent`, `Allow`, and `Disallow` directives, as well as the wildcard characters. Incorrectly configured robots.txt files can unintentionally block search engines from crawling important content, negatively impacting a website's visibility. The author also mentioned how Google and other major search engines deprecated support for certain robots.txt rules, like "Crawl-delay", so webmasters can no longer rely on them for crawl rate management.</p>
+
+<p>In conclusion, the author argues for a more informed and pragmatic approach to robots.txt. It should be viewed as a tool for crawl management and SEO optimization, not as a security measure. Proper security should be implemented through authentication, authorization, and other access control mechanisms, while robots.txt should be used to guide well-behaved crawlers and optimize crawl efficiency. The key takeaway is that relying solely on robots.txt to protect sensitive information creates a vulnerability that can be easily exploited.</p>
+
+<h3>Key Points</h3>
+<ul>
+<li>Robots.txt is not a security measure and should not be used to protect sensitive information.</li>
+<li>Robots.txt is a set of suggestions for web crawlers, not mandatory rules. Malicious bots can ignore it.</li>
+<li>The robots.txt file is publicly accessible, revealing the directory structure and potentially sensitive areas of a website.</li>
+<li>Use robust authentication and authorization mechanisms for access control.</li>
+<li>Robots.txt is primarily for managing crawl traffic and optimizing crawl efficiency.</li>
+<li>Incorrectly configured robots.txt files can negatively impact search engine rankings.</li>
+<li>Understand the proper syntax and limitations of robots.txt directives.</li>
+<li>Google and other major search engines deprecated support for certain robots.txt rules, like "Crawl-delay".</li>
+</ul>
+</div>
+</div>
+</article>
