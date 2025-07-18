@@ -1,0 +1,37 @@
+<article>
+    <h2>Fully homomorphic encryption and the dawn of a private internet</h2>
+    <div>
+<div>
+<h3>Summary</h3>
+The article discusses Fully Homomorphic Encryption (FHE), a type of encryption that allows computations to be performed directly on encrypted data without the need for decryption. This enables processing sensitive data in untrusted environments while maintaining privacy. The author begins by explaining traditional encryption methods, where data needs to be decrypted before processing, creating a vulnerability. FHE solves this by allowing computations on encrypted data, with the result also encrypted. Only the owner of the decryption key can decrypt the final result.
+
+The article presents a simplified analogy using playing cards to illustrate the concept. Alice encrypts data and sends it to Bob, who can perform computations on the encrypted data. Bob then sends the encrypted result back to Alice, who decrypts it to get the final result. The security stems from Bob never needing to decrypt the data, thus protecting its confidentiality.
+
+The author then introduces different types of homomorphic encryption, including Partially Homomorphic Encryption (PHE), Somewhat Homomorphic Encryption (SHE), and Fully Homomorphic Encryption (FHE). PHE supports only one type of operation (either addition or multiplication) on encrypted data. SHE supports both addition and multiplication, but a limited number of times. FHE overcomes this limitation, allowing arbitrary computations on encrypted data an unlimited number of times.
+
+The article mentions the initial discovery of FHE by Craig Gentry in 2009, which was based on lattice-based cryptography and bootstrapping. Bootstrapping is a crucial process that refreshes the ciphertext to reduce noise accumulated during computations. Without bootstrapping, the noise would eventually corrupt the ciphertext, making decryption impossible.
+
+The article also discusses practical FHE schemes, including BGV, BFV, CKKS, and TFHE. BGV and BFV are integer-based schemes, CKKS is approximate number-based scheme, and TFHE is a torus-based scheme. The article highlights the trade-offs between these schemes in terms of performance and functionality. CKKS is faster for approximate computations on real numbers, while BFV is better suited for precise computations on integers. TFHE enables fast bootstrapping and is suitable for complex boolean circuits.
+
+The article then explores the applications of FHE, which include secure multi-party computation, privacy-preserving machine learning, secure cloud computing, and confidential data analytics. These applications benefit from the ability to process sensitive data without exposing it to unauthorized parties.
+
+Finally, the author acknowledges that FHE is computationally intensive compared to traditional encryption methods. However, ongoing research and development are improving the efficiency of FHE schemes. The article concludes by emphasizing the potential of FHE to revolutionize data privacy and security in various domains.
+
+<h3>Key Points</h3>
+<ul>
+<li>Fully Homomorphic Encryption (FHE) allows computations on encrypted data without decryption.</li>
+<li>Traditional encryption requires decryption before processing, creating vulnerabilities.</li>
+<li>FHE enables secure processing of sensitive data in untrusted environments.</li>
+<li>Partially Homomorphic Encryption (PHE) supports one type of operation (addition or multiplication).</li>
+<li>Somewhat Homomorphic Encryption (SHE) supports both addition and multiplication with a limited number of operations.</li>
+<li>Fully Homomorphic Encryption (FHE) supports arbitrary computations an unlimited number of times.</li>
+<li>Craig Gentry discovered the first FHE scheme in 2009.</li>
+<li>Bootstrapping is a process to refresh ciphertexts and reduce noise.</li>
+<li>Practical FHE schemes include BGV, BFV, CKKS, and TFHE.</li>
+<li>CKKS is faster for approximate computations, BFV for precise integer computations, and TFHE for fast bootstrapping.</li>
+<li>FHE applications include secure multi-party computation, privacy-preserving machine learning, secure cloud computing, and confidential data analytics.</li>
+<li>FHE is computationally intensive but ongoing research improves efficiency.</li>
+</ul>
+</div>
+</div>
+</article>
