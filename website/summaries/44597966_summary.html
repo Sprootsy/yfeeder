@@ -1,0 +1,36 @@
+<article>
+    <h2>Running TypeScript Natively in Node.js</h2>
+    <div>
+<div>
+  <h2>Summary</h2>
+  <p>
+    The article discusses the ability to run TypeScript code natively in Node.js without a compilation step. Traditionally, TypeScript code needs to be compiled into JavaScript before it can be executed in a Node.js environment. However, recent advancements have enabled direct execution of TypeScript files, streamlining the development process.
+  </p>
+  <p>
+    The article highlights that while tools like <code>ts-node</code> have been available for some time to execute TypeScript code directly, they often involve a compilation step behind the scenes, impacting performance and startup time. The focus is on achieving true native execution, where TypeScript code is interpreted and run without intermediate JavaScript generation.
+  </p>
+  <p>
+    One approach mentioned is using the <code>@esbuild-kit/esm-loader</code>, which leverages esbuild to transpile TypeScript on the fly, offering a faster alternative to <code>ts-node</code>.  This method still involves transpilation but is optimized for speed.
+  </p>
+  <p>
+    The core of the article revolves around the experimental support for loaders in Node.js. Loaders are modules that customize the <code>import</code> statement's behavior, allowing the interpretation of different file types.  By implementing a loader, Node.js can directly understand and execute TypeScript code. The article also points to specific GitHub repositories and resources that provide examples and implementations of such loaders.
+  </p>
+  <p>
+    The author also mentions using the <code>node --loader ts-node-dev/esm index.ts</code> command for development purposes.
+  </p>
+  <p>
+    The article emphasizes that this native execution capability is still evolving and might require experimental flags or specific configurations to enable. However, the potential benefits include simplified development workflows, faster execution speeds, and reduced complexity in build processes.  It encourages developers to explore these new possibilities and contribute to the ongoing development of native TypeScript support in Node.js.
+  </p>
+
+  <h2>Key Points</h2>
+  <ul>
+    <li>Node.js can now run TypeScript natively without requiring a separate compilation step in some cases.</li>
+    <li>Tools like <code>ts-node</code> have existed but often involve transpilation behind the scenes.</li>
+    <li><code>@esbuild-kit/esm-loader</code> offers faster on-the-fly transpilation using esbuild.</li>
+    <li>Node.js loaders provide a mechanism to customize the <code>import</code> statement and interpret TypeScript files directly.</li>
+    <li>Native execution simplifies development workflows and potentially improves performance.</li>
+    <li>The native TypeScript support is experimental and may require specific flags or configurations.</li>
+  </ul>
+</div>
+</div>
+</article>
