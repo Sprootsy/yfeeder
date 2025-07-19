@@ -1,0 +1,29 @@
+<article>
+    <h2>Broadcom to discontinue free Bitnami Helm charts</h2>
+    <div>
+<div>
+  <p>The GitHub issue discusses a proposal to add support for multiple certificates to the Bitnami Harbor Helm chart. Currently, the chart only supports a single TLS certificate, which can be limiting in scenarios where multiple hostnames or domains need to be supported. The proposal suggests allowing users to specify multiple certificates, each associated with a specific hostname. This would enable Harbor to handle TLS connections for different domains using the appropriate certificate for each.</p>
+
+  <p>Several users have expressed interest in this feature, highlighting use cases such as supporting both a primary domain and a subdomain, or migrating from one domain to another without downtime. The discussion explores different approaches to implementing this functionality, including modifying the existing `tls` section of the `values.yaml` file to accept a list of certificates, or introducing a new section specifically for multiple certificates. Some users have also suggested using Kubernetes Ingress resources to manage TLS termination, but this approach may not be suitable for all deployments, especially those that require Harbor to handle TLS directly.</p>
+
+  <p>One proposed solution involves adding a `tls.certificates` section to the `values.yaml` file. This section would contain a list of certificate objects, each specifying the hostname and the corresponding certificate and key. The Helm chart would then generate the necessary Kubernetes Secrets and configure Harbor to use these certificates for the specified hostnames. This approach would allow users to easily manage multiple certificates without requiring significant changes to the existing chart structure.</p>
+
+  <p>Another suggestion involves using a wildcard certificate and specifying multiple hostnames in the `tls.existingSecret` field. However, this approach may not be ideal for all users, as it requires obtaining a wildcard certificate, which may not be feasible or desirable in some cases. Additionally, wildcard certificates can pose security risks if not managed properly.</p>
+
+  <p>The discussion also touches on the need for clear documentation and examples to guide users on how to configure multiple certificates. It is important to provide detailed instructions on how to generate certificates, create Kubernetes Secrets, and configure the `values.yaml` file. This will help ensure that users can easily adopt this feature and avoid common pitfalls.</p>
+
+  <p>Overall, the issue highlights the need for improved TLS certificate management in the Bitnami Harbor Helm chart. The proposed solutions offer different approaches to addressing this need, each with its own advantages and disadvantages. The ultimate goal is to provide a flexible and user-friendly solution that allows users to easily manage multiple certificates and secure their Harbor deployments.</p>
+
+  <p><b>Key Points:</b></p>
+  <ul>
+    <li>The Bitnami Harbor Helm chart currently only supports a single TLS certificate.</li>
+    <li>Users are requesting support for multiple certificates to handle different hostnames or domains.</li>
+    <li>Proposed solutions include modifying the `tls` section in `values.yaml` or adding a new `tls.certificates` section.</li>
+    <li>Using Kubernetes Ingress for TLS termination is another option, but may not be suitable for all deployments.</li>
+    <li>Wildcard certificates are also mentioned, but may not be ideal for all users.</li>
+    <li>Clear documentation and examples are crucial for users to configure multiple certificates successfully.</li>
+    <li>The goal is to provide a flexible and user-friendly solution for managing multiple certificates in Harbor.</li>
+  </ul>
+</div>
+</div>
+</article>

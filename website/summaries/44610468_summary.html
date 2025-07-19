@@ -1,0 +1,32 @@
+<article>
+    <h2>How to write Rust in the Linux kernel: part 3</h2>
+    <div>
+<div>
+<p>The article discusses the ongoing efforts to improve the Rust support within the Linux kernel. The author, Miguel Ojeda, has posted the 50th patch series for the Rust infrastructure, marking a significant milestone in this endeavor. This series focuses on refactoring existing code and adding new features, demonstrating the continuous progress and refinement of Rust integration into the kernel.</p>
+
+<p>A key aspect of this iteration is the removal of the `static` modifier from certain inline functions. This change addresses a warning issued by newer versions of the Rust compiler (rustc) and simplifies the code. Additionally, the series includes improvements to the `hash` module, adding support for the `siphash13` algorithm. This expands the cryptographic capabilities available to Rust modules within the kernel.</p>
+
+<p>Another notable feature is the introduction of the `maybe_init` module. This module provides a mechanism for initializing data structures in a way that avoids potential undefined behavior when dealing with uninitialized memory. This is particularly important in kernel development, where memory management and initialization must be handled with extreme care.</p>
+
+<p>The patch series also incorporates several other minor improvements and fixes, contributing to the overall stability and reliability of the Rust support. These include updates to the documentation, code cleanup, and bug fixes. The article highlights the incremental nature of the development process, with each patch series building upon the previous ones to gradually enhance the Rust infrastructure.</p>
+
+<p>Furthermore, the article touches upon the ongoing discussion regarding the Rust standard library (`core`) within the kernel. While the current approach involves reimplementing essential parts of the `core` library to avoid dependencies on the full standard library, there is an exploration of potentially using a reduced or modified version of the standard library in the future. This could simplify development and improve compatibility with existing Rust code.</p>
+
+<p>The article emphasizes the importance of collaboration and community involvement in the Rust-in-kernel project. The author acknowledges the contributions of various individuals and encourages further participation from the broader Rust and Linux communities. The ultimate goal is to provide a robust and well-integrated Rust environment within the Linux kernel, enabling developers to leverage the safety and expressiveness of Rust for kernel development.</p>
+
+<p>In summary, the 50th patch series represents a significant step forward in the Rust-in-kernel project, bringing new features, improvements, and refinements to the existing infrastructure. The continued development and community engagement are essential for the long-term success of this endeavor, paving the way for wider adoption of Rust within the Linux kernel.</p>
+
+<h2>Key Points:</h2>
+
+<ul>
+  <li>The 50th patch series for Rust infrastructure in the Linux kernel has been posted.</li>
+  <li>Refactoring includes removing `static` modifier from inline functions to address rustc warnings.</li>
+  <li>`hash` module is enhanced with `siphash13` algorithm support.</li>
+  <li>A `maybe_init` module is introduced for safer data structure initialization.</li>
+  <li>Minor improvements, documentation updates, code cleanup, and bug fixes are included.</li>
+  <li>Discussion ongoing regarding potential use of a reduced Rust standard library (`core`).</li>
+  <li>Collaboration and community involvement are crucial for the project's success.</li>
+</ul>
+</div>
+</div>
+</article>

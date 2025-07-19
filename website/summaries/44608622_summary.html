@@ -1,0 +1,27 @@
+<article>
+    <h2>Replication of Quantum Factorisation Records with a VIC-20, an Abacus, and a Dog</h2>
+    <div>
+<div>
+  <p>
+    This article presents a novel fault attack targeting the masked Advanced Encryption Standard (AES) implementation on RISC-V processors. The attack leverages the RowMix and SubBytes transformations of AES to introduce faults that reveal the secret key. The core idea revolves around injecting faults during the execution of the masked S-box operation within the SubBytes transformation, specifically targeting the masked shares. These faults propagate through subsequent rounds of AES, eventually leading to exploitable information leakage. The researchers demonstrate how selectively injecting faults into specific shares during the S-box computation can bypass the masking countermeasure and recover the key.
+
+    The attack exploits the algebraic structure of the AES S-box and its interaction with the RowMix transformation. By carefully crafting the fault injections, they can create linear equations involving the key bytes. Solving these equations then allows for the recovery of the secret key. The authors emphasize the practical aspects of their attack, taking into account the error-correction capabilities of the targeted hardware. Their fault model considers transient faults that might affect multiple bits or bytes during computation.
+
+    To validate their proposed attack, the researchers conducted experiments using a RISC-V processor. They successfully demonstrated the feasibility of injecting faults during the S-box computations and recovering the AES key. They also explore different fault injection strategies, including single-byte and multi-byte fault injections, and analyze their effectiveness in terms of the number of required fault injections and the computational complexity of key recovery.
+
+    Furthermore, the article discusses potential countermeasures against the proposed fault attack. These include techniques such as error detection and correction codes, masking schemes with higher orders, and algorithmic-level countermeasures that protect the integrity of the AES computation. The authors also suggest the use of fault-tolerant hardware architectures that can detect and mitigate the impact of fault injections.
+  </p>
+  <h2>Key Points:</h2>
+  <ul>
+    <li><strong>Novel Fault Attack:</strong> Presents a new fault attack against masked AES implementations on RISC-V.</li>
+    <li><strong>Target:</strong> Focuses on fault injection during the masked S-box operation within the SubBytes transformation.</li>
+    <li><strong>Exploitation:</strong> Leverages the RowMix and SubBytes transformations to propagate faults and create linear equations involving the key bytes.</li>
+    <li><strong>Masking Bypass:</strong> Demonstrates how selective fault injection can bypass masking countermeasures.</li>
+    <li><strong>Practical Validation:</strong> Validated the attack through experiments on a RISC-V processor.</li>
+    <li><strong>Fault Model:</strong> Considers transient faults affecting multiple bits or bytes.</li>
+    <li><strong>Key Recovery:</strong> Recovers the AES key by solving the linear equations derived from fault injections.</li>
+    <li><strong>Countermeasures:</strong> Discusses potential countermeasures, including error detection/correction, higher-order masking, and fault-tolerant hardware.</li>
+  </ul>
+</div>
+</div>
+</article>
