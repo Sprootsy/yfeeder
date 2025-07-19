@@ -1,0 +1,33 @@
+<article>
+    <h2>Asynchrony is not concurrency</h2>
+    <div>
+<div>
+<h3>Summary</h3>
+<p>The article "Asynchrony Is Not Concurrency" by Kristoff.it elucidates the distinction between asynchronous programming and concurrent programming, clarifying common misconceptions and highlighting their independent benefits and use cases. The author argues that while the terms are often used interchangeably, they represent fundamentally different concepts. Asynchrony focuses on non-blocking operations, allowing a single thread to initiate multiple tasks without waiting for each one to complete before starting the next. Concurrency, on the other hand, involves the simultaneous execution of multiple tasks, typically leveraging multiple threads or processes to achieve parallelism.</p>
+
+<p>The article begins by defining asynchrony as a technique that enables a program to start a task and then proceed with other operations without blocking or waiting for the task to finish. This is achieved through mechanisms like callbacks, promises, or async/await, which allow the program to be notified when the task is completed. Asynchrony is primarily about improving responsiveness and preventing a single task from monopolizing the execution thread.</p>
+
+<p>Concurrency, in contrast, is described as the ability to execute multiple tasks seemingly at the same time. This can be achieved through various means, including multi-threading, multi-processing, or distributed computing. The goal of concurrency is often to improve performance by dividing work among multiple processors or cores, enabling true parallel execution. The author emphasizes that concurrency introduces complexities like managing shared resources and avoiding race conditions, which require careful synchronization mechanisms.</p>
+
+<p>A key argument presented is that asynchrony and concurrency are orthogonal concepts. Asynchronous operations can be performed in a single thread, leveraging the event loop to manage multiple tasks efficiently. Conversely, concurrent programs can utilize synchronous operations, where each thread or process blocks while waiting for its task to complete. The choice between asynchrony and concurrency depends on the specific requirements of the application. Asynchrony is well-suited for I/O-bound tasks, where the program spends a significant amount of time waiting for external operations to complete. Concurrency is more appropriate for CPU-bound tasks, where the program needs to perform intensive computations that can be parallelized.</p>
+
+<p>The article further discusses the benefits and drawbacks of each approach. Asynchrony can improve the responsiveness of applications, especially those with graphical user interfaces or those that handle network requests. However, it does not necessarily lead to faster overall execution times for CPU-bound tasks. Concurrency, on the other hand, can significantly reduce execution time for computationally intensive tasks by utilizing multiple cores. However, it introduces complexities related to thread synchronization, data consistency, and potential race conditions.</p>
+
+<p>The author also touches upon the implications of these concepts in different programming languages and environments. Some languages provide built-in support for asynchronous programming, while others rely on libraries or frameworks. Similarly, the availability and implementation of concurrency mechanisms vary across different platforms. Understanding the underlying principles of asynchrony and concurrency is crucial for making informed decisions about the design and implementation of efficient and responsive applications.</p>
+
+<p>In conclusion, the article advocates for a clear understanding of the differences between asynchrony and concurrency. While both techniques can improve the performance and responsiveness of applications, they address different challenges and require different approaches. Asynchrony is about non-blocking operations and improving responsiveness within a single thread, while concurrency is about parallel execution and improving performance by utilizing multiple threads or processes. Recognizing these distinctions is essential for developing effective and scalable software.</p>
+
+<h3>Key Points</h3>
+<ul>
+  <li>Asynchrony and concurrency are distinct concepts, not interchangeable.</li>
+  <li>Asynchrony enables non-blocking operations, improving responsiveness by allowing a single thread to handle multiple tasks without waiting.</li>
+  <li>Concurrency enables parallel execution of multiple tasks, improving performance by utilizing multiple threads or processes.</li>
+  <li>Asynchrony is suitable for I/O-bound tasks, while concurrency is suitable for CPU-bound tasks.</li>
+  <li>Asynchrony can improve responsiveness but doesn't necessarily speed up CPU-bound tasks.</li>
+  <li>Concurrency can speed up CPU-bound tasks but introduces complexities like thread synchronization and race conditions.</li>
+  <li>Asynchrony and concurrency are orthogonal; you can have asynchronous code in a single thread or synchronous code in multiple threads.</li>
+  <li>Understanding the differences is crucial for designing efficient and scalable applications.</li>
+</ul>
+</div>
+</div>
+</article>

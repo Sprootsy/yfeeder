@@ -1,0 +1,30 @@
+<article>
+    <h2>We do not break userspace (2012)</h2>
+    <div>
+<div>
+  <p>The email is from Kees Cook to LKML (Linux Kernel Mailing List) and details a proposal to address a specific type of vulnerability in the Linux kernel: stack corruption caused by unbounded string copies (strcpy/strcat). These functions, unlike their safer counterparts strncpy/strncat, do not have a limit on the number of bytes they copy, making them susceptible to buffer overflows if the source string is larger than the destination buffer. Such overflows can overwrite data on the stack, leading to crashes or, more seriously, security vulnerabilities.</p>
+
+  <p>Kees proposes a compile-time mitigation strategy. The core idea is to replace direct calls to strcpy/strcat with inline functions (likely named `strcpy_chk` and `strcat_chk`). These inline functions would perform a check at compile time to determine if the size of the destination buffer is known. If the size *is* known (e.g., the destination is a fixed-size array), the inline function can include a check to ensure that the source string is not larger than the destination. This compile-time check would prevent the use of strcpy/strcat when it's provably unsafe, forcing developers to use safer alternatives or to explicitly handle the potential overflow.</p>
+
+  <p>If the size of the destination buffer is *not* known at compile time (e.g., the destination is a pointer to dynamically allocated memory), the inline function would simply call the original strcpy/strcat. In these cases, the mitigation would not be effective, as the size check cannot be performed. However, the compile-time check still catches many common cases where strcpy/strcat are used with fixed-size buffers and thus are easily exploitable.</p>
+
+  <p>Kees acknowledges that this approach is not a complete solution. It does not eliminate all potential stack buffer overflows, as it only works when the destination buffer size is known at compile time. He also mentions alternatives, such as using `FORTIFY_SOURCE`, which provides runtime checks, but notes that `FORTIFY_SOURCE` has performance overhead. His proposal aims to provide a lightweight compile-time solution that catches many common strcpy/strcat errors without significant performance impact.</p>
+
+  <p>The email also discusses implementation details, such as the naming of the inline functions (`strcpy_chk`, `strcat_chk`) and how they would be used to replace existing strcpy/strcat calls throughout the kernel. He also notes that there will inevitably be cases where the compiler cannot determine the buffer size, requiring manual intervention to use safer alternatives. The goal is to make the common, unsafe usage of strcpy/strcat more difficult, encouraging developers to use safer functions by default.</p>
+
+  <p>Finally, Kees requests feedback on the proposal, including the naming of the new functions and the overall approach. He mentions a patch series implementing the proposed changes is forthcoming.</p>
+
+  <h2>Key Points:</h2>
+  <ul>
+    <li><b>Problem:</b> Stack buffer overflows due to unbounded string copies (strcpy/strcat) in the Linux kernel.</li>
+    <li><b>Proposed Solution:</b> Replace strcpy/strcat with inline functions (`strcpy_chk`, `strcat_chk`) that perform compile-time size checks.</li>
+    <li><b>Compile-Time Check:</b> If the destination buffer size is known at compile time, the inline function checks if the source string is larger. If it is, a compilation error is triggered, preventing the unsafe strcpy/strcat.</li>
+    <li><b>Unknown Buffer Size:</b> If the destination buffer size is unknown at compile time, the inline function simply calls the original strcpy/strcat (no mitigation).</li>
+    <li><b>Lightweight Mitigation:</b> Aims to catch common strcpy/strcat errors with minimal performance impact compared to runtime checks like `FORTIFY_SOURCE`.</li>
+    <li><b>Partial Solution:</b> Does not eliminate all stack buffer overflows, only those where the destination buffer size is known at compile time.</li>
+    <li><b>Implementation:</b> Requires replacing existing strcpy/strcat calls with the new inline functions.  Manual intervention may be required in some cases.</li>
+    <li><b>Feedback Requested:</b>  Kees is seeking feedback on the proposal and naming conventions. A patch implementing the changes is planned.</li>
+  </ul>
+</div>
+</div>
+</article>

@@ -1,0 +1,31 @@
+<article>
+    <h2>Multiplatform Matrix Multiplication Kernels</h2>
+    <div>
+<div>
+  <p>This article discusses the challenges and advancements in achieving state-of-the-art (SOTA) performance for matrix multiplication (matmul) across various platforms, particularly focusing on the Burn framework. Matrix multiplication is a fundamental operation in deep learning and scientific computing, and its efficient execution is crucial for overall performance. The article highlights the complexities involved in optimizing matmul for different hardware architectures, including CPUs, GPUs, and specialized accelerators like Apple's Metal Performance Shaders (MPS) and WebGPU.</p>
+
+  <p>The article begins by outlining the importance of matmul and the difficulty of writing a single implementation that performs optimally across all platforms. It delves into the nuances of different backends and their respective APIs, such as the differences between CUDA, Metal, and CPU implementations. The article emphasizes that a one-size-fits-all approach to matmul is often suboptimal and that achieving SOTA performance requires platform-specific optimizations.</p>
+
+  <p>The article then explores the use of code generation as a solution to address these challenges. Burn utilizes code generation to tailor matmul implementations to specific hardware, allowing for optimized performance without the need for manual, platform-specific code. The article discusses the advantages of code generation, including the ability to target different hardware features and instruction sets.</p>
+
+  <p>A key focus of the article is the implementation of matmul within Burn. It describes the use of the `autotune` feature to automatically search for the best performing kernel configurations for a given platform. This involves exploring different tiling sizes, loop unrolling factors, and other optimization techniques. The article also details the use of shared memory on GPUs to reduce global memory access and improve performance. The article then describes how they managed to implement performant matrix multiplication for different hardware platforms, including the use of specialized hardware features. They have achieved near-optimal performance on Apple Silicon using Metal, where they matched and even exceeded the performance of the optimized MPS backend in several cases. On WebGPU the performance of Burn’s matmul is comparable to the highly optimized XNNPACK library.</p>
+
+  <p>The article also touches upon the challenges of supporting WebGPU and the efforts made to optimize matmul for this platform. It highlights the limitations of WebGPU compared to more mature APIs like CUDA and Metal, but also showcases the progress made in achieving competitive performance. The use of workgroup memory and other optimization techniques are discussed in the context of WebGPU.</p>
+
+  <p>In conclusion, the article emphasizes the importance of platform-specific optimization for matmul and the effectiveness of code generation and autotuning in achieving SOTA performance across diverse hardware. The Burn framework's approach to matmul is presented as a successful example of how to overcome the challenges of multiplatform support and deliver high-performance deep learning operations.</p>
+
+  <h2>Key Points:</h2>
+  <ul>
+    <li>Matrix multiplication (matmul) is a fundamental operation in deep learning, and its performance is critical.</li>
+    <li>Achieving state-of-the-art (SOTA) matmul performance requires platform-specific optimizations due to differences in hardware architectures and APIs (CUDA, Metal, WebGPU).</li>
+    <li>Code generation is a key technique for tailoring matmul implementations to specific hardware, enabling optimized performance without manual platform-specific code.</li>
+    <li>The Burn framework uses code generation and autotuning to automatically search for the best performing kernel configurations for different platforms.</li>
+    <li>Shared memory on GPUs is used to reduce global memory access and improve performance.</li>
+    <li>The Burn framework has achieved near-optimal performance on Apple Silicon using Metal, matching or exceeding the performance of the optimized MPS backend in several cases.</li>
+    <li>On WebGPU the performance of Burn’s matmul is comparable to the highly optimized XNNPACK library.</li>
+    <li>Optimizing matmul for WebGPU presents unique challenges due to limitations compared to more mature APIs.</li>
+    <li>Platform-specific optimization, code generation, and autotuning are crucial for achieving SOTA matmul performance across diverse hardware.</li>
+  </ul>
+</div>
+</div>
+</article>

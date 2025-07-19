@@ -1,0 +1,26 @@
+<article>
+    <h2>My Ultimate Self-Hosting Setup</h2>
+    <div>
+ <div>
+  <h2>Summary</h2>
+  <p>The article describes the author's self-hosting setup, detailing the hardware, software, and services they use to maintain control over their data and online activities. The author emphasizes the benefits of self-hosting, including data privacy, customization, and cost savings, while also acknowledging the time and effort required for maintenance and troubleshooting.</p>
+  <p>The author's setup revolves around a central server running Proxmox VE, a virtualization platform. Within Proxmox, they host multiple virtual machines (VMs) and containers, each dedicated to specific services. The hardware consists of a mini PC with sufficient RAM and storage to handle the workload.</p>
+  <p>Key services the author self-hosts include a reverse proxy (NGINX Proxy Manager) to securely expose services to the internet, a password manager (Vaultwarden), a media server (Jellyfin), a file synchronization tool (Syncthing), and various other utilities like a monitoring dashboard (Grafana), a link shortener (Yet Another URL Shortener), and a personal website. They also use Docker containers managed with Portainer for some applications, offering a balance between VM isolation and container efficiency.</p>
+  <p>For network management, the author uses Cloudflare Tunnels to securely expose services without opening ports directly on their router, enhancing security. They also utilize Tailscale, a VPN solution, for secure remote access to their self-hosted services from any device.</p>
+  <p>The article details the specific configurations and considerations for each service, including security best practices like using strong passwords, enabling two-factor authentication, and keeping software up to date. The author also shares their reasoning for choosing specific tools and configurations, providing valuable insights for others looking to embark on their self-hosting journey.</p>
+  <h2>Key Points</h2>
+  <ul>
+   <li><b>Hardware:</b> Utilizes a mini PC as the primary server.</li>
+   <li><b>Virtualization:</b> Employs Proxmox VE for managing virtual machines and containers.</li>
+   <li><b>Reverse Proxy:</b> Uses NGINX Proxy Manager for secure internet exposure.</li>
+   <li><b>Password Management:</b> Self-hosts Vaultwarden for password storage.</li>
+   <li><b>Media Server:</b> Runs Jellyfin for media streaming.</li>
+   <li><b>File Synchronization:</b> Implements Syncthing for file syncing across devices.</li>
+   <li><b>Containerization:</b> Uses Docker and Portainer for some applications.</li>
+   <li><b>Network Security:</b> Leverages Cloudflare Tunnels to avoid direct port exposure.</li>
+   <li><b>Remote Access:</b> Utilizes Tailscale for secure VPN access.</li>
+   <li><b>Monitoring:</b> Employs Grafana for system monitoring and visualization.</li>
+  </ul>
+ </div>
+ </div>
+</article>
