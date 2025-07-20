@@ -1,0 +1,41 @@
+<article>
+    <h2>Make Your Own Backup System – Part 1: Strategy Before Scripts</h2>
+    <div>
+<div>
+  <h2>Summary</h2>
+  <p>
+    The article "Make Your Own Backup System – Part 1: Strategy Before Scripts" emphasizes the importance of a well-defined backup strategy before implementing any backup scripts or tools. It argues that a clear strategy tailored to individual needs is crucial for effective data protection. The author outlines several key considerations for formulating a robust backup strategy.
+  </p>
+  <p>
+    The initial and primary advice is to understand precisely what data is critical and needs backing up. This involves identifying the essential files, databases, configurations, and systems that, if lost, would significantly impact operations or cause substantial data loss. The article suggests categorizing data based on its importance and frequency of change, as this will influence the backup schedule and retention policies.
+  </p>
+  <p>
+    Next, the author underscores the significance of defining the Recovery Point Objective (RPO) and Recovery Time Objective (RTO). The RPO determines the maximum acceptable data loss in case of a failure (e.g., "we can afford to lose one hour of data"), while the RTO specifies the maximum tolerable downtime (e.g., "we need to be back up and running within two hours"). These objectives dictate the frequency and type of backups required. Lower RPOs necessitate more frequent backups, while stringent RTOs may require more sophisticated backup and recovery solutions.
+  </p>
+  <p>
+    The article also discusses different backup types, including full, incremental, and differential backups. A full backup copies all selected data, providing a complete point-in-time snapshot. Incremental backups only copy data that has changed since the last backup (full or incremental), resulting in faster backup times but potentially longer restore times. Differential backups, on the other hand, copy data that has changed since the last full backup.
+  </p>
+  <p>
+    Retention policies are another critical element of a backup strategy. The article stresses the need to determine how long backups should be retained. Retention periods should comply with legal and regulatory requirements and align with business needs. Older backups may be archived to less expensive storage, while more recent backups are kept readily available for faster restoration.
+  </p>
+  <p>
+    Backup storage location is also discussed. The article advises on having both on-site and off-site backups to protect against various failure scenarios, such as hardware failures, natural disasters, or ransomware attacks. On-site backups offer faster recovery, while off-site backups ensure data availability even if the primary site is compromised. Cloud-based storage is presented as a viable off-site backup solution.
+  </p>
+  <p>
+    Finally, the article emphasizes the importance of regularly testing the backup and recovery process. Periodic testing validates that backups are working correctly and that data can be restored within the defined RTO. Testing also helps identify potential weaknesses in the backup strategy and allows for necessary adjustments. Documentation of the backup strategy and procedures is also crucial for consistent and reliable operation, especially when multiple individuals are involved in the backup process.
+  </p>
+
+  <h2>Key Points</h2>
+  <ul>
+    <li><b>Strategy First:</b> Define a clear backup strategy before implementing any scripts or tools.</li>
+    <li><b>Identify Critical Data:</b> Determine which data is essential and needs backing up.</li>
+    <li><b>RPO and RTO:</b> Define Recovery Point Objective (RPO) and Recovery Time Objective (RTO) to determine backup frequency and acceptable downtime.</li>
+    <li><b>Backup Types:</b> Understand the differences between full, incremental, and differential backups.</li>
+    <li><b>Retention Policies:</b> Establish how long backups should be retained based on legal requirements and business needs.</li>
+    <li><b>Storage Location:</b> Use both on-site and off-site backups for redundancy and protection against different failure scenarios.</li>
+    <li><b>Regular Testing:</b> Regularly test the backup and recovery process to ensure its effectiveness.</li>
+    <li><b>Documentation:</b> Document the backup strategy and procedures for consistency and reliability.</li>
+  </ul>
+</div>
+</div>
+</article>
