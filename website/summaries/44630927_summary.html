@@ -1,0 +1,33 @@
+<article>
+    <h2>Log by time, not by count</h2>
+    <div>
+<div>
+  <p>
+    The article "Log by Time, Not by Count" by John Scolaro argues against using a fixed number of log files that rotate based on size or count, advocating instead for time-based log rotation. The author highlights the limitations of size-based rotation, pointing out that it can lead to data loss during periods of high activity and excessive log retention during periods of low activity. This inconsistency makes it difficult to analyze logs effectively and can complicate debugging efforts.
+  </p>
+  <p>
+    Scolaro emphasizes that time-based rotation offers a more predictable and consistent approach. By rotating logs based on a fixed time interval (e.g., daily, weekly, monthly), organizations can ensure that they retain a specific history of their system's behavior. This allows for easier comparison of logs across different periods and simplifies the process of identifying trends and anomalies.
+  </p>
+  <p>
+    The article further explains that time-based rotation aligns better with the way humans reason about time. When investigating an issue, engineers typically think in terms of specific dates and times, rather than the number of log entries generated. Time-based rotation makes it easier to retrieve the relevant logs for a particular period, saving time and effort during troubleshooting.
+  </p>
+  <p>
+    Scolaro also addresses potential concerns about storage space, suggesting that modern compression techniques can effectively mitigate the impact of larger log files. He argues that the benefits of time-based rotation outweigh the potential storage costs, especially when considering the value of retaining a complete and consistent log history.
+  </p>
+  <p>
+    The author also briefly touches upon implementation details, suggesting the use of standard tools like `logrotate` which are commonly available on Unix-like systems. He also recommends configuring monitoring systems and alerts to notify administrators of storage constraints.
+  </p>
+  <p>
+    In conclusion, the article promotes time-based log rotation as a superior strategy for managing log data, emphasizing its consistency, predictability, and alignment with human reasoning. By switching from size-based to time-based rotation, organizations can improve their ability to analyze logs, troubleshoot issues, and gain valuable insights into their systems' behavior.
+  </p>
+  <p><b>Key Points:</b></p>
+  <ul>
+    <li><b>Problem with Count/Size-Based Rotation:</b> Rotation based on log file size/count is inconsistent and leads to data loss during high activity and excessive retention during low activity.</li>
+    <li><b>Advantage of Time-Based Rotation:</b> Time-based rotation provides a more predictable and consistent log history.</li>
+    <li><b>Human-Centric Approach:</b> Time-based rotation aligns better with how people reason about time, making troubleshooting easier.</li>
+    <li><b>Storage Concerns Addressed:</b> Modern compression techniques mitigate storage concerns associated with larger log files.</li>
+    <li><b>Tool Recommendation:</b> Tools like `logrotate` can be used to implement time-based log rotation.</li>
+  </ul>
+</div>
+</div>
+</article>
