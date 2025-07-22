@@ -1,0 +1,25 @@
+<article>
+    <h2>Uv: Running a script with dependencies</h2>
+    <div>
+<div>
+<h2>Summary</h2>
+<p>The article describes how to run Python scripts with dependencies using uv, a fast Python package installer and resolver. It focuses on creating isolated environments for running scripts and managing their dependencies effectively. The article highlights that uv is designed to be significantly faster than traditional tools like pip and venv, making it well-suited for managing dependencies in script execution scenarios.</p>
+<p>The guide explains that uv does not have a direct equivalent to running scripts directly with `uv run`. Instead, it leverages the standard `python` interpreter in conjunction with uv to manage dependencies. The recommended approach involves creating a virtual environment using `uv venv`, activating it, installing the necessary dependencies using `uv pip install`, and then running the script using `python`. This ensures that the script runs in an isolated environment with the correct dependencies installed.</p>
+<p>The article provides a step-by-step example. It starts by creating a directory for the project, then creates a virtual environment using `uv venv`. It then activates the virtual environment, which isolates the project's dependencies from the global Python environment. Next, it installs the required dependencies, such as the `requests` library, using `uv pip install`. Finally, it creates a Python script that uses the installed dependencies and runs it using `python your_script.py`.</p>
+<p>The article also covers how to specify dependencies using a `requirements.txt` file. This allows for easy management of project dependencies, especially for more complex projects. The `uv pip install -r requirements.txt` command installs all the dependencies listed in the file into the virtual environment.</p>
+<p>Additionally, the article touches on the concept of a `pyproject.toml` file for managing dependencies. While `requirements.txt` is suitable for simple projects, `pyproject.toml` offers more advanced features for specifying dependencies, build requirements, and other project metadata. The article mentions that tools like `uv pip install` can install dependencies specified in a `pyproject.toml` file, typically located in the project root.</p>
+
+<h2>Key Points</h2>
+<ul>
+    <li>uv does not have a direct "uv run" equivalent.</li>
+    <li>Use `uv venv` to create a virtual environment for your script.</li>
+    <li>Activate the virtual environment to isolate dependencies.</li>
+    <li>Use `uv pip install` to install dependencies within the virtual environment.</li>
+    <li>Run the script using the standard `python` interpreter.</li>
+    <li>Dependencies can be specified in `requirements.txt` and installed using `uv pip install -r requirements.txt`.</li>
+    <li>For more complex projects, consider using `pyproject.toml` to manage dependencies.</li>
+    <li>uv is significantly faster than traditional tools like pip and venv.</li>
+</ul>
+</div>
+</div>
+</article>
