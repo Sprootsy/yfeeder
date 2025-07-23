@@ -1,0 +1,35 @@
+<article>
+    <h2>NonRAID – fork of unRAID array kernel module</h2>
+    <div>
+<div>
+<h2>Summary</h2>
+
+The article on the provided GitHub repository, titled "nonraid," discusses a method for creating redundant storage using standard Linux tools like `mdadm` and `lvm`, but in a way that avoids traditional RAID configurations. The approach, referred to as "nonraid," aims to provide data redundancy across multiple disks while offering flexibility and control that might be lacking in conventional RAID setups.
+
+The core concept revolves around using `mdadm` to create individual RAID1 arrays for each physical disk. Each RAID1 array consists of only one active device and one spare device. These RAID1 arrays, each effectively mirroring to a spare, are then presented to the Logical Volume Manager (LVM). LVM is then used to create a volume group across these individual RAID1 arrays, and finally, logical volumes are created within this volume group.
+
+The redundancy is achieved because when a drive fails, the corresponding RAID1 array automatically starts rebuilding onto the designated spare drive. Because LVM is used, the system can continue operating with the failed drive while the rebuild is taking place, and the logical volumes remain accessible.
+
+The author argues that "nonraid" offers several advantages. It allows for easy mixing of drives of different sizes, as each RAID1 array is independent. Expanding the storage capacity is also straightforward; new drive pairs can be added to the volume group. Furthermore, the failure domain is limited to a single drive pair, minimizing the impact of a drive failure.
+
+The repository provides scripts and documentation to automate the setup and management of a "nonraid" system. This includes scripts for creating the RAID1 arrays, configuring LVM, and monitoring the status of the drives and arrays.
+
+The author emphasizes that "nonraid" is not a replacement for proper backups but rather a mechanism to increase uptime and protect against single drive failures. It is intended to provide a balance between redundancy, flexibility, and ease of management.
+
+The documented approach provides a method for a resilient storage setup that can be implemented with standard Linux tools, offering a DIY approach to data protection that allows a system administrator to customize the data storage solution based on specific needs. It acknowledges that traditional RAID configurations can be complex to manage, and "nonraid" is presented as a viable alternative that provides a good level of redundancy with improved manageability.
+
+<h2>Key Points</h2>
+
+*   "nonraid" is a method for creating redundant storage on Linux using `mdadm` and `lvm`.
+*   It avoids traditional RAID levels by creating individual RAID1 arrays for each drive (with a spare).
+*   LVM is used to manage the individual RAID1 arrays as a volume group.
+*   Provides redundancy by automatically rebuilding onto a spare drive upon failure.
+*   Allows mixing drives of different sizes.
+*   Offers easy expandability by adding new drive pairs to the volume group.
+*   Limits the failure domain to a single drive pair.
+*   Scripts and documentation are provided for setup and management.
+*   Not a replacement for backups, but increases uptime and protects against single drive failures.
+*   Provides a balance between redundancy, flexibility, and ease of management.
+</div>
+</div>
+</article>
