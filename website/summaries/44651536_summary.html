@@ -1,0 +1,23 @@
+<article>
+    <h2>Fun with gzip bombs and email clients</h2>
+    <div>
+ <div>
+  <h2>Summary</h2>
+  <p>The article discusses the potential for using specially crafted gzip files, often referred to as "gzip bombs," to cause problems for email clients and other software that automatically decompress them. A gzip bomb is a compressed archive that, when decompressed, expands to a much larger size, potentially overwhelming the system's resources (CPU, memory, disk space) and causing it to crash or become unresponsive. The author explores how such bombs can be embedded within emails, specifically as attachments, and the consequences this can have on various email clients and servers.</p>
+  <p>The core concept revolves around the exponential expansion that gzip compression can achieve with highly repetitive data. A relatively small gzip file can decompress into a massive file, creating a denial-of-service (DoS) condition. The author details the process of creating such gzip bombs, emphasizing the importance of maximizing the compression ratio by using repetitive data patterns.</p>
+  <p>The article investigates the behavior of different email clients when confronted with these gzip bombs. Some clients may attempt to decompress the attachment, leading to resource exhaustion and crashes. Others may have built-in safeguards to prevent excessive decompression, either by limiting the output file size or by monitoring resource usage and terminating the process if it exceeds certain thresholds.</p>
+  <p>The author also touches upon the ethical considerations of creating and distributing such bombs. While the primary purpose of the article is to explore the technical aspects of gzip bombs and their impact on email clients, it acknowledges the potential for malicious use and warns against irresponsible behavior. The article serves as a reminder of the importance of robust error handling and resource management in software that processes compressed data.</p>
+  <p>The author points out the difficulty in completely preventing gzip bomb attacks, as the effectiveness of such attacks depends on the specific implementation of the decompression algorithm and the resource limits imposed by the operating system and the email client. Regular expressions and other pattern-matching techniques are deemed insufficient for reliably detecting malicious gzip files.</p>
+  <h2>Key Points</h2>
+  <ul>
+   <li><b>Gzip bombs exploit the high compression ratio of gzip with repetitive data.</b></li>
+   <li><b>A small gzip file can decompress into a very large file, causing resource exhaustion.</b></li>
+   <li><b>Email clients are vulnerable to gzip bombs sent as attachments.</b></li>
+   <li><b>Different email clients react differently to gzip bombs; some crash, while others have safeguards.</b></li>
+   <li><b>Detecting gzip bombs reliably is difficult due to the nature of compression algorithms.</b></li>
+   <li><b>The article highlights the importance of resource management and error handling in software.</b></li>
+   <li><b>The author acknowledges the potential for malicious use and warns against it.</b></li>
+  </ul>
+ </div>
+ </div>
+</article>
