@@ -1,0 +1,48 @@
+<article>
+    <h2>Hyperpb: Faster dynamic Protobuf parsing</h2>
+    <div>
+<div>
+  <p>HyperPB is a new Protobuf compiler developed by Buf that aims to significantly improve the performance of Protobuf serialization and deserialization, especially in Go. The existing Protobuf implementations in Go, `protoc-gen-go` and `gogoprotobuf`, have limitations. `protoc-gen-go` prioritizes correctness and simplicity, resulting in slower performance and larger binary sizes. `gogoprotobuf`, while offering performance improvements, introduces compatibility issues and requires complex code generation, leading to maintainability challenges. HyperPB addresses these issues with a focus on speed, zero-copy deserialization, and minimal binary size increase, while maintaining compatibility and a smooth upgrade path.</p>
+
+  <p>The key design decisions behind HyperPB are:</p>
+
+  <ul>
+    <li><b>Focus on x86-64 Architecture:</b> HyperPB optimizes for modern x86-64 architectures, allowing it to take advantage of CPU features for performance gains.</li>
+    <li><b>Unsafe Package Usage:</b> HyperPB utilizes the `unsafe` package in Go to directly manipulate memory, enabling zero-copy deserialization and reducing memory allocations.</li>
+    <li><b>Custom Code Generation:</b> HyperPB implements its own Protobuf compiler, giving it fine-grained control over the generated code and enabling optimizations tailored for performance.</li>
+    <li><b>Compatibility Focus:</b> HyperPB aims to be compatible with existing Protobuf definitions and libraries, minimizing the effort required to migrate.</li>
+  </ul>
+
+  <p>HyperPB offers several advantages:</p>
+
+  <ul>
+    <li><b>Significant Performance Improvements:</b> Benchmarks show that HyperPB significantly outperforms `protoc-gen-go` in serialization and deserialization speed, often exceeding it by a factor of 2x to 4x.</li>
+    <li><b>Zero-Copy Deserialization:</b> By using the `unsafe` package, HyperPB avoids unnecessary memory copies during deserialization, further improving performance.  This is particularly beneficial for large messages.</li>
+    <li><b>Minimal Binary Size Increase:</b> While HyperPB focuses on performance, it also aims to minimize the increase in binary size compared to `protoc-gen-go`.</li>
+    <li><b>Improved Memory Efficiency:</b> HyperPB's zero-copy approach and reduced memory allocations lead to improved memory efficiency, reducing garbage collection overhead.</li>
+  </ul>
+
+  <p>The article also discusses the following:</p>
+
+  <ul>
+    <li><b>Trade-offs:</b> The use of `unsafe` introduces potential risks and requires careful handling.  HyperPB's reliance on x86-64 architecture might limit its portability.</li>
+    <li><b>Implementation Details:</b> The article delves into how HyperPB handles different Protobuf data types and optimizes their serialization and deserialization.</li>
+    <li><b>Future Directions:</b> The article outlines future development plans for HyperPB, including support for additional Protobuf features and optimizations.</li>
+  </ul>
+
+  <p>In conclusion, HyperPB represents a significant advancement in Protobuf compilation for Go, offering substantial performance improvements without sacrificing compatibility. Its focus on zero-copy deserialization and optimized code generation makes it a compelling alternative for performance-sensitive applications.</p>
+
+  <h2>Key Points:</h2>
+  <ul>
+    <li>HyperPB is a new Protobuf compiler for Go aiming for high performance.</li>
+    <li>It addresses the limitations of `protoc-gen-go` (slow) and `gogoprotobuf` (compatibility issues).</li>
+    <li>HyperPB prioritizes speed, zero-copy deserialization, and minimal binary size increase.</li>
+    <li>It focuses on the x86-64 architecture and leverages the `unsafe` package.</li>
+    <li>Benchmarks show significant performance improvements compared to `protoc-gen-go`.</li>
+    <li>Zero-copy deserialization avoids unnecessary memory copies.</li>
+    <li>Compatibility with existing Protobuf definitions is a key goal.</li>
+    <li>The use of `unsafe` introduces trade-offs that must be managed carefully.</li>
+  </ul>
+</div>
+</div>
+</article>

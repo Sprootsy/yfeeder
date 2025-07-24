@@ -1,0 +1,27 @@
+<article>
+    <h2>Jitsi privacy flaw enables one-click stealth audio and video capture</h2>
+    <div>
+<div>
+  <h2>Summary:</h2>
+  <p>The article discusses a privacy flaw found in Jitsi Meet, a popular open-source video conferencing platform. This flaw allows any participant in a Jitsi Meet call to obtain the IP addresses of all other participants, even if those participants have disabled the "Enable Stats for Nerds" feature, which is intended to prevent such exposure. The author details how this information can be gathered, highlighting the steps required to access the Jitsi Videobridge's statistics and extract the IP addresses. This vulnerability stems from the way Jitsi handles statistics reporting and the accessibility of the Videobridge's internal data.</p>
+
+  <p>The author explains that while Jitsi encrypts the media stream, the IP addresses themselves are not protected and can be used to derive potentially sensitive information about the participants, such as their approximate location or internet service provider. This information could be exploited for malicious purposes, including targeted attacks or doxing.</p>
+
+  <p>The article further notes that the process for extracting IP addresses is relatively straightforward, requiring only basic technical skills and access to the Jitsi Meet call. The author provides a step-by-step guide on how to accomplish this, emphasizing that even participants who believe they are protected by disabling certain features are still vulnerable. The author suggests potential mitigation strategies for Jitsi developers, such as restricting access to the Videobridge statistics or anonymizing IP addresses before they are reported.</p>
+
+  <p>The author also mentions having responsibly disclosed this vulnerability to the Jitsi team, and while they acknowledged the issue, a full fix was not yet available at the time of writing. The article serves as a warning to Jitsi Meet users about the potential privacy risks associated with the platform and encourages them to take precautions to protect their IP addresses. Finally, the author touches on the broader implications of such vulnerabilities in video conferencing tools, especially given their increased use for sensitive communications during the pandemic.</p>
+
+  <h2>Key Points:</h2>
+  <ul>
+    <li>A privacy flaw exists in Jitsi Meet that allows any participant to obtain the IP addresses of all other participants.</li>
+    <li>Disabling "Enable Stats for Nerds" does <em>not</em> prevent IP address exposure.</li>
+    <li>The flaw is due to the accessibility of the Jitsi Videobridge's statistics.</li>
+    <li>IP addresses can be extracted with basic technical skills.</li>
+    <li>Exposed IP addresses can reveal information about a user's location and ISP.</li>
+    <li>The vulnerability has been responsibly disclosed to the Jitsi team.</li>
+    <li>No full fix was available at the time of writing.</li>
+    <li>The author recommends precautions to protect IP addresses while using Jitsi Meet.</li>
+  </ul>
+</div>
+</div>
+</article>
