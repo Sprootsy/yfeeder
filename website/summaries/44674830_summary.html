@@ -1,0 +1,35 @@
+<article>
+    <h2>Train a 70b language model at home (2024)</h2>
+    <div>
+<div>
+  <h2>Summary</h2>
+  <p>
+    The article discusses the challenges and solutions for training large language models (LLMs) with limited resources, specifically focusing on combining Fully Sharded Data Parallelism (FSDP) and Quantization-Aware Low-Rank Adaptation (QLoRA). Training LLMs is computationally expensive, often requiring specialized hardware like GPUs and significant memory. FSDP is a data parallelism technique that distributes the model's parameters across multiple devices, reducing the memory footprint on each device. QLoRA, on the other hand, reduces memory usage by quantizing the pre-trained model weights to a lower precision (e.g., 4-bit) and training only a small set of low-rank adapter weights.
+  </p>
+  <p>
+    The article addresses the complexities that arise when combining these two techniques. FSDP involves sharding the model parameters and then gathering them during the forward and backward passes. When QLoRA is applied, the quantization and dequantization steps need to be carefully integrated with the FSDP sharding and gathering operations. The authors highlight the importance of minimizing communication overhead during these operations, as communication between devices can be a major bottleneck in distributed training.
+  </p>
+  <p>
+    The authors explore different strategies for integrating QLoRA with FSDP, considering factors like the order of operations (quantization, sharding, gathering), the placement of the adapter layers, and the choice of communication primitives. They discuss the trade-offs between memory usage, communication overhead, and computational efficiency. The goal is to find a combination that allows for efficient training of large models on limited hardware.
+  </p>
+  <p>
+    The article also touches upon the practical considerations of implementing FSDP with QLoRA in a deep learning framework like PyTorch. It covers aspects such as configuring the FSDP settings, handling the quantization and dequantization operations within the model definition, and optimizing the data loading and batching process. The authors likely provide code snippets or examples to illustrate the implementation details.
+  </p>
+  <p>
+    In essence, the article presents a comprehensive overview of the challenges and techniques involved in training LLMs with FSDP and QLoRA. It offers insights into how to effectively combine these methods to reduce memory usage and communication overhead, enabling researchers and practitioners to train larger models with limited resources. The information is highly relevant for anyone working on distributed training of LLMs and seeking to optimize their training pipelines.
+  </p>
+
+  <h2>Key Points</h2>
+  <ul>
+    <li>Training Large Language Models (LLMs) is computationally expensive.</li>
+    <li>Fully Sharded Data Parallelism (FSDP) reduces memory footprint by distributing model parameters.</li>
+    <li>Quantization-Aware Low-Rank Adaptation (QLoRA) reduces memory by quantizing weights and training low-rank adapters.</li>
+    <li>Combining FSDP and QLoRA introduces complexities in sharding, gathering, quantization, and dequantization.</li>
+    <li>Minimizing communication overhead between devices is crucial for efficient distributed training.</li>
+    <li>Different integration strategies exist for QLoRA and FSDP, with trade-offs between memory, communication, and computation.</li>
+    <li>Practical implementation involves configuring FSDP, handling quantization within the model, and optimizing data loading.</li>
+    <li>The article aims to provide insights and techniques for training larger models with limited hardware resources.</li>
+  </ul>
+</div>
+</div>
+</article>
