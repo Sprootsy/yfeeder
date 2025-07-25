@@ -1,0 +1,40 @@
+<article>
+    <h2>Building MCP servers for ChatGPT and API integrations</h2>
+    <div>
+<div>
+  <p>
+    The provided text is a documentation page for OpenAI's Moderation API, which is part of their Model Customization Platform (MCP). This API is designed to help developers identify potentially harmful or unsafe content based on OpenAI's content policy. It covers various categories of violations, including hate speech, self-harm, sexual content, violence, and other sensitive topics.
+  </p>
+  <p>
+    The documentation details how to use the Moderation API, including the different models available for content moderation (`text-moderation-stable` and `text-moderation-latest`). The `text-moderation-latest` model is the most current and recommended for its improved accuracy and broader coverage.
+  </p>
+  <p>
+    The API's response includes a breakdown of the content's risk level across various categories. Each category has a `score` indicating the model's confidence that the content violates OpenAI's policy, and a `flagged` boolean value that signals whether the content has been flagged as violating the policy in that category.  The categories include: hate, hate/threatening, self-harm, sexual, sexual/minors, violence, and violence/graphic.  There is also a 'category' for potentially sensitive topics, like political content, and is intended to serve as a first line of defense.
+  </p>
+  <p>
+    The documentation also describes use-case specific risk thresholds. It advises developers to adjust the `flagged` threshold based on their specific needs and risk tolerance. The default threshold is intended to provide a balance between catching policy violations and avoiding false positives.
+  </p>
+  <p>
+    Furthermore, the documentation warns that the Moderation API is not foolproof. It can make mistakes, and developers are encouraged to implement additional safety measures like human review, and use their own judgment when deciding whether content violates their specific terms of service. It emphasizes that the API is a tool to augment, not replace, human oversight.
+  </p>
+  <p>
+    Rate limits are also mentioned, restricting the number of requests that can be made to the API within a certain timeframe. These limits are subject to change.
+  </p>
+  <p>
+    Finally, the documentation includes example code snippets demonstrating how to send moderation requests to the API and interpret the responses, providing a practical guide for developers to integrate the Moderation API into their applications.
+  </p>
+
+  <h3>Key Points:</h3>
+  <ul>
+    <li><b>Purpose:</b> OpenAI's Moderation API helps identify potentially harmful content.</li>
+    <li><b>Models:</b> Uses `text-moderation-stable` and `text-moderation-latest` models, with the latter being recommended.</li>
+    <li><b>Categories:</b> Detects hate speech, self-harm, sexual content, violence, and other sensitive topics.</li>
+    <li><b>Response:</b> Provides scores and flags for each category, indicating the level of risk.</li>
+    <li><b>Thresholds:</b> Developers should adjust flagging thresholds based on their specific use case.</li>
+    <li><b>Limitations:</b> The API is not perfect and should be used with human review.</li>
+    <li><b>Rate Limits:</b> API usage is subject to rate limits.</li>
+    <li><b>Implementation:</b> Example code is provided for easy integration.</li>
+  </ul>
+</div>
+</div>
+</article>
