@@ -1,0 +1,40 @@
+<article>
+    <h2>Nullable but not null</h2>
+    <div>
+<div>
+<h3>Summary</h3>
+<p>
+The article discusses the challenges and best practices surrounding nullable types in programming, particularly focusing on C#. It highlights the common pitfalls developers face when dealing with null values and provides strategies to avoid unexpected NullReferenceExceptions.
+</p>
+<p>
+The author begins by explaining the concept of nullability, emphasizing that a nullable type indicates that a variable can hold either a value of its underlying type or a null value. The core issue arises when developers fail to properly check for null values before accessing members of a potentially null object. This often leads to runtime errors that can be difficult to debug.
+</p>
+<p>
+The article explores various techniques for handling nullable types safely. One of the primary recommendations is to use the null-conditional operator (<code>?.</code>) to access members of nullable objects. This operator allows you to access a member only if the object is not null, otherwise, it short-circuits and returns null. This prevents the dreaded NullReferenceException.
+</p>
+<p>
+Another technique discussed is the null-coalescing operator (<code>??</code>). This operator provides a way to specify a default value to use when a nullable variable is null. This is useful for providing fallback values and ensuring that a variable always has a meaningful value.
+</p>
+<p>
+The article also touches on the importance of being explicit about nullability in your code. Using nullable reference types (a feature introduced in C# 8.0) allows you to specify whether a reference type variable is intended to be nullable or not. This helps the compiler catch potential null-related errors at compile time, rather than at runtime.
+</p>
+<p>
+Additionally, the author emphasizes the importance of defensive programming practices, such as validating input parameters to ensure they are not null and using assertions to check for unexpected null values. These practices can help to catch potential null-related errors early in the development process.
+</p>
+<p>
+Finally, the article underscores the need for thorough testing to ensure that your code handles null values correctly. Unit tests should be written to specifically test scenarios where variables may be null, to ensure that the code behaves as expected.
+</p>
+
+<h3>Key Points</h3>
+<ul>
+<li>Nullable types allow variables to hold either a value of their underlying type or a null value.</li>
+<li>Failing to check for null values before accessing members of nullable objects can lead to NullReferenceExceptions.</li>
+<li>The null-conditional operator (<code>?.</code>) allows you to access members of a nullable object only if it is not null.</li>
+<li>The null-coalescing operator (<code>??</code>) provides a default value to use when a nullable variable is null.</li>
+<li>Nullable reference types (introduced in C# 8.0) allow you to specify whether a reference type variable is intended to be nullable or not, enabling compile-time null checking.</li>
+<li>Defensive programming practices, such as validating input parameters and using assertions, can help catch null-related errors early.</li>
+<li>Thorough testing, including unit tests that specifically test null scenarios, is essential for ensuring that your code handles null values correctly.</li>
+</ul>
+</div>
+</div>
+</article>
