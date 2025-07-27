@@ -1,0 +1,41 @@
+<article>
+    <h2>Asyncio: A library with too many sharp corners</h2>
+    <div>
+<div>
+<h3>Summary</h3>
+The article is a comprehensive guide to understanding and using `asyncio` in Python. It begins by explaining the fundamental concepts of concurrency and parallelism, differentiating between CPU-bound and I/O-bound operations, and clarifying the roles of threads, processes, and asynchronous programming.
+
+The author emphasizes that `asyncio` is a single-threaded, single-process concurrency model that achieves concurrency through cooperative multitasking, where coroutines voluntarily yield control to the event loop. This contrasts with parallelism, which involves the simultaneous execution of multiple tasks on different CPU cores.
+
+The core of the article revolves around explaining `asyncio`'s key components: the event loop, coroutines, tasks, and futures. The event loop is the central execution mechanism, scheduling and running coroutines. Coroutines are special functions declared with `async def` that can be paused and resumed, allowing other coroutines to run in the meantime. Tasks are used to wrap coroutines, making them schedulable by the event loop. Futures represent the eventual result of an asynchronous operation.
+
+The article delves into practical aspects of using `asyncio`, including how to create and run coroutines, schedule them as tasks, wait for their completion using `await`, and handle timeouts. It demonstrates how to perform concurrent operations using `asyncio.gather` and `asyncio.wait`.
+
+Furthermore, it covers the important topic of asynchronous context managers using `async with` and asynchronous iterators using `async for`, which enable safe and efficient management of resources in asynchronous code. The article also addresses the use of locks, events, and queues from the `asyncio` module to handle synchronization and communication between coroutines, preventing race conditions and ensuring data consistency.
+
+A significant portion of the article is dedicated to integrating blocking I/O operations with `asyncio`. Since `asyncio` is designed for non-blocking operations, the author explains how to run blocking functions in a separate thread pool using `loop.run_in_executor` to avoid blocking the event loop. This allows developers to leverage existing libraries that may not be natively asynchronous.
+
+The article also discusses best practices for error handling in `asyncio`, including using `try...except` blocks within coroutines and handling exceptions raised by tasks. It emphasizes the importance of properly cancelling tasks when they are no longer needed to prevent resource leaks.
+
+Finally, the article touches upon advanced topics such as creating custom asynchronous context managers and iterators, as well as debugging `asyncio` code. It provides practical examples and code snippets throughout to illustrate the concepts and techniques discussed.
+
+In essence, the article provides a comprehensive overview of `asyncio`, equipping readers with the knowledge and tools necessary to write efficient and scalable concurrent applications in Python. It carefully explains the underlying principles, demonstrates practical usage patterns, and addresses common challenges, making it a valuable resource for both beginners and experienced developers.
+
+<h3>Key Points</h3>
+<ul>
+<li><b>Concurrency vs. Parallelism:</b> `asyncio` provides concurrency (handling multiple tasks seemingly simultaneously) but not true parallelism (simultaneous execution on multiple cores).</li>
+<li><b>Event Loop:</b> The heart of `asyncio`, responsible for scheduling and running coroutines.</li>
+<li><b>Coroutines:</b> Special functions defined with `async def` that can be paused and resumed.</li>
+<li><b>Tasks:</b> Wrappers around coroutines, making them schedulable by the event loop.</li>
+<li><b>Futures:</b> Represent the eventual result of an asynchronous operation.</li>
+<li><b>`await` Keyword:</b> Used to pause a coroutine until a future is resolved.</li>
+<li><b>Concurrent Execution:</b> Achieved using `asyncio.gather` and `asyncio.wait`.</li>
+<li><b>Asynchronous Context Managers & Iterators:</b> Use `async with` and `async for` for resource management in asynchronous code.</li>
+<li><b>Synchronization Primitives:</b> `asyncio.Lock`, `asyncio.Event`, `asyncio.Queue` are used for synchronization and communication between coroutines.</li>
+<li><b>Handling Blocking I/O:</b> Use `loop.run_in_executor` to run blocking functions in a separate thread pool.</li>
+<li><b>Error Handling:</b> Use `try...except` blocks and handle exceptions raised by tasks.</li>
+<li><b>Task Cancellation:</b> Cancel tasks when they are no longer needed to prevent resource leaks.</li>
+</ul>
+</div>
+</div>
+</article>

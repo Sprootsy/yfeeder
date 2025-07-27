@@ -1,0 +1,35 @@
+<article>
+    <h2>Test Results for AMD Zen 5</h2>
+    <div>
+<div>
+<p>This forum post on agner.org discusses the relative performance of different methods for calculating the square root function, specifically focusing on the performance and accuracy trade-offs between using the x87 FPU instruction `FSQRT`, SSE/AVX instructions like `SQRTSS` and `SQRTSD`, and software implementations, including lookup tables and polynomial approximations. The discussion revolves around optimizing square root calculations in terms of speed, accuracy, and code size.</p>
+
+<p>The original poster (OP) is investigating different methods for approximating the square root and asks for information about the `FSQRT` instruction.  He seeks details about its latency, throughput, and accuracy.  He also inquires whether it is possible to improve upon the performance of `FSQRT` with lookup tables, polynomial approximations, or other techniques, and the conditions under which such alternatives might be preferable, considering factors such as the required accuracy and the target processor.</p>
+
+<p>Several other users contribute to the discussion, providing insights and data from their own experiments and knowledge. There's a consensus that the hardware square root instructions (`FSQRT`, `SQRTSS`, `SQRTSD`) generally provide a good balance between speed and accuracy for many applications. However, certain use cases might benefit from alternative methods. Software approximations can be faster, especially if high accuracy isn't needed or if the calculations are performed in single-precision floating-point arithmetic using SIMD instructions.</p>
+
+<p>The discussion touches on various aspects of optimization. Lookup tables can be very fast but require significant memory and are best suited when the input range is limited. Polynomial approximations can offer a good compromise between speed, accuracy, and memory usage. The choice depends on the specific requirements of the application.</p>
+
+<p>The post mentions the importance of considering the target architecture when optimizing. Modern processors have improved `SQRTSS` and `SQRTSD` instructions compared to older ones. Also, the cost of moving data between memory and registers can outweigh the benefits of a faster approximation method if it requires more memory access.</p>
+
+<p>There's discussion about the accuracy of different methods. While `FSQRT` offers high accuracy, software approximations can be tailored to achieve a specific accuracy level, potentially trading accuracy for speed. Some contributors share code snippets and performance data for different approximation methods, including those using SIMD instructions for parallel processing.</p>
+
+<p>The topic of denormalized numbers is brought up.  These numbers can significantly slow down `FSQRT` calculations. Some suggest using techniques to avoid denormals if performance is critical.</p>
+
+<p>The thread also refers to Agner Fog's optimization manuals for more in-depth information about the performance characteristics of different instructions.</p>
+
+<p>In summary, the discussion explores the trade-offs involved in choosing the right method for square root calculation, considering factors such as speed, accuracy, memory usage, target architecture, and the potential impact of denormalized numbers.  The overall theme is finding the best balance for a given application's needs.</p>
+
+<h2>Key Points:</h2>
+
+<ul>
+<li>The forum post discusses different methods for calculating square roots, focusing on performance and accuracy.</li>
+<li>Hardware square root instructions (e.g., `FSQRT`, `SQRTSS`, `SQRTSD`) generally provide a good balance.</li>
+<li>Software approximations (lookup tables, polynomial approximations) can be faster in specific scenarios, especially with relaxed accuracy requirements or SIMD instructions.</li>
+<li>The choice depends on factors such as required accuracy, target architecture, memory constraints, and input range.</li>
+<li>Denormalized numbers can significantly slow down `FSQRT` calculations.</li>
+<li>Agner Fog's optimization manuals are referenced for further information.</li>
+</ul>
+</div>
+</div>
+</article>

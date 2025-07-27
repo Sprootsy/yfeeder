@@ -1,0 +1,28 @@
+<article>
+    <h2>How we rooted Copilot</h2>
+    <div>
+<div>
+<h2>Summary:</h2>
+The article details a security research project by researchers at EYE Security who successfully rooted GitHub Copilot, a cloud-based AI pair programmer. The research demonstrates the potential risks associated with AI-powered code assistants and highlights the importance of robust security measures in these tools.
+
+The researchers exploited vulnerabilities within the sandboxed environment in which Copilot executes code. They crafted specific prompts that, when processed by Copilot, allowed them to bypass security restrictions and gain arbitrary code execution within the underlying virtual machine. This, in turn, enabled them to obtain root privileges, effectively compromising the entire Copilot environment.
+
+The attack leveraged a combination of techniques, including prompt injection, path traversal, and exploiting weaknesses in the Python libraries used by Copilot. By carefully crafting their prompts, the researchers were able to trick Copilot into generating code that performed unintended actions, ultimately leading to the sandbox escape.
+
+The implications of this research are significant. A compromised Copilot instance could be used to inject malicious code into user projects, steal sensitive information, or even launch attacks against other systems. The research also underscores the need for AI developers to prioritize security and implement rigorous testing procedures to prevent similar vulnerabilities from being exploited in the future.
+
+EYE Security responsibly disclosed their findings to GitHub, who has since addressed the vulnerabilities. The article provides a detailed technical analysis of the attack, including the specific prompts used and the vulnerabilities exploited. It also offers recommendations for mitigating similar risks in other AI-powered code assistants.
+<br/>
+<h2>Key Points:</h2>
+<ul>
+<li>Researchers at EYE Security successfully rooted GitHub Copilot.</li>
+<li>The attack involved exploiting vulnerabilities in the Copilot sandbox.</li>
+<li>Prompt injection, path traversal, and Python library weaknesses were used.</li>
+<li>The researchers gained arbitrary code execution and root privileges.</li>
+<li>A compromised Copilot could inject malicious code or steal data.</li>
+<li>GitHub has been notified and has addressed the vulnerabilities.</li>
+<li>The research highlights the importance of security in AI-powered tools.</li>
+</ul>
+</div>
+</div>
+</article>
