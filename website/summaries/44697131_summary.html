@@ -1,0 +1,34 @@
+<article>
+    <h2>Resizable structs in Zig</h2>
+    <div>
+<div>
+  <h3>Summary:</h3>
+  <p>
+    The article "Resizable Structs in Zig" by Tristan Pemble discusses a technique for creating resizable structures in Zig, a systems programming language. Zig does not have built-in support for dynamic data structures like vectors or lists in the same way as some higher-level languages. Therefore, the author explores how to implement resizable structs by manually managing memory allocation and reallocation.
+  </p>
+  <p>
+    The core idea involves embedding an array within a struct and using an allocator to manage the underlying memory. The struct holds a pointer to the allocated memory block, the current length (number of elements), and the capacity (maximum number of elements that can be stored without reallocation). The key operations are initializing the struct, adding elements, and resizing the underlying array when the capacity is reached.
+  </p>
+  <p>
+    Initialization involves allocating an initial memory block using an allocator. Adding an element checks if the current length is equal to the capacity. If it is, the array is reallocated to a larger size (typically doubling the capacity). The reallocation is done using the allocator's `resize` function (or similar). The new element is then added to the array, and the length is incremented.
+  </p>
+  <p>
+    The author also discusses error handling, such as dealing with out-of-memory errors during allocation or reallocation. Zig's error union types are used to propagate errors back to the caller. Proper memory management is crucial to avoid memory leaks, so the article emphasizes the importance of freeing the allocated memory when the resizable struct is no longer needed.
+  </p>
+  <p>
+    The article likely includes code examples demonstrating the implementation of these concepts in Zig. These examples would showcase how to define the struct, implement the initialization function, the add element function and the resize logic. The author likely also includes tests to verify that the resizable struct works correctly, including adding elements, resizing, and freeing memory.
+  </p>
+
+  <h3>Key Points:</h3>
+  <ul>
+    <li>Resizable structs can be implemented in Zig by manually managing memory allocation and reallocation.</li>
+    <li>A struct contains a pointer to allocated memory, current length, and capacity.</li>
+    <li>Initialization involves allocating an initial memory block.</li>
+    <li>Adding elements triggers reallocation when the capacity is reached, typically doubling the size.</li>
+    <li>Error handling is crucial for dealing with allocation failures.</li>
+    <li>Memory must be freed when the struct is no longer needed to prevent leaks.</li>
+    <li>Zig's error union types are used to propagate errors.</li>
+  </ul>
+</div>
+</div>
+</article>
