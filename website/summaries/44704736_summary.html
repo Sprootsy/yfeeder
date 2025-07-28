@@ -1,0 +1,29 @@
+<article>
+    <h2>Making Postgres slower</h2>
+    <div>
+ <div>
+   <h2>Summary</h2>
+   <p>The article "Making Postgres Slow" discusses common mistakes and anti-patterns that can lead to performance issues in PostgreSQL databases. It emphasizes that while Postgres is a powerful and robust database system, improper configuration and usage can significantly degrade its performance.</p>
+   <p>The author starts by highlighting the importance of understanding how Postgres works internally, particularly the query execution plan. They stress that developers should not treat Postgres as a "black box" and should instead learn how to analyze query plans using <code>EXPLAIN</code> and <code>EXPLAIN ANALYZE</code> to identify bottlenecks. Ignoring query plans and blindly trusting the ORM or query builder can lead to inefficient queries that perform poorly.</p>
+   <p>The article then delves into specific anti-patterns, such as N+1 queries, which occur when an application executes one query to retrieve a set of records, and then executes additional queries for each of those records to fetch related data. This can result in a large number of database round trips, drastically slowing down the application. The solution is typically to use eager loading or JOINs to fetch all the necessary data in a single query.</p>
+   <p>Another key point is the importance of indexing. The author explains how indexes can significantly speed up queries by allowing Postgres to quickly locate the relevant rows without scanning the entire table. However, they also caution against over-indexing, as indexes consume storage space and can slow down write operations. The article advises to carefully choose which columns to index based on the queries that are frequently executed.</p>
+   <p>The article also covers the impact of large tables and the need for partitioning. When tables become very large, queries can become slow even with proper indexing. Partitioning involves dividing a large table into smaller, more manageable pieces, which can improve query performance and simplify maintenance tasks.</p>
+   <p>Furthermore, the article emphasizes the significance of proper data types. Choosing the right data type for each column can not only save storage space but also improve query performance. For example, using an integer type instead of a text type for numerical data can lead to faster comparisons and aggregations.</p>
+   <p>Configuration is another critical aspect discussed. The article highlights the importance of tuning Postgres configuration parameters, such as <code>shared_buffers</code>, <code>work_mem</code>, and <code>effective_cache_size</code>, to match the available hardware resources and workload characteristics. Improperly configured Postgres instances can be significantly slower than properly tuned ones.</p>
+   <p>The author also underscores the need to monitor Postgres performance and identify potential issues before they become critical. Tools like <code>pg_stat_statements</code> can be used to track query performance and identify slow-running queries that need optimization.</p>
+   <p>Finally, the article touches upon the importance of avoiding common pitfalls such as using <code>LIKE</code> queries with leading wildcards, which prevent Postgres from using indexes effectively. It also advises against using functions in <code>WHERE</code> clauses, as this can also hinder index usage. The author advises to find alternative ways to achieve the desired results without sacrificing performance.</p>
+   <h2>Key Points</h2>
+   <ul>
+     <li>Understand Postgres query execution plans using <code>EXPLAIN</code> and <code>EXPLAIN ANALYZE</code>.</li>
+     <li>Avoid N+1 queries by using eager loading or JOINs.</li>
+     <li>Use indexes to speed up queries, but avoid over-indexing.</li>
+     <li>Consider partitioning large tables.</li>
+     <li>Choose appropriate data types for columns.</li>
+     <li>Tune Postgres configuration parameters.</li>
+     <li>Monitor Postgres performance using tools like <code>pg_stat_statements</code>.</li>
+     <li>Avoid <code>LIKE</code> queries with leading wildcards.</li>
+     <li>Avoid using functions in <code>WHERE</code> clauses that prevent index usage.</li>
+   </ul>
+ </div>
+ </div>
+</article>
