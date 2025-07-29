@@ -1,0 +1,36 @@
+<article>
+    <h2>I designed my own fast game streaming video codec – PyroWave</h2>
+    <div>
+<div>
+  <p>
+    The article is a blog post by the author, "TheMaister," detailing the creation of Pyrowave, a custom video codec designed for low-latency game streaming. The author was dissatisfied with existing codecs due to latency issues and the inability to fine-tune them for specific use cases like fast-paced games with rapid screen changes. Pyrowave aims to minimize latency, even at the expense of bandwidth. The core idea is to treat each frame as independent, avoiding inter-frame compression techniques that introduce delays.
+  </p>
+  <p>
+    The codec works by dividing the screen into small blocks (8x8 pixels by default) and comparing each block to the corresponding block in the previous frame. If the difference exceeds a threshold, the block is encoded and transmitted. The encoding is a simple RGB quantization scheme, further prioritizing speed over compression efficiency. To further reduce latency, Pyrowave sends only the changed blocks, creating a sparse update to the frame. A key optimization is the use of SIMD (Single Instruction, Multiple Data) instructions to perform the block comparisons efficiently. Specifically, the author uses AVX2 intrinsics for this purpose.
+  </p>
+  <p>
+    The post goes into detail about the implementation, covering aspects like memory layout, avoiding branches in critical loops, and utilizing multiple threads for encoding. The author describes the challenges in achieving consistent low latency, particularly avoiding stalls in the encoding pipeline. The encoding process involves capturing the screen, converting the pixel data to a suitable format, detecting changes using SIMD comparisons, encoding changed blocks, and transmitting the encoded data. The decoding process involves receiving the encoded blocks, decoding them, and updating the frame buffer.
+  </p>
+  <p>
+    The blog post includes performance benchmarks and comparisons to existing solutions like OBS (Open Broadcaster Software) with various encoders. The author demonstrates that Pyrowave achieves significantly lower latency, often under 1 millisecond encoding time, which is crucial for interactive game streaming. However, the article also acknowledges the limitations of Pyrowave. The simple encoding scheme results in lower image quality and higher bandwidth usage compared to more sophisticated codecs like H.264 or H.265. The author views Pyrowave as a proof of concept and a highly specialized tool for scenarios where ultra-low latency is paramount.
+  </p>
+  <p>
+    The author expresses a desire to improve Pyrowave in the future, potentially exploring techniques like more advanced quantization methods or simple intra-frame compression algorithms that don't introduce significant latency. The article emphasizes the importance of understanding the trade-offs between latency, image quality, and bandwidth when choosing or designing a video codec for game streaming. The article provides code snippets (inline) to give the reader insight into the actual implementation of Pyrowave.
+  </p>
+
+  <h3>Key Points:</h3>
+  <ul>
+    <li><strong>Goal:</strong> Develop a custom video codec (Pyrowave) for ultra-low latency game streaming.</li>
+    <li><strong>Motivation:</strong> Dissatisfaction with existing codecs due to latency and lack of fine-grained control.</li>
+    <li><strong>Core Idea:</strong> Treat each frame as independent, avoiding inter-frame compression for minimal delay.</li>
+    <li><strong>Block-Based Change Detection:</strong> Divide the screen into blocks and only encode/transmit changed blocks.</li>
+    <li><strong>Simple Encoding:</strong> Use a basic RGB quantization scheme for speed.</li>
+    <li><strong>SIMD Optimization:</strong> Employ AVX2 intrinsics for efficient block comparisons.</li>
+    <li><strong>Multi-threading:</strong> Utilize multiple threads to accelerate encoding.</li>
+    <li><strong>Low Latency:</strong> Achieves significantly lower latency compared to standard solutions like OBS (often under 1ms encoding time).</li>
+    <li><strong>Trade-offs:</strong> Lower image quality and higher bandwidth usage compared to more complex codecs.</li>
+    <li><strong>Proof of Concept:</strong> Pyrowave is a specialized tool prioritizing latency above all else.</li>
+  </ul>
+</div>
+</div>
+</article>
