@@ -1,0 +1,38 @@
+<article>
+    <h2>The Useless UseCallback</h2>
+    <div>
+<div>
+  <h2>Summary</h2>
+  <p>
+    The article "The Useless useCallBack" by TkDodo critiques the overuse and misunderstanding of the <code>useCallback</code> hook in React. It argues that <code>useCallback</code> is often applied unnecessarily, leading to more complex code without providing tangible performance benefits. The author explains that <code>useCallback</code> is primarily intended for memoizing functions to prevent them from being recreated on every render, which is crucial when passing these functions as props to memoized components or using them as dependencies in other hooks like <code>useEffect</code>.
+  </p>
+  <p>
+    The article highlights that the perceived performance gains from using <code>useCallback</code> are often negligible and can even be counterproductive. The author points out that the memoization provided by <code>useCallback</code> comes at a cost: it requires maintaining an internal cache and performing equality checks on dependencies, which can offset any potential performance improvements, especially when the function's dependencies are simple values that are cheap to recreate.
+  </p>
+  <p>
+    TkDodo emphasizes that <code>useCallback</code> should not be used blindly as a default practice. Instead, developers should carefully consider the specific use case and whether the memoization it provides is genuinely necessary. The article suggests that <code>useCallback</code> is most beneficial when passing callbacks to components wrapped in <code>React.memo</code> or when the callback is a dependency of a hook like <code>useEffect</code> that should only re-run when the callback function changes.
+  </p>
+  <p>
+    The author also touches on the importance of understanding the concept of referential equality in JavaScript. When a function is recreated on every render, it has a new reference, even if its implementation is identical. This new reference can cause memoized components to re-render unnecessarily. <code>useCallback</code> helps maintain the same function reference across renders when its dependencies remain unchanged, preventing these unnecessary re-renders.
+  </p>
+  <p>
+    The article further explains that the dependencies array provided to <code>useCallback</code> plays a crucial role in determining when the memoized function should be updated. If the dependencies change, <code>useCallback</code> will return a new function; otherwise, it will return the cached function from the previous render. Incorrectly specifying dependencies can lead to unexpected behavior and negate the benefits of <code>useCallback</code>.
+  </p>
+  <p>
+    In conclusion, "The Useless useCallBack" advocates for a more deliberate and informed approach to using <code>useCallback</code>. It encourages developers to understand the underlying mechanisms of memoization and referential equality, and to apply <code>useCallback</code> only when it is truly necessary to optimize performance or prevent unintended side effects. Overusing <code>useCallback</code> can lead to code that is harder to read and maintain, without providing any meaningful performance improvements.
+  </p>
+
+  <h2>Key Points</h2>
+  <ul>
+    <li><code>useCallback</code> is primarily for memoizing functions to maintain referential equality across renders.</li>
+    <li>It is most useful when passing callbacks to memoized components (<code>React.memo</code>) or as dependencies to hooks like <code>useEffect</code>.</li>
+    <li>Overusing <code>useCallback</code> can add complexity without significant performance benefits.</li>
+    <li>The memoization provided by <code>useCallback</code> incurs a cost in terms of maintaining an internal cache and performing equality checks.</li>
+    <li>Incorrectly specifying dependencies can negate the benefits of <code>useCallback</code>.</li>
+    <li>Understand referential equality: recreated functions have new references, even if identical.</li>
+    <li>Apply <code>useCallback</code> deliberately, considering the specific use case and potential performance impact.</li>
+    <li>Avoid blindly using <code>useCallback</code> as a default practice.</li>
+  </ul>
+</div>
+</div>
+</article>
