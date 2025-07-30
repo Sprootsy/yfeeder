@@ -1,0 +1,37 @@
+<article>
+    <h2>URL-Driven State in HTMX</h2>
+    <div>
+ <div>
+   <h3>Summary</h3>
+   <p>
+     The article discusses how to build bookmarkable web applications using HTMX, focusing on the importance of representing application state in the URL. The author argues that by encoding the application's state directly in the URL, users can easily share, bookmark, and return to specific views or states within the application. This approach enhances user experience and aligns with the fundamental principles of the web.
+   </p>
+   <p>
+     The author emphasizes that web applications should ideally expose distinct states through unique URLs. This allows users to navigate directly to a desired state by simply entering or clicking on a specific URL.  Using HTMX, the article explains that developers can achieve this by updating the URL whenever the application's state changes, and conversely, use the URL to drive the application's initial state. The author provides code examples that illustrate how to use HTMX attributes, server-side code and JavaScript to synchronize the URL with the application's state.
+   </p>
+   <p>
+     The article describes a process for designing bookmarkable applications using HTMX. It starts with identifying the key aspects of the application's state that should be represented in the URL. Then, it suggests structuring the application to respond to different URL states, with the server rendering content based on the parameters present in the URL. HTMX is used to trigger requests that update the URL via the `hx-push-url` attribute and to load content based on the server response.
+   </p>
+   <p>
+     The article stresses the importance of making changes to the URL using `hx-push-url`, which adds a new entry to the browser's history, allowing the back button to function as expected. The author describes an example involving filtering a list of items, where the filter criteria are encoded in the URL. The HTMX attributes on the filter form trigger a request to the server and update the URL with the new filter parameters. The server then returns the filtered list, and HTMX replaces the old list with the new one.
+   </p>
+   <p>
+     The author explains how to handle initial page load and how to use JavaScript to read values in the URL and send them to the server. The examples show using JavaScript code to extract URL parameters on page load and trigger an HTMX request using `htmx.ajax()` to initialize the application's state. 
+   </p>
+   <p>
+     The article concludes by highlighting the benefits of designing web applications with bookmarkability in mind, including improved user experience, better shareability, and more predictable behavior. By using HTMX and carefully structuring URLs, developers can create applications that are easier to use and more aligned with the web's core principles.
+   </p>
+ 
+
+   <h3>Key Points</h3>
+   <ul>
+     <li>Application state should be represented in the URL to enable bookmarking and sharing.</li>
+     <li>HTMX can be used to update the URL with `hx-push-url` when the application's state changes.</li>
+     <li>The server should render content based on the parameters in the URL.</li>
+     <li>The browser's back button should function correctly by using `hx-push-url` to add entries to the browser's history.</li>
+     <li>JavaScript can be used to read values from the URL on initial page load and trigger HTMX requests to initialize the application's state.</li>
+     <li>Designing for bookmarkability improves user experience and aligns with the web's core principles.</li>
+   </ul>
+ </div>
+ </div>
+</article>
