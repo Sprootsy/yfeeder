@@ -1,0 +1,30 @@
+<article>
+    <h2>Emacs: The macOS Bug</h2>
+    <div>
+<div>
+<p>The article discusses a bug in Emacs on macOS related to the `file-name-shadow-file-name` function. This function is designed to return the name of a shadow file (a backup file created during editing) if it exists; otherwise, it returns nil. The bug arises because macOS's file system can sometimes report that a file does not exist, even when it does, if the file was created very recently. This discrepancy between the file system's state and Emacs's perception leads to problems in Emacs's auto-save and backup mechanisms.</p>
+
+<p>Specifically, Emacs might incorrectly determine that a shadow file doesn't exist immediately after it has been written. Consequently, Emacs could then attempt to create a new shadow file with the same name, leading to errors or data loss. The author provides a detailed analysis of the conditions under which this bug manifests and its potential impact on Emacs users on macOS. The author also dives into the reasons for the bug, mentioning that macOS's file system caches directory contents and metadata aggressively. These caches might not be updated immediately after a file is created, causing the `file-name-shadow-file-name` function to return nil incorrectly.</p>
+
+<p>The bug can cause a race condition when auto-saving or creating backups. If the file system cache hasn't been updated to reflect the existence of the shadow file, Emacs could proceed as if the shadow file doesn't exist, triggering a new auto-save or backup operation. This can lead to multiple auto-save files being created rapidly or, in more severe cases, data corruption if Emacs tries to write to the same file name simultaneously. The article also points out that the timing of this issue is highly dependent on system load and disk performance, making it difficult to reproduce consistently.</p>
+
+<p>The article explores several potential workarounds and solutions. One approach involves introducing a delay or retry mechanism when checking for the existence of shadow files. This would give the file system cache a chance to update before Emacs makes a decision about whether to create a new shadow file. The author also suggests that Emacs could potentially use lower-level file system APIs to bypass the cache and get a more accurate view of the file system's state. Additionally, tuning Emacs's auto-save interval might reduce the likelihood of triggering the bug. However, the article notes that these solutions are not without their drawbacks. Adding delays could slow down Emacs, while using lower-level APIs might introduce platform-specific code and complexity.</p>
+
+<p>Finally, the article emphasizes the importance of understanding the underlying file system behavior on macOS to effectively address the bug. It serves as a cautionary tale about the challenges of writing cross-platform software that interacts closely with the operating system's file system. It also underscores the need for thorough testing and careful consideration of edge cases when dealing with file system operations.</p>
+
+<h2>Key points:</h2>
+<ul>
+<li>A bug exists in Emacs on macOS related to the <code>file-name-shadow-file-name</code> function.</li>
+<li>macOS's file system can report a file as non-existent immediately after creation due to caching.</li>
+<li>This discrepancy causes Emacs to incorrectly determine that a shadow file doesn't exist.</li>
+<li>The bug leads to potential race conditions during auto-save and backup processes.</li>
+<li>Consequences include creation of multiple auto-save files and potential data corruption.</li>
+<li>Timing of the bug is system-dependent and difficult to reproduce consistently.</li>
+<li>Possible workarounds involve introducing delays or using lower-level file system APIs.</li>
+<li>Solutions are not without drawbacks, potentially slowing down Emacs or increasing code complexity.</li>
+<li>Understanding macOS file system behavior is crucial for addressing the bug.</li>
+<li>The issue highlights the challenges of cross-platform development involving file system operations.</li>
+</ul>
+</div>
+</div>
+</article>

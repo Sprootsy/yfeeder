@@ -1,0 +1,26 @@
+<article>
+    <h2>Classic Common Desktop Environment coming to OpenBSD</h2>
+    <div>
+ <div>
+  <p>The article discusses the Sendmail Milter interface and its misuse, specifically focusing on a vulnerability in the Sympa mailing list manager. Milter, short for Mail Filter, is an API in Sendmail that allows external programs to inspect and modify email messages during the SMTP transaction. This enables various functionalities like spam filtering, virus scanning, and content modification.</p>
+  <p>The author explains that Milter operates by establishing a TCP connection between Sendmail and the Milter application. Sendmail then sends the email data (envelope and content) to the Milter application for processing. The Milter application can then accept, reject, modify, or even add recipients to the email. The vulnerability arises from the trust Sendmail places in the Milter application's return values, especially regarding recipient addresses.</p>
+  <p>The core of the issue lies in how Sympa, a mailing list manager, uses Milter. Sympa utilizes Milter to expand mailing lists; when an email is sent to a mailing list address, Sympa's Milter application receives the email, determines the members of the list, and adds each member's address as a recipient of the email. Sendmail then delivers the email to these expanded recipients. The vulnerability is caused by insufficient validation of the addresses supplied by Sympa.</p>
+  <p>The vulnerability is specifically related to how Sympa handles sender addresses. An attacker can craft an email where the sender address is carefully constructed. When Sympa expands the mailing list, it blindly adds the sender address as a recipient without proper sanitization or verification. An attacker can leverage this by injecting extra commands into the address, exploiting a feature in Sendmail where it can run a program as the recipient, such as the "program" delivery agent. The result is that the attacker can execute arbitrary commands on the server with the privileges of the Sendmail user (typically `mail`).</p>
+  <p>The article illustrates the attack vector using a crafted sender address which injects a shell command execution. This command creates a file in the /tmp directory to confirm code execution.  The author demonstrates how this can be achieved due to the lack of proper input validation in Sympa's Milter implementation when handling sender addresses, leading to remote command execution.</p>
+  <p>The article further explains that while Sendmail itself performs some basic checks, it ultimately relies on the Milter application to provide valid recipient addresses.  Sympa's failure to properly validate these addresses creates the security hole. The author also notes that while they used the "program" delivery agent in the exploit, other local delivery agents might also be exploitable depending on system configuration.</p>
+  <p>The author concludes by emphasizing the importance of careful input validation in Milter applications. Because Sendmail trusts the information provided by the Milter application, any vulnerabilities in the Milter application can directly lead to security breaches on the Sendmail server. The case highlights the need for developers to thoroughly sanitize and validate all data received from external sources, even within seemingly trusted environments like the Milter interface.</p>
+  <p><b>Key Points:</b></p>
+  <ul>
+   <li>The article discusses a remote command execution vulnerability in Sympa mailing list manager related to its Milter implementation.</li>
+   <li>Milter is a Sendmail API that allows external programs to process and modify email messages.</li>
+   <li>Sympa uses Milter to expand mailing lists, adding recipients to emails.</li>
+   <li>The vulnerability is caused by Sympa not properly validating sender addresses provided by an attacker.</li>
+   <li>An attacker can inject shell commands into the sender address that get executed on the server by Sendmail.</li>
+   <li>The root cause is insufficient input validation in the Sympa Milter application.</li>
+   <li>Sendmail trusts the Milter application to provide valid recipient addresses.</li>
+   <li>The exploit uses the "program" delivery agent in Sendmail to execute commands.</li>
+   <li>The article emphasizes the importance of careful input validation in Milter applications to prevent security breaches.</li>
+  </ul>
+ </div>
+ </div>
+</article>
