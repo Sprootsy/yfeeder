@@ -1,0 +1,54 @@
+<article>
+    <h2>Secure boot certificate rollover is real but probably won&#39;t hurt you</h2>
+    <div>
+ <div>
+  <p>
+   The article is a blog post discussing the author's experience with implementing TPM-backed SSH keys and the challenges encountered, primarily focusing on integration issues with existing tooling and the limitations of the TPM itself. The author initially aimed to store SSH keys securely within the TPM (Trusted Platform Module) to enhance security by preventing key extraction.
+  </p>
+  <p>
+   The author details the setup process, involving generating an asymmetric key within the TPM and configuring SSH to use this key for authentication. They use tools like `tpm2-tools` and `openssh` with PKCS#11 support. The author also mentions that the private key is created in the TPM and can't be moved out of the TPM.
+  </p>
+  <p>
+   The post highlights a number of problems encountered. One major issue is the lack of seamless integration with `ssh-agent`. Standard `ssh-agent` is designed to cache decrypted private keys, which contradicts the purpose of keeping the key secured within the TPM.
+  </p>
+  <p>
+   Another issue is the lack of support for key confirmation when using `pkcs11-tool`, meaning that it is not possible to confirm the use of the key with a physical button press, which is supported by some security keys.
+  </p>
+  <p>
+   The author also describes the challenges with key management, specifically the need to manually load the PKCS#11 module and the lack of automated integration with SSH configuration files. The author wrote scripts to automate key loading and configuration.
+  </p>
+  <p>
+   The author also encountered issues relating to TPM quirks. They describe problems relating to key handles, and how they are invalidated across reboots.
+  </p>
+  <p>
+   The author concludes by stating that while using TPM for SSH key storage is technically feasible, the current state of tooling and integration is not ideal, requiring significant manual configuration and custom scripting. The author's overall assessment is that while the core functionality works, the user experience and integration with existing SSH workflows need improvement for wider adoption.
+  </p>
+  <p>
+   <b>Key points:</b>
+  </p>
+  <ul>
+   <li>
+    The author attempted to use TPM to secure SSH keys, preventing key extraction.
+   </li>
+   <li>
+    The implementation involved using `tpm2-tools`, `openssh`, and PKCS#11.
+   </li>
+   <li>
+    Standard `ssh-agent` is incompatible, as it caches decrypted keys.
+   </li>
+   <li>
+    There is no key confirmation support when using `pkcs11-tool`.
+   </li>
+   <li>
+    Manual configuration and scripting were required to load PKCS#11 module and integrate with SSH.
+   </li>
+   <li>
+    TPM key handles are invalidated across reboots.
+   </li>
+   <li>
+    Current tooling and integration are not seamless, needing improvement for better user experience.
+   </li>
+  </ul>
+ </div>
+</div>
+</article>
