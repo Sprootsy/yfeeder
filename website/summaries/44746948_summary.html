@@ -1,0 +1,32 @@
+<article>
+    <h2>QUIC for the kernel</h2>
+    <div>
+<div>
+<p>This article from LWN.net discusses the ongoing discussion around integrating Rust code into the Linux kernel. It begins by mentioning that the effort to enable writing kernel modules in Rust has been underway for several years. Despite initial resistance and concerns, the idea has gained traction and patches have been merged into the kernel, primarily focusing on infrastructure that allows Rust modules to interact with the existing C kernel code. The article highlights the release of the <code>rust-next</code> branch, which contains the latest Rust-related patches intended for inclusion in the next merge window.</p>
+
+<p>A significant portion of the article is dedicated to addressing remaining concerns and challenges. Memory management is a key area of discussion. Rust's ownership and borrowing system provides strong compile-time guarantees about memory safety, but adapting it to the kernel's memory allocation mechanisms, which are often more complex and require manual management, poses difficulties. The article mentions the use of raw pointers and unsafe code blocks to bridge the gap between Rust's safety guarantees and the kernel's memory management practices. The development team is focused on creating safe abstractions over the kernel's memory APIs to minimize the need for unsafe code.</p>
+
+<p>Another point of discussion is exception handling and the unwinding mechanism in Rust. Unwinding, used for exception handling, is generally considered unsafe in the kernel context, where error handling is typically done through return codes. The article describes the efforts to disable unwinding in Rust kernel modules and the ongoing debate about whether to completely remove unwinding support or to provide alternative mechanisms for handling errors. The main concern is avoiding unexpected behavior and maintaining kernel stability in error scenarios.</p>
+
+<p>The article also touches on the topic of tooling and the Rust toolchain. Ensuring that the Rust compiler and associated tools are compatible with the kernel build environment and can produce reliable and efficient code is crucial. The article notes that the kernel developers are working to integrate the Rust toolchain into the kernel build process and to address any potential compatibility issues.</p>
+
+<p>Furthermore, the article mentions specific areas where Rust is being considered for use within the kernel. These include driver development, particularly for new hardware, and the implementation of security-critical components. The goal is to leverage Rust's memory safety and concurrency features to improve the robustness and security of the kernel. The article emphasizes that the integration of Rust is not intended to replace C entirely but to provide an alternative language for specific tasks where its strengths can be best utilized.</p>
+
+<p>The conclusion of the article is cautiously optimistic. While challenges remain, the progress made in integrating Rust into the Linux kernel is significant. The kernel community is actively engaged in addressing the technical issues and refining the integration process. The potential benefits of using Rust for certain kernel components, particularly in terms of security and reliability, are driving the effort forward.</p>
+
+<h2>Key Points:</h2>
+
+<ul>
+<li>Efforts to integrate Rust into the Linux kernel are ongoing, with patches being merged and tested.</li>
+<li>The <code>rust-next</code> branch contains the latest Rust-related patches for the kernel.</li>
+<li>Memory management is a major challenge, requiring the creation of safe abstractions over kernel memory APIs.</li>
+<li>Unwinding (exception handling) in Rust is problematic for the kernel, and discussions are focused on disabling or replacing it.</li>
+<li>Ensuring compatibility between the Rust toolchain and the kernel build environment is crucial.</li>
+<li>Rust is being considered for use in driver development and security-critical components.</li>
+<li>The goal is to complement C, not replace it entirely, by utilizing Rust's strengths in memory safety and concurrency.</li>
+<li>Progress is being made, but challenges remain in the integration process.</li>
+</ul>
+
+</div>
+</div>
+</article>
