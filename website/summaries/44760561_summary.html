@@ -1,0 +1,28 @@
+<article>
+    <h2>Self-Signed JWTs</h2>
+    <div>
+<div>
+<h3>Summary:</h3>
+<p>The article discusses Self-Signed JWTs (JSON Web Tokens), a specific type of JWT where the token's signature is verified using the same key that signed it. This deviates from the standard JWT usage where a separate, trusted key is used for verification. The author explores the security implications and potential use cases of Self-Signed JWTs, particularly in development or testing environments, or in specific authorization scenarios where the audience and issuer have a tightly coupled trust relationship.</p>
+
+<p>The text begins by defining JWTs and their common use for authentication and authorization, emphasizing the role of cryptographic signatures in ensuring the integrity and authenticity of the token. Typically, a server signs the JWT with a private key, and clients or other services verify the signature using the corresponding public key. This establishes a chain of trust. However, Self-Signed JWTs bypass this conventional approach.</p>
+
+<p>The author emphasizes that Self-Signed JWTs are inherently less secure than standard JWTs with separate signing and verification keys. The primary risk is that if an attacker gains access to the self-signing key, they can forge tokens. In a traditional setup, compromising the public key used for verification doesn't allow token forgery, as the attacker would still need the private key. Therefore, Self-Signed JWTs should never be used in production systems or any environment where security is a primary concern.</p>
+
+<p>Despite the security risks, the article highlights potential use cases where Self-Signed JWTs might be acceptable. One such scenario is during local development and testing. Using Self-Signed JWTs can simplify the setup process, as it eliminates the need to generate and manage separate keys. Since the environment is controlled and isolated, the risk is reduced. Another possibility is in environments where the issuer and the relying party are the same entity or have an extremely high level of trust. This can occur in certain microservices architectures or internal systems where the risk of external compromise is minimal. It should be very carefully considered, and only done in specific cases where the security risks are understood and mitigated.</p>
+
+<p>The article warns that relying on Self-Signed JWTs because "it hasn't been a problem yet" is poor justification. The security implications must always be carefully considered. Any use of self-signed JWTs has to be regarded as a temporary or exceptional measure. A proper JWT setup with separate keys should be implemented eventually to ensure the security and integrity of the system. While Self-Signed JWTs might offer convenience in specific situations, they require a deep understanding of the associated security trade-offs and should never be considered a long-term solution in security-sensitive contexts.</p>
+
+<h3>Key points:</h3>
+<ul>
+  <li>Self-Signed JWTs use the same key for signing and verification, unlike standard JWTs.</li>
+  <li>Self-Signed JWTs are less secure than standard JWTs because compromising the key allows token forgery.</li>
+  <li>They are generally not recommended for production environments.</li>
+  <li>Potential use cases include local development/testing and specific scenarios with a high degree of trust between issuer and audience.</li>
+  <li>Using them based on the reasoning of "it hasn't been a problem yet" is a bad practice.</li>
+  <li>Careful consideration of security trade-offs is essential before implementing Self-Signed JWTs.</li>
+  <li>They should be considered a temporary or exceptional measure, and a proper JWT setup should be implemented for long-term security.</li>
+</ul>
+</div>
+</div>
+</article>
