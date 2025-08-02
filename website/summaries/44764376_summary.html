@@ -1,0 +1,26 @@
+<article>
+    <h2>Hardening mode for the compiler</h2>
+    <div>
+<div>
+  <h2>Summary</h2>
+  <p>The article discusses a proposal for a new "hardening mode" in the LLVM compiler. This mode aims to improve the security of compiled programs by enabling various hardening techniques by default. The motivation behind this is that developers often don't enable these security features due to the complexity of configuration and potential performance overhead. The hardening mode seeks to simplify the process and encourage wider adoption of security best practices.</p>
+  <p>The RFC proposes a new compiler flag, likely something like <code>-hardened</code> or <code>-fhardening</code>, that would act as a meta-flag to enable a set of individual hardening options. The specific hardening techniques to be included are still under discussion, but the proposal mentions examples such as Control-Flow Integrity (CFI), Stack Clash protection, SafeStack, ShadowCallStack, and others. The goal is to select a set of options that provide a good balance between security improvements and performance impact.</p>
+  <p>The proposal also addresses the need for different levels of hardening. A single <code>-hardened</code> flag might be too blunt of an instrument, as some hardening techniques are more expensive than others, and the optimal choice depends on the specific application and its security requirements. One possibility is to introduce multiple hardening levels (e.g., <code>-hardened=1</code>, <code>-hardened=2</code>, <code>-hardened=3</code>) corresponding to different sets of enabled features, offering a trade-off between security and performance. Alternatively, the mode could be configurable via a profile, allowing users to specify exactly which features they wish to enable.</p>
+  <p>The article also touches on the implications for build systems. The hardening mode should be easy to integrate into existing build processes, and the RFC suggests that it should ideally be possible to enable it with a single flag. However, some build systems might require more fine-grained control over individual hardening options. The RFC acknowledges the challenge of balancing simplicity with flexibility.</p>
+  <p>Furthermore, the RFC proposes that the hardening mode should be "opt-in" rather than enabled by default. This is to avoid breaking existing code or introducing unexpected performance regressions. However, it is also suggested that the hardening mode should be actively promoted and encouraged for new projects.</p>
+  <p>The thread discusses potential interactions with sanitizers, LTO, and other compiler features. Ensuring compatibility and avoiding conflicts between different compiler options is an important consideration. Also, the RFC needs to address how the hardening mode would work with different target architectures and operating systems, as some hardening techniques are platform-specific.</p>
+
+  <h2>Key Points</h2>
+  <ul>
+    <li>Proposal for a new "hardening mode" in LLVM to improve program security.</li>
+    <li>Aims to simplify the adoption of hardening techniques by enabling them with a single flag (e.g., <code>-hardened</code>).</li>
+    <li>Discusses various hardening techniques like CFI, Stack Clash protection, SafeStack, and ShadowCallStack.</li>
+    <li>Considers different levels of hardening (e.g., <code>-hardened=1</code>, <code>-hardened=2</code>, <code>-hardened=3</code>) or configurable profiles.</li>
+    <li>Addresses integration into build systems and the need for both simplicity and flexibility.</li>
+    <li>Proposes an "opt-in" approach, not enabled by default, to avoid breaking existing code.</li>
+    <li>Highlights the importance of compatibility with sanitizers, LTO, and other compiler features.</li>
+    <li>Acknowledges platform-specific considerations for different target architectures and operating systems.</li>
+  </ul>
+</div>
+</div>
+</article>
