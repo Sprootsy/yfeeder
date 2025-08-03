@@ -1,0 +1,30 @@
+<article>
+    <h2>The /o in Ruby regex stands for &#34;oh the humanity &#34;</h2>
+    <div>
+ <div>
+  <p>The article "The O in Ruby Regex" by JP Cavara discusses the often overlooked `O` option in Ruby regular expressions, which stands for "once." This option affects how Ruby's regular expression engine handles the `#{}`, which is the string interpolation inside regular expressions. The author explains that without the `O` option, the interpolated string is re-evaluated every time the regular expression is used. This can lead to unexpected behavior and performance issues if the interpolated variable changes or if the interpolation is computationally expensive.
+  </p>
+  <p>
+   The article illustrates this with examples. First, it demonstrates how a simple regular expression with string interpolation behaves when the interpolated variable changes after the regex is defined. Without the `O` option, the regex matches based on the current value of the variable each time it's used. Then it demonstrates that with the `O` option, the interpolated value is frozen at the time the regular expression is created, ensuring consistent behavior even if the variable changes later.
+  </p>
+  <p>
+   The author then explores the performance implications of re-evaluating the interpolated string on every use of the regex. Using benchmark tests, it's shown that using the `O` option can provide a significant performance boost, especially when the interpolation involves complex operations or large strings. This is because the regex engine only performs the interpolation once when the regex is created with the `O` option, rather than every time it is used.
+  </p>
+  <p>
+   The article also addresses when it is appropriate to use `O` option. It emphasizes that the `O` option is useful when you want the regex to behave consistently with the value of the interpolated string at the time the regex was defined, and when performance is a concern. However, it also cautions that if you need the regex to dynamically reflect changes in the interpolated variable, you should not use the `O` option.
+  </p>
+  <p>
+   In conclusion, the article advocates for a better understanding and more conscious use of the `O` option in Ruby regular expressions. It highlights that by understanding how the `O` option affects string interpolation and performance, developers can write more predictable and efficient Ruby code.
+  </p>
+  <p><b>Key Points:</b></p>
+  <ul>
+   <li>The `O` option in Ruby regular expressions stands for "once" and affects how string interpolation (`#{}`) is handled.</li>
+   <li>Without the `O` option, interpolated strings are re-evaluated every time the regex is used, potentially leading to unexpected behavior if the interpolated variable changes.</li>
+   <li>Using the `O` option freezes the interpolated value at the time the regex is created, ensuring consistent behavior.</li>
+   <li>The `O` option can significantly improve performance, especially when interpolation involves complex operations or large strings, by avoiding repeated re-evaluation.</li>
+   <li>Use the `O` option when you want consistent behavior based on the initial interpolated value and when performance is a concern.</li>
+   <li>Do not use the `O` option if you need the regex to dynamically reflect changes in the interpolated variable.</li>
+  </ul>
+ </div>
+ </div>
+</article>

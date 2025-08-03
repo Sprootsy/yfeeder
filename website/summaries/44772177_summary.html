@@ -1,0 +1,36 @@
+<article>
+    <h2>HTML-in-Canvas</h2>
+    <div>
+ <div>
+  <p>The "HTML in Canvas" proposal suggests a mechanism to render HTML content directly onto a canvas element. This would allow developers to leverage existing HTML, CSS, and JavaScript code within canvas-based applications, providing a way to integrate complex layouts, text rendering, and interactive elements that are difficult to achieve using the canvas API alone. The proposal outlines a new `drawImage` method overload for the CanvasRenderingContext2D interface. This new method would accept an `HTMLElement` as an argument, enabling the rendering of that element's visual representation onto the canvas.
+  </p>
+  <p>
+   The proposal addresses challenges like text rendering limitations in canvas, the complexity of recreating HTML-based UI components using canvas drawing commands, and the desire to reuse existing HTML/CSS-based components within canvas contexts. The use cases include embedding complex text layouts (e.g., with mixed fonts, bidirectional text) in games or data visualizations, creating interactive UI elements within a canvas, and generating dynamic textures for WebGL using HTML content.
+  </p>
+  <p>
+   The proposal details considerations for CSS styling, layout, and event handling within the rendered HTML content. It discusses how CSS styles should apply to the rendered HTML, noting that while most styles should work as expected, certain styles (like those affecting the stacking context or absolute positioning relative to the viewport) may require special handling or have limitations. The layout of the HTML content within the canvas would be similar to how it's rendered in a regular HTML document, but with the canvas as the containing block. Event handling (e.g., mouse clicks, keyboard input) is also addressed, suggesting that events occurring on the rendered HTML within the canvas should be able to propagate and trigger JavaScript code associated with those elements.
+  </p>
+  <p>
+   Security considerations are mentioned, particularly regarding cross-origin content and potential security vulnerabilities related to rendering untrusted HTML. The proposal suggests mechanisms for mitigating these risks, such as restricting the rendering of cross-origin HTML or implementing sandboxing techniques.
+  </p>
+  <p>
+   The proposal also touches upon potential performance implications, such as the overhead of rendering HTML content and the need for optimization strategies to ensure smooth performance, especially in scenarios involving frequent updates to the rendered HTML.
+  </p>
+  <p>
+   The `drawImage` overload would accept the HTML element to be rendered, along with optional parameters to specify the destination rectangle on the canvas where the HTML content should be drawn.  The rendering would capture the visual representation of the HTML element at the time the `drawImage` method is called. Subsequent changes to the original HTML element would not automatically update the rendered image on the canvas unless `drawImage` is called again.
+  </p>
+  <p>
+   Key Points:
+  </p>
+  <ul>
+   <li>Proposes a new `drawImage` overload to render HTML elements onto a canvas.</li>
+   <li>Aims to address limitations of canvas API in areas like text rendering and complex layouts.</li>
+   <li>Enables reuse of existing HTML/CSS components within canvas applications.</li>
+   <li>Covers CSS styling, layout, and event handling considerations.</li>
+   <li>Addresses security concerns related to cross-origin content and untrusted HTML.</li>
+   <li>Discusses potential performance implications and optimization strategies.</li>
+   <li>Rendering captures the visual state of the HTML element at the time of the `drawImage` call.</li>
+  </ul>
+ </div>
+ </div>
+</article>
