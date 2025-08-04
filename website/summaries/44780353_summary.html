@@ -1,0 +1,32 @@
+<article>
+    <h2>So you want to parse a PDF?</h2>
+    <div>
+<div>
+<h2>Summary</h2>
+<p>The article is a deep dive into the complexities of PDF parsing, specifically focusing on the Xref (cross-reference) table. It explains that a PDF file is structured around objects, which can be of various types (like numbers, strings, dictionaries, streams), and how these objects are located within the file. The Xref table serves as an index, providing the byte offset for each object, allowing random access to elements within the PDF without needing to read the entire file sequentially. This is crucial for efficient PDF viewing and processing.</p>
+
+<p>The author describes different versions and types of Xref tables. Originally, Xref tables were simple lists of byte offsets. Later, PDF versions introduced Xref streams, which are compressed objects containing the same information as a traditional Xref table but in a more compact format. These streams can utilize compression algorithms like FlateDecode to reduce file size.</p>
+
+<p>The article further explains the structure of Xref entries. In a traditional Xref table, each entry occupies 20 bytes. The first 10 bytes represent the byte offset of the object, and the next 5 bytes represent the generation number. The remaining 5 bytes indicate whether the object is in use ('n') or free ('f'). In Xref streams, this information is stored more compactly, with fields defining the width (in bytes) of the object number, generation number, and type fields.</p>
+
+<p>The article also highlights the challenge of incremental updates in PDF files. When a PDF is modified, the changes are typically appended to the end of the file, along with a new Xref table or stream that reflects these updates. This means a PDF file can contain multiple Xref tables, and the parser needs to identify the correct one to use, usually the last one in the file, pointed to by the 'startxref' marker. Handling these incremental updates and multiple Xref tables is a significant aspect of robust PDF parsing.</p>
+
+<p>The piece also touches upon object streams, which group multiple small objects into a single stream, further complicating the parsing process. These object streams are themselves objects and are referenced in the Xref table. To access an object within an object stream, the parser needs to first locate the object stream using the Xref table and then locate the desired object within the stream based on its index.</p>
+
+<p>Furthermore, the article mentions that PDF files can be malformed or deliberately crafted to exploit vulnerabilities in PDF parsers. These malformed PDFs might contain incorrect Xref entries, circular references, or other anomalies that can cause parsers to crash or behave unpredictably. Therefore, robust PDF parsing requires careful error handling and validation of the Xref table and object structure.</p>
+
+<p>Finally, the author illustrates the process of locating the Xref table and extracting object information, highlighting the importance of understanding the PDF file structure and the various techniques used to encode object locations. Understanding these intricacies is crucial for anyone developing software that needs to reliably process PDF files.</p>
+
+<h2>Key Points</h2>
+<ul>
+<li>PDF files are structured around objects, and the Xref table provides the byte offsets for these objects.</li>
+<li>There are two main types of Xref structures: Xref tables (simple lists) and Xref streams (compressed objects).</li>
+<li>Xref entries contain the byte offset, generation number, and a flag indicating whether the object is in use or free.</li>
+<li>PDF files support incremental updates, which means they can contain multiple Xref tables; the parser must locate the correct (last) one using the 'startxref' marker.</li>
+<li>Object streams group multiple small objects into a single stream, adding complexity to the parsing process.</li>
+<li>Malformed PDFs can exploit vulnerabilities in parsers, requiring robust error handling and validation.</li>
+<li>Locating the Xref table and extracting object information are crucial steps in PDF parsing.</li>
+</ul>
+</div>
+</div>
+</article>

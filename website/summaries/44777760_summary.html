@@ -1,0 +1,37 @@
+<article>
+    <h2>Persona vectors: Monitoring and controlling character traits in language models</h2>
+    <div>
+<div>
+  <p>
+    The article from Anthropic introduces a new technique called "persona vectors" to control the behavior of large language models (LLMs). This method involves training a smaller model to predict the hidden states (activations) of a larger LLM when it is given prompts designed to elicit specific personas or behaviors. These predicted hidden states, or persona vectors, can then be added to the hidden states of the larger LLM to steer its responses in a desired direction.
+  </p>
+  <p>
+    The core idea is to create a more efficient and controllable way to influence LLM behavior without needing to fine-tune the entire large model. Fine-tuning can be computationally expensive and can sometimes lead to unintended consequences, such as losing other valuable capabilities of the model. Persona vectors offer a lighter-weight approach, allowing for dynamic and targeted adjustments to the model's persona.
+  </p>
+  <p>
+    The process begins by curating a dataset of prompts and corresponding desired responses that reflect different personas (e.g., helpful assistant, creative writer, knowledgeable expert). These prompts are fed into the large LLM, and the hidden states (specifically, the activations from a particular layer) are recorded. A smaller model, often a multi-layer perceptron (MLP), is then trained to predict these hidden states based on the input prompts. The trained smaller model effectively learns to map prompts to the hidden state representations associated with the desired personas.
+  </p>
+  <p>
+    Once the smaller model is trained, it can generate persona vectors for new prompts. These vectors are then added to the hidden states of the larger LLM at the chosen layer. This addition modifies the LLM's internal representation, influencing its subsequent responses to align with the desired persona. The authors found that adding persona vectors at earlier layers tended to affect the overall style and tone of the model's output, while adding them at later layers had a greater impact on the content and specific information provided.
+  </p>
+  <p>
+    The article highlights several advantages of using persona vectors. They are computationally efficient, as they require training only a small model. They offer a flexible way to control LLM behavior, allowing for dynamic switching between personas. They also provide a degree of interpretability, as the effect of the persona vector can be analyzed to understand how it is influencing the model's internal representations. The authors demonstrate the effectiveness of this technique through experiments, showing that persona vectors can successfully steer LLM behavior towards specific personas and improve performance on tasks requiring particular styles or knowledge.
+  </p>
+  <p>
+    Furthermore, the article explores how persona vectors can be used for various applications, such as improving the safety and helpfulness of LLMs, customizing the model's responses to different users, and enhancing its creative capabilities. The research also touches on the potential for combining multiple persona vectors to create hybrid personas and for using them to mitigate biases in LLMs.
+  </p>
+
+  <h3>Key Points:</h3>
+  <ul>
+    <li>Introduces persona vectors as a method for controlling LLM behavior by steering its hidden states.</li>
+    <li>Involves training a smaller model to predict the hidden states of a larger LLM given persona-specific prompts.</li>
+    <li>The predicted hidden states (persona vectors) are added to the larger LLM's hidden states to influence its responses.</li>
+    <li>Offers a computationally efficient alternative to fine-tuning the entire large model.</li>
+    <li>Allows for dynamic and targeted adjustments to the LLM's persona.</li>
+    <li>Early layers affect style/tone, later layers affect content/information.</li>
+    <li>Demonstrates improved control, flexibility, and interpretability compared to other methods.</li>
+    <li>Explores applications in safety, customization, creativity, and bias mitigation.</li>
+  </ul>
+</div>
+</div>
+</article>

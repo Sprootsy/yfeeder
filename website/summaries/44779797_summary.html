@@ -1,0 +1,23 @@
+<article>
+    <h2>One Dataset. No Warning. Google Took Everything. You&#39;re Not Safe Either</h2>
+    <div>
+ <div>
+  <p>The article details the experience of the author, a developer who created a privacy-focused Android application called UntrackMe, which aimed to strip tracking parameters from URLs shared with users. The app was initially available on the Google Play Store but was eventually banned due to a violation of the policy against misrepresentation and deceptive behavior. Google specifically cited the app's use of a dataset containing personal information, arguing that the app could potentially recreate sensitive user data, even though the app itself did not collect user data.</p>
+  <p>The author explains that UntrackMe worked by identifying and removing tracking parameters appended to URLs, such as those used by Facebook (fbclid), Google Analytics (utm_*), and other tracking services. These parameters often contain unique identifiers that allow websites and advertisers to track users across the web. The app also functioned as a URL "unshortener," expanding shortened links to reveal the actual destination URL, which could then be opened without tracking parameters.</p>
+  <p>The issue that led to the ban revolved around a dataset called the "Facebook Data Leaks Dataset." This dataset, publicly available on platforms like Kaggle and Hugging Face, contains information extracted from Facebook profiles. The author incorporated a small portion of this dataset (around 27,000 records) into UntrackMe to identify and rewrite URLs from Facebook that contained user profile IDs. The intention was to allow users to share Facebook profile links without revealing the profile ID itself, thereby enhancing privacy.</p>
+  <p>Google's policy team argued that even though UntrackMe did not collect or transmit user data, the inclusion of the Facebook Data Leaks Dataset violated their policies because it contained personal information that could potentially be used to reconstruct user profiles or identify individuals. The author argued that the dataset was already widely available and used in academic research for AI and machine learning purposes and that UntrackMe's use of the dataset was limited and intended to protect user privacy, not to expose it.</p>
+  <p>Despite appealing the decision and explaining the app's functionality and purpose, Google upheld the ban. The author expresses frustration with Google's inconsistent application of its policies, noting that similar datasets are used in AI research and that other apps on the Play Store likely utilize similar data in various ways. The author believes that Google's decision was ultimately based on a misunderstanding of the app's function and a broad interpretation of its data privacy policies.</p>
+  <p>The author concludes by expressing concern over the power that Google wields as the gatekeeper of the Android app ecosystem and the potential for such policies to stifle innovation in privacy-enhancing technologies. The author has since made the app available on the F-Droid app store.</p>
+  <h2>Key Points:</h2>
+  <ul>
+   <li>UntrackMe was a privacy-focused Android app that removed tracking parameters from URLs.</li>
+   <li>The app was banned from the Google Play Store for violating policies against misrepresentation and deceptive behavior.</li>
+   <li>The ban was triggered by the app's use of a portion of the "Facebook Data Leaks Dataset."</li>
+   <li>Google argued that the dataset contained personal information that could be used to recreate user profiles.</li>
+   <li>The author argued that the dataset was already widely available and that UntrackMe used it to protect privacy.</li>
+   <li>Google upheld the ban despite appeals, raising concerns about inconsistent policy enforcement.</li>
+   <li>The author has made the app available on F-Droid.</li>
+  </ul>
+ </div>
+ </div>
+</article>
