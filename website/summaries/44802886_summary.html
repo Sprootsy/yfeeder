@@ -1,0 +1,28 @@
+<article>
+    <h2>Spotting base64 encoded JSON, certificates, and private keys</h2>
+    <div>
+<div>
+<h2>Summary</h2>
+<p>The article discusses the use of Base64 encoding for JSON data, particularly in scenarios where JSON needs to be transmitted or stored in environments that are not natively compatible with its text-based format. Base64 encoding is a method of converting binary data into an ASCII string representation, making it suitable for transmission over channels that only support text or have limitations on the characters allowed.</p>
+
+<p>The author explains that while JSON is inherently text-based, there are situations where it benefits from being Base64 encoded. One such case is when embedding JSON within other text-based formats like XML or when including it in URLs. Certain characters in JSON, like quotes or brackets, might need escaping to be properly included in these formats, which can complicate parsing and increase the size of the data. Base64 encoding avoids these issues by representing the entire JSON structure as a string of ASCII characters.</p>
+
+<p>The article provides a practical example using Python to demonstrate how to Base64 encode a JSON object. It uses the `json` module to serialize a Python dictionary into a JSON string and then uses the `base64` module to encode this string into a Base64 representation. The reverse process, decoding the Base64 string back into a JSON object, is also shown.</p>
+
+<p>The author highlights that Base64 encoding increases the size of the data. For every three bytes of input, Base64 produces four bytes of output. This overhead is a trade-off for the benefits of compatibility and ease of handling in certain contexts. The article advises considering this size increase when deciding whether to use Base64 encoding for JSON data, especially in situations where bandwidth or storage is limited.</p>
+
+<p>The article also briefly mentions use cases such as passing complex data structures in URL parameters (though this is discouraged for large amounts of data due to URL length limitations) and storing JSON data in systems that have constraints on the types of characters allowed.</p>
+
+<h2>Key Points</h2>
+<ul>
+<li>Base64 encoding converts binary data (including JSON strings) into an ASCII string representation.</li>
+<li>It is useful when JSON needs to be embedded in text-based formats like XML or included in URLs.</li>
+<li>Base64 encoding avoids the need to escape special characters in JSON when embedding it in other formats.</li>
+<li>The article provides Python code examples for encoding JSON to Base64 and decoding Base64 back to JSON.</li>
+<li>Base64 encoding increases the size of the data (approximately 33% overhead).</li>
+<li>Consider the size increase when deciding whether to use Base64 encoding, especially when bandwidth or storage is limited.</li>
+<li>Use cases include passing data in URL parameters (with caution due to URL length limits) and storing JSON in systems with character restrictions.</li>
+</ul>
+</div>
+</div>
+</article>

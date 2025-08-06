@@ -1,0 +1,27 @@
+<article>
+    <h2>I&#39;m Archiving Picocrypt</h2>
+    <div>
+<div>
+  <p>The GitHub issue discusses a potential security vulnerability in Picocrypt related to password salting and key derivation. The issue was initially opened by user cocobearcodes who pointed out that Picocrypt's use of a 16-byte salt and Argon2id with specific parameters (1 pass, 12 MiB memory, 1 lane) might make it easier for attackers to crack passwords, especially against dictionary attacks. The user suggests using a larger salt (e.g., 64 bytes) and more robust Argon2id parameters (e.g., at least 2 passes and higher memory usage). Another user, Key1024, supported this concern, emphasizing that the current configuration might be insufficient for modern security standards and that the encryption key is derived directly from the password and salt using Argon2id, without any additional transformations, potentially weakening the encryption.</p>
+
+  <p>User memorysafety also chimed in, noting that while increasing the Argon2id parameters might offer better protection against brute-force attacks, it would also increase the encryption/decryption time. They suggested that the current parameters likely represent a trade-off between security and performance. They also noted that while increasing the salt size might be helpful, the current 16-byte salt is already considered cryptographically secure against rainbow table attacks.</p>
+
+  <p>The discussion also touched on the general security of Picocrypt, with cocobearcodes highlighting that while Picocrypt is advertised as "unbreakable," no encryption software is truly unbreakable, and it is crucial to design with the assumption that the encryption may eventually be compromised. This includes using strong key derivation functions (KDFs) with appropriate parameters and large salts to make password cracking as difficult as possible.</p>
+
+  <p>The Picocrypt developer, Hinaar, responded to the concerns, acknowledging the points raised about the salt size and Argon2id parameters. They mentioned that the current design choices were made with consideration for both security and performance, aiming to provide a balance that would be suitable for most users. The developer is open to re-evaluating the Argon2id parameters in future updates, potentially making them configurable to allow users to choose between faster encryption/decryption and higher security levels. However, they also point out the trade-offs involved, as increasing these parameters would increase the time it takes to encrypt and decrypt files, which may not be desirable for all users.</p>
+
+  <p>Overall, the issue highlights the ongoing debate in cryptography between security and performance, as well as the importance of using strong KDFs and large salts to protect against password-based attacks.</p>
+
+  <h2>Key Points:</h2>
+  <ul>
+    <li><b>Potential Vulnerability:</b> Picocrypt's current 16-byte salt and Argon2id parameters (1 pass, 12 MiB, 1 lane) might be insufficient against dictionary and brute-force attacks.</li>
+    <li><b>Salt Size:</b> There is a suggestion to increase the salt size to 64 bytes for better security.</li>
+    <li><b>Argon2id Parameters:</b> Increasing the number of passes and memory usage in Argon2id could improve security but would also increase encryption/decryption time.</li>
+    <li><b>Security vs. Performance:</b> The current parameters represent a trade-off between security and performance.</li>
+    <li><b>"Unbreakable" Claim:</b> The claim that Picocrypt is "unbreakable" is misleading, as no encryption software is truly unbreakable. Security design should account for eventual compromise.</li>
+    <li><b>Developer Response:</b> The developer acknowledged the concerns and is open to re-evaluating the Argon2id parameters, potentially making them configurable in future updates.</li>
+    <li><b>KDF Importance:</b> The discussion highlights the importance of using strong key derivation functions (KDFs) and large salts to protect against password-based attacks.</li>
+  </ul>
+</div>
+</div>
+</article>
