@@ -1,0 +1,32 @@
+<article>
+    <h2>Consider using Zstandard and/or LZ4 instead of Deflate</h2>
+    <div>
+<div>
+  <p>This is a discussion on GitHub, specifically within the W3C PNG repository, concerning a potential vulnerability related to maliciously crafted PNG files and their impact on applications using libpng. The discussion revolves around whether a certain type of PNG file, when processed by libpng, can lead to an infinite loop, potentially causing a denial-of-service (DoS) condition. The central question is if this behavior constitutes a security vulnerability that should be addressed. Multiple contributors offer their insights, analyzing the technical aspects of the PNG specification and libpng's implementation.</p>
+
+  <p>The issue stems from the way libpng handles zlib streams within PNG files, particularly the decompression process. Specifically, the discussion highlights a crafted zlib stream that, when decompressed, can cause libpng to enter an infinite loop. This loop arises due to a combination of factors related to the structure and content of the zlib stream, potentially leading to repeated memory allocation and data processing without ever reaching a termination condition.</p>
+
+  <p>Several points are raised regarding the nature of the vulnerability. Some argue that it should be considered a security issue because a specially crafted PNG file could be used to exhaust resources on a server or client application, effectively denying service to legitimate users. Others suggest that it's more of a bug or a robustness issue in libpng's error handling, as the crafted PNG file doesn't directly exploit a known security flaw but rather triggers an unexpected behavior within the decompression algorithm.</p>
+
+  <p>The discussion also delves into the question of responsibility. Some argue that libpng should be more resilient to malformed or malicious input, while others point out that applications using libpng should implement appropriate safeguards, such as setting resource limits or timeouts, to prevent DoS attacks. It's also mentioned that the zlib library itself might have some responsibility in handling such streams, as libpng relies on zlib for decompression.</p>
+
+  <p>Several potential solutions and mitigations are discussed. These include modifying libpng to better handle malformed zlib streams, improving error checking and reporting, and providing guidance to application developers on how to protect themselves against DoS attacks. Another approach is to limit the resources that libpng can consume during decompression, such as setting a maximum memory allocation size or a maximum number of iterations.</p>
+
+  <p>The discussion also touches upon the practical implications of addressing the vulnerability. Applying a fix to libpng could potentially break compatibility with existing PNG files or introduce new performance overhead. Therefore, any solution needs to be carefully considered and tested to ensure that it doesn't have unintended consequences.</p>
+
+  <p>The thread also explores the potential for other image formats that use similar compression algorithms to be vulnerable to similar attacks. This highlights the importance of robust error handling and input validation in image processing libraries in general.</p>
+
+  <p>Ultimately, the discussion aims to determine the best course of action to address the potential vulnerability, balancing the need for security with the desire to maintain compatibility and performance. The contributors engage in a detailed technical analysis of the issue, considering various perspectives and proposing potential solutions.</p>
+
+  <p><strong>Key Points:</strong></p>
+  <ul>
+    <li>A crafted PNG file can cause libpng to enter an infinite loop during decompression due to a malformed zlib stream.</li>
+    <li>The core issue is whether this behavior constitutes a security vulnerability (DoS) or a robustness problem.</li>
+    <li>Responsibility for addressing the issue is debated between libpng developers, zlib developers, and application developers using libpng.</li>
+    <li>Potential solutions include modifying libpng, improving error handling, and implementing resource limits in applications.</li>
+    <li>Any fix must consider compatibility and performance implications.</li>
+    <li>Other image formats using similar compression algorithms may also be vulnerable.</li>
+  </ul>
+</div>
+</div>
+</article>
