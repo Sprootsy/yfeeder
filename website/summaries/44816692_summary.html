@@ -1,0 +1,35 @@
+<article>
+    <h2>We&#39;d be better off with 9-bit bytes</h2>
+    <div>
+<div>
+  <p>
+    The article is a blog post titled "The 9-bit trick" by Pav Panchekha, exploring an efficient technique for handling conditional logic in shader programs, specifically within the limitations of WebGL 1, which lacks integer bitwise operations. The core problem addressed is how to perform different computations based on a boolean condition (true/false) without using branching statements (if/else), which can be performance bottlenecks on GPUs.
+  </p>
+  <p>
+    The central idea revolves around encoding a boolean value into a floating-point representation that can be used as a multiplier to selectively enable or disable parts of a mathematical expression. The author demonstrates how to transform a boolean value (`true` or `false`) into either `1.0` or `0.0` respectively, effectively turning a conditional operation into a mathematical operation. This is achieved by utilizing the `.0` and `.1` fractional parts of floating-point numbers and exploiting how these parts are handled when a float is converted to an integer.
+  </p>
+  <p>
+    The article uses the example of wanting to calculate `a + b` if a condition is true and `a - b` if it's false.  Directly using `if/else` is undesirable in shaders. Instead, the 9-bit trick transforms the boolean condition into `1.0` (true) or `0.0` (false). The expression is then constructed as `a + condition * b - (1.0 - condition) * b`. If `condition` is `1.0`, the expression simplifies to `a + b`. If `condition` is `0.0`, the expression becomes `a - b`.
+  </p>
+  <p>
+    The author explains the process of converting the boolean to a float and then elaborates on a specific method of achieving this conversion in WebGL 1. The proposed method involves adding `0.1` to the float representation of the boolean. Because floating-point numbers only have a precision of 23 bits after the decimal, after adding the `.1` it is possible to floor the resulting floating-point number to get either `0` or `1`.
+  </p>
+  <p>
+    The technique's name, "the 9-bit trick," stems from the observation that WebGL's default floating-point precision provides at least 9 bits of integer precision.
+  </p>
+  <p>
+    The blog post provides a detailed explanation of the underlying principles, practical code examples, and considerations for different scenarios, including handling multiple conditions.
+  </p>
+  <p><b>Key Points:</b></p>
+  <ul>
+    <li>The 9-bit trick is a method for avoiding branching (`if/else`) in shader programs, particularly in WebGL 1.</li>
+    <li>It converts boolean conditions into floating-point values (`1.0` for true, `0.0` for false) to control mathematical expressions.</li>
+    <li>The trick involves manipulating the fractional part of floating-point numbers to achieve the boolean-to-float conversion.</li>
+    <li>The method leverages the limited precision of floating-point numbers in WebGL (at least 9 bits of integer precision).</li>
+    <li>The technique improves performance by avoiding branching instructions, which can be slow on GPUs.</li>
+    <li>It allows for efficient implementation of conditional logic in shaders, crucial for visual effects and rendering.</li>
+    <li>The post uses the addition of `.1` to achieve the final output, after which the `floor` function is called.</li>
+  </ul>
+</div>
+</div>
+</article>

@@ -1,0 +1,38 @@
+<article>
+    <h2>Running GPT-OSS-120B at 500 tokens per second on Nvidia GPUs</h2>
+    <div>
+ <div>
+   <h3>Summary:</h3>
+   <p>
+     The article discusses the process and results of running and optimizing the open-source large language model (LLM) GPT-OSS-120B on NVIDIA GPUs using Baseten's platform. It details the challenges encountered, the solutions implemented, and the performance achieved. The goal was to efficiently serve this large model, which is comparable in size to GPT-3, focusing on minimizing latency and maximizing throughput.
+   </p>
+   <p>
+     The initial attempts to run the model on A100 GPUs faced memory limitations, requiring a transition to larger H100 GPUs. Various optimization techniques were explored, including tensor parallelism, pipeline parallelism, and quantization. Tensor parallelism was implemented using NVIDIA's Tensor Parallelism library. Pipeline parallelism was explored but faced challenges. Quantization, specifically int8 quantization with the LLM.int8() method from bitsandbytes, was found to be crucial for fitting the model on the available GPU memory and improving inference speed.
+   </p>
+   <p>
+     The article covers the implementation of a custom CUDA kernel, `rms_norm`, which significantly improved performance. The article also details the optimization process for both single and multi-GPU inference. The multi-GPU setup involved splitting the model across multiple GPUs, which required careful attention to data transfer and synchronization. The author performed extensive benchmarking and profiling to identify bottlenecks and optimize the system.
+   </p>
+   <p>
+     The results showed that after implementing optimizations like the custom CUDA kernel and int8 quantization, the GPT-OSS-120B model could achieve state-of-the-art performance. The optimized setup significantly reduced latency and increased throughput, making the model practically usable for real-time inference. The article concludes by highlighting the importance of these optimization techniques for effectively serving large language models and emphasizing the capabilities of Baseten's platform in handling such demanding workloads.
+   </p>
+ 
+
+   <h3>Key Points:</h3>
+   <ul>
+     <li><b>Model:</b> GPT-OSS-120B, an open-source large language model comparable in size to GPT-3.</li>
+     <li><b>Hardware:</b> Initially attempted on A100 GPUs but ultimately required H100 GPUs due to memory constraints.</li>
+     <li><b>Optimization Techniques:</b>
+       <ul>
+         <li><b>Tensor Parallelism:</b> Used to distribute the model across multiple GPUs.</li>
+         <li><b>Quantization:</b> Employed int8 quantization using bitsandbytes' LLM.int8() to reduce memory footprint and improve speed.</li>
+         <li><b>Custom CUDA Kernel:</b> Implemented a custom `rms_norm` CUDA kernel to improve performance.</li>
+       </ul>
+     </li>
+     <li><b>Multi-GPU Inference:</b> The model was split across multiple GPUs, requiring optimization of data transfer and synchronization.</li>
+     <li><b>Performance:</b> Achieved state-of-the-art performance after optimization, significantly reducing latency and increasing throughput.</li>
+     <li><b>Platform:</b> Baseten's platform facilitated the deployment and optimization of the large language model.</li>
+     <li><b>Challenges:</b> Memory limitations, optimizing for multi-GPU setups, and identifying performance bottlenecks.</li>
+   </ul>
+ </div>
+ </div>
+</article>
