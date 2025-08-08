@@ -1,0 +1,28 @@
+<article>
+    <h2>Cursed Knowledge</h2>
+    <div>
+<div>
+<h2>Summary:</h2>
+<p>The article on the Immich blog, titled "Cursed Knowledge," discusses the challenges and complexities involved in reverse geocoding within the Immich application. Reverse geocoding is the process of converting geographical coordinates (latitude and longitude) into a human-readable address. The author explains why implementing reliable reverse geocoding is more difficult than it initially appears, outlining several factors that contribute to its "cursed" nature.</p>
+
+<p>One key issue is the reliance on external APIs for reverse geocoding services. These services are not always accurate, consistent, or free. The quality of results can vary significantly depending on the provider, geographical region, and the specific coordinates being queried. Furthermore, free services often have rate limits or usage restrictions, making them unsuitable for large-scale applications like Immich, which potentially handles numerous user photos from diverse locations.</p>
+
+<p>The article details the complexities of address formats across different countries and regions. A standardized approach that works globally is nearly impossible due to variations in address components, ordering, and naming conventions. This localization requirement adds significant overhead to the implementation. Additionally, the data used by reverse geocoding services is constantly evolving, with new streets being built, address information being updated, and place names changing. Maintaining accurate and up-to-date information requires ongoing effort and introduces a potential source of errors.</p>
+
+<p>Another problem stems from the inherent limitations of GPS accuracy. Coordinates embedded in image metadata may not always pinpoint the exact location where the photo was taken. Factors like signal strength, environmental interference, and device calibration can introduce errors. Reverse geocoding based on inaccurate coordinates can return misleading or completely incorrect addresses. Furthermore, privacy concerns play a crucial role. Many users are wary of sharing precise location data, and storing or displaying detailed addresses can raise privacy issues. Striking a balance between providing useful location information and protecting user privacy is a challenge.</p>
+
+<p>The article highlights the trade-offs between accuracy, cost, and performance. Free reverse geocoding services are often less accurate and have rate limits. Paid services offer better accuracy and higher rate limits but incur costs. Immich's development team must carefully consider these factors to provide a usable experience for its users without compromising the project's financial sustainability. The "cursed knowledge" refers to the realization that what initially seemed like a straightforward feature (converting coordinates to addresses) is actually a complex and nuanced problem with numerous challenges and trade-offs.</p>
+
+<h2>Key Points:</h2>
+<ul>
+<li>Reverse geocoding (converting coordinates to addresses) is more complex than it seems.</li>
+<li>Reliance on external APIs introduces challenges with accuracy, consistency, rate limits, and cost.</li>
+<li>Address formats vary significantly across countries, requiring localization efforts.</li>
+<li>Data used for reverse geocoding is constantly evolving, requiring ongoing maintenance.</li>
+<li>GPS inaccuracies can lead to incorrect address results.</li>
+<li>Privacy concerns arise from displaying detailed location information.</li>
+<li>There are trade-offs between accuracy, cost, and performance in choosing reverse geocoding services.</li>
+</ul>
+</div>
+</div>
+</article>
