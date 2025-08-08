@@ -1,0 +1,32 @@
+<article>
+    <h2>Show HN: Browser AI agent platform designed for reliability</h2>
+    <div>
+<div>
+  <p>The article is a README file for Notte, a privacy-preserving collaborative note-taking application. Notte aims to provide a secure and decentralized alternative to traditional note-taking apps like Google Keep or Notion. The core focus is on end-to-end encryption (E2EE), ensuring that only the user and those they explicitly share notes with can access the content. The application leverages technologies like Yjs for conflict-free replicated data types (CRDTs) to enable real-time collaboration, and GunDB for decentralized data storage.</p>
+
+  <p>The document outlines the core principles of Notte, emphasizing data ownership and privacy. It highlights the limitations of existing centralized platforms, where data is stored on servers controlled by the provider, potentially exposing user information to risks such as data breaches, surveillance, and censorship. Notte addresses these concerns by giving users control over their data and ensuring that even the Notte developers cannot access the unencrypted content.</p>
+
+  <p>The README provides details about the application's architecture, explaining how E2EE is implemented using cryptographic keys generated and managed on the user's device. It describes the use of Yjs for handling concurrent edits from multiple users on the same note. Yjs allows for seamless merging of changes without conflicts, even when users are working offline. GunDB is presented as the decentralized database solution, providing a distributed and resilient storage layer for the encrypted notes. The document also acknowledges that GunDB is still experimental, which comes with some trade-offs in terms of data durability.</p>
+
+  <p>Furthermore, the document touches on the development status of Notte, labeling it as a "weekend project" and indicating that it is not yet production-ready. It mentions that the application is currently available as a web app, with potential plans for native iOS and Android apps in the future. The README outlines the basic setup instructions for running the application locally, including the necessary prerequisites (Node.js and npm or yarn) and the steps to install dependencies and start the development server. It explains how to set up a local GunDB instance for testing purposes.</p>
+
+  <p>The document elaborates on the known issues and limitations of the current version of Notte, such as the experimental nature of GunDB and the lack of data durability guarantees. It also mentions potential performance limitations and other areas for improvement. The README encourages contributions from the community, inviting users to report bugs, suggest new features, and contribute code to the project. It provides links to the project's GitHub repository for those interested in getting involved.</p>
+
+  <p>In essence, the README file serves as an introduction to Notte, a privacy-focused collaborative note-taking application that prioritizes data ownership and security through end-to-end encryption, decentralized storage, and real-time collaboration capabilities. While still under development, Notte presents a compelling alternative to traditional note-taking apps, offering users a higher degree of control over their data.</p>
+
+  <h2>Key Points:</h2>
+  <ul>
+    <li><strong>Privacy-focused:</strong> Notte is designed with a strong emphasis on user privacy and data ownership.</li>
+    <li><strong>End-to-end encryption (E2EE):</strong> All notes are encrypted on the user's device, ensuring that only the user and authorized collaborators can access the content.</li>
+    <li><strong>Decentralized storage:</strong> Notte uses GunDB for decentralized data storage, eliminating reliance on centralized servers.</li>
+    <li><strong>Real-time collaboration:</strong> Yjs is used for conflict-free real-time collaboration on notes.</li>
+    <li><strong>Open-source:</strong> Notte is an open-source project, encouraging community contributions and transparency.</li>
+    <li><strong>Work in Progress:</strong> The project is under active development and should be considered a weekend project and not production-ready, still experimental.</li>
+    <li><strong>Web App:</strong> Currently available as a web application, with potential plans for native mobile apps.</li>
+    <li><strong>Local Setup:</strong> Instructions are provided for setting up and running the application locally.</li>
+    <li><strong>Community-Driven:</strong> Contributions and feedback from the community are encouraged.</li>
+    <li><strong>GunDB limitations:</strong> GunDB is still in the experimental phase and may have data durability issues.</li>
+  </ul>
+</div>
+</div>
+</article>

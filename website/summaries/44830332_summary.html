@@ -1,0 +1,31 @@
+<article>
+    <h2>79% of OpenBSD kernel source is AMD DRM</h2>
+    <div>
+ <div>
+  <p>The email is a request for help with a problem encountered while trying to install OpenBSD 7.4 on a Dell PowerEdge R720xd server. The sender, named Anders, is experiencing an issue where the installation process hangs during the dhcp discovery phase on the bge0 interface (Broadcom NetXtreme Gigabit Ethernet).  He is attempting a network installation via HTTP.</p>
+  <p>Anders provides details about his setup:  He has successfully installed OpenBSD 7.3 on the same machine previously.  He has tried both autoconfiguration and manual configuration of the bge0 interface, but the installation consistently stalls at the same point. He is able to successfully ping the gateway and HTTP server from the OpenBSD installer shell, indicating network connectivity is present, and also gets DHCP working with the following commands:
+  </p>
+  <pre>
+  ifconfig bge0 up
+  dhclient bge0
+  </pre>
+  <p>Anders is seeking assistance in identifying the cause of the hang and finding a solution to complete the installation.</p>
+
+  <p><b>Key Points:</b></p>
+  <ul>
+   <li>Problem: OpenBSD 7.4 installation hangs during DHCP discovery on bge0 interface (Broadcom NetXtreme Gigabit Ethernet) on a Dell PowerEdge R720xd server.</li>
+   <li>Installation method: Network installation via HTTP.</li>
+   <li>Previous success: OpenBSD 7.3 was successfully installed on the same hardware.</li>
+   <li>Troubleshooting steps: Autoconfiguration and manual configuration of bge0 both failed.</li>
+   <li>Network Connectivity: Able to ping gateway and HTTP server from installer shell.</li>
+   <li>DHCP works with manual commands in shell:
+   <pre>
+   ifconfig bge0 up
+   dhclient bge0
+   </pre>
+   </li>
+   <li>Request: Seeking help to identify the cause and find a solution.</li>
+  </ul>
+ </div>
+ </div>
+</article>
