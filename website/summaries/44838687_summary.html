@@ -1,0 +1,30 @@
+<article>
+    <h2>HRT&#39;s Python fork: Leveraging PEP 690 for faster imports</h2>
+    <div>
+<div>
+  <h3>Summary:</h3>
+  <p>
+    The article discusses Hudson River Trading's (HRT) internal use of a modified version of Python, referred to as the "HRT Python fork." It explains the motivations behind creating and maintaining this custom fork instead of relying solely on standard CPython or other existing Python implementations. The primary reason for the fork is to enhance performance, determinism, and control over memory management, which are critical for HRT's low-latency trading systems.
+  </p>
+  <p>
+    The article highlights several key modifications and features of the HRT Python fork. These include a custom memory allocator designed to minimize fragmentation and improve allocation speed, especially for frequently used data structures in trading applications. The fork also incorporates deterministic garbage collection to reduce unpredictable pauses that can affect trading performance. HRT has also made modifications to the Global Interpreter Lock (GIL) to improve concurrency, although the specific details of these changes aren't specified in the article.
+  </p>
+  <p>
+    Furthermore, the article emphasizes HRT's commitment to contributing back to the open-source community. They detail how some of their improvements and patches have been submitted to the upstream CPython project. This illustrates a desire to not only benefit from the open-source nature of Python but also to actively participate in its evolution and improvement for the broader community. The article also touches on the challenges of maintaining a custom fork, including the effort required to keep it up-to-date with upstream CPython changes and the need for specialized expertise within HRT.
+  </p>
+  <p>
+    The piece further explains that by using their own Python fork, HRT is able to have greater control over the exact versions of third party packages that are used within their platform. This provides greater stability and allows them to perform fixes and enhancements for their specific use cases.
+  </p>
+  <h3>Key Points:</h3>
+  <ul>
+    <li>HRT uses a custom Python fork to optimize performance, determinism, and memory management for low-latency trading.</li>
+    <li>The HRT Python fork includes a custom memory allocator to minimize fragmentation and improve allocation speed.</li>
+    <li>Deterministic garbage collection is implemented to reduce unpredictable pauses.</li>
+    <li>Modifications have been made to the GIL to improve concurrency.</li>
+    <li>HRT contributes some of its improvements back to the upstream CPython project.</li>
+    <li>Maintaining a custom fork requires significant effort to keep it up-to-date and requires specialized expertise.</li>
+    <li>Using a custom Python fork provides greater control over packages and greater stability.</li>
+  </ul>
+</div>
+</div>
+</article>
