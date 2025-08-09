@@ -1,0 +1,45 @@
+<article>
+    <h2>Build durable workflows with Postgres</h2>
+    <div>
+<div>
+  <p>
+    The article "Why Postgres for Durable Execution" discusses the benefits of using PostgreSQL as a foundation for building durable execution systems, particularly in the context of DBOS (Database-oriented Operating System). Durable execution refers to the ability of a system to reliably execute code and maintain its state even in the face of failures like crashes or network outages.
+  </p>
+  <p>
+    The article starts by outlining the challenges of building reliable distributed systems. Traditional approaches often involve complex infrastructure and application-level logic for handling fault tolerance, retries, and state management. These approaches can be error-prone and add significant overhead to development.
+  </p>
+  <p>
+    PostgreSQL, as a robust and widely-used relational database, offers several key features that make it an attractive alternative for durable execution. These features include ACID (Atomicity, Consistency, Isolation, Durability) transactions, write-ahead logging (WAL), and the ability to durably store application state directly within the database.
+  </p>
+  <p>
+    The ACID properties ensure that operations are executed reliably and consistently. Atomicity guarantees that a transaction is treated as a single unit of work, either succeeding entirely or failing completely. Consistency ensures that transactions maintain the integrity of the database. Isolation prevents concurrent transactions from interfering with each other. Durability ensures that once a transaction is committed, its changes are permanently stored and will survive even system failures.
+  </p>
+  <p>
+    Write-ahead logging (WAL) is a crucial component of PostgreSQL's durability. Before any changes are made to the database files, they are first written to the WAL. This ensures that in the event of a crash, the database can be recovered to a consistent state by replaying the WAL logs.
+  </p>
+  <p>
+    By leveraging PostgreSQL for durable execution, developers can offload many of the complexities of fault tolerance and state management to the database. Application code can focus on the core business logic, while PostgreSQL handles the underlying reliability concerns. This can lead to simpler, more maintainable, and more robust systems.
+  </p>
+  <p>
+    The article highlights how DBOS utilizes PostgreSQL to provide a platform for building durable applications. DBOS extends PostgreSQL with additional features and abstractions that simplify the development of distributed systems. For example, DBOS provides primitives for defining durable workflows and managing application state within the database.
+  </p>
+  <p>
+    Furthermore, the article discusses the performance considerations of using PostgreSQL for durable execution. While durability mechanisms like WAL can introduce some overhead, PostgreSQL is highly optimized for these operations. The article also mentions techniques for tuning PostgreSQL to achieve high performance in durable execution scenarios, such as optimizing WAL settings and using appropriate indexing strategies.
+  </p>
+  <p>
+    In conclusion, the article advocates for using PostgreSQL as a foundation for building durable execution systems. By leveraging PostgreSQL's robust features and ACID properties, developers can create reliable and scalable applications with reduced complexity. DBOS builds upon this foundation to provide a comprehensive platform for durable execution, further simplifying the development of distributed systems.
+  </p>
+  <p><b>Key points:</b></p>
+  <ul>
+    <li>Building reliable distributed systems is challenging due to the need for fault tolerance and state management.</li>
+    <li>PostgreSQL offers features like ACID transactions and write-ahead logging (WAL) that make it suitable for durable execution.</li>
+    <li>ACID properties ensure atomicity, consistency, isolation, and durability of transactions.</li>
+    <li>WAL guarantees that database changes are durably stored and can be recovered in case of failures.</li>
+    <li>Using PostgreSQL for durable execution simplifies application development by offloading fault tolerance and state management to the database.</li>
+    <li>DBOS leverages PostgreSQL to provide a platform for building durable applications with additional features and abstractions.</li>
+    <li>PostgreSQL can be tuned for high performance in durable execution scenarios.</li>
+    <li>PostgreSQL's reliability and features make it a beneficial base for durable execution systems, simplifying distributed application development.</li>
+  </ul>
+</div>
+</div>
+</article>
