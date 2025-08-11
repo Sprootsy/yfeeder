@@ -1,0 +1,34 @@
+<article>
+    <h2>Compiling a Lisp: Lambda lifting</h2>
+    <div>
+<div>
+  <p>
+    This article, titled "Compiling a Lisp, #12," delves into the intricate process of compiling a simplified Lisp dialect, focusing specifically on the compilation of function calls and argument passing. The author meticulously constructs a compiler that translates Lisp code into assembly code, emphasizing efficiency and optimization techniques suitable for resource-constrained environments. The compilation process is explained step-by-step, starting from the abstract syntax tree (AST) representation of the Lisp code and culminating in the generation of executable assembly instructions.
+  </p>
+  <p>
+    The article begins by outlining the fundamental principles of compiling function calls, including how arguments are prepared and passed to functions, and how the return value is handled. The author introduces specific assembly instructions used for these operations, such as `mov` for moving data, `push` for pushing values onto the stack, and `call` for invoking a function. The discussion highlights the importance of adhering to a calling convention, which defines the standardized way functions interact, ensuring interoperability between different code modules. The article details a specific calling convention implemented in the compiler, outlining the registers used for passing arguments and the stack frame structure.
+  </p>
+  <p>
+    A significant portion of the article is dedicated to managing the stack, which is crucial for both argument passing and local variable storage. The author elaborates on how the compiler generates code to allocate and deallocate stack space for function calls, including the creation of a stack frame that holds the return address, arguments, and local variables. The article describes the usage of the frame pointer (typically the `ebp` register) to provide a stable reference point for accessing stack-based data. The author presents code snippets demonstrating how the compiler emits instructions to set up the stack frame at the beginning of a function and restore the stack pointer upon function return, ensuring proper stack management.
+  </p>
+  <p>
+    The article then delves into the specific details of compiling function calls, including the handling of both built-in functions (primitives) and user-defined functions. For built-in functions, the compiler generates direct calls to corresponding assembly routines. For user-defined functions, the compiler emits code to jump to the function's entry point. The author illustrates how the compiler resolves function names and generates the appropriate `call` instruction, based on whether the function is defined in the current scope or in an external module. The article further explores the challenges of handling variable numbers of arguments and how the compiler can dynamically adjust the argument list on the stack to accommodate these functions.
+  </p>
+  <p>
+    The optimization aspects are addressed by showing how the compiler avoids unnecessary stack operations and register spilling. The author touches on techniques such as tail-call optimization, where the compiler transforms a function call at the end of another function into a jump, eliminating the overhead of creating a new stack frame. The article showcases how the compiler performs constant folding and other basic optimizations to improve the efficiency of the generated code.
+  </p>
+  <p>
+    Finally, the author shows how the compiler integrates with the previously developed components, such as the parser and the code generator. The compilation pipeline, from parsing the Lisp source code to generating the final assembly output, is elucidated. The article includes code examples of the compiler's output, demonstrating the generated assembly code for various Lisp expressions, and illustrates the mapping between the source Lisp code and the compiled assembly instructions. The techniques presented are designed to create a self-contained compiler that can translate Lisp code into optimized and executable assembly code.
+  </p>
+
+  <h2>Key Points:</h2>
+  <ul>
+    <li>The article focuses on compiling function calls and argument passing in a Lisp compiler.</li>
+    <li>It details the process of translating Lisp code into assembly, covering stack management, register usage, and calling conventions.</li>
+    <li>The compiler handles both built-in and user-defined functions.</li>
+    <li>Optimization techniques such as tail-call optimization are discussed.</li>
+    <li>The compilation pipeline, from parsing to assembly generation, is explained.</li>
+  </ul>
+</div>
+</div>
+</article>
