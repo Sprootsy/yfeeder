@@ -1,0 +1,24 @@
+<article>
+    <h2>Ollama and gguf</h2>
+    <div>
+ <div>
+  <p>The GitHub issue discusses a feature request for Ollama to support streaming responses in JSON format. Currently, Ollama primarily streams responses as plain text. The request stems from the need for applications to more easily parse and process structured data from Ollama, especially when dealing with tools or function calling, which are typically defined using JSON schemas.</p>
+  <p>Several users have expressed their support for this feature. One user explains their use case, stating they are building a tool that relies on structured output. They also note that using plain text output and then attempting to parse it into JSON can be unreliable due to the model sometimes deviating from the expected format or adding conversational elements.</p>
+  <p>Another user details a similar problem. They are using Ollama with a function calling interface, but the plain text streaming is causing issues with parsing the resulting JSON. They suggest that a JSON streaming format would enable faster response times and improved data integrity, particularly when integrating with tools like LangChain.</p>
+  <p>There are multiple suggestions on how this could be implemented. One proposal involves adding a specific header to the request to indicate that the response should be streamed as JSON. The response format would consist of a series of JSON objects, each containing a "content" field with a partial JSON payload. A final JSON object would signal the end of the stream.</p>
+  <p>Another user mentioned the use of Server-Sent Events (SSE) as a suitable streaming format, suggesting that it is already compatible with JavaScript's EventSource and Go's SSE client. The discussion also touches on the potential use of JSON Lines format. The advantages are its simplicity and ease of parsing.</p>
+  <p>One participant notes that while some libraries exist to handle potentially broken JSON, a robust JSON streaming option directly from Ollama would be preferable.</p>
+  <p>The maintainers acknowledge the feature request and seem receptive to the idea. A maintainer asked for further clarification on the exact use case. They also requested detailed example of the desired input and output formats when using tools and function calling to better understand the requirements and challenges involved.</p>
+  <p>Overall, the issue highlights a clear demand for JSON streaming capabilities in Ollama to enhance its usability in applications requiring structured data, particularly those involving function calling and integration with tools and frameworks like LangChain. The discussion includes multiple suggestions for how this feature could be implemented using various streaming formats like SSE or JSON Lines.</p>
+  <p><b>Key Points:</b></p>
+  <ul>
+   <li>Feature request for Ollama to support JSON streaming.</li>
+   <li>Current plain text streaming makes parsing structured data (especially from function calling) difficult and unreliable.</li>
+   <li>Users are requesting the feature to improve integration with tools and frameworks like LangChain.</li>
+   <li>Suggestions for implementation include using specific headers to request JSON streaming.</li>
+   <li>Proposed streaming formats include SSE and JSON Lines.</li>
+   <li>Maintainers are receptive and seeking more details about use cases and desired input/output formats.</li>
+  </ul>
+ </div>
+ </div>
+</article>
