@@ -1,0 +1,30 @@
+<article>
+    <h2>Apache Iceberg V3 Spec new features for more efficient and flexible data lakes</h2>
+    <div>
+ <div>
+  <p>The article discusses the new features and improvements in Iceberg v3, a major release of the open-source table format. Iceberg is designed for large, evolving datasets, offering features like schema evolution, time travel, and efficient query planning.</p>
+  
+  <p>One key focus of Iceberg v3 is enhanced data governance. It introduces Row-level Security, enabling fine-grained access control to data within a table based on user roles or attributes. This allows organizations to comply with data privacy regulations and restrict access to sensitive information. Iceberg v3 implements Role-Based Access Control (RBAC), simplifying user permission management by assigning roles with specific privileges to users or groups. To enhance data quality and reliability, Iceberg v3 provides ACID (Atomicity, Consistency, Isolation, Durability) guarantees for all write operations, preventing data corruption and ensuring consistency in concurrent environments. It incorporates Data Validation Rules to automatically validate data before it is written to the table, preventing invalid or inconsistent data from entering the system.</p>
+
+  <p>Another important enhancement is the improved performance. Iceberg v3 features Optimized Query Planning to reduce query latency and improve overall performance. This feature employs advanced query optimization techniques to generate efficient execution plans, minimizing the amount of data scanned and processed. Iceberg v3 adds support for Vectorized Reads that takes advantage of modern CPU architectures to process data in batches, significantly improving read throughput. To ensure optimal performance, Iceberg v3 incorporates Adaptive Optimization based on real-time data characteristics and workload patterns to dynamically adjust query plans and storage layouts.</p>
+
+  <p>Iceberg v3 supports more use-cases thanks to its expanded ecosystem. The release adds support for SQL extensions to simplify data manipulation and query operations. The update also implements Spark, Flink and Trino integrations. Iceberg v3 features improved Integration with Cloud Storage. This offers seamless integration with popular cloud storage platforms, making it easier to store and manage data in the cloud.</p>
+
+  <p>In summary, Iceberg v3 is a significant upgrade that strengthens data governance, optimizes performance, and extends the use-cases for the table format.</p>
+
+  <h2>Key Points:</h2>
+  <ul>
+   <li><b>Row-level Security:</b> Implements fine-grained access control based on user roles and attributes.</li>
+   <li><b>Role-Based Access Control (RBAC):</b> Simplifies user permission management through roles.</li>
+   <li><b>ACID Guarantees:</b> Ensures data consistency and prevents corruption during write operations.</li>
+   <li><b>Data Validation Rules:</b> Automatically validates data before writing to prevent invalid entries.</li>
+   <li><b>Optimized Query Planning:</b> Reduces query latency and improves performance through efficient execution plans.</li>
+   <li><b>Vectorized Reads:</b> Enhances read throughput by processing data in batches.</li>
+   <li><b>Adaptive Optimization:</b> Dynamically adjusts query plans and storage layouts based on real-time data.</li>
+   <li><b>SQL Extensions:</b> Simplifies data manipulation and query operations with new SQL syntax.</li>
+   <li><b>Spark, Flink, Trino Integrations:</b> Natively supports these systems.</li>
+   <li><b>Improved Integration with Cloud Storage:</b> Seamlessly integrates with popular cloud storage platforms.</li>
+  </ul>
+ </div>
+ </div>
+</article>
