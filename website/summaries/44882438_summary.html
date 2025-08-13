@@ -1,0 +1,40 @@
+<article>
+    <h2>A gentle introduction to anchor positioning</h2>
+    <div>
+<div>
+  <h3>Summary</h3>
+  <p>
+    The article "A Gentle Introduction to Anchor Positioning" on the WebKit blog introduces a new CSS feature called Anchor Positioning. This feature allows developers to position elements relative to other elements, referred to as "anchors," in a more flexible and declarative way than previously possible with JavaScript-based solutions. Anchor Positioning aims to solve common layout challenges, such as tooltips, callouts, and other UI elements that need to be contextually placed near another element on the page, and it's designed to work well with scrolling containers.
+  </p>
+  <p>
+    The article explains the basic concepts of Anchor Positioning, starting with defining an anchor using the `anchor-name` property. Any element can be named as an anchor. Then, the `position-anchor` property on the element to be positioned is used to specify which anchor(s) it should be positioned relative to.
+  </p>
+  <p>
+    The core of Anchor Positioning lies in the `anchor()` function, which allows authors to reference properties of the anchor element, such as its size or position, in calculations for the positioned element's style. The `anchor()` function can be used to access the size or location of the anchor in the viewport or the containing block.
+  </p>
+  <p>
+    The article demonstrates practical use cases, such as positioning a tooltip relative to a button, ensuring that the tooltip stays within the viewport, and adjusting its position based on the available space. It also covers how to handle situations where the anchor element is near the edge of the screen, preventing the positioned element from being cut off. The use of `inset-area` values for the `position` property and the `auto` keyword for positioning properties are also discussed.
+  </p>
+  <p>
+    The feature is shown to work with scrolling and explains how to use the anchor function to keep elements attached to their anchors even when the anchor is inside a scrollable container.
+  </p>
+  <p>
+    The article emphasizes the benefits of using CSS Anchor Positioning over JavaScript-based solutions, including improved performance, reduced code complexity, and better maintainability. The author also mentions the initial implementation of Anchor Positioning in Safari Technology Preview and encourages readers to try it out and provide feedback.
+  </p>
+
+  <h3>Key Points</h3>
+  <ul>
+    <li><b>Anchor Positioning Introduction:</b> A new CSS feature that enables positioning elements relative to other elements (anchors).</li>
+    <li><b>`anchor-name` Property:</b> Used to define an element as an anchor.</li>
+    <li><b>`position-anchor` Property:</b> Specifies which anchor(s) a positioned element should be relative to.</li>
+    <li><b>`anchor()` Function:</b> Allows referencing anchor properties (size, position) in calculations for the positioned element's style.</li>
+    <li><b>Use Cases:</b> Tooltips, callouts, and other contextually positioned UI elements.</li>
+    <li><b>Viewport Awareness:</b> Ensuring positioned elements stay within the viewport.</li>
+    <li><b>Scrolling Support:</b> Maintaining the position of elements relative to their anchors within scrollable containers.</li>
+    <li><b>Benefits Over JavaScript:</b> Improved performance, reduced complexity, better maintainability.</li>
+    <li><b>Implementation:</b> Initially implemented in Safari Technology Preview.</li>
+    <li><b>`inset-area` value:</b> Usage for `position` property.</li>
+  </ul>
+</div>
+</div>
+</article>

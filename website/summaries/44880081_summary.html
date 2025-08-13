@@ -1,0 +1,25 @@
+<article>
+    <h2>The equality delete problem in Apache Iceberg</h2>
+    <div>
+<div>
+  <p>This article discusses the "Equality Delete Problem" in Apache Iceberg, a high-performance format for huge analytic tables. It begins by explaining how equality deletes work in Iceberg. Equality deletes target specific rows based on column values, unlike position deletes which identify rows by their file path and position. The article highlights a scenario where equality deletes can lead to unexpected behavior and potential data loss when data is updated concurrently.</p>
+
+  <p>The core problem arises when a writer updates a row (performing a delete and an insert) while another writer is concurrently deleting the same row using equality deletes. The article uses a concrete example of updating a user's email address to illustrate the issue. If one writer deletes the old row based on the old email address while another writer concurrently updates the row (which involves deleting the row and inserting the updated row), the equality delete from the first writer can inadvertently delete the *newly inserted* row by the second writer if the update commit happens after the equality delete commit.</p>
+
+  <p>The article then explores several proposed solutions to mitigate this issue. One approach involves using position deletes instead of equality deletes for updates. Position deletes are safer because they precisely target the original row by its file path and position, avoiding unintended deletion of the updated row. However, this approach has performance implications, as position deletes might require scanning more data to locate the target rows, especially in large datasets with frequent updates. Another suggested solution involves implementing a form of conflict detection and resolution mechanism within Iceberg to handle concurrent updates and deletes more gracefully. This could involve techniques like optimistic locking or versioning to ensure that deletes only affect the intended rows.</p>
+
+  <p>The article concludes by emphasizing the importance of understanding the potential pitfalls of equality deletes, especially in environments with concurrent writes. It suggests carefully considering the trade-offs between performance and data integrity when choosing a delete strategy and staying informed about ongoing developments and best practices within the Apache Iceberg community to address the equality delete problem.</p>
+
+  <h3>Key Points:</h3>
+  <ul>
+    <li><b>Equality Deletes:</b> Target specific rows based on column values.</li>
+    <li><b>The Problem:</b> Concurrent updates and equality deletes can lead to data loss. An equality delete can unintentionally remove an updated row inserted by another writer.</li>
+    <li><b>Scenario:</b> Updating a row (e.g., email address) while another process concurrently deletes the row based on the old value.</li>
+    <li><b>Position Deletes:</b> A safer alternative for updates, targeting rows by file path and position.</li>
+    <li><b>Performance Trade-off:</b> Position deletes might be slower than equality deletes, especially for large datasets.</li>
+    <li><b>Conflict Resolution:</b> Future solutions may involve conflict detection mechanisms within Iceberg.</li>
+    <li><b>Importance of Understanding:</b> Users should be aware of the potential issues and carefully consider delete strategies in concurrent write environments.</li>
+  </ul>
+</div>
+</div>
+</article>
