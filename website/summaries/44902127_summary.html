@@ -1,0 +1,45 @@
+<article>
+    <h2>I made a real-time C/C&#43;&#43;/Rust build visualizer</h2>
+    <div>
+<div>
+  <p>
+    The article "Syscall Build Snooping" by Daniel Chase Hooper discusses a method for intercepting and observing system calls made during a software build process. The primary goal is to gain insights into what files, directories, and other resources are accessed by the build system, which can be valuable for understanding build dependencies, identifying potential performance bottlenecks, and detecting unexpected or malicious behavior.
+  </p>
+  <p>
+    The author begins by outlining the challenges of understanding complex build systems, where the intricate interplay of various tools and scripts can obscure the actual system calls being made. Traditional methods like manually inspecting build scripts or using static analysis tools often fall short due to the dynamic nature of builds and the sheer volume of code involved.
+  </p>
+  <p>
+    The core of the article revolves around using `strace`, a powerful debugging tool that intercepts and records system calls made by a process. However, simply running `strace` on the top-level build command can produce a massive and overwhelming amount of data. The author introduces a refined approach that involves targeting specific parts of the build process and filtering the `strace` output to focus on relevant information.
+  </p>
+  <p>
+    A key technique described is the use of `make`'s `-n` (dry-run) option in conjunction with `strace`. The `-n` option causes `make` to print the commands it would execute without actually running them. This allows the author to identify the specific commands that are likely to be of interest. These commands can then be individually executed under `strace` to observe their system call activity.
+  </p>
+  <p>
+    Furthermore, the author emphasizes the importance of filtering the `strace` output to reduce noise and highlight relevant system calls. This can be achieved by using `grep` or other text processing tools to focus on specific file paths, system call names, or error codes.  For example, filtering for `open` system calls with specific file extensions can reveal which source files and libraries are being accessed during compilation.
+  </p>
+  <p>
+    The article also touches upon the use of more advanced `strace` features, such as attaching to already running processes. This can be useful for investigating long-running build processes or debugging build failures in real-time.  The author cautions about the performance overhead of `strace`, especially when tracing complex or high-volume system calls.
+  </p>
+  <p>
+    In addition to `strace`, the author mentions other tools that can be used for system call tracing, such as `perf` and eBPF-based tools. These tools offer different capabilities and performance characteristics, and the choice of tool depends on the specific requirements of the task.
+  </p>
+  <p>
+    The article provides practical examples of how to use `strace` to investigate specific build-related issues, such as identifying missing dependencies or detecting unexpected file accesses. By carefully analyzing the system call traces, developers can gain a deeper understanding of the build process and identify areas for optimization or improvement.
+  </p>
+  <p>
+    The author concludes by emphasizing the value of system call snooping as a technique for understanding and debugging complex software builds. While the process can be time-consuming and require some expertise, the insights gained can be invaluable for improving build performance, ensuring build security, and troubleshooting build failures.
+  </p>
+
+  <h2>Key Points:</h2>
+  <ul>
+    <li>System call snooping using `strace` can provide insights into build processes.</li>
+    <li>Complex build systems make it difficult to understand system call activity.</li>
+    <li>Combining `make -n` (dry run) with `strace` helps target specific build commands.</li>
+    <li>Filtering `strace` output with tools like `grep` is essential to focus on relevant information.</li>
+    <li>`strace` can be used to identify file accesses, missing dependencies, and unexpected behavior.</li>
+    <li>Other tools like `perf` and eBPF can also be used for system call tracing.</li>
+    <li>Analyzing system call traces helps optimize build performance and ensure security.</li>
+  </ul>
+</div>
+</div>
+</article>
