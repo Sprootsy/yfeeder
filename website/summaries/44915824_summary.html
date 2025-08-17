@@ -2,18 +2,20 @@
     <h2>OpenBSD is so fast, I had to modify the program slightly to measure itself</h2>
     <div>
 <div>
-<p>The article is a blog post by Ted Unangst addressing a claim that OpenBSD is ten times faster than Linux. Unangst expresses skepticism about such a claim, particularly without specific context or benchmarks. He suggests that blanket statements about operating system performance are generally misleading due to the wide variety of workloads and hardware configurations. He uses a personal anecdote about optimizing a specific workload on OpenBSD which resulted in an approximately 10x performance improvement as an example of how targeted optimization can yield significant gains in specific scenarios but not represent the overall performance characteristics of the operating system.</p>
-<p>He clarifies that while OpenBSD may have architectural differences or default settings that could lead to performance advantages in certain cases, it is unlikely to be universally ten times faster than Linux. He points out the importance of understanding the specific problem being addressed and the factors influencing performance when comparing operating systems. He further notes that it is more likely that targeted optimization of a specific workload is what led to the claim.</p>
-<p>Unangst concludes by reiterating that broad claims about one operating system being significantly faster than another are often inaccurate and that performance is highly dependent on the specifics of the application, hardware, and configuration.</p>
+<p>The article is a blog post by Ted Unangst discussing claims circulating online that OpenBSD is significantly faster (10x) than Linux. Unangst investigates the origin of these claims and analyzes the methodology and context behind benchmarks that might suggest such a performance difference. He focuses on the anecdote that OpenBSD "felt faster" back when the author switched to it. He clarifies that this feeling likely stemmed from specific workload scenarios where OpenBSD's design choices, such as a simpler and less feature-laden kernel, offered an advantage. He explains that Linux, in its pursuit of broader hardware support and a wider range of use cases, has accumulated more complexity and drivers, which can introduce overhead.
 </p>
-<h2>Key Points:</h2>
+<p>Unangst critiques the idea of a blanket "10x faster" statement, emphasizing that performance is highly dependent on the specific workload and hardware configuration. He notes that the original claims likely originated from observations in specific areas like packet filtering with pf, where OpenBSD has historically been recognized for its efficiency. The author also uses an analogy where he compares a highly specialized tool versus a general-purpose tool with extra added functionalities. Unangst also investigates other potential performance influences such as compiler differences (GCC vs Clang) and security mitigations.
+</p>
+<p>Ultimately, the article concludes that while OpenBSD might exhibit performance advantages in certain niche scenarios due to its simpler design and specific optimizations, it is inaccurate and misleading to claim a general 10x speed advantage over Linux. Modern Linux systems are highly optimized and can outperform OpenBSD in many other scenarios. The choice between the two operating systems should be based on specific requirements and priorities rather than a simplistic notion of overall speed.</p>
+<p><b>Key Points:</b></p>
 <ul>
-<li>The claim that OpenBSD is 10x faster than Linux is viewed skeptically by the author.</li>
-<li>Blanket statements about OS performance are generally misleading.</li>
-<li>Performance gains are often workload-specific and due to targeted optimization.</li>
-<li>Architectural differences or default settings might give OpenBSD advantages in specific cases.</li>
-<li>The specific problem and factors influencing performance must be understood for comparison.</li>
-<li>Broad claims about OS performance are often inaccurate.</li>
+<li>The article addresses claims that OpenBSD is 10x faster than Linux.</li>
+<li>The author dismisses the blanket claim of a 10x performance advantage as misleading.</li>
+<li>Any perceived speed difference is highly workload-dependent.</li>
+<li>OpenBSD's simpler kernel and design can provide advantages in specific scenarios, like packet filtering.</li>
+<li>Linux's broader feature set and hardware support come with added complexity and potential overhead.</li>
+<li>Compiler differences (GCC vs Clang) and security mitigations can influence performance.</li>
+<li>Choosing between OpenBSD and Linux should be based on specific needs, not just speed.</li>
 </ul>
 </div>
 </div>

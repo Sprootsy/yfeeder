@@ -2,21 +2,30 @@
     <h2>The Future of Large Files in Git Is Git</h2>
     <div>
 <div>
-  <p>Tyler Cipriani's article discusses Git Large File Storage (LFS), an extension to Git designed to handle large files more efficiently. Standard Git is not well-suited for tracking large binary files like images, audio, or video, as it stores every version of every file in its history, leading to large repository sizes and slow performance. Git LFS addresses this by storing the large file content separately from the Git repository. Instead of storing the actual file data, Git LFS stores a pointer or text file within the Git repository, referencing the location of the large file on a separate LFS server. When you check out a commit, Git LFS automatically downloads the actual large file content from the LFS server. This keeps the Git repository itself small and manageable, while still allowing version control of large assets.</p>
+  <p>The article is a comprehensive guide to Git Large File Storage (LFS), explaining its purpose, how it works, and when to use it. It begins by highlighting the limitations of Git when dealing with large files, which can lead to repository bloat and performance issues. Git LFS is introduced as an extension that addresses these problems by storing large files separately while keeping pointer files in the Git repository. This approach allows for efficient versioning of large assets without impacting Git's performance.</p>
 
-  <p>The article explains how Git LFS works, covering aspects like tracking files, committing changes, pushing to remote repositories, and pulling changes. To use Git LFS, you first need to install the Git LFS client and then initialize it in your Git repository. You then specify which file types should be managed by Git LFS using the <code>git lfs track</code> command, which modifies the <code>.gitattributes</code> file. When you commit changes, Git LFS intercepts the large files, stores them on the LFS server, and places pointer files in your repository. When you push your commits, Git LFS uploads the large file content to the LFS server. When another user pulls the changes, Git LFS downloads the large files referenced by the pointer files from the LFS server, replacing the pointers with the actual file content in their working directory.</p>
+  <p>The article explains how Git LFS works by replacing large files with pointer files in the Git repository. These pointer files contain metadata about the actual large files, which are stored on a separate LFS server (either a public service like GitHub or a private server). When you clone or checkout a repository with LFS, Git LFS automatically downloads the large files from the LFS server, effectively "hydrating" your working directory.</p>
 
-  <p>The author also notes some considerations when using Git LFS, such as the need for an LFS server to store the large files. These servers can be self-hosted or provided by services like GitHub, GitLab, or Bitbucket. The article touches on the impact Git LFS has on collaboration workflows, as team members need to have Git LFS installed to properly interact with repositories using LFS. It also mentions potential issues like managing storage quotas on LFS servers and ensuring consistent availability of the LFS server. Additionally, the article likely discusses the benefits of using Git LFS, such as improved repository performance, reduced storage costs for the Git repository itself, and better handling of large assets in collaborative projects.</p>
+  <p>The author details the installation and configuration process for Git LFS, including installing the Git LFS client and configuring Git to use LFS for specific file types. The article demonstrates how to track files using the `git lfs track` command, which adds the specified file patterns to the `.gitattributes` file. This file tells Git LFS which files should be managed by LFS.</p>
 
-  <p><b>Key Points:</b></p>
+  <p>The advantages of using Git LFS are thoroughly explained, including reduced repository size, improved Git performance (especially for cloning and fetching), and better handling of binary files and other large assets. The article also addresses the drawbacks, such as the added complexity of managing an LFS server and the potential cost associated with storage and bandwidth, especially for private LFS servers.</p>
+
+  <p>The article covers migrating existing Git repositories to use Git LFS. The author cautions that this process can be complex, especially for large repositories with a long history. The best approach is to start using Git LFS from the beginning of a project. However, it can also work after the repository has been created.</p>
+
+  <p>The author explores alternative solutions to Git LFS, such as Git Annex. Git Annex aims to manage large files outside of Git but offers more flexibility in terms of storage options, including decentralized storage. The article provides a comparative overview of Git LFS and Git Annex, helping readers choose the right tool for their needs.</p>
+
+  <p>Finally, the article offers practical advice on when to use Git LFS. The key recommendation is to use Git LFS for any file that is large and doesn't benefit from Git's delta compression, such as binary files, large media assets (images, videos, audio), and datasets. By following these guidelines, developers can leverage Git LFS to improve their workflow and maintain a clean and efficient Git repository.</p>
+
+  <h2>Key Points:</h2>
   <ul>
-    <li>Git LFS is an extension to Git for handling large files efficiently.</li>
-    <li>It stores large file content separately from the Git repository on an LFS server.</li>
-    <li>Git LFS replaces large files in the repository with pointer files.</li>
-    <li>The <code>git lfs track</code> command specifies which file types Git LFS manages.</li>
-    <li>Team members need Git LFS installed to work with LFS-enabled repositories.</li>
-    <li>LFS servers can be self-hosted or provided by platforms like GitHub and GitLab.</li>
-    <li>Git LFS improves repository performance and reduces storage costs for the Git repository.</li>
+    <li>Git LFS is an extension that helps manage large files in Git repositories, preventing bloat and performance issues.</li>
+    <li>Git LFS stores large files on a separate server and replaces them with pointer files in the Git repository.</li>
+    <li>The `git lfs track` command is used to specify which file types should be managed by Git LFS.</li>
+    <li>Using Git LFS reduces repository size, improves Git performance, and better handles binary files.</li>
+    <li>Drawbacks include the complexity of managing an LFS server and potential costs for storage and bandwidth.</li>
+    <li>Migrating an existing repository to Git LFS can be complex, with starting from the beginning of the project being ideal.</li>
+    <li>Git Annex is an alternative to Git LFS that offers more flexibility in storage options.</li>
+    <li>Git LFS is recommended for large files that don't benefit from Git's delta compression, such as binary files and media assets.</li>
   </ul>
 </div>
 </div>
