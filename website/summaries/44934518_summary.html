@@ -1,0 +1,31 @@
+<article>
+    <h2>HN Search isn&#39;t ingesting new data since Friday</h2>
+    <div>
+<div>
+  <p>The GitHub issue #248 on the algolia/hn-search repository discusses a proposal to introduce a new feature that would allow users to filter search results based on a custom date range. Currently, the Hacker News search provided by Algolia offers filtering by predefined ranges like "past 24 hours", "past week", "past month", or "past year". The feature request aims to provide more granular control by enabling users to specify a specific start and end date for their searches.</p>
+
+  <p>The original poster (OP) and subsequent commenters highlight several use cases for this feature. One primary use case is for research purposes, where users need to find discussions or articles within a specific historical timeframe. This is particularly useful for tracking the evolution of a topic, finding information related to past events, or analyzing historical trends on Hacker News.</p>
+
+  <p>The discussion also delves into the technical challenges of implementing this feature. The Algolia search API needs to be configured to support date range filtering. This involves indexing the stories and comments with their respective timestamps and then constructing the appropriate search queries to leverage Algolia's range filtering capabilities. There is also a discussion about the user interface (UI) considerations, such as how to best present the date range selection options to the user. Options include using date pickers, text input fields, or a combination of both.</p>
+
+  <p>Another point raised is the importance of performance. Implementing date range filtering should not significantly degrade the search speed or responsiveness. The Algolia index needs to be optimized to handle range queries efficiently. The discussion touches on potential optimizations, such as using appropriate data types for timestamps and employing indexing strategies that are well-suited for range searches.</p>
+
+  <p>Several users also suggest alternative approaches or workarounds. One suggestion is to use Google's site search operator (`site:news.ycombinator.com`) along with date range operators. However, this approach is considered less than ideal because it relies on a third-party search engine and may not provide the same level of accuracy or relevance as Algolia's dedicated Hacker News search.</p>
+
+  <p>The issue also mentions the need for clear and concise documentation if the feature is implemented. Users should be able to easily understand how to use the date range filtering options and how to construct effective search queries.</p>
+
+  <p>The discussion concludes with a general consensus that the date range filtering feature would be a valuable addition to the Hacker News search provided by Algolia. The feature would enhance the utility of the search tool for research, analysis, and historical information retrieval. However, the implementation requires careful consideration of technical challenges, UI design, performance optimization, and documentation.</p>
+
+  <h2>Key Points:</h2>
+  <ul>
+    <li><b>Feature Request:</b> Users are requesting the ability to filter Hacker News search results by a custom date range (start and end date).</li>
+    <li><b>Use Cases:</b> Primarily for research, historical analysis, and tracking the evolution of topics on Hacker News.</li>
+    <li><b>Technical Challenges:</b> Implementing date range filtering in the Algolia search API, indexing timestamps, constructing range queries, and UI design.</li>
+    <li><b>Performance:</b> Ensuring that the feature does not significantly degrade search speed and responsiveness.</li>
+    <li><b>Alternative Approaches:</b> Using Google's site search operator as a workaround, but it's not ideal.</li>
+    <li><b>Documentation:</b> The feature requires clear documentation for users to understand how to use it effectively.</li>
+    <li><b>Value:</b> The feature would be a valuable addition to the Hacker News search, enhancing its utility for various use cases.</li>
+  </ul>
+</div>
+</div>
+</article>

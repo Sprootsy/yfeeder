@@ -1,0 +1,28 @@
+<article>
+    <h2>ClickHouse vs PostgreSQL UPDATE performance comparison</h2>
+    <div>
+<div>
+<h2>Summary</h2>
+<p>
+The article is a benchmark comparison of UPDATE performance between ClickHouse and PostgreSQL. It focuses on how efficiently each database system handles UPDATE operations, which are crucial for modifying existing data. The article highlights that while ClickHouse is traditionally known for its analytical capabilities and fast read performance, its performance on UPDATE queries has significantly improved over time. The benchmark uses a dataset of 1 billion rows, simulating real-world scenarios where data needs to be updated frequently.
+</p>
+<p>
+The benchmark compares the performance of ClickHouse and PostgreSQL on various UPDATE scenarios, including updating a single row, updating a small number of rows, and updating a large percentage of rows. The performance is measured by the time it takes to complete the UPDATE operation. Different ClickHouse engines are compared, like ReplacingMergeTree and VersionedCollapsingMergeTree.
+</p>
+<p>
+The results show that ClickHouse has made substantial improvements in UPDATE performance, especially with newer versions. In many scenarios, ClickHouse performs comparably to or even better than PostgreSQL. The article emphasizes that the choice between ClickHouse and PostgreSQL for UPDATE-heavy workloads depends on the specific use case, data model, and query patterns.
+</p>
+
+<h2>Key Points</h2>
+<ul>
+<li>The article presents a benchmark comparison of UPDATE performance between ClickHouse and PostgreSQL.</li>
+<li>The benchmark uses a dataset of 1 billion rows.</li>
+<li>Various UPDATE scenarios are tested, including single-row updates and large-scale updates.</li>
+<li>ClickHouse has shown significant improvements in UPDATE performance in recent versions.</li>
+<li>ClickHouse's performance is now comparable to or better than PostgreSQL in several UPDATE scenarios.</li>
+<li>The choice between ClickHouse and PostgreSQL depends on the specific workload and data characteristics.</li>
+<li>ReplacingMergeTree and VersionedCollapsingMergeTree engines are used to optimize performance.</li>
+</ul>
+</div>
+</div>
+</article>
