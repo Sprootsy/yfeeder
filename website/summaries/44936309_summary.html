@@ -1,0 +1,67 @@
+<article>
+    <h2>Clojure Async Flow Guide</h2>
+    <div>
+<div>
+<h3>Summary</h3>
+<p>The Clojure core.async library provides tools for asynchronous programming, including the concept of Flows. Flows are similar to channels, but with added capabilities for transforming and managing streams of data. The Flow Guide outlines how to create, transform, and consume Flows effectively.</p>
+
+<p><strong>Creating Flows:</strong> Flows can be created using `flow`, which returns a Flow that can have values placed on it using `offer!`. Alternatively, `->Flow` creates a Flow from an existing channel. Flows can also be created from collections or other sources using functions like `from-coll`.</p>
+
+<p><strong>Transforming Flows:</strong> Flows can be transformed using various functions analogous to sequence operations in Clojure. These include:</p>
+<ul>
+<li>`map`: Applies a function to each element of the Flow.</li>
+<li>`filter`: Filters elements based on a predicate function.</li>
+<li>`remove`: Removes elements based on a predicate function.</li>
+<li>`mapcat`: Maps each element to a collection and concatenates the results into a single Flow.</li>
+<li>`take`: Takes a specified number of elements from the Flow.</li>
+<li>`drop`: Drops a specified number of elements from the Flow.</li>
+<li>`take-while`: Takes elements until a predicate function returns false.</li>
+<li>`drop-while`: Drops elements until a predicate function returns false.</li>
+<li>`dedupe`: Removes consecutive duplicate elements.</li>
+<li>`sliding-time`: Emits the last value seen within a specified time window.</li>
+<li>`partition`: Groups elements into sub-flows of a fixed size.</li>
+<li>`partition-by`: Groups elements into sub-flows based on the result of a function.</li>
+</ul>
+
+<p><strong>Buffering:</strong> Flows can be buffered, affecting how they handle incoming values when the consumer is slower than the producer. Options include:</p>
+<ul>
+<li>Unbuffered: Values are only accepted if a receiver is immediately available.</li>
+<li>Fixed-size buffer: Holds a fixed number of values.</li>
+<li>Sliding buffer: When full, the oldest value is dropped to make room for new ones.</li>
+<li>Dropping buffer: When full, new values are dropped.</li>
+</ul>
+
+<p><strong>Tapping Flows:</strong>  `tap` allows you to create a side effect without consuming the Flow. It takes values from the Flow and applies a function to each value without modifying the Flow itself. `untap` removes a tap.</p>
+
+<p><strong>Consuming Flows:</strong> Flows are consumed using functions such as:</p>
+<ul>
+<li>`collect`: Collects the values from a Flow into a collection.</li>
+<li>`reduce`: Reduces the Flow to a single value using a reducing function.</li>
+<li>`consume`: Executes a side-effecting function on each element.</li>
+<li>`onto-chan`: Puts the values from a flow onto a channel.</li>
+</ul>
+
+<p><strong>Error Handling:</strong> Flows support error handling.  If an exception occurs during a transformation, the exception is placed on the Flow.  Downstream consumers must handle these exceptions. `catch` is used to handle exceptions placed on the flow.</p>
+
+<p><strong>Merging and Joining Flows:</strong> Flows can be merged and joined:</p>
+<ul>
+<li>`merge`: Merges multiple Flows into a single Flow.</li>
+<li>`join`: Allows for stateful joining of elements from multiple Flows based on a key.</li>
+</ul>
+
+<p><strong>Flow Control:</strong> core.async provides tools for managing the rate at which values are processed in a Flow. This is important for preventing resource exhaustion and ensuring fair access to shared resources. The guide mentions `buffer` for controlling the flow of values and `pipeline` for asynchronous processing.</p>
+
+<p>The guide also covers more advanced topics such as stateful processing with `reduce`, dynamic flow creation, and using Flows with transducers.</p>
+
+<h3>Key Points</h3>
+<ul>
+<li>Flows are asynchronous streams of data with transformation and management capabilities.</li>
+<li>Flows can be created from channels, collections, or other sources.</li>
+<li>Transformation functions like `map`, `filter`, and `reduce` are available for Flows.</li>
+<li>Buffering strategies (unbuffered, fixed-size, sliding, dropping) control how Flows handle incoming values.</li>
+<li>`tap` enables side effects without consuming the Flow.</li>
+<li>Error handling is supported by placing exceptions on the Flow.</li>
+<li>Flows can be merged and joined.</li>
+<li>Flow control is essential for managing resource usage.</li>
+<li>core.async Flows provide powerful tools for building asynchronous data processing pipelines in Clojure.</li></div>
+</article>
