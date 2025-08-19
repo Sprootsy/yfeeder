@@ -1,0 +1,32 @@
+<article>
+    <h2>XZ Utils Backdoor Still Lurking in Docker Images</h2>
+    <div>
+ <div>
+  <h2>Summary</h2>
+  <p>
+   Binarly's research reveals that the XZ Utils backdoor, discovered in late March 2024, persists in Docker images available on Docker Hub. This indicates a potential supply chain risk for developers and organizations using these images. Despite the vulnerability being widely publicized and patched, Binarly's analysis identified multiple Docker images containing the malicious code.
+  </p>
+  <p>
+   The XZ Utils backdoor (CVE-2024-3094) allows unauthorized remote access via SSH. The malicious code was inserted into the liblzma library within XZ Utils, a popular data compression software package used in many Linux distributions. When a system with the backdoored XZ Utils is accessed via SSH, the malicious code can intercept and modify the authentication process, potentially allowing an attacker to bypass authentication and gain unauthorized access.
+  </p>
+  <p>
+   Binarly's team scanned Docker Hub, a large repository of container images, and identified several images still containing the backdoored XZ Utils library. This is significant because Docker images are often used as building blocks for larger applications and systems. If a developer pulls and uses a compromised image, the vulnerability can be inadvertently propagated into their own software.
+  </p>
+  <p>
+   The continued presence of the XZ Utils backdoor in Docker images highlights the challenges of supply chain security and the importance of regularly scanning and updating dependencies. Even after a vulnerability is identified and patched, it can persist in various parts of the software ecosystem, especially within container images that might not be actively maintained or scanned for vulnerabilities. The identified images were reported to Docker Hub.
+  </p>
+  <p>
+   The discovery underscores the need for developers to exercise caution when using third-party Docker images and to implement robust security measures, including vulnerability scanning, image provenance validation, and regular updates, to mitigate the risk of incorporating compromised components into their applications. Furthermore, it is crucial for Docker image providers to promptly update their images to remove the malicious code and ensure the security of their users.
+  </p>
+  <h2>Key Points</h2>
+  <ul>
+   <li>The XZ Utils backdoor (CVE-2024-3094) persists in Docker images on Docker Hub.</li>
+   <li>The backdoor allows unauthorized remote access via SSH.</li>
+   <li>Compromised Docker images pose a supply chain risk.</li>
+   <li>Developers should scan Docker images for vulnerabilities.</li>
+   <li>Docker image providers must update images to remove the malicious code.</li>
+   <li>The identified images were reported to Docker Hub.</li>
+  </ul>
+ </div>
+ </div>
+</article>

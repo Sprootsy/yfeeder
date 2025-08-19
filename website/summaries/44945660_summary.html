@@ -1,0 +1,31 @@
+<article>
+    <h2>Phrack 72</h2>
+    <div>
+<div>
+<h3>Summary</h3>
+<p>The Phrack article "Smashing The Heap For Fun And Profit" by Julian 'Hammering' Kirsch delves into heap exploitation techniques, focusing on the glibc memory allocator (pMalloc). The article provides a detailed explanation of how the heap works, including the structures used to manage memory chunks (both in-use and free) and the metadata associated with them. It emphasizes understanding the heap's internal mechanisms as a prerequisite for successful exploitation.</p>
+<p>The article begins by explaining basic heap concepts like chunks, their sizes, and the flags that indicate their status (in-use or free). It describes the different types of bins used by pMalloc to store free chunks, such as fastbins, unsorted bin, small bins, and large bins. These bins are organized based on the size of the free chunks and are used to speed up allocation requests. The author details how pMalloc selects a suitable chunk from these bins when a program requests memory via malloc().</p>
+<p>The core of the article lies in demonstrating various heap exploitation techniques. One primary focus is on exploiting vulnerabilities that allow an attacker to overwrite heap metadata. This includes manipulating chunk sizes, next/previous pointers in free chunks, and other critical fields. By carefully crafting these overwritten values, an attacker can cause pMalloc to allocate a chunk at an arbitrary address, leading to code execution.</p>
+<p>Specifically, the article discusses techniques like:</p>
+<ul>
+<li><b>Fastbin corruption:</b> Overwriting the `fd` pointer of a free chunk in a fastbin to point to an attacker-controlled address. Subsequent allocation requests then return this attacker-controlled address.</li>
+<li><b>Unsorted bin attack:</b> Corrupting the `fd` and `bk` pointers of a chunk in the unsorted bin to achieve arbitrary memory write when the chunk is processed during allocation.</li>
+<li><b>House of Lore:</b> A technique that involves manipulating the `fd` pointer of a small bin chunk to point to a location slightly offset from a desired target address, allowing for controlled memory corruption.</li>
+<li><b>Poison Null Byte:</b> A technique to trick pMalloc into creating overlapping chunks by placing a null byte to overwrite the least significant byte of the size of the previous chunk.</li>
+</ul>
+<p>The article thoroughly explains the conditions necessary for each of these techniques to succeed. It provides code examples illustrating how these attacks can be implemented and demonstrates the impact of successful exploitation, typically achieving arbitrary code execution.</p>
+<p>Furthermore, the article considers mitigations and defenses that may be in place, such as checks performed by pMalloc to detect corrupted metadata. It touches on how some of these defenses can be bypassed with creative manipulation of heap structures.</p>
+<p>In essence, "Smashing The Heap For Fun And Profit" serves as a comprehensive guide to heap exploitation, providing both a solid understanding of heap internals and practical techniques for leveraging vulnerabilities in heap management to achieve arbitrary code execution. The article highlights the importance of precise memory manipulation and a deep understanding of pMalloc's behavior for successful heap exploitation.</p>
+
+<h3>Key Points</h3>
+<ul>
+<li>The article focuses on exploiting the glibc pMalloc heap implementation.</li>
+<li>Understanding the heap's internal structures (chunks, bins, metadata) is critical for exploitation.</li>
+<li>Heap exploitation involves manipulating heap metadata (chunk sizes, pointers) to control memory allocation.</li>
+<li>Fastbin corruption, unsorted bin attacks, House of Lore, and Poison Null Byte are example exploitation techniques discussed.</li>
+<li>These techniques can lead to arbitrary memory writes and, ultimately, code execution.</li>
+<li>The article discusses potential mitigations and bypasses.</li>
+</ul>
+</div>
+</div>
+</article>
