@@ -1,0 +1,33 @@
+<article>
+    <h2>Drunken Bishop (2023)</h2>
+    <div>
+ <div>
+   <p>The article discusses the Drunken Bishop algorithm, a method for visualizing SSH keys as small, unique ASCII art fingerprints. These fingerprints, also known as visual hashes or cryptographic fingerprints, aim to provide a human-readable and easily comparable representation of a key's underlying cryptographic data, making it simpler for users to verify the authenticity of SSH server keys and prevent man-in-the-middle attacks. The algorithm's name comes from the seemingly random walk that generates the fingerprint, reminiscent of a drunken bishop's movement on a chessboard.</p>
+ 
+
+   <p>The article delves into the technical details of the algorithm. The process starts with the MD5 hash of the public key's fingerprint. The MD5 hash is then interpreted as a series of moves on a 4x8 grid, starting from the center. Each pair of hexadecimal digits in the MD5 hash determines the direction of the "bishop's" move. The bishop can move diagonally up-left, up-right, down-left, or down-right, based on these hexadecimal values. Boundary conditions are handled by reflecting the bishop back into the grid if it tries to move outside the grid's boundaries. Each cell visited by the bishop is marked. Finally, the algorithm renders this marked grid as an ASCII art image using specific characters for corners, sides, and visited cells. The starting point and the final point are specially marked to aid visual identification.</p>
+ 
+
+   <p>The author goes into detail about the individual steps. First it converts the public key to its MD5 hash. Then a visualization grid is created with characters depicting the sides and corners. The &quot;bishop&quot; starts at the center of the grid, and iterates through the MD5 hash, two characters at a time. The pair of hexadecimal characters are converted to a number between 0 and 15. This value is then taken modulo 4 to determine the direction of the move. Based on the direction, the position of the bishop is updated. If the bishop tries to move off the grid, it is reflected back. Every time the bishop lands on a square, it's marked with an &quot;X&quot; to indicate it has been visited. After processing all pairs of characters, the grid is printed, with the start point marked as &quot;S&quot; and the end point marked as &quot;E&quot;.</p>
+ 
+
+   <p>The article also explores the history and context of the Drunken Bishop algorithm, noting that it was initially developed by Peter Miller for use in OpenSSH. It highlights the algorithm's strengths, such as its simplicity and ease of implementation, and its weaknesses, including the potential for collisions (different keys generating the same fingerprint) due to the relatively small grid size and the use of MD5. The author also explores alternative visual hash algorithms that have been developed to address these weaknesses, often using larger grid sizes and more robust hash functions like SHA-256 to reduce the risk of collisions and improve security.</p>
+ 
+
+   <p>Finally, the article concludes by discussing the ongoing relevance of visual hashes in the context of SSH key verification and authentication, emphasizing the importance of choosing secure algorithms and appropriate key lengths to ensure the security of SSH connections. It highlights the trade-offs between visual simplicity and cryptographic strength in the design of visual hash algorithms, and suggests that while Drunken Bishop has some weaknesses it is still useful due to its simplicity. The main goal is to have the user verify that the key is indeed the right one, by comparing the fingerprint, not to perfectly secure the authentication process.</p>
+ 
+
+   <h2>Key Points:</h2>
+   <ul>
+    <li>The Drunken Bishop algorithm generates an ASCII art fingerprint of an SSH key.</li>
+    <li>It uses the MD5 hash of the public key and a 4x8 grid.</li>
+    <li>The algorithm simulates a bishop's random walk on the grid, marking visited cells.</li>
+    <li>The resulting grid is rendered as ASCII art, with the start and end points marked.</li>
+    <li>The algorithm is easy to implement but has potential for collisions due to the grid size and MD5.</li>
+    <li>Alternative visual hash algorithms with larger grids and stronger hash functions exist.</li>
+    <li>Visual hashes aid in SSH key verification by providing a human-readable representation.</li>
+    <li>The algorithm was originally developed by Peter Miller for OpenSSH.</li>
+   </ul>
+ </div>
+ </div>
+</article>
