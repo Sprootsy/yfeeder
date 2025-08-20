@@ -1,0 +1,36 @@
+<article>
+    <h2>Emacs as your video-trimming tool</h2>
+    <div>
+<div>
+  <p>This article describes how to use Emacs, along with FFmpeg and a bit of Elisp code, as a video trimming tool. The author emphasizes the advantages of using Emacs for this task, highlighting its keyboard-centric nature, extensibility, and ability to precisely control the trimming process. The article walks through a practical example of trimming a video recording of a Zoom meeting.</p>
+
+  <p>The author starts by explaining the initial problem: needing to remove unwanted segments from a Zoom recording, specifically the beginning and end portions. Instead of relying on conventional video editing software, the author explores using Emacs. The core idea involves leveraging FFmpeg, a powerful command-line tool for video manipulation, and controlling it from within Emacs using Elisp.
+  </p>
+
+  <p>The article details the setup process, which includes ensuring FFmpeg is installed and accessible in the system's PATH. The next step involves creating an Elisp function, `trim-video`, that takes input and output file paths, along with start and end times, as arguments. This function constructs an FFmpeg command string and executes it using `shell-command`. The FFmpeg command uses the `-ss` option to specify the start time, `-to` to specify the end time, and `-c copy` to perform a fast, lossless copy of the video stream.
+  </p>
+
+  <p>To make the trimming process more interactive and efficient, the author describes creating another Elisp function, `trim-video-at-point`. This function extracts the video file name from the current buffer (assuming the buffer contains the file path), and uses the current cursor position (point) as the timestamp for either the start or end time of the trim. This allows the user to quickly set the start or end time by simply moving the cursor to the desired timestamp within the video file. The timestamp is copied from the buffer using `thing-at-point`. The `read-from-minibuffer` function is used to get the output file path from the user.
+  </p>
+
+  <p>To further streamline the workflow, the author creates two more functions: `trim-video-start-at-point` and `trim-video-end-at-point`. These functions are similar to `trim-video-at-point`, but they specifically set either the start or end time, respectively. This eliminates the need to repeatedly specify whether the current point represents the start or end time. These functions are then bound to keybindings for easy access.</p>
+
+  <p>The author illustrates the workflow with a concrete example. They open the Zoom recording file in Emacs, navigate to the desired start time, and execute the `trim-video-start-at-point` function via the defined keybinding. The author then moves the cursor to the desired end time and calls `trim-video-end-at-point`. Finally, the author uses the `trim-video` function and inputs both start and end times. The FFmpeg command executes, creating a trimmed video file. This entire process is claimed to be fast and precise, leveraging Emacs's strengths in text manipulation and keyboard control.</p>
+
+  <p>The article emphasizes the benefits of this approach, including the ability to use precise timestamps, avoid the overhead of a GUI-based video editor, and integrate the video trimming process into an existing Emacs workflow. The author also encourages readers to customize the Elisp code to suit their specific needs.</p>
+  
+
+  <h2>Key Points:</h2>
+  <ul>
+    <li>Emacs can be used as a video trimming tool by leveraging FFmpeg and Elisp.</li>
+    <li>FFmpeg handles the actual video trimming via command-line.</li>
+    <li>Elisp functions are created to simplify the process of constructing and executing FFmpeg commands.</li>
+    <li>`trim-video` function allows trimming video given start and end times.</li>
+    <li>`trim-video-at-point` function extracts timestamps from the buffer at the current cursor position.</li>
+    <li>`trim-video-start-at-point` and `trim-video-end-at-point` functions streamline the process by setting only the start or end time.</li>
+    <li>Keybindings are used for quick access to the trimming functions.</li>
+    <li>The process is fast, precise, and integrates well into an Emacs workflow.</li>
+  </ul>
+</div>
+</div>
+</article>

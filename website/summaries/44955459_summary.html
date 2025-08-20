@@ -1,0 +1,40 @@
+<article>
+    <h2>CRDT: Text Buffer</h2>
+    <div>
+<div>
+<h2>Summary</h2>
+<p>
+The article presents a detailed exploration of Conflict-Free Replicated Data Types (CRDTs) applied to the challenging problem of collaborative text editing. It focuses on a specific CRDT approach designed for a shared text buffer, aiming to provide a solution where multiple users can concurrently edit a document without encountering conflicts or data loss. The core challenge lies in maintaining consistency across all replicas of the document when operations are performed independently and potentially out of order.
+</p>
+<p>
+The author begins by illustrating the fundamental requirements of a collaborative text editing system, emphasizing the need for eventual consistency, where all replicas converge to the same state after a period of inactivity and message propagation. The article then delves into the complexities that arise from concurrent insertions and deletions, highlighting the issues of conflicting operations and the need for a robust mechanism to resolve these conflicts.
+</p>
+<p>
+The proposed CRDT solution revolves around the concept of assigning unique identifiers to each character in the text buffer. These identifiers, or "IDs", are generated in a way that allows for unambiguous ordering of characters even when insertions occur concurrently. The ID generation process involves a combination of a site ID (unique to each user/replica) and a logical clock (a counter that increments with each operation). The author introduces a clever scheme for generating IDs between existing characters in the buffer, ensuring that new characters can be inserted at any position without causing ID collisions. This scheme involves using fractional IDs, represented as ratios, and a deterministic algorithm for finding available "space" between existing IDs.
+</p>
+<p>
+The article meticulously describes the algorithms for insertion and deletion. Insertion involves generating a new ID for the inserted character and broadcasting this insertion operation to all replicas. Deletion involves marking a character with a specific ID as deleted, but not physically removing it from the buffer. This approach allows for deleted characters to be "resurrected" if a conflicting insertion occurs at the same position.
+</p>
+<p>
+A crucial aspect of the CRDT is the handling of concurrent insertions at the same position. The ID generation scheme, coupled with the lexicographical ordering of IDs, ensures that concurrent insertions are consistently ordered across all replicas, preventing conflicts. The article explains how the site ID component of the character ID acts as a tiebreaker in cases where multiple users insert characters at the same logical position.
+</p>
+<p>
+The article also touches upon the challenges of cursor management in a collaborative text editing environment. It describes how cursors can be represented as IDs and how these cursors are updated in response to insertions and deletions. The author discusses the need for cursor correction to maintain accurate cursor positions in the face of concurrent edits.
+</p>
+<p>
+The text concludes with a discussion of the trade-offs involved in choosing a CRDT-based approach for collaborative text editing. While CRDTs offer strong consistency guarantees and resilience to network latency, they can also introduce complexity in terms of ID management and algorithm implementation. The author suggests that the benefits of CRDTs, particularly in scenarios where real-time collaboration is essential, often outweigh these complexities.
+</p>
+
+<h2>Key Points</h2>
+<ul>
+    <li>CRDTs are used to solve the problem of collaborative text editing by ensuring eventual consistency across multiple replicas.</li>
+    <li>Each character in the text buffer is assigned a unique ID generated using a combination of a site ID and a logical clock.</li>
+    <li>The ID generation scheme allows for inserting new characters between existing characters without ID collisions using fractional IDs.</li>
+    <li>Deletions are handled by marking characters as deleted rather than physically removing them, allowing for resurrection in case of conflicts.</li>
+    <li>Concurrent insertions at the same position are resolved using the lexicographical ordering of IDs, with the site ID as a tiebreaker.</li>
+    <li>Cursor management involves representing cursors as IDs and updating them in response to insertions and deletions, including cursor correction.</li>
+    <li>CRDTs offer strong consistency guarantees but introduce complexity in ID management and algorithm implementation.</li>
+</ul>
+</div>
+</div>
+</article>

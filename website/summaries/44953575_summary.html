@@ -1,0 +1,36 @@
+<article>
+    <h2>Why Semantic Layers Matter (and how to build one with DuckDB)</h2>
+    <div>
+<div>
+<h2>Summary:</h2>
+The article provides a tutorial on building a semantic layer using DuckDB, a fast and lightweight analytical database, and SQLMesh, a framework for data transformation and governance. It addresses the challenges of data teams needing to provide consistent and reliable data definitions across various BI tools and stakeholders. The article introduces the concept of a semantic layer as a crucial component in modern data stacks, acting as a single source of truth for business metrics and data definitions.
+
+The tutorial begins by outlining the problem: data teams struggle with inconsistent metrics, complex SQL queries scattered across different tools, and a lack of a centralized, governed approach to data definitions. The semantic layer aims to solve these problems by defining metrics, dimensions, and relationships in a standardized way, making it easier for business users to access and understand data.
+
+DuckDB is presented as an ideal choice for the semantic layer due to its speed, ability to run locally, and compatibility with SQL. SQLMesh is then introduced as the framework for defining and managing the semantic layer. The article guides the reader through the process of setting up SQLMesh, connecting it to a DuckDB database, and defining data models.
+
+The tutorial walks through a practical example using a fictional e-commerce dataset. It demonstrates how to define models representing core entities like `users`, `products`, and `orders`. These models are defined using SQL, with SQLMesh providing features like automatic dependency resolution and data lineage tracking.
+
+Next, the article explains how to define metrics on top of these models. Metrics are calculations, such as `total_revenue` or `average_order_value`, that are central to business understanding. SQLMesh allows these metrics to be defined in a declarative way, specifying the calculation and the underlying models they depend on. This approach ensures consistency and allows SQLMesh to automatically manage dependencies and recalculate metrics when the underlying data changes.
+
+The tutorial then covers how to use SQLMesh to query the semantic layer. It shows how to formulate queries that combine metrics and dimensions to answer specific business questions. SQLMesh handles the complexity of joining tables and calculating metrics, allowing users to focus on the business logic of their queries.
+
+Furthermore, the article highlights the governance features of SQLMesh. It emphasizes how SQLMesh enables version control, testing, and continuous integration/continuous deployment (CI/CD) for the semantic layer. This ensures that changes to data models and metrics are properly reviewed and tested before being deployed to production. The tutorial shows how to use SQLMesh's CLI to plan and apply changes, ensuring a smooth and controlled deployment process.
+
+The article concludes by emphasizing the benefits of using DuckDB and SQLMesh to build a semantic layer, including improved data consistency, reduced query complexity, and enhanced data governance. It positions the semantic layer as a critical component for data-driven organizations, enabling them to make better decisions based on reliable and well-defined data. The tutorial also suggests further exploration of SQLMesh's features and integration with other BI tools.
+
+<h2>Key Points:</h2>
+
+*   **Problem:** Data teams struggle with inconsistent metrics and a lack of centralized data governance.
+*   **Solution:** Implement a semantic layer to define metrics, dimensions, and relationships in a standardized way.
+*   **DuckDB:** A fast and lightweight analytical database suitable for the semantic layer.
+*   **SQLMesh:** A framework for defining and managing the semantic layer, including dependency resolution and data lineage.
+*   **Data Models:** Define core entities (e.g., users, products, orders) using SQL within SQLMesh.
+*   **Metrics:** Define calculations (e.g., total\_revenue, average\_order\_value) on top of data models.
+*   **Querying:** SQLMesh simplifies querying the semantic layer by handling joins and metric calculations.
+*   **Governance:** SQLMesh provides version control, testing, and CI/CD for the semantic layer.
+*   **Benefits:** Improved data consistency, reduced query complexity, and enhanced data governance.
+*   **Workflow:** Define models and metrics in SQLMesh, plan and apply changes using the CLI.
+</div>
+</div>
+</article>
