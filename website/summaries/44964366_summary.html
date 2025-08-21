@@ -1,0 +1,22 @@
+<article>
+    <h2>Zed for Windows: What&#39;s Taking So Long?</h2>
+    <div>
+<div>
+  <p>Zed, a high-performance, collaborative code editor, is making progress on its Windows version. The development team has overcome significant challenges related to Windows-specific issues, particularly with GPU integration and input handling. They initially faced difficulties with GPU processes crashing due to conflicts between the Chromium rendering engine and the way Windows handles GPU resources. After extensive investigation, they implemented a workaround by disabling certain Chromium features, which stabilized the application but introduced performance regressions.</p>
+  <p>To address the performance issues, the team explored different rendering methods, eventually opting to use Direct3D 11 (D3D11) instead of the default OpenGL. This change required substantial modifications to their rendering pipeline but resulted in significant performance improvements and reduced power consumption. They also encountered challenges with input handling, specifically with IME (Input Method Editor) support for languages like Chinese and Japanese. The standard IME APIs in Windows proved unreliable, leading to the development of a custom solution using the Text Services Framework (TSF) for more robust and predictable IME behavior.</p>
+  <p>The development team also focused on improving the overall user experience on Windows, including addressing issues with font rendering, window resizing, and handling of DPI scaling across multiple monitors with different resolutions. They are actively working on polishing the UI, fixing bugs, and optimizing performance to ensure a smooth and responsive experience for Windows users. While a public release date is not specified, the blog post conveys that the Windows version of Zed is progressing steadily, with the core technical hurdles largely resolved. The team is now focused on refinement and stabilization in preparation for wider testing and eventual release.</p>
+
+  <h2>Key Points</h2>
+  <ul>
+    <li>Zed's Windows version is under development and making good progress.</li>
+    <li>Initial development was hampered by GPU process crashes related to Chromium and Windows GPU resource conflicts.</li>
+    <li>A workaround involving disabling Chromium features initially stabilized the application, but introduced performance regressions.</li>
+    <li>The team switched to Direct3D 11 (D3D11) for rendering, resulting in significant performance improvements and reduced power consumption.</li>
+    <li>Input Method Editor (IME) support was challenging, leading to a custom implementation using the Text Services Framework (TSF).</li>
+    <li>The team is actively addressing issues related to font rendering, window resizing, and DPI scaling on Windows.</li>
+    <li>Focus is now on UI polishing, bug fixing, and performance optimization.</li>
+    <li>A public release date is not yet specified, but progress is steady and core technical hurdles are largely resolved.</li>
+  </ul>
+</div>
+</div>
+</article>

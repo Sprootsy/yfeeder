@@ -1,0 +1,21 @@
+<article>
+    <h2>Show HN: Anchor Relay – A faster, easier way to get Let&#39;s Encrypt certificates</h2>
+    <div>
+ <div>
+   <p>Anchor Relay is a service provided by Anchor that enables users to execute Solana programs without needing to hold SOL tokens or manage transaction signing. It essentially abstracts away the complexities of Solana transactions, allowing developers to offer a seamless user experience, especially for users new to the Solana ecosystem. The service works by allowing a user to sign a message containing the details of the desired program instruction and then forwarding it to Anchor Relay. Anchor Relay then constructs and signs the actual Solana transaction, paying the associated transaction fees. This eliminates the need for users to manage their own wallets, acquire SOL for gas fees, or understand the intricacies of Solana transactions. </p>
+   <p>There are several key benefits to using Anchor Relay. First, it provides a gasless experience for users. This drastically reduces the friction associated with onboarding new users who may not be familiar with cryptocurrency or the concept of gas fees. Second, it allows for session keys, which enable more complex authorization schemes. Session keys are temporary keys that authorize specific actions for a limited time, adding an extra layer of security and flexibility. This enables use cases such as daily spending limits, subscription models, and temporary access permissions. Third, Anchor Relay enhances the security of user interactions. Because the actual transaction signing is handled by Anchor Relay, user keys are not directly exposed, reducing the risk of key compromise. </p>
+   <p>The service integrates with Anchor programs using a specific instruction called the "relay" instruction. This instruction is included in the Anchor program code and is designed to receive relayed instructions from Anchor Relay. When a user interacts with a program through Anchor Relay, they sign a message containing the target program instruction. This message is then sent to Anchor Relay, which verifies the signature, constructs the full transaction (including paying the fees), and executes the transaction on the Solana blockchain. This process ensures that the intended program logic is executed while abstracting away the underlying complexities for the user.</p>
+   <p>Anchor Relay supports several key features. It verifies that the user has authorized the transaction through cryptographic signatures. It handles transaction fee payments, removing the burden from the end user. It enables session keys for advanced authorization schemes. And it provides a straightforward integration path with Anchor programs via the relay instruction. By using Anchor Relay, developers can create more user-friendly and secure Solana applications, making it easier for a broader audience to participate in the Solana ecosystem.</p>
+   <h2>Key Points:</h2>
+   <ul>
+     <li>Anchor Relay enables gasless transactions for Solana programs.</li>
+     <li>It abstracts away transaction complexities for users, improving user experience.</li>
+     <li>Users sign messages containing program instructions, which are then executed by Anchor Relay.</li>
+     <li>Anchor Relay handles transaction fee payments.</li>
+     <li>It supports session keys for advanced authorization and enhanced security.</li>
+     <li>Integration with Anchor programs is achieved via the "relay" instruction.</li>
+     <li>It enhances security by keeping user keys private.</li>
+   </ul>
+ </div>
+ </div>
+</article>

@@ -1,0 +1,42 @@
+<article>
+    <h2>Introduction to AT Protocol</h2>
+    <div>
+<div>
+  <p>
+    The article is an introduction to atproto, a decentralized social networking protocol developed by Bluesky. Atproto aims to provide an alternative to centralized social media platforms by offering more control to users over their data and algorithms.
+  </p>
+  <p>
+    The author starts by explaining the problems with current social media platforms, such as the lack of control over algorithms and the potential for censorship. Atproto seeks to address these issues through decentralization. It enables users to choose their own "frontends" (called "Views") to access the network, which can then use different algorithms and have different moderation policies. This contrasts with centralized platforms where the platform operator dictates what users see and how they interact.
+  </p>
+  <p>
+    The core of atproto is the "Authenticated Transfer Protocol," which handles identity, data storage, and social graph relationships. Users have a "handle" (e.g., @username.example.com) that can be moved between different servers. The handle is tied to a DID (Decentralized Identifier), which acts as a portable, verifiable identity. User data is stored in "repositories," which are essentially append-only logs of user actions (posts, follows, etc.). These repositories are stored on servers called "Personal Data Servers" (PDSs), and users can choose which PDS to use.
+  </p>
+  <p>
+    A key feature is the ability to "syndicate" data across multiple PDSs. This means users can have their data stored in multiple locations, increasing resilience and availability. Atproto also uses a system called "Lexicon" to define the data structures and APIs used in the protocol, ensuring consistency and interoperability.
+  </p>
+  <p>
+    The "Views" component is responsible for presenting the data to users. Views fetch data from various PDSs, apply algorithms to rank and filter content, and then display it. Users are free to choose any View, and developers can create new Views with different features and moderation policies.
+  </p>
+  <p>
+    The article further explains how atproto addresses spam and abuse. The open nature of the network requires mechanisms to filter unwanted content. Because Views are separate from the underlying data, each View can implement its own moderation and filtering policies. Users can also use block lists and mute lists that can be applied across different Views.
+  </p>
+  <p>
+    The author then discusses the current state of atproto, mentioning that it's still under development but is already usable. They highlight some existing clients and tools, and also points out areas where atproto can be improved, such as repository syncing.
+  </p>
+
+  <p><b>Key points:</b></p>
+  <ul>
+    <li>atproto is a decentralized social networking protocol.</li>
+    <li>It aims to give users more control over their data and algorithms.</li>
+    <li>Users have portable identities (handles and DIDs).</li>
+    <li>Data is stored in repositories on Personal Data Servers (PDSs).</li>
+    <li>Data can be syndicated across multiple PDSs.</li>
+    <li>"Views" are clients that present data to users and apply algorithms.</li>
+    <li>Views can implement different moderation policies.</li>
+    <li>Lexicon defines the data structures and APIs.</li>
+    <li>The protocol is designed to address spam and abuse.</li>
+    <li>atproto is still under development but is usable.</li>
+  </ul>
+</div>
+</div>
+</article>
