@@ -1,0 +1,29 @@
+<article>
+    <h2>Uv format: Code Formatting Comes to uv (experimentally)</h2>
+    <div>
+<div>
+<p>The article announces the experimental integration of code formatting capabilities into uv, a Python package installer and resolver, leveraging the Ruff formatter. This enhancement allows uv to automatically format Python code during the installation process. </p>
+
+<p>Previously, uv focused on speed and reliability in package installation and dependency resolution, aiming to be a faster alternative to pip and pip-tools. With the introduction of code formatting, uv expands its functionality to include code style enforcement, contributing to code consistency across projects. The Ruff formatter, known for its speed and comprehensive style checks, is the engine behind this new feature.</p>
+
+<p>The experimental integration is enabled via the `--format` flag.  When used, uv will format any Python code it encounters during installation, such as setup.py files or any other executable Python files that might be included in packages.  The goal is to ensure that the installed code adheres to a consistent style, even if the original package source does not.</p>
+
+<p>The article highlights several benefits of this integration.  First, it automates code formatting, removing the need for manual formatting steps or separate formatting tools. Second, it promotes code consistency across projects by enforcing a unified style. Third, it can potentially catch and fix minor style issues during installation, improving code quality. Finally, the Ruff formatter's speed ensures that the formatting process does not significantly impact installation time.</p>
+
+<p>The author emphasizes the experimental nature of the feature, inviting users to test it and provide feedback. The feedback is crucial for refining the integration and identifying potential issues before a stable release. The article also mentions that the specific formatting rules and configuration are inherited from Ruff, allowing users to customize the formatting style according to their preferences, typically through a `pyproject.toml` file.</p>
+
+<p>In summary, the article details the experimental addition of code formatting to uv using the Ruff formatter. This integration aims to streamline the installation process, enforce code consistency, and improve code quality by automatically formatting Python code during package installation.  User feedback is encouraged to help refine this new feature.</p>
+
+<h2>Key Points:</h2>
+<ul>
+<li>uv now has experimental code formatting capabilities.</li>
+<li>The formatting is powered by the Ruff formatter.</li>
+<li>It's enabled via the `--format` flag.</li>
+<li>It automates code formatting during package installation.</li>
+<li>It promotes code consistency across projects.</li>
+<li>It uses Ruff's configuration, allowing for customization.</li>
+<li>User feedback is requested to improve the feature.</li>
+</ul>
+</div>
+</div>
+</article>

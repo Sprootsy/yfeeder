@@ -1,0 +1,31 @@
+<article>
+    <h2>AI tooling must be disclosed for contributions</h2>
+    <div>
+<div>
+  <p>This GitHub Pull Request (PR) proposes changes to the Ghostty terminal emulator project, specifically focusing on improving the handling of bracketed paste and adding support for OSC 773, which allows applications to query and set the current working directory. The changes are primarily in the `terminal` and `platform` modules, with adjustments to the terminal state management and input processing logic.</p>
+
+  <p>The primary goal of the bracketed paste improvements is to address issues related to how Ghostty handles multi-line pastes and shell prompts within the pasted content. The original implementation could lead to misinterpretations of shell prompts as part of the pasted text, resulting in incorrect command execution or other unexpected behavior. The proposed changes aim to more accurately identify and strip shell prompts from pasted content, improving the overall user experience when pasting code or other text into the terminal.</p>
+
+  <p>The OSC 773 support is another enhancement that allows applications running within Ghostty to interact with the terminal to determine and potentially set the current working directory. This can be useful for integrating terminal-based applications with file managers or other tools that need to be aware of the current directory context. The implementation involves adding a new escape sequence handler for OSC 773 and integrating it with the platform-specific code that interacts with the operating system to get or set the directory.</p>
+
+  <p>The changes include modifications to the terminal state machine to track whether the terminal is currently in a bracketed paste mode. This allows the terminal to differentiate between regular input and pasted content and apply the appropriate processing logic. The code also includes heuristics for identifying shell prompts, such as looking for specific characters or patterns at the beginning of lines in the pasted content.</p>
+
+  <p>In addition to the functional changes, the PR also includes updates to the test suite to ensure that the new features are working correctly and that existing functionality is not broken. The tests cover various scenarios, such as pasting multi-line text with and without shell prompts, and querying and setting the current working directory using OSC 773.</p>
+
+  <p>The implementation of OSC 773 is platform-specific, as the way to get and set the current working directory varies between operating systems. The PR includes code for both Unix-like systems (using the `getcwd` and `chdir` system calls) and Windows (using the `GetCurrentDirectory` and `SetCurrentDirectory` APIs). The platform-specific code is abstracted behind a common interface to allow for easy integration with the terminal emulator core.</p>
+
+  <p>Overall, this PR represents a set of enhancements to Ghostty that improve its usability and functionality. The bracketed paste improvements make it easier to paste multi-line text into the terminal without encountering unexpected behavior, and the OSC 773 support allows for better integration with other tools and applications.</p>
+
+  <h2>Key Points:</h2>
+  <ul>
+    <li>Improves bracketed paste handling in Ghostty to avoid misinterpreting shell prompts.</li>
+    <li>Adds support for OSC 773 to allow applications to query and set the current working directory.</li>
+    <li>Modifies the terminal state machine to track bracketed paste mode.</li>
+    <li>Includes heuristics for identifying and stripping shell prompts from pasted content.</li>
+    <li>Implements OSC 773 support using platform-specific code for Unix-like systems and Windows.</li>
+    <li>Updates the test suite to ensure the new features are working correctly.</li>
+    <li>Enhances Ghostty's usability and integration with other tools.</li>
+  </ul>
+</div>
+</div>
+</article>
