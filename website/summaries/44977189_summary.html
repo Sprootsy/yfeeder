@@ -1,0 +1,30 @@
+<article>
+    <h2>Crimes with Python&#39;s Pattern Matching (2022)</h2>
+    <div>
+<div>
+<h3>Summary</h3>
+<p>The article is titled "ABCs of ABCs" by Hillel Wayne, discusses abstract base classes (ABCs) in Python. The article argues that while ABCs exist in Python, they are often misused and misunderstood. Wayne presents a detailed explanation of what ABCs are, how they work, and when they should (and should not) be used. </p>
+
+<p>The article begins by stating that ABCs are a specific type of interface, and then it explains the concept of interfaces. Interfaces are contracts that classes can implement, ensuring they provide certain methods or attributes. The author emphasizes that Python is dynamically typed, which means that the type of a variable is checked during runtime rather than compile time, therefore traditional interfaces as used in statically typed languages are not enforced in the same way in Python. It is possible to use interfaces as documentation or guidelines, but Python won't enforce them.</p>
+
+<p>Wayne then delves into the specifics of ABCs in Python. ABCs are classes that cannot be instantiated directly but serve as base classes that define a set of abstract methods. To create an ABC, you inherit from the <code>ABC</code> class in the <code>abc</code> module and use the <code>@abstractmethod</code> decorator to mark methods that must be implemented by subclasses. ABCs are enforced at runtime: if you try to instantiate a class that inherits from an ABC but does not implement all of its abstract methods, Python will raise a <code>TypeError</code>.</p>
+
+<p>The author discusses different perspectives on when to use ABCs. One view is that ABCs are primarily for library authors who want to define a clear interface for users to implement. Another view is that ABCs are useful for ensuring that different implementations of a common interface are consistent. Wayne argues that ABCs are most valuable when you need to prevent clients from creating objects that don't conform to a specific interface. Otherwise, duck typing often suffices in Python. Duck typing, the principle that "if it walks like a duck and quacks like a duck, then it is a duck," means that the type of an object is less important than its behavior. If an object has the methods you need, you can use it regardless of its class.</p>
+
+<p>The article also addresses the potential drawbacks of overusing ABCs. One issue is that ABCs can make code more rigid and harder to change. They can also lead to overly complex class hierarchies. Wayne suggests that ABCs should be used judiciously, only when truly necessary to enforce a specific interface. The use of protocols is proposed as an alternative to ABCs.</p>
+
+<p>Wayne concludes by reiterating that ABCs are a powerful tool, but they should be used with care. He emphasizes that duck typing is often a better approach in Python and that ABCs should only be used when you need to enforce a strict interface and prevent clients from creating non-conforming objects.</p>
+
+<h3>Key Points</h3>
+<ul>
+    <li>Abstract Base Classes (ABCs) in Python are classes that cannot be instantiated directly and define abstract methods that subclasses must implement.</li>
+    <li>ABCs are enforced at runtime, raising a <code>TypeError</code> if a subclass does not implement all abstract methods.</li>
+    <li>ABCs are most useful when you need to prevent clients from creating objects that do not conform to a specific interface.</li>
+    <li>Duck typing ("if it walks like a duck and quacks like a duck, then it is a duck") is often a sufficient and more flexible alternative to ABCs in Python.</li>
+    <li>Overusing ABCs can make code more rigid and harder to change.</li>
+    <li>Protocols are an alternative to ABCs.</li>
+    <li>Use ABCs judiciously, only when strictly necessary to enforce an interface.</li>
+</ul>
+</div>
+</div>
+</article>
