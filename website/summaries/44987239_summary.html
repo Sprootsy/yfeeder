@@ -1,0 +1,29 @@
+<article>
+    <h2>Google did not unilaterally decide to kill XSLT</h2>
+    <div>
+<div>
+  <p>
+    The article addresses concerns and misinformation circulating about Google supposedly deciding to kill off XSLT (Extensible Stylesheet Language Transformations). The author clarifies that Google did not make any unilateral decision to remove XSLT from browsers or the web platform. The author explains how the misunderstanding arose, specifically mentioning a statement in a Chromium intent-to-ship document about removing built-in support for XSLTProcessor in Blink (the rendering engine used by Chrome and other browsers).
+  </p>
+  <p>
+    The core of the article emphasizes that while Google is considering removing the built-in XSLTProcessor from Blink, this doesn't mean XSLT is going away entirely. Instead, the intention is to shift the responsibility for XSLT processing away from the browser itself and towards JavaScript libraries. This means web developers who need XSLT functionality would need to include an XSLT processor library in their web applications, similar to how other specialized functionalities are implemented.
+  </p>
+  <p>
+    The rationale behind this potential change is that the built-in XSLTProcessor is not widely used on the web, and maintaining it adds complexity and security concerns to the browser. By removing it, the browser can become simpler and more secure. Additionally, JavaScript-based XSLT processors exist and offer comparable functionality, making the transition feasible.
+  </p>
+  <p>
+    The author stresses that the discussion is still ongoing and the decision isn't final. There's an active discussion within the Chromium project about the implications and potential alternatives. The author encourages developers to participate in these discussions and provide feedback if they have concerns about the proposed change. The article also makes clear that it's primarily about the XSLTProcessor API and not about XSLT as a language or concept itself. XSLT files can still be processed by JavaScript libraries.
+  </p>
+  <p><b>Key Points:</b></p>
+  <ul>
+    <li>Google is considering removing the built-in XSLTProcessor API from the Blink rendering engine (used in Chrome).</li>
+    <li>This does NOT mean XSLT itself is being removed from the web.</li>
+    <li>The intention is to shift XSLT processing to JavaScript libraries.</li>
+    <li>The built-in XSLTProcessor has low usage and adds complexity to the browser.</li>
+    <li>JavaScript-based XSLT processors are available as alternatives.</li>
+    <li>The decision is not final, and discussions are ongoing.</li>
+    <li>The focus is on the XSLTProcessor API, not the XSLT language.</li>
+  </ul>
+</div>
+</div>
+</article>

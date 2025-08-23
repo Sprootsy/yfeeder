@@ -1,0 +1,27 @@
+<article>
+    <h2>Should the web platform adopt XSLT 3.0?</h2>
+    <div>
+<div>
+  <p>The GitHub issue discusses the addition of a &lt;documentpicture&gt; element to HTML, which aims to address the challenge of providing appropriate image resources for different display contexts, such as varying screen densities and resolutions, print media, and potentially even future display technologies like VR/AR. The current &lt;picture&gt; element is considered insufficient because it is limited to image selection based on viewport size and media queries, but lacks features like content-based selection or finer-grained control over image types and encodings. The proposed &lt;documentpicture&gt; element seeks to provide a more comprehensive solution, enabling developers to specify a range of image resources with associated metadata, allowing the browser to select the most suitable resource based on a wider array of criteria.</p>
+
+  <p>One of the primary motivations behind the proposal is to optimize image delivery for various devices and network conditions, improving page load times and reducing bandwidth consumption. By providing multiple image options, the browser can choose the smallest acceptable image for a given device, preventing the unnecessary download of high-resolution images on devices with lower screen densities. The element could also facilitate the selection of different image formats based on browser support and performance characteristics, for example, using WebP or AVIF formats when available.</p>
+
+  <p>The discussion includes considerations for the element's attributes, such as how to specify image sources, media queries, and other selection criteria. There's also consideration on how the element would interact with CSS and JavaScript, and how it might be extended in the future to support more advanced features. A key aspect is to ensure that the &lt;documentpicture&gt; element is both flexible enough to meet the needs of developers and efficient for browsers to implement.</p>
+
+  <p>One of the challenges involves defining a clear and intuitive syntax for specifying image resources and their associated metadata. Another challenge lies in ensuring that the element is compatible with existing web standards and practices. The discussion explores different approaches to address these challenges, taking into account the trade-offs between complexity and functionality. The end goal is to create a new HTML element that significantly improves image delivery and rendering across a wide range of devices and contexts.</p>
+
+  <p>The issue also covers the potential use cases and benefits of the &lt;documentpicture&gt; element. This includes improved performance, reduced bandwidth consumption, and enhanced user experience. The new element will also give more fine grained control to developers in choosing the correct image for a certain device or technology.</p>
+
+  <h2>Key Points:</h2>
+  <ul>
+    <li><b>Proposal:</b> Introduction of a new &lt;documentpicture&gt; element to HTML.</li>
+    <li><b>Problem:</b> Existing &lt;picture&gt; element is limited in its ability to select appropriate image resources for diverse display contexts.</li>
+    <li><b>Goal:</b> Provide a more comprehensive solution for image selection based on various criteria like screen density, media type, and browser support.</li>
+    <li><b>Benefits:</b> Improved page load times, reduced bandwidth consumption, and enhanced user experience through optimized image delivery.</li>
+    <li><b>Considerations:</b> Syntax, compatibility with existing standards, and future extensibility.</li>
+    <li><b>Motivation:</b> Optimizing image delivery for different devices and network conditions.</li>
+    <li><b>Functionality:</b> Allows developers to specify multiple image resources with associated metadata for the browser to choose from.</li>
+  </ul>
+</div>
+</div>
+</article>
