@@ -1,0 +1,31 @@
+<article>
+    <h2>The first Media over QUIC CDN: Cloudflare</h2>
+    <div>
+<div>
+<h2>Summary</h2>
+<p>The article "First CDN" details the author's journey of setting up a Content Delivery Network (CDN) for their personal website, moq.dev, to improve performance and reduce server load. The author initially hosted the site on a single server in Frankfurt, Germany. While sufficient for a small audience, the author anticipated increased traffic due to upcoming conference talks and decided to implement a CDN to handle the load more efficiently, especially for users geographically distant from the origin server.</p>
+
+<p>The author chose Bunny.net as their CDN provider, citing its ease of use and transparent pricing. The setup process involved creating a pull zone in Bunny.net, which specifies the origin server (moq.dev) and the desired caching behavior. The author then configured their DNS settings to point to the Bunny.net CDN, ensuring that website traffic would be routed through the CDN's edge servers.</p>
+
+<p>The article highlights the importance of configuring caching rules and headers to optimize CDN performance. The author emphasizes setting appropriate cache durations (TTL - Time To Live) for different types of content, such as static assets (images, CSS, JavaScript) and dynamic content. They also discuss the use of cache-control headers to instruct browsers and CDNs on how to cache content effectively.</p>
+
+<p>A significant part of the article focuses on handling cache invalidation. The author describes how they implemented a system to purge the CDN cache whenever they deploy new website updates. This ensures that users always receive the latest version of the site, even if the CDN has cached an older version. The cache invalidation process involves sending a purge request to the Bunny.net API, which clears the cached content for specific files or the entire zone.</p>
+
+<p>The author also shares practical tips and considerations for CDN setup, such as using versioned URLs for static assets to force cache updates, configuring proper CORS (Cross-Origin Resource Sharing) headers, and using tools like `curl` to verify that the CDN is serving content correctly. They also caution about the potential for over-caching and the importance of testing cache invalidation procedures thoroughly.</p>
+
+<p>Finally, the article concludes with a discussion of the benefits of using a CDN, including improved website loading times, reduced server load, and enhanced user experience, especially for visitors from different geographical locations. The author expresses satisfaction with their CDN setup and encourages others to consider using a CDN for their websites, especially as traffic grows.</p>
+
+<h2>Key points</h2>
+<ul>
+<li>The author implemented a CDN (Bunny.net) for their personal website, moq.dev, to improve performance and handle increased traffic.</li>
+<li>The CDN setup involved creating a pull zone in Bunny.net and configuring DNS settings to point to the CDN.</li>
+<li>Proper caching rules and headers (cache-control, TTL) are crucial for optimizing CDN performance.</li>
+<li>Cache invalidation is essential to ensure users receive the latest website updates. The author implemented a system to purge the CDN cache on deployment.</li>
+<li>Versioned URLs for static assets are used to force cache updates.</li>
+<li>CORS headers need to be configured correctly.</li>
+<li>Tools like `curl` are helpful for verifying CDN functionality.</li>
+<li>CDNs improve website loading times, reduce server load, and enhance user experience.</li>
+</ul>
+</div>
+</div>
+</article>
