@@ -1,0 +1,33 @@
+<article>
+    <h2>Waitgroups: What they are, how to use them and what changed with Go 1.25</h2>
+    <div>
+<div>
+<h2>Summary</h2>
+<p>The article provides an in-depth explanation of the <code>sync.WaitGroup</code> in Go, a crucial tool for synchronizing goroutines. It begins by illustrating the problem that <code>WaitGroup</code> solves: coordinating the completion of multiple goroutines. Without proper synchronization, a program might exit before all goroutines finish their tasks, leading to incomplete or incorrect results.</p>
+
+<p>The core functionality of <code>WaitGroup</code> revolves around three methods: <code>Add(delta int)</code>, <code>Done()</code>, and <code>Wait()</code>. <code>Add()</code> increments an internal counter, signifying the number of goroutines to wait for. <code>Done()</code> decrements this counter, typically called when a goroutine completes its execution. <code>Wait()</code> blocks the calling goroutine until the internal counter becomes zero, indicating that all added goroutines have finished.</p>
+
+<p>The article emphasizes the importance of correctly managing the <code>WaitGroup</code> counter. Calling <code>Done()</code> more times than <code>Add()</code> can lead to a panic, while failing to call <code>Done()</code> for all goroutines added to the <code>WaitGroup</code> will cause the <code>Wait()</code> method to block indefinitely, resulting in a deadlock. The author highlights the common pitfall of calling <code>Add()</code> inside the goroutine itself, which can lead to race conditions if the goroutines start executing before <code>Add()</code> is called, particularly in loops. The recommended practice is to call <code>Add()</code> before launching the goroutine.</p>
+
+<p>Furthermore, the article warns against copying <code>WaitGroup</code> instances. Since <code>WaitGroup</code> manages an internal state, copying it can lead to unexpected behavior and synchronization issues. The author suggests passing <code>WaitGroup</code> instances by pointer to ensure that all goroutines operate on the same instance.</p>
+
+<p>The article also touches on the potential performance implications of using <code>WaitGroup</code> and suggests using errgroup when needing error propagation and goroutine cancellation, and using channels when there is a need for more complex communication patterns.</p>
+
+<p>In summary, the article serves as a guide to effectively using <code>sync.WaitGroup</code> for goroutine synchronization in Go, covering its basic functions, common pitfalls, and best practices for avoiding race conditions, deadlocks, and unexpected behavior.</p>
+
+<h2>Key Points</h2>
+<ul>
+    <li><code>sync.WaitGroup</code> is used to wait for a collection of goroutines to finish.</li>
+    <li>The <code>Add(delta int)</code> method increments the internal counter of the <code>WaitGroup</code>.</li>
+    <li>The <code>Done()</code> method decrements the internal counter, signaling the completion of a goroutine.</li>
+    <li>The <code>Wait()</code> method blocks until the internal counter becomes zero.</li>
+    <li>Calling <code>Done()</code> more times than <code>Add()</code> results in a panic.</li>
+    <li>Failing to call <code>Done()</code> for all goroutines causes <code>Wait()</code> to block indefinitely (deadlock).</li>
+    <li>Call <code>Add()</code> before launching goroutines to avoid race conditions.</li>
+    <li>Avoid copying <code>WaitGroup</code> instances; pass them by pointer instead.</li>
+    <li>Consider using <code>errgroup</code> for error propagation and cancellation.</li>
+    <li>Consider using channels for more complex communication patterns.</li>
+</ul>
+</div>
+</div>
+</article>
