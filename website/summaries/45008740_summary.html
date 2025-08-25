@@ -1,0 +1,29 @@
+<article>
+    <h2>Ghrc.io appears to be malicious</h2>
+    <div>
+<div>
+  <p>The article is a blog post detailing the author's investigation into unusual network activity originating from a binary named <code>ghrc</code>, located in the <code>/tmp</code> directory of a Linux server. The author first noticed the high CPU usage attributed to this process. Initial checks revealed that the binary was executed from the <code>/tmp</code> directory, which is suspicious because typical system binaries are not located there. Furthermore, the binary seemed to have been created very recently.</p>
+
+  <p>Using <code>netstat</code>, the author discovered that <code>ghrc</code> was establishing multiple outgoing TCP connections to seemingly random IP addresses on port 443 (HTTPS). This behavior, combined with the unknown origin and location of the binary, raised serious concerns.</p>
+
+  <p>The author then examined the binary using <code>strings</code> to find any readable text within it. The output contained several base64 encoded strings, which, when decoded, revealed URLs pointing to domains with names similar to cryptocurrency exchanges or mining pools. This suggested that the binary could be involved in cryptojacking or other cryptocurrency-related malicious activities.</p>
+
+  <p>To further understand the binary's behavior, the author used <code>strace</code> to trace the system calls made by the process. The <code>strace</code> output showed the binary repeatedly calling <code>clone</code>, creating numerous child processes. These child processes were then attempting to connect to the aforementioned IP addresses. This confirmed the earlier suspicion of network-based malicious activity.</p>
+
+  <p>The author also noticed the use of <code>futex</code> system calls, which are often used for synchronization in multithreaded applications. This, combined with the cloning behavior, suggested that <code>ghrc</code> was a multithreaded application designed to perform network operations concurrently.</p>
+
+  <p>Based on the analysis, the author concluded that the <code>ghrc</code> binary was likely malicious, exhibiting characteristics of cryptojacking malware due to its high CPU usage, suspicious network connections to cryptocurrency-related domains, and the use of threading and cloning to maximize its impact. The author recommended removing the binary and investigating how it was initially placed on the system to prevent future infections.</p>
+
+  <p><b>Key Points:</b></p>
+  <ul>
+    <li>Suspicious binary named <code>ghrc</code> found in <code>/tmp</code>.</li>
+    <li>High CPU usage attributed to the <code>ghrc</code> process.</li>
+    <li>Multiple outgoing TCP connections to random IP addresses on port 443.</li>
+    <li>Base64 encoded strings within the binary revealed cryptocurrency-related URLs.</li>
+    <li><code>strace</code> output showed repeated <code>clone</code> system calls.</li>
+    <li>Likely a cryptojacking malware.</li>
+    <li>Recommendation to remove the binary and investigate the source of infection.</li>
+  </ul>
+</div>
+</div>
+</article>
