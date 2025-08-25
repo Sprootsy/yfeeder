@@ -1,0 +1,31 @@
+<article>
+    <h2>SQLite (with WAL) doesn&#39;t do `fsync` on each commit under default settings</h2>
+    <div>
+<div>
+<h2>Summary</h2>
+<p>The article discusses the importance of proper fsync usage in SQLite to ensure data durability and prevent database corruption, especially in the face of power loss or system crashes. It highlights that SQLite, by default, might not be configured for the highest level of data safety and explains how different PRAGMA settings, specifically related to synchronous mode and journal mode, impact the database's resilience.</p>
+
+<p>The author emphasizes that the default `PRAGMA synchronous = NORMAL` setting in SQLite trades off some data safety for performance, meaning that under certain failure scenarios, data loss or corruption can occur.  They delve into the details of the `FULL` synchronous mode, which ensures that all data is written to disk before a transaction is considered complete, thus providing the highest level of durability. However, this comes at a performance cost, as each write operation requires an fsync call.</p>
+
+<p>The article further discusses write-ahead logging (WAL) mode and its advantages over the default rollback journal mode. WAL mode allows concurrent readers and writers and generally offers better performance. However, the author warns that even with WAL mode, proper fsync behavior is crucial. They explain the significance of the `PRAGMA wal_checkpoint` command and how it affects data durability. Specifically, the checkpoint operation, which moves data from the WAL file into the main database file, must be properly synced to disk.</p>
+
+<p>The author also touches upon the potential problems arising from using network file systems (NFS) with SQLite, as NFS might not guarantee the same level of fsync behavior as local file systems. This can lead to data corruption even with `PRAGMA synchronous = FULL`. They strongly recommend avoiding SQLite on NFS unless the NFS server is configured to provide reliable fsync semantics.</p>
+
+<p>The piece also investigates how different programming languages and SQLite drivers handle fsync operations. It points out that some drivers might not correctly expose the necessary options to control synchronous mode or perform WAL checkpoints, potentially undermining data safety. The author advises developers to carefully examine their chosen driver's documentation and test its behavior under failure conditions.</p>
+
+<p>Finally, the article provides practical advice on how to configure SQLite for maximum data safety, including setting `PRAGMA synchronous = FULL`, using WAL mode with frequent checkpoints, and verifying that the chosen SQLite driver correctly handles fsync operations. It underscores the importance of understanding the trade-offs between performance and durability and making informed decisions based on the specific application's requirements.</p>
+
+<h2>Key Points</h2>
+<ul>
+<li>SQLite's default settings may not provide the highest level of data durability.</li>
+<li>`PRAGMA synchronous = FULL` ensures all data is written to disk before a transaction is complete, preventing data loss at the cost of performance.</li>
+<li>Write-Ahead Logging (WAL) mode offers better performance and concurrency but still requires proper fsync behavior.</li>
+<li>`PRAGMA wal_checkpoint` is crucial in WAL mode to move data from the WAL file to the main database and must be properly synced.</li>
+<li>Using SQLite on Network File Systems (NFS) can be problematic due to potentially unreliable fsync semantics.</li>
+<li>Different programming languages and SQLite drivers may handle fsync operations differently, potentially impacting data safety.</li>
+<li>Developers should carefully configure SQLite for maximum data safety by setting `PRAGMA synchronous = FULL`, using WAL mode with frequent checkpoints, and verifying driver behavior.</li>
+<li>Understanding the trade-offs between performance and durability is essential for choosing the right SQLite configuration.</li>
+</ul>
+</div>
+</div>
+</article>

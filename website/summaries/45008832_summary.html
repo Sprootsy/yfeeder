@@ -1,0 +1,38 @@
+<article>
+    <h2>How to check if your Apple Silicon Mac is booting securely</h2>
+    <div>
+<div>
+<h3>Summary</h3>
+<p>The article discusses how to verify if an Apple silicon Mac is booting securely, which involves confirming that the Secure Boot process is functioning correctly. The Secure Boot process on Apple silicon Macs is a critical component of the system's security architecture, designed to ensure that only trusted and authorized software is loaded during startup. This process helps to prevent malicious code or unauthorized operating systems from taking control of the system early in the boot sequence. The article details the methods and tools available to users to check the Secure Boot state of their Macs and interpret the results.</p>
+
+<p>The primary tool for checking Secure Boot status is the System Information app (also known as System Profiler). Within System Information, users can navigate to the "Software" section and find the "Installations" sub-section, where the "Secure Boot" setting is displayed. This setting indicates the current security policy enforced during the boot process.</p>
+
+<p>The possible states for Secure Boot, as reported in System Information, are:</p>
+<ul>
+<li><strong>Full Security:</strong> This is the most secure setting. It ensures that the Mac only boots with a current version of the operating system trusted by Apple. All software loaded during startup must be signed and cryptographically verified.</li>
+<li><strong>Reduced Security:</strong> This setting allows the user to run older or unsigned software, including potentially modified operating systems. It compromises some security guarantees in favor of greater flexibility. Users might choose this setting to run older versions of macOS or specific third-party kernel extensions that are not signed.</li>
+<li><strong>Permissive Security:</strong> This is the least secure setting. It disables most security checks, allowing the system to boot with almost any software. It is typically used for debugging or running very old or highly customized systems.</li>
+<li><strong>Unsupported:</strong> This means that Secure Boot is not supported on this Mac.</li>
+</ul>
+
+<p>The article emphasizes that "Full Security" is the recommended setting for most users because it provides the strongest protection against malware and unauthorized software. However, it acknowledges that some users may need to use "Reduced Security" to run specific software. It also cautions users against using "Permissive Security" unless they have a specific need and understand the associated risks.</p>
+
+<p>The article also alludes to the fact that Secure Boot settings can be adjusted in Recovery Mode (booting while holding the power button) and using the Startup Security Utility. Changing these settings requires authentication and an understanding of the implications, highlighting that users should only modify the Secure Boot setting if they are confident in what they are doing.</p>
+
+<p>Finally, the article underscores the importance of regularly checking the Secure Boot status to ensure that the system is configured as intended. This helps users maintain a secure computing environment and protect against potential threats.</p>
+
+<h3>Key Points</h3>
+<ul>
+<li>Apple silicon Macs use a Secure Boot process to ensure only trusted software is loaded during startup.</li>
+<li>The Secure Boot status can be checked in System Information, under the Software -> Installations section.</li>
+<li>Possible Secure Boot states are: Full Security, Reduced Security, Permissive Security, and Unsupported.</li>
+<li>Full Security is the recommended setting for most users, providing the highest level of protection.</li>
+<li>Reduced Security allows running older or unsigned software but compromises security.</li>
+<li>Permissive Security disables most security checks and is only recommended for specific debugging or legacy purposes.</li>
+<li>Secure Boot settings can be modified in Recovery Mode using the Startup Security Utility.</li>
+<li>Users should only modify Secure Boot settings if they understand the implications.</li>
+<li>Regularly checking the Secure Boot status is important for maintaining a secure system.</li>
+</ul>
+</div>
+</div>
+</article>

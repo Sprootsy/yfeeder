@@ -1,0 +1,43 @@
+<article>
+    <h2>We put a coding agent in a while loop</h2>
+    <div>
+<div>
+  <p>
+    The document describes repomirror, a versatile tool designed for mirroring repositories from various sources like HTTP, FTP, and rsync to a local destination. It aims to solve the challenge of reliably and efficiently synchronizing large repositories, such as Linux distributions, for use in environments with limited or unreliable internet connectivity, or for creating local mirrors to reduce external bandwidth consumption.
+  </p>
+  <p>
+    Repomirror supports a wide range of repository types, including generic directory mirrors, Debian APT repositories, Red Hat yum/dnf repositories, Python PyPI repositories, Node.js npm repositories, and more. This broad compatibility makes it suitable for mirroring diverse software sources.
+  </p>
+  <p>
+    The tool offers features like filtering and rewriting packages or files during the mirroring process. This allows administrators to customize the mirrored repository to only include specific architectures, versions, or components, thereby saving storage space and reducing synchronization time. Package rewriting enables modifications to metadata or file content on-the-fly.
+  </p>
+  <p>
+    Repomirror can be configured through a YAML configuration file, which specifies the source repository, destination directory, repository type, filters, and other options. The configuration file enables declarative management of mirroring tasks and supports templating for dynamic configuration based on environment variables.
+  </p>
+  <p>
+    The tool's architecture involves a main process that reads the configuration and spawns worker processes for each repository being mirrored. Workers download files and metadata, apply filters and rewrites, and update the local repository. Repomirror also handles tasks such as verifying checksums and cleaning up obsolete files.
+  </p>
+  <p>
+    Repomirror provides capabilities for scheduling mirroring operations using cron or other scheduling tools. It also includes features for monitoring the mirroring process and sending notifications upon completion or errors.
+  </p>
+  <p>
+    The document details the usage of repomirror, including installation instructions, configuration file syntax, command-line options, and examples of mirroring different types of repositories. It also covers advanced topics such as using filters and rewrites, scheduling mirroring operations, and troubleshooting common issues.
+  </p>
+  <p>
+    The document emphasizes repomirror's support for incremental updates, which minimizes bandwidth usage and synchronization time by only downloading changes since the last mirror. It also supports atomic updates, ensuring that the local repository is always in a consistent state.
+  </p>
+
+  <h2>Key Points:</h2>
+  <ul>
+    <li>Repomirror is a tool for mirroring repositories from various sources (HTTP, FTP, rsync).</li>
+    <li>It supports different repository types such as Debian APT, Red Hat yum/dnf, PyPI, npm, and generic directories.</li>
+    <li>It allows filtering and rewriting packages/files during mirroring.</li>
+    <li>Configuration is managed through a YAML file.</li>
+    <li>It uses a multi-process architecture for concurrent mirroring.</li>
+    <li>It supports scheduling, monitoring, and notifications.</li>
+    <li>Incremental updates minimize bandwidth usage.</li>
+    <li>Atomic updates ensure repository consistency.</li>
+  </ul>
+</div>
+</div>
+</article>
