@@ -1,0 +1,61 @@
+<article>
+    <h2>WiFi-3D-Fusion – Real-time 3D motion sensing with Wi-Fi</h2>
+    <div>
+<div>
+  <p>
+    This GitHub repository, titled "wifi-3d-fusion," presents a method for 3D reconstruction using WiFi signals. The core idea is to leverage Channel State Information (CSI), a fine-grained measurement of WiFi signal propagation, to estimate the geometry of a scene. This approach contrasts with traditional 3D reconstruction techniques that rely on visual data (cameras) or LiDAR sensors. The repository provides code and resources for implementing this WiFi-based 3D reconstruction.
+  </p>
+  <p>
+    The project focuses on fusing WiFi sensing with 3D reconstruction. It explores how CSI can be used to infer information about the environment. CSI captures how WiFi signals are affected as they travel through space, including the amplitude and phase changes of different subcarriers. These changes are influenced by objects and surfaces in the environment that reflect, refract, and scatter the WiFi signals.
+  </p>
+  <p>
+    The method described in the repository attempts to establish a relationship between the measured CSI and the physical characteristics of the environment. The goal is to invert this relationship, using the CSI measurements to estimate the location and shape of objects. The project likely involves developing algorithms that can process CSI data, filter out noise, and extract relevant features that correlate with the geometry of the scene. This might involve techniques like ray tracing, signal processing, and optimization algorithms.
+  </p>
+  <p>
+    One of the challenges of WiFi-based 3D reconstruction is the inherent noisiness and complexity of WiFi signals. The signal propagation is affected by various factors, including multipath effects, interference from other devices, and dynamic changes in the environment. Therefore, robust signal processing and data fusion techniques are required to obtain accurate and reliable 3D reconstructions.
+  </p>
+  <p>
+    The repository likely contains implementations of these signal processing and reconstruction algorithms. It might also include datasets of CSI measurements collected in different environments, along with corresponding ground truth data (e.g., 3D models obtained from other sensors) for evaluation purposes.
+  </p>
+  <p>
+    The potential applications of this technology are diverse. WiFi-based 3D reconstruction could be used in indoor navigation, robotics, and smart home applications. It offers a complementary approach to visual or LiDAR-based methods, especially in situations where those sensors are not available or are limited by lighting conditions or privacy concerns.
+  </p>
+  <p>
+    The research potentially explores different aspects of the method, such as:
+  </p>
+  <p>
+    <ul>
+      <li>
+        CSI data acquisition: The setup and procedure for collecting CSI measurements using commodity WiFi devices.
+      </li>
+      <li>
+        Signal processing techniques: Methods for filtering, denoising, and calibrating CSI data.
+      </li>
+      <li>
+        3D reconstruction algorithms: Algorithms for estimating the geometry of the environment from CSI data. This may include optimization techniques to find the 3D structure that best explains the observed CSI measurements.
+      </li>
+      <li>
+        Data fusion: Combining CSI data with other sensor data (e.g., inertial measurement unit (IMU) data) to improve the accuracy and robustness of the reconstruction.
+      </li>
+      <li>
+        Performance evaluation: Metrics and experiments to assess the accuracy and limitations of the proposed method.
+      </li>
+    </ul>
+  </p>
+  <p>
+    The repository likely includes code examples, documentation, and potentially pre-trained models or datasets to enable others to reproduce and build upon the research.
+  </p>
+
+  <h2>Key Points:</h2>
+  <ul>
+    <li>Presents a method for 3D reconstruction using WiFi Channel State Information (CSI).</li>
+    <li>Leverages CSI to infer information about the environment's geometry.</li>
+    <li>Deals with the challenges of noisy WiFi signals through robust signal processing.</li>
+    <li>Potentially combines CSI data with other sensor data for improved accuracy.</li>
+    <li>Offers code, documentation, and potentially datasets for reproducibility.</li>
+    <li>Has applications in indoor navigation, robotics, and smart homes.</li>
+    <li>Presents an alternative to visual and LiDAR-based methods.</li>
+  </ul>
+</div>
+</div>
+</article>
