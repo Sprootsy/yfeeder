@@ -1,0 +1,42 @@
+<article>
+    <h2>The Limits of NTP Accuracy on Linux</h2>
+    <div>
+ <div>
+  <p>
+   The article discusses the limitations of the Network Time Protocol (NTP) and potential issues that may arise in the future. It highlights the fact that NTP timestamps use a 32-bit number to represent seconds, which wraps around approximately every 136 years. The last wrap-around occurred in 1900, and the next one is scheduled for 2036.
+  </p>
+  <p>
+   The author explains that while the 2036 wrap-around is well-known and modern NTP implementations are designed to handle it, other less-obvious limitations could cause problems sooner. One such limitation is the "kiss of death" packet, which is sent by NTP servers to clients that are misbehaving or exceeding rate limits. These packets contain a code that indicates the reason for the rejection, and some of these codes are also used by ntpd itself internally. If a server sends a "kiss of death" packet with a code that is interpreted as an internal ntpd code, it could potentially cause the client to shut down unexpectedly.
+  </p>
+  <p>
+   Another potential issue is the use of Mode 7 packets, which are typically used for control and monitoring purposes. These packets can be abused to query NTP servers for information or even to attempt to modify their configuration. As a result, many NTP servers are configured to drop Mode 7 packets, but some older or misconfigured servers may still be vulnerable.
+  </p>
+  <p>
+   The author also points out that some NTP clients may not be able to handle large delays or offsets in the time reported by the server. This can cause problems if the client's clock is significantly out of sync with the server, or if the network connection between the client and server is experiencing high latency.
+  </p>
+  <p>
+   Finally, the article mentions that NTP is a complex protocol with many different implementations, and it is possible that some of these implementations may have bugs or vulnerabilities that could be exploited. It is important to keep NTP software up to date and to follow security best practices when configuring NTP servers and clients.
+  </p>
+  <p>
+   <b>Key Points:</b>
+  </p>
+  <ul>
+   <li>
+    NTP timestamps use a 32-bit number to represent seconds, which wraps around approximately every 136 years. The next wrap-around is scheduled for 2036.
+   </li>
+   <li>
+    "Kiss of death" packets, used to reject misbehaving clients, can cause issues if the codes are misinterpreted by the NTP client.
+   </li>
+   <li>
+    Mode 7 packets, used for control and monitoring, can be abused and are often dropped by NTP servers.
+   </li>
+   <li>
+    Some NTP clients may not be able to handle large delays or offsets in the time reported by the server.
+   </li>
+   <li>
+    NTP is a complex protocol, and it is important to keep NTP software up to date and follow security best practices.
+   </li>
+  </ul>
+ </div>
+ </div>
+</article>
