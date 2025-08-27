@@ -1,0 +1,35 @@
+<article>
+    <h2>Proposal: AI Content Disclosure Header</h2>
+    <div>
+<div>
+  <h3>Summary</h3>
+  <p>
+   The document "draft-abaris-aicdh-00" specifies a method for Authenticated Inter-Domain Coordination of Host routes (AICDH). This method aims to facilitate the exchange of host routes between domains in an authenticated and secure manner. The core problem it addresses is the need for end-to-end reachability in scenarios where hosts move between different network domains, or when applications require specific routing policies across domain boundaries. Traditional routing protocols like BGP (Border Gateway Protocol) are not always suitable for distributing host-specific routes due to scalability and policy considerations. AICDH provides a mechanism for domains to selectively share host routes with each other, ensuring that only authorized domains receive and propagate these routes.
+  </p>
+  <p>
+   The document describes a protocol built upon existing technologies, including the Resource Public Key Infrastructure (RPKI) for authentication and authorization, and BGP for route propagation within and between domains. AICDH uses RPKI to verify the authorization of a domain to announce a specific host route. When a domain wants to announce a host route to another domain, it creates a digitally signed Route Origin Authorization (ROA) attesting that it is authorized to announce the route. This ROA is then made available to the receiving domain, which can use it to validate the route's origin.
+  </p>
+  <p>
+   Once the route is validated, the receiving domain can then propagate the route within its own network and potentially to other domains that it trusts. This process ensures that only authorized routes are accepted and propagated, preventing malicious or accidental route announcements from disrupting network traffic. AICDH defines the specific BGP attributes and procedures for carrying the route information and the associated RPKI ROA. This allows the receiving domain to verify the authenticity of the route.
+  </p>
+  <p>
+   The document also addresses security considerations, emphasizing the importance of proper key management and the need to protect the RPKI infrastructure from attacks. It highlights the potential risks associated with unauthorized route announcements and the measures that AICDH takes to mitigate these risks. Furthermore, the document discusses the operational aspects of AICDH, including the configuration of routers and the monitoring of route propagation.
+  </p>
+  <p>
+   Overall, "draft-abaris-aicdh-00" proposes a solution for inter-domain host route exchange that balances the need for reachability with the requirements for security and scalability. By leveraging existing technologies like RPKI and BGP, AICDH aims to provide a practical and deployable mechanism for enabling end-to-end connectivity in complex network environments.
+  </p>
+
+  <h3>Key Points</h3>
+  <ul>
+   <li>AICDH facilitates authenticated exchange of host routes between network domains.</li>
+   <li>It addresses the limitations of traditional routing protocols for host-specific routes.</li>
+   <li>It uses RPKI for authentication and authorization of route announcements.</li>
+   <li>Route Origin Authorizations (ROAs) are used to verify the origin of host routes.</li>
+   <li>BGP is used to propagate routes and associated RPKI information.</li>
+   <li>The protocol defines specific BGP attributes and procedures.</li>
+   <li>Security considerations include key management and RPKI infrastructure protection.</li>
+   <li>It aims to provide a secure and scalable solution for inter-domain host route exchange.</li>
+  </ul>
+</div>
+</div>
+</article>
