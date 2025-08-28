@@ -1,0 +1,31 @@
+<article>
+    <h2>Kiwi.com flight search MCP server</h2>
+    <div>
+<div>
+<h2>Summary</h2>
+
+The article provides comprehensive instructions for setting up a server to run the Kiwi.com flight search application. It covers various aspects, from initial server setup and user creation to installing necessary software like Docker and Docker Compose, and finally, deploying the Kiwi.com application itself. The guide is designed to be followed step-by-step, ensuring a functional environment for the flight search application.
+
+The initial steps involve connecting to the server via SSH, creating a non-root user with sudo privileges for security purposes, and securing the server by configuring a firewall using UFW (Uncomplicated Firewall). Specific ports are opened to allow necessary traffic, such as SSH, HTTP, and HTTPS.
+
+Next, the article details the installation of Docker, a platform for running applications in containers, and Docker Compose, a tool for defining and managing multi-container Docker applications. The installation process involves updating the package index, installing necessary packages, adding the user to the Docker group to grant permissions, and verifying the installation.
+
+The core of the guide focuses on deploying the Kiwi.com flight search application using Docker Compose. It involves creating a `docker-compose.yml` file that defines the services, networks, and volumes required for the application to run. Environment variables are set to configure the application, including API keys and other settings. The article also touches on setting up monitoring tools like Grafana and Prometheus to observe the application's performance and health.
+
+Furthermore, the instructions cover setting up a reverse proxy using Nginx to manage incoming traffic and route it to the appropriate containers. This includes configuring Nginx to serve the application over HTTPS, ensuring secure communication. The article provides sample Nginx configuration files and explains how to enable the configuration.
+
+Finally, the guide addresses setting up scheduled tasks using Cron to automate tasks such as database backups. This ensures data integrity and provides a recovery mechanism in case of failures. The article includes examples of Cron jobs and instructions on how to configure them.
+
+<h2>Key Points</h2>
+
+*   **Initial Server Setup:** Connect via SSH, create a non-root user with sudo privileges.
+*   **Firewall Configuration:** Set up UFW and open necessary ports (SSH, HTTP, HTTPS).
+*   **Docker Installation:** Install Docker and Docker Compose. Add user to the Docker group.
+*   **Docker Compose Configuration:** Create a `docker-compose.yml` file to define application services, networks, and volumes.
+*   **Environment Variables:** Configure the application using environment variables for API keys and other settings.
+*   **Monitoring Setup:** Use Grafana and Prometheus to monitor application performance and health.
+*   **Nginx Reverse Proxy:** Configure Nginx to manage incoming traffic and serve the application over HTTPS.
+*   **Scheduled Tasks (Cron):** Set up Cron jobs for automated tasks like database backups.
+</div>
+</div>
+</article>
