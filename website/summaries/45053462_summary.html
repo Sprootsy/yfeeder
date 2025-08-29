@@ -1,0 +1,33 @@
+<article>
+    <h2>Optimising for maintainability – Gleam in production at Strand</h2>
+    <div>
+<div>
+<h2>Summary</h2>
+
+The article is a case study detailing how Strand, a company building a collaborative product development platform, leveraged Gleam to overcome performance and scalability challenges they faced with their initial Elixir-based backend. Strand's platform allows multiple users to simultaneously interact with and modify complex product designs, requiring real-time updates and efficient data synchronization.
+
+Initially, Strand's backend was built using Elixir and Phoenix LiveView, which provided a good foundation for real-time functionality. However, as the platform gained more users and the complexity of the designs increased, they began to experience performance bottlenecks. The Erlang VM, while generally performant, struggled to efficiently handle the large volume of data and complex computations required for real-time collaboration on intricate designs. Specifically, they encountered issues with CPU utilization and memory management, leading to sluggish performance and scalability limitations.
+
+To address these challenges, Strand decided to explore Gleam, a functional programming language that compiles to Erlang and JavaScript, but with a focus on performance and static typing. They chose to rewrite critical parts of their backend, particularly the core logic for managing and synchronizing design data, using Gleam. This allowed them to take advantage of Gleam's performance optimizations and type safety features, while still benefiting from the Erlang ecosystem's robustness and concurrency capabilities.
+
+The transition to Gleam was gradual, starting with smaller, isolated components of the backend. This allowed the team to learn Gleam and integrate it into their existing Elixir codebase without disrupting the entire system. They found Gleam's type system to be particularly helpful in preventing errors and improving code maintainability.
+
+By rewriting performance-critical components in Gleam, Strand was able to significantly improve the performance and scalability of their platform. They observed a substantial reduction in CPU utilization and memory consumption, allowing them to handle a larger number of concurrent users and more complex designs. This resulted in a smoother, more responsive user experience, which was crucial for their collaborative product development platform.
+
+The case study highlights the benefits of using Gleam for building high-performance, scalable applications within the Erlang ecosystem. It demonstrates how Gleam's performance optimizations and type safety features can address the limitations of Elixir in certain scenarios, while still allowing developers to leverage the strengths of the Erlang VM and its ecosystem.
+
+<h2>Key Points</h2>
+
+*   **Challenge:** Strand faced performance and scalability challenges with their Elixir-based backend due to the demands of real-time collaboration on complex product designs.
+*   **Solution:** They rewrote performance-critical components of their backend in Gleam, a functional programming language that compiles to Erlang.
+*   **Benefits of Gleam:**
+    *   Improved performance and scalability due to Gleam's optimizations.
+    *   Reduced CPU utilization and memory consumption.
+    *   Enhanced code maintainability and error prevention through Gleam's type system.
+    *   Seamless integration with the existing Elixir codebase.
+    *   Smoother and more responsive user experience.
+*   **Gradual Transition:** Strand adopted Gleam incrementally, starting with smaller components to minimize disruption.
+*   **Outcome:** Gleam enabled Strand to handle a larger number of concurrent users and more complex designs, improving the overall performance and scalability of their platform.
+</div>
+</div>
+</article>
