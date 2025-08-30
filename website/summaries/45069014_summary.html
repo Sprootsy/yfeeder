@@ -1,0 +1,31 @@
+<article>
+    <h2>How to stop Google from AI-summarising your website</h2>
+    <div>
+<div>
+  <p>This article from Teruza discusses how website owners can prevent Google's AI from automatically summarizing their content in Search Generative Experience (SGE) results. The rise of AI-powered search summaries poses a challenge for websites that rely on user traffic, ad revenue, or direct engagement with their content. If Google's AI provides satisfactory summaries, users may not need to visit the original website, potentially impacting traffic and revenue.</p>
+
+  <p>The article highlights Google's introduction of SGE, an experimental feature that uses AI to generate summaries of search results. It explains that while AI summaries aim to provide quick and relevant information to users, they can inadvertently hurt content creators by reducing the incentive for users to click through to their websites. This is especially true for websites that depend on ad revenue or aim to build direct relationships with their audience.</p>
+
+  <p>The main method to prevent Google from summarizing website content is using the <code>nosnippet</code> meta tag. This tag instructs Google not to generate snippets or summaries for the page in search results. Website owners can implement this tag by adding <code>&lt;meta name="robots" content="nosnippet"&gt;</code> to the <code>&lt;head&gt;</code> section of their HTML code. The article notes that this tag applies to all types of snippets, not just AI-generated ones.</p>
+
+  <p>Alternatively, website owners can use the <code>data-nosnippet</code> HTML attribute to prevent specific parts of a page from being used in snippets. By wrapping the desired content with a <code>&lt;span data-nosnippet&gt;</code> tag, only the unwrapped content will be eligible for snippets.</p>
+
+  <p>The article also addresses the potential impact of blocking snippets on website traffic. While preventing AI summaries might protect content and ad revenue, it could also reduce visibility in search results, potentially lowering overall traffic. Therefore, website owners need to carefully consider the trade-offs and evaluate which pages would benefit most from disabling snippets.</p>
+
+  <p>The article provides a step-by-step guide on implementing the <code>nosnippet</code> meta tag. It involves accessing the website's HTML code, locating the <code>&lt;head&gt;</code> section, and adding the meta tag. For content management systems (CMS) like WordPress, the article suggests using plugins like Yoast SEO or Rank Math to easily add the meta tag to individual pages or posts.</p>
+
+  <p>In conclusion, the article advises website owners to be proactive in managing how their content is used in AI-generated search summaries. By using the <code>nosnippet</code> meta tag or the <code>data-nosnippet</code> attribute, they can control whether their content is summarized in search results and protect their website traffic and revenue. However, they should carefully consider the potential impact on visibility and make informed decisions based on their specific goals.</p>
+
+  <h2>Key Points:</h2>
+  <ul>
+    <li>Google's SGE uses AI to generate summaries of search results, potentially reducing traffic to websites.</li>
+    <li>The <code>nosnippet</code> meta tag prevents Google from generating snippets or summaries for a page.</li>
+    <li>The <code>data-nosnippet</code> HTML attribute prevents specific parts of a page from being used in snippets.</li>
+    <li>Blocking snippets can protect content and ad revenue but may also reduce visibility in search results.</li>
+    <li>Website owners should carefully consider the trade-offs before implementing <code>nosnippet</code>.</li>
+    <li>The <code>nosnippet</code> tag can be implemented in the <code>&lt;head&gt;</code> section of the HTML code.</li>
+    <li>WordPress plugins like Yoast SEO or Rank Math can simplify the process of adding the <code>nosnippet</code> tag.</li>
+  </ul>
+</div>
+</div>
+</article>
