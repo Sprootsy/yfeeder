@@ -1,0 +1,24 @@
+<article>
+    <h2>SQLite&#39;s documentation about its durability properties is unclear</h2>
+    <div>
+<div>
+<h2>Summary</h2>
+<p>The article delves into the durability of SQLite transactions, emphasizing the importance of understanding how SQLite ensures data integrity in the face of system crashes or power failures. It explains that SQLite, by default, uses a rollback journal to ensure atomicity and durability. When a transaction begins, SQLite writes the original data to a rollback journal before making any changes to the database file. If a crash occurs during the transaction, SQLite can use the rollback journal to revert the database to its original state, guaranteeing atomicity. The article discusses different journal modes, including DELETE (default), TRUNCATE, PERSIST, MEMORY, and WAL (Write-Ahead Logging). The DELETE mode removes the rollback journal after a successful commit, while TRUNCATE mode truncates the journal file to zero length. PERSIST mode keeps the rollback journal even after a commit, which can be useful for certain recovery scenarios. The MEMORY mode stores the rollback journal in RAM, offering speed but sacrificing durability if a crash occurs. WAL mode provides better concurrency and performance by writing changes to a separate WAL file before applying them to the database. The WAL file is periodically checkpointed to merge the changes into the main database file.</p>
+<p>The author highlights the significance of the `PRAGMA synchronous` setting, which controls how aggressively SQLite flushes data to disk. The options are FULL (most durable but slowest), NORMAL (default), and OFF (least durable but fastest). FULL ensures that all data is written to disk before a transaction is considered complete, protecting against operating system and hardware malfunctions. NORMAL provides reasonable durability with good performance but may lose the last transaction if there is an operating system crash or power failure. OFF sacrifices durability for speed, which is generally not recommended for critical data. The article also covers the use of atomic commits in SQLite, where SQLite attempts to write all changes in a single atomic operation. The success of atomic commits depends on the underlying file system's support for atomic writes. Additionally, the author notes the potential for data corruption if the file system reorders writes, especially when the `synchronous` setting is set to OFF.</p>
+<p>Furthermore, the article emphasizes that hardware issues, such as failing hard drives or unreliable power supplies, can compromise SQLite's durability guarantees. The author recommends using reliable hardware and UPS (Uninterruptible Power Supply) to mitigate these risks. In summary, the durability of SQLite transactions depends on a combination of factors, including journal mode, synchronous setting, file system behavior, and hardware reliability. Understanding these factors is crucial for ensuring data integrity in SQLite-based applications.</p>
+<h2>Key Points</h2>
+<ul>
+<li>SQLite uses a rollback journal (by default) or WAL to ensure atomicity and durability of transactions.</li>
+<li>Rollback journal modes include DELETE (default), TRUNCATE, PERSIST, and MEMORY, each with different trade-offs between durability and performance.</li>
+<li>WAL mode offers better concurrency and performance compared to rollback journals.</li>
+<li>The <code>PRAGMA synchronous</code> setting controls how aggressively SQLite flushes data to disk, with options FULL, NORMAL (default), and OFF.</li>
+<li><code>synchronous = FULL</code> provides the highest durability but is the slowest, while <code>synchronous = OFF</code> is the fastest but least durable.</li>
+<li>Atomic commits rely on the file system's support for atomic writes.</li>
+<li>File system write reordering can compromise durability, especially with <code>synchronous = OFF</code>.</li>
+<li>Hardware failures (e.g., failing hard drives, power outages) can also compromise data integrity.</li>
+<li>Using reliable hardware and UPS is recommended to improve durability.</li>
+<li>Durability depends on the interplay of journal mode, synchronous setting, file system, and hardware reliability.</li>
+</ul>
+</div>
+</div>
+</article>
