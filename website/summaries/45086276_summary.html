@@ -1,0 +1,44 @@
+<article>
+    <h2>New Ruby Curl bindings with Fiber native support</h2>
+    <div>
+ <div>
+ <h2>Summary</h2>
+ <p>
+ The document provided is a changelog for the Curb Ruby library. It details the various changes, bug fixes, and improvements made to Curb over different versions.
+ </p>
+ <p>
+ <b>Curb 0.9.11 (2024-04-28)</b> is a minor release that addresses a long-standing SSL-related bug, preventing the library from functioning correctly in some environments. This version disables the built-in cert file used by Curb to avoid conflicts with other applications' OpenSSL configurations.
+ </p>
+ <p>
+ <b>Curb 0.9.10 (2023-12-15)</b> fixes two issues. The first resolves a crash related to using the <code>:on_failure</code> option with Curl >= 7.80.0, where Curl's error buffer is not null-terminated. The second addresses a build error that occurs with newer versions of Ruby and libcurl.
+ </p>
+ <p>
+ <b>Curb 0.9.9 (2022-03-10)</b> includes two fixes. One prevents a crash when using HTTP/3 (CURLMOPT_PROTOCOL) due to shared curl easy handles. The other resolves an issue with the <code>:body_str</code> option, where a Ruby string was not being passed correctly, leading to potential crashes.
+ </p>
+ <p>
+ <b>Curb 0.9.8 (2022-02-22)</b> addresses a bug in the <code>:body_str</code> functionality, which was introduced in version 0.9.7.
+ </p>
+ <p>
+ <b>Curb 0.9.7 (2022-02-21)</b> introduces several changes and bug fixes. It addresses a regression where <code>Curb::Easy#header_str</code> was not populated when using a block.  It fixes an issue where <code>Content-Length</code> was being set incorrectly when using <code>put</code> or <code>post</code> requests.  It allows setting the request body via <code>:body_str</code> with correct Content-Length handling. It also fixes a memory leak in test code.  Additionally, it includes more robust error checking when setting options on easy handles.
+ </p>
+ <p>
+ <b>Curb 0.9.6 (2021-12-03)</b> includes a fix to ensure that <code>Content-Length</code> is properly set on PUT requests, even when using the <code>multipart: true</code> option.
+ </p>
+ <p>
+ <b>Curb 0.9.5 (2021-11-10)</b> adds support for HTTP/3 via the <code>CURLMOPT_PROTOCOL</code> option and fixes an issue related to transferring ownership of the multi handle to easy handles within a block.
+ </p>
+ <p>
+ <b>Curb 0.9.4 (2021-09-08)</b> resolves a crash caused by accessing an already-freed Curl::Easy object.
+ </p>
+ <p>
+ <b>Curb 0.9.3 (2021-08-10)</b> primarily addresses a memory leak related to multi-handle operations when used with a block. It also includes a change to avoid calling <code>curl_multi_wakeup</code> on Ruby 2.4 and earlier, which can cause problems.
+ </p>
+ <p>
+ <b>Curb 0.9.2 (2021-04-13)</b> adds support for passing options to <code>curl_multi_setopt</code> using the <code>:multi</code> option.
+ </p>
+ <p>
+ <b>Curb 0.9.1 (2021-03-16)</b> includes several changes, including the addition of <code>Curl::Easy#header_str</code>, improvements to the documentation to use https URLs, the removal of Travis CI configuration in favor of Github Actions, and a fix to prevent double-freeing of the easy handle in specific scenarios.
+ </p>
+ <p>
+ <b>Curb 0.9.0 (2020-03-28)</b> contains multiple bug fixes and enhancements. It resolves issues where global options were being applied incorrectly, fixes a crash caused by setting options on an already-performed easy handle, corrects a double-free issue when using the <code>:on_complete</code> option, ensures that the </div>
+</article>

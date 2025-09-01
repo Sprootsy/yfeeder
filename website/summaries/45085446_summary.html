@@ -1,0 +1,27 @@
+<article>
+    <h2>How many HTTP requests/second can a single machine handle? (2024)</h2>
+    <div>
+ <div>
+ <h3>Summary</h3>
+ <p>The article "How Many HTTP Requests Can a Single Machine Handle?" by Igor Trubin explains the factors influencing the number of HTTP requests a single machine can handle and provides a practical guide to measuring and optimizing performance. It emphasizes that there's no single answer to the question, as it depends heavily on the specific hardware, software, and workload characteristics. The author breaks down the process into manageable components, providing practical advice and code examples for setting up a testing environment and identifying bottlenecks.</p>
+ <p>The article begins by highlighting the common misconception that the number of requests per second (RPS) is the only metric that matters. Instead, it underscores the importance of considering latency, error rates, and resource utilization (CPU, memory, network) to gain a holistic understanding of system performance. The author then describes the key components of a typical HTTP request processing pipeline, including the client, network, server, and backend services. Each component introduces potential bottlenecks that can limit the overall throughput.</p>
+ <p>To measure the number of requests a server can handle, the author recommends using load testing tools like `wrk`. He provides a sample command for running `wrk` against a local server, emphasizing the importance of gradually increasing the load to identify the breaking point. The article details how to interpret `wrk`'s output, focusing on requests per second, latency percentiles, and error rates. The author also stresses the need to monitor server resources during the load test using tools like `top` or `htop` to identify CPU, memory, or I/O bottlenecks.</p>
+ <p>The article explores various factors that affect the performance of an HTTP server. These include hardware limitations such as CPU cores, memory, and network bandwidth. Software configurations, such as the web server (e.g., Nginx, Apache), the programming language runtime (e.g., Node.js, Python), and the operating system, also play a significant role. The author discusses how different web servers have different architectures (e.g., event-driven vs. thread-based) that can impact performance. He also points out the importance of optimizing database queries and caching frequently accessed data to reduce the load on backend services.</p>
+ <p>Furthermore, the article delves into the impact of different types of workloads. Simple, static content requests will generally be much faster and consume fewer resources than complex, dynamic content requests that require database queries and server-side processing. The author suggests techniques for optimizing dynamic content generation, such as using efficient data structures, minimizing I/O operations, and employing caching strategies. He also discusses the importance of connection management, including HTTP keep-alive and connection pooling, to reduce the overhead of establishing new connections for each request.</p>
+ <p>To illustrate the concepts, the author provides practical examples and code snippets. For instance, he demonstrates how to set up a simple HTTP server using Node.js and how to use `wrk` to benchmark its performance. He also offers tips for optimizing Nginx configurations, such as tuning the `worker_processes` and `worker_connections` directives. The article emphasizes the iterative nature of performance optimization, recommending a process of profiling, identifying bottlenecks, implementing changes, and re-testing to measure the impact of the optimizations.</p>
+ <p>In conclusion, the article emphasizes that determining the maximum number of HTTP requests a single machine can handle is a complex task that requires careful consideration of hardware, software, workload, and configuration. It provides a practical framework for measuring performance, identifying bottlenecks, and implementing optimizations. The author stresses that continuous monitoring and iterative improvement are essential for achieving optimal performance in a production environment.</p>
+ <h3>Key Points</h3>
+ <ul>
+  <li>The number of HTTP requests a single machine can handle depends on hardware, software, and workload.</li>
+  <li>Important metrics include requests per second (RPS), latency, error rates, and resource utilization (CPU, memory, network).</li>
+  <li>Load testing tools like `wrk` are essential for measuring performance.</li>
+  <li>Monitor server resources during load tests using tools like `top` or `htop`.</li>
+  <li>Hardware limitations (CPU, memory, network) affect performance.</li>
+  <li>Web server architecture (e.g., Nginx, Apache) impacts performance.</li>
+  <li>Optimize database queries and use caching to reduce backend load.</li>
+  <li>Simple, static content requests are faster than complex, dynamic content requests.</li>
+  <li>Optimize dynamic content generation (efficient data structures, minimal I/O, caching).</li>
+  <li>Use HTTP keep-alive and connection pooling to reduce connection overhead.</li>
+  <li>Performance optimization is an iterative process: profile, identify bottlenecks, implement changes, re-test.</li>
+  <li></div>
+</article>

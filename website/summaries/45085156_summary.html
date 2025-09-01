@@ -1,0 +1,34 @@
+<article>
+    <h2>How is Ultrassembler so fast?</h2>
+    <div>
+<div>
+<h3>Summary</h3>
+The article discusses Ultrassembler, a fast assembler written in Rust. The author initially aimed to create a Z80 assembler for a retrocomputing project, but the scope expanded to include other processors like the 6502 and 6809. A key focus was on achieving high performance, motivated by the slow assembly times of existing assemblers.
+
+The author details the performance optimization techniques employed in Ultrassembler. Initially, the assembler was written in Python. While satisfactory for small projects, performance degraded significantly with larger codebases. To address this, the author rewrote the assembler in Rust, focusing on efficient data structures and algorithms.
+
+One of the primary strategies was to minimize memory allocations, which are a common performance bottleneck. Instead of allocating strings and vectors repeatedly, Ultrassembler uses string interning to ensure that each unique string is stored only once, reducing memory usage and comparison overhead. Similarly, vectors are pre-allocated or reused whenever possible to avoid frequent allocation and deallocation.
+
+The parsing stage was optimized by using a two-pass approach. The first pass identifies labels and their addresses, while the second pass generates the machine code. This allows forward references to labels without requiring multiple passes or complex dependency resolution. The author also utilized parallel processing to speed up the assembly process, splitting the source code into chunks and processing them concurrently. The final stage involves merging the assembled chunks into a single output file.
+
+The article also addresses challenges related to code maintainability and complexity that arose from the aggressive optimization strategies. The author notes that while the Rust rewrite significantly improved performance, it also introduced some complexity to the codebase. Balancing performance with readability and maintainability was a key consideration throughout the development process.
+
+The results presented show Ultrassembler achieving impressive assembly speeds, often outperforming other popular assemblers by a significant margin. The author provides benchmarks comparing Ultrassembler to other assemblers, demonstrating its speed advantage, particularly for large projects.
+
+In conclusion, the article highlights the development of Ultrassembler as a fast and efficient assembler, driven by the need for performance in retrocomputing projects. It emphasizes the importance of careful optimization techniques, such as minimizing memory allocations, using efficient data structures, and leveraging parallel processing, to achieve high assembly speeds. It also touches on the tradeoffs between performance and code complexity, highlighting the need for a balanced approach in software development.
+
+<h3>Key Points</h3>
+<ul>
+<li>Ultrassembler is a fast assembler written in Rust, initially for Z80 but expanded to include 6502 and 6809 processors.</li>
+<li>The primary motivation was to achieve high assembly speeds compared to existing, slower assemblers.</li>
+<li>The assembler was initially written in Python but rewritten in Rust for performance reasons.</li>
+<li>Optimization techniques include minimizing memory allocations through string interning and vector pre-allocation/reuse.</li>
+<li>A two-pass parsing approach is used to handle forward references efficiently.</li>
+<li>Parallel processing is employed to speed up assembly by dividing the source code into chunks and processing them concurrently.</li>
+<li>The author acknowledges the increased code complexity resulting from aggressive optimization.</li>
+<li>Benchmarks demonstrate that Ultrassembler outperforms other assemblers in terms of speed, especially for large projects.</li>
+<li>The development process focused on balancing performance with code maintainability and readability.</li>
+</ul>
+</div>
+</div>
+</article>
