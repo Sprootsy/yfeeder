@@ -1,0 +1,26 @@
+<article>
+    <h2>Installing UEFI Firmware on ARM SBCs</h2>
+    <div>
+<div>
+<h2>Summary</h2>
+The article discusses the process of porting EDK2 UEFI firmware to the Rock 5 ITX single-board computer, enabling it to boot a standard operating system like Linux or Windows. It explains the challenges involved in adapting UEFI firmware, traditionally used in PCs, to an ARM-based platform like the Rock 5 ITX, which typically relies on simpler bootloaders like U-Boot. The author details the steps taken to create a functional UEFI environment, including setting up the build environment, configuring the EDK2 codebase, and writing device drivers for the Rock 5 ITX's specific hardware components. The key elements involve enabling core boot services, initializing the memory controller and other essential hardware, and implementing drivers for devices like storage controllers, display outputs, and USB interfaces.
+
+The article describes the process of building the UEFI firmware for the Rock 5 ITX using the EDK2 (Embedded Development Kit II) open-source project. It goes through setting up the build environment using a Linux system and installing the necessary tools and dependencies, which include the ARM cross-compiler toolchain, Python, and other utilities required by the EDK2 build system. The configuration of the EDK2 codebase includes defining the target architecture (AArch64), specifying the platform (Rockchip), and customizing build options to tailor the firmware to the specific hardware of the Rock 5 ITX board. This customization involves modifying platform-specific configuration files and defining the memory map, interrupt controllers, and other hardware resources.
+
+The device driver development part is critical to the UEFI adaptation. The author needed to implement drivers for the Rock 5 ITX's hardware components, such as the SPI flash controller, the memory controller, the PCIe bus, USB controllers, and the display output. These drivers provide the UEFI firmware with the ability to initialize and control these devices during the boot process. The article explains the challenges involved in writing these drivers, which require a detailed understanding of the hardware specifications and the UEFI driver model. The drivers need to conform to the UEFI Driver Execution Environment (DXE) architecture, enabling the firmware to load and execute them dynamically during the boot process.
+
+The final step discussed in the article is booting a standard operating system, like Linux, using the newly created UEFI firmware. The author explains how to configure the UEFI firmware to load a Linux kernel from a storage device (e.g., NVMe SSD or USB drive) and pass control to it. This involves creating a UEFI boot entry, configuring the boot order, and ensuring that the Linux kernel is compatible with the UEFI environment. The author also mentions the possibility of booting Windows on the Rock 5 ITX using the UEFI firmware, which would require additional steps, such as enabling Secure Boot and providing Windows drivers for the hardware components.
+
+<h2>Key Points</h2>
+<ul>
+<li>Porting EDK2 UEFI firmware to the Rock 5 ITX enables booting standard operating systems.</li>
+<li>The process involves setting up the EDK2 build environment with ARM cross-compiler and necessary tools.</li>
+<li>Configuration includes defining the target architecture (AArch64) and platform (Rockchip).</li>
+<li>Device driver development is crucial for hardware components like storage, display, and USB.</li>
+<li>Drivers must conform to the UEFI DXE architecture.</li>
+<li>Booting Linux involves creating a UEFI boot entry and configuring the boot order.</li>
+<li>Windows booting is possible with additional steps like Secure Boot and Windows drivers.</li>
+</ul>
+</div>
+</div>
+</article>
