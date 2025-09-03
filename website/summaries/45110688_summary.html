@@ -1,0 +1,24 @@
+<article>
+    <h2>%CPU utilization is a lie</h2>
+    <div>
+ <div>
+  <p>Brendan Gregg's article "CPU Utilization is Wrong" delves into the complexities of CPU utilization metrics and why they can be misleading when assessing system performance. He argues that relying solely on CPU utilization percentages, as reported by tools like <code>top</code> or <code>vmstat</code>, can paint an inaccurate picture of actual CPU activity and potential bottlenecks. Gregg emphasizes the importance of understanding the underlying states a CPU core can be in, such as User, System, Idle, IO Wait, Steal, and Guest, and how each contributes to the overall utilization percentage.</p>
+  <p>The article highlights that a high CPU utilization doesn't always mean the CPU is busy executing application code. It could be spending a significant amount of time in the "System" state, which represents kernel-level activities like system calls, interrupt handling, and device driver execution. Understanding the proportion of time spent in User vs. System states is crucial for identifying whether the application code or the kernel is the primary consumer of CPU resources. High System CPU might indicate issues like excessive system calls, inefficient kernel code, or hardware-related problems.</p>
+  <p>Gregg also discusses the "IO Wait" state, which represents the time the CPU is idle because it's waiting for I/O operations to complete. While IO Wait contributes to CPU utilization, it signifies a bottleneck outside the CPU itself, usually related to storage or network. High IO Wait indicates that the system's performance is limited by I/O throughput, not CPU processing power.</p>
+  <p>The article further explains the impact of virtualization on CPU utilization metrics. In virtualized environments, the "Steal" state represents the time a virtual CPU is ready to run but is involuntarily delayed by the hypervisor because the physical CPU is being used by another virtual machine. A high Steal percentage indicates resource contention between virtual machines and suggests that the virtual machine may not be getting the CPU resources it requires.</p>
+  <p>The "Guest" state accounts for the CPU time spent running virtual machines. This can be useful for understanding the resource consumption of VMs on a host.</p>
+  <p>Gregg advocates for using more detailed performance analysis tools, such as perf, eBPF, and other advanced tracing and profiling utilities, to gain deeper insights into CPU activity. These tools can pinpoint specific functions or code paths that are consuming the most CPU time, allowing for targeted optimization efforts. He also mentions the importance of considering factors like CPU frequency scaling and power management, which can affect CPU utilization and performance.</p>
+  <p>In essence, the article argues against relying solely on simple CPU utilization percentages as a measure of system performance. It stresses the need for a more nuanced understanding of CPU states and the use of advanced tools to identify and address performance bottlenecks effectively. By analyzing the breakdown of CPU time across different states and using performance analysis tools, system administrators and developers can gain a more accurate picture of CPU activity and optimize their systems for better performance.</p>
+  <p><b>Key Points:</b></p>
+  <ul>
+   <li>CPU utilization percentage alone is a misleading metric for assessing system performance.</li>
+   <li>Understanding CPU states (User, System, Idle, IO Wait, Steal, Guest) is crucial.</li>
+   <li>High "System" CPU indicates kernel-level activity, not necessarily application code inefficiency.</li>
+   <li>"IO Wait" signifies I/O bottlenecks, not CPU limitations.</li>
+   <li>"Steal" time in virtualized environments indicates resource contention between VMs.</li>
+   <li>Use advanced performance analysis tools (perf, eBPF) for deeper insights.</li>
+   <li>Consider CPU frequency scaling and power management effects.</li>
+  </ul>
+ </div>
+ </div>
+</article>

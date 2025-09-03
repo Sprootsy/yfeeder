@@ -1,0 +1,35 @@
+<article>
+    <h2>Physically based rendering from first principles</h2>
+    <div>
+<div>
+<h2>Summary</h2>
+
+<p>The article is a comprehensive guide to Physically Based Rendering (PBR), explaining the underlying concepts, equations, and practical implementations. It starts by highlighting the importance of PBR in achieving realistic and physically plausible rendering results, especially as hardware capabilities increase and can handle more complex computations. The article emphasizes that while older shading models often relied on empirical observations and artistic tweaking, PBR is rooted in the physics of light transport and material properties.</p>
+
+<p>The guide breaks down the core elements of PBR, beginning with an overview of light and its behavior. It explains how light interacts with surfaces through reflection and refraction, leading to either specular (mirror-like) or diffuse (scattered) reflections. The article then introduces the Bidirectional Reflectance Distribution Function (BRDF), a fundamental function in PBR that describes how light is reflected from a surface at a specific incoming and outgoing direction. It details the mathematical components of the BRDF, including the Fresnel term (which describes the amount of light reflected based on the viewing angle and material's refractive index), the Normal Distribution Function (NDF) (which describes the distribution of microfacets on the surface), and the Geometry Function (which describes the shadowing and masking effects between microfacets).</p>
+
+<p>The article further elaborates on the concept of microfacet theory, which forms the basis of many modern BRDFs. Microfacet theory posits that a surface, even one that appears smooth, is actually composed of tiny, perfectly reflective microfacets. The distribution and orientation of these microfacets determine the overall reflective properties of the material. The guide also touches upon different BRDF models like Cook-Torrance and Trowbridge-Reitz GGX, explaining their differences and trade-offs.</p>
+
+<p>The importance of energy conservation in PBR is also emphasized, ensuring that a surface does not reflect more light than it receives. The guide goes on to discuss material properties that are essential for PBR workflows, such as albedo (base color), roughness (surface smoothness), metallic (whether the material is a metal or non-metal), and ambient occlusion (simulated shadows from nearby geometry). The article explains how these properties are typically represented using texture maps, enabling artists to create detailed and varied surface appearances.</p>
+
+<p>The rendering equation is another crucial aspect explained in the article. It provides a mathematical description of how light is distributed in a scene, taking into account light sources, surface properties, and the geometry of the environment. The article highlights the challenges of solving the rendering equation directly, which is why various approximation techniques like Monte Carlo integration and path tracing are commonly used.</p>
+
+<p>Image-Based Lighting (IBL) is presented as a powerful technique for simulating realistic lighting environments. The article describes how environment maps (typically HDR images) can be used to capture the lighting from a real-world scene and apply it to virtual objects. IBL significantly enhances the realism of rendered images by providing complex and natural illumination.</p>
+
+<p>Finally, the article concludes by discussing practical considerations for implementing PBR in rendering engines. This includes topics such as gamma correction, tone mapping, and the importance of using a linear color space for calculations. It also mentions the advantages of using pre-computed BRDFs and other optimization techniques to improve rendering performance. The guide is supplemented with diagrams, equations, and code snippets to provide a comprehensive understanding of PBR principles and their application.</p>
+
+<h2>Key Points</h2>
+
+<ul>
+<li>PBR is based on the physics of light transport and material properties, leading to realistic rendering.</li>
+<li>The BRDF is a core function in PBR, describing how light is reflected from a surface.</li>
+<li>Microfacet theory explains surface reflection based on the distribution of tiny, perfectly reflective microfacets.</li>
+<li>Key material properties in PBR include albedo, roughness, metallic, and ambient occlusion.</li>
+<li>Energy conservation is essential in PBR to ensure realistic light behavior.</li>
+<li>The rendering equation describes how light is distributed in a scene.</li>
+<li>Image-Based Lighting (IBL) uses environment maps to simulate realistic lighting.</li>
+<li>Practical considerations for PBR implementation include gamma correction, tone mapping, and linear color space.</li>
+</ul>
+</div>
+</div>
+</article>

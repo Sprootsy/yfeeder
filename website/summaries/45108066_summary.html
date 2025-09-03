@@ -1,0 +1,37 @@
+<article>
+    <h2>Making a Linux home server sleep on idle and wake on demand (2023)</h2>
+    <div>
+<div>
+<h2>Summary</h2>
+The article is a detailed guide on how to set up an Ubuntu home server to automatically sleep when idle and wake up on demand. The author, Daniel Gross, outlines the motivation behind this setup, which is to conserve energy and reduce noise when the server is not actively in use, while still ensuring it's readily available when needed.
+
+The guide begins by explaining the rationale for implementing auto-sleep on a home server. The author emphasizes the importance of reducing the server's power consumption during periods of inactivity, as home servers often remain powered on 24/7, leading to unnecessary energy waste and noise.
+
+The core of the article focuses on the technical steps required to achieve this functionality. It involves several key components: configuring `systemd-logind` to allow suspend, setting up `ethtool` to enable Wake-on-LAN (WoL), and using `cron` to schedule regular checks for inactivity.
+
+The author provides specific instructions on how to modify the `/etc/systemd/logind.conf` file to permit suspend functionality. This step ensures that the system can be put into a sleep state without encountering permission issues.
+
+Next, the article details the process of enabling Wake-on-LAN (WoL) using `ethtool`. WoL allows the server to be woken up from a sleep state by sending a "magic packet" to its network interface. The author explains how to identify the network interface name and use `ethtool` to enable WoL for that interface. The instructions also include making the WoL configuration persistent across reboots by modifying the `/etc/network/interfaces` file (or a similar network configuration file, depending on the system's network management setup).
+
+A crucial part of the setup involves determining when the server is idle and should be put to sleep. The author uses a `cron` job to run a script that checks for user activity and network traffic. The script uses tools like `w`, `who`, and `netstat` (or `ss`, a more modern alternative) to monitor these activities. If no activity is detected within a specified period (e.g., 30 minutes), the script initiates the suspend process using `systemctl suspend`. The author provides a sample script and explains how to configure the `cron` job to run it periodically.
+
+The article also addresses the issue of waking the server from sleep. It describes how to use a simple script, which can be run from another device on the network, to send the Wake-on-LAN "magic packet" to the server. This script uses the `wakeonlan` command-line tool and requires the server's MAC address.
+
+Further, the author includes a discussion on handling potential issues, such as the server not waking up correctly or experiencing unexpected behavior. It suggests troubleshooting steps like checking BIOS settings for WoL support, verifying network configuration, and examining system logs for errors.
+
+The author recommends using `ss` command instead of `netstat` command, as the `netstat` command is considered obsolete. He provides an updated version of the script that uses the `ss` command.
+
+Finally, the article emphasizes the importance of testing the setup thoroughly to ensure that the auto-sleep and wake-on-LAN functionalities are working as expected. It encourages readers to adapt the provided scripts and configurations to their specific needs and environment.
+
+<h2>Key Points</h2>
+<ul>
+<li><b>Goal:</b> Automatically put an Ubuntu home server to sleep when idle to conserve energy and reduce noise, while still allowing it to be woken up on demand.</li>
+<li><b>Systemd Configuration:</b> Modify `/etc/systemd/logind.conf` to allow suspend functionality.</li>
+<li><b>Wake-on-LAN (WoL):</b> Enable WoL using `ethtool` on the network interface and configure it to persist across reboots by modifying `/etc/network/interfaces` (or equivalent).</li>
+<li><b>Idle Detection:</b> Use a `cron` job to run a script that checks for user activity and network traffic using `w`, `who`, and `ss` (or `netstat`).</li>
+<li><b>Suspend Initiation:</b> The script uses `systemctl suspend` to put the server to sleep when idle.</li>
+<li><b>Wake-up Script:</b> A separate script using `wakeonlan` is used to send a "magic packet" to wake the server, requiring the server's MAC address.</li>
+<li><b>Troubleshooting:</b> Check BIOS settings, network configuration, and system logs for issues with WoL or suspend.</li>
+<li><b>Testing:</b> Thoroughly test the auto-sleep and wake-on-LAN functionalities after setup.</li>
+<li><b>Modernization:</b> The article suggests using `ss` command instead of `netstat` command.</li></div>
+</article>
