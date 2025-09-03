@@ -1,0 +1,69 @@
+<article>
+    <h2>This blog is running on a recycled Google Pixel 5 (2024)</h2>
+    <div>
+ <div>
+  <p>
+   This blog post details the author's experience of hosting their blog directly from a Google Pixel 5 smartphone. The author outlines the motivation behind this unconventional setup, driven by a desire to reduce reliance on traditional cloud hosting and explore the capabilities of readily available personal hardware.
+  </p>
+  <p>
+   The author uses Termux, an Android terminal emulator and Linux environment, as the foundation for the setup. Within Termux, they install Alpine Linux via proot, creating a full-fledged Linux environment on the phone. This environment allows them to install and run software typically used on a server.
+  </p>
+  <p>
+   The blog itself is generated using Hugo, a static site generator. The Hugo project files are stored on the phone, and the Hugo server is run within the Termux/Alpine Linux environment. This allows the author to preview and test changes to the blog locally on the phone.
+  </p>
+  <p>
+   To make the blog accessible from the internet, the author uses Tailscale, a VPN service that creates a secure network between devices. Tailscale is installed on the Pixel 5, effectively placing the phone on the author's private network. This allows the author to access the Hugo server running on the phone from other devices on the network, as well as to set up a reverse proxy.
+  </p>
+  <p>
+   A crucial element is the reverse proxy, which sits on a separate server (a Hetzner VPS in this case). The reverse proxy forwards incoming HTTP requests to the Pixel 5, making the blog accessible via a public domain name. The author chose to host the reverse proxy on a separate server for reliability and to avoid exposing the phone directly to the internet.
+  </p>
+  <p>
+   The author addresses the challenges of running a server on a phone, particularly regarding dynamic IP addresses and power management. To handle the dynamic IP address, they use a dynamic DNS (DDNS) service to keep the domain name pointed to the phone's current IP address. For power management, the phone needs to be plugged in to avoid battery drain, and the author acknowledges the potential impact on battery lifespan.
+  </p>
+  <p>
+   The author also describes setting up automatic deployment using GitHub Actions. When changes are pushed to the blog's GitHub repository, a GitHub Actions workflow is triggered. This workflow connects to the Pixel 5 via SSH, pulls the latest changes, and regenerates the static site using Hugo. This automates the process of updating the blog.
+  </p>
+  <p>
+   The article then delves into the specifics of configuring Tailscale, setting up the reverse proxy with Nginx on the Hetzner VPS, and configuring the dynamic DNS service. It provides example configurations and commands used to set up these components.
+  </p>
+  <p>
+   Finally, the author reflects on the experience, noting the surprisingly smooth setup process and the advantages of having full control over the hosting environment. They acknowledge the limitations, such as the phone needing to be constantly powered, but express satisfaction with the project as a proof of concept and a way to reduce reliance on centralized cloud services.
+  </p>
+  <p>
+   <strong>Key Points:</strong>
+  </p>
+  <ul>
+   <li>
+    The author hosts their blog directly from a Google Pixel 5.
+   </li>
+   <li>
+    Termux and Alpine Linux (via proot) provide a Linux environment on the phone.
+   </li>
+   <li>
+    Hugo is used to generate the static blog site.
+   </li>
+   <li>
+    Tailscale creates a secure VPN connection to the phone.
+   </li>
+   <li>
+    A reverse proxy (Nginx on a Hetzner VPS) forwards traffic to the phone.
+   </li>
+   <li>
+    Dynamic DNS (DDNS) is used to handle the phone's dynamic IP address.
+   </li>
+   <li>
+    GitHub Actions automates blog deployment.
+   </li>
+   <li>
+    The phone needs to be constantly powered.
+   </li>
+   <li>
+    The setup provides full control over the hosting environment.
+   </li>
+   <li>
+    The author aims to reduce reliance on traditional cloud hosting.
+   </li>
+  </ul>
+ </div>
+ </div>
+</article>
