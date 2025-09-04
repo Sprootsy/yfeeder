@@ -1,0 +1,38 @@
+<article>
+    <h2>Neovim Pack</h2>
+    <div>
+<div>
+<p>The article is a help file for Neovim, specifically detailing the <code>:pack</code> command and related functionalities for package management. It explains how to use packages to organize and manage plugins in Neovim. It covers the basic concepts of packages, including their directory structure, activation, and how they interact with Neovim's runtimepath.</p>
+
+<p>The document starts by explaining the structure of a package, which resides in the <code>packpath</code> (a list of directories where packages are located, typically <code>~/.local/share/nvim/site/pack</code>). Each package directory contains one or more "start" and "opt" directories. Plugins placed in the "start" directory are automatically loaded at Neovim startup, while those in the "opt" directory are loaded on demand via the <code>:packadd</code> command.</p>
+
+<p>The document details the <code>:packloadall</code> command, which adds all "start" plugins from all packages to the runtimepath. It also describes the <code>:packadd {name}</code> command, which adds a specific plugin from the "opt" directory to the runtimepath, effectively loading it. The <code>:packloadall</code> command is automatically executed at startup.</p>
+
+<p>It further explains how to disable automatic loading of "start" plugins by using the <code>packloadall</code> option. When this option is disabled, plugins are not loaded automatically on startup, providing more control over plugin loading. The <code>:packloadall!</code> command forces the loading of all "start" plugins, overriding the <code>packloadall</code> setting.</p>
+
+<p>The document also covers dependency management. Packages can depend on other packages, and the loading order can be controlled using the <code>depends</code>, <code>after</code>, and <code>opt</code> directories within a package. Dependencies can be declared within the <code>plugin/</code> directory by creating a file with the name of the dependency. If one plugin depends on another, the dependent plugin will be loaded after its dependency.</p>
+
+<p>The document describes the use of <code>:helptags</code> to generate help tags for plugins within packages. This allows users to access the documentation provided by the plugins. It is recommended to run <code>:helptags ALL</code> after adding or updating plugins.</p>
+
+<p>The <code>packadd</code> command and its behavior is described in detail, including how it affects the runtimepath and how it loads plugins from the "opt" directory. It is possible to load multiple plugins with <code>:packadd</code> by providing several plugin names as arguments.</p>
+
+<p>The document also mentions the <code>&rtp</code> setting, which represents the runtimepath, and how package management affects it. Plugins in the "start" directories are added to the runtimepath automatically, while those in the "opt" directories are added when <code>:packadd</code> is used.</p>
+
+<p>In summary, the help file provides a comprehensive guide to using Neovim's package management system, covering package structure, plugin loading, dependency management, and related commands. It allows users to organize and manage their plugins effectively, providing control over which plugins are loaded and when.</p>
+
+<h2>Key Points</h2>
+<ul>
+    <li>Packages are located in directories specified by the <code>packpath</code> option (e.g., <code>~/.local/share/nvim/site/pack</code>).</li>
+    <li>Each package directory contains "start" and "opt" directories.</li>
+    <li>Plugins in "start" are loaded automatically at startup.</li>
+    <li>Plugins in "opt" are loaded on demand using <code>:packadd {name}</code>.</li>
+    <li><code>:packloadall</code> loads all "start" plugins from all packages.</li>
+    <li>The <code>packloadall</code> option controls automatic loading of "start" plugins.</li>
+    <li><code>:packloadall!</code> forces loading of all "start" plugins.</li>
+    <li>Dependencies between packages can be managed using the <code>depends</code> and <code>after</code> directories or by creating dependency files in plugin directories.</li>
+    <li><code>:helptags ALL</code> generates help tags for plugins in packages.</li>
+    <li>Package management affects the <code>&rtp</code> (runtimepath) setting.</li>
+</ul>
+</div>
+</div>
+</article>

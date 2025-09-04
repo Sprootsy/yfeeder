@@ -1,0 +1,47 @@
+<article>
+    <h2>Poor man&#39;s bitemporal data system in SQLite and Clojure</h2>
+    <div>
+ <div>
+   <h2>Summary</h2>
+   <p>
+     The article "Poor Man's Time-Oriented Data System" discusses a practical approach to managing time-oriented data without relying on complex or expensive database systems. It focuses on using simple, readily available tools and techniques to handle data that changes over time, emphasizing ease of implementation and understanding.
+   </p>
+   <p>
+     The core idea revolves around representing time-varying data as a series of records, each associated with a specific time interval during which the data is valid. This approach, termed a "temporal table," allows for tracking changes in data attributes over time. The author describes how to structure such tables and provides guidance on querying them effectively to retrieve data relevant to specific points in time or time ranges.
+   </p>
+   <p>
+     The article highlights the importance of defining clear start and end times for each record to accurately represent the period of validity. It also addresses the challenge of handling updates and deletions, suggesting strategies such as inserting new records with updated values and adjusting the end times of existing records to reflect the changes. The concept of "snapshotting" is introduced, where the state of the data at a particular point in time can be reconstructed by querying the temporal table for records that were valid at that time.
+   </p>
+   <p>
+     Furthermore, the article explores techniques for optimizing query performance, such as indexing the start and end time columns. It also discusses the trade-offs between storage space and query speed, as maintaining a complete history of data changes can lead to increased storage requirements. The author emphasizes the importance of carefully considering the specific needs of the application and choosing the appropriate level of granularity for time tracking.
+   </p>
+   <p>
+     The article is geared towards developers and database administrators who need to manage time-oriented data but may not have the resources or expertise to implement more sophisticated solutions. It provides a practical, hands-on guide to building a simple yet effective time-oriented data system using common database tools and techniques. The author acknowledges that this "poor man's" approach may not be suitable for all situations, particularly those with extremely high data volumes or complex temporal requirements, but it can be a valuable starting point for many projects.
+   </p>
+   <h2>Key Points</h2>
+   <ul>
+     <li>
+       <strong>Temporal Tables:</strong> Represent time-varying data as a series of records, each associated with a specific time interval of validity.
+     </li>
+     <li>
+       <strong>Start and End Times:</strong> Define clear start and end times for each record to accurately represent the period of validity.
+     </li>
+     <li>
+       <strong>Updates and Deletions:</strong> Handle updates by inserting new records with updated values and adjusting the end times of existing records.
+     </li>
+     <li>
+       <strong>Snapshotting:</strong> Reconstruct the state of the data at a particular point in time by querying the temporal table for records that were valid at that time.
+     </li>
+     <li>
+       <strong>Query Optimization:</strong> Index the start and end time columns to improve query performance.
+     </li>
+     <li>
+       <strong>Trade-offs:</strong> Consider the trade-offs between storage space and query speed when determining the level of granularity for time tracking.
+     </li>
+     <li>
+       <strong>Practical Approach:</strong> Provides a practical, hands-on guide to building a simple yet effective time-oriented data system using common database tools and techniques.
+     </li>
+   </ul>
+ </div>
+ </div>
+</article>
