@@ -1,0 +1,27 @@
+<article>
+    <h2>I ditched Spotify and set up my own music stack</h2>
+    <div>
+<div>
+  <p>
+    The article discusses the author's experience and methodology for migrating their personal music library from Google Play Music (GPM) to Spotify. It details the challenges faced due to the discontinuation of GPM and the limitations of available transfer tools. The author emphasizes the importance of accurately transferring not just the songs, but also the associated metadata such as playlists, ratings (thumbs up/down), and play counts to maintain their listening habits within the new Spotify environment.
+  </p>
+  <p>
+    The author outlines a multi-step process involving exporting data from GPM using Google Takeout, cleaning and transforming the data, and then importing it into Spotify via the Spotify API. A significant portion of the effort was dedicated to data cleaning and matching songs correctly between GPM and Spotify, as discrepancies in naming conventions and album versions were common. The author created custom scripts using Python and libraries such as Pandas and Spotipy to automate the matching and migration processes. This included fuzzy matching algorithms to reconcile differences in track titles and artist names, thereby improving the accuracy of the transfer. The author was able to migrate a substantial portion of the music library, including playlists and associated metadata, to Spotify. They also share code snippets to highlight how specific tasks, like playlist creation and song addition to playlists, were accomplished programmatically via the Spotify API.
+  </p>
+  <p>
+    The article also mentions tools like Stamp, which can automatically transfer music between services, but highlights their limitations, such as cost and the inability to transfer ratings. The author ultimately preferred the more manual, albeit time-consuming, approach to gain greater control over the data and ensure higher accuracy.
+  </p>
+
+  <h3>Key Points:</h3>
+  <ul>
+    <li>Migration from Google Play Music to Spotify was necessitated by the discontinuation of GPM.</li>
+    <li>The goal was to transfer not only songs but also metadata (playlists, ratings, play counts).</li>
+    <li>Challenges included data discrepancies between GPM and Spotify and the limitations of existing transfer tools.</li>
+    <li>A custom Python script using Pandas and Spotipy was developed to automate the migration.</li>
+    <li>Data cleaning and fuzzy matching algorithms were crucial for accurate song matching.</li>
+    <li>The Spotify API was used to create playlists and add songs programmatically.</li>
+    <li>Commercial tools like Stamp were considered but deemed insufficient due to cost and limitations.</li>
+  </ul>
+</div>
+</div>
+</article>
