@@ -1,0 +1,34 @@
+<article>
+    <h2>io_uring is faster than mmap</h2>
+    <div>
+<div>
+<h2>Summary</h2>
+<p>The article "Memory is Slow, Part 2" delves into the practical implications of memory latency on application performance, expanding upon the foundational concepts introduced in Part 1. It emphasizes that while theoretical peak performance of modern CPUs and memory modules are impressive, real-world application performance is often severely limited by the speed at which data can be fetched from memory. The author uses several examples and code snippets to illustrate how seemingly simple code can become bottlenecked by memory access patterns.</p>
+
+<p>The article begins by reiterating the vast disparity between CPU clock speeds and memory access times. A CPU can execute instructions in fractions of a nanosecond, while accessing data from main memory can take tens or even hundreds of nanoseconds. This latency forces the CPU to stall, waiting for data to arrive before it can proceed with computations. The author stresses that understanding and mitigating this memory latency is crucial for optimizing performance.</p>
+
+<p>One key area explored is the impact of cache hierarchies (L1, L2, and L3 caches) on performance. The article explains that these caches serve as small, fast memory buffers that store frequently accessed data, reducing the need to go to main memory. When the CPU needs data, it first checks the L1 cache, then L2, then L3, and finally main memory if the data isn't found in any of the caches. This process is known as a cache miss, and it incurs a significant performance penalty. The effectiveness of caching depends heavily on the locality of reference in the data being accessed - that is, whether the same data or data nearby in memory is accessed repeatedly.</p>
+
+<p>The article introduces the concept of spatial and temporal locality. Spatial locality refers to the tendency to access memory locations that are physically close to each other, while temporal locality refers to the tendency to access the same memory location repeatedly within a short period. Efficient algorithms and data structures should be designed to maximize both spatial and temporal locality to improve cache hit rates.</p>
+
+<p>Furthermore, the article touches on the impact of data structures on memory access patterns. For example, linked lists, where elements are scattered randomly in memory, can lead to poor cache performance due to the lack of spatial locality. In contrast, arrays, where elements are stored contiguously in memory, offer better spatial locality and are generally more cache-friendly.</p>
+
+<p>The author also discusses techniques for improving memory access performance. These include data structure optimization (choosing data structures that promote locality), loop optimization (rearranging loops to access data in a more cache-friendly manner), and prefetching (anticipating future memory accesses and loading data into the cache proactively).  The article mentions that modern compilers and CPUs often perform some of these optimizations automatically, but understanding the underlying principles allows developers to write code that is more amenable to optimization.</p>
+
+<p>The impact of memory alignment on performance is mentioned. Properly aligning data structures in memory can prevent the CPU from needing to perform multiple memory accesses to retrieve a single piece of data, improving performance, especially on architectures with strict alignment requirements.</p>
+
+<p>Finally, the article emphasizes the importance of profiling and benchmarking code to identify memory-related bottlenecks. Performance analysis tools can help developers pinpoint areas where memory access patterns are causing performance issues, allowing them to focus their optimization efforts effectively.</p>
+
+<h2>Key Points</h2>
+<ul>
+    <li>Memory latency is a significant bottleneck in modern computer systems, often limiting application performance more than CPU processing power.</li>
+    <li>Cache hierarchies (L1, L2, L3) are crucial for mitigating memory latency by storing frequently accessed data closer to the CPU.</li>
+    <li>Spatial and temporal locality of reference are key factors in cache performance. Algorithms and data structures should be designed to maximize both.</li>
+    <li>Data structure choice significantly impacts memory access patterns. Arrays generally offer better cache performance than linked lists due to spatial locality.</li>
+    <li>Techniques for improving memory access performance include data structure optimization, loop optimization, and prefetching.</li>
+    <li>Memory alignment can impact performance, especially on architectures with strict alignment requirements.</li>
+    <li>Profiling and benchmarking are essential for identifying memory-related bottlenecks and guiding optimization efforts.</li>
+</ul>
+</div>
+</div>
+</article>
