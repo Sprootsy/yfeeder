@@ -1,0 +1,36 @@
+<article>
+    <h2>Stop writing CLI validation. Parse it right the first time</h2>
+    <div>
+<div>
+  <p>This article argues that developers spend too much time writing validation logic for command-line interface (CLI) applications. The author proposes a shift in mindset: instead of writing validation logic, developers should strive to parse the input correctly from the beginning. This approach aims to reduce code complexity, improve maintainability, and enhance the user experience by providing more informative and helpful error messages early in the process.</p>
+
+  <p>The author criticizes the common practice of first parsing input as strings and then writing separate validation functions to ensure the input conforms to the expected format and values. This often results in verbose and repetitive code, where the same input is checked multiple times throughout the application. Furthermore, these validation routines often produce generic error messages that are not user-friendly and do not clearly indicate what went wrong or how to fix it.</p>
+
+  <p>Instead, the article advocates for using parsing libraries or techniques that allow developers to define the expected input format and constraints upfront. These libraries can then automatically parse the input and raise specific, informative errors if the input does not conform to the defined schema. This approach eliminates the need for manual validation and ensures that the input is always in the correct format before being used by the application logic.</p>
+
+  <p>The benefits of this approach include:</p>
+
+  <ul>
+    <li><strong>Reduced code complexity:</strong> By eliminating separate validation functions, the code becomes simpler and easier to understand.</li>
+    <li><strong>Improved maintainability:</strong> Changes to the input format only require updating the parsing schema, rather than modifying multiple validation functions.</li>
+    <li><strong>Enhanced user experience:</strong> More informative and helpful error messages guide users to correct their input quickly.</li>
+    <li><strong>Increased reliability:</strong> The parsing library handles the validation, reducing the risk of human error in the validation logic.</li>
+  </ul>
+
+  <p>The author suggests several tools and techniques that can be used to implement this approach, depending on the programming language. These tools often provide features such as type checking, range validation, and custom validation rules. By leveraging these tools, developers can create more robust and user-friendly CLI applications with less effort.</p>
+
+  <p>In summary, the article encourages developers to rethink their approach to CLI input handling. By focusing on parsing the input correctly from the start, they can avoid writing redundant validation logic, improve code quality, and provide a better user experience.</p>
+
+  <h2>Key Points:</h2>
+  <ul>
+    <li>Traditional CLI development involves parsing input as strings and then validating it.</li>
+    <li>This leads to verbose, repetitive code and generic, unhelpful error messages.</li>
+    <li>The article advocates for parsing input correctly from the beginning using specialized libraries.</li>
+    <li>This approach eliminates the need for manual validation.</li>
+    <li>Benefits include reduced code complexity, improved maintainability, enhanced user experience, and increased reliability.</li>
+    <li>Developers should leverage parsing tools that offer features like type checking, range validation, and custom validation rules.</li>
+    <li>Focus on parsing as the primary means of validation for cleaner, more robust CLIs.</li>
+  </ul>
+</div>
+</div>
+</article>
