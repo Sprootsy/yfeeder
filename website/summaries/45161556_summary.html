@@ -1,0 +1,49 @@
+<article>
+    <h2>No Silver Bullet: Essence and Accidents of Software Engineering (1986) [pdf]</h2>
+    <div>
+<div>
+  <h3>Summary</h3>
+  <p>
+   The article is a technical report from the Department of Computer Science at the University of North Carolina at Chapel Hill, focusing on algorithms for ray tracing parametric surfaces. Ray tracing is a rendering technique used to create realistic images by simulating the way light interacts with objects in a scene. Parametric surfaces, defined by mathematical equations, are commonly used in computer graphics to represent complex shapes. The report addresses the computational challenges involved in finding the points where rays intersect these surfaces, a fundamental step in the ray tracing process.
+  </p>
+  <p>
+   The report begins by outlining the general problem of ray-surface intersection and discussing the specific challenges associated with parametric surfaces. Unlike simpler geometric primitives like spheres or triangles, parametric surfaces often lead to complex, non-linear equations that are difficult to solve analytically.
+  </p>
+  <p>
+   The authors present a detailed overview of several numerical techniques for solving these ray-surface intersection problems. These techniques include:
+  </p>
+  <ul>
+   <li><b>Newton-Raphson Method:</b> An iterative root-finding algorithm that refines an initial guess to converge towards a solution. The report discusses the application of Newton-Raphson to ray-surface intersection, including the computation of derivatives and the importance of a good initial guess for convergence.</li>
+   <li><b>Subdivision Algorithms:</b> Techniques that recursively divide the surface into smaller patches until the intersection problem becomes easier to solve within each patch. The report explores different subdivision strategies and their efficiency.</li>
+   <li><b>Continuation Methods:</b> Algorithms that track the solution of a system of equations as a parameter is varied. In the context of ray tracing, continuation methods can be used to trace the intersection point as the ray's origin or direction changes.</li>
+  </ul>
+  <p>
+   The report also discusses the problem of finding a good initial guess for iterative methods like Newton-Raphson. A poor initial guess can lead to slow convergence, incorrect solutions, or even divergence. The authors explore techniques for generating initial guesses, such as using bounding volumes or approximating the surface with simpler geometry.
+  </p>
+  <p>
+   Furthermore, the report delves into methods for improving the efficiency and robustness of the ray tracing algorithms. These include techniques for:
+  </p>
+  <ul>
+   <li><b>Adaptive Subdivision:</b> Adjusting the level of subdivision based on the curvature of the surface and the distance to the ray.</li>
+   <li><b>Ray Coherence:</b> Exploiting the fact that neighboring rays often intersect the same surface in similar locations, allowing for the reuse of intersection information and initial guesses.</li>
+   <li><b>Bounding Volume Hierarchies:</b> Organizing the surfaces in a hierarchical structure of bounding volumes to quickly reject rays that do not intersect any part of the surface.</li>
+  </ul>
+  <p>
+   The report emphasizes the importance of balancing accuracy and efficiency in ray tracing algorithms. While high accuracy is desirable for generating realistic images, it often comes at the cost of increased computation time. The authors discuss trade-offs between different algorithms and parameter settings, highlighting the need to choose methods that are appropriate for the specific application and the complexity of the scene.
+  </p>
+  <p>
+   In summary, the technical report provides a comprehensive overview of algorithms for ray tracing parametric surfaces, covering numerical solution techniques, initial guess generation, and methods for improving efficiency and robustness. It emphasizes the challenges and trade-offs involved in accurately and efficiently rendering complex shapes using ray tracing.
+  </p>
+  <h3>Key Points</h3>
+  <ul>
+   <li>Focuses on algorithms for ray tracing parametric surfaces.</li>
+   <li>Parametric surfaces are defined by mathematical equations and pose challenges for ray tracing due to complex intersection calculations.</li>
+   <li>Discusses numerical techniques for solving ray-surface intersection problems, including Newton-Raphson, subdivision algorithms, and continuation methods.</li>
+   <li>Addresses the importance of finding good initial guesses for iterative methods to ensure convergence and accuracy.</li>
+   <li>Explores techniques for improving efficiency and robustness, such as adaptive subdivision, ray coherence, and bounding volume hierarchies.</li>
+   <li>Emphasizes the trade-offs between accuracy and efficiency in ray tracing algorithms.</li>
+   <li>Provides a comprehensive overview of the challenges and solutions for ray tracing complex shapes.</li>
+  </ul>
+</div>
+</div>
+</article>
