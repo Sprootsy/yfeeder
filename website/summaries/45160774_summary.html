@@ -1,0 +1,51 @@
+<article>
+    <h2>Keeping secrets out of logs (2024)</h2>
+    <div>
+<div>
+  <p>
+    The article "Keeping Secrets Out of Logs" by Allan Reyes discusses the importance of preventing sensitive information, such as API keys, passwords, and Personally Identifiable Information (PII), from being inadvertently exposed in application logs. The author emphasizes that logs, while crucial for debugging and monitoring, can become a significant security vulnerability if they contain secrets.
+  </p>
+  <p>
+    The article starts by illustrating how secrets can end up in logs through various pathways, including:
+  </p>
+  <ul>
+    <li>Directly logging secret values: This is the most straightforward mistake, where developers explicitly log a secret.</li>
+    <li>Indirectly logging secrets through error messages: Error messages might contain sensitive data when exceptions occur, especially if the error handling is not carefully designed.</li>
+    <li>Accidentally including secrets in request/response payloads: When logging HTTP requests and responses, the headers or body might contain secrets.</li>
+    <li>Logging secrets via third-party libraries: Some third-party libraries might inadvertently log sensitive information.</li>
+  </ul>
+  <p>
+    The author then provides several strategies to mitigate the risk of exposing secrets in logs:
+  </p>
+  <ul>
+    <li>Secret Management: Using tools like HashiCorp Vault, AWS Secrets Manager, or similar services to store and manage secrets securely, instead of hardcoding them in configuration files or environment variables. The application should retrieve secrets from these services at runtime.</li>
+    <li>Filtering Sensitive Data: Implementing filters or sanitization routines to remove or mask sensitive data before logging. This can involve techniques like redacting specific fields or using regular expressions to identify and remove patterns that resemble secrets.</li>
+    <li>Avoiding Logging Request/Response Payloads: Being selective about logging request and response payloads, especially when dealing with sensitive data. If logging is necessary, ensure that secrets are filtered out.</li>
+    <li>Using Structured Logging: Employing structured logging formats (e.g., JSON) instead of plain text, making it easier to filter and process logs programmatically.</li>
+    <li>Auditing and Monitoring Logs: Regularly auditing logs to identify potential exposures of secrets and setting up alerts for suspicious activity.</li>
+    <li>Secret Scanning: Implement secret scanning tools in the CI/CD pipeline to automatically detect and prevent the committing of secrets into the codebase.</li>
+    <li>Using tools to automatically redact secrets in logs: Some tools are able to detect when secrets are about to be logged and automatically redact them before the logs are written.</li>
+  </ul>
+  <p>
+    The article also highlights the importance of educating developers about the risks of logging secrets and promoting secure coding practices. Regular training and code reviews can help prevent mistakes that lead to the exposure of sensitive information.
+  </p>
+  <p>
+    In conclusion, the author stresses that preventing secrets from ending up in logs is a crucial aspect of application security. By implementing appropriate secret management practices, filtering sensitive data, and regularly auditing logs, organizations can significantly reduce the risk of exposing sensitive information and protect their systems from potential attacks.
+  </p>
+
+  <h2>Key Points:</h2>
+  <ul>
+    <li>Secrets in logs are a significant security vulnerability.</li>
+    <li>Secrets can end up in logs directly, indirectly through errors, in request/response payloads, or via third-party libraries.</li>
+    <li>Use secret management tools (e.g., HashiCorp Vault, AWS Secrets Manager).</li>
+    <li>Filter or sanitize sensitive data before logging.</li>
+    <li>Avoid logging request/response payloads containing secrets.</li>
+    <li>Use structured logging formats (e.g., JSON).</li>
+    <li>Audit and monitor logs regularly.</li>
+    <li>Implement secret scanning in the CI/CD pipeline.</li>
+    <li>Educate developers about secure logging practices.</li>
+    <li>Automated tools can redact secrets in logs.</li>
+  </ul>
+</div>
+</div>
+</article>
