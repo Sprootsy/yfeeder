@@ -1,0 +1,45 @@
+<article>
+    <h2>Signal Secure Backups</h2>
+    <div>
+ <div>
+ 
+
+  <h2>Summary</h2>
+ 
+
+  <p>The Signal blog post introduces a new feature: Secure Backups. This feature allows Signal users to create encrypted backups of their Signal data, including messages, media files, and settings. These backups can then be securely stored and restored, providing a way to transfer Signal data to a new device or recover it in case of device loss or damage.</p>
+ 
+
+  <p>The main problem that Secure Backups aim to solve is the lack of a straightforward and private way to back up and restore Signal data. Previously, users had to rely on device-specific backup solutions (like iCloud or Google Drive) which often lacked end-to-end encryption and were not designed with Signal's privacy standards in mind. This meant that sensitive Signal data could potentially be accessed by third parties.</p>
+ 
+
+  <p>Secure Backups addresses this by implementing a system where the backup is encrypted using a 30-digit passphrase that only the user knows. This passphrase is not stored by Signal or any other third party. The encryption key is derived directly from this passphrase using a technique that allows for quick restoration even with a large amount of data.  The backup file itself is stored on the user's device or a location of their choosing, giving them control over where their encrypted data resides.</p>
+ 
+
+  <p>The article emphasizes the security and privacy aspects of the new feature. Because the encryption key is derived from the user-generated 30-digit passphrase and is never transmitted to Signal, the company cannot decrypt the backup. If a user loses their passphrase, the backup becomes unrecoverable.  The design ensures that only the user, possessing the correct passphrase, can access their backed-up data.</p>
+ 
+
+  <p>The post details the user experience of creating and restoring a Secure Backup. To create a backup, users will be guided through the process of generating and securely storing their 30-digit passphrase. When restoring, users will need to enter this passphrase to decrypt and restore their messages, media, and settings to their Signal app.</p>
+ 
+
+  <p>The blog post also mentions that Secure Backups is designed with performance in mind, allowing for relatively quick creation and restoration of backups, even for users with large message histories and media files. This is achieved through the key derivation technique employed.</p>
+ 
+
+  <p>Finally, the announcement serves as an invitation for users to try out the new Secure Backups feature, providing them with a more secure and private way to protect their Signal data and easily transfer it between devices.</p>
+ 
+
+  <h2>Key Points</h2>
+ 
+
+  <ul>
+  <li><b>Introduction of Secure Backups:</b> A new feature in Signal that allows users to create encrypted backups of their messages, media, and settings.</li>
+  <li><b>Privacy-Focused Design:</b> Backups are encrypted using a 30-digit passphrase known only to the user, ensuring end-to-end encryption.</li>
+  <li><b>User Control:</b> The encrypted backup file is stored on the user's device, giving them control over its location.</li>
+  <li><b>Passphrase Importance:</b> The passphrase is crucial for restoring the backup; losing it means the backup is unrecoverable.</li>
+  <li><b>Performance:</b> Designed for quick backup and restore, even with large amounts of data.</li>
+  <li><b>Secure Restoration:</b> Requires the correct passphrase to decrypt and restore the backup.</li>
+  <li><b>Enhanced Security:</b> Addresses privacy concerns associated with device-specific backup solutions that may not offer end-to-end encryption.</li>
+  </ul>
+ </div>
+ </div>
+</article>

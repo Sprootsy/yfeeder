@@ -1,0 +1,31 @@
+<article>
+    <h2>Setting up local LLMs for R and Python</h2>
+    <div>
+<div>
+<h2>Summary</h2>
+
+<p>The article discusses how to set up and use Local Large Language Models (LLMs) for R and Python development. It emphasizes the benefits of using local LLMs, such as enhanced privacy, control, and the ability to work offline, as well as reduced costs compared to cloud-based LLMs like those provided by OpenAI. The guide covers the installation and configuration of Ollama, a tool that simplifies the process of running LLMs locally, and demonstrates how to interact with these models using the <code>ollama</code> package in R and the <code>llama-cpp-python</code> package in Python.</p>
+
+<p>The setup begins with installing Ollama, which is available for macOS and Linux, with a Windows version in development. Once installed, users can pull pre-trained models from the Ollama library, such as <code>llama2</code> or <code>mistralai/Mistral-7B-Instruct-v0.1</code>. The article provides specific instructions for installing Ollama on macOS using Homebrew and discusses alternative installation methods for Linux.</p>
+
+<p>For R users, the article introduces the <code>ollama</code> R package, which provides functions to interact with the Ollama server. Key functions include <code>ollama_pull()</code> to download models, <code>ollama_run()</code> to generate text completions, and <code>ollama_chat()</code> for conversational interactions. The article demonstrates how to use these functions with various models and how to customize the generation parameters, such as temperature and top_p, to influence the output.</p>
+
+<p>Python users are guided to use the <code>llama-cpp-python</code> library, which facilitates interaction with local LLMs. The article provides examples of how to load a model, generate text completions, and stream responses. It also explains how to customize generation parameters and discusses the use of different models.</p>
+
+<p>The article highlights the importance of considering the hardware requirements, particularly the RAM needed to run the models effectively. Smaller models can run on systems with 8GB of RAM, while larger models may require 16GB or more. Quantization, a technique to reduce the size of the models, is mentioned as a way to mitigate these requirements.</p>
+
+<p>In summary, the article provides a practical guide to setting up and using local LLMs for R and Python developers, empowering them to leverage the capabilities of LLMs while maintaining privacy, control, and cost-effectiveness.</p>
+
+<h2>Key Points</h2>
+
+<ul>
+<li>Local LLMs offer privacy, control, offline access, and cost benefits compared to cloud-based LLMs.</li>
+<li>Ollama simplifies the process of running LLMs locally and is available for macOS and Linux.</li>
+<li>The <code>ollama</code> R package allows R users to interact with the Ollama server, pull models, generate text, and engage in conversational interactions.</li>
+<li>The <code>llama-cpp-python</code> library enables Python users to load models, generate text completions, and stream responses from local LLMs.</li>
+<li>Hardware requirements, especially RAM, are important to consider when running local LLMs, and quantization can help reduce these requirements.</li>
+<li>The article provides step-by-step instructions and code examples for setting up and using local LLMs in both R and Python environments.</li>
+</ul>
+</div>
+</div>
+</article>
