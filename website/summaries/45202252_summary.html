@@ -1,0 +1,28 @@
+<article>
+    <h2>Dotter: Dotfile manager and templater written in Rust</h2>
+    <div>
+<div>
+<h2>Summary</h2>
+<p>Dotter is a dotfile manager that utilizes a TOML configuration file to manage the deployment of files and templates. It allows users to specify source paths, target paths, and templating engines for various files and directories within their dotfile repository. Dotter supports multiple profiles, enabling users to apply different configurations based on the system or environment they are working in. It also includes features for variable substitution, allowing for dynamic configuration based on environment variables or user-defined values.</p>
+
+<p>The core functionality of Dotter revolves around reading a TOML configuration file, typically named `dot.toml`, which defines how files and directories should be handled. Each entry in the configuration specifies a source file or directory within the dotfile repository and a corresponding target location on the system. Dotter can then either copy the source file directly to the target location or process it as a template using a specified templating engine, such as Jinja2 or Handlebars. When templating is used, Dotter substitutes variables within the template with values from the environment or user-defined variables.</p>
+
+<p>Dotter's profile system allows users to define multiple configurations within the same `dot.toml` file. Each profile can specify different source and target paths, as well as different templating settings and variables. This enables users to easily switch between different configurations based on the system they are working on, such as a personal laptop or a work computer. Profiles can be activated using the `--profile` flag when running Dotter commands.</p>
+
+<p>In addition to managing files and directories, Dotter also provides features for managing packages and running shell commands. Users can specify a list of packages to be installed on the system, and Dotter will use the system's package manager to install them. Users can also define shell commands to be executed before or after the deployment of files and templates. This allows for further customization and automation of the dotfile deployment process.</p>
+
+<p>Dotter aims to simplify the management of dotfiles by providing a declarative configuration format and a set of tools for deploying and managing files, templates, packages, and shell commands. Its features for profiles, variable substitution, and templating make it a flexible and powerful tool for managing dotfiles across multiple systems and environments.</p>
+
+<h2>Key Points</h2>
+<ul>
+    <li>Dotter is a dotfile manager that uses a TOML configuration file (e.g., `dot.toml`).</li>
+    <li>It allows specifying source files/directories and target locations.</li>
+    <li>Supports templating engines like Jinja2 and Handlebars for dynamic configuration.</li>
+    <li>Features profile support for different system configurations.</li>
+    <li>Enables variable substitution using environment variables or user-defined values.</li>
+    <li>Can manage packages by using system's package manager.</li>
+    <li>Allows execution of shell commands before/after deployment.</li>
+</ul>
+</div>
+</div>
+</article>

@@ -1,0 +1,24 @@
+<article>
+    <h2>API, Claude.ai, and Console services impacted [resolved]</h2>
+    <div>
+<div>
+<p><b>Summary:</b></p>
+<p>On May 8, 2024, Anthropic experienced an incident that impacted Claude's availability and caused errors across several services. The incident started at 9:53 AM PST and was fully resolved by 6:15 PM PST. The root cause was traced to a database migration that introduced increased latency and resource contention. The migration was intended to improve database performance, but an unforeseen interaction led to significant performance degradation under production load.</p>
+<p>The incident manifested as elevated error rates, particularly HTTP 500 errors, across various Claude services, including the API, web interface, and integrations. Users experienced difficulties accessing Claude and completing requests. Anthropic's monitoring systems detected the issue, and the on-call team was alerted. The team initially focused on mitigating the immediate impact by increasing capacity and restarting services. However, these actions did not fully resolve the problem.</p>
+<p>Further investigation revealed the database migration as the source of the performance bottleneck. Anthropic then focused on reverting the migration to restore the database to its previous state. This involved coordinating the rollback across multiple database clusters and ensuring data consistency. After initiating the rollback, service performance gradually improved. Once the rollback was complete, the error rates returned to normal levels, and services were fully recovered.</p>
+<p>Anthropic has outlined several steps to prevent similar incidents in the future. These include enhancing pre-production testing to better simulate production load and identify potential performance issues before deployment. They also plan to improve monitoring and alerting systems to provide earlier and more granular detection of database performance degradation. Additionally, Anthropic will refine their database migration procedures to include more robust rollback mechanisms and better coordination across teams.</p>
+<p>Anthropic acknowledged the impact of the incident on users and expressed their commitment to preventing future occurrences. They emphasized the importance of maintaining a reliable and stable service and outlined the steps they are taking to achieve this goal.</p>
+<br/>
+<p><b>Key Points:</b></p>
+<ul>
+<li><b>Incident:</b> Claude services experienced an outage.</li>
+<li><b>Date:</b> May 8, 2024.</li>
+<li><b>Root Cause:</b> A problematic database migration caused increased latency and resource contention.</li>
+<li><b>Impact:</b> Elevated error rates (HTTP 500) across Claude API, web interface, and integrations.</li>
+<li><b>Resolution:</b> Rollback of the database migration.</li>
+<li><b>Timeline:</b> Incident started at 9:53 AM PST and was resolved by 6:15 PM PST.</li>
+<li><b>Preventative Measures:</b> Enhanced pre-production testing, improved monitoring/alerting, refined database migration procedures.</li>
+</ul>
+</div>
+</div>
+</article>
