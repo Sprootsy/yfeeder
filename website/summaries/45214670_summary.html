@@ -1,0 +1,32 @@
+<article>
+    <h2>Top model scores may be skewed by Git history leaks in SWE-bench</h2>
+    <div>
+<div>
+<p>The GitHub issue discusses a problem encountered while using the SWE-bench dataset, specifically with the &quot;codeql_match&quot; results for the &quot;security&quot; category. The issue reporter, &quot;jordan-lewis,&quot; notes that when running the evaluation script &quot;sweep_eval/evaluate_model.py&quot; with the argument &quot;--use_security_codeql,&quot; they receive an error because the script attempts to load a nonexistent file. This missing file is expected to contain the CodeQL results related to security vulnerabilities.</p>
+
+<p>The reporter traces the source of the error to the &quot;load_codeql_matches&quot; function in &quot;sweep_eval/utils.py&quot;. This function tries to load a pickle file located at a specific path constructed using the &quot;eval_dir&quot; and the &quot;codeql_file_name&quot;. The issue is that this file does not exist in the expected location.</p>
+
+<p>The reporter attempts to resolve the problem by downloading the CodeQL results from a provided link, which leads to an &quot;index.json&quot; file within a &quot;security_codeql&quot; directory. However, the evaluation script expects a pickle file, not the &quot;index.json&quot; file. The reporter asks for clarification on how to properly use the &quot;--use_security_codeql&quot; argument and how to obtain the correct CodeQL results file.</p>
+
+<p>A response from &quot;ejj28&quot; (likely one of the SWE-bench maintainers) acknowledges the issue. They state that the CodeQL results for the security category were not initially included in the SWE-bench release due to concerns about reproducibility and licensing. They explain that CodeQL results can vary depending on the environment and version of CodeQL used, which complicates the guarantee of consistent results.</p>
+
+<p>Furthermore, they mention that the CodeQL rules used to generate these results are proprietary to GitHub and are not redistributable under the SWE-bench license. Therefore, the results were intentionally omitted from the main release.</p>
+
+<p>However, &quot;ejj28&quot; notes that they can provide the CodeQL results to users who request them individually for research purposes. To obtain these results, users need to agree to the terms of use, which include not redistributing the data and acknowledging that the results may not be perfectly reproducible.</p>
+
+<p>The response also indicates that the documentation might be outdated or unclear regarding the use of the &quot;--use_security_codeql&quot; argument. The maintainers plan to update the documentation to reflect the current situation: that the CodeQL results are not included in the standard download and require a separate request.</p>
+
+<p>In summary, the GitHub issue highlights a discrepancy between the SWE-bench evaluation script's expectation of a CodeQL results file for security vulnerabilities and the actual availability of this file in the distributed dataset. The CodeQL results were deliberately excluded due to reproducibility and licensing issues, but can be obtained upon request for research purposes subject to specific terms of use. The documentation will be updated to clarify this process.</p>
+
+<h2>Key Points:</h2>
+<ul>
+  <li>The SWE-bench evaluation script expects a CodeQL results file for the &quot;security&quot; category when using the &quot;--use_security_codeql&quot; argument.</li>
+  <li>This CodeQL results file is missing from the standard SWE-bench dataset download.</li>
+  <li>The missing file is a pickle file that should contain CodeQL match data.</li>
+  <li>The CodeQL results were excluded due to concerns about reproducibility (variations based on environment and CodeQL version) and licensing (proprietary GitHub rules).</li>
+  <li>The CodeQL results can be obtained upon request for research purposes, subject to specific terms of use (no redistribution, acknowledgment of potential irreproducibility).</li>
+  <li>The SWE-bench documentation will be updated to reflect the unavailability of the CodeQL results in the standard download and the process for requesting them.</li>
+</ul>
+</div>
+</div>
+</article>

@@ -1,0 +1,16 @@
+<article>
+    <h2>Randomly selecting points inside a triangle</h2>
+    <div>
+ <div>
+ <h2>Summary</h2>
+ <p>The article discusses how to generate random points uniformly inside a triangle. It presents and compares different methods, highlighting their efficiency and correctness. The naive approach of generating random points within the bounding box of the triangle and rejecting those that fall outside is inefficient, especially for long, thin triangles. A better method involves generating random points within a parallelogram defined by two sides of the triangle and then mapping these points into the triangle using a transformation. This method is faster but requires careful handling to ensure uniformity. The article then describes a more efficient and straightforward method that involves generating two uniform random numbers between 0 and 1, say <code>a</code> and <code>b</code>. If <code>a + b</code> is greater than 1, it subtracts both from 1. The generated values are then used as barycentric coordinates within the triangle, producing a uniformly distributed random point.</p>
+ <h2>Key Points</h2>
+ <ul>
+  <li>A naive approach of generating random points within a bounding box and rejecting those outside the triangle is inefficient.</li>
+  <li>A parallelogram-based method is faster than the bounding box method but requires careful implementation to ensure uniformity.</li>
+  <li>The most efficient method involves generating two random numbers, adjusting them if their sum exceeds 1, and using them as barycentric coordinates.</li>
+  <li>The barycentric coordinate method provides a simple and efficient way to generate uniformly distributed random points within a triangle.</li>
+ </ul>
+ </div>
+ </div>
+</article>
