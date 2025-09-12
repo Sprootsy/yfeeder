@@ -1,0 +1,27 @@
+<article>
+    <h2>Rails on SQLite: new ways to cause outages</h2>
+    <div>
+<div>
+  <p>This article humorously discusses the trend of using SQLite as a production database for Ruby on Rails applications, highlighting potential pitfalls and outage scenarios. The author begins by noting the increasing interest in SQLite for production, driven by its simplicity, zero-configuration setup, and suitability for smaller applications or those with limited write concurrency. The author then outlines several ways in which deploying Rails applications with SQLite in production can lead to outages.
+</p>
+  <p>Firstly, the author describes how deploying multiple Rails processes to a server with a single SQLite database can lead to database locking and contention. SQLite, while robust, is designed for lower concurrency than databases like PostgreSQL or MySQL. As multiple processes try to write to the database simultaneously, lock timeouts can occur, leading to application errors and performance degradation. The author uses the analogy of a single-lane bridge with traffic jams to illustrate this point.</p>
+  <p>Secondly, the article points out that unexpected write-heavy workloads can overwhelm SQLite. The author explains that if an application suddenly experiences a surge in write operations (e.g., due to a viral social media post or a marketing campaign), SQLite might struggle to keep up, resulting in slow response times and potential application crashes. The author likens this to a water pipe bursting when subjected to too much pressure.</p>
+  <p>Thirdly, the author discusses how background jobs using SQLite can also cause issues. If background workers are writing to the same SQLite database as the main Rails application, they can exacerbate concurrency problems and lead to deadlocks. The author recommends using a proper background job queue (e.g., Sidekiq, Resque) with a more robust database backend for such tasks.</p>
+  <p>The author then describes potential problems with shared SQLite databases on network file systems (NFS). The author warns that SQLite is not designed to work reliably over a network file system because NFS doesn't provide the locking mechanisms that SQLite requires to guarantee data consistency. This can lead to database corruption and data loss.
+</p>
+  <p>Further, the article warns of the possibility of exceeding SQLite's maximum database size. Although SQLite can handle large databases, it's still subject to file system limitations. If an application's data grows unexpectedly, it could hit the size limit, causing the application to fail.</p>
+  <p>Finally, the author recommends strategies for mitigating these risks, such as monitoring SQLite performance, using connection pooling, carefully managing background jobs, and considering alternative database solutions (like PostgreSQL) for applications that require higher concurrency or scalability. The author emphasizes that while SQLite can be a viable option for certain Rails applications, it's crucial to understand its limitations and potential pitfalls to avoid unexpected outages.</p>
+
+  <h3>Key Points:</h3>
+  <ul>
+    <li>SQLite is gaining popularity as a production database for Rails applications due to its simplicity.</li>
+    <li>High write concurrency from multiple Rails processes can cause database locking and performance issues.</li>
+    <li>Unexpectedly high write workloads can overwhelm SQLite, leading to slowdowns and crashes.</li>
+    <li>Background jobs writing to the same SQLite database can worsen concurrency problems.</li>
+    <li>Using SQLite over network file systems (like NFS) can lead to database corruption and data loss due to locking issues.</li>
+    <li>Exceeding SQLite's maximum database size can cause application failures.</li>
+    <li>Monitoring, connection pooling, careful management of background jobs, and considering alternative databases are crucial for mitigating risks.</li>
+  </ul>
+</div>
+</div>
+</article>
