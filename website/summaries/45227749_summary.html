@@ -1,0 +1,25 @@
+<article>
+    <h2>Tips for installing Windows 98 in QEMU/UTM</h2>
+    <div>
+<div>
+<p>This article provides a comprehensive guide on installing Windows 98 in QEMU/UTM, focusing on achieving optimal performance and functionality. It addresses common issues encountered during the installation process and offers solutions to circumvent them. The guide begins by emphasizing the necessity of a Windows 98 installation ISO and a virtual floppy disk containing essential drivers, particularly network drivers for later internet access. It details the VM setup, recommending specific settings like allocating sufficient RAM (around 512MB), creating a virtual hard disk image (between 4-8GB), and selecting the appropriate machine type (pc440fx is mentioned). The author underscores the importance of booting from the ISO image and navigating the initial Windows 98 setup screens.</p>
+
+<p>A significant portion of the guide is dedicated to troubleshooting common problems. A key challenge is the potential for the installer to hang during hardware detection. The article suggests disabling hardware detection to bypass this issue, allowing the installation to proceed. Once the base OS is installed, the guide walks through installing drivers for sound, graphics, and network. The VIA chipset drivers are highlighted as crucial for overall system stability and performance. Specific instructions are given for installing the SciTech Display Doctor (SDD) to achieve higher screen resolutions and color depths, significantly improving the visual experience. The guide also emphasizes the importance of installing network drivers to enable internet connectivity within the virtual machine.</p>
+
+<p>The article further delves into optimizing the virtual machine for better performance. This includes editing the SYSTEM.INI file to improve disk performance by enabling 32-bit disk access. Instructions are provided on how to modify the VCACHE settings to manage memory allocation effectively. The guide also offers tips on installing DirectX for improved graphics capabilities, enabling the user to run older games and applications more smoothly. Finally, the article touches upon sharing files between the host operating system and the Windows 98 virtual machine, suggesting the use of a virtual floppy disk for transferring small files and setting up a Samba server for larger file transfers.</p>
+
+<p>In essence, the guide aims to equip users with the knowledge and tools necessary to create a functional and relatively performant Windows 98 virtual machine within QEMU/UTM, addressing common pitfalls and providing solutions for a smoother and more enjoyable retro computing experience.</p>
+
+<h2>Key Points:</h2>
+<ul>
+<li><b>Required Files:</b> Windows 98 installation ISO and a virtual floppy disk with necessary drivers (especially network drivers).</li>
+<li><b>VM Setup:</b> Allocate sufficient RAM (512MB recommended), create a virtual hard disk (4-8GB), and select an appropriate machine type (pc440fx suggested).</li>
+<li><b>Installer Issues:</b> Disable hardware detection if the installer hangs during that phase.</li>
+<li><b>Essential Drivers:</b> Install VIA chipset drivers for stability, SciTech Display Doctor (SDD) for better graphics, and network drivers for internet access.</li>
+<li><b>Performance Optimization:</b> Edit SYSTEM.INI for 32-bit disk access, adjust VCACHE settings for memory management.</li>
+<li><b>Graphics Enhancement:</b> Install DirectX for improved graphics, enabling better compatibility with older games.</li>
+<li><b>File Sharing:</b> Use virtual floppy disks for small files and Samba for larger files to transfer between the host and guest OS.</li>
+</ul>
+</div>
+</div>
+</article>
