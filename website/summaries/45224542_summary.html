@@ -1,0 +1,22 @@
+<article>
+    <h2>Why do browsers throttle JavaScript timers?</h2>
+    <div>
+ <div>
+  <p>This article, written as a blog post from the future (August 31, 2025), discusses the reasons why browsers throttle JavaScript timers. The author explains that browsers implement timer throttling primarily to improve performance and battery life, especially for background tabs or inactive windows. JavaScript timers, such as `setTimeout` and `setInterval`, are commonly used for various tasks, including animations, polling for updates, and scheduling tasks. However, these timers can consume significant resources, even when the user is not actively interacting with the page.</p>
+  <p>The article details how unthrottled timers in background tabs can lead to excessive CPU usage, draining battery life on laptops and mobile devices. This is because even if a tab is hidden, the JavaScript code continues to execute, and timers continue to fire. The browser's rendering engine also consumes power when timers trigger frequent updates, even if these updates are not visible to the user.</p>
+  <p>To mitigate these issues, browsers employ timer throttling techniques. Typically, this involves reducing the frequency at which timers fire in background tabs. For example, a timer set to fire every 100 milliseconds in an active tab might be throttled to fire only once per second (or even less frequently) in a background tab. This significantly reduces the CPU usage and power consumption associated with background tabs.</p>
+  <p>The article also mentions that modern browsers are becoming more aggressive with timer throttling to further improve performance and battery life. Some browsers may even completely suspend timers in inactive tabs after a certain period of inactivity. The exact throttling behavior can vary between browsers and may depend on factors such as the user's power settings, the age of the tab, and the overall system load.</p>
+  <p>The author notes that while timer throttling is generally beneficial, it can sometimes lead to unexpected behavior or performance issues if developers are not aware of it. For example, animations or polling mechanisms that rely on precise timing may not work correctly in background tabs. To address this, developers can use techniques such as the Page Visibility API to detect when a tab is in the background and adjust their code accordingly. They can also use requestAnimationFrame for animations, which is optimized for browser rendering and less likely to be throttled. The author also touches on the use of Web Workers for running tasks in the background, as they are less subject to the same throttling limitations as timers in the main thread.</p>
+  <p>In summary, the article explains that timer throttling is a crucial optimization technique used by browsers to reduce CPU usage and improve battery life, especially for background tabs. While it can sometimes introduce complexity for developers, understanding how timer throttling works and using appropriate techniques can help ensure that web applications perform efficiently and reliably across different browsers and devices.</p>
+  <h2>Key Points:</h2>
+  <ul>
+   <li>Browsers throttle JavaScript timers (setTimeout, setInterval) primarily to improve performance and battery life.</li>
+   <li>Unthrottled timers in background tabs can lead to excessive CPU usage and battery drain.</li>
+   <li>Timer throttling reduces the frequency at which timers fire in background tabs.</li>
+   <li>Browsers are becoming more aggressive with timer throttling.</li>
+   <li>Developers should be aware of timer throttling and use techniques like the Page Visibility API or requestAnimationFrame to mitigate potential issues.</li>
+   <li>Web Workers can be used for background tasks that are less subject to timer throttling.</li>
+  </ul>
+ </div>
+ </div>
+</article>

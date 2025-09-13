@@ -1,0 +1,30 @@
+<article>
+    <h2>Humanely dealing with humungus crawlers</h2>
+    <div>
+<div>
+<p>This article by Ted Unangst discusses strategies for dealing with excessively large or resource-intensive web crawlers, often referred to as "humungous crawlers," that can negatively impact website performance. The author outlines various methods to manage these crawlers, ranging from polite and cooperative approaches to more aggressive techniques when gentler methods fail.</p>
+
+<p>The article begins by emphasizing the importance of identifying the offending crawler. This can be achieved through analyzing web server logs for unusual traffic patterns, high request rates, or distinctive user-agent strings. Once identified, the initial approach should be communication. The author suggests checking if the crawler adheres to <code>robots.txt</code> rules and attempting to contact the crawler's operators to request a reduced crawl rate or restricted access to specific parts of the site. Providing detailed information about the crawler's impact and offering suggestions for more efficient crawling can be effective in gaining cooperation.</p>
+
+<p>If communication fails or the crawler continues to cause problems, the author proposes implementing more assertive measures. These include rate limiting based on IP address or user-agent, which restricts the number of requests a crawler can make within a given timeframe. This can be implemented at the web server level or using more sophisticated traffic management tools. Another approach is to serve different content to the crawler, such as simplified versions of pages or pre-rendered content, to reduce the server load. This can be achieved through user-agent detection and content negotiation.</p>
+
+<p>The article also touches upon the use of CAPTCHAs to deter automated crawling. While effective, CAPTCHAs can also inconvenience legitimate users, so their use should be carefully considered and targeted specifically at the problematic crawler. In extreme cases, blocking the crawler's IP address range entirely may be necessary, but this should be a last resort as it can potentially block legitimate users who share the same IP range.</p>
+
+<p>Unangst highlights the importance of monitoring the effectiveness of any implemented measures. Regularly reviewing server logs and performance metrics is crucial to ensure that the crawler's impact is being mitigated and that legitimate users are not being inadvertently affected. The author also acknowledges the ongoing arms race between website operators and crawler developers, emphasizing that crawler technology is constantly evolving, and strategies for managing them must adapt accordingly.</p>
+
+<p>Finally, the article advises against engaging in unethical or illegal practices, such as attempting to hack or disable the crawler directly. Such actions can have serious legal consequences and are unlikely to be effective in the long run.</p>
+
+<p><b>Key points:</b></p>
+<ul>
+<li>Identify the humungous crawler through server log analysis.</li>
+<li>Initially attempt communication and cooperation with the crawler's operators.</li>
+<li>Implement rate limiting based on IP address or user-agent.</li>
+<li>Consider serving different content to the crawler to reduce server load.</li>
+<li>Use CAPTCHAs sparingly and target them specifically at the problematic crawler.</li>
+<li>Block the crawler's IP address range as a last resort.</li>
+<li>Monitor the effectiveness of implemented measures regularly.</li>
+<li>Avoid unethical or illegal practices.</li>
+</ul>
+</div>
+</div>
+</article>
