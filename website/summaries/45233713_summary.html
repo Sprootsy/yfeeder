@@ -1,0 +1,62 @@
+<article>
+    <h2>RIP pthread_cancel</h2>
+    <div>
+<div>
+<p>The article discusses the problems with using <code>pthread_cancel</code> in C/C++ multithreaded programming. The author argues that while <code>pthread_cancel</code> seems like a convenient way to terminate threads, it is fraught with issues that make it unreliable and dangerous in practice. The core problem is that <code>pthread_cancel</code> injects asynchronous termination points into a thread's execution. This means that a thread can be terminated at almost any point, potentially leaving shared resources in an inconsistent state.
+</p>
+<p>
+The author explains that <code>pthread_cancel</code> operates by sending a cancellation signal to the target thread. The thread, if cancellation is enabled and the cancellation type allows it, will then terminate. However, the exact point at which the thread terminates is often unpredictable. Cancellation points are typically inserted at specific function calls (e.g., I/O operations, <code>sleep</code>, <code>pthread_join</code>). If a thread is in a critical section of code where it holds locks or manages other resources, being canceled at an arbitrary point can lead to deadlocks, resource leaks, or data corruption.
+</p>
+<p>
+The article details the mechanisms provided by POSIX threads to mitigate the risks of cancellation. These include:
+</p>
+<ol>
+<li>
+<b>Cancellation Enable/Disable:</b> Threads can disable or enable cancellation using <code>pthread_setcancelstate</code>. Disabling cancellation prevents the thread from being terminated until cancellation is re-enabled.
+</li>
+<li>
+<b>Cancellation Type:</b> The cancellation type (<code>PTHREAD_CANCEL_DEFERRED</code> or <code>PTHREAD_CANCEL_ASYNCHRONOUS</code>) determines when the cancellation signal is acted upon. Deferred cancellation (the default) means that cancellation only occurs at cancellation points. Asynchronous cancellation allows termination at any time, which is highly discouraged due to its inherent unsafety.
+</li>
+<li>
+<b>Cancellation Handlers:</b> These are cleanup handlers that can be pushed onto a stack using <code>pthread_cleanup_push</code> and popped off using <code>pthread_cleanup_pop</code>. When a thread is canceled, these handlers are executed in reverse order of their registration, allowing the thread to release resources and restore invariants.
+</li>
+</ol>
+<p>
+Despite these mechanisms, the author contends that using <code>pthread_cancel</code> safely requires extreme discipline and careful design. Ensuring that all resources are properly managed in cancellation handlers and that critical sections are protected from cancellation is complex and error-prone. Furthermore, the presence of third-party libraries that might introduce cancellation points without the application's knowledge adds another layer of complexity.
+</p>
+<p>
+The article advocates for alternative approaches to thread termination that are more controlled and predictable. One such approach is to use a signaling mechanism where a thread periodically checks a flag or message queue to determine if it should terminate. This allows the thread to terminate itself gracefully at a safe point, ensuring that resources are properly released and data remains consistent. Another alternative is to structure the program using a pool of worker threads that process tasks from a queue. To terminate a worker, simply stop adding tasks to the queue and let the workers finish their current tasks before exiting.
+</p>
+<p>
+The author concludes that <code>pthread_cancel</code> should be avoided whenever possible due to its inherent risks and complexity. More structured and controlled approaches to thread termination are generally safer and easier to manage, leading to more robust and reliable multithreaded applications.
+</p>
+<h2>Key Points:</h2>
+<ul>
+<li>
+<code>pthread_cancel</code> is a mechanism for terminating threads in POSIX environments, but it's inherently unsafe.
+</li>
+<li>
+It injects asynchronous termination points, leading to potential data corruption, deadlocks, and resource leaks if not handled carefully.
+</li>
+<li>
+Cancellation occurs when a cancellation signal is sent and the thread is at a cancellation point (or at any time with asynchronous cancellation, which is highly discouraged).
+</li>
+<li>
+POSIX provides mechanisms like disabling/enabling cancellation, deferred/asynchronous cancellation types, and cancellation handlers to mitigate risks.
+</li>
+<li>
+However, using these mechanisms correctly is complex and error-prone.
+</li>
+<li>
+Third-party libraries can introduce cancellation points without the application's awareness, further complicating matters.
+</li>
+<li>
+Safer alternatives include using signaling mechanisms or worker thread pools with task queues to allow threads to terminate themselves gracefully.
+</li>
+<li>
+The article recommends avoiding <code>pthread_cancel</code> in favor of more controlled thread termination strategies.
+</li>
+</ul>
+</div>
+</div>
+</article>

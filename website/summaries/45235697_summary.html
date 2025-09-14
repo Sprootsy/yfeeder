@@ -1,0 +1,46 @@
+<article>
+    <h2>Wayland breaks the tools I use to make a living</h2>
+    <div>
+<div>
+  <p>
+    The article is a comprehensive overview of Wayland, a display server protocol intended to replace the aging X Window System (X11). It discusses the history, architecture, advantages, and disadvantages of Wayland, as well as its current state and future prospects.
+  </p>
+  <p>
+    The article begins by outlining the problems with X11, which was designed in the 1980s for a different computing landscape. X11's monolithic architecture, network transparency focus (which is often unnecessary today), and complex extensions have led to performance issues and difficulties in maintaining and extending the system. Wayland was conceived as a modern replacement to address these shortcomings.
+  </p>
+  <p>
+    The core principle of Wayland is simplicity. It moves the compositing functionality from the X server into the compositor, which can be part of the window manager or a standalone application. This direct rendering approach reduces latency and improves performance.  The compositor directly manages the display and input devices, providing a more streamlined and efficient architecture.
+  </p>
+  <p>
+    The article details the roles of the Wayland compositor and clients. The compositor is responsible for drawing windows, handling input, and managing the overall display. Clients, such as applications, connect to the compositor and request to be displayed. The communication between the compositor and clients is handled through the Wayland protocol, which is designed to be extensible.
+  </p>
+  <p>
+    One of the key advantages of Wayland is its improved security model.  Because the compositor directly handles input, it has better control over access to input devices, preventing malicious clients from eavesdropping on user input.  Furthermore, Wayland promotes better isolation between applications, reducing the risk of one application crashing the entire system.
+  </p>
+  <p>
+    The article also discusses the challenges associated with transitioning to Wayland. One major hurdle is the lack of backward compatibility with X11. To address this, Xwayland was created which is an X server running as a Wayland client. This allows legacy X11 applications to run on Wayland compositors, but it introduces a layer of indirection that can impact performance.
+  </p>
+  <p>
+    Another challenge is the adoption of Wayland by various desktop environments and applications. While major desktop environments like GNOME and KDE Plasma have embraced Wayland, some applications still lack native Wayland support, relying on Xwayland.  Driver support, especially for proprietary graphics drivers, has also been a concern, although it has improved significantly over time.
+  </p>
+  <p>
+    The article explores specific Wayland compositors like Weston (the reference implementation), Mutter (used by GNOME), KWin (used by KDE Plasma), and Sway (a tiling window manager). It also mentions the importance of libraries like wlroots, which provides a foundation for building custom Wayland compositors.
+  </p>
+  <p>
+    The article also touches on the impact of Wayland on remote desktop solutions and screen recording. These functionalities, which were traditionally handled by the X server, require new approaches in Wayland. Solutions like PipeWire are emerging to address these challenges, providing a framework for managing audio and video streams in a Wayland environment.
+  </p>
+  <p>
+    Finally, the article concludes that Wayland is the future of display servers on Linux, offering significant improvements in performance, security, and architecture compared to X11.  While the transition to Wayland has not been without its challenges, the ecosystem is maturing, and Wayland is becoming increasingly prevalent in modern Linux distributions.  The author suggests that while X11 may remain relevant for some time due to legacy applications, Wayland's advantages make it the superior choice for the long term.
+  </p>
+
+  <h2>Key Points:</h2>
+  <ul>
+    <li>Wayland is designed to replace the X Window System (X11) due to X11's architectural limitations and performance issues.</li>
+    <li>Wayland's core principle is simplicity, moving compositing to the compositor for direct rendering.</li>
+    <li>The Wayland compositor manages the display and input, while clients request to be displayed.</li>
+    <li>Wayland offers improved security compared to X11 by controlling access to input devices.</li>
+    <li>Xwayland allows legacy X11 applications to run on Wayland compositors.</li>
+    <li>Major desktop environments like GNOME and KDE Plasma have adopted Wayland.</li>
+    <li>Libraries like wlroots facilitate the creation of custom Wayland compositors.</li>
+    <li>PipeWire is emerging to handle audio and video streams, crucial for remote desktop</div>
+</article>

@@ -1,0 +1,30 @@
+<article>
+    <h2>486Tang – 486 on a credit-card-sized FPGA board</h2>
+    <div>
+<div>
+  <p>The article discusses the author's project of porting a complete i486 (Intel 80486) core to the Sipeed Tang Nano 20K FPGA board, a small and inexpensive board. The author describes the challenges and process of implementing the i486 core, initially developed by Altrezza, on the Tang Nano 20K, which uses the Gowin GW2AR-18 FPGA. The original Altrezza core was designed for Xilinx FPGAs, so significant modifications were needed to adapt it to the Gowin architecture and the limited resources of the Tang Nano 20K. This involved addressing differences in memory access, interrupt handling, and peripheral support, including VGA output using a resistor ladder DAC.</p>
+
+  <p>The project's initial goal was to run DOS and classic DOS games on the FPGA-based i486. The author outlines the steps taken to achieve this, including generating a bootable disk image and loading it into the FPGA's memory. The article details the adjustments required in the core's configuration and memory map to work within the constraints of the Tang Nano 20K. The author also describes the process of implementing essential peripherals, such as a VGA controller for display output, and the challenges associated with timing and resource limitations on the FPGA. A UART was implemented for serial communication.</p>
+
+  <p>The article goes into specific technical details, such as the use of Gowin's EDA tools, the modifications made to the Verilog code of the i486 core, and the optimizations performed to reduce resource usage. The author mentions the issues encountered with Gowin's memory initialization and describes the workarounds used to load the bootable disk image correctly. Furthermore, the author explains the interrupt handling mechanism and modifications to it to make it more real-time, specifically to get keyboard input to work.</p>
+
+  <p>The author explains the steps required to load the core, BIOS, and disk image onto the FPGA. This includes creating a Gowin project, configuring the memory, and synthesizing the design. The article also covers the process of creating a bootable disk image using standard PC tools and converting it into a format suitable for loading into the FPGA's memory.</p>
+
+  <p>The author expresses satisfaction with the project's outcome, noting the ability to run DOS and play games like Doom and Prince of Persia on the credit card-sized FPGA board. The article concludes with a summary of the key challenges and accomplishments, as well as providing links to the project's source code and related resources, encouraging others to explore and build upon the work.</p>
+
+  <h2>Key Points:</h2>
+  <ul>
+    <li>Ported the Altrezza i486 core to the Sipeed Tang Nano 20K FPGA board.</li>
+    <li>Modified the core to adapt to the Gowin GW2AR-18 FPGA architecture and resource constraints.</li>
+    <li>Implemented a VGA controller for display output using a resistor ladder DAC.</li>
+    <li>Implemented a UART controller for serial communications.</li>
+    <li>Successfully booted DOS and ran classic DOS games, including Doom and Prince of Persia.</li>
+    <li>Addressed challenges related to memory access, interrupt handling, and peripheral support.</li>
+    <li>Optimized the Verilog code to reduce resource usage on the FPGA.</li>
+    <li>Created a bootable disk image and loaded it into the FPGA's memory.</li>
+    <li>Provides access to source code and resources for others to replicate and improve upon the project.</li>
+    <li>Explains interrupt handling and real-time modifications for keyboard input.</li>
+  </ul>
+</div>
+</div>
+</article>
