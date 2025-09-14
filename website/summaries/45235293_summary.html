@@ -1,0 +1,33 @@
+<article>
+    <h2>AMD’s RDNA4 GPU architecture</h2>
+    <div>
+<div>
+<h2>Summary:</h2>
+<p>The article discusses AMD's RDNA4 GPU architecture, presented at Hot Chips. RDNA4 is a graphics architecture set to compete in the mainstream and value segments, not targeting the high-end enthusiast market. AMD is focusing on efficiency and cost-effectiveness. The architecture features improvements in compute units, memory, and overall design.</p>
+
+<p>RDNA4 incorporates a redesigned Compute Unit (CU) that aims for higher utilization and performance. It uses a new wavefront size of 32, a change from RDNA3's dual 32-wide wavefronts executing as a single 64-wide wavefront. This adjustment helps reduce overhead and improve efficiency, particularly in scenarios with divergent code. The CU also includes enhancements to the L0 instruction cache and register file, increasing their size and bandwidth. The new architecture uses a dual issue datapath, increasing instruction throughput. AMD has also decoupled the texture units, enabling them to operate independently of the vector ALUs.</p>
+
+<p>Memory subsystem improvements are another key focus. RDNA4 adopts a narrower memory bus compared to previous high-end AMD GPUs, likely using a 128-bit or 192-bit memory interface. To compensate for this reduction in memory bandwidth, AMD has significantly increased the size of the on-die cache. The architecture includes a larger L1 cache and a redesigned L2 cache. These changes are aimed at reducing memory latency and improving overall performance by keeping more data closer to the compute units.</p>
+
+<p>The display engine in RDNA4 supports DisplayPort 2.1 and HDMI 2.1, enabling high-resolution and high-refresh-rate displays. The media engine includes support for AV1 encode and decode. AMD highlighted improvements to the ray tracing performance. While no dedicated ray tracing cores are added, enhancements have been made to the intersection and traversal units, resulting in faster ray tracing execution on the compute units.</p>
+
+<p>RDNA4 aims to deliver a performance uplift compared to RDNA3, despite targeting lower power budgets and mainstream markets. Efficiency improvements have been made throughout the architecture, allowing for higher performance-per-watt. AMD emphasizes the architecture's scalability, making it suitable for various applications.</p>
+
+<h2>Key Points:</h2>
+<ul>
+<li>RDNA4 targets mainstream and value GPU markets, not high-end enthusiasts.</li>
+<li>Compute Unit (CU) redesigned with a 32-wide wavefront size for better efficiency.</li>
+<li>Increased L0 instruction cache and register file size and bandwidth.</li>
+<li>Dual issue datapath for increased instruction throughput.</li>
+<li>Decoupled texture units for independent operation.</li>
+<li>Narrower memory bus (likely 128-bit or 192-bit).</li>
+<li>Larger L1 and redesigned L2 caches to compensate for reduced memory bandwidth.</li>
+<li>DisplayPort 2.1 and HDMI 2.1 support.</li>
+<li>AV1 encode and decode support.</li>
+<li>Ray tracing performance improvements through enhanced intersection and traversal units.</li>
+<li>Focus on efficiency and performance-per-watt.</li>
+<li>Scalable architecture suitable for various applications.</li>
+</ul>
+</div>
+</div>
+</article>
