@@ -1,0 +1,25 @@
+<article>
+    <h2>OCSP Service Has Reached End of Life</h2>
+    <div>
+<div>
+  <p>The Let's Encrypt article announces the end-of-life of their old OCSP responder service on August 6, 2025. This service used a less common method of serving OCSP responses and will be discontinued to allow Let's Encrypt to focus on more widely adopted technologies and improve overall service reliability.</p>
+
+  <p>The primary reason for the shutdown is the low usage of the specific endpoint affected. The article points out that most modern TLS clients have already transitioned to using the newer "preferred" OCSP endpoints provided by Let's Encrypt. The old service requires more operational effort than the new one and doesn't offer enough benefit.</p>
+
+  <p>The deprecated service is identified by its URL: <code>http://ocsp.letencrypt.org/</code>. Web server and other client applications that have been specifically configured to use this URL will need to be updated to use the standard OCSP endpoints instead. Most users will not be affected as their systems will be configured to use the standard endpoints. The standard endpoints are embedded in Let's Encrypt certificates through the Authority Information Access (AIA) extension.</p>
+
+  <p>The article emphasizes that modern TLS clients should automatically use the OCSP responder URL present in the AIA extension of the certificate. This allows for automatic updates and simplifies configuration for most users. Users who have manually configured the now-deprecated OCSP endpoint should check their server configuration files and update to use the recommended method of relying on the AIA extension within the certificates.</p>
+
+  <p>Let's Encrypt has provided ample notice (more than a year) to allow administrators to make the necessary changes. They encourage users to proactively check their configurations to avoid any disruption in service when the old OCSP responder is retired.</p>
+
+  <p><b>Key Points:</b></p>
+  <ul>
+    <li>Let's Encrypt is shutting down its old OCSP responder service on August 6, 2025.</li>
+    <li>The deprecated service is accessible via <code>http://ocsp.letencrypt.org/</code>.</li>
+    <li>Most users are not affected because modern TLS clients use OCSP endpoints from the AIA extension in certificates.</li>
+    <li>Users who have manually configured the deprecated OCSP endpoint need to update their server configurations.</li>
+    <li>Let's Encrypt is providing more than a year's notice for this change.</li>
+  </ul>
+</div>
+</div>
+</article>

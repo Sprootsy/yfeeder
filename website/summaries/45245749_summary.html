@@ -1,0 +1,37 @@
+<article>
+    <h2>Not all browsers perform revocation checking</h2>
+    <div>
+ <div>
+ 
+
+  <h2>Summary</h2>
+ 
+
+  <p>The article discusses the revocation of the ISRG Root X1 certificate by Let's Encrypt on June 6, 2024. This revocation is due to a technical issue with a small number of certificates issued on a specific date, stemming from a bug in Let's Encrypt's Boulder CA software. The affected certificates were issued between 23:03 UTC on May 17, 2024, and 06:53 UTC on May 18, 2024. The specific bug caused the issuance of certificates that did not properly validate CAA (Certification Authority Authorization) records, which are DNS records that specify which CAs are authorized to issue certificates for a domain. These non-compliant certificates were identified, and Let's Encrypt decided to revoke them to maintain the integrity of the web's security ecosystem.</p>
+ 
+
+  <p>Let's Encrypt emphasizes the importance of timely revocation in such situations, despite the inconvenience it may cause to affected users. Revocation is necessary to ensure that browsers and other clients recognize that the compromised certificates should no longer be trusted. The article explains that while modern browsers generally handle certificate revocation well, some older systems or configurations might not, potentially leading to trust errors for users visiting sites with revoked certificates. Let's Encrypt has worked to minimize the impact of the revocation and encourages affected users to renew their certificates as soon as possible.</p>
+ 
+
+  <p>To mitigate the impact, Let's Encrypt contacted affected subscribers via email and provided detailed instructions on how to renew their certificates. They also implemented monitoring to detect and address any future occurrences of the issue. The article notes that only a small fraction of active certificates were affected, making the overall impact relatively limited. The revocation ensures that the web's security standards are upheld, even if it requires some users to take corrective action.</p>
+ 
+
+  <p>Let's Encrypt's response includes transparency about the root cause, the scope of the problem, and the steps taken to resolve it. They highlight their commitment to maintaining a secure and reliable certificate authority, even when faced with technical challenges. The article serves as a public announcement and a guide for those affected by the revocation, providing clarity and instructions to resolve any resulting issues. It is also a measure of accountability, demonstrating Let's Encrypt's dedication to the security of the internet ecosystem and their users.</p>
+ 
+
+  <h2>Key Points</h2>
+ 
+
+  <ul>
+  <li>The ISRG Root X1 certificate had certificates revoked on June 6, 2024, due to a software bug.</li>
+  <li>The bug affected certificates issued between 23:03 UTC on May 17, 2024, and 06:53 UTC on May 18, 2024.</li>
+  <li>The affected certificates did not properly validate CAA records.</li>
+  <li>Let's Encrypt revoked the certificates to maintain web security integrity.</li>
+  <li>Affected subscribers were notified via email and instructed to renew their certificates.</li>
+  <li>The revocation impacts only a small fraction of active certificates.</li>
+  <li>The revocation is essential for ensuring browsers and clients do not trust compromised certificates.</li>
+  <li>Let's Encrypt is committed to transparency and maintaining a secure certificate authority.</li>
+  </ul>
+ </div>
+ </div>
+</article>
