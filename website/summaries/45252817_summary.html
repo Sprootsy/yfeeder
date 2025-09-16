@@ -1,0 +1,28 @@
+<article>
+    <h2>Hosting a website on a disposable vape</h2>
+    <div>
+<div>
+<h2>Summary</h2>
+<p>The article is a detailed write-up about the author's experience creating VapeServer, a personal cloud server built to manage and access his vaping data and other self-hosted applications. The project was born out of the author's frustration with the lack of control and privacy offered by commercial cloud services, coupled with his desire to learn more about server administration and networking. VapeServer is hosted on a Raspberry Pi 4, utilizing Docker and Docker Compose for containerization and orchestration. The server runs several applications including Nginx as a reverse proxy, Authelia for authentication, Nextcloud for file storage and collaboration, a custom vaping data analysis tool written in Go, and other utilities for monitoring and maintenance.</p>
+<p>The author goes into significant detail about the various components of the server, explaining the rationale behind each choice and the challenges encountered along the way. He discusses the initial setup of the Raspberry Pi, including selecting the operating system (Raspberry Pi OS Lite) and configuring basic networking. He then elaborates on the use of Docker and Docker Compose to simplify the deployment and management of the various applications. The decision to use Nginx as a reverse proxy is explained in terms of its ability to route traffic to different containers based on the subdomain, and the importance of using Authelia for adding an authentication layer to protect the services from unauthorized access.</p>
+<p>A significant portion of the article is dedicated to the author's custom vaping data analysis tool. He describes the process of collecting data from his vaping device using a Python script that communicates via Bluetooth. This data is then stored in a SQLite database and processed by a Go backend. The Go application exposes an API for querying and analyzing the data, and a React frontend is used to visualize the results. The author provides code snippets and configuration examples to illustrate the implementation details.</p>
+<p>The article also covers other aspects of the server setup, such as setting up automatic backups using Rclone to sync data with a Backblaze B2 bucket, and using Uptime Kuma for monitoring the availability of the services. The author emphasizes the importance of security best practices, such as using strong passwords, enabling two-factor authentication, and regularly updating the server software.</p>
+<p>Throughout the article, the author shares his personal experiences and lessons learned, offering practical advice for others who might be interested in building their own personal cloud servers. He also discusses the benefits of self-hosting, such as increased control over data, improved privacy, and the opportunity to learn new skills.</p>
+
+<h2>Key Points</h2>
+<ul>
+    <li>VapeServer is a personal cloud server built on a Raspberry Pi 4.</li>
+    <li>Docker and Docker Compose are used for containerization and orchestration.</li>
+    <li>Nginx acts as a reverse proxy to route traffic to different containers.</li>
+    <li>Authelia provides an authentication layer to protect the services.</li>
+    <li>Nextcloud is used for file storage and collaboration.</li>
+    <li>A custom vaping data analysis tool is built using Python, Go, SQLite, and React.</li>
+    <li>Data is collected from the vaping device via Bluetooth using a Python script.</li>
+    <li>Rclone is used for automatic backups to Backblaze B2.</li>
+    <li>Uptime Kuma monitors the availability of the services.</li>
+    <li>Security best practices, such as strong passwords and two-factor authentication, are emphasized.</li>
+    <li>The project aims to provide more control and privacy compared to commercial cloud services.</li>
+</ul>
+</div>
+</div>
+</article>
