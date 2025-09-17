@@ -1,0 +1,38 @@
+<article>
+    <h2>The Linux Process Journey (2023) [pdf]</h2>
+    <div>
+ <div>
+ 
+
+ <h2>Summary</h2>
+ <p>The document, titled "The Linux Process Journey," provides a detailed overview of processes within the Linux operating system. It begins by explaining the fundamental concept of a process, distinguishing it from a program and a thread. A program is defined as a set of instructions, while a process is the dynamic execution of those instructions. A thread, on the other hand, is a unit of execution within a process. The journey metaphor is employed to illustrate how a process is born, evolves, and eventually terminates within the Linux environment.
+ </p>
+ <p>The document elaborates on the structure of a process, describing its various components such as the process ID (PID), parent process ID (PPID), user ID (UID), group ID (GID), and the process's memory map, which includes the text, data, heap, and stack segments. It details the process state transitions, moving from creation to running, waiting, sleeping, stopped, and ultimately, termination (zombie or completely removed).
+ </p>
+ <p>The article further explains the process creation mechanism using system calls like `fork()`, `vfork()`, and `clone()`. `fork()` creates a new process by duplicating the parent process's address space, while `vfork()` creates a process that shares the parent's memory space (but has risks). The `clone()` system call offers more fine-grained control over what is shared between the parent and child processes.
+ </p>
+ <p>Process scheduling is a core topic, covering the role of the Linux kernel's scheduler in managing CPU time allocation among various processes. The document touches on scheduling policies like real-time (FIFO, RR) and time-sharing (CFS) and their impact on process execution. The concept of process priority (nice value) is also explained.
+ </p>
+ <p>Inter-process communication (IPC) mechanisms are also discussed, including pipes, message queues, shared memory, semaphores, and sockets. Each mechanism offers different ways for processes to exchange data and synchronize their activities.
+ </p>
+ <p>The document also covers process termination, describing the difference between normal and abnormal termination. Normal termination occurs when a process completes its execution, while abnormal termination results from signals or errors. The `exit()` system call is used for normal termination, and signals like `SIGTERM` and `SIGKILL` can be used to terminate a process externally. Zombie processes are also explained which are terminated process that have not yet had their process table entry released.
+ </p>
+ <p>Finally, the article delves into the tools used to manage and monitor processes, such as `ps`, `top`, `htop`, and `/proc`. These tools provide insights into process status, resource usage, and other relevant information. The `/proc` filesystem is described as a virtual filesystem that exposes kernel data about processes.
+ </p>
+ 
+
+ <h2>Key Points</h2>
+ <ul>
+  <li>A process is an instance of a program in execution, different from a static program.</li>
+  <li>Processes have attributes like PID, PPID, UID, GID, and a memory map.</li>
+  <li>Process states include running, waiting, sleeping, stopped, and terminated.</li>
+  <li>`fork()`, `vfork()`, and `clone()` are used to create new processes.</li>
+  <li>The Linux scheduler manages CPU time allocation among processes.</li>
+  <li>Scheduling policies include real-time (FIFO, RR) and time-sharing (CFS).</li>
+  <li>IPC mechanisms (pipes, message queues, shared memory, semaphores, sockets) facilitate communication between processes.</li>
+  <li>Processes can terminate normally (via `exit()`) or abnormally (via signals).</li>
+  <li>Tools like `ps`, `top`, `htop`, and `/proc` are used to manage and monitor processes.</li>
+ </ul>
+ </div>
+ </div>
+</article>
