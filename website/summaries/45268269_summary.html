@@ -1,0 +1,47 @@
+<article>
+    <h2>Doom crash after 2.5 years of real-world runtime confirmed on real hardware</h2>
+    <div>
+<div>
+<h3>Summary:</h3>
+The article is a discussion in a forum about issues encountered while trying to install and run Windows 98 on a Lenovo ThinkPad T42 laptop. The user, named 'madcaps', details their attempts, problems faced, and solutions sought. The core issue is the struggle to get Windows 98 to function correctly on the relatively modern hardware of the T42, which was designed for later operating systems like Windows XP.
+
+The user initially encountered problems with the system hanging during the Windows 98 installation process, specifically after the initial file copying stage and during the hardware detection phase. This was suspected to be due to incompatibility with the T42's hardware, particularly the graphics card (ATI Mobility Radeon 9600), chipset, or other integrated components.
+
+Troubleshooting steps included:
+
+*   **BIOS Settings Adjustments:** Attempts were made to modify BIOS settings related to ACPI (Advanced Configuration and Power Interface) and other power management features, suspecting that these might interfere with Windows 98's older power management protocols.
+*   **Boot Parameters:** Experimentation with boot parameters (e.g., using `/p j` to bypass hardware detection) was undertaken to try and force the installation to proceed.
+*   **Driver Issues:** The user anticipated driver compatibility problems, especially with the graphics card, and explored options for obtaining or creating custom drivers. Generic VGA drivers were considered as a fallback.
+*   **AHCI/IDE Configuration:** Consideration was given to the SATA controller mode (AHCI vs. IDE compatibility mode) in the BIOS, as Windows 98 has limited native support for AHCI.
+*   **Memory Limitations:** There was discussion on memory limitations, considering that Windows 98 might have issues with large amounts of RAM.
+
+Several suggestions were offered by other forum members:
+
+*   **ACPI Disablement:** Disabling ACPI in the BIOS was suggested as a primary troubleshooting step.
+*   **RAM Reduction:** Reducing the amount of RAM installed in the system was recommended to overcome potential memory-related issues.
+*   **Using a Boot Floppy/CD:** Employing a boot floppy or CD with specific drivers loaded could help bypass initial hardware detection problems.
+*   **Alternative Operating Systems:** While the user was focused on Windows 98, the possibility of using a different, more compatible operating system was also hinted at.
+*   **Driver Acquisition:** Finding compatible drivers for the Radeon 9600 was recognized as crucial, with the suggestion of looking for older or modified drivers.
+
+The discussion highlights the inherent challenges of running an older operating system on newer hardware due to driver incompatibility, hardware abstraction layer differences, and changes in system architecture. The user's persistence in trying various solutions, along with the community's input, illustrates the dedication sometimes required for retro computing projects. The thread documents the common hurdles faced when installing Windows 98 on hardware it was not originally designed for.
+
+<h3>Key Points:</h3>
+
+*   **Problem:** User is trying to install Windows 98 on a Lenovo ThinkPad T42 and is experiencing hangs during installation.
+*   **Suspected Cause:** Hardware incompatibility between Windows 98 and the T42's components (graphics card, chipset, etc.).
+*   **Troubleshooting Steps:**
+    *   BIOS settings adjustments (ACPI, power management).
+    *   Boot parameters (`/p j`).
+    *   Driver research (ATI Radeon 9600, generic VGA).
+    *   AHCI/IDE configuration.
+    *   Memory limitations.
+*   **Suggested Solutions:**
+    *   Disable ACPI in BIOS.
+    *   Reduce RAM.
+    *   Use boot floppy/CD with drivers.
+    *   Consider alternative operating systems.
+    *   Find compatible Radeon 9600 drivers.
+*   **Core Challenge:** Running an old OS on new hardware presents driver and compatibility issues.
+</div>
+</div>
+</article>
