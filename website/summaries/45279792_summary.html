@@ -1,0 +1,34 @@
+<article>
+    <h2>Optimizing ClickHouse for Intel&#39;s 280 core processors</h2>
+    <div>
+<div>
+<h2>Summary: Optimizing ClickHouse on Intel High Core Count CPUs</h2>
+
+<p>The article discusses optimizing ClickHouse performance on Intel's high core count CPUs, particularly focusing on the impact of Non-Uniform Memory Access (NUMA) architecture and the importance of proper CPU affinity and memory allocation strategies. It begins by highlighting the increasing core counts in modern CPUs and how this trend presents challenges for memory-intensive applications like ClickHouse, especially with NUMA architectures where memory access times vary depending on the location of the CPU core and the memory module.</p>
+
+<p>The article emphasizes that simply increasing the number of cores doesn't automatically translate to proportional performance gains. Without careful consideration of NUMA effects, performance can be significantly hampered due to increased latency when cores access memory on different NUMA nodes. The article provides a detailed explanation of NUMA architecture, explaining how it divides memory and CPU cores into nodes, and how accessing memory within the same node (local memory) is much faster than accessing memory on a different node (remote memory).</p>
+
+<p>To address NUMA-related performance bottlenecks, the article recommends several optimization techniques. Firstly, it stresses the importance of CPU affinity, which involves binding ClickHouse threads to specific CPU cores within the same NUMA node. This ensures that threads primarily access local memory, minimizing latency. The article uses tools like `numactl` to demonstrate how to control CPU affinity and memory allocation. It explains different NUMA policies like `interleave` (distributing memory across all NUMA nodes), `preferred` (allocating memory on a specific node), and `local` (allocating memory only on the node where the process is running).</p>
+
+<p>Secondly, the article discusses memory allocation strategies. It suggests configuring ClickHouse to allocate memory in a NUMA-aware manner, such as by using the `jemalloc` allocator with NUMA support or by configuring ClickHouse's internal memory management to prefer local memory allocation. The article also touches on the importance of correctly configuring ClickHouse's settings related to thread pool sizes and the number of background threads to effectively utilize the available CPU cores without over-scheduling or contention.</p>
+
+<p>The article presents benchmark results demonstrating the effectiveness of these optimization techniques. It shows that by carefully managing CPU affinity and memory allocation, significant performance improvements can be achieved compared to running ClickHouse with default settings. The benchmark results illustrate the performance gains obtained by binding ClickHouse threads to specific NUMA nodes and using local memory allocation policies. The results show improvements in query execution times and overall system throughput.</p>
+
+<p>Finally, the article concludes by summarizing the key takeaways: understanding NUMA architecture is crucial for optimizing ClickHouse performance on high core count CPUs, proper CPU affinity and memory allocation strategies are essential for minimizing latency and maximizing throughput, and tools like `numactl` can be used to control CPU affinity and memory allocation. It recommends a combination of configuration changes within ClickHouse and operating system level settings to achieve optimal performance on NUMA-based systems.</p>
+
+<h2>Key Points:</h2>
+
+<ul>
+<li>Modern CPUs have increasing core counts, which introduces challenges for memory-intensive applications like ClickHouse due to NUMA architecture.</li>
+<li>NUMA divides memory and CPU cores into nodes; local memory access is faster than remote memory access.</li>
+<li>Without NUMA awareness, performance degrades significantly due to remote memory access latency.</li>
+<li>CPU affinity is critical: binding ClickHouse threads to cores within the same NUMA node minimizes latency.</li>
+<li>Tools like `numactl` can control CPU affinity and memory allocation policies (e.g., `interleave`, `preferred`, `local`).</li>
+<li>NUMA-aware memory allocation using `jemalloc` or ClickHouse's internal settings is beneficial.</li>
+<li>Correctly configure ClickHouse's thread pool sizes and background thread counts.</li>
+<li>Benchmarks demonstrate significant performance improvements from CPU affinity and local memory allocation.</li>
+<li>Understanding NUMA and employing proper CPU affinity and memory allocation strategies are crucial for optimizing ClickHouse on high core count CPUs.</li>
+</ul>
+</div>
+</div>
+</article>
