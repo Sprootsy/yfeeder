@@ -1,0 +1,33 @@
+<article>
+    <h2>Hypervisor 101 in Rust</h2>
+    <div>
+<div>
+<h3>Summary</h3>
+The article is a comprehensive guide to developing a hypervisor using Rust. It begins by defining virtualization and hypervisors, distinguishing between Type-1 (bare-metal) and Type-2 (hosted) hypervisors, and focusing on the development of a Type-1 hypervisor for x86-64 architecture. It details the prerequisites, including familiarity with Rust, operating system concepts, and the x86-64 architecture.
+
+The article introduces the concept of Virtual Machine Extensions (VMX), which are hardware features provided by Intel and AMD processors to facilitate virtualization. It explains how to enable VMX operation, including BIOS settings and CPU feature checks. The core of VMX operation revolves around the Virtual Machine Control Structure (VMCS), which is a data structure in memory that controls the behavior of the virtual machine. The article details the different VMCS regions (VMCS Region, VMXON Region, and VMXOFF Region), how they are enabled and configured.
+
+The process of transitioning between the host (hypervisor) and guest (virtual machine) is described, focusing on VM Entry and VM Exit. VM Entry transfers control from the hypervisor to the guest, while VM Exit transfers control from the guest back to the hypervisor. The article covers the various reasons for VM Exits, such as exceptions, interrupts, and certain instructions executed by the guest.
+
+The article delves into setting up the guest environment, including creating a Guest Page Table (EPT), which is similar to regular page tables but used to control the guest's access to physical memory. It covers identity mapping the guest's memory and setting up the necessary data structures for the guest, such as the Guest IDT (Interrupt Descriptor Table) and Guest GDT (Global Descriptor Table).
+
+The article provides code snippets and examples in Rust to illustrate the concepts and steps involved in building a hypervisor. It guides the reader through enabling VMX, setting up the VMCS, configuring VM Entry and VM Exit parameters, and launching the guest virtual machine. It also touches upon handling VM Exits, specifically focusing on handling exceptions like page faults.
+
+It uses the `x86-64` crate to interact with x86-64 specific instructions and data structures. The article gives detailed explanations about enabling VMX, initializing VMCS, setting up guest registers and memory, and handling VM exits. The article progresses step-by-step, providing a clear and concise approach to hypervisor development using Rust.
+
+It shows how to allocate memory for the VMCS, VMXON, and VMXOFF regions, initialize them with proper values, and enable VMX using the `VMXON` instruction. The article shows how to load the VMCS pointer, set up the control fields, and populate guest registers.
+
+It also handles the initial VM Exit caused by an exception by identity mapping the faulting address and resuming the guest execution. This process involves setting up an EPT and configuring it to allow the guest to access physical memory. The article emphasizes the importance of understanding the underlying hardware and virtualization concepts for successful hypervisor development.
+
+<h3>Key Points</h3>
+<ul>
+<li><b>Introduction to Virtualization:</b> Defines virtualization and hypervisors, differentiating between Type-1 and Type-2 hypervisors. Focuses on developing a Type-1 hypervisor using Rust.</li>
+<li><b>Prerequisites:</b> Requires familiarity with Rust, operating system concepts, and the x86-64 architecture.</li>
+<li><b>Virtual Machine Extensions (VMX):</b> Explains VMX, hardware features provided by Intel and AMD for virtualization. Describes how to enable VMX operation through BIOS and CPU feature checks.</li>
+<li><b>Virtual Machine Control Structure (VMCS):</b> Details the VMCS, a data structure controlling the virtual machine's behavior, including the VMCS Region, VMXON Region, and VMXOFF Region.</li>
+<li><b>VM Entry and VM Exit:</b> Describes the transitions between host (hypervisor) and guest (virtual machine). VM Entry transfers control to the guest; VM Exit transfers control back to the hypervisor. Explains common reasons for VM Exits.</li>
+<li><b>Guest Environment Setup:</b> Covers creating a Guest Page Table (EPT) to control the guest's access to physical memory. Describes identity mapping the guest's memory and setting up data structures like the Guest IDT and Guest GDT.</li>
+<li><b>Rust Code Examples:</b> Provides code snippets in Rust to illustrate the steps involved in building a hypervisor.</li>
+<li><b>Enabling VMX:</b> Guides the reader through enabling VMX, setting up the VMCS, configuring VM Entry and VM Exit parameters, and launching the guest virtual machine.</li>
+<li><b>VM Exit Handling:</b> Touches upon handling VM Exits, focusing on handling exceptions like page faults.</li></div>
+</article>

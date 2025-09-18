@@ -1,0 +1,71 @@
+<article>
+    <h2>One Token to rule them all – Obtaining Global Admin in every Entra ID tenant</h2>
+    <div>
+ <div>
+   <h3>Summary:</h3>
+   <p>
+     The article by Dirk-jan Mollema details a method for obtaining Global Administrator privileges in any Entra ID (Azure AD) tenant by exploiting a vulnerability related to actor tokens and the Microsoft Graph API. The core issue revolves around how Microsoft's systems handle the authorization and delegation of permissions when an actor (like an application or service principal) performs actions on behalf of a user or within a tenant.
+   </p>
+   <p>
+     The vulnerability stems from the fact that certain Microsoft applications or service principals possess excessively high privileges across all Entra ID tenants. These privileges are meant to allow Microsoft to manage and maintain its services. However, by crafting specific requests to the Microsoft Graph API using actor tokens associated with these highly privileged Microsoft applications, it's possible to bypass normal authorization checks and perform actions that should be restricted.
+   </p>
+   <p>
+     The attack involves the following key steps:
+   </p>
+   <ol>
+     <li>
+       <b>Identifying a Vulnerable Application/Service Principal:</b> The attacker needs to identify a Microsoft-owned application or service principal that possesses the necessary, overly broad permissions.
+     </li>
+     <li>
+       <b>Obtaining an Actor Token:</b> The attacker obtains an actor token for the identified application. This token acts as proof that the application is authorized to perform certain actions. This token can be retrieved either through legitimate access or by exploiting other vulnerabilities that allow impersonation or token theft.
+     </li>
+     <li>
+       <b>Crafting a Malicious Graph API Request:</b> The attacker crafts a Microsoft Graph API request that leverages the actor token to assign the "Global Administrator" role to a user account within the target Entra ID tenant. This request exploits the insufficient permission checks within the Graph API when using actor tokens.
+     </li>
+     <li>
+       <b>Executing the Request:</b> The attacker executes the crafted Graph API request. If successful, the targeted user account is granted Global Administrator privileges in the Entra ID tenant.
+     </li>
+   </ol>
+   <p>
+     The article demonstrates that because the application/service principal is a trusted Microsoft entity, the Graph API incorrectly assumes that any action performed using its actor token is authorized, even if it involves escalating privileges in a tenant where the application should not have such broad access.
+   </p>
+   <p>
+     The author also discusses the potential impact of this vulnerability, emphasizing that it allows an attacker to gain complete control over any Entra ID tenant, leading to data breaches, service disruptions, and other severe security consequences.
+   </p>
+   <p>
+     Furthermore, the article touches upon the difficulty in detecting and preventing this type of attack because the actions are performed by legitimate Microsoft applications, making them appear as normal administrative operations. Traditional security measures might not flag these actions as malicious.
+   </p>
+   <p>
+     Finally, the author urges Microsoft to address the underlying issues by implementing stricter authorization checks within the Microsoft Graph API and limiting the permissions granted to Microsoft-owned applications across Entra ID tenants.
+   </p>
+ 
+   <h3>Key Points:</h3>
+   <ul>
+     <li>
+       <b>Vulnerability:</b> An actor token-based vulnerability exists in the Microsoft Graph API that allows for unauthorized privilege escalation in Entra ID tenants.
+     </li>
+     <li>
+       <b>Actor Tokens:</b> The vulnerability leverages actor tokens associated with highly privileged Microsoft-owned applications or service principals.
+     </li>
+     <li>
+       <b>Global Admin:</b> Attackers can exploit this vulnerability to assign the Global Administrator role to any user account within any Entra ID tenant.
+     </li>
+     <li>
+       <b>Bypass:</b> The attack bypasses normal authorization checks due to the implicit trust placed in Microsoft-owned applications.
+     </li>
+     <li>
+       <b>Graph API:</b> The Microsoft Graph API is the primary target for exploiting this vulnerability.
+     </li>
+     <li>
+       <b>Impact:</b> Successful exploitation grants complete control over the targeted Entra ID tenant, leading to severe security consequences.
+     </li>
+     <li>
+       <b>Detection Difficulty:</b> The attack is difficult to detect because it involves actions performed by legitimate Microsoft applications.
+     </li>
+     <li>
+       <b>Mitigation:</b> Mitigation requires stricter authorization checks in the Graph API and limiting the permissions of Microsoft-owned applications.
+     </li>
+   </ul>
+ </div>
+ </div>
+</article>

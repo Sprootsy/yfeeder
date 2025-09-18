@@ -1,0 +1,38 @@
+<article>
+    <h2>Gluon: a GPU programming language based on the same compiler stack as Triton</h2>
+    <div>
+<div>
+  <p>
+   This article is a Python tutorial introducing Triton, a language and compiler for writing efficient parallel programs, especially for GPUs. The tutorial focuses on implementing a rectified linear unit (ReLU) kernel using Triton. ReLU is a simple activation function that outputs the input if it's positive and zero otherwise.
+  </p>
+  <p>
+   The tutorial begins by explaining the basic structure of a Triton kernel. A Triton kernel is defined using the <code>@triton.jit</code> decorator, which compiles the Python code into efficient machine code for the target device (e.g., a GPU). Inside the kernel, you can use Triton's built-in functions and data types to perform parallel computations.
+  </p>
+  <p>
+   The tutorial then demonstrates how to load data from memory into Triton tensors. Triton uses the concept of "blocks" to divide the input data into smaller chunks that can be processed in parallel by different threads on the GPU. The tutorial shows how to calculate memory offsets for each thread based on its block ID and thread ID.
+  </p>
+  <p>
+   Next, the tutorial explains how to perform the ReLU operation on the loaded data. This involves comparing each element of the input tensor with zero and setting the corresponding element of the output tensor to the maximum of the input element and zero. Triton provides built-in functions for performing element-wise comparisons and maximum operations.
+  </p>
+  <p>
+   After performing the ReLU operation, the tutorial demonstrates how to store the results back into memory. Similar to loading data, this involves calculating memory offsets for each thread and writing the corresponding element of the output tensor to the correct memory location.
+  </p>
+  <p>
+   Finally, the tutorial shows how to launch the Triton kernel and verify its correctness. Launching a Triton kernel involves specifying the grid size, which determines the number of thread blocks that will be launched. The tutorial also provides a simple Python function to compare the output of the Triton kernel with the output of a NumPy implementation of ReLU.
+  </p>
+  <p>
+   In summary, the tutorial provides a step-by-step guide to writing a simple Triton kernel for performing the ReLU operation. It covers the basic concepts of Triton, including kernel definition, data loading, computation, data storing, and kernel launching. The tutorial is a good starting point for learning how to use Triton to write efficient parallel programs for GPUs.
+  </p>
+
+  <h3>Key Points:</h3>
+  <ul>
+   <li><b>Triton Kernel Definition:</b> Triton kernels are defined using the <code>@triton.jit</code> decorator.</li>
+   <li><b>Data Loading:</b> Data is loaded into Triton tensors using block-based memory access patterns. Memory offsets are calculated based on thread and block IDs.</li>
+   <li><b>ReLU Operation:</b> The ReLU operation is performed element-wise using Triton's built-in functions for comparison and maximum.</li>
+   <li><b>Data Storing:</b> Results are stored back into memory using block-based memory access patterns.</li>
+   <li><b>Kernel Launching:</b> Triton kernels are launched by specifying the grid size, which determines the number of thread blocks.</li>
+   <li><b>Verification:</b> The output of the Triton kernel can be verified against a NumPy implementation.</li>
+  </ul>
+</div>
+</div>
+</article>
