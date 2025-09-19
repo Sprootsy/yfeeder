@@ -1,0 +1,40 @@
+<article>
+    <h2>Apple: SSH and FileVault</h2>
+    <div>
+<div>
+  <h3>Summary</h3>
+  <p>
+   The article discusses the interaction between SSH (Secure Shell) and FileVault disk encryption on macOS. It explains how FileVault, which encrypts the entire startup volume, can affect the ability to remotely access a Mac via SSH, especially before a user has logged in.
+  </p>
+  <p>
+   When FileVault is enabled, the operating system resides on an encrypted volume. Until a user logs in and unlocks the volume, the system is in a pre-boot state, and certain services, including the standard SSH daemon, are unavailable. This prevents remote login via SSH during this phase.
+  </p>
+  <p>
+   The document introduces a mechanism to enable SSH access before user login by using a "recovery key" or institutional recovery key. This involves a process where a special "FileVault-aware" SSH daemon is launched very early in the boot process. This special daemon leverages a system component that can unlock the FileVault volume using the recovery key or institutional recovery key, allowing SSH access even before a user logs in.
+  </p>
+  <p>
+   The article details the security implications of enabling pre-boot SSH access. Because the disk is unlocked using a recovery key, anyone with access to that key can unlock the disk remotely via SSH. This weakens the security posture compared to only allowing access after a user has authenticated.
+  </p>
+  <p>
+   It describes the configuration and management of this pre-boot SSH access, including how to enable it, how to specify which users are allowed to log in during this pre-boot phase, and how to manage authorized keys for these users. It also covers how to disable the feature if it's no longer needed.
+  </p>
+  <p>
+   The document warns about potential conflicts with other system configurations and customizations. Specifically, custom configurations in `/etc/ssh/sshd_config` might interfere with the pre-boot SSH daemon's operation, as the system might overwrite or ignore these settings.
+  </p>
+  <p>
+   Finally, the article describes the process of troubleshooting the pre-boot SSH setup and discusses the logging and auditing capabilities related to it. It provides guidance on examining system logs to diagnose issues with the early SSH daemon and understanding when the FileVault volume is being unlocked.
+  </p>
+
+  <h3>Key Points</h3>
+  <ul>
+   <li>FileVault encryption prevents standard SSH access before user login.</li>
+   <li>A "FileVault-aware" SSH daemon can be enabled to allow pre-boot SSH access using a recovery key or institutional recovery key.</li>
+   <li>Enabling pre-boot SSH access weakens security as the recovery key can be used to unlock the disk remotely.</li>
+   <li>Configuration involves enabling the feature, specifying allowed users, and managing authorized keys.</li>
+   <li>Custom configurations in `/etc/ssh/sshd_config` may conflict with the pre-boot SSH daemon.</li>
+   <li>Troubleshooting involves examining system logs for the early SSH daemon.</li>
+   <li>The system provides logging and auditing capabilities related to FileVault unlocking.</li>
+  </ul>
+</div>
+</div>
+</article>

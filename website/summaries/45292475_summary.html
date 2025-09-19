@@ -1,0 +1,42 @@
+<article>
+    <h2>OpenTelemetry collector: What it is, when you need it, and when you don&#39;t</h2>
+    <div>
+<div>
+  <h2>Summary:</h2>
+  <p>
+    The article discusses the OpenTelemetry Collector, a vendor-agnostic way to receive, process, and export telemetry data. Telemetry data includes traces, metrics, and logs, which are crucial for monitoring and understanding the performance and behavior of applications and infrastructure.
+  </p>
+  <p>
+    The OpenTelemetry Collector streamlines the process of collecting and exporting this data, addressing common challenges such as the lack of standardization across different monitoring tools, the complexity of managing multiple agents, and the need for data transformation. It acts as a central hub, decoupling applications from specific monitoring backends. This decoupling provides flexibility, allowing users to switch between or use multiple monitoring solutions without modifying their application code.
+  </p>
+  <p>
+    The Collector's architecture is based on a pipeline concept, comprising Receivers, Processors, and Exporters. Receivers ingest telemetry data from various sources and protocols. Processors transform, filter, or enrich the data. Exporters send the processed data to one or more backend monitoring systems. This modular design allows users to customize the Collector's behavior to meet specific needs.
+  </p>
+  <p>
+    The article highlights the benefits of using the OpenTelemetry Collector, including vendor neutrality, simplified management, data transformation capabilities, reduced overhead, and enhanced security. By acting as a single point of contact for telemetry data, it reduces the complexity of managing multiple agents and configurations. It also supports various data transformation techniques, such as filtering, sampling, and data enrichment, allowing users to optimize their telemetry data for analysis and storage. Furthermore, the Collector can reduce resource overhead by batching and compressing data before sending it to the backend.
+  </p>
+  <p>
+    The Collector has two modes of deployment: Agent and Gateway. The Agent Collector runs alongside the application, typically on the same host, and is responsible for collecting telemetry data locally. The Gateway Collector, on the other hand, acts as a central aggregation point for telemetry data from multiple Agents or other sources. It typically runs on separate infrastructure and is responsible for more complex processing and routing of data.
+  </p>
+  <p>
+    The article also briefly touches on the configuration of the OpenTelemetry Collector, which is typically done using YAML files. These configuration files define the Receivers, Processors, and Exporters that make up the pipeline, as well as their respective settings.
+  </p>
+
+  <h2>Key Points:</h2>
+  <ul>
+    <li><b>OpenTelemetry Collector:</b> A vendor-agnostic component for receiving, processing, and exporting telemetry data (traces, metrics, and logs).</li>
+    <li><b>Problem Addressed:</b> Lack of standardization, complexity of managing multiple agents, and the need for data transformation in telemetry data collection.</li>
+    <li><b>Decoupling:</b> Decouples applications from specific monitoring backends, providing flexibility to switch between or use multiple solutions.</li>
+    <li><b>Pipeline Architecture:</b> Composed of Receivers (ingest data), Processors (transform data), and Exporters (send data).</li>
+    <li><b>Benefits:</b> Vendor neutrality, simplified management, data transformation capabilities, reduced overhead, and enhanced security.</li>
+    <li><b>Deployment Modes:</b>
+      <ul>
+        <li><b>Agent:</b> Runs alongside the application, collecting telemetry data locally.</li>
+        <li><b>Gateway:</b> Acts as a central aggregation point for telemetry data from multiple Agents or other sources.</li>
+      </ul>
+    </li>
+    <li><b>Configuration:</b> Configured using YAML files to define the pipeline components and their settings.</li>
+  </ul>
+</div>
+</div>
+</article>
