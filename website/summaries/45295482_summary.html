@@ -1,0 +1,37 @@
+<article>
+    <h2>Show HN: I created a small 2D game about an ant</h2>
+    <div>
+<div>
+<h2>Summary</h2>
+<p>
+The article "Ant and Apples" presents a mathematical puzzle involving an ant traversing the edges of an equilateral triangle. The triangle's vertices are labeled A, B, and C, and an apple is placed at each vertex. The ant starts at vertex A and moves randomly between adjacent vertices (either clockwise or counterclockwise). The goal is to determine the expected number of moves the ant will take to eat all the apples. Eating an apple occurs when the ant visits the vertex where the apple is located.
+</p>
+<p>
+The author begins by framing the problem as a Markov chain, where the state of the system is defined by the set of apples the ant has already eaten. There are eight possible states, ranging from having eaten no apples (the initial state) to having eaten all three apples. The article highlights the symmetry in the problem. For instance, the expected number of moves to eat the first apple is relatively straightforward to calculate, since the ant starts at vertex A where an apple is located.
+</p>
+<p>
+The core of the article involves setting up and solving a system of linear equations to determine the expected number of moves to reach the absorbing state (all apples eaten) from each of the other possible states. The author carefully explains the reasoning behind each equation, leveraging the concept of conditional expectation. For example, the expected number of moves to eat all apples starting from the state where only one apple has been eaten is equal to 1 (for the next move) plus the average of the expected number of moves from the two possible states the ant could transition to after that move.
+</p>
+<p>
+The symmetry of the triangle is used to simplify the problem. Since the triangle is equilateral, the expected number of moves to eat the second apple, starting from having eaten only one, is the same regardless of which apple was eaten first. Similarly, when two apples have been eaten, the expected number of additional moves to eat the last apple is the same regardless of which two apples were eaten.
+</p>
+<p>
+The author then presents the system of equations in matrix form, which allows for a more compact representation and facilitates solving the system using computational tools. The solution to the system of equations yields the expected number of moves to eat all three apples starting from the initial state (no apples eaten).
+</p>
+<p>
+Finally, the article discusses a slightly modified version of the problem where the ant is allowed to stay at the same vertex with a certain probability on each move. The author demonstrates how the system of equations needs to be adjusted to account for this new possibility. The article concludes by emphasizing the power of using Markov chains and systems of linear equations to solve problems involving expected values and random processes.
+</p>
+
+<h2>Key Points</h2>
+<ul>
+<li>The problem involves an ant moving randomly on an equilateral triangle, trying to eat apples located at each vertex.</li>
+<li>The problem is modeled as a Markov chain with states representing the set of eaten apples.</li>
+<li>A system of linear equations is set up to determine the expected number of moves to eat all apples from each possible state.</li>
+<li>The symmetry of the equilateral triangle is exploited to simplify the system of equations.</li>
+<li>The system of equations is solved to find the expected number of moves to eat all apples starting from the initial state (no apples eaten).</li>
+<li>A variation of the problem is considered where the ant can stay at the same vertex with a certain probability.</li>
+<li>The solution demonstrates the application of Markov chains and linear equations to solve expected value problems.</li>
+</ul>
+</div>
+</div>
+</article>

@@ -1,0 +1,37 @@
+<article>
+    <h2>Tldraw SDK 4.0</h2>
+    <div>
+<div>
+<h2>Summary of tldraw SDK 4.0</h2>
+
+<p>The tldraw SDK 4.0 represents a significant overhaul of the tldraw library, focusing on improved extensibility, customizability, and performance. The core aim is to empower developers to deeply integrate and tailor tldraw to fit the specific needs of their applications.</p>
+
+<p>One of the major changes is the introduction of a new "core" package (<code>@tldraw/core</code>). This package contains the foundational, low-level APIs necessary for building diagramming tools. It separates the essential logic from the more opinionated parts of the original tldraw library, which are now housed in the <code>@tldraw/editor</code> package. This separation allows developers to either use the complete tldraw editor with pre-built UI components or build a completely custom editor using the core package.</p>
+
+<p>The <code>@tldraw/editor</code> package provides the full tldraw editor experience, including UI elements, default tools, and behaviors. However, even with this package, customization is greatly enhanced. Developers can now more easily override and modify default behaviors, styles, and components. The concept of "patchable" properties allows for targeted modifications without rewriting entire components.</p>
+
+<p>The update also brings improvements to performance and rendering. By decoupling the core logic, the library can be more efficiently optimized. The introduction of React Fast Refresh compatibility enhances the developer experience by enabling faster iteration cycles during development.</p>
+
+<p>Shape handling has been revamped. The introduction of "decorations" allows for more flexible and dynamic visual representations of shapes, opening up possibilities for new types of diagrams and visualizations. A more consistent and predictable system for shape bindings has also been implemented.</p>
+
+<p>The event handling system has been re-architected for improved reliability and predictability, particularly when dealing with complex interactions and custom tools. This makes it easier to build custom tools and interactions on top of tldraw.</p>
+
+<p>The documentation and examples have been significantly improved to help developers understand the new architecture and how to leverage the SDK's features. The team has also focused on providing better migration guides to assist existing tldraw users in upgrading to version 4.0.</p>
+
+<p>In summary, tldraw SDK 4.0 is designed to be more modular, extensible, and performant, enabling developers to create tailored diagramming and drawing experiences within their applications.</p>
+
+<h2>Key Points</h2>
+
+<ul>
+<li><b>Core Package Separation:</b> The SDK is now divided into <code>@tldraw/core</code> (low-level APIs) and <code>@tldraw/editor</code> (full editor with UI).</li>
+<li><b>Enhanced Customization:</b> Developers can override default behaviors, styles, and components more easily. "Patchable" properties allow targeted modifications.</li>
+<li><b>Improved Performance:</b> Decoupling the core logic allows for better optimization.</li>
+<li><b>React Fast Refresh:</b> Enhanced developer experience with faster iteration cycles.</li>
+<li><b>Shape Decorations:</b> New "decorations" feature allows for more flexible shape visualizations.</li>
+<li><b>Consistent Shape Bindings:</b> A more predictable system for shape bindings.</li>
+<li><b>Re-architected Event Handling:</b> Improved reliability and predictability for complex interactions.</li>
+<li><b>Improved Documentation:</b> Enhanced documentation and examples for easier adoption.</li>
+</ul>
+</div>
+</div>
+</article>
