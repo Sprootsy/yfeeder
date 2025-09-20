@@ -1,0 +1,34 @@
+<article>
+    <h2>Show HN: Zedis – A Redis clone I&#39;m writing in Zig</h2>
+    <div>
+<div>
+  <p>
+    Zedis is described as a lightweight in-memory key-value store written in Zig, drawing inspiration from Redis. It supports basic data types like strings, lists, and hashes, and offers commands analogous to those found in Redis, such as `GET`, `SET`, `LPUSH`, `RPUSH`, `HGET`, `HSET`, and others. Its primary goal is to provide a simple, fast, and efficient alternative to Redis for scenarios where full Redis functionality isn't required.
+  </p>
+  <p>
+    The repository provides a basic implementation of these features, along with benchmarks demonstrating Zedis's performance. The benchmarks compare Zedis against Redis and memcached for simple `GET` and `SET` operations, showcasing competitive performance, particularly in terms of requests per second. The documentation also highlights that while Zedis aims for speed and simplicity, it is not intended to be a complete drop-in replacement for Redis. Features like persistence, replication, and more advanced data structures are not included in the current implementation.
+  </p>
+  <p>
+    The README file includes instructions on how to build and run Zedis, using the Zig build system.  It describes the necessary steps to compile the server and client, and then demonstrates the use of the client to interact with the server via command-line arguments, mirroring Redis's command structure.  The benchmarks are similarly straightforward to execute, providing a comparative performance overview.
+  </p>
+  <p>
+    The project structure includes source code for the server, client, and benchmark tools. The server component manages the in-memory data storage and handles client requests. The client provides a command-line interface to interact with the Zedis server. The benchmarks are used to measure the performance of Zedis in comparison to other similar tools.
+  </p>
+  <p>
+    Essentially, Zedis is presented as a minimalist, high-performance key-value store for situations where a full-fledged Redis instance would be overkill.
+  </p>
+
+  <h3>Key Points:</h3>
+  <ul>
+    <li>Zedis is a lightweight, in-memory key-value store written in Zig.</li>
+    <li>It is inspired by Redis but aims for simplicity and speed.</li>
+    <li>It supports basic data types: strings, lists, and hashes.</li>
+    <li>It provides commands similar to Redis, like `GET`, `SET`, `LPUSH`, `RPUSH`, `HGET`, and `HSET`.</li>
+    <li>It offers competitive performance compared to Redis and memcached in basic operations.</li>
+    <li>It is not a full Redis replacement and lacks features like persistence and replication.</li>
+    <li>The repository includes a server, a client, and benchmark tools.</li>
+    <li>It can be built and run using the Zig build system.</li>
+  </ul>
+</div>
+</div>
+</article>
