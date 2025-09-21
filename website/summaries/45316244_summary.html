@@ -1,0 +1,39 @@
+<article>
+    <h2>TV Time Machine: A Raspberry Pi That Plays Random 90s TV</h2>
+    <div>
+ <div>
+ <h2>Summary:</h2>
+ <p>The article describes a project to build a "TV Time Machine" using a Raspberry Pi. The goal is to create a device that mimics the experience of watching TV in the 1990s, specifically the feeling of flipping through channels and encountering random, often low-quality, content. The project focuses on recreating the nostalgic experience of analog TV, complete with commercials, public access shows, and other forgotten or obscure content from that era.</p>
+ 
+
+ <p>The author details the hardware and software components used. A Raspberry Pi 4 serves as the core of the system, connected to a small LCD screen, and controlled by a rotary encoder. The Raspberry Pi runs a custom Python script that manages the video playback and channel selection.  The rotary encoder mimics channel surfing with each click moving to a "new" randomly selected video.</p>
+ 
+
+ <p>The project's core challenge lies in sourcing and organizing a large library of video content from the 90s. This includes TV shows, commercials, news segments, movie trailers, music videos, public access programs, and other types of content that would have been common on TV during that time. The author emphasizes the importance of variety and randomness to replicate the unpredictability of analog TV.  The author used a combination of internet archive and torrent websites to source the required video files. The video files were converted into a consistent format and stored on a USB drive.</p>
+ 
+
+ <p>The Python script is responsible for randomly selecting and playing videos from the library. It uses the `omxplayer` video player to display the content. The script also implements a basic user interface, allowing users to "change channels" using the rotary encoder. Each channel change triggers the selection of a new random video, providing an endless stream of 90s TV nostalgia. The Raspberry Pi is set up to boot directly into the script.</p>
+ 
+
+ <p>The article also touches on the challenges of creating a seamless and authentic experience. This includes considerations such as video quality (intentionally keeping it low to match the era), aspect ratios (4:3), and the inclusion of static or brief moments of signal loss to mimic the imperfections of analog television. Additionally, the author added a sleep function to the rotary encoder, so that the device shuts off after a period of inactivity.</p>
+ 
+
+ <p>Overall, the "TV Time Machine" project is presented as a fun and creative way to relive the experience of watching TV in the 1990s. It combines hardware and software to create a device that offers a nostalgic and unpredictable viewing experience.</p>
+ 
+
+ <h2>Key Points:</h2>
+ <ul>
+  <li>Project: Build a "TV Time Machine" using a Raspberry Pi to recreate the experience of watching 90s TV.</li>
+  <li>Hardware: Raspberry Pi 4, small LCD screen, rotary encoder for channel selection.</li>
+  <li>Software: Custom Python script to manage video playback and channel selection.</li>
+  <li>Content: Large library of 90s TV shows, commercials, news segments, movie trailers, music videos, public access programs, etc.</li>
+  <li>Video Sourcing: The video files were sourced from internet archive and torrent websites.</li>
+  <li>Randomness: The script randomly selects videos to mimic the unpredictability of analog TV.</li>
+  <li>Authenticity: Focus on low video quality, 4:3 aspect ratio, and imperfections of analog TV.</li>
+  <li>User Interface: Rotary encoder simulates channel surfing.</li>
+  <li>Video Player: `omxplayer` is used to display the video content.</li>
+  <li>Purpose: A nostalgic project to relive the 90s TV experience.</li>
+ </ul>
+ </div>
+ </div>
+</article>
