@@ -1,0 +1,29 @@
+<article>
+    <h2>Is Zig&#39;s new writer unsafe?</h2>
+    <div>
+<div>
+<h2>Summary</h2>
+<p>The article "Is Zig's New IO Unsafe?" by Andrew Kelley discusses the safety and design considerations of the new I/O system introduced in the Zig programming language. The author delves into the challenges of creating a safe and efficient I/O interface, particularly when dealing with potential errors and resource management. The article begins by outlining the initial design goals of Zig's I/O, which prioritize explicitness and control over implicit behavior often found in other languages.</p>
+
+<p>The author explains the problems with the previous iteration of Zig's I/O system, which was based on returning errors for short reads or writes, making error handling cumbersome and prone to bugs. The new I/O system aims to address these issues by providing a more streamlined and safer approach. This involves introducing a concept of "amount" of data transferred, and distinguishing between "end of file" and other errors, making error propagation and handling more predictable.</p>
+
+<p>The article explores the concept of a "stream" in Zig's I/O, which represents a source or destination of data. The safety of the stream operations is a key focus, and the author discusses how Zig's features, such as the ability to check for null pointers and memory safety, are leveraged to prevent common I/O-related bugs. However, the author also notes potential sources of unsafety, such as the possibility of misusing the I/O primitives or introducing race conditions in concurrent programs.</p>
+
+<p>The author emphasizes that even with a well-designed I/O system, complete safety is difficult to guarantee. He uses examples to illustrate potential pitfalls, such as unchecked errors, which can lead to unexpected behavior. He also discusses the role of testing and validation in ensuring the reliability of I/O operations.</p>
+
+<p>The article also discusses about the usage of `try` and `catch` in Zig's error handling. The new IO design takes advantage of Zig's error handling to make error handling explicit and easier to manage. The author explains how these language features help programmers to deal with errors that might occur during I/O operations. </p>
+
+<p>In conclusion, the article presents a nuanced view of the safety aspects of Zig's new I/O system. While the new design aims to improve safety and reduce the likelihood of common errors, the author cautions that vigilance and careful programming practices are still necessary to ensure the reliability of I/O operations in Zig programs.</p>
+
+<h2>Key Points</h2>
+<ul>
+    <li>Zig's new I/O system prioritizes explicitness and control.</li>
+    <li>The new I/O system addresses issues with the previous error-prone design.</li>
+    <li>Streams represent data sources or destinations.</li>
+    <li>Zig's memory safety features contribute to safer I/O operations.</li>
+    <li>Complete safety is difficult to guarantee; vigilance is still necessary.</li>
+    <li>The article also talks about `try` and `catch` in Zig's error handling.</li>
+</ul>
+</div>
+</div>
+</article>

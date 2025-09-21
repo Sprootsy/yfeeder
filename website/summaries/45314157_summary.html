@@ -1,0 +1,28 @@
+<article>
+    <h2>Systemd can be a cause of restrictions on daemons</h2>
+    <div>
+<div>
+<p>
+The article discusses the author's belief that systemd can be a cause of restrictions, particularly regarding certain system behaviors and configurations. The author recounts an experience where they wanted to limit the number of threads a specific service could create, specifically for a local Cyrus IMAP server. Their initial approach using <code>/etc/security/limits.conf</code> proved ineffective because systemd services run in their own separate scopes.
+</p>
+<p>
+The author then tried to configure the limit via systemd's configuration. They explored setting <code>TasksMax</code> in the systemd service unit file. While this setting appeared to work, it imposed a hard limit, causing the service to fail entirely if the thread limit was reached. This was not the desired outcome, as the author only wanted to restrict the service, not cause a complete failure. The author highlights that older, non-systemd init systems allowed for more nuanced control, where exceeding thread limits would only impact the offending service without bringing it down.
+</p>
+<p>
+The article goes on to state that in this particular case, the ability to set resource limits on services has effectively been restricted compared to the options available in the past. The author considers this restriction a negative consequence of systemd's design, despite acknowledging its potential advantages. They argue that systemd's all-or-nothing approach to resource limits can be problematic, forcing administrators to choose between no limits or a catastrophic failure.
+</p>
+<p>
+The author concludes by stating that while they don't dislike systemd in general, this experience is an example of how systemd can sometimes impose restrictions and make certain system administration tasks more difficult than they were previously.
+</p>
+
+<h2>Key Points:</h2>
+<ul>
+<li>Systemd's service scopes can make traditional methods of setting resource limits (e.g., <code>/etc/security/limits.conf</code>) ineffective.</li>
+<li>Systemd's <code>TasksMax</code> setting imposes a hard limit on the number of threads a service can create.</li>
+<li>Exceeding the <code>TasksMax</code> limit causes the service to fail completely, which may not be the desired behavior.</li>
+<li>Older init systems allowed for more granular control over resource limits, where exceeding limits would not necessarily lead to service failure.</li>
+<li>The author views this as a restriction imposed by systemd, making it harder to achieve certain system administration goals.</li>
+</ul>
+</div>
+</div>
+</article>
