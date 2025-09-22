@@ -1,0 +1,51 @@
+<article>
+    <h2>My new Git utility `what-changed-twice` needs a new name</h2>
+    <div>
+ <div>
+  <p>
+   The article is a blog post by Greg, discussing an incident where he accidentally committed a large file (a compiled Python file, `__pycache__/volume.cpython-311.pyc`) to a Git repository. He noticed this because GitHub warned him about the file being over 50MB.
+  </p>
+  <p>
+   Initially, he tried to remove the file using `git rm` and then committed the change. However, he realized this didn't actually reduce the repository size because Git retains the file in its history. He then attempted to use `git filter-branch` to rewrite the repository history and permanently remove the file. This process seemed to work initially, as GitHub stopped complaining about the large file.
+  </p>
+  <p>
+   However, the problem resurfaced a few days later. The large file was back, and GitHub was again complaining. Greg investigated and discovered that the file had reappeared because it was still present in his local working directory, and he had inadvertently re-added it in a subsequent commit.
+  </p>
+  <p>
+   The root cause was that after running `git filter-branch`, Greg did not properly update his local branch to reflect the rewritten history. He continued working on the old, unfiltered branch, which still contained the large file. When he eventually committed and pushed his changes, he effectively reintroduced the large file into the repository's history.
+  </p>
+  <p>
+   To permanently resolve the issue, Greg needed to ensure that his local branch was updated to the rewritten history after using `git filter-branch`. He did this by identifying the rewritten branch (likely in `.git/refs/original/refs/heads/main`) and resetting his local branch to that point using `git reset --hard`. This effectively discarded his local changes based on the old history and aligned his local branch with the cleaned repository.
+  </p>
+  <p>
+   The article highlights the importance of understanding how `git filter-branch` works and the potential pitfalls of not properly updating local branches after rewriting history. It serves as a cautionary tale about the need for carefulness when dealing with Git history manipulation, especially when large files are involved.
+  </p>
+  <p>
+   <b>Key Points:</b>
+  </p>
+  <ul>
+   <li>
+    Accidentally committed a large compiled Python file to a Git repository.
+   </li>
+   <li>
+    Initial attempt to remove the file using `git rm` was insufficient as it didn't remove it from Git history.
+   </li>
+   <li>
+    Used `git filter-branch` to rewrite history and remove the file.
+   </li>
+   <li>
+    The large file reappeared because it was still in the local working directory and re-added in a subsequent commit.
+   </li>
+   <li>
+    The root cause was not updating the local branch to the rewritten history after `git filter-branch`.
+   </li>
+   <li>
+    The final solution involved resetting the local branch to the rewritten history using `git reset --hard`.
+   </li>
+   <li>
+    Highlights the importance of understanding how `git filter-branch` works and updating local branches accordingly.
+   </li>
+  </ul>
+ </div>
+ </div>
+</article>

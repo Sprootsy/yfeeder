@@ -1,0 +1,40 @@
+<article>
+    <h2>Be careful with Go struct embedding</h2>
+    <div>
+ <div>
+   <p>
+     This article by Matt Hall discusses the potential pitfalls of using struct embedding in Go, a feature that allows one struct to include the fields and methods of another struct directly. While struct embedding can be a convenient way to achieve code reuse and composition, it can also lead to unexpected behavior if not used carefully.
+   </p>
+   <p>
+     The author begins by illustrating a seemingly straightforward use case: embedding a `Logger` struct into other structs to provide logging capabilities. However, he demonstrates how this simple scenario can become problematic when dealing with method sets and interface satisfaction. Specifically, embedding a struct promotes its methods to the embedding struct's method set. If the embedded struct implements an interface, the embedding struct might also implicitly satisfy that interface, even if that was not the intention.
+   </p>
+   <p>
+     The core issue arises from the fact that Go's interface satisfaction is implicit and based on method signatures. If a struct has all the methods required by an interface, it automatically implements that interface. When a struct embeds another, it gains the embedded struct's methods, potentially causing it to satisfy interfaces it wasn't explicitly designed to fulfill.
+   </p>
+   <p>
+     The author provides several code examples to illustrate these problems. He shows how embedding a `Logger` struct can inadvertently make a `Service` struct satisfy a `LoggingService` interface, even though the `Service` might not be designed to be a full-fledged logging service. This can lead to confusion and unexpected behavior, especially if the `Service`'s implementation of the interface methods isn't appropriate.
+   </p>
+   <p>
+     One of the key problems is related to method promotion of the inner type. The method set of the embedding type is effectively the union of the method set of the embedding type and the method set of the embedded type. This can unexpectedly satisfy interfaces.
+   </p>
+   <p>
+     To mitigate these risks, the author suggests alternative approaches to code reuse and composition. He recommends using explicit composition instead of embedding. This involves declaring a field of the desired type within the struct, rather than embedding it directly. With explicit composition, the methods of the composed type are not automatically promoted to the embedding struct, providing more control over the struct's method set and interface satisfaction. The embedding struct would need to define its own method and then delegate calls to the composed type explicitly.
+   </p>
+   <p>
+     He also suggests using interfaces explicitly to define the desired behavior, rather than relying on implicit interface satisfaction through embedding. By defining interfaces that clearly specify the required methods, developers can ensure that structs only implement the interfaces they are explicitly designed to support.
+   </p>
+   <p>
+     The article emphasizes that while struct embedding can be a useful tool, it should be used with caution and a clear understanding of its implications. Developers should carefully consider whether embedding is truly the best approach for achieving code reuse and composition, or whether explicit composition or interfaces would provide more control and clarity. By being mindful of these potential pitfalls, developers can avoid unexpected behavior and write more robust and maintainable Go code.
+   </p>
+   <p><b>Key Points:</b></p>
+   <ul>
+     <li>Struct embedding in Go can lead to unintended interface satisfaction due to method promotion.</li>
+     <li>Embedding promotes the embedded struct's methods to the embedding struct's method set.</li>
+     <li>Implicit interface satisfaction can cause unexpected behavior if a struct unintentionally implements an interface.</li>
+     <li>Explicit composition (using fields instead of embedding) offers more control over method sets and interface satisfaction.</li>
+     <li>Explicitly defining interfaces helps ensure that structs only implement the interfaces they are designed to support.</li>
+     <li>Be careful when using struct embedding.</li>
+   </ul>
+ </div>
+ </div>
+</article>
