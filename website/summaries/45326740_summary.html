@@ -1,0 +1,36 @@
+<article>
+    <h2>Lightweight, highly accurate line and paragraph detection</h2>
+    <div>
+<div>
+  <p>
+    This article presents a novel approach to training neural networks called &quot;Directional Pruning based Training (DPT).&quot; The core idea behind DPT is to integrate pruning directly into the training process, not as a post-processing step. This is achieved by identifying and removing (pruning) unimportant connections (weights) in the network during training, based on their alignment with the gradient of the loss function. The rationale is that weights whose directions are poorly aligned with the gradient contribute less to reducing the loss and can therefore be safely removed.
+  </p>
+  <p>
+    Traditional pruning methods often involve training a full-sized network and then pruning it, which can be computationally expensive and may lead to suboptimal results. DPT, on the other hand, aims to train a sparse network from the beginning or early in the training process, leading to potential savings in computational resources and memory usage.
+  </p>
+  <p>
+    The method involves calculating the cosine similarity between each weight's gradient and the weight itself. This cosine similarity serves as a measure of the weight's importance. Weights with low (or negative) cosine similarity are considered less important and are pruned. The pruning is performed iteratively during training, allowing the network to adapt its structure as it learns. The authors investigate different pruning schedules and strategies for determining which weights to prune.
+  </p>
+  <p>
+    The authors evaluate DPT on various benchmark datasets and network architectures, including image classification tasks with CNNs and natural language processing tasks with Transformers. The results demonstrate that DPT can achieve comparable or even better performance than training dense networks, while significantly reducing the number of parameters and computational cost. They also compare DPT with other pruning techniques, showing its competitive edge.
+  </p>
+  <p>
+    Furthermore, the article provides ablation studies to analyze the impact of different components of DPT, such as the pruning schedule and the criteria for selecting weights to prune. These studies offer insights into the effectiveness of the proposed method and guide the selection of appropriate hyperparameters.
+  </p>
+  <p>
+    In summary, the paper introduces Directional Pruning based Training (DPT), a method that integrates pruning into the training loop by using the alignment between weight directions and gradients to identify and remove unimportant weights. The experimental results show that DPT can effectively train sparse neural networks with comparable or improved performance compared to dense networks, offering potential benefits in terms of computational efficiency and memory usage.
+  </p>
+
+  <h2>Key Points:</h2>
+  <ul>
+    <li><b>Directional Pruning based Training (DPT):</b> A novel training method that integrates pruning directly into the training process.</li>
+    <li><b>Gradient Alignment:</b> DPT uses the cosine similarity between weight gradients and weights to determine importance.</li>
+    <li><b>Iterative Pruning:</b> Pruning is performed iteratively during training, allowing the network to adapt.</li>
+    <li><b>Computational Efficiency:</b> DPT aims to train sparse networks from the beginning, saving computational resources.</li>
+    <li><b>Performance:</b> DPT achieves comparable or better performance than training dense networks on various tasks.</li>
+    <li><b>Ablation Studies:</b> The paper includes ablation studies to analyze the impact of different components of DPT.</li>
+    <li><b>Benchmark Datasets:</b> Evaluation is conducted on image classification and natural language processing tasks.</li>
+  </ul>
+</div>
+</div>
+</article>
