@@ -1,0 +1,44 @@
+<article>
+    <h2>How fast is Go? simulating particles on a smart TV</h2>
+    <div>
+<div>
+<h3>Summary</h3>
+<p>The article is a blog post by David Gerrells detailing his experience optimizing a particle simulation written in Go to run efficiently on a Samsung Smart TV. The author was initially surprised by the relatively slow performance of his Go code compared to Javascript, particularly when simulating a large number of particles (millions). The blog post focuses on the optimization strategies he employed to improve the Go implementation's performance and achieve a satisfactory frame rate on the TV's limited hardware.
+</p>
+<p>
+The author begins by outlining the problem: a simple particle simulation that struggled to maintain a reasonable frame rate when the particle count increased. He observed that the Go code was significantly slower than a Javascript version of the same simulation. This prompted an investigation into potential bottlenecks within the Go implementation.
+</p>
+<p>
+The first optimization step involved identifying the performance-critical sections of the code using profiling tools (pprof). This revealed that a significant portion of the execution time was spent on memory allocation, particularly when creating new particle objects. To address this, the author implemented a memory pooling strategy. Instead of allocating new particle objects on each frame, he created a pool of pre-allocated particles that could be reused. This drastically reduced the overhead associated with memory allocation and garbage collection.
+</p>
+<p>
+Next, the author explored ways to improve the spatial partitioning of the simulation space. The initial implementation used a simple brute-force approach to find neighboring particles, which had a time complexity of O(n^2), where n is the number of particles. To improve this, he implemented a grid-based spatial partitioning scheme. The simulation space was divided into a grid of cells, and each particle was assigned to the cell it occupied. This allowed for efficient neighbor searching by only considering particles within the same or adjacent cells. This significantly reduced the number of distance calculations required, improving the overall performance.
+</p>
+<p>
+Further optimization involved utilizing Go's concurrency features (goroutines) to parallelize the particle update calculations. The author divided the particle set into smaller chunks and assigned each chunk to a separate goroutine for processing. This allowed the workload to be distributed across multiple CPU cores, further accelerating the simulation. However, the author noted that the benefits of parallelization were limited by the overhead of goroutine management and synchronization. He also discussed the importance of choosing an appropriate number of goroutines to avoid excessive context switching.
+</p>
+<p>
+Beyond algorithmic and code-level optimizations, the author also considered compiler optimizations. He experimented with different compiler flags to fine-tune the generated machine code for the target architecture. While the impact of these optimizations was less significant than the algorithmic changes, they still contributed to incremental performance improvements.
+</p>
+<p>
+The author emphasizes the importance of profiling and benchmarking throughout the optimization process. By carefully measuring the impact of each optimization, he was able to focus his efforts on the areas that yielded the greatest performance gains. He also highlights the trade-offs involved in different optimization strategies, such as the increased memory usage associated with memory pooling or the overhead of goroutine management.
+</p>
+<p>
+Finally, the author reflects on the challenges of optimizing code for resource-constrained devices like Smart TVs. He notes that the limited CPU power and memory capacity necessitate careful attention to detail and a deep understanding of the underlying hardware. He concludes that by combining algorithmic improvements, memory management strategies, and concurrency, it is possible to achieve satisfactory performance even on such devices.
+</p>
+
+<h3>Key points</h3>
+<ul>
+    <li>The article details the optimization of a Go-based particle simulation for a Samsung Smart TV.</li>
+    <li>Initial Go implementation was significantly slower than Javascript equivalent.</li>
+    <li>Profiling (pprof) identified memory allocation as a major bottleneck.</li>
+    <li>Memory pooling was implemented to reduce memory allocation overhead.</li>
+    <li>Spatial partitioning (grid-based) replaced brute-force neighbor searching to reduce computational complexity from O(n^2) to near O(n).</li>
+    <li>Concurrency (goroutines) was used to parallelize particle updates.</li>
+    <li>Compiler optimizations were explored for incremental performance gains.</li>
+    <li>Profiling and benchmarking were crucial for measuring optimization impact.</li>
+    <li>Optimizing for resource-constrained devices like Smart TVs requires careful attention to detail.</li>
+</ul>
+</div>
+</div>
+</article>

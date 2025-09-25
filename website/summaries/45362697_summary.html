@@ -1,0 +1,20 @@
+<article>
+    <h2>Terence Tao: The role of small organizations in society has shrunk significantly</h2>
+    <div>
+<div>
+<p>The article is a blog post by Terence Tao on Mathstodon discussing a problem related to the minimum possible value of the expression \(\sum_{i=1}^n |x_i - x_{i+1}|\) given that \(\sum_{i=1}^n x_i^2 = 1\), where \(x_{n+1} = x_1\). The problem involves finding a tight asymptotic for the minimum value as \(n\) approaches infinity. The problem can be interpreted geometrically as minimizing the length of a closed polygon inscribed in the unit sphere in \(\mathbb{R}^n\). Tao outlines several approaches to the problem and discusses their strengths and weaknesses.</p>
+
+<p>One approach involves using calculus. By using Lagrange multipliers to extremize \(\sum_{i=1}^n |x_i - x_{i+1}|\) subject to the constraint \(\sum_{i=1}^n x_i^2 = 1\), one can find candidate critical points. This approach suggests that the minimum should be attained when the \(x_i\) are equally spaced around a circle, which can be formalized by setting \(x_i = \sqrt{2/n} \cos(2\pi i / n)\) and \(x_{i+n/2} = \sqrt{2/n} \sin(2\pi i / n)\) for \(1 \leq i \leq n/2\) (assuming \(n\) is even). This approach yields an asymptotic of \(\frac{2\pi}{\sqrt{3n}} + O(n^{-3/2})\) for the minimum value. However, this approach requires a justification that the critical point obtained is indeed a global minimum and that there are no other critical points that yield a smaller value.</p>
+
+<p>Another approach involves bounding the expression using Cauchy-Schwarz inequality. By applying Cauchy-Schwarz, one can obtain the bound \(\sum_{i=1}^n |x_i - x_{i+1}| \geq \frac{1}{\sqrt{n}} \sum_{i=1}^n |x_i - x_{i+1}|\). However, this bound is not tight enough to give the desired asymptotic.</p>
+
+<p>A third approach is to exploit Fourier analysis. By expressing the sequence \(x_i\) as a linear combination of Fourier basis elements \(e_k(i) = e^{2\pi i k / n}\), the constraint \(\sum_{i=1}^n x_i^2 = 1\) is equivalent to \(\sum_{k=0}^{n-1} |\hat{x}(k)|^2 = 1\), where \(\hat{x}(k)\) are the Fourier coefficients of \(x\). The quantity \(\sum_{i=1}^n |x_i - x_{i+1}|\) can be related to the Fourier coefficients as well. Specifically, \(x_i - x_{i+1}\) has Fourier coefficients \((1 - e^{2\pi i k / n}) \hat{x}(k)\), and using Plancherel's theorem and Cauchy-Schwarz, one can potentially obtain a lower bound in terms of the Fourier coefficients. The minimum should occur when the energy is concentrated in the lowest non-zero frequencies, corresponding to \(k = \pm 1\). This approach seems promising, but the details need to be worked out to obtain a rigorous bound.  Concentrating the Fourier coefficients at \(k = \pm 1\) corresponds to the earlier cosine/sine ansatz.</p>
+
+<p>Tao also mentions a fourth approach: Using the Euler-Lagrange equations to directly extremize the expression.  This approach would be similar to the calculus approach but formulated in a way to make it easier to justify the global minimum. However, this approach appears to have some technical difficulties in justifying that the extremum obtained is indeed a global minimum.</p>
+
+<p>The post concludes by mentioning that there might be some existing literature that solves this or related problems. The key difficulty lies in rigorously justifying that the critical points found using calculus or other methods are indeed the global minimum and that no other critical points give a smaller value. The Fourier approach seems promising in that it could potentially give a rigorous lower bound, which could then be compared to the value obtained by the cosine/sine ansatz. However, the details need to be carefully worked out.</p>
+
+<h2>Key Points:</h2>
+<ul>
+  <li>The problem is to find the minimum of \(\sum_{i=1}^n |x_i - x_{i+1}|\) given \(\sum_{i=1}^n x_i^</div>
+</article>
