@@ -1,0 +1,32 @@
+<article>
+    <h2>Implementing UI translation in SumatraPDF, a C&#43;&#43; Windows application</h2>
+    <div>
+<div>
+<p>The article is a blog post by Krzysztof Kowalczyk detailing the implementation of UI translation in SumatraPDF, a C++ Windows application. The author outlines the challenges faced when adding translation support to an existing codebase and the design decisions made to overcome them. The post describes the initial approach of hardcoding strings in the application, which quickly became unsustainable as the software evolved and the need for localization arose.</p>
+
+<p>The author explains the chosen solution: using a simple text file format (.txt) to store translations. Each line in the file contains a key-value pair, where the key is the original English string and the value is the translated string. The translation system is designed to be flexible and allow for multiple translation files, enabling support for various languages. The loading of translations is done dynamically at runtime, allowing for easy updates and additions of new languages without recompiling the application.</p>
+
+<p>The article highlights the importance of carefully selecting strings for translation. The author explains how they identified translatable strings within the codebase and created unique identifiers for them. The approach involves wrapping translatable strings in a macro (TR) to mark them for translation. This macro is defined differently depending on whether a translation is available or not. If a translation exists, the macro returns the translated string; otherwise, it returns the original English string.</p>
+
+<p>The author also discusses the challenges of handling placeholders and formatting within translated strings. They describe how they used printf-style formatting with numbered arguments (e.g., %1, %2) to ensure that the order of arguments could be adjusted for different languages. The implementation also includes error handling to gracefully handle cases where a translation is missing or invalid.</p>
+
+<p>The blog post emphasizes the importance of testing and quality assurance in the translation process. The author describes how they used a combination of automated testing and manual review to ensure the accuracy and completeness of the translations. They also mention the use of external translation services to help with the translation process.</p>
+
+<p>Furthermore, the article touches upon the technical aspects of loading and applying translations in a Windows application. The author explains how they used the Windows API to access the system's language settings and load the appropriate translation file. They also describe how they handled font changes and other UI adjustments that may be necessary to accommodate different languages.</p>
+
+<p>The post concludes by summarizing the lessons learned from the experience of implementing UI translation in SumatraPDF. The author highlights the importance of planning, careful string selection, and thorough testing. They also emphasize the value of using a simple and flexible translation format that can be easily maintained and updated.</p>
+
+<h2>Key Points:</h2>
+<ul>
+<li>SumatraPDF initially used hardcoded strings, which created problems when localization was needed.</li>
+<li>The chosen translation method uses simple .txt files with key-value pairs (English string = Translated string).</li>
+<li>Translations are loaded dynamically at runtime.</li>
+<li>A TR macro is used to mark translatable strings. The macro returns the translation if available, otherwise the original string.</li>
+<li>printf-style formatting with numbered arguments (%1, %2) handles placeholders and ensures correct argument order in different languages.</li>
+<li>Thorough testing (automated and manual) is essential for translation accuracy.</li>
+<li>Windows API is used to detect system language and load the correct translation file.</li>
+<li>Careful planning and a flexible translation format are crucial for maintainability.</li>
+</ul>
+</div>
+</div>
+</article>

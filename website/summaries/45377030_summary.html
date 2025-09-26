@@ -1,0 +1,33 @@
+<article>
+    <h2>Tracing JITs in the Real World CPython Core Dev Sprint</h2>
+    <div>
+<div>
+<h3>Summary</h3>
+<p>The article is a blog post by Antonio Cuni, detailing his experiences and observations from the CPython core developer sprint focused on tracing JITs. The sprint, held in-person, brought together developers to work on and discuss the practicalities of implementing tracing JITs within CPython, specifically focusing on the challenges and considerations for real-world integration.</p>
+
+<p>Cuni highlights the importance of moving beyond theoretical discussions and diving into concrete implementation details. The sprint involved working directly with code, running benchmarks, and addressing the various hurdles that arise when attempting to introduce JIT compilation into a complex and established codebase like CPython.</p>
+
+<p>The blog post emphasizes that integrating a JIT is not just about achieving peak performance in isolated benchmarks. It involves a holistic approach, considering debugging, profiling, tooling, and the overall user experience for both developers and end-users. The sprint covered topics like how to make the JIT discoverable and controllable, how to debug JITed code effectively, and how to ensure that existing C extensions remain compatible.</p>
+
+<p>Cuni also underscores the collaborative nature of the sprint. He mentions that participants shared knowledge, debated design decisions, and worked together to overcome technical challenges. This collaborative environment was crucial for making progress and ensuring that the JIT implementation aligns with the needs and expectations of the CPython community.</p>
+
+<p>He also notes considerations around the interactions with C extensions, and how the JIT should behave in the presence of code that falls outside the directly JIT-compiled python code. This includes discussions around deoptimization and how the JIT can handle calls into native code, ensuring stability and correctness.</p>
+
+<p>The post touches on the complexities of benchmarking the JIT. It's not enough to run a few micro-benchmarks; real-world workloads and diverse code patterns need to be evaluated. The developers also need to consider how the JIT affects the performance of existing code and libraries.</p>
+
+<p>Finally, Cuni concludes by emphasizing that the sprint was a valuable step forward in making tracing JITs a reality in CPython. While many challenges remain, the collective effort and practical focus of the sprint have laid a foundation for continued progress in this area.</p>
+
+<h3>Key Points</h3>
+<ul>
+<li>The CPython core developer sprint focused on the practical implementation of tracing JITs.</li>
+<li>Integrating a JIT involves more than just performance; it requires attention to debugging, profiling, and user experience.</li>
+<li>Collaboration and knowledge-sharing were crucial for making progress during the sprint.</li>
+<li>Interactions with C extensions and deoptimization strategies are important considerations.</li>
+<li>Benchmarking must cover real-world workloads and diverse code patterns.</li>
+<li>The sprint was a significant step forward in making tracing JITs a reality in CPython.</li>
+<li>The sprint involved hands-on coding, benchmarking, and addressing practical challenges.</li>
+<li>Discussions included how to make the JIT discoverable, controllable, and debuggable.</li>
+</ul>
+</div>
+</div>
+</article>

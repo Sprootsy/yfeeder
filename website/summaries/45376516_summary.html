@@ -1,0 +1,34 @@
+<article>
+    <h2>Immich mobile app sync V2</h2>
+    <div>
+<div>
+<h2>Summary:</h2>
+
+<p>The Immich blog post announces the release of Sync v2, a significant update to Immich's asset synchronization mechanism. This new version addresses limitations and inefficiencies present in the original synchronization process, offering a more robust, reliable, and performant experience for users managing their media libraries. Sync v2 tackles issues such as slow initial synchronization, excessive database queries, and difficulties in handling large libraries or network interruptions.</p>
+
+<p>The core problem with the original sync implementation stemmed from its reliance on querying the database for each file to determine its existence and modification status. This approach became a bottleneck, especially for large libraries, leading to slow synchronization times and high resource consumption. Additionally, the previous system struggled to gracefully handle interruptions, often requiring a complete restart of the synchronization process.</p>
+
+<p>Sync v2 introduces several key improvements to overcome these challenges. First, it employs a hashing algorithm to efficiently detect file changes. Instead of repeatedly querying the database, the system calculates a hash for each file and compares it to a stored hash. If the hashes match, the file is considered unchanged, significantly reducing the number of database interactions. This hashing process is optimized for speed and efficiency.</p>
+
+<p>Second, the new synchronization process is designed to be more resilient to interruptions. It leverages a queueing system and checkpoints to track progress and resume synchronization from where it left off in case of network issues or other disruptions. This eliminates the need to restart the entire process from scratch, saving time and resources.</p>
+
+<p>Third, Sync v2 incorporates improved error handling and logging mechanisms. These features provide better visibility into the synchronization process, allowing users to diagnose and resolve issues more effectively. The logs offer detailed information about file processing, errors encountered, and overall progress.</p>
+
+<p>The blog post highlights the benefits of Sync v2, including faster synchronization times, reduced resource consumption, improved reliability, and enhanced error handling. It emphasizes that this update represents a significant step forward in making Immich a more robust and user-friendly solution for managing personal media libraries.</p>
+
+<p>The post also provides instructions for upgrading to Sync v2 and encourages users to report any issues or provide feedback. It acknowledges the contributions of the Immich community in identifying areas for improvement and testing the new synchronization mechanism.</p>
+
+<h2>Key Points:</h2>
+
+<ul>
+<li><b>Sync v2 addresses performance and reliability issues in Immich's original asset synchronization.</b></li>
+<li><b>The original sync process was slow due to excessive database queries.</b></li>
+<li><b>Sync v2 uses hashing to efficiently detect file changes, reducing database load.</b></li>
+<li><b>The new process is more resilient to interruptions with a queueing system and checkpoints.</b></li>
+<li><b>Improved error handling and logging provide better visibility into the synchronization process.</b></li>
+<li><b>Sync v2 results in faster synchronization, reduced resource consumption, and enhanced reliability.</b></li>
+<li><b>Users are encouraged to upgrade and provide feedback.</b></li>
+</ul>
+</div>
+</div>
+</article>

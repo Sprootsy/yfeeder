@@ -1,0 +1,42 @@
+<article>
+    <h2>RedoxFS is the default filesystem of Redox OS, inspired by ZFS</h2>
+    <div>
+<div>
+<h2>Summary</h2>
+
+<p>The article describes RedoxFS, the file system used by the Redox operating system. RedoxFS is designed with several goals in mind, including modern design, crash safety, high performance, and feature richness. It is written in Rust, leveraging the language's safety features to prevent common file system errors.</p>
+
+<p>RedoxFS is a next-generation file system that incorporates modern design principles. It avoids legacy baggage and aims to provide a clean and efficient implementation. Crash safety is a primary concern, ensuring that the file system remains consistent even in the event of system crashes or power failures. This is achieved through techniques like copy-on-write and journaling.</p>
+
+<p>The file system also focuses on high performance, using techniques such as caching and efficient data structures to minimize latency and maximize throughput. RedoxFS aims to offer a rich set of features, including support for various file types, permissions, and extended attributes.</p>
+
+<p>The article then delves into the on-disk format of RedoxFS.  The file system is divided into blocks, and the first block is the boot block which is unused in RedoxFS.  The second block is the superblock, which contains metadata about the entire file system, such as the block size, number of blocks, and location of important data structures.  Following the superblock is the allocation bitmap, used to track which blocks are free and which are in use.  The root directory inode follows the bitmap.</p>
+
+<p>Inodes are fundamental data structures in RedoxFS, storing metadata about files and directories, like permissions, timestamps, size, and pointers to data blocks.  Small files may have their data stored directly in the inode (inline data), whereas larger files use data blocks pointed to by the inode.  Directories are implemented as files containing a list of entries, each mapping a filename to an inode number.</p>
+
+<p>RedoxFS employs a copy-on-write (CoW) strategy, meaning that when a block is modified, the original block is preserved, and a new block is allocated for the modified data. This approach is crucial for crash safety because it ensures that the file system can always revert to a consistent state in case of a crash during a write operation. Transactions group multiple operations together, ensuring that they are either all committed or none are, further enhancing crash safety.</p>
+
+<p>The allocator is responsible for managing the allocation and deallocation of blocks. RedoxFS uses a bitmap-based allocator, where each bit in the bitmap represents a block on the disk. A set bit indicates that the block is in use, while a cleared bit indicates that the block is free.</p>
+
+<p>The caching layer plays a vital role in improving performance by storing frequently accessed data in memory. RedoxFS utilizes a Least Recently Used (LRU) cache to efficiently manage the cached data.</p>
+
+<p>Finally, the article touches upon the namespace, describing how paths are resolved to inodes and how file operations are performed on the identified files or directories.</p>
+
+<h2>Key Points</h2>
+
+<ul>
+    <li>RedoxFS is the file system for the Redox operating system, designed for modern systems.</li>
+    <li>Key goals: modern design, crash safety, high performance, and feature richness.</li>
+    <li>Written in Rust, leveraging its safety features.</li>
+    <li>On-disk format includes boot block, superblock, allocation bitmap, and inodes.</li>
+    <li>Inodes store metadata about files and directories, and point to data blocks.</li>
+    <li>Directories are implemented as files containing a list of filename-to-inode mappings.</li>
+    <li>Copy-on-write (CoW) strategy ensures crash safety by preserving original blocks.</li>
+    <li>Transactions group operations for atomicity, further enhancing crash safety.</li>
+    <li>Bitmap-based allocator manages block allocation and deallocation.</li>
+    <li>Caching layer with LRU cache improves performance.</li>
+    <li>Namespace resolution maps paths to inodes for file operations.</li>
+</ul>
+</div>
+</div>
+</article>

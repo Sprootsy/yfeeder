@@ -1,0 +1,21 @@
+<article>
+    <h2>Redis is fast – I&#39;ll cache in Postgres</h2>
+    <div>
+ <div>
+  <p>The article "Redis is fast, I'll cache in Postgres" discusses using Postgres as a caching layer as an alternative to Redis. The author begins by acknowledging the common wisdom that Redis is the go-to solution for caching due to its speed and in-memory nature. However, they challenge this assumption by presenting scenarios where Postgres, specifically with proper configuration and extensions, can serve as a viable and sometimes superior caching solution. They state that Postgres offers several advantages, including data durability, SQL support, and transactional consistency, which Redis lacks. The durability prevents cache loss on restarts, while SQL support enables efficient queries for cached data. Additionally, transactional consistency prevents serving stale data. </p>
+  <p>The author describes a specific use case where they needed a cache for query results that were relatively static but frequently accessed. They initially considered Redis but opted for Postgres due to the desire for data persistence and the complexity of managing data consistency between Postgres (the primary database) and Redis (the cache). The article explains how they implemented a cache table in Postgres with appropriate indexes and configured Postgres to keep the cache table in memory as much as possible. This was achieved by adjusting `shared_buffers` to be sufficiently large. They also utilized the `pg_repack` extension to rebuild the table and indexes without downtime, improving performance over time. The article also discusses techniques for invalidating cache entries, such as using triggers or background processes to update the cache when the underlying data changes.</p>
+  <p>The author provides code snippets illustrating how to create the cache table, insert data, and retrieve cached results. They emphasize the importance of using `EXPLAIN ANALYZE` to understand query performance and identify potential bottlenecks. Additionally, the author describes how to use `pg_stat_statements` to monitor query performance and identify frequently executed queries that could benefit from caching.</p>
+  <p>The article addresses potential concerns about using Postgres as a cache, such as increased CPU usage and memory pressure. However, the author argues that with proper configuration and monitoring, these concerns can be mitigated. They also acknowledge that Redis remains a valid choice for certain caching scenarios, particularly those requiring extremely low latency or complex data structures. However, the author concludes that Postgres can be a surprisingly effective caching solution when durability, consistency, and SQL-based querying are important considerations.</p>
+  <p>In summary, the article advocates for considering Postgres as a caching layer, especially when data durability, SQL capabilities, and transactional consistency are important. It details practical implementation techniques and configuration settings to optimize Postgres for caching, presenting it as a viable alternative to Redis in specific use cases.</p>
+  <h2>Key Points:</h2>
+  <ul>
+   <li>Postgres can be a viable alternative to Redis for caching.</li>
+   <li>Postgres offers data durability, SQL support, and transactional consistency.</li>
+   <li>Proper configuration is crucial for Postgres caching performance.</li>
+   <li>Using extensions like `pg_repack` and `pg_stat_statements` can improve performance and monitoring.</li>
+   <li>Careful consideration of cache invalidation strategies is necessary.</li>
+   <li>Redis remains a better choice for low latency or complex data structures.</li>
+  </ul>
+ </div>
+ </div>
+</article>
