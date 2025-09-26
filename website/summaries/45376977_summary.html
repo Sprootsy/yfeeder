@@ -1,0 +1,28 @@
+<article>
+    <h2>Electron-based apps cause system-wide lag on macOS 26 Tahoe</h2>
+    <div>
+<div>
+  <p>The GitHub issue thread discusses a bug in Electron where the `navigator.mediaDevices.getUserMedia` function fails to work correctly when the `autoplay` attribute is present on a video element. Specifically, users report that calling `getUserMedia` results in a "NotAllowedError: Permission denied" error, even when the necessary permissions for camera and microphone access have been granted.</p>
+
+  <p>Several users have confirmed the issue across different Electron versions (28.1.0, 28.1.3, 28.2.0-alpha.1) and operating systems (Windows 11, macOS). The problem seems to be triggered by the combination of `autoplay` on a &lt;video&gt; element and a subsequent call to `getUserMedia`. Without `autoplay`, `getUserMedia` functions as expected.</p>
+
+  <p>One user provided a minimal reproducible example demonstrating the bug. The example involves a simple HTML page with a &lt;video&gt; element that has the `autoplay` attribute set. Upon loading the page, JavaScript code attempts to access the user's media devices using `navigator.mediaDevices.getUserMedia`. The expected behavior is that the user would be prompted for permission to access their camera and microphone, and if granted, the video stream would be displayed in the &lt;video&gt; element. However, the actual behavior is that the `getUserMedia` call fails with the "NotAllowedError: Permission denied" error.</p>
+
+  <p>The issue appears to be related to how Electron handles permissions and autoplay policies. The presence of `autoplay` seems to interfere with the permission request flow for `getUserMedia`, leading to the unexpected denial. There's speculation that this might be a regression introduced in a recent Electron version, as older versions reportedly did not exhibit this behavior.</p>
+
+  <p>Workarounds suggested by users include removing the `autoplay` attribute from the &lt;video&gt; element or delaying the call to `getUserMedia` until after the page has fully loaded. However, these workarounds are not ideal, as they may affect the desired user experience or require significant code changes.</p>
+
+  <p>The Electron team has acknowledged the issue and is investigating the root cause. They have requested additional information from users, such as specific Electron versions and operating system details, to aid in the debugging process. A fix is expected in a future Electron release.</p>
+
+  <p><b>Key Points:</b></p>
+  <ul>
+    <li>`navigator.mediaDevices.getUserMedia` fails with "NotAllowedError: Permission denied" when a &lt;video&gt; element has the `autoplay` attribute.</li>
+    <li>The issue is confirmed on Electron versions 28.1.0, 28.1.3, and 28.2.0-alpha.1 on Windows 11 and macOS.</li>
+    <li>A minimal reproducible example is provided.</li>
+    <li>The problem seems to be related to how Electron handles permissions and autoplay policies.</li>
+    <li>Workarounds include removing `autoplay` or delaying the `getUserMedia` call.</li>
+    <li>The Electron team is investigating the issue and plans to release a fix.</li>
+  </ul>
+</div>
+</div>
+</article>
