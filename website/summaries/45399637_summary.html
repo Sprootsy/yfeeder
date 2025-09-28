@@ -1,0 +1,32 @@
+<article>
+    <h2>We reverse-engineered Flash Attention 4</h2>
+    <div>
+<div>
+  <p>
+    This article provides a detailed reverse engineering analysis of FlashAttention-4, a highly optimized attention algorithm designed to accelerate the training of large language models. It begins by outlining the context of FlashAttention's development, highlighting the challenges posed by the memory bottleneck in attention mechanisms and how FlashAttention and its subsequent versions aim to address this. The core idea is to perform attention calculations in smaller blocks stored in fast SRAM memory, reducing the need for frequent reads and writes to slower DRAM.
+  </p>
+  <p>
+    The article dives into the mathematical formulation of attention, explaining the query, key, and value matrices and how they are used to compute attention scores and weighted values. It then introduces the tiling approach, a crucial component of FlashAttention, where the input matrices are divided into smaller tiles to fit within SRAM. It also describes the forward pass of FlashAttention-4, which is separated into block operations. These operations involve loading query and key blocks, computing attention scores, and using these scores to calculate output blocks. The use of a maximum value to improve numerical stability is also explained.
+  </p>
+  <p>
+    The backward pass is then explored which involves computing the derivatives of the output with respect to the inputs. This is also done in tiles, and the process involves recomputing the forward pass inside the backward pass to derive gradients.
+  </p>
+  <p>
+    The article explains the improvements incorporated in FlashAttention-4. These include optimized software prefetching that hides memory latency, and a new parallel reduction algorithm that is faster and uses less memory compared to previous reduction methods.
+  </p>
+  <p>
+    Finally, the article presents benchmarks comparing the performance of FlashAttention-4 against other attention implementations like scaled dot-product attention and FlashAttention-2. The results demonstrate FlashAttention-4's superior speed and efficiency, highlighting the impact of its optimizations on real-world training workloads. The article concludes by emphasizing the practical benefits of FlashAttention-4 for researchers and practitioners working with large language models, enabling faster training and reduced hardware requirements.
+  </p>
+
+  <h3>Key Points:</h3>
+  <ul>
+    <li>FlashAttention-4 is designed to reduce the memory bottleneck in attention mechanisms.</li>
+    <li>The algorithm uses tiling to divide input matrices into smaller blocks.</li>
+    <li>The forward and backward passes are computed block-by-block.</li>
+    <li>FlashAttention-4 incorporates optimized software prefetching.</li>
+    <li>FlashAttention-4 uses a new faster and more memory efficient parallel reduction algorithm.</li>
+    <li>Benchmarks show FlashAttention-4 outperforms previous attention implementations.</li>
+  </ul>
+</div>
+</div>
+</article>
