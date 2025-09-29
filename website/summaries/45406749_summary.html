@@ -1,0 +1,37 @@
+<article>
+    <h2>J-Link Compact USB-C Issues</h2>
+    <div>
+<div>
+  <p>
+    The article details the author's frustrating experience with a J-Link Compact debugger that uses a USB-C connector. The core issue revolves around the debugger's unreliability and its susceptibility to malfunctioning when connected to various USB-C ports, especially those found on laptops. The author initially suspected a hardware problem with the debugger itself, prompting him to order a replacement. However, the new unit exhibited the same connectivity issues, leading him to investigate further.
+  </p>
+  <p>
+    The author describes how the J-Link Compact would often fail to be recognized by the host computer, or would disconnect unexpectedly during debugging sessions. This behavior was inconsistent, working sometimes and failing at other times, even with the same hardware setup. He tried different cables, different computers, and different operating systems (Windows, macOS, and Linux) to isolate the problem.
+  </p>
+  <p>
+    His investigation led him to discover that the issue was related to the power delivery (PD) negotiation between the J-Link Compact and the USB-C host. The J-Link Compact seemed to have trouble properly negotiating power delivery with certain USB-C ports, especially those that aggressively implement the USB-C Power Delivery standard. This negotiation failure resulted in the debugger either not being recognized at all, or disconnecting during operation.
+  </p>
+  <p>
+    The author found that using a simple USB-C to USB-A adapter, or a USB-C hub that did not actively implement power delivery, resolved the issue. This workaround suggested that the problem lay specifically with the USB-C PD implementation of the J-Link Compact. He also tested other USB-C devices to rule out a general issue with his computer's USB-C ports.
+  </p>
+  <p>
+    He concludes that the J-Link Compact has a flawed USB-C implementation that makes it unreliable with many modern USB-C ports. He suggests that Segger, the manufacturer of the J-Link, should address this issue with a firmware update or a hardware revision to improve the debugger's USB-C power delivery negotiation.
+  </p>
+  <p>
+    The article is essentially a detailed account of a debugging process, where the author meticulously isolates and identifies the root cause of a hardware problem. He emphasizes the importance of systematic testing and the challenges of debugging issues related to USB-C power delivery. The author hopes that by sharing his experience, he can help other users encountering similar problems with the J-Link Compact, and also bring the issue to the attention of Segger for a potential fix. He also highlights the general complexities introduced by USB-C and power delivery, making hardware debugging more challenging.
+  </p>
+
+  <h3>Key Points:</h3>
+  <ul>
+    <li>The author experienced connectivity issues with a J-Link Compact debugger using USB-C.</li>
+    <li>The debugger would frequently fail to be recognized or disconnect during use.</li>
+    <li>The issue was traced to problems with USB-C Power Delivery (PD) negotiation.</li>
+    <li>The J-Link Compact struggled to negotiate power with certain USB-C ports, especially on laptops.</li>
+    <li>Using a USB-C to USB-A adapter or a non-PD USB-C hub resolved the issue.</li>
+    <li>The author believes the J-Link Compact has a flawed USB-C implementation.</li>
+    <li>He suggests Segger should address the issue with a firmware update or hardware revision.</li>
+    <li>The article highlights the challenges of debugging hardware issues related to USB-C power delivery.</li>
+  </ul>
+</div>
+</div>
+</article>

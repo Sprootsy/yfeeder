@@ -1,0 +1,29 @@
+<article>
+    <h2>The QMA Singularity</h2>
+    <div>
+<div>
+<p>This is a blog post by Scott Aaronson discussing the complexity class P/poly (P/log*), which consists of problems solvable by polynomial-size circuits (or, equivalently, Turing machines with polynomial advice). The post delves into why this complexity class is considered important, despite not being a "natural" class in the same way as P or NP. One key reason for the significance of P/poly is its connection to the question of whether NP is a subset of P/poly. If NP were a subset of P/poly, it would have major implications for cryptography, specifically breaking essentially all public-key cryptography. The post explains that breaking public-key cryptography would mean the ability to efficiently solve problems like factoring large numbers or finding discrete logarithms, problems assumed to be hard and upon which the security of cryptographic systems relies.</p>
+
+<p>Aaronson elaborates on the concept of non-uniform computation, which is a central feature of P/poly. While standard Turing machines represent uniform computation (a single algorithm solves all instances of a problem), P/poly allows different algorithms (circuits) for different input sizes. This makes it a more powerful class than P. The post then touches upon the debate around whether proving NP ⊆ P/poly would be considered a major breakthrough. While it might not immediately lead to practical algorithms for solving NP-complete problems, it would be a significant theoretical advance and would likely offer new insights into the structure of NP.</p>
+
+<p>The blog post also discusses the difficulty of proving lower bounds in complexity theory. Proving that NP is not a subset of P/poly is considered a major open problem. One reason is the phenomenon of "natural proofs," formalized by Razborov and Rudich. These proofs, which have been the basis for most lower bound arguments, are unable to separate NP from P/poly. A natural proof argues that a problem in NP requires large circuits by exhibiting a property that is easy to check, holds for the function to be computed, and also holds for many random functions. However, P/poly circuits can simulate random functions, thus circumventing the natural proof barrier.</p>
+
+<p>The post explores the possibility of proving NP ⊆ P/poly using diagonalization arguments.  It also briefly mentions the notion of average-case complexity and how NP problems might be hard on average, even if they are solvable in polynomial time in the worst case.  The author also considers the implications of NP ⊆ P/poly for Levin search and other related concepts in computational complexity.</p>
+
+<p>Finally, the post concludes by reflecting on the question of what would happen if P=NP.  Aaronson suggests that while the immediate consequences might not be as dramatic as some envision, it would force a major re-evaluation of our understanding of computation and complexity.</p>
+
+<h2>Key Points:</h2>
+<ul>
+<li>P/poly is the complexity class of problems solvable by polynomial-size circuits.</li>
+<li>P/poly is important because if NP ⊆ P/poly, it would break almost all public-key cryptography.</li>
+<li>P/poly allows non-uniform computation (different algorithms for different input sizes).</li>
+<li>Proving NP ⊆ P/poly, while not necessarily yielding practical algorithms, would be a major theoretical advance.</li>
+<li>Proving NP ⊈ P/poly is a major open problem due to the limitations of "natural proofs."</li>
+<li>Natural proofs can't separate NP from P/poly because P/poly can simulate random functions.</li>
+<li>The post discusses potential avenues for proving NP ⊆ P/poly, including diagonalization.</li>
+<li>The implications of NP ⊆ P/poly for Levin search and average-case complexity are considered.</li>
+<li>The post contemplates the ramifications of P=NP, suggesting a significant shift in our understanding of computation.</li>
+</ul>
+</div>
+</div>
+</article>
