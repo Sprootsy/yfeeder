@@ -1,0 +1,42 @@
+<article>
+    <h2>Testing “Exotic” P2P VPN</h2>
+    <div>
+<div>
+<h2>Summary:</h2>
+<p>The article discusses the author's journey in setting up a resilient and performant mesh VPN using several technologies to overcome the limitations of traditional VPN solutions. The primary motivation was to improve network performance and reliability compared to a standard OpenVPN setup. The author starts by outlining the shortcomings of a single OpenVPN server, such as a single point of failure, limited bandwidth, and the overhead of TCP-over-TCP when using VPNs for connections that already use TCP.
+</p>
+<p>
+To address these issues, the author explored alternatives like WireGuard, which offers better performance and lower overhead than OpenVPN due to its UDP-based protocol and more modern cryptography. The core of the solution involves creating a fully meshed network where each node (server) is directly connected to every other node. This provides redundancy, as traffic can be routed through alternative paths if one link fails.
+</p>
+<p>
+The implementation details cover several key components.  WireGuard is used as the VPN protocol for establishing secure tunnels between nodes.  BIRD internet routing daemon is used to handle dynamic routing within the mesh network, ensuring that traffic is efficiently routed and that routes are automatically updated when nodes become unavailable.  Additionally, the author uses keepalived for automatic failover of public IP addresses between nodes in case of server failure.  This ensures high availability of the VPN endpoints.
+</p>
+<p>
+The setup involves configuring each server with WireGuard interfaces, assigning them private IP addresses within a common subnet, and configuring BIRD to advertise these routes to other nodes in the mesh.  Keepalived monitors the health of each server and automatically moves the public IP to a healthy server if a failure is detected.
+</p>
+<p>
+The author also discusses the challenges of dealing with dynamic IP addresses on some of the servers.  To solve this, they implemented a dynamic DNS (DDNS) system that automatically updates the DNS records for each server whenever its IP address changes.  This ensures that other nodes can always reach the server, even if its IP address is not static.
+</p>
+<p>
+Regarding security, the author emphasizes the importance of properly configuring firewalls on each server to prevent unauthorized access.  They also note the need to regularly update the software on all nodes to patch security vulnerabilities.
+</p>
+<p>
+The benefits of this setup include improved performance due to the use of WireGuard and the ability to route traffic through the most efficient path.  It provides high availability because of the meshed network topology and the use of keepalived for automatic failover.  The system is also self-healing, as BIRD automatically adjusts routes when nodes fail or recover.
+</p>
+<p>
+Finally, the author reflects on the complexity of the setup and acknowledges that it may be overkill for some users.  However, for those who require high performance, reliability, and redundancy, a mesh VPN can be a valuable solution.
+</p>
+<h2>Key Points:</h2>
+<ul>
+<li>The author created a mesh VPN to improve performance and reliability over a single OpenVPN server.</li>
+<li>WireGuard was chosen as the VPN protocol due to its speed and efficiency.</li>
+<li>The network is fully meshed, meaning each server is directly connected to every other server for redundancy.</li>
+<li>BIRD is used for dynamic routing, automatically adjusting routes based on network conditions.</li>
+<li>Keepalived provides automatic failover of public IP addresses in case of server failure.</li>
+<li>A dynamic DNS (DDNS) system is used to handle servers with dynamic IP addresses.</li>
+<li>Firewall configuration and regular software updates are essential for security.</li>
+<li>The mesh VPN provides improved performance, high availability, and self-healing capabilities.</li>
+</ul>
+</div>
+</div>
+</article>
