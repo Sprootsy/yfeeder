@@ -1,0 +1,44 @@
+<article>
+    <h2>How to create an OS from scratch</h2>
+    <div>
+<div>
+  <h2>Summary:</h2>
+  <p>
+    The os-tutorial project, found on GitHub under the user cfenollosa, is a comprehensive guide to creating a simple operating system from scratch. It's designed to be educational and accessible, walking the reader through the fundamental concepts and practical implementation details necessary to build a basic OS. The tutorial covers a range of topics, starting from the very low-level aspects of booting a computer to more advanced features like memory management, interrupt handling, and basic file system design.
+  </p>
+  <p>
+    The tutorial starts with setting up a development environment, including installing necessary tools like a cross-compiler (GCC), a linker, and an emulator (QEMU or Bochs). The early stages focus on the boot process.  It explains how a computer starts up, the role of the BIOS/UEFI, and how to load a small program into memory. It delves into assembly language (typically x86 assembly), as this is essential for interacting directly with the hardware during the boot sequence.
+  </p>
+  <p>
+    As the tutorial progresses, it introduces concepts like protected mode, which allows for more advanced memory management and protection mechanisms.  The Global Descriptor Table (GDT) and Interrupt Descriptor Table (IDT) are explained, which are crucial for managing memory segments and handling hardware interrupts, respectively. Interrupt handling is a key part of the OS, which allows the OS to respond to events such as keyboard input or timer ticks.
+  </p>
+  <p>
+    Memory management is another core topic. The tutorial typically covers basic techniques like physical memory allocation and virtual memory. It might demonstrate how to implement a simple memory allocator to manage available RAM.
+  </p>
+  <p>
+    Furthermore, the tutorial introduces the concept of a kernel, the core of the OS. It explains how to transition from the bootloader to the kernel, initializing the kernel, and implementing basic system calls.
+  </p>
+  <p>
+   The later sections might touch upon simple device drivers, allowing the OS to interact with hardware components. Topics such as implementing a basic console output (printing characters to the screen) are covered.  Some tutorials might also include implementing a very basic file system.
+  </p>
+  <p>
+    The tutorial emphasizes a hands-on approach, encouraging the reader to write code and experiment with the OS as it's being built. It generally provides code examples and detailed explanations of each step, making it easier to understand the underlying concepts. The goal is to provide a solid foundation in OS development principles, enabling the reader to build upon this knowledge and explore more advanced topics.
+  </p>
+
+  <h2>Key Points:</h2>
+  <ul>
+    <li><b>Building an OS from Scratch:</b> The tutorial guides users through the process of creating a simple operating system, starting from the bootloader.</li>
+    <li><b>Development Environment Setup:</b>  It covers setting up the necessary tools, including a cross-compiler, linker, and emulator.</li>
+    <li><b>Boot Process:</b> Explains the boot sequence, BIOS/UEFI, and loading a program into memory.</li>
+    <li><b>Assembly Language:</b> Uses assembly language (x86) for low-level hardware interaction.</li>
+    <li><b>Protected Mode:</b> Introduces protected mode for advanced memory management.</li>
+    <li><b>GDT and IDT:</b> Explains the Global Descriptor Table (GDT) and Interrupt Descriptor Table (IDT).</li>
+    <li><b>Interrupt Handling:</b> Covers handling hardware interrupts, enabling the OS to respond to events.</li>
+    <li><b>Memory Management:</b> Demonstrates basic memory management techniques like physical memory allocation.</li>
+    <li><b>Kernel Implementation:</b> Explains the transition to the kernel and implementing basic system calls.</li>
+    <li><b>Device Drivers:</b> Touches upon simple device drivers for interacting with hardware.</li>
+    <li><b>Hands-on Approach:</b> Emphasizes writing code and experimenting with the OS.</li>
+  </ul>
+</div>
+</div>
+</article>
