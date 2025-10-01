@@ -1,0 +1,33 @@
+<article>
+    <h2>Introduction to Multi-Armed Bandits (2019)</h2>
+    <div>
+<div>
+  <h2>Summary of arXiv:1904.07272</h2>
+  <p>This article, titled "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding," introduces a new language representation model called BERT (Bidirectional Encoder Representations from Transformers). BERT is designed to pre-train deep bidirectional representations from unlabeled text by jointly conditioning on both left and right context in all layers. As a result, the pre-trained BERT model can be fine-tuned with just one additional output layer to create state-of-the-art models for a wide range of tasks, such as question answering, natural language inference, and sentiment analysis, without substantial task-specific architecture modifications.</p>
+
+  <p>The paper highlights the limitations of previous language models which were either unidirectional or shallowly bidirectional. Unidirectional models only use either the left or the right context, which is suboptimal for downstream tasks requiring a deep understanding of the text. While some models attempted to combine left-to-right and right-to-left training, they were still shallowly bidirectional because they didn't allow for bidirectional conditioning at each layer. BERT addresses these limitations by using a "masked language model" (MLM) pre-training objective. In MLM, some tokens in the input are randomly masked, and the model's objective is to predict the original vocabulary id of the masked word based on its context. This enables the model to learn a true bidirectional representation.</p>
+
+  <p>In addition to MLM, BERT is also pre-trained on a "next sentence prediction" (NSP) task. In NSP, the model receives pairs of sentences as input and learns to predict whether the second sentence in the pair is the subsequent sentence in the original document. This task helps BERT understand sentence relationships, which is important for tasks like question answering and natural language inference.</p>
+
+  <p>The authors pre-trained two BERT models: BERT<sub>BASE</sub> and BERT<sub>LARGE</sub>. BERT<sub>BASE</sub> has 12 layers (Transformer blocks), 12 attention heads, and 110 million parameters. BERT<sub>LARGE</sub> has 24 layers, 16 attention heads, and 340 million parameters. The models were pre-trained on two large corpora: the BooksCorpus and English Wikipedia.</p>
+
+  <p>The paper presents experimental results on a variety of NLP tasks, including the GLUE benchmark, SQuAD question answering dataset, and SWAG (Situations With Adversarial Generations) dataset. BERT achieves state-of-the-art results on all of these tasks, significantly outperforming previous models. For example, on the GLUE benchmark, BERT improves upon the state of the art by 7.6% absolute accuracy. On the SQuAD v1.1 question answering task, BERT achieves 93.2% F1 score, surpassing human performance.</p>
+
+  <p>The authors also conduct ablation studies to analyze the importance of different components of BERT. They find that the bidirectional training and the NSP task are crucial for achieving high performance. Removing either of these components significantly degrades the model's performance. The depth of the model is also important, with the larger BERT model consistently outperforming the smaller one.</p>
+
+  <p>The paper concludes that BERT represents a significant advance in language representation learning. The model's ability to learn deep bidirectional representations from unlabeled text, combined with its ease of fine-tuning for a wide range of downstream tasks, makes it a valuable tool for NLP research and applications. The success of BERT has led to a surge of research on Transformer-based language models and has influenced the development of many subsequent models.</p>
+
+  <h2>Key Points</h2>
+  <ul>
+    <li>Introduces BERT (Bidirectional Encoder Representations from Transformers), a new language representation model.</li>
+    <li>BERT pre-trains deep bidirectional representations from unlabeled text by jointly conditioning on both left and right context.</li>
+    <li>Uses a "masked language model" (MLM) objective, where some tokens are masked and predicted, to enable bidirectional training.</li>
+    <li>Also pre-trained on a "next sentence prediction" (NSP) task to understand sentence relationships.</li>
+    <li>Two pre-trained models: BERT<sub>BASE</sub> (12 layers, 110M parameters) and BERT<sub>LARGE</sub> (24 layers, 340M parameters).</li>
+    <li>Achieves state-of-the-art results on GLUE, SQuAD, and SWAG datasets.</li>
+    <li>Bidirectional training and NSP task are crucial for high performance.</li>
+    <li>BERT's success has significantly influenced subsequent research on Transformer-based language models.</li>
+  </ul>
+</div>
+</div>
+</article>

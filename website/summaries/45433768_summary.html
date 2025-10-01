@@ -1,0 +1,44 @@
+<article>
+    <h2>CDC File Transfer</h2>
+    <div>
+<div>
+  <p>
+    The article describes the CDC File Transfer, a tool developed by Google for efficient and reliable file synchronization between a source and a destination. It leverages Change Data Capture (CDC) principles to minimize data transfer by only copying the portions of files that have changed since the last synchronization. This approach is particularly beneficial for large files or datasets where modifications are infrequent, reducing network bandwidth usage and transfer times.
+  </p>
+  <p>
+    The CDC File Transfer tool implements a rolling checksum algorithm to identify changed blocks within files. The source file is divided into blocks, and checksums are calculated for each block. These checksums are then compared against checksums calculated for the corresponding blocks in the destination file. Only blocks with differing checksums are transferred from the source to the destination.
+  </p>
+  <p>
+    Key features of the CDC File Transfer tool include:
+  </p>
+  <ul>
+    <li><b>Change Data Capture (CDC):</b> Only transfers changed data blocks, minimizing bandwidth and transfer time.</li>
+    <li><b>Rolling Checksum Algorithm:</b> Efficiently identifies changed blocks within files using checksum comparisons.</li>
+    <li><b>Resumability:</b> Supports resuming interrupted transfers, ensuring that synchronization can continue from where it left off without restarting from the beginning.</li>
+    <li><b>Data Integrity:</b> Uses checksums to verify data integrity during and after the transfer process, ensuring that the destination file is an accurate reflection of the source file.</li>
+    <li><b>Configurability:</b> Provides various configuration options to fine-tune the transfer process, such as block size, checksum algorithm, and number of parallel transfer threads.</li>
+    <li><b>Command-Line Interface (CLI):</b> Offers a command-line interface for easy integration into scripts and automated workflows.</li>
+    <li><b>Monitoring and Logging:</b> Provides detailed logs and monitoring information about the transfer process, enabling users to track progress and troubleshoot issues.</li>
+  </ul>
+  <p>
+    The article also mentions that the CDC File Transfer tool is designed to be robust and handle various error conditions, such as network interruptions and file system errors. It includes mechanisms for error detection, retry, and recovery to ensure data consistency and reliability.
+  </p>
+  <p>
+    Overall, the CDC File Transfer tool is presented as a valuable solution for efficient and reliable file synchronization, especially in scenarios involving large files or datasets and limited network bandwidth. By leveraging CDC principles and incorporating features like resumability and data integrity verification, it offers a robust and optimized approach to file transfer.
+  </p>
+
+  <h2>Key Points:</h2>
+  <ul>
+    <li>CDC File Transfer is a tool for efficient file synchronization.</li>
+    <li>It uses Change Data Capture (CDC) to only transfer changed blocks.</li>
+    <li>A rolling checksum algorithm identifies changed blocks.</li>
+    <li>Supports resumable transfers.</li>
+    <li>Ensures data integrity through checksum verification.</li>
+    <li>Offers configurability for block size, checksum algorithm, etc.</li>
+    <li>Provides a command-line interface (CLI).</li>
+    <li>Includes monitoring and logging capabilities.</li>
+    <li>Designed to be robust and handle error conditions.</li>
+  </ul>
+</div>
+</div>
+</article>

@@ -1,0 +1,21 @@
+<article>
+    <h2>Diff Algorithms</h2>
+    <div>
+<div>
+  <p>This article is a technical document describing an algorithm for efficiently finding the differences between two lists (or sequences) of items. The algorithm aims to identify insertions, deletions, and moves required to transform one list into the other, focusing on minimizing the number of operations needed. It employs a combination of techniques including hashing, longest common subsequence (LCS) computation, and refinement strategies to handle various difference scenarios effectively. The article details the algorithm's steps, discusses its complexity, and highlights optimization strategies such as pre-hashing and early exit conditions to improve performance in practical applications. It also makes comparisons to traditional diff algorithms, such as those used in text comparison tools, and highlights its advantages in the context of collections, which are expected to have many common members.</p>
+
+  <p><strong>Key Points:</strong></p>
+  <ul>
+    <li>The algorithm focuses on efficiently finding the differences (insertions, deletions, moves) between two lists of items.</li>
+    <li>It aims to minimize the number of operations needed to transform one list into the other.</li>
+    <li>Hashing is used to quickly identify common elements between the lists. This involves calculating a hash for each element in both the source and target lists.</li>
+    <li>The longest common subsequence (LCS) is computed to determine the longest sequence of elements that appear in both lists in the same order.</li>
+    <li>The algorithm then refines the initial diff by merging simple insertions and deletions. This step helps create a more compact and readable diff.</li>
+    <li>Move detection is implemented to recognize when an item has simply been moved from one location to another, rather than being deleted and re-inserted.</li>
+    <li>Performance optimizations are included, such as pre-hashing (computing hashes once and reusing them) and early exit conditions (stopping early if the lists are identical or empty).</li>
+    <li>The article claims the algorithm is particularly well-suited for collections where many members are common to both lists.</li>
+    <li>The algorithm's complexity is discussed, taking into account the hashing and LCS computation steps.</li>
+  </ul>
+</div>
+</div>
+</article>

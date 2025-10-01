@@ -1,0 +1,45 @@
+<article>
+    <h2>Mind the encryptionroot: How to save your data when ZFS loses its mind</h2>
+    <div>
+ <div>
+  <p>
+   This article discusses a scenario where a ZFS pool becomes unbootable due to corruption in the pool's configuration data, specifically the encryption root. The author recounts their experience with a ZFS pool that failed to import after a server reboot, displaying errors related to encryption root problems.
+  </p>
+  <p>
+   The author explains that ZFS stores configuration data, including encryption keys and settings, within the pool itself. This allows for easy management and portability, but it also means that if this metadata becomes corrupted, the entire pool can become inaccessible. In this case, the encryption root, which is crucial for unlocking encrypted datasets, was damaged.
+  </p>
+  <p>
+   The article then details the steps taken to recover the ZFS pool. The recovery process involves using ZFS utilities to examine the pool's metadata and attempt to repair the corrupted encryption root. This involves utilizing tools like `zdb` (ZFS Debugger) to analyze the ZFS pool and potentially rewrite corrupted data.
+  </p>
+  <p>
+   The author emphasizes the importance of backups and regular ZFS scrubs to prevent data loss and ensure pool integrity. They also advise caution when dealing with corrupted ZFS pools, as incorrect actions can exacerbate the problem and lead to permanent data loss.
+  </p>
+  <p>
+   The article serves as a cautionary tale about the potential for ZFS pool corruption and provides a practical example of how to troubleshoot and recover a ZFS pool with encryption root issues.
+  </p>
+  <p>
+   <b>Key Points:</b>
+  </p>
+  <ul>
+   <li>
+    ZFS pools can become unbootable due to corruption in the pool's configuration data, including the encryption root.
+   </li>
+   <li>
+    The encryption root is essential for unlocking encrypted datasets within the ZFS pool.
+   </li>
+   <li>
+    Corruption in the encryption root can prevent the ZFS pool from being imported.
+   </li>
+   <li>
+    Tools like `zdb` can be used to analyze and potentially repair corrupted ZFS pools.
+   </li>
+   <li>
+    Regular ZFS scrubs and backups are crucial for preventing data loss and ensuring pool integrity.
+   </li>
+   <li>
+    Recovering a corrupted ZFS pool can be complex and requires caution to avoid further data loss.
+   </li>
+  </ul>
+ </div>
+ </div>
+</article>
