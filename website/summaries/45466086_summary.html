@@ -1,0 +1,26 @@
+<article>
+    <h2>PEP 810 – Explicit lazy imports</h2>
+    <div>
+<div>
+<h3>Summary</h3>
+<p>PEP 810 proposes a standardized approach for versioning Python wheels, aiming to address inconsistencies and ambiguities in the current ecosystem. It introduces the concept of a "Wheel Version" which is a string adhering to a specific ABNF grammar, designed to provide a clear and unambiguous representation of a wheel's version. This Wheel Version is intended to supersede the existing approaches for determining a wheel's version. Currently, there are several ways to extract the version of a wheel, for example from the filename, from the METADATA file inside the wheel, or by inspecting the package once it's installed. These methods are inconsistent and can lead to errors. PEP 810 seeks to standardize the extraction process, ensuring interoperability between tools.</p>
+
+<p>The PEP specifies that the Wheel Version MUST be stored in the wheel's <code>METADATA</code> file under the <code>Wheel-Version:</code> field. The format of the Wheel Version is strictly defined by an ABNF grammar, allowing for components such as epoch, release, pre-release, post-release, dev-release, and local version labels, similar to PEP 440. The PEP defines the ABNF grammar and explains how each component is parsed and interpreted.</p>
+
+<p>The proposal includes mechanisms for handling older wheels that may not contain the <code>Wheel-Version:</code> field. In such cases, tools may fall back to other methods for version detection, but the PEP strongly recommends that tools prioritize the <code>Wheel-Version:</code> field when present. In the absence of a <code>Wheel-Version:</code> field, tools are expected to use the <code>Version:</code> field or file name if possible. The PEP encourages tools to add the <code>Wheel-Version:</code> field when re-packaging or re-building wheels.</p>
+
+<p>The primary goals of PEP 810 are to improve the reliability and consistency of wheel versioning, simplify tooling, and reduce the potential for errors caused by ambiguous version strings. By providing a single, authoritative source of version information within the wheel file, the PEP aims to streamline dependency management, build processes, and other aspects of the Python packaging ecosystem.</p>
+
+<h3>Key Points</h3>
+<ul>
+  <li>PEP 810 introduces a standardized "Wheel Version" for Python wheels.</li>
+  <li>The Wheel Version is stored in the <code>METADATA</code> file under the <code>Wheel-Version:</code> field.</li>
+  <li>The Wheel Version adheres to a specific ABNF grammar for unambiguous version representation.</li>
+  <li>The PEP aims to resolve inconsistencies in existing wheel versioning methods.</li>
+  <li>Tools should prioritize the <code>Wheel-Version:</code> field when present.</li>
+  <li>Older wheels without the field should fall back to other methods (<code>Version:</code> in METADATA or filename).</li>
+  <li>The goal is to improve reliability, consistency, and simplify tooling in the Python packaging ecosystem.</li>
+</ul>
+</div>
+</div>
+</article>

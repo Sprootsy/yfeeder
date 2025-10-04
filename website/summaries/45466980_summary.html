@@ -1,0 +1,25 @@
+<article>
+    <h2>WireGuard topologies for self-hosting at home</h2>
+    <div>
+<div>
+  <p>The article discusses different WireGuard VPN topologies suitable for self-hosting at home, focusing on secure and efficient remote access to home network resources. It outlines three main topologies: Road Warrior, Site-to-Site, and Hybrid, detailing their configurations, advantages, disadvantages, and use cases.</p>
+
+  <p>The <strong>Road Warrior</strong> topology is the most common, designed for individual remote access. A central server within the home network acts as a WireGuard peer, allowing remote devices (laptops, phones) to connect securely. This setup enables access to services running on the home network, such as Plex, file servers, or Home Assistant, as if the device were physically connected to the LAN. The Road Warrior configuration is relatively simple to set up, providing a secure tunnel for accessing internal resources from anywhere with an internet connection. However, it is primarily designed for single-user or small-group access and doesn't inherently facilitate network bridging between multiple locations.</p>
+
+  <p>The <strong>Site-to-Site</strong> topology focuses on connecting two or more networks securely. In this scenario, two or more WireGuard servers are set up, each within its own network. These servers then establish a persistent tunnel between them, effectively merging the networks into one logical network. This is useful for scenarios where you have multiple homes or offices that need to share resources seamlessly. Site-to-Site configurations require careful IP address planning to avoid conflicts and more complex routing configurations compared to the Road Warrior setup. The main advantage is the ability to access resources on either network without needing to manually connect each time, and it supports multiple users simultaneously.</p>
+
+  <p>The <strong>Hybrid</strong> topology combines aspects of both Road Warrior and Site-to-Site setups. This is useful for more complex scenarios where you need both individual remote access and network bridging. For example, a central server can act as a hub, connecting multiple remote clients (Road Warrior) and also bridging to another network (Site-to-Site). The Hybrid approach provides the most flexibility but also demands the most complex configuration, as it involves managing multiple peer connections and routing rules. It is suitable for users who require a comprehensive solution for both personal remote access and network integration across multiple locations.</p>
+
+  <p>The article emphasizes the importance of considering security implications, such as firewall rules and key management, when setting up any WireGuard topology. It also highlights the need for proper subnet planning to prevent IP address conflicts, especially in Site-to-Site and Hybrid scenarios. The choice of topology depends on the specific needs and complexity of the desired network setup.</p>
+
+  <h2>Key Points:</h2>
+  <ul>
+    <li><b>Road Warrior Topology:</b> Single server for individual remote access. Simple setup, ideal for personal use, but limited scalability for multiple networks.</li>
+    <li><b>Site-to-Site Topology:</b> Connects two or more networks. Requires more complex configuration but enables seamless resource sharing between locations.</li>
+    <li><b>Hybrid Topology:</b> Combines Road Warrior and Site-to-Site. Most flexible but also most complex, suitable for advanced users needing both individual access and network bridging.</li>
+    <li><b>Security Considerations:</b> Firewall rules, key management, and subnet planning are crucial for all topologies.</li>
+    <li><b>Topology Choice:</b> Depends on specific needs and complexity of the desired network setup.</li>
+  </ul>
+</div>
+</div>
+</article>
