@@ -1,0 +1,34 @@
+<article>
+    <h2>NSA and IETF: Can an attacker purchase standardization of weakened cryptography?</h2>
+    <div>
+ <div>
+   <h3>Summary</h3>
+   <p>
+     The article, written by Daniel J. Bernstein, discusses concerns regarding potential deliberate weakening of cryptographic standards by government agencies. It primarily focuses on the security of elliptic-curve cryptography and the possibility of backdoors being introduced through the selection of specific elliptic curves or parameters.
+   </p>
+   <p>
+     Bernstein argues that the process of selecting and standardizing elliptic curves is vulnerable to manipulation. He highlights that there are infinitely many possible elliptic curves, and only a small subset are considered suitable for cryptographic use. The selection process often involves government agencies like NIST (National Institute of Standards and Technology), which raises concerns about the potential for these agencies to choose curves with hidden weaknesses or backdoors that would allow them to decrypt communications.
+   </p>
+   <p>
+     The article points out that it's extremely difficult to prove that a given elliptic curve is free from hidden weaknesses. Even if a curve appears to be randomly generated, it's possible that it was constructed in a way that allows an attacker with knowledge of the curve's "genesis" to break the cryptography. Bernstein emphasizes the asymmetry of the situation: it's easy to create a backdoored curve, but exceedingly difficult to verify that a curve is safe.
+   </p>
+   <p>
+     Bernstein suggests that the best defense against this threat is to use a wide variety of different curves, chosen independently by different parties. By diversifying the curves used, the risk that a single backdoored curve will compromise a significant portion of cryptographic communications is reduced. He also recommends that the selection process be as transparent and auditable as possible, to increase confidence in the security of the curves being used.
+   </p>
+   <p>
+     The author also touches on the broader issue of trust in cryptographic standards and the institutions that create them. He suggests that constant vigilance and skepticism are necessary to ensure that cryptographic systems remain secure.
+   </p>
+   <h3>Key Points</h3>
+   <ul>
+     <li>Potential for government agencies to weaken cryptographic standards.</li>
+     <li>Focus on the security of elliptic-curve cryptography.</li>
+     <li>Possibility of backdoors in elliptic curves through manipulated selection.</li>
+     <li>Difficulty in proving the absence of hidden weaknesses in curves.</li>
+     <li>Asymmetry: Easy to create a backdoored curve, hard to verify safety.</li>
+     <li>Recommendation to use a variety of curves chosen independently.</li>
+     <li>Importance of transparency and auditability in curve selection.</li>
+     <li>Need for vigilance and skepticism regarding cryptographic standards.</li>
+   </ul>
+ </div>
+ </div>
+</article>
