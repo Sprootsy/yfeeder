@@ -1,0 +1,39 @@
+<article>
+    <h2>Doing Rails Wrong</h2>
+    <div>
+ <div>
+   <h3>Summary</h3>
+   <p>
+     The article "You're Doing Rails Wrong" discusses common mistakes and anti-patterns that Rails developers often fall into, leading to less maintainable, scalable, and efficient applications. It emphasizes that while Rails offers a lot of convenience and "magic," blindly relying on these features without understanding the underlying principles can result in poorly designed code. The article critiques approaches that overcomplicate models, neglect database optimization, misuse concerns, and misunderstand service objects, among other things. It champions a more deliberate and thoughtful approach to Rails development that prioritizes code clarity, testability, and separation of concerns.
+   </p>
+   <p>
+     The author highlights the problem of "fat models," where models become bloated with business logic, validations, and callbacks, making them difficult to understand and test. They advocate for pushing business logic into service objects or form objects to keep models focused on data persistence. The article also cautions against excessive use of callbacks, suggesting that they can make code harder to debug and reason about.
+   </p>
+   <p>
+     Database performance is another key area of focus. The author warns against N+1 queries and encourages developers to use eager loading and other optimization techniques to reduce database load. They also stress the importance of proper indexing and choosing appropriate data types for database columns.
+   </p>
+   <p>
+     The article criticizes the overuse or misuse of concerns. While concerns can be useful for sharing code between models, they can also lead to tight coupling and make it harder to understand the dependencies between different parts of the application. The author suggests alternative approaches, such as using POROs (Plain Old Ruby Objects) or service objects, to achieve code reuse without the drawbacks of concerns.
+   </p>
+   <p>
+     Service objects are presented as a way to encapsulate complex business logic that doesn't naturally belong in models or controllers. The author explains that service objects can improve code organization, testability, and reusability. They provide examples of how to use service objects to handle tasks such as processing payments or generating reports.
+   </p>
+   <p>
+     The article also touches on the importance of writing good tests. The author emphasizes that tests should be clear, concise, and focused on verifying specific behaviors. They suggest using techniques such as mocking and stubbing to isolate units of code and make tests more reliable.
+   </p>
+   <p>
+     Finally, the article advocates for continuous learning and improvement. The author encourages developers to stay up-to-date with the latest Rails best practices and to always be looking for ways to improve their code.
+   </p>
+   <h3>Key Points</h3>
+   <ul>
+     <li><b>Avoid Fat Models:</b> Keep models focused on data persistence and move business logic to service objects or form objects.</li>
+     <li><b>Minimize Callbacks:</b> Use callbacks judiciously, as they can make code harder to debug and understand.</li>
+     <li><b>Optimize Database Queries:</b> Prevent N+1 queries with eager loading and use proper indexing.</li>
+     <li><b>Use Concerns Carefully:</b> Consider POROs or service objects as alternatives to concerns for code reuse.</li>
+     <li><b>Employ Service Objects:</b> Encapsulate complex business logic in service objects to improve organization and testability.</li>
+     <li><b>Write Good Tests:</b> Focus on clear, concise tests that verify specific behaviors.</li>
+     <li><b>Continuous Learning:</b> Stay updated on Rails best practices and seek continuous improvement.</li>
+   </ul>
+ </div>
+ </div>
+</article>

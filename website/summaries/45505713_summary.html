@@ -1,0 +1,45 @@
+<article>
+    <h2>Building a Browser for Reverse Engineers</h2>
+    <div>
+<div>
+<h3>Summary</h3>
+<p>
+The article is a comprehensive guide to reverse engineering web browsers, focusing on understanding their internal workings and security mechanisms. It begins by emphasizing the complexity of modern browsers, which function as virtual machines executing code from untrusted sources, making them prime targets for security vulnerabilities. The author then outlines a practical approach to reverse engineering, starting with setting up a suitable environment (Linux with debugging tools), choosing a target (in this case, Firefox), and understanding the build system.
+</p>
+<p>
+A significant portion of the article is dedicated to explaining the Firefox build process, detailing the use of build scripts written in Python and JavaScript, and how the `mach` command orchestrates the build. It covers different build types (optimized, debug), compiler options, and the importance of debug symbols for effective reverse engineering. The author provides guidance on building Firefox from source, including necessary dependencies and configurations.
+</p>
+<p>
+The article then delves into debugging techniques, introducing tools like GDB (GNU Debugger) and LLDB (Low Level Debugger). It explains how to attach a debugger to a running Firefox process, set breakpoints, and inspect memory and registers. The author also discusses the use of Firefox's internal debugging features, such as the JavaScript debugger and logging mechanisms. He emphasizes the importance of understanding the browser's multi-process architecture, particularly the separation of the browser UI process from the content processes that handle web page rendering.
+</p>
+<p>
+The process of finding specific code sections is discussed using examples of identifying where certain JavaScript functions are executed. Tools such as `grep`, `objdump`, and `nm` are presented as useful aids in locating code of interest within the massive codebase. The author highlights the use of the symbol table to map function names to memory addresses, making it easier to follow the program's execution flow.
+</p>
+<p>
+Furthermore, the article dives into specific security features of Firefox, such as the sandboxing mechanism that isolates content processes to limit the damage caused by potential vulnerabilities. It explains how the sandbox is implemented using system calls and process isolation, and how reverse engineering can help understand the effectiveness of these security measures.
+</p>
+<p>
+The article also explores memory management within the browser, explaining how JavaScript objects are allocated and garbage collected. It touches upon techniques for identifying memory leaks and vulnerabilities related to memory corruption.
+</p>
+<p>
+Finally, the author emphasizes the ethical considerations of reverse engineering, stressing the importance of using this knowledge for defensive purposes and not for exploiting vulnerabilities. The article encourages readers to contribute to the security community by reporting any discovered vulnerabilities to the browser developers. It concludes by highlighting the continuous learning process involved in reverse engineering and the value of understanding how browsers work to improve web security.
+</p>
+
+<h3>Key points</h3>
+<ul>
+<li>Modern web browsers are complex virtual machines and prime targets for security vulnerabilities.</li>
+<li>Reverse engineering involves setting up a suitable environment, understanding the build system, and utilizing debugging tools.</li>
+<li>The Firefox build process is orchestrated by `mach` using Python and JavaScript build scripts.</li>
+<li>Debug symbols are crucial for effective reverse engineering.</li>
+<li>Debugging tools like GDB and LLDB allow attaching to running processes, setting breakpoints, and inspecting memory.</li>
+<li>Firefox uses a multi-process architecture, separating the UI process from content processes.</li>
+<li>Tools like `grep`, `objdump`, and `nm` aid in locating code sections within the codebase.</li>
+<li>The symbol table maps function names to memory addresses.</li>
+<li>Sandboxing isolates content processes to limit the impact of vulnerabilities.</li>
+<li>Memory management is critical for browser security, with techniques to identify leaks and corruption.</li>
+<li>Reverse engineering knowledge should be used defensively and ethically.</li>
+<li>Reporting vulnerabilities to developers contributes to web security.</li>
+</ul>
+</div>
+</div>
+</article>
