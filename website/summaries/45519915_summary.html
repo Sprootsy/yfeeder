@@ -1,0 +1,29 @@
+<article>
+    <h2>Svelte’s characteristics that likely contribute most to improved performance</h2>
+    <div>
+<div>
+<h3>Summary</h3>
+The article "Svelte is Fast" from CH Universiteit explores the performance characteristics of the Svelte JavaScript framework. It argues that Svelte distinguishes itself from other popular frameworks like React, Vue, and Angular by shifting the majority of its work to the compile-time, rather than the runtime.
+
+Traditional JavaScript frameworks operate by including a substantial amount of framework code in the browser. This runtime code is responsible for tasks such as managing the virtual DOM, tracking dependencies, and updating the actual DOM in response to data changes. The article points out that these runtime operations can introduce performance overhead, particularly in complex applications with frequent updates.
+
+Svelte, in contrast, works by compiling the application's code into highly optimized vanilla JavaScript during the build process. This means that the browser receives code that is already tailored to the specific components and data bindings of the application, without the need for a large framework library to interpret and manage updates at runtime. Svelte effectively eliminates the virtual DOM diffing process commonly used by React and Vue, resulting in faster and more efficient updates.
+
+The article emphasizes that Svelte's compile-time approach leads to smaller bundle sizes, faster initial load times, and improved runtime performance. By reducing the amount of JavaScript that needs to be downloaded, parsed, and executed in the browser, Svelte can contribute to a better user experience, especially on devices with limited processing power or slower network connections.
+
+Furthermore, the article may discuss how Svelte's reactivity system is implemented directly in the compiled code. Instead of relying on framework-level mechanisms for detecting changes, Svelte generates code that directly updates the DOM when relevant data changes. This fine-grained control over updates minimizes unnecessary re-renders and optimizes performance.
+
+In essence, the article presents a case for Svelte as a high-performance alternative to traditional JavaScript frameworks, attributing its speed and efficiency to its compile-time approach and the elimination of the virtual DOM.
+
+<h3>Key Points</h3>
+<ul>
+<li>Svelte shifts work to compile-time, unlike other frameworks that do more work at runtime.</li>
+<li>Traditional frameworks include substantial runtime code in the browser, managing the virtual DOM and updates.</li>
+<li>Svelte compiles code into optimized vanilla JavaScript during the build process.</li>
+<li>Svelte eliminates the virtual DOM diffing process.</li>
+<li>Svelte leads to smaller bundle sizes, faster initial load times, and improved runtime performance.</li>
+<li>Svelte's reactivity system is implemented directly in the compiled code.</li>
+</ul>
+</div>
+</div>
+</article>

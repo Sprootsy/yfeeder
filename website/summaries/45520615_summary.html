@@ -1,0 +1,31 @@
+<article>
+    <h2>Kurt Got Got</h2>
+    <div>
+<div>
+<p>The article is a blog post titled "Kurt Got Got" on fly.io's blog, focusing on a technical deep dive into debugging a tricky Go application deployment issue. The author, Kurt, recounts his experience troubleshooting a problem where a Go application, seemingly built correctly, failed to start properly within the Fly.io platform. The application would exhibit unexpected behavior and crash shortly after launch, despite working as expected in development environments.</p>
+
+<p>The debugging process involved a systematic approach, starting with examining the application's logs and Fly.io's monitoring tools. Initial investigations didn't reveal obvious errors. Kurt then explored the possibility of environment-specific issues, such as differences in environment variables or file system access, by creating a minimal reproduction case. He tried running the application locally within a Docker container mimicking the Fly.io environment and then remotely via `fly ssh console`. Still, it seemed to work everywhere except when run normally on Fly.io.</p>
+
+<p>After days of investigation, Kurt then suspected the issue was happening before main in the application startup process. That lead him to debug the application as it starts. To debug the Go application during startup, Kurt used `dlv` (Delve), the Go debugger, along with the `fly ssh console` command, and `gdb`. He attached the debugger to the running process remotely, by changing the entrypoint of the running application to a shell script that prepares the environment and launches `dlv`. Using breakpoints set early in the application's initialization phase, he identified that the crash occurred during the execution of `init()` functions. He stepped through the `init()` functions, meticulously examining the state of the application and the execution flow.</p>
+
+<p>Specifically, the `init()` function associated with the `orc` package was identified as the source of the problem. The `orc` package, related to ORC file handling, was attempting to perform some operations during initialization that caused a crash in the Fly.io environment. The issue arose because the application relied on certain implicit behaviors or assumptions during initialization that were not valid within the Fly.io runtime environment.</p>
+
+<p>Ultimately, the root cause was identified as a combination of factors. Firstly, the application's initialization logic was more complex and sensitive to the environment than initially anticipated. Secondly, the differences between the development and production environments (Fly.io) were subtle but significant enough to trigger the problematic behavior. And thirdly, an obscure error message that was not visible until using the debugger.</p>
+
+<p>The solution involved modifying the application's initialization logic to be more robust and explicitly handle the environment-specific conditions. The author modified the code to avoid running the faulty `init()` function call if running on Fly.io</p>
+
+<p>The article concludes by emphasizing the importance of thorough testing and debugging, especially when deploying applications to production environments. It highlights the value of using debugging tools like Delve (`dlv`) and GDB to gain deep insights into application behavior, particularly during startup or in the presence of environment-specific issues. It serves as a case study demonstrating how to effectively troubleshoot challenging deployment problems in Go applications, and to use the debugging tools effectively.</p>
+
+<h2>Key Points:</h2>
+<ul>
+<li>The article details the debugging process of a Go application failing to start correctly on Fly.io.</li>
+<li>Initial debugging attempts focusing on logs and environment variables were unsuccessful.</li>
+<li>The author employed remote debugging using Delve (`dlv`) via `fly ssh console` and GDB to inspect the application during startup.</li>
+<li>The root cause was traced to an `init()` function within the `orc` package that was causing a crash.</li>
+<li>The issue was related to environment-specific behavior during initialization.</li>
+<li>The solution involved modifying the application's initialization logic to be more robust and environment-aware.</li>
+<li>The article highlights the importance of thorough debugging in production environments and using debugging tools effectively.</li>
+</ul>
+</div>
+</div>
+</article>
