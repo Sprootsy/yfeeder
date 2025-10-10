@@ -1,0 +1,31 @@
+<article>
+    <h2>Show HN: Open source, logical multi-master PostgreSQL replication</h2>
+    <div>
+<div>
+<p>The article describes Spock, an open-source distributed SQL platform built on PostgreSQL. Spock is designed to provide high availability, scalability, and resilience for PostgreSQL deployments. It leverages PostgreSQL's logical replication capabilities, along with a custom consensus algorithm based on Raft, to manage distributed transactions and ensure data consistency across multiple nodes. Spock aims to simplify the deployment and management of distributed PostgreSQL clusters, offering features like automatic failover, load balancing, and online schema changes.</p>
+
+<p>Spock achieves high availability through a multi-node architecture where data is replicated across multiple nodes. If one node fails, another node automatically takes over, minimizing downtime. Scalability is addressed by allowing users to add more nodes to the cluster as data volume or query load increases. The system automatically redistributes data and load across the new nodes. Resilience is ensured by the Raft-based consensus algorithm, which guarantees that all nodes agree on the state of the data, even in the presence of network partitions or node failures.</p>
+
+<p>The platform includes a management console for monitoring and managing the cluster. This console provides insights into the health of the nodes, replication status, and overall performance. It also allows administrators to perform tasks such as adding or removing nodes, configuring replication settings, and performing backups. The Spock platform is designed to be compatible with existing PostgreSQL tools and applications, minimizing the need for application changes when migrating to a distributed environment.</p>
+
+<p>Key features highlighted include:</p>
+<ul>
+<li><b>Distributed Transactions:</b> Spock supports distributed transactions, allowing applications to perform atomic operations that span multiple nodes.</li>
+<li><b>Automatic Failover:</b> In the event of a node failure, Spock automatically promotes a replica to become the new primary, ensuring continuous operation.</li>
+<li><b>Scalability:</b> Spock can be scaled out by adding more nodes to the cluster, allowing it to handle increasing data volumes and query loads.</li>
+<li><b>Online Schema Changes:</b> Spock supports online schema changes, allowing users to modify the database schema without incurring downtime.</li>
+<li><b>PostgreSQL Compatibility:</b> Spock is designed to be compatible with existing PostgreSQL tools and applications.</li>
+<li><b>Raft-based Consensus:</b> Spock uses a Raft-based consensus algorithm to ensure data consistency and fault tolerance.</li>
+</ul>
+
+<p><b>Key Points:</b></p>
+<ul>
+<li>Spock is a distributed SQL platform built on PostgreSQL.</li>
+<li>It provides high availability, scalability, and resilience.</li>
+<li>It uses PostgreSQL's logical replication and a Raft-based consensus algorithm.</li>
+<li>It features automatic failover and online schema changes.</li>
+<li>It is compatible with existing PostgreSQL tools and applications.</li>
+</ul>
+</div>
+</div>
+</article>

@@ -1,0 +1,33 @@
+<article>
+    <h2>The Burrows-Wheeler Transform</h2>
+    <div>
+<div>
+  <p>The Burrows-Wheeler Transform (BWT) is a reversible data transformation technique primarily used for data compression. It rearranges a string of characters to make it more amenable to compression algorithms, by grouping together characters that tend to occur in similar contexts. Unlike compression algorithms, BWT doesn't compress the data itself; instead, it transforms it into a format that is easier to compress using other methods.</p>
+
+  <p><b>Transformation Process:</b></p>
+  <ol>
+    <li><b>Circular Rotations:</b> The BWT begins by generating all circular rotations of the input string. A circular rotation is created by moving the last character of the string to the beginning. This process is repeated until the original string is obtained. For example, the circular rotations of "BANANA" are "BANANA", "ANANAB", "NANABA", "ANABAN", "NABANA", and "ABANAN".</li>
+    <li><b>Lexicographical Sorting:</b> The rotations are then sorted lexicographically (i.e., alphabetically). Using the "BANANA" example, the sorted rotations would be "ABANAN", "ANABAN", "ANANAB", "BANANA", "NABANA", and "NANABA".</li>
+    <li><b>Last Column Extraction:</b> The BWT output is the last column of this sorted list of rotations. In our example, this would be "NNBAAA". This last column is referred to as the BWT of the original string.</li>
+    <li><b>Index Tracking:</b> In addition to the last column, the index of the original string in the sorted rotations must also be recorded. This index is crucial for reversing the transform. In the "BANANA" example, the original string "BANANA" is in the 4th position (index 3, since indexing starts from 0), so the index is 3.</li>
+  </ol>
+
+  <p><b>Reversal Process:</b></p>
+  <ol>
+    <li><b>First Column Recovery:</b> The first column of the sorted rotations can be derived from the last column (the BWT output) by sorting the characters in the last column alphabetically. In our example, the last column "NNBAAA" when sorted becomes "AAABNN".</li>
+    <li><b>Rank Computation:</b> Assign a rank to each character in both the first and last columns, indicating their position among identical characters. For instance, in "AAABNN", the first "A" has rank 0, the second has rank 1, and the third has rank 2. The same ranking is done for the last column "NNBAAA".</li>
+    <li><b>Last-to-First Mapping:</b> The ranks are used to map characters from the last column to the first column. For example, the first "N" in the last column (rank 0) corresponds to the first "N" in the first column (rank 0).</li>
+    <li><b>String Reconstruction:</b> Starting with the original string's index, traverse the first and last columns using the last-to-first mapping to reconstruct the original string in reverse order. In the "BANANA" example, we know the original string was at index 3 in the sorted rotations. We start with the character at index 3 in the last column ("A").  We then find the corresponding "A" in the first column using the ranks. This process is repeated, building the string in reverse until we return to the starting point.</li>
+  </ol>
+
+  <p><b>Key Points:</b></p>
+  <ul>
+    <li>The BWT is a reversible transformation, not a compression algorithm itself.</li>
+    <li>It rearranges a string to group similar characters together, improving the efficiency of subsequent compression.</li>
+    <li>The transformation involves circular rotations, lexicographical sorting, and extraction of the last column.</li>
+    <li>The reversal requires the BWT output (last column) and the index of the original string after sorting.</li>
+    <li>The reversal process involves recovering the first column, computing ranks, creating a last-to-first mapping, and reconstructing the original string.</li>
+  </ul>
+</div>
+</div>
+</article>

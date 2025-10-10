@@ -1,0 +1,35 @@
+<article>
+    <h2>Finding a VS Code Memory Leak</h2>
+    <div>
+<div>
+  <h3>Summary</h3>
+  <p>The article is a blog post detailing the author's investigation into a memory leak within Visual Studio Code (VS Code), specifically in the embedded terminal. The author, Bruce Dawson, meticulously outlines the steps taken to identify, isolate, and ultimately resolve the leak. The investigation begins with noticing increasing memory consumption in VS Code's renderer process over time, especially when using the integrated terminal. The initial clue comes from Task Manager, which reveals a steady increase in memory usage.
+</p>
+  <p>To diagnose the issue, the author uses various tools and techniques. He starts by analyzing heap snapshots taken at different times using Chrome DevTools. These snapshots help him compare memory allocations and identify the objects that are growing in number. The initial heap snapshots point to a large number of detached HTML elements, specifically &lt;div&gt; elements related to the terminal's rendering. However, it's not immediately clear why these elements are not being garbage collected.
+</p>
+  <p>Further investigation reveals that the detached &lt;div&gt; elements are being held onto by JavaScript objects within the terminal's code. The author uses Chrome DevTools' object allocation tracking to pinpoint the exact JavaScript code responsible for retaining these elements. By examining the allocation stacks, he discovers that the "xterm.js" library, used for terminal emulation, is creating and holding onto these detached elements.
+</p>
+  <p>The author then dives into the xterm.js code to understand how these detached elements are being created and retained. He identifies a specific code path where the terminal's rendering logic creates &lt;div&gt; elements for rendering characters and then detaches them from the DOM. The problem is that these detached elements are being stored in a cache for potential reuse, but the cache is not properly managed, leading to unbounded growth.
+</p>
+  <p>Specifically, the investigation highlights the `acquireCharAtlasCell` function within xterm.js, which is responsible for creating and reusing character atlas cells (the detached &lt;div&gt; elements). This function caches the elements, but there is no mechanism to limit the cache size or to release the cached elements when they are no longer needed. This leads to the accumulation of detached &lt;div&gt; elements in the cache, causing the memory leak.
+</p>
+  <p>To fix the leak, the author proposes a solution involving limiting the size of the character atlas cell cache. This prevents the unbounded growth of detached elements. The author notes that while an ideal solution might involve smarter caching or element recycling, limiting the cache size provides a practical and immediate fix.
+</p>
+  <p>The author submits a pull request to the xterm.js project with the proposed fix. The pull request limits the cache size, preventing the memory leak from occurring. The fix is accepted and merged into the xterm.js codebase.
+</p>
+  <p>Finally, the author confirms that the fix resolves the memory leak in VS Code. By monitoring memory usage after the fix is applied, he observes that the renderer process's memory consumption remains stable, even after prolonged use of the integrated terminal. The article concludes by emphasizing the importance of careful memory management, particularly when dealing with detached DOM elements and caching mechanisms in JavaScript applications.
+</p>
+
+  <h3>Key Points</h3>
+  <ul>
+    <li><b>Memory Leak in VS Code Terminal:</b> The article describes a memory leak found in VS Code's integrated terminal, leading to increasing memory consumption over time.</li>
+    <li><b>Detached DOM Elements:</b> The leak was caused by an accumulation of detached &lt;div&gt; HTML elements related to the terminal's rendering.</li>
+    <li><b>Chrome DevTools for Diagnosis:</b> The author used Chrome DevTools (heap snapshots and object allocation tracking) to identify the source of the leak.</li>
+    <li><b>xterm.js Library:</b> The xterm.js library, used for terminal emulation, was identified as the source of the problem.</li>
+    <li><b>Character Atlas Cell Cache:</b> The `acquireCharAtlasCell` function in xterm.js was caching detached &lt;div&gt; elements without a size limit.</li>
+    <li><b>Unbounded Cache Growth:</b> The lack of cache management led to an unbounded growth of detached elements, causing the memory leak.</li>
+    <li><b>Fix: Limiting Cache Size:</b> The solution involved limiting the size of the character atlas cell cache to prevent unbounded growth.</li>
+    <li><b>Pull Request and Resolution:</b> The author submitted a pull request to xterm.js with the fix, which was accepted and resolved the memory leak in VS Code.</li>
+  </ul>
+</div>
+</article>
