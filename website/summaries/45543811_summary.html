@@ -1,0 +1,31 @@
+<article>
+    <h2>How to save the world with ZFS and 12 USB sticks: 4th anniversary video (2011)</h2>
+    <div>
+<div>
+<h3>Summary</h3>
+The article, "How to Save the World with ZFS and 12 USB Sticks (4th Anniversary Video Re-Release Edition)," humorously explores the idea of using ZFS, a combined file system and logical volume manager, with a large number of USB sticks to create a resilient and theoretically "world-saving" data storage solution. The author recounts an experiment where they attempted to build a ZFS array using 12 USB sticks.
+
+The core concept revolves around ZFS's capabilities, particularly its data integrity features such as checksumming and redundancy through RAID-like configurations. By distributing data across multiple devices (in this case, USB sticks), ZFS can detect and correct errors, and in some configurations, even recover from the failure of one or more devices.
+
+The author initially presents the idea with a tongue-in-cheek tone, suggesting that backing up the internet archive to a ZFS array on USB sticks is a way to "save the world." However, the article quickly transitions into a more technical exploration of the practical challenges and limitations of such a setup.
+
+The experiment revealed several issues. The write speeds of USB sticks are often inconsistent and relatively slow compared to traditional hard drives or SSDs. This becomes a bottleneck when creating and maintaining a ZFS array. The reliability of USB sticks is also a concern, as they are not designed for the continuous read/write operations that a ZFS array demands. The author encountered errors and device failures during the experiment, highlighting the unsuitability of USB sticks for this purpose.
+
+Despite the impracticality, the author emphasizes the educational value of the experiment. It provides a hands-on understanding of ZFS concepts, such as RAID-Z configurations (RAID-Z1, RAID-Z2, RAID-Z3), which offer different levels of redundancy. The experiment also demonstrates the importance of choosing appropriate hardware for ZFS deployments, as the performance and reliability of the underlying storage directly impact the overall stability and effectiveness of the file system.
+
+The article concludes by acknowledging the limitations of using USB sticks for ZFS but reiterating the value of the learning experience. It serves as a reminder that while ZFS is a powerful tool for data management and protection, its effectiveness depends on a solid foundation of reliable hardware. The humorous approach makes complex concepts more accessible and memorable.
+<h3>Key Points</h3>
+<ul>
+<li>The article describes an experiment using ZFS with 12 USB sticks.</li>
+<li>ZFS's data integrity features (checksumming, redundancy) are highlighted.</li>
+<li>The author humorously suggests backing up the internet archive as a way to "save the world".</li>
+<li>Write speed and reliability of USB sticks are identified as major limitations.</li>
+<li>The experiment demonstrates practical challenges in using USB sticks for ZFS arrays.</li>
+<li>The article explains the concepts of RAID-Z configurations (RAID-Z1, RAID-Z2, RAID-Z3).</li>
+<li>The importance of choosing suitable hardware for ZFS deployments is emphasized.</li>
+<li>The experiment is presented as a valuable learning experience despite its impracticality.</li>
+<li>The article uses a humorous tone to make complex technical concepts more accessible.</li>
+</ul>
+</div>
+</div>
+</article>
