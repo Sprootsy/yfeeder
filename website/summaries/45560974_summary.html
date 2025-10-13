@@ -1,0 +1,25 @@
+<article>
+    <h2>Completing a BASIC language interpreter in 2025</h2>
+    <div>
+ <div>
+  <h3>Summary:</h3>
+  <p>The article describes a minimal chess engine called "ecs_basic_2," designed for educational purposes, demonstrating the core concepts of chess engine programming in a concise and understandable manner. It builds upon a previous version, "ecs_basic," improving its move generation and search capabilities while remaining relatively small (under 1500 lines of C code). The engine focuses on simplicity and clarity, prioritizing ease of understanding over raw performance or advanced features.</p>
+  <p>The engine uses a bitboard representation of the chess board, which is an efficient way to represent the positions of pieces. Each piece type (pawns, knights, bishops, rooks, queens, and kings) and color (white and black) has its own bitboard, a 64-bit integer where each bit corresponds to a square on the chessboard. A bit set to 1 indicates the presence of that piece on that square, and 0 indicates its absence. This allows for fast and parallel computations of piece movements using bitwise operations.</p>
+  <p>Move generation is a crucial part of the engine. The engine generates all legal moves for a given position. This involves calculating the possible moves for each piece type, taking into account the positions of other pieces and the rules of chess (e.g., pawn moves, knight moves, sliding piece moves, castling, en passant). The generated moves are then filtered to ensure that they are legal, meaning that they do not leave the king in check.</p>
+  <p>The engine uses a basic alpha-beta search algorithm to explore the game tree and find the best move. The alpha-beta algorithm is a pruning technique that reduces the number of nodes that need to be evaluated in the game tree, making the search more efficient. The search algorithm recursively explores the game tree to a certain depth, evaluating the position at the leaf nodes using an evaluation function. The evaluation function assigns a score to each position, indicating how favorable it is for white or black. The alpha-beta algorithm then propagates these scores back up the tree, selecting the move that leads to the best score.</p>
+  <p>The evaluation function is a relatively simple one, considering factors such as material balance (the difference in value between white's pieces and black's pieces), piece-square tables (which assign different values to pieces based on their position on the board), and other basic chess heuristics. The simplicity of the evaluation function contributes to the engine's overall clarity and ease of understanding.</p>
+  <p>The article also covers aspects like the user interface (UI) for interacting with the engine, which is typically a command-line interface or a simple graphical user interface (GUI). The UI allows the user to input moves, display the board, and control the engine's search parameters.</p>
+  <p>Overall, "ecs_basic_2" serves as a valuable resource for learning about chess engine programming, providing a clear and concise implementation of the fundamental algorithms and data structures involved.</p>
+  <h3>Key points:</h3>
+  <ul>
+   <li>Minimal chess engine (under 1500 lines of C code).</li>
+   <li>Designed for educational purposes, prioritizing clarity.</li>
+   <li>Uses bitboard representation for board state.</li>
+   <li>Implements move generation for all piece types.</li>
+   <li>Employs alpha-beta search algorithm for move selection.</li>
+   <li>Features a simple evaluation function based on material balance and piece-square tables.</li>
+   <li>Includes a basic user interface for interaction.</li>
+  </ul>
+ </div>
+ </div>
+</article>
