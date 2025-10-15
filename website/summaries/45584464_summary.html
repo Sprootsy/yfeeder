@@ -1,0 +1,37 @@
+<article>
+    <h2>Why Is SQLite Coded In C</h2>
+    <div>
+<div>
+<h3>Summary</h3>
+<p>The article on the SQLite website, titled "When To Use SQLite," outlines the use cases where SQLite is a suitable and advantageous choice for data storage and management. It positions SQLite as an embedded SQL database engine, contrasting it with client/server database management systems (DBMS) like PostgreSQL or MySQL. The core argument is that SQLite is often a better fit for applications that don't require the complexity and overhead of a separate database server.</p>
+
+<p>The article highlights several scenarios where SQLite excels. It emphasizes SQLite's suitability for embedded devices and applications, such as those found in IoT devices, mobile phones, game consoles, and other gadgets. Its small footprint and zero-configuration design make it ideal for resource-constrained environments. Because SQLite is file-based, it doesn't require installation or administration. The database is simply a file on the device's storage.</p>
+
+<p>SQLite is also presented as a good option for single-user desktop applications. If an application needs local data storage and doesn't require concurrent access from multiple users, SQLite provides a simple and reliable solution. It eliminates the need to set up and maintain a separate database server, reducing complexity and administrative overhead.</p>
+
+<p>Another use case is as a cache for larger databases. Applications can use SQLite to store frequently accessed data locally, improving performance and reducing the load on the main database server. This caching strategy is especially useful for applications that need to access data quickly, even when the network connection is slow or unreliable.</p>
+
+<p>Furthermore, SQLite is positioned as a useful tool for testing. Developers can use SQLite databases as test fixtures, creating isolated environments for running tests without affecting the production database. This allows for faster and more reliable testing, as developers don't have to worry about data corruption or interference from other processes.</p>
+
+<p>The article also briefly mentions the use of SQLite as an archival format. Because SQLite databases are self-contained and platform-independent, they can be used to store data for long-term preservation.</p>
+
+<p>The text also points out scenarios where SQLite might not be the best choice. Specifically, client/server database systems are generally more appropriate for applications that require high concurrency, need to manage large datasets, require tight access control, or need dedicated server resources.</p>
+
+<p>In summary, the article advocates for SQLite in situations where simplicity, portability, low overhead, and ease of use are paramount, while acknowledging the limitations of SQLite in more demanding, enterprise-level scenarios.</p>
+
+<h3>Key Points</h3>
+<ul>
+    <li><b>Embedded Database:</b> SQLite is an embedded SQL database engine, not a standalone server.</li>
+    <li><b>Zero Configuration:</b> Requires no separate server process, making it easy to set up and use.</li>
+    <li><b>Small Footprint:</b> Ideal for resource-constrained environments like embedded systems and mobile devices.</li>
+    <li><b>Single-User Applications:</b> Suitable for desktop applications needing local data storage without concurrency.</li>
+    <li><b>Caching:</b> Can be used as a disk-based cache for enterprise data.</li>
+    <li><b>Testing:</b> Useful for creating test databases.</li>
+    <li><b>Archival Format:</b> Suitable to be used as a file format for long-term data storage.</li>
+    <li><b>Not for High Concurrency:</b> Not designed for applications requiring high concurrent access.</li>
+    <li><b>Client/Server Alternatives:</b> Client/server DBMS (like PostgreSQL or MySQL) are better for high-volume and high-concurrency needs.</li>
+    <li><b>Simplicity and Portability:</b> SQLite excels where simplicity, portability, and low overhead are critical.</li>
+</ul>
+</div>
+</div>
+</article>
