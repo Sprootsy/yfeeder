@@ -1,0 +1,35 @@
+<article>
+    <h2>Windows 11 Cumulative Update 2025-10 breaks localhost applications</h2>
+    <div>
+<div>
+  <p>
+    The article discusses an issue where 'localhost' stopped working after installing the 2025-10 Cumulative Update. The user reports that they can no longer access web applications running on their local machine using 'localhost' in the browser. They tried using 127.0.0.1 as an alternative, which works, but they want to understand why 'localhost' stopped resolving correctly.
+  </p>
+  <p>
+    Several suggestions were offered in the discussion. One suggestion was to check the HOSTS file located at 'C:\Windows\System32\drivers\etc\hosts' to ensure that 'localhost' is correctly mapped to 127.0.0.1. Another suggestion involved checking the DNS Client service and restarting it to refresh DNS resolution. Also, clearing the DNS cache using 'ipconfig /flushdns' via the command prompt was proposed.
+  </p>
+  <p>
+    Another user pointed out that some VPNs or security software can interfere with localhost resolution. The advice was to temporarily disable such software to see if it resolves the issue. Additionally, checking firewall settings to ensure that connections to localhost are not being blocked was suggested.
+  </p>
+  <p>
+    Further suggestions included examining the application's configuration to verify that it's correctly bound to localhost and not a specific IP address. It was also proposed to check the browser's settings and extensions, as some extensions might interfere with local address resolution. Finally, someone recommended ensuring that there aren't any conflicting entries in the HOSTS file that could be overriding the default localhost resolution.
+  </p>
+  <p>
+    Without a definite resolution in the article, the advice centers around troubleshooting network configuration, DNS settings, security software interference, and potential conflicts in the HOSTS file.
+  </p>
+
+  <h3>Key Points:</h3>
+  <ul>
+    <li>The user's 'localhost' stopped working after installing the 2025-10 Cumulative Update.</li>
+    <li>127.0.0.1 still works as an alternative.</li>
+    <li>Troubleshooting steps include checking the HOSTS file for correct mapping of 'localhost' to 127.0.0.1.</li>
+    <li>Restarting the DNS Client service and flushing the DNS cache are recommended.</li>
+    <li>VPNs and security software might interfere with localhost resolution.</li>
+    <li>Firewall settings should be checked to ensure that localhost connections are not blocked.</li>
+    <li>Application configuration should be verified to ensure it is bound to localhost.</li>
+    <li>Browser settings and extensions could potentially interfere.</li>
+    <li>Conflicting entries in the HOSTS file could override the default localhost resolution.</li>
+  </ul>
+</div>
+</div>
+</article>
