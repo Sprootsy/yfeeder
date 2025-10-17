@@ -1,0 +1,44 @@
+<article>
+    <h2>How I bypassed Amazon&#39;s Kindle web DRM</h2>
+    <div>
+ <div>
+   <h2>Summary</h2>
+   <p>
+     The article is a detailed technical investigation into the DRM (Digital Rights Management) used by Amazon for Kindle books accessed through the Kindle Cloud Reader (the web version of Kindle). The author reverse-engineered the system to understand how Amazon protects its ebooks from unauthorized access and copying. The investigation focuses on the specific mechanisms employed to encrypt and decrypt the ebook content within the web browser environment.
+   </p>
+   <p>
+     The author begins by outlining the motivation: to understand the security measures in place and whether they are robust. They explain the process of obtaining a Kindle book through the Cloud Reader and intercepting the network traffic to analyze the downloaded content. The initial observation is that the book's content is not directly accessible as a standard ebook format (like EPUB); instead, it's retrieved in a custom, obfuscated format.
+   </p>
+   <p>
+     A significant portion of the article is dedicated to describing the reverse engineering process. The author examines the JavaScript code used by the Kindle Cloud Reader, specifically targeting the functions responsible for handling the downloaded book data. They identify key functions involved in the decryption process and use browser developer tools to step through the code, inspect variables, and understand the algorithms being used.
+   </p>
+   <p>
+     The article reveals that Amazon's DRM involves multiple layers of protection. The downloaded book data is encrypted using a combination of techniques, including:
+   </p>
+   <ul>
+     <li><strong>AES (Advanced Encryption Standard):</strong> A symmetric encryption algorithm used to encrypt the core content of the book.</li>
+     <li><strong>RSA (Rivest-Shamir-Adleman):</strong> An asymmetric encryption algorithm likely used to protect the AES key.</li>
+     <li><strong>Obfuscation:</strong> The JavaScript code itself is obfuscated to make it harder to understand and reverse engineer.</li>
+   </ul>
+   <p>
+     The author uncovers how the decryption key is derived. It involves a combination of device-specific information (likely tied to the user's Amazon account or browser) and data obtained from the downloaded book itself. The exact details of the key derivation process are complex and involve several stages of transformation and hashing. The investigation also identifies that the "FairPlay Streaming" is mentioned in the javascript code, revealing that they may share some code.
+   </p>
+   <p>
+     The article further explores the format of the downloaded book data, revealing that it's not a single file but rather a collection of encrypted "chunks" or segments. Each chunk contains a portion of the book's content, and these chunks are decrypted individually before being assembled and displayed in the Kindle Cloud Reader.
+   </p>
+   <p>
+     The author acknowledges the challenges of fully defeating the DRM, given the complexity of the system and the potential for Amazon to update its security measures. However, the article demonstrates a significant understanding of the Kindle Cloud Reader's DRM implementation.
+   </p>
+   <h2>Key Points</h2>
+   <ul>
+     <li>Amazon uses DRM to protect Kindle books accessed through the Kindle Cloud Reader.</li>
+     <li>The downloaded book content is encrypted and obfuscated, not directly accessible as a standard ebook format.</li>
+     <li>The DRM involves a combination of AES and RSA encryption, along with JavaScript obfuscation.</li>
+     <li>The decryption key is derived from device-specific information and data within the downloaded book.</li>
+     <li>The book content is divided into encrypted chunks that are decrypted individually.</li>
+     <li>Reverse engineering the Kindle Cloud Reader's JavaScript code reveals the DRM implementation details.</li>
+     <li>FairPlay Streaming technology is also mentioned in the javascript.</li>
+   </ul>
+ </div>
+ </div>
+</article>

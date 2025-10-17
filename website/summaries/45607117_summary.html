@@ -1,0 +1,33 @@
+<article>
+    <h2>Claude Skills</h2>
+    <div>
+<div>
+<h3>Summary:</h3>
+The article from Anthropic discusses a new approach to AI model development focused on modularity and interpretability, termed "Steerable, Modular, and Interpretable Language Model Skills" (or "Skills" for short). The core idea is to decompose large language models (LLMs) into smaller, specialized sub-networks ("Skills") that can be independently trained, evaluated, and composed to perform complex tasks.
+
+The article highlights the increasing difficulty in understanding and controlling monolithic LLMs as they grow in size and complexity. This lack of interpretability poses challenges for safety, reliability, and the ability to adapt models to specific use cases. The Skills approach aims to address these issues by creating models where the function of each component is more transparent and easier to modify.
+
+The article details the methodology for creating and using Skills. This involves identifying key sub-tasks or "skills" required for a broader application, training individual neural networks to perform these skills, and then developing a mechanism for routing inputs to the appropriate skill network. This routing mechanism could be another AI model or a more traditional rule-based system. The output of the selected skill is then used to generate the final response.
+
+The benefits of the Skills approach, as outlined in the article, include improved interpretability (understanding what each skill is doing), steerability (the ability to modify the model's behavior by adjusting or replacing specific skills), and modularity (the ease of adding or removing skills to adapt the model to new tasks). The article suggests that this approach could lead to more reliable, safer, and customizable AI systems.
+
+The article mentions some preliminary experiments and results that demonstrate the feasibility of the Skills approach. These experiments involve training skills for tasks such as code generation, reasoning, and knowledge retrieval. The authors present evidence that the Skills approach can achieve comparable performance to monolithic models while offering the advantages of interpretability and steerability. They also discuss how Skills can be used for safety interventions. For example, a "fact-checking" skill can be used to filter out incorrect information before it is presented to the user.
+
+Finally, the article emphasizes that this is an initial exploration and that further research is needed to fully realize the potential of the Skills approach. Future work will focus on developing more sophisticated routing mechanisms, exploring different skill architectures, and scaling the approach to more complex tasks. The article positions Skills as a promising direction for building more understandable, controllable, and adaptable AI systems.
+
+<h3>Key Points:</h3>
+<ul>
+<li><b>Problem:</b> Large language models are becoming increasingly difficult to understand, control, and adapt.</li>
+<li><b>Solution:</b> Decompose LLMs into smaller, specialized, and independently trained sub-networks called "Skills."</li>
+<li><b>Skills Approach:</b> Involves identifying sub-tasks, training individual networks for each skill, and developing a routing mechanism to direct inputs to the appropriate skill.</li>
+<li><b>Benefits:</b> Improved interpretability, steerability, and modularity.</li>
+<li><b>Interpretability:</b> Easier to understand what each skill is doing.</li>
+<li><b>Steerability:</b> Ability to modify the model's behavior by adjusting or replacing specific skills.</li>
+<li><b>Modularity:</b> Ease of adding or removing skills to adapt to new tasks.</li>
+<li><b>Experiments:</b> Preliminary results demonstrate the feasibility of the Skills approach for tasks like code generation and reasoning.</li>
+<li><b>Safety:</b> Skills can be used for safety interventions, such as fact-checking.</li>
+<li><b>Future Work:</b> Focus on improving routing mechanisms, exploring different skill architectures, and scaling the approach to more complex tasks.</li>
+</ul>
+</div>
+</div>
+</article>
