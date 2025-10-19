@@ -1,0 +1,36 @@
+<article>
+    <h2>SQL Anti-Patterns</h2>
+    <div>
+ <div>
+  <p>The article "SQL Anti-Patterns You Should Avoid" on the Data Methods Substack discusses common mistakes and inefficient practices in SQL development that can lead to performance issues, code maintainability problems, and increased complexity. It labels these mistakes as "anti-patterns" and provides explanations along with alternative, better approaches.</p>
+  
+  <p>The anti-patterns covered in the article include:</p>
+  
+  <ol>
+   <li><strong>SELECT *</strong>:  The article criticizes using <code>SELECT *</code> as a bad practice, explaining that it retrieves all columns from a table, regardless of whether they are needed. This can lead to unnecessary data transfer, increased memory usage, and performance degradation, especially with large tables. It recommends explicitly specifying the required columns in the <code>SELECT</code> statement to reduce the amount of data processed and improve query efficiency.</li>
+   
+   <li><strong>Not using indexes</strong>: The author emphasizes the importance of indexes for speeding up query performance.  The anti-pattern involves querying large tables without appropriate indexes, which forces the database to perform full table scans. The article suggests identifying frequently queried columns and creating indexes on them to enable faster data retrieval using index seeks.</li>
+   
+   <li><strong>Ignoring data types</strong>: Using incorrect or inefficient data types is highlighted as another anti-pattern. This can lead to wasted storage space, performance issues due to implicit data type conversions, and data integrity problems. The author advises choosing the most appropriate data type for each column based on the type of data it will store and its expected range.</li>
+   
+   <li><strong>Overusing cursors</strong>:  The article identifies cursors as a common source of performance bottlenecks in SQL. Cursors process data row by row, which can be significantly slower than set-based operations. It recommends using set-based operations (e.g., <code>UPDATE</code>, <code>DELETE</code> with <code>WHERE</code> clauses, <code>JOIN</code>s) to perform operations on entire datasets at once, which are generally much more efficient.</li>
+   
+   <li><strong>Storing multiple values in one column</strong>: This anti-pattern describes storing multiple values (e.g., comma-separated lists) within a single column. This violates normalization principles, making it difficult to query and analyze the data effectively. The author suggests normalizing the database schema by creating separate tables to store the individual values and using relationships to link them to the main table.</li>
+   
+   <li><strong>Not using transactions</strong>: Failing to use transactions for multi-step operations that must be atomic (all steps succeed or none do) is identified as an anti-pattern. This can lead to data inconsistencies if one step fails and the entire operation is not rolled back. The article recommends wrapping such operations in transactions to ensure data integrity.</li>
+  </ol>
+  
+  <p>In essence, the article advocates for writing efficient, well-structured SQL code that optimizes performance, maintains data integrity, and enhances code maintainability by avoiding these common anti-patterns.</p>
+
+  <h3>Key Points:</h3>
+  <ul>
+   <li>Avoid <code>SELECT *</code>:  Specify the required columns explicitly for better performance.</li>
+   <li>Use indexes: Create indexes on frequently queried columns to speed up data retrieval.</li>
+   <li>Choose appropriate data types: Select the most efficient data type for each column.</li>
+   <li>Minimize cursor usage: Prefer set-based operations over cursors for better performance.</li>
+   <li>Normalize data: Avoid storing multiple values in a single column.</li>
+   <li>Use transactions: Wrap multi-step operations in transactions to ensure data consistency.</li>
+  </ul>
+ </div>
+ </div>
+</article>
