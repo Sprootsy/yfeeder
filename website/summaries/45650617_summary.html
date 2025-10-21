@@ -1,0 +1,39 @@
+<article>
+    <h2>Why UUIDs won&#39;t protect your secrets</h2>
+    <div>
+ <div>
+  <h3>Summary</h3>
+  <p>
+   The article discusses the use of UUIDs (Universally Unique Identifiers) and sequential IDs (IDOR - Insecure Direct Object Reference vulnerabilities) in web applications and APIs, focusing on their security implications and performance trade-offs.
+  </p>
+  <p>
+   It begins by outlining the common practice of using sequential integers as primary keys in databases and exposing these IDs directly in URLs. While simple, this approach creates security vulnerabilities, specifically IDOR vulnerabilities, where attackers can easily guess and manipulate IDs to access unauthorized resources.
+  </p>
+  <p>
+   The article then introduces UUIDs as an alternative. UUIDs are 128-bit identifiers generated with a very low probability of collision, making them suitable for distributed systems and situations where uniqueness is critical. The article explains different versions of UUIDs, highlighting Version 4 UUIDs, which are generated randomly, and Version 7 UUIDs, which incorporate a timestamp and random component, providing both uniqueness and some level of sortability.
+  </p>
+  <p>
+   The author contrasts the security benefits of UUIDs against sequential IDs. UUIDs obscure resource identifiers, making it much harder for attackers to enumerate and access resources they shouldn't. However, the article also addresses the performance considerations. UUIDs, being larger and less ordered than integers, can lead to increased storage costs, fragmentation in database indexes, and slower query performance, particularly with Version 4 UUIDs.
+  </p>
+  <p>
+   The article dives into database performance issues, particularly in the context of MySQL and other relational databases. It explains how inserting UUIDs randomly can fragment indexes, leading to increased disk I/O and slower queries. It then introduces Version 7 UUIDs as a potential solution, as their time-based component allows for more sequential inserts, reducing fragmentation and improving performance compared to Version 4 UUIDs.
+  </p>
+  <p>
+   Furthermore, the author addresses the implications of using UUIDs in URLs from a user experience perspective. While UUIDs enhance security by preventing easy enumeration, they are less human-readable and harder to remember or type compared to short integer IDs. The article suggests considering the trade-offs between security, performance, and usability when choosing between UUIDs and sequential IDs.
+  </p>
+  <p>
+   Finally, the article concludes by summarizing the pros and cons of using UUIDs versus sequential IDs, advocating for a balanced approach that considers the specific requirements of the application, the sensitivity of the data, and the acceptable performance overhead. It emphasizes that while UUIDs offer enhanced security against IDOR vulnerabilities, developers must be aware of the potential performance implications and choose the appropriate UUID version or alternative strategies to mitigate those effects.
+  </p>
+  <h3>Key Points</h3>
+  <ul>
+   <li><b>Sequential IDs and IDOR:</b> Exposing sequential integer IDs in URLs creates Insecure Direct Object Reference (IDOR) vulnerabilities, allowing attackers to guess and access unauthorized resources.</li>
+   <li><b>UUIDs as an Alternative:</b> UUIDs (Universally Unique Identifiers) provide a more secure alternative due to their near-uniqueness and unguessability.</li>
+   <li><b>UUID Versions:</b> Version 4 UUIDs are randomly generated, while Version 7 UUIDs include a timestamp component for better sortability and performance.</li>
+   <li><b>Security vs. Performance:</b> UUIDs enhance security by obscuring resource identifiers but can negatively impact database performance due to increased storage costs and index fragmentation.</li>
+   <li><b>Database Performance Issues:</b> Random UUID insertion can fragment database indexes, leading to slower query performance. Version 7 UUIDs can alleviate this issue due to their time-based component.</li>
+   <li><b>User Experience:</b> UUIDs are less user-friendly than sequential IDs due to their length and lack of readability.</li>
+   <li><b>Balanced Approach:</b> Choosing between UUIDs and sequential IDs requires balancing security, performance, and usability considerations based on the application's specific needs.</li>
+  </ul>
+ </div>
+ </div>
+</article>

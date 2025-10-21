@@ -1,0 +1,39 @@
+<article>
+    <h2>Production RAG: what I learned from processing 5M&#43; documents</h2>
+    <div>
+<div>
+  <p>
+    This article details the author's experience in building a Production-Ready Retrieval-Augmented Generation (RAG) pipeline to process 5 million documents. The focus is on the practical aspects, challenges, and lessons learned while building such a large-scale system. The article covers data ingestion, data processing, embedding generation, vector database selection, query processing, and evaluation.
+  </p>
+  <p>
+    The author begins by emphasizing the importance of a well-defined data ingestion process. The source data consisted of HTML files, PDFs, and other formats. They discuss the need for robust data cleaning, format standardization, and metadata extraction to ensure high-quality input for subsequent steps. The article explores different options for document loading and parsing, ultimately choosing a combination of tools to handle the variety of document types.
+  </p>
+  <p>
+    Next, the data processing stage involves splitting documents into smaller chunks for effective retrieval. The article considers various chunking strategies, including fixed-size chunks, semantic chunking, and context-aware chunking. The author stresses the trade-offs between chunk size and retrieval performance, aiming for a balance that captures relevant context without introducing excessive noise.
+  </p>
+  <p>
+    Embedding generation is a crucial component, where text chunks are transformed into vector representations. The article discusses the selection of embedding models, considering factors like performance, cost, and the specific requirements of the use case. The author experiments with different embedding models and discusses the importance of benchmarking to identify the most suitable option.
+  </p>
+  <p>
+    The article then delves into the selection of a vector database for storing and querying the embeddings. Various vector databases are evaluated based on factors such as scalability, performance, cost, and ease of integration. The author shares their decision-making process, considering the specific needs of their large-scale RAG pipeline.
+  </p>
+  <p>
+    Query processing involves encoding user queries into vector embeddings and then performing similarity searches within the vector database to retrieve relevant document chunks. The author discusses different query strategies, including techniques for improving retrieval accuracy and efficiency.
+  </p>
+  <p>
+    Finally, the article highlights the importance of evaluation in a production RAG system. They emphasize the need for both quantitative metrics and qualitative assessments to measure the performance of the pipeline. The author outlines strategies for evaluating retrieval accuracy, response quality, and overall system effectiveness. The article concludes by sharing key lessons learned throughout the process, including the importance of iterative development, continuous monitoring, and a deep understanding of the data.
+  </p>
+
+  <h3>Key Points:</h3>
+  <ul>
+    <li><b>Data Ingestion:</b> Robust and standardized data ingestion is essential, including cleaning, format standardization, and metadata extraction from various document types (HTML, PDF, etc.).</li>
+    <li><b>Chunking Strategies:</b> Careful consideration of chunking strategies (fixed-size, semantic, context-aware) is needed to balance context retention and retrieval accuracy.</li>
+    <li><b>Embedding Model Selection:</b> Choosing the right embedding model based on performance, cost, and specific use case requirements is critical, necessitating benchmarking.</li>
+    <li><b>Vector Database Choice:</b> Selecting a vector database depends on scalability, performance, cost, and integration ease for large-scale embedding storage and querying.</li>
+    <li><b>Query Processing:</b> Effective query processing strategies are needed to encode user queries and perform efficient similarity searches for relevant chunks.</li>
+    <li><b>Evaluation is Key:</b> Continuous evaluation, using both quantitative metrics and qualitative assessments, is crucial for measuring and improving RAG pipeline performance.</li>
+    <li><b>Iterative Development:</b> The article highlights the importance of iterative development, continuous monitoring, and data understanding for building a production-ready RAG system.</li>
+  </ul>
+</div>
+</div>
+</article>

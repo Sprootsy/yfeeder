@@ -1,0 +1,37 @@
+<article>
+    <h2>Building a message queue with only two UNIX signals</h2>
+    <div>
+<div>
+  <h3>Summary</h3>
+  <p>
+    The article "You Don't Need Kafka: Building a Message Queue with Only Two Unix Signals" by Leandro Pardini explores a minimalist approach to creating a message queue using only two Unix signals (SIGUSR1 and SIGUSR2) and shell scripting. The author challenges the common reliance on complex messaging systems like Kafka for simple tasks and demonstrates how a basic message queue can be implemented with readily available Unix tools.
+  </p>
+  <p>
+    The core idea revolves around using a directory to store messages as individual files. A producer script writes messages to this directory, and a consumer script processes them. The communication and coordination between the producer and consumer are achieved using Unix signals. Specifically, SIGUSR1 is used to notify the consumer that new messages are available, and SIGUSR2 is used by the consumer to signal the producer that it is ready to receive more notifications.
+  </p>
+  <p>
+    The producer script, upon writing a new message file, sends a SIGUSR1 signal to the consumer process. This signal acts as a trigger for the consumer to check the message directory for new files. The consumer, after processing a message, sends a SIGUSR2 signal back to the producer, indicating its readiness to receive further notifications. This mechanism ensures that the consumer isn't overwhelmed with notifications and only processes messages when it's prepared to do so.
+  </p>
+  <p>
+    The article delves into the implementation details, including the scripts for the producer and consumer. It highlights the simplicity and elegance of the solution, emphasizing its suitability for scenarios where a full-fledged message queue system is overkill. Error handling, such as dealing with missing consumer processes, is also addressed. The author provides concrete examples of the shell scripts used for both the producer and consumer, allowing readers to readily implement the message queue.
+  </p>
+  <p>
+    The author acknowledges the limitations of this approach, such as the lack of guaranteed delivery and the potential for message loss if the consumer crashes during processing. It is clearly stated that the solution is not intended to replace robust messaging systems like Kafka in production environments where reliability and scalability are paramount. Rather, it serves as a practical demonstration of how to achieve basic message queuing functionality with minimal overhead and dependencies. The article positions the described solution as a valuable tool for simpler scenarios, such as internal tooling, proof-of-concept projects, or situations with limited resources. It encourages readers to consider simpler solutions when appropriate, instead of automatically reaching for complex systems.
+  </p>
+
+  <h3>Key Points</h3>
+  <ul>
+    <li>Demonstrates building a message queue using only two Unix signals (SIGUSR1 and SIGUSR2).</li>
+    <li>Uses a directory to store messages as individual files.</li>
+    <li>The producer sends SIGUSR1 to the consumer to notify it of new messages.</li>
+    <li>The consumer sends SIGUSR2 to the producer to signal readiness for more notifications.</li>
+    <li>Provides shell script examples for both producer and consumer.</li>
+    <li>Highlights the simplicity and suitability for basic message queuing needs.</li>
+    <li>Acknowledges limitations such as lack of guaranteed delivery.</li>
+    <li>Emphasizes that it's not a replacement for robust messaging systems like Kafka in production.</li>
+    <li>Suggests its use for internal tooling, proof-of-concept projects, or resource-constrained environments.</li>
+    <li>Encourages considering simpler solutions before opting for complex systems.</li>
+  </ul>
+</div>
+</div>
+</article>
