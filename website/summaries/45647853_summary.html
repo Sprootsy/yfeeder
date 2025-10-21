@@ -1,0 +1,31 @@
+<article>
+    <h2>First Self-Propagating Worm Using Invisible Code Hits OpenVSX and VS Code</h2>
+    <div>
+<div>
+<h2>Summary:</h2>
+
+The article discusses the discovery of a novel self-propagating worm called "Glassworm" that targets the OpenVSX Marketplace, an open-source alternative to the VS Code Marketplace. Glassworm is unique because it employs "invisible code," specifically zero-width characters, to conceal its malicious payload within seemingly innocuous extension descriptions. This allows it to bypass basic security measures and propagate through the marketplace by infecting other extensions.
+
+The attack begins with a malicious extension uploaded to the OpenVSX Marketplace. This extension contains zero-width characters embedded within its description. When another developer downloads and installs this infected extension, the zero-width characters are interpreted as JavaScript code by the OpenVS Code server. This code then downloads and executes a malicious script from an external server.
+
+The downloaded script is responsible for several malicious activities: extracting the source code and metadata (including the description) of other extensions managed by the user; injecting the same zero-width character payload into the descriptions of those extensions; and publishing these infected extensions to the OpenVSX Marketplace. This process ensures that the worm spreads to other developers and their extensions, creating a self-propagating infection cycle.
+
+The use of zero-width characters makes the malicious code difficult to detect through traditional code review methods, as these characters are invisible to the human eye. This stealth allows the worm to remain undetected for an extended period.
+
+The primary goal of Glassworm appears to be spreading its infection, but the injected code could potentially be used for more nefarious purposes such as stealing sensitive information (API keys, credentials) or injecting malicious code directly into the infected extensions.
+
+The discovery of Glassworm highlights the importance of robust security measures in software marketplaces, including more sophisticated methods for detecting and preventing the injection of malicious code, even when concealed through techniques like the use of zero-width characters. It also emphasizes the need for developers to be vigilant about the extensions they install and to implement security best practices to protect their code and systems from such attacks.
+<br>
+<h2>Key Points:</h2>
+
+*   **Glassworm:** A self-propagating worm targeting the OpenVSX Marketplace.
+*   **Invisible Code:** Employs zero-width characters to hide malicious JavaScript code within extension descriptions.
+*   **Infection Vector:** Malicious extension uploaded to the marketplace.
+*   **Propagation:** Infects other extensions by injecting zero-width characters into their descriptions and republishing them.
+*   **Malicious Activity:** Extracts extension source code and metadata, injects malicious code, and publishes infected extensions.
+*   **Stealth:** Zero-width characters make detection difficult.
+*   **Potential Impact:** Spreads infection, potential for data theft and code injection.
+*   **Security Implications:** Highlights the need for improved security measures in software marketplaces and developer vigilance.
+</div>
+</div>
+</article>

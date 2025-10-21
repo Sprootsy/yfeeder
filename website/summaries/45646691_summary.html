@@ -1,0 +1,42 @@
+<article>
+    <h2>TernFS – an exabyte scale, multi-region distributed filesystem</h2>
+    <div>
+<div>
+  <h2>Summary</h2>
+  <p>The article discusses the challenges and solutions involved in building a high-performance, low-latency file system called TernFS for xTX Markets' trading infrastructure. The primary goal of TernFS is to provide a fast and efficient way to access and manage large amounts of market data required for trading decisions. The existing solutions were found to be inadequate for their specific needs, prompting the development of a custom solution.</p>
+
+  <p>One major challenge addressed is the "tail latency" problem, where occasional delays in file system operations can negatively impact trading performance. TernFS is designed to minimize these delays through several key strategies, including:</p>
+
+  <ul>
+    <li><strong>POSIX-shaped Interface:</strong> TernFS presents a familiar POSIX-like interface, making it easier to integrate with existing tools and applications.  This reduces the need for extensive code modifications.</li>
+    <li><strong>Kernel Bypass:</strong>  A user-space implementation allows TernFS to bypass the kernel for many operations, reducing overhead and context switching. This is achieved using technologies like SPDK (Storage Performance Development Kit) and DPDK (Data Plane Development Kit).</li>
+    <li><strong>RDMA:</strong> Remote Direct Memory Access (RDMA) is used to enable direct memory access between servers, further reducing latency and CPU overhead.</li>
+    <li><strong>Lockless Data Structures:</strong>  The article emphasizes the use of lockless data structures to minimize contention and improve concurrency.  This is crucial for handling high volumes of concurrent requests.</li>
+    <li><strong>Optimized Data Layout:</strong>  TernFS is designed with a data layout that minimizes disk seeks and maximizes sequential I/O.</li>
+    <li><strong>Tiered Storage:</strong> The architecture includes multiple tiers of storage with varying performance characteristics to ensure frequently accessed data is rapidly available.</li>
+    <li><strong>Asynchronous Operations:</strong> Leveraging asynchronous I/O operations to avoid blocking and to maximize throughput.</li>
+  </ul>
+
+  <p>The article delves into specific technical details, such as the use of SPDK's NVMe driver for fast access to NVMe storage devices. It also explains the challenges of implementing lockless data structures in C++ and the approaches they used to ensure correctness and performance.</p>
+
+  <p>Moreover, the article highlights the importance of thorough testing and benchmarking throughout the development process. They continuously measured performance and identified bottlenecks to optimize the system. The development team also used formal verification techniques to ensure the correctness of certain critical components.</p>
+
+  <p>The article also touches on the challenges of maintaining data consistency and durability in a distributed file system. TernFS employs techniques like checksumming and replication to protect against data loss and corruption.</p>
+
+  <h2>Key Points</h2>
+  <ul>
+    <li>xTX Markets developed TernFS, a custom, low-latency file system, to address limitations of existing solutions for their trading infrastructure.</li>
+    <li>TernFS aims to minimize "tail latency" which is critical for trading performance.</li>
+    <li>It utilizes a POSIX-shaped interface for easy integration.</li>
+    <li>Kernel bypass is implemented using SPDK and DPDK to reduce overhead.</li>
+    <li>RDMA is used for direct memory access between servers.</li>
+    <li>Lockless data structures are employed for high concurrency.</li>
+    <li>The data layout is optimized for sequential I/O and reduced disk seeks.</li>
+    <li>The system uses tiered storage for performance.</li>
+    <li>Asynchronous operations improve throughput.</li>
+    <li>Thorough testing and benchmarking were crucial throughout the development process.</li>
+    <li>Data consistency and durability are maintained through checksumming and replication.</li>
+  </ul>
+</div>
+</div>
+</article>
