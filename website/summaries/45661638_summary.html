@@ -1,0 +1,56 @@
+<article>
+    <h2>rlsw – Raylib software OpenGL renderer in less than 5k LOC</h2>
+    <div>
+<div>
+  <p>The provided document is a header file, <code>rlsw.h</code>, which is part of the raylib library, specifically located in the <code>src/external</code> directory. It appears to define a software rasterizer for raylib. The code provides low-level functions for drawing pixels, lines, triangles, and performing texture mapping directly on the framebuffer, without relying on hardware acceleration (like OpenGL). The file is heavily commented, explaining the purpose and implementation details of each function and structure. It includes considerations for different pixel formats, clipping, and basic shading.</p>
+
+  <p>The header file starts with a license notice (zlib/libpng license) and includes a header guard to prevent multiple inclusions. It then includes the <code>raylib.h</code> header file, indicating its dependency on the core raylib functionality. The code defines several structures and enumerations, including:</p>
+
+  <ul>
+    <li><code>rlSwContext</code>: The main software rasterizer context. It contains the framebuffer data, width, height, pixel format, clipping rectangle, and internal buffers for triangle rasterization.</li>
+    <li><code>rlSwVertex</code>: Represents a vertex with position (x, y, z), UV coordinates (u, v), and color (r, g, b, a).</li>
+    <li>Various enumerations for pixel formats (<code>PIXELFORMAT_*</code>), triangle winding order (<code>TRI_CCW</code>, <code>TRI_CW</code>), and shading modes (<code>SHADER_UNLIT</code>, <code>SHADER_GOURAUD</code>).</li>
+  </ul>
+
+  <p>The functions defined in the header file can be grouped into several categories:</p>
+
+  <ul>
+    <li><b>Context Management:</b> <code>rlSwBegin()</code> to initialize the software rasterizer context and <code>rlSwEnd()</code> to clean up the context.</li>
+    <li><b>Pixel Drawing:</b> <code>rlSwDrawPixel()</code> to draw a single pixel with a specified color.</li>
+    <li><b>Line Drawing:</b> <code>rlSwDrawLine()</code> to draw a line between two points using Bresenham's algorithm.</li>
+    <li><b>Triangle Drawing:</b> Functions for drawing triangles, including:
+      <ul>
+        <li><code>rlSwDrawTriangle()</code>: General triangle drawing function.</li>
+        <li><code>rlSwDrawTriangleFlatTop()</code> and <code>rlSwDrawTriangleFlatBottom()</code>: Optimized functions for triangles with a flat top or flat bottom, which are often used as primitives in triangle rasterization.</li>
+      </ul>
+    </li>
+    <li><b>Texture Mapping:</b> Functions for applying textures to triangles, including:
+      <ul>
+        <li><code>rlSwSetTexture()</code>: Sets the current texture to be used for rasterization.</li>
+        <li><code>rlSwSetShaderMode()</code>: Sets the shading mode (unlit or Gouraud).</li>
+      </ul>
+    </li>
+    <li><b>Clipping:</b> Functions for setting and using a clipping rectangle to restrict drawing to a specific region of the framebuffer.</li>
+    <li><b>Utility Functions:</b> Helper functions for color conversion, lerping, and other common tasks.</li>
+  </ul>
+
+  <p>The code uses fixed-point arithmetic for some calculations, likely for performance reasons on platforms without efficient floating-point support. The implementation also includes optimizations such as pre-calculating values and using lookup tables. The code appears designed to be relatively lightweight and portable.</p>
+
+  <p>Overall, <code>rlsw.h</code> provides a self-contained software rasterizer that can be used as a fallback when hardware acceleration is not available or desired. It implements basic drawing primitives and texture mapping functionality. The extensive comments make the code relatively easy to understand and modify.</p>
+
+  <h2>Key Points:</h2>
+  <ul>
+    <li>Header file <code>rlsw.h</code> provides a software rasterizer for raylib.</li>
+    <li>Implements pixel, line, and triangle drawing functions.</li>
+    <li>Includes texture mapping support.</li>
+    <li>Uses a <code>rlSwContext</code> to manage the framebuffer and rasterization state.</li>
+    <li>Supports different pixel formats and shading modes.</li>
+    <li>Includes clipping functionality.</li>
+    <li>Uses fixed-point arithmetic for performance.</li>
+    <li>Designed to be a fallback when hardware acceleration is not available.</li>
+    <li>Heavily commented for clarity.</li>
+    <li>Licensed under the zlib/libpng license.</li>
+  </ul>
+</div>
+</div>
+</article>
