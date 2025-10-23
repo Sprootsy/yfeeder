@@ -1,0 +1,34 @@
+<article>
+    <h2>Show HN: Cuq – Formal Verification of Rust GPU Kernels</h2>
+    <div>
+<div>
+  <p>
+    The article describes a method called Calibrated Uncertainty Quantification (CUQ), a technique designed to improve the reliability and trustworthiness of uncertainty estimates produced by machine learning models, particularly in scenarios where accurate uncertainty assessment is critical. It focuses on classification tasks and aims to address the common issue of miscalibration, where model confidence scores do not accurately reflect the true probability of a correct prediction. The core idea behind CUQ involves creating a calibration function that maps the original model's confidence scores to more accurate probability estimates. This function is learned using a held-out calibration set, which is distinct from the training and test sets. The method is model-agnostic, meaning it can be applied to any classification model that outputs confidence scores.
+  </p>
+  <p>
+    CUQ's calibration process involves optimizing a loss function that encourages both accuracy and calibration. Accuracy ensures that the recalibrated probabilities lead to correct predictions, while calibration ensures that the confidence scores are well-aligned with the actual likelihood of correctness. The calibration function itself can take various forms, such as a histogram binning, isotonic regression, or a neural network. The choice of calibration function depends on the specific characteristics of the model and the desired trade-off between flexibility and computational cost.
+  </p>
+  <p>
+    The article emphasizes the importance of proper data splitting to avoid overfitting the calibration set. Using a separate calibration set ensures that the calibration function is not biased towards the training data and can generalize well to unseen examples. The effectiveness of CUQ is evaluated using various metrics, including Expected Calibration Error (ECE) and Maximum Calibration Error (MCE), which quantify the degree of miscalibration.
+  </p>
+  <p>
+    Furthermore, the document describes the open-source library, "cuq", that implements the CUQ method. It provides tools for calibrating classification models and evaluating the quality of uncertainty estimates. The library supports various calibration techniques and evaluation metrics, making it easy for researchers and practitioners to apply CUQ to their own models and datasets. It also includes features for visualizing calibration curves and other diagnostic plots, which can help users understand the behavior of their models and the effectiveness of the calibration process. The library is designed to be modular and extensible, allowing users to easily add their own calibration techniques and evaluation metrics.
+  </p>
+  <p>
+    Key points:
+    <ul>
+      <li>CUQ is a method for calibrating the uncertainty estimates of classification models.</li>
+      <li>It addresses the problem of miscalibration, where model confidence scores do not accurately reflect the true probability of a correct prediction.</li>
+      <li>CUQ uses a separate calibration set to learn a calibration function that maps original confidence scores to more accurate probabilities.</li>
+      <li>The calibration function is optimized to achieve both accuracy and calibration.</li>
+      <li>The method is model-agnostic and can be applied to any classification model that outputs confidence scores.</li>
+      <li>Proper data splitting is crucial to avoid overfitting the calibration set.</li>
+      <li>The effectiveness of CUQ is evaluated using metrics like ECE and MCE.</li>
+      <li>"cuq" is an open-source library that implements the CUQ method and provides tools for calibration and evaluation.</li>
+      <li>The library supports various calibration techniques, evaluation metrics, and visualization tools.</li>
+      <li>The library is designed to be modular and extensible.</li>
+    </ul>
+  </p>
+</div>
+</div>
+</article>
