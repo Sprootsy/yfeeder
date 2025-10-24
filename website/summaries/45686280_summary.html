@@ -1,0 +1,35 @@
+<article>
+    <h2>Zram Performance Analysis</h2>
+    <div>
+<div>
+  <p>
+    The article discusses zram, a Linux kernel module that creates a compressed block device in RAM. This device can be used as swap space, effectively compressing less frequently used memory pages and storing them in RAM, thereby reducing the need to swap to slower storage devices like HDDs or SSDs. The main benefits of using zram are improved system responsiveness, especially on systems with limited RAM, and reduced wear on SSDs by minimizing swap writes.
+  </p>
+  <p>
+    The article explains that when the system runs out of physical RAM, instead of swapping pages to a hard drive or SSD, zram compresses these pages and stores them in a designated portion of RAM. This process is faster than traditional swapping because RAM access is significantly quicker than disk access. While compression and decompression operations do consume CPU resources, the overall performance gain is generally positive, particularly when the system would otherwise be heavily reliant on slow swap.
+  </p>
+  <p>
+    The article also touches upon different compression algorithms that can be used with zram, such as LZO-RLE, LZ4, and ZSTD, highlighting their respective trade-offs between compression ratio and speed. ZSTD is mentioned as a generally good option due to its balance of speed and compression.
+  </p>
+  <p>
+    Furthermore, the article describes how to set up and configure zram on various Linux distributions. It includes examples of using `zramctl` to create, configure, and manage zram devices, including setting the disk size and compression algorithm. It also describes how to enable zram at boot time using systemd.
+  </p>
+  <p>
+    The article also discusses the use of `zram-generator`, a tool that simplifies the configuration of zram by using configuration files to define zram devices and their settings. This allows for a more declarative and manageable approach to configuring zram.
+  </p>
+  <p>
+    Finally, the article provides practical advice on determining the optimal size for the zram device. A common recommendation is to set the zram size to be roughly equal to the amount of physical RAM, but this can be adjusted based on specific workload and performance testing. The article emphasizes that the ideal size depends on the system's memory usage patterns and the desired balance between memory availability and CPU overhead for compression.
+  </p>
+  <h2>Key points:</h2>
+  <ul>
+    <li>Zram creates a compressed block device in RAM for use as swap space.</li>
+    <li>It improves system responsiveness by compressing memory pages in RAM instead of swapping to disk.</li>
+    <li>It reduces wear on SSDs by minimizing swap writes to the disk.</li>
+    <li>Various compression algorithms can be used (LZO-RLE, LZ4, ZSTD), each with different performance characteristics.</li>
+    <li>`zramctl` is used to create, configure, and manage zram devices.</li>
+    <li>`zram-generator` simplifies zram configuration using configuration files.</li>
+    <li>The optimal zram size is usually around the same size as the physical RAM, but can be adjusted based on usage patterns.</li>
+  </ul>
+</div>
+</div>
+</article>

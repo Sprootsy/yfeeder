@@ -1,0 +1,28 @@
+<article>
+    <h2>How memory maps (mmap) deliver faster file access in Go</h2>
+    <div>
+<div>
+<h2>Summary</h2>
+
+The article discusses how memory maps (mmap) can significantly improve file access performance in Go, achieving up to 25x faster speeds compared to traditional read operations. It explains that mmap allows a program to map a file's contents directly into the process's virtual memory space. This mapping eliminates the need for explicit read and write system calls, as the operating system handles the loading and caching of file data into physical memory as needed. When a program accesses a mapped region, the OS automatically loads the corresponding file content into memory, behaving like a very large array that is directly available to the application.
+
+The article contrasts this approach with traditional file I/O methods, where data must be copied between the kernel's buffer cache and the user space. Mmap avoids this copying, leading to reduced overhead and improved performance, especially for large files or repeated accesses to the same data.
+
+The author presents a practical example demonstrating the performance benefits of mmap in Go. The code compares the time taken to read a large file using both the traditional `os.ReadFile` method and the `mmap` approach. The results show a substantial performance improvement when using mmap.
+
+The article also touches on some considerations when using mmap, such as the potential for increased memory usage if large portions of the file are accessed and the need to handle errors related to memory mapping. Despite these considerations, the article advocates for using mmap in Go when high-performance file access is crucial.
+
+<h2>Key Points</h2>
+
+<ul>
+<li>Memory maps (mmap) can provide significantly faster file access in Go compared to traditional read operations.</li>
+<li>Mmap maps a file's content directly into a process's virtual memory space, eliminating the need for explicit read/write system calls.</li>
+<li>Mmap avoids data copying between the kernel's buffer cache and user space, reducing overhead.</li>
+<li>The article provides a practical Go example demonstrating the performance gains of mmap.</li>
+<li>Performance improvements of up to 25x were observed in the example.</li>
+<li>Considerations when using mmap include potential increased memory usage and the need for error handling.</li>
+<li>Mmap is recommended for scenarios where high-performance file access is required in Go.</li>
+</ul>
+</div>
+</div>
+</article>

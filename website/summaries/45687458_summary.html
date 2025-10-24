@@ -1,0 +1,39 @@
+<article>
+    <h2>/dev/null is an ACID compliant database</h2>
+    <div>
+ <div>
+  <p>This article humorously argues that <code>/dev/null</code>, a Unix null device, can be considered an ACID-compliant database. The author presents the characteristics of <code>/dev/null</code> in the context of the ACID properties (Atomicity, Consistency, Isolation, Durability) typically associated with database management systems, claiming it satisfies all of them in a peculiar way.
+  </p>
+  <p>
+   The article begins by introducing <code>/dev/null</code> as a file that discards any data written to it, acting like a black hole. The author sets the stage by humorously presenting the idea of <code>/dev/null</code> as a highly optimized datastore and promising to demonstrate its ACID compliance.
+  </p>
+  <p>
+   Regarding Atomicity, the article claims that any write operation to <code>/dev/null</code> is atomic since it either completely accepts and discards the data or does nothing. There is no partial write or any intermediate state. The operation is treated as a single, indivisible unit.
+  </p>
+  <p>
+   For Consistency, the article argues that <code>/dev/null</code> maintains a consistent state, which is always empty. Any attempt to modify it simply results in the data being discarded, ensuring the "database" remains consistently null. Every operation leaves it in the same valid (empty) state.
+  </p>
+  <p>
+   In terms of Isolation, the author explains that since <code>/dev/null</code> doesn't store any data, concurrent operations do not interfere with each other. Each write operation is independent and has no effect on any other operation. There is no concept of concurrent access because every write is simply discarded.
+  </p>
+  <p>
+   Concerning Durability, the article posits that <code>/dev/null</code> is highly durable because the "data" (or rather, the absence of data) is guaranteed to persist. Since it discards all data, it doesn't need to worry about storage failures, corruption, or any of the usual concerns about data persistence. The lack of stored data is, in effect, permanently preserved.
+  </p>
+  <p>
+   The author also touches on practical aspects, like query language support. In a humorous tone, the article mentions that queries against <code>/dev/null</code> are always simple and fast, as there's nothing to retrieve.
+  </p>
+  <p>
+   The article concludes by stating that while <code>/dev/null</code> might not be suitable for most real-world database applications due to its inability to store data, it technically fulfills all the ACID properties. It emphasizes the humor of the idea, framing it as a thought experiment on the core principles of database design.
+  </p>
+  <p><b>Key Points:</b></p>
+  <ul>
+   <li><code>/dev/null</code> is presented as a humorous example of an ACID-compliant "database."</li>
+   <li>Atomicity: Writes to <code>/dev/null</code> are atomic because they either fully succeed (discarding data) or do nothing.</li>
+   <li>Consistency: <code>/dev/null</code> is always in a consistent state (empty).</li>
+   <li>Isolation: Concurrent writes to <code>/dev/null</code> do not interfere with each other since no data is stored.</li>
+   <li>Durability: The "emptiness" of <code>/dev/null</code> is guaranteed to persist.</li>
+   <li>The article is a thought experiment, not a practical database solution.</li>
+  </ul>
+ </div>
+ </div>
+</article>
