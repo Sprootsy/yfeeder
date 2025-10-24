@@ -1,0 +1,23 @@
+<article>
+    <h2>Date bug in Rust-based coreutils affects Ubuntu 25.10 automatic updates</h2>
+    <div>
+<div>
+<p>This article discusses the ongoing development and challenges surrounding the integration of Rust into the Linux kernel. It begins by noting that while the initial groundwork for Rust support has been merged, the actual process of writing and incorporating Rust drivers is still in its early stages and faces hurdles. The author attended the Rust in Linux micro-conference at the 2024 Linux Plumbers Conference, which covered various aspects of this integration. One key discussion point was the challenges arising from the differences between Rust's strict memory safety model and the more flexible, but potentially unsafe, nature of C, which is the language the kernel is written in. The kernel relies on constructs like raw pointers and complex data structures that are difficult to replicate directly in safe Rust. Therefore, the development team has to create safe Rust abstractions and interfaces that allow Rust code to interact with the kernel's C code without compromising safety.</p>
+
+<p>The article then delves into specific challenges. A significant one is dealing with linked lists, which are extensively used in the kernel. Directly implementing linked lists in Rust while adhering to its borrowing rules (which prevent multiple mutable references to the same data) proves difficult. The current solution involves using unsafe Rust code to manage the list's structure, wrapped in a safe Rust interface to prevent memory corruption. Another area of concern is interrupt handling. The kernel uses a mechanism called "threaded interrupts," where interrupt handling is deferred to a kernel thread. However, Rust's ownership and borrowing rules can complicate the process of passing data between the interrupt handler and the thread. The article also addresses the use of `spinlocks` for synchronization. The Rust wrapper for spinlocks must ensure that the lock is always held when accessing protected data, and that the lock is released properly. This requires careful design to prevent deadlocks or data races. Further, the article notes the importance of tooling and testing. The Rust code in the kernel needs to be thoroughly tested to ensure that it adheres to the kernel's requirements for stability and reliability. Developers are working on tools to automate this process and to make it easier to write safe and correct Rust code for the kernel.</p>
+
+<p>The discussion also touched upon the topic of exception handling. C relies heavily on return codes to signal errors, whereas Rust prefers to use `Result` types for error propagation. The integration of these two approaches requires careful consideration to avoid losing important error information. Finally, the article emphasizes that the adoption of Rust in the kernel is a gradual process. The developers are committed to ensuring that Rust code meets the same standards of quality and reliability as C code. While there are challenges, the potential benefits of Rust, such as improved memory safety and reduced risk of vulnerabilities, make the effort worthwhile.</p>
+
+<h2>Key Points:</h2>
+<ul>
+<li>Rust integration into the Linux kernel is underway but faces challenges.</li>
+<li>Differences between Rust's safety model and C's flexibility create difficulties.</li>
+<li>Linked lists, interrupt handling, and spinlocks present specific challenges for safe Rust implementation.</li>
+<li>Safe Rust abstractions are crucial for interacting with C code without compromising safety.</li>
+<li>Tooling and testing are essential to ensure the reliability of Rust code in the kernel.</li>
+<li>Error handling needs careful consideration to integrate C's return codes and Rust's `Result` types.</li>
+<li>Rust adoption in the kernel is a gradual process focused on quality and reliability.</li>
+</ul>
+</div>
+</div>
+</article>
