@@ -1,0 +1,33 @@
+<article>
+    <h2>The Swift SDK for Android</h2>
+    <div>
+<div>
+<h2>Summary</h2>
+<p>The Swift project has introduced nightly Swift SDK builds for Android, enabling developers to build and test Swift code directly on Android devices and emulators. This initiative marks a significant step towards expanding Swift's reach beyond Apple's platforms, aligning with the project's goal of supporting server-side and cross-platform development. The nightly builds, generated from the <code>main</code> branch, provide access to the latest Swift language features, compiler improvements, and standard library updates. This allows developers to experiment with cutting-edge Swift capabilities in an Android environment.</p>
+
+<p>The article explains that these nightly SDKs are primarily intended for experimentation and testing, rather than production use, due to their potentially unstable nature. They are built using the Swift Cross-Compilation infrastructure, which allows the Swift compiler to generate code for different target platforms. The builds include the Swift standard library, core libraries, and essential tools needed to compile and run Swift code on Android. The builds are available for download as tarballs, containing the necessary components to set up a Swift development environment for Android.</p>
+
+<p>The article also provides instructions for downloading and setting up the nightly Swift SDK for Android. Developers need to download the appropriate tarball for their host platform (Linux or macOS), extract it, and configure their environment to point to the Swift toolchain. This involves setting environment variables such as <code>PATH</code>, <code>SWIFT_PATH</code>, and <code>ANDROID_NDK_HOME</code>. The Android NDK (Native Development Kit) is required as it provides the necessary tools and libraries for building native Android applications.</p>
+
+<p>Furthermore, the article demonstrates how to compile and run a simple Swift program on Android using the newly provided SDK. This includes creating a Swift source file, compiling it into an executable using <code>swiftc</code> with the appropriate target triple (<code>armv7-android</code>, <code>aarch64-android</code>, or <code>i686-android</code>), and then running the executable on an Android device or emulator using <code>adb push</code> and <code>adb shell</code>. The example highlights the basic steps involved in cross-compiling Swift code for Android and executing it in the Android environment.</p>
+
+<p>The availability of nightly Swift SDK builds for Android opens up new possibilities for Swift developers. It enables them to leverage their existing Swift knowledge and skills to create applications and libraries for the Android platform. This can lead to code sharing between iOS and Android projects, reducing development time and effort. It also allows developers to explore new use cases for Swift in areas such as mobile gaming, embedded systems, and server-side development on Android-based platforms.</p>
+
+<p>The article emphasizes that the Swift project welcomes feedback and contributions from the community. Developers are encouraged to report any issues they encounter while using the nightly SDKs and to contribute to the ongoing development of Swift on Android. This collaborative approach will help to improve the stability and functionality of the Swift SDK for Android and to ensure that it meets the needs of the broader Swift community.</p>
+<h2>Key points</h2>
+<ul>
+    <li>Nightly Swift SDK builds for Android are now available.</li>
+    <li>These builds allow developers to build and test Swift code on Android devices and emulators.</li>
+    <li>The builds are generated from the <code>main</code> branch and contain the latest Swift features and improvements.</li>
+    <li>These nightly SDKs are for experimentation and testing, not production.</li>
+    <li>The builds use the Swift Cross-Compilation infrastructure.</li>
+    <li>The SDK includes the Swift standard library, core libraries, and essential tools.</li>
+    <li>Instructions are provided for downloading and setting up the SDK.</li>
+    <li>The Android NDK is required.</li>
+    <li>An example demonstrates how to compile and run a simple Swift program on Android.</li>
+    <li>This initiative enables code sharing between iOS and Android projects.</li>
+    <li>The Swift project welcomes feedback and contributions from the community.</li>
+</ul>
+</div>
+</div>
+</article>

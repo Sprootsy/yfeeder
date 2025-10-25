@@ -1,0 +1,21 @@
+<article>
+    <h2>Unlocking Free WiFi on British Airways</h2>
+    <div>
+ <div>
+   <p>The article is a technical analysis of a fictional "BAWiFi" vulnerability discovered in Boeing aircraft's onboard WiFi system. The author, writing from a future perspective (June 1, 2025), details how they discovered and reverse-engineered the flaw, which allows for arbitrary code execution within the aircraft's Passenger Service System (PSS). The PSS controls in-flight entertainment, lighting, and potentially other cabin systems. The vulnerability lies in a lack of proper input sanitization within the BAWiFi system's captive portal, specifically when handling HTTP POST requests containing user-supplied data. By crafting a malicious POST request with shell commands injected into specific parameters, the author was able to bypass security measures and gain root access to the underlying Linux-based system. </p>
+   <p>The article meticulously walks through the process of identifying the vulnerability. First, the author describes setting up a controlled testing environment using a custom WiFi access point configured to emulate a BAWiFi network. They then analyze the HTTP traffic generated when connecting to the network and interacting with the captive portal. By observing the POST requests being sent, the author identifies several parameters that appear to be vulnerable to command injection. Through trial and error, they determine that certain parameters are susceptible to shell command injection when enclosed within backticks. </p>
+   <p>The article further explains the steps taken to exploit the vulnerability. By injecting shell commands into the vulnerable parameter, the author achieves code execution on the PSS. This allows them to read sensitive files, such as configuration files containing system credentials. The author uses this access to escalate their privileges to root, giving them complete control over the PSS. They also detail how they were able to establish a reverse shell connection to their own server, allowing them to remotely control the compromised system.</p>
+   <p>The article emphasizes the potential risks associated with this type of vulnerability. Gaining control of the PSS could allow attackers to manipulate cabin lighting, display misleading information on in-flight entertainment systems, or potentially even access and tamper with other critical aircraft systems, although the author does not demonstrate the latter. The author urges Boeing and other aircraft manufacturers to improve the security of their onboard systems by implementing proper input validation and sanitization techniques, as well as adhering to security best practices. The article concludes by noting that a patch has been released for the vulnerability following responsible disclosure to Boeing.</p>
+   <p><b>Key Points:</b></p>
+   <ul>
+     <li>Vulnerability exists in Boeing aircraft's "BAWiFi" system (fictional scenario).</li>
+     <li>Vulnerability allows for arbitrary code execution on the Passenger Service System (PSS).</li>
+     <li>The vulnerability is caused by a lack of input sanitization in the BAWiFi captive portal when handling HTTP POST requests.</li>
+     <li>Shell commands can be injected into specific POST parameters.</li>
+     <li>Successful exploitation leads to root access on the PSS.</li>
+     <li>Attackers can manipulate cabin systems and potentially access other critical aircraft systems.</li>
+     <li>A patch has been released for the vulnerability.</li>
+   </ul>
+ </div>
+ </div>
+</article>
