@@ -1,0 +1,29 @@
+<article>
+    <h2>A sharded DuckDB on 63 nodes runs 1T row aggregation challenge in 5 sec</h2>
+    <div>
+<div>
+  <p>
+    The article discusses the "One Trillion Row Challenge" (1TRC), a programming challenge designed to optimize the processing of a large dataset. The challenge involves reading a text file containing one trillion rows of temperature measurements for various weather stations, calculating the minimum, mean, and maximum temperature for each station, and then printing the results in alphabetical order by station name.
+  </p>
+  <p>
+    The 1TRC is not about the correctness of the calculations, as the formula for temperature calculation is simple, but rather about optimizing performance to process this massive dataset as quickly as possible. This involves considering factors such as I/O operations, memory management, CPU utilization, and algorithm selection. The goal is to push the limits of what's achievable with commodity hardware and clever programming techniques.
+  </p>
+  <p>
+    The article highlights several key areas where optimizations can be made. Input/output (I/O) is a major bottleneck, so techniques like memory-mapped files, buffered reading, and parallel processing of file segments are essential. Data structures need to be carefully chosen to minimize memory footprint and provide efficient lookups. Hash tables are often used for fast station name lookups. Efficient numerical processing is also crucial, including using appropriate data types (e.g., integers instead of floating-point numbers where possible) and minimizing calculations within the inner loop. Parallelization is another important aspect, as modern CPUs have multiple cores that can be used to process different parts of the data simultaneously.
+  </p>
+  <p>
+    The challenge is not new in spirit, as similar challenges have existed in the database and data processing world for years. However, the 1TRC specifically focuses on processing a large text file, which presents its own unique set of challenges.
+  </p>
+  <p><b>Key Points:</b></p>
+  <ul>
+    <li><b>Objective:</b> Process a one trillion row dataset of temperature measurements to calculate min, mean, and max temperatures for each weather station and output the results alphabetically.</li>
+    <li><b>Focus:</b> Optimization of performance rather than correctness of calculations.</li>
+    <li><b>I/O Optimization:</b> Techniques like memory-mapped files, buffered reading, and parallel file processing are critical to minimize I/O bottlenecks.</li>
+    <li><b>Data Structures:</b> Efficient data structures (e.g., hash tables) are needed to minimize memory usage and provide fast lookups.</li>
+    <li><b>Numerical Processing:</b> Choosing appropriate data types and minimizing calculations within loops improves performance.</li>
+    <li><b>Parallelization:</b> Leveraging multi-core CPUs through parallel processing is important for faster execution.</li>
+    <li><b>Challenge Type:</b> A programming challenge that pushes the limits of data processing on commodity hardware.</li>
+  </ul>
+</div>
+</div>
+</article>
