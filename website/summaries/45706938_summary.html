@@ -1,0 +1,23 @@
+<article>
+    <h2>How programs get run: ELF binaries (2015)</h2>
+    <div>
+ <div>
+  <p>This article from LWN.net discusses the challenges and proposed solutions for improving the memory management of the Linux kernel, specifically focusing on memory fragmentation and its impact on system performance. Memory fragmentation occurs when available memory is broken into small, non-contiguous blocks, making it difficult to allocate large contiguous blocks of memory, even when sufficient total memory is available. This can lead to allocation failures, performance degradation, and system instability.</p>
+  <p>The article highlights the different types of memory fragmentation, including external and internal fragmentation, and how they manifest in the kernel. External fragmentation arises when free memory is scattered in small chunks, while internal fragmentation occurs when allocated memory blocks are larger than the requested size, leading to wasted space within the allocated block.</p>
+  <p>The author, Mel Gorman, details several techniques used to mitigate memory fragmentation, such as compaction, which involves moving allocated memory blocks to consolidate free space. He also discusses the use of memory pools and slab allocators to reduce fragmentation by allocating memory in fixed-size chunks. Furthermore, the article explores the concept of memory zones and how they are used to isolate different types of memory and reduce fragmentation across different memory regions.</p>
+  <p>The article delves into the complexities of memory management in NUMA (Non-Uniform Memory Access) systems, where memory access times vary depending on the location of the memory relative to the processor. NUMA systems introduce additional challenges for memory management, as it's crucial to allocate memory close to the processor that will use it to minimize access latency. The article discusses how the kernel attempts to balance memory allocation across NUMA nodes to avoid memory imbalances and performance bottlenecks.</p>
+  <p>The article also touches upon the use of transparent huge pages (THP) as a mechanism to improve memory management by allocating memory in larger contiguous blocks. THP can reduce TLB (Translation Lookaside Buffer) misses and improve overall performance, but they can also exacerbate memory fragmentation if not managed carefully. The article discusses the trade-offs involved in using THP and the strategies for optimizing their use.</p>
+  <p>Furthermore, the author outlines ongoing research and development efforts to address memory fragmentation, including new algorithms and techniques for memory allocation and compaction. He emphasizes the importance of continuous monitoring and analysis of memory usage patterns to identify and address potential fragmentation issues. The article concludes by stressing the need for a holistic approach to memory management that considers the interplay between different kernel subsystems and the underlying hardware architecture.</p>
+  <p><b>Key points:</b></p>
+  <ul>
+   <li>Memory fragmentation is a significant challenge in Linux kernel memory management.</li>
+   <li>External and internal fragmentation are two common types of memory fragmentation.</li>
+   <li>Compaction, memory pools, and slab allocators are used to mitigate fragmentation.</li>
+   <li>NUMA systems introduce additional complexities for memory management.</li>
+   <li>Transparent Huge Pages (THP) can improve performance but can also exacerbate fragmentation.</li>
+   <li>Ongoing research focuses on new algorithms and techniques for memory allocation and compaction.</li>
+   <li>A holistic approach is needed to address memory fragmentation effectively.</li>
+  </ul>
+ </div>
+ </div>
+</article>

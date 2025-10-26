@@ -1,0 +1,35 @@
+<article>
+    <h2>ARM Memory Tagging: how it improves C/C&#43;&#43; memory safety (2018) [pdf]</h2>
+    <div>
+<div>
+  <p>This presentation discusses memory tagging, a hardware-based memory safety mechanism, and its integration into LLVM. Memory tagging aims to detect and prevent memory safety violations such as use-after-free, buffer overflows, and other memory corruption issues. The core idea is to associate metadata (tags) with memory allocations and pointers. Hardware then checks whether the tag on a pointer matches the tag on the memory location being accessed. If the tags don't match, it indicates a memory safety violation, and the program can be terminated or handled in a more controlled manner.</p>
+
+  <p>The presentation outlines the motivation for memory tagging, highlighting the prevalence and impact of memory safety bugs in real-world software. Traditional software-based approaches to memory safety often incur significant performance overhead. Hardware-assisted memory tagging offers the potential to achieve better performance with comparable or improved memory safety guarantees.</p>
+
+  <p>Several hardware architectures provide memory tagging capabilities, including ARM's Memory Tagging Extension (MTE) and similar features in other architectures.  These extensions provide instructions to set and check memory tags. The presentation then delves into how LLVM can be used to leverage these hardware features. The goal is to enable developers to use memory tagging without requiring extensive manual code changes. The compiler inserts the necessary instructions to set and check tags at appropriate points in the program.</p>
+
+  <p>The presentation details the challenges involved in integrating memory tagging into LLVM. These challenges include how to represent memory tags in LLVM's intermediate representation (IR), how to insert tag setting and checking instructions efficiently, and how to minimize the performance overhead introduced by memory tagging. Different approaches to memory tagging are explored, including coarse-grained and fine-grained tagging. Coarse-grained tagging associates a single tag with a larger memory region, while fine-grained tagging allows for more precise tracking of memory safety.</p>
+
+  <p>The presentation also covers the trade-offs between different tagging strategies. Fine-grained tagging provides better accuracy in detecting memory safety violations but can introduce higher performance overhead. Coarse-grained tagging has lower overhead but may miss some memory safety bugs. The choice of tagging strategy depends on the specific application requirements and the desired balance between performance and memory safety.</p>
+
+  <p>Furthermore, the presentation addresses the issue of compatibility with existing code.  Memory tagging should ideally be introduced without requiring extensive rewriting of existing codebases. The integration into LLVM allows developers to enable memory tagging with minimal changes to their source code, using compiler flags and annotations. The presentation discusses how to handle memory allocations and deallocations, pointer arithmetic, and other common operations in the presence of memory tags.</p>
+
+  <p>The talk also touches on the debugging aspects of memory tagging. When a memory safety violation is detected, it is essential to provide developers with useful information to diagnose and fix the bug. The presentation explores how to integrate memory tagging with debugging tools to provide more informative error messages and stack traces.</p>
+
+  <p>Finally, the presentation concludes with a discussion of future directions and potential improvements. This includes exploring more advanced tagging strategies, optimizing the performance of memory tagging, and extending the support for memory tagging to other languages and platforms. The goal is to make memory tagging a widely adopted and effective technique for improving the security and reliability of software.</p>
+
+  <h2>Key Points:</h2>
+  <ul>
+    <li><b>Memory Tagging:</b> A hardware-based memory safety mechanism using tags to detect memory errors.</li>
+    <li><b>Motivation:</b> Addresses prevalent memory safety bugs with lower overhead than software-based solutions.</li>
+    <li><b>Hardware Support:</b> Leverages features like ARM MTE, requiring compiler support for effective use.</li>
+    <li><b>LLVM Integration:</b> Focuses on adding memory tagging capabilities to LLVM with minimal code changes.</li>
+    <li><b>Challenges:</b> Includes representing tags in LLVM IR and inserting tag checks efficiently.</li>
+    <li><b>Granularity Trade-offs:</b> Explores coarse-grained vs. fine-grained tagging, balancing performance and accuracy.</li>
+    <li><b>Compatibility:</b> Aims to integrate memory tagging without requiring extensive code rewriting.</li>
+    <li><b>Debugging:</b> Considers integrating memory tagging with debugging tools for better error reporting.</li>
+    <li><b>Future Directions:</b> Includes optimizing performance and extending support to other platforms.</li>
+  </ul>
+</div>
+</div>
+</article>
