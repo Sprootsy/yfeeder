@@ -1,0 +1,32 @@
+<article>
+    <h2>The Journey Before main()</h2>
+    <div>
+<div>
+<h2>Summary</h2>
+<p>The article "Before Main" by Amit Prasad delves into the crucial, yet often overlooked, period of program execution that occurs before the `main` function is invoked in C++ (and, by extension, C). The author emphasizes that a significant amount of activity takes place behind the scenes to set up the execution environment before the programmer's code in `main` begins to run. Understanding this pre-`main` phase is essential for debugging, optimizing, and achieving a deeper understanding of program behavior, particularly in complex scenarios like those involving global objects, shared libraries, and dynamic linking.</p>
+
+<p>The article starts by illustrating how global objects, seemingly simple declarations, trigger constructor execution before `main`.  These constructors perform essential initialization tasks, and the order in which they're called is a complex dance orchestrated by the compiler and linker, often influenced by the translation unit order. This order is generally unspecified, meaning developers cannot rely on a particular sequence. This poses challenges when global objects depend on each other, as an object's constructor might execute before its dependencies are initialized, leading to undefined behavior.  The author highlights this issue and provides examples of how this problem might manifest itself.</p>
+
+<p>The article then explains the role of the C runtime library (CRT) and its startup code. This code, typically provided by the compiler and linker, performs essential system-level initialization. This includes setting up the stack, initializing the heap, and handling command-line arguments.  The CRT startup code also iterates through a table of function pointers – a list of constructors for global objects – and calls them in the appropriate order. The exact mechanics of the CRT startup code vary depending on the compiler, linker, and operating system.</p>
+
+<p>The piece also discusses the implications of shared libraries (DLLs on Windows, shared objects on Linux) on the pre-`main` execution phase. When a program uses shared libraries, the dynamic linker (e.g., `ld-linux.so` on Linux) is responsible for loading these libraries into memory and resolving symbols (function and variable references) at runtime. Crucially, the constructors of global objects within these shared libraries are also executed before `main`, adding another layer of complexity to the initialization process. The dynamic linker uses mechanisms like `DT_INIT` and `DT_INIT_ARRAY` (on Linux) to specify initialization functions that must be run before `main` is called in the main executable.</p>
+
+<p>The author further explores the impact of dynamic linking on global object initialization. When a shared library is loaded, its global objects are initialized. If the main executable or other shared libraries depend on these global objects, problems can arise if the initialization order is incorrect. The article points out that debugging these issues can be challenging, as the pre-`main` phase is often opaque and difficult to step through with a debugger.  The author gives an example of using `LD_DEBUG=all` to understand the order in which shared libraries get initialized on Linux.</p>
+
+<p>The article emphasizes the importance of being aware of the pre-`main` phase, especially when dealing with global objects and shared libraries. While global objects might seem convenient, their unpredictable initialization order can lead to subtle and hard-to-debug errors. The author suggests minimizing the use of global objects and considering alternative initialization strategies, such as lazy initialization or explicit initialization functions called from `main`, to avoid these pitfalls.</p>
+
+<p>In conclusion, "Before Main" sheds light on a complex and often hidden part of program execution. By understanding the pre-`main` phase, developers can write more robust and maintainable code, avoid common pitfalls related to global object initialization, and gain a deeper understanding of how programs are loaded and executed by the operating system.</p>
+
+<h2>Key Points</h2>
+<ul>
+<li>Execution begins <i>before</i> the `main` function.</li>
+<li>Global object constructors are executed before `main`.</li>
+<li>The order of global object constructor execution is unspecified and depends on factors like translation unit order and linker behavior.</li>
+<li>The C Runtime Library (CRT) provides startup code that initializes the execution environment, including the stack and heap.</li>
+<li>CRT startup code invokes global object constructors.</li>
+<li>Shared libraries (DLLs/shared objects) introduce additional complexity because their global objects are also initialized before `main`.</li>
+<li>Dynamic linkers (e.g., `ld-linux.so`) load shared libraries and resolve symbols at runtime.</li>
+<li>The dynamic linker uses mechanisms like `DT_INIT` and `DT_INIT_ARRAY` to execute initialization functions in shared libraries before `main`.</li>
+<li>Dependencies between global objects can cause problems if initialization order is incorrect.</li>
+<li>Debugging pre-`main</div>
+</article>
