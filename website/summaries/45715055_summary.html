@@ -1,0 +1,34 @@
+<article>
+    <h2>Show HN: MyraOS – My 32-bit operating system in C and ASM (Hack Club project)</h2>
+    <div>
+<div>
+  <h3>Summary</h3>
+  <p>
+    MyraOS is a research operating system designed for studying and experimenting with OS development, written in C++ for x86-64 architectures. It emphasizes modularity and a microkernel architecture where as much functionality as possible is implemented as userspace services. This design aims to improve security and system stability.
+  </p>
+  <p>
+    The OS features a preemptive and multi-core capable kernel. Processes are isolated through virtual memory, and inter-process communication (IPC) is facilitated using message passing. Key components are implemented as userspace services, including a file system (based on a virtual file system layer), device drivers, and a network stack. This separation allows for easier debugging, testing, and updating of these services without compromising the entire system.
+  </p>
+  <p>
+    MyraOS includes a custom build system using CMake, along with a suite of development tools to facilitate development and debugging. It uses a memory allocator based on the buddy system algorithm. It supports booting via UEFI and includes features like virtual file systems, which enable the use of different file systems. Device drivers operate in userspace, which enhances system stability by preventing driver crashes from directly affecting the kernel. The network stack also runs in userspace, further isolating potential security vulnerabilities.
+  </p>
+  <p>
+    The project includes various debugging tools and utilities to aid in the development process. Overall, MyraOS serves as a platform for learning about operating systems, experimenting with different designs, and contributing to a practical OS project. The documentation provided explains the system's architecture, build process, and key design decisions.
+  </p>
+  <h3>Key Points</h3>
+  <ul>
+    <li>Research operating system written in C++ for x86-64.</li>
+    <li>Modular microkernel architecture.</li>
+    <li>Preemptive and multi-core capable kernel.</li>
+    <li>Process isolation through virtual memory.</li>
+    <li>Inter-Process Communication (IPC) via message passing.</li>
+    <li>Userspace services for file system, device drivers, and network stack.</li>
+    <li>Custom build system using CMake.</li>
+    <li>UEFI booting support.</li>
+    <li>Virtual file system layer for supporting multiple file systems.</li>
+    <li>Userspace device drivers for improved stability.</li>
+    <li>Userspace network stack for enhanced security.</li>
+  </ul>
+</div>
+</div>
+</article>

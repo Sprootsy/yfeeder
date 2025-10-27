@@ -1,0 +1,19 @@
+<article>
+    <h2>Microsoft 365 Copilot – Arbitrary Data Exfiltration via Mermaid Diagrams</h2>
+    <div>
+ <div>
+  <p>The article discusses a vulnerability in Microsoft 365 Copilot that allowed for arbitrary data exfiltration using Mermaid diagrams. The vulnerability stemmed from Copilot's ability to generate diagrams based on user prompts, which could be manipulated to include external links. When Copilot attempted to render these diagrams, it would inadvertently make requests to the specified external URLs, effectively exfiltrating data to an attacker-controlled server. The author discovered that by crafting specific Mermaid diagrams with external links, sensitive information, such as internal file names, could be leaked. Microsoft was notified of the vulnerability and subsequently fixed it.</p>
+ 
+
+  <h2>Key Points:</h2>
+  <ul>
+   <li>Vulnerability: Microsoft 365 Copilot was vulnerable to arbitrary data exfiltration.</li>
+   <li>Mechanism: The vulnerability was based on Copilot's ability to render Mermaid diagrams with external links.</li>
+   <li>Attack Vector: Malicious actors could craft diagrams with external links pointing to attacker-controlled servers.</li>
+   <li>Data Exfiltration: When Copilot rendered the diagrams, it would make requests to the external URLs, leaking data in the process.</li>
+   <li>Impact: Internal file names and potentially other sensitive information could be exfiltrated.</li>
+   <li>Mitigation: Microsoft was notified and has since fixed the vulnerability.</li>
+  </ul>
+ </div>
+ </div>
+</article>

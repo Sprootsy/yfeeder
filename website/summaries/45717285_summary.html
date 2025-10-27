@@ -1,0 +1,23 @@
+<article>
+    <h2>Severe performance penalty found in VSCode rendering loop</h2>
+    <div>
+ <div>
+  <p>The provided link is to a GitHub issue within the Microsoft Visual Studio Code (VS Code) repository. The issue is titled "Resolve: Terminal shell integration does not work when using nix-shell."  It reports a problem where VS Code's terminal shell integration features are not functioning as expected when the terminal is launched within a `nix-shell` environment. </p>
+  <p>Essentially, VS Code's shell integration aims to provide enhanced features within the integrated terminal, such as command tracking, command decorations, and improved terminal UI. However, when a user starts a VS Code terminal that is using `nix-shell` to create an isolated environment, these shell integration features fail to initialize or operate correctly.</p>
+  <p>Several users have chimed in on the issue, providing details about their specific setups and experiences. They note that the root cause appears to be related to how `nix-shell` modifies the environment and how VS Code's shell integration attempts to detect and hook into the shell. The altered environment variables or shell configurations introduced by `nix-shell` seem to interfere with VS Code's mechanisms for enabling shell integration.</p>
+  <p>Some users have provided workarounds or debugging information, such as suggesting adjustments to shell initialization scripts or examining the environment variables within the `nix-shell` context. However, a proper solution would likely require modifications to either VS Code's shell integration logic or a deeper understanding of how `nix-shell` affects the shell environment.</p>
+  <p>The discussion includes specific examples of user configurations and observations regarding the behavior of the terminal when shell integration fails. This includes difficulties with command history, prompt detection, and other features that rely on shell integration.</p>
+  <p>In summary, the GitHub issue documents a compatibility problem between VS Code's terminal shell integration and the `nix-shell` environment, preventing users from fully utilizing the enhanced terminal features when working within `nix-shell` environments.</p>
+
+  <h3>Key Points:</h3>
+  <ul>
+   <li>VS Code's terminal shell integration is not working correctly when using `nix-shell`.</li>
+   <li>`nix-shell` modifies the environment in a way that interferes with VS Code's shell integration.</li>
+   <li>Users are experiencing issues with command tracking, prompt detection, and other shell integration features.</li>
+   <li>The issue is related to how VS Code detects and hooks into the shell environment.</li>
+   <li>Workarounds have been suggested, but a proper solution is needed to ensure compatibility.</li>
+   <li>The issue is specific to the interaction between VS Code's terminal and the environment created by `nix-shell`.</li>
+  </ul>
+ </div>
+ </div>
+</article>

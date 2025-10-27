@@ -1,0 +1,21 @@
+<article>
+    <h2>How I turned Zig into my favorite language to write network programs in</h2>
+    <div>
+<div>
+  <p>The article "ZIO Async IO for Zig" discusses the author's exploration of asynchronous I/O (async I/O) in the Zig programming language, drawing inspiration from the ZIO library in Scala. The author aims to create a similar robust and composable async I/O framework for Zig, addressing challenges in Zig's standard library and existing async solutions. The article details the author's experimentation with Zig's `async` and `await` keywords, low-level system calls like `epoll`, and custom data structures to manage async tasks and their states. The goal is to achieve efficient concurrency and parallelism by enabling tasks to yield control while waiting for I/O operations, allowing other tasks to proceed. The author provides code snippets and explanations of the implementation, including the design of a task scheduler, a mechanism for registering I/O events, and utilities for handling concurrency primitives like mutexes. The article also highlights the importance of proper error handling and resource management in async programming to prevent issues like deadlocks and memory leaks. Additionally, the author reflects on the differences between Zig's approach to async I/O and other languages like Scala and Go, and provides insights on the trade-offs involved in implementing async I/O in a low-level language like Zig. It touches upon the challenges of dealing with Zig's lack of garbage collection and the need for manual memory management in the context of async tasks. The author also shares thoughts on the design choices made and the lessons learned while building the ZIO-inspired async I/O library for Zig.</p>
+
+  <h3>Key Points:</h3>
+  <ul>
+    <li>The author is creating a ZIO-inspired async I/O library for Zig.</li>
+    <li>The library aims to provide robust and composable async I/O capabilities, addressing limitations in Zig's standard library.</li>
+    <li>The implementation utilizes Zig's `async` and `await` keywords, along with low-level system calls like `epoll`.</li>
+    <li>A custom task scheduler is designed to manage async tasks and their states.</li>
+    <li>The library includes mechanisms for registering I/O events and handling concurrency primitives (e.g., mutexes).</li>
+    <li>Error handling and resource management are crucial considerations in the design.</li>
+    <li>The author reflects on the differences between Zig's async I/O and other languages like Scala and Go.</li>
+    <li>Manual memory management is a significant challenge due to Zig's lack of garbage collection.</li>
+    <li>The article provides code snippets and explanations of the implementation process and design choices.</li>
+  </ul>
+</div>
+</div>
+</article>
