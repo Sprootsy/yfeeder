@@ -1,0 +1,93 @@
+<article>
+    <h2>We Saved $500k per Year by Rolling Our Own &#34;S3&#34;</h2>
+    <div>
+<div>
+  <h2>Summary</h2>
+  <p>
+    The article details how Nanit, a company focused on baby monitoring and
+    sleep analysis, significantly reduced its cloud storage costs by creating
+    its own S3-compatible object storage solution called "Yoda" instead of
+    relying solely on Amazon's S3. Nanit's core business involves storing and
+    processing large volumes of video data, leading to substantial S3 costs that
+    impacted their gross margins. The engineering team explored various options,
+    including using S3 Intelligent-Tiering and other cloud storage providers,
+    but found them insufficient to meet their specific needs and cost
+    expectations.
+  </p>
+  <p>
+    The primary driver for building their own solution was the cost of S3,
+    particularly considering the amount of data Nanit stored and the predictable
+    nature of their data access patterns. After a thorough analysis, they
+    concluded that building a custom solution based on open-source components
+    like MinIO, coupled with their custom metadata management and data lifecycle
+    policies, would be more cost-effective. They estimated potential savings of
+    hundreds of thousands of dollars per year.
+  </p>
+  <p>
+    The article explains the architecture of Yoda, which consists of MinIO for
+    object storage, a custom metadata service (using MySQL), and various
+    background workers for tasks such as data lifecycle management (deletion and
+    archiving). The metadata service is crucial for efficiently tracking objects
+    and applying retention policies. The team implemented a strategy of storing
+    recent data in S3 for quick access and migrating older, less frequently
+    accessed data to Yoda, which was backed by significantly cheaper storage.
+  </p>
+  <p>
+    The implementation involved careful consideration of data migration,
+    consistency, and operational overhead. They built tools to seamlessly
+    migrate data between S3 and Yoda, ensuring minimal disruption to their
+    users. They also focused on monitoring and alerting to proactively identify
+    and address any issues with the new storage solution.
+  </p>
+  <p>
+    The results of implementing Yoda were significant. Nanit achieved substantial
+    cost savings, estimated at $500,000 per year, while maintaining the
+    performance and reliability of their data storage. The project demonstrated
+    the value of carefully analyzing cloud costs and considering alternative
+    solutions, even if it means building custom infrastructure. The article
+    emphasizes that while building your own solution is not always the right
+    choice, it can be a viable option when the cost savings are substantial and
+    the team has the necessary expertise.
+  </p>
+
+  <h2>Key Points</h2>
+  <ul>
+    <li>
+      Nanit built a custom S3-compatible object storage solution ("Yoda") to
+      reduce cloud storage costs.
+    </li>
+    <li>
+      High S3 costs, driven by large volumes of video data, were impacting gross
+      margins.
+    </li>
+    <li>
+      Alternatives like S3 Intelligent-Tiering were insufficient for their
+      needs.
+    </li>
+    <li>
+      Yoda is based on MinIO for object storage and a custom metadata service
+      (MySQL).
+    </li>
+    <li>
+      Data lifecycle management (deletion/archiving) is handled by background
+      workers.
+    </li>
+    <li>
+      The strategy involves storing recent data in S3 and migrating older data to
+      Yoda.
+    </li>
+    <li>
+      Data migration tools were built to minimize disruption.
+    </li>
+    <li>
+      Implementation resulted in estimated savings of $500,000 per year.
+    </li>
+    <li>
+      Building a custom solution can be viable when cost savings are substantial
+      and the team has the expertise.
+    </li>
+  </ul>
+</div>
+```
+</div>
+</article>
