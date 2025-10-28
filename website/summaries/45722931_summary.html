@@ -1,0 +1,29 @@
+<article>
+    <h2>Fnox, a secret manager that pairs well with mise</h2>
+    <div>
+<div>
+  <p>The GitHub discussion revolves around the tool "mise" (formerly known as rtx), a polyglot version manager designed to handle multiple programming languages and tools. Users are discussing a proposal to change mise's default behavior regarding plugin installation and tool installation. Currently, mise automatically installs plugins when it detects a tool (e.g., node, python) specified in a configuration file (like `.mise.toml` or `.tool-versions`) if that plugin isn't already installed. Similarly, it automatically installs the specified tool version if it's not already present.</p>
+
+  <p>The main point of contention is whether this automatic installation should remain the default behavior or if it should be changed to require explicit user confirmation or an opt-in mechanism. Proponents of the change argue that automatic installation can be surprising and potentially disruptive, especially in CI/CD environments or when users have specific reasons for wanting to control the installation process manually. They suggest that explicitly requiring users to run a command like `mise install` (or adding a flag like `--yes`) would provide more transparency and control.</p>
+
+  <p>Arguments in favor of retaining the automatic installation include the convenience it offers, particularly for new users or in shared development environments where it simplifies setup. Users who prefer the current behavior appreciate that it "just works" without requiring extra steps. They also raise concerns that requiring explicit installation might lead to confusion and increase the barrier to entry for new users.</p>
+
+  <p>The discussion also covers alternative approaches, such as introducing a configuration option to control the automatic installation behavior, providing clearer messaging or warnings when automatic installation occurs, and improving the plugin installation process to be more reliable and less prone to errors. Several users share their experiences with mise in different environments and offer suggestions based on their workflows.</p>
+
+  <p>There is also some conversation around the initial design goals of mise, particularly in comparison to asdf, another version manager. Some users suggest that mise's original intent was to provide a more streamlined and user-friendly experience than asdf, and that changing the default behavior might deviate from this goal.</p>
+
+  <p>The discussion is ongoing, with users weighing the trade-offs between convenience, control, and transparency. The maintainers of mise are considering the feedback and exploring different options to address the concerns raised while preserving the tool's usability.</p>
+
+  <p><b>Key Points:</b></p>
+  <ul>
+    <li><b>Proposal:</b> Change mise's default behavior to require explicit confirmation or an opt-in for plugin and tool installation.</li>
+    <li><b>Current Behavior:</b> Mise automatically installs plugins and tools when they are detected in configuration files but not already installed.</li>
+    <li><b>Arguments for Change:</b> Increased control, transparency, and predictability, especially in CI/CD environments. Prevents surprising or unwanted installations.</li>
+    <li><b>Arguments Against Change:</b> Reduced convenience, increased complexity for new users, and potential deviation from mise's original design goals.</li>
+    <li><b>Alternative Solutions:</b> Configuration options to control automatic installation, clearer messaging, and improved plugin installation process.</li>
+    <li><b>Context:</b> Comparison to asdf, user experiences in various environments, and considerations for both new and experienced users.</li>
+    <li><b>Status:</b> Ongoing discussion with maintainers considering feedback and exploring different options.</li>
+  </ul>
+</div>
+</div>
+</article>
