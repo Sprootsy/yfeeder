@@ -1,0 +1,25 @@
+<article>
+    <h2>Avoid 2:00 and 3:00 am cron jobs (2013)</h2>
+    <div>
+<div>
+  <h2>Summary</h2>
+  <p>
+    The article "Avoid 200 and 300 AM Cron Jobs" discusses the potential pitfalls of scheduling cron jobs to run between 2:00 AM and 3:00 AM, particularly in environments that utilize daylight saving time (DST). The author highlights that during the transition to DST in the spring, the clock advances by one hour, effectively skipping the 2:00 AM hour. Consequently, any cron jobs scheduled to run during that hour will not execute on that day.
+  </p>
+  <p>
+    The article emphasizes that while this issue is well-known among experienced system administrators, it can still lead to unexpected problems if overlooked. The author suggests avoiding this time slot when scheduling important tasks that must run daily. Instead, they recommend scheduling cron jobs either before 2:00 AM or after 3:00 AM to ensure consistent execution, regardless of DST transitions.
+  </p>
+  <p>
+    The author acknowledges that some system administrators might opt to use tools or configurations that handle DST transitions automatically. However, the article primarily caters to those who manage cron jobs directly and need to be mindful of the potential for skipped executions during DST transitions. The primary takeaway is a cautionary note to consider DST when scheduling cron jobs and to avoid the 2:00 AM to 3:00 AM window to prevent unintended consequences.
+  </p>
+
+  <h2>Key Points</h2>
+  <ul>
+    <li>Avoid scheduling cron jobs between 2:00 AM and 3:00 AM in environments with daylight saving time (DST).</li>
+    <li>During the spring DST transition, the 2:00 AM hour is skipped, causing cron jobs scheduled during that time to not execute.</li>
+    <li>Schedule cron jobs before 2:00 AM or after 3:00 AM to ensure consistent daily execution.</li>
+    <li>Be mindful of DST transitions when scheduling cron jobs to prevent missed executions.</li>
+  </ul>
+</div>
+</div>
+</article>
