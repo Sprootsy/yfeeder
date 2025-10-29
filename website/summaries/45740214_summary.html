@@ -1,0 +1,36 @@
+<article>
+    <h2>Keeping the Internet fast and secure: introducing Merkle Tree Certificates</h2>
+    <div>
+<div>
+<p>The article discusses Cloudflare's implementation of a Median Time Client (MTC) to improve the accuracy and reliability of time synchronization across its global network. It addresses the limitations of traditional NTP (Network Time Protocol) in the face of network asymmetries and adversarial attacks, and how MTC helps mitigate these issues.</p>
+
+<p>The article begins by explaining the importance of accurate timekeeping for various network operations, including cryptographic operations, log correlation, and cache expiry. Traditional NTP relies on exchanging timestamps between clients and servers to estimate the current time. However, network asymmetry, where the forward and reverse paths between a client and server have different delays, can introduce errors in the time estimate. Additionally, NTP is vulnerable to attacks where adversaries can manipulate timestamps, leading to incorrect time synchronization.</p>
+
+<p>To address these problems, Cloudflare developed MTC. MTC works by having each server measure the timestamps of other servers on the network, creating a mesh of time measurements.  These are published as a signed data structure. Then, clients download these measurements and use them to estimate their own time. The MTC design uses a combination of cryptographic techniques and statistical analysis to improve time accuracy and resilience.</p>
+
+<p>One key aspect of MTC is its use of cryptographic signatures. Each server cryptographically signs its timestamp measurements, preventing attackers from tampering with the data. Clients verify these signatures before using the measurements to estimate their time. This helps ensure the integrity of the time data.</p>
+
+<p>Another important feature of MTC is its use of statistical analysis to mitigate the effects of network asymmetry and outliers. Instead of simply averaging the timestamps from different servers, MTC uses robust statistical methods to identify and remove outliers, and to estimate the true time based on the distribution of measurements. This helps improve the accuracy and stability of the time synchronization, even in the presence of noisy network conditions.</p>
+
+<p>The article also describes the specific algorithms used in MTC, including techniques for outlier detection and time estimation. The algorithms are designed to be computationally efficient and scalable, allowing MTC to be deployed across Cloudflare's large and distributed network.</p>
+
+<p>Furthermore, the article discusses the deployment and evaluation of MTC in Cloudflare's network. It presents experimental results demonstrating the improved accuracy and resilience of MTC compared to traditional NTP. The results show that MTC can significantly reduce the impact of network asymmetry and adversarial attacks on time synchronization.</p>
+
+<p>In conclusion, the article highlights the benefits of MTC for improving time synchronization in large and distributed networks. By using cryptographic signatures and robust statistical analysis, MTC provides a more accurate and resilient time synchronization solution compared to traditional NTP. This improved time synchronization can enhance the reliability and security of various network operations, making MTC a valuable tool for network operators.</p>
+
+<h2>Key Points:</h2>
+<ul>
+<li>Accurate time synchronization is crucial for network operations like cryptography, log correlation, and cache management.</li>
+<li>Traditional NTP is vulnerable to network asymmetry and adversarial attacks, which can compromise time accuracy.</li>
+<li>Cloudflare developed MTC to address the limitations of NTP.</li>
+<li>MTC uses a mesh of timestamp measurements between servers, which are cryptographically signed.</li>
+<li>Clients download these measurements and use them to estimate their own time.</li>
+<li>MTC employs robust statistical methods to mitigate network asymmetry and outliers.</li>
+<li>Cryptographic signatures prevent attackers from tampering with time data.</li>
+<li>Statistical analysis improves the accuracy and stability of time synchronization.</li>
+<li>MTC has been deployed and evaluated in Cloudflare's network, demonstrating improved accuracy and resilience compared to NTP.</li>
+<li>MTC enhances the reliability and security of network operations through improved time synchronization.</li>
+</ul>
+</div>
+</div>
+</article>

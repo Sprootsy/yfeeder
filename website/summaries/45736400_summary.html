@@ -1,0 +1,26 @@
+<article>
+    <h2>Show HN: Apache Fory Rust – 10-20x faster serialization than JSON/Protobuf</h2>
+    <div>
+ <div>
+  <p>The article discusses "Fory," a new Rust serialization framework designed to address the limitations of existing Rust serialization solutions like Serde. It highlights the challenges in handling diverse data formats, schema evolution, and the need for compile-time safety and performance. Fory aims to provide a versatile and efficient solution that can adapt to various serialization needs while maintaining Rust's core principles.</p>
+  <p>The current landscape of Rust serialization is dominated by Serde, which, while powerful, struggles with evolving schemas and handling non-self-describing formats efficiently. The article points out that many real-world applications require dealing with data formats beyond the standard ones supported by Serde (JSON, YAML, etc.) and need better support for schema migrations and versioning. Additionally, the performance overhead associated with Serde's generic approach can be a bottleneck in performance-critical applications.</p>
+  <p>Fory introduces a novel approach by offering a more flexible and extensible architecture. It achieves this through a combination of compile-time code generation and a runtime-agnostic data model. This allows Fory to tailor the serialization and deserialization logic to the specific data format and schema, resulting in improved performance and reduced code size. The framework's design also prioritizes schema evolution, making it easier to handle changes in data structures over time without breaking compatibility.</p>
+  <p>The core components of Fory include a schema definition language (SDL), a code generator, and a runtime library. The SDL allows developers to define their data schemas in a clear and concise manner. The code generator then uses these schemas to produce Rust code that handles the serialization and deserialization processes. The runtime library provides the necessary infrastructure for managing data buffers and handling errors.</p>
+  <p>One of the key features of Fory is its support for custom data formats. Developers can define their own encoders and decoders to handle formats not natively supported by the framework. This makes Fory highly adaptable to a wide range of applications, including those dealing with binary protocols, embedded systems, and legacy data formats.</p>
+  <p>Fory also focuses on performance. By generating specialized code for each data format and schema, it minimizes the overhead associated with generic serialization libraries. Furthermore, the framework is designed to be zero-copy whenever possible, reducing the need for unnecessary data duplication.</p>
+  <p>The article then presents a practical example of using Fory to serialize and deserialize data in a custom binary format. It shows how to define the schema, generate the code, and use the resulting code to read and write data. The example demonstrates the ease of use and flexibility of the framework.</p>
+  <p>Finally, the article concludes by discussing the future directions of Fory, including plans to add support for more data formats, improve the schema definition language, and enhance the code generation capabilities. The authors invite the Rust community to contribute to the project and help shape its development.</p>
+  <h2>Key Points:</h2>
+  <ul>
+   <li>Fory is a new Rust serialization framework designed to overcome the limitations of existing solutions like Serde.</li>
+   <li>It aims to provide versatility, efficiency, and better support for schema evolution and custom data formats.</li>
+   <li>Fory uses a combination of compile-time code generation and a runtime-agnostic data model.</li>
+   <li>The core components include a schema definition language (SDL), a code generator, and a runtime library.</li>
+   <li>Fory supports custom data formats through user-defined encoders and decoders.</li>
+   <li>The framework prioritizes performance by generating specialized code and minimizing data copying.</li>
+   <li>The article provides a practical example of using Fory with a custom binary format.</li>
+   <li>Future development plans include adding support for more data formats and improving the SDL and code generation capabilities.</li>
+  </ul>
+ </div>
+ </div>
+</article>
