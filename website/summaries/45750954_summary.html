@@ -1,0 +1,23 @@
+<article>
+    <h2>Dithering – Part 1</h2>
+    <div>
+ <div>
+  <p>This article, titled "Dithering: Part 1," is the first in a series exploring the concept of dithering in digital image processing. The author starts by explaining the fundamental problem that dithering addresses: representing a continuous range of colors (or shades of gray) using a limited, discrete set of colors. This limitation often arises when displaying images on devices with restricted color palettes or when saving images in formats that support fewer colors than the original image.</p>
+  <p>The article uses the example of converting a grayscale image to a black-and-white image (1-bit color depth) to illustrate the need for dithering. A straightforward conversion, such as setting all pixel values above a certain threshold to white and below to black, results in harsh, artificial-looking boundaries and a loss of detail. Dithering aims to mitigate these artifacts by introducing a controlled form of noise that, when viewed from a distance, creates the illusion of intermediate shades.</p>
+  <p>The author introduces the concept of "error diffusion" as a dithering technique. This technique works by distributing the error (the difference between the original pixel value and the quantized pixel value) to neighboring pixels. This error diffusion helps to maintain the overall brightness of the image and reduce the appearance of banding or contouring.</p>
+  <p>The article then explains the Floyd-Steinberg dithering algorithm, a common and effective error diffusion method. This algorithm distributes the quantization error to four neighboring pixels: the pixel to the right, the pixel below, and the two diagonal pixels below and to the sides. Specific weights are assigned to each neighbor determining how much of the error is added to their original value. The standard Floyd-Steinberg weights are 7/16 to the right, 3/16 to the bottom left, 5/16 to the bottom, and 1/16 to the bottom right.</p>
+  <p>The author provides a detailed explanation of how the Floyd-Steinberg algorithm processes each pixel, calculating the error, distributing it, and moving on to the next pixel. By propagating the error, the algorithm ensures that areas that should be slightly gray, have a mix of black and white pixels that average out to the correct shade when perceived by the eye.</p>
+  <p>The article also acknowledges that the order in which pixels are processed can affect the appearance of the dithered image. The standard left-to-right, top-to-bottom raster scan can sometimes create directional artifacts. The author hints that future articles will explore different scanning patterns to address these issues.</p>
+  <p>Finally, the article shows examples of images dithered using the described techniques to visually demonstrate the effectiveness of dithering compared to simple thresholding.</p>
+  <p><b>Key points:</b></p>
+  <ul>
+   <li>Dithering is a technique used to simulate more colors than are actually available in a color palette.</li>
+   <li>It addresses the problem of representing continuous color ranges with a limited set of discrete colors, especially when reducing color depth.</li>
+   <li>Simple thresholding leads to harsh boundaries and loss of detail.</li>
+   <li>Error diffusion is a dithering method that distributes the quantization error to neighboring pixels.</li>
+   <li>The Floyd-Steinberg algorithm is a common error diffusion algorithm with specific weights for distributing error to neighboring pixels.</li>
+   <li>The order in which pixels are processed can affect the appearance of the dithered image, potentially leading to artifacts.</li>
+  </ul>
+ </div>
+ </div>
+</article>

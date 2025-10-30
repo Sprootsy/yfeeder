@@ -1,0 +1,32 @@
+<article>
+    <h2>The Green Tea Garbage Collector</h2>
+    <div>
+<div>
+<p>The Go team at Google has announced the release of a new tool called <code>greentea</code>, which is designed to help Go developers identify and fix performance regressions in their Go code. Performance regressions are changes in code that cause it to run slower or consume more resources than it did previously. Detecting these regressions early in the development cycle is crucial for maintaining the performance of Go applications.</p>
+
+<p><code>greentea</code> is a command-line tool that automates the process of running benchmarks, collecting performance data, and comparing the results between different versions of the code. It integrates with the <code>benchstat</code> tool, which is used to statistically analyze benchmark results and determine if there are significant performance differences. The tool aims to make performance testing more accessible and easier to integrate into continuous integration (CI) systems.</p>
+
+<p>The blog post outlines the challenges of detecting performance regressions manually and explains how <code>greentea</code> addresses these challenges. It emphasizes the importance of consistent benchmark environments, automated execution, and statistical analysis to ensure reliable results. The tool is designed to be flexible and can be configured to run different types of benchmarks, specify custom test environments, and integrate with various CI systems.</p>
+
+<p>The post provides a detailed explanation of how to use <code>greentea</code>, including examples of how to configure and run benchmarks, analyze the results, and integrate it into a CI pipeline. The blog post also describes the key features and design considerations behind the tool, such as its ability to handle different types of benchmarks, its support for custom test environments, and its integration with <code>benchstat</code>.</p>
+
+<p>The tool works by defining a set of benchmarks to run and then executing these benchmarks in a controlled environment. It then compares the results against a baseline, typically the performance of the code in the main branch. <code>greentea</code> uses statistical analysis to determine if any performance changes are significant, taking into account the inherent variability in benchmark results. If a regression is detected, the tool can provide detailed information about the performance changes, including the specific benchmarks that were affected and the magnitude of the performance difference.</p>
+
+<p>The blog post also covers the benefits of using <code>greentea</code>, such as improved performance, reduced development costs, and increased developer productivity. By automating the process of performance testing, <code>greentea</code> allows developers to focus on writing code rather than manually running benchmarks and analyzing results.</p>
+
+<p>The post concludes by encouraging Go developers to try out <code>greentea</code> and provide feedback to the Go team. The tool is open-source and available on GitHub, and the Go team welcomes contributions from the community.</p>
+
+<h2>Key points:</h2>
+<ul>
+<li><code>greentea</code> is a new command-line tool for detecting performance regressions in Go code.</li>
+<li>It automates benchmark execution, data collection, and statistical analysis using <code>benchstat</code>.</li>
+<li>The tool helps maintain application performance by identifying regressions early.</li>
+<li>It provides consistent benchmark environments and automated execution.</li>
+<li><code>greentea</code> is configurable for various benchmarks and CI systems.</li>
+<li>It compares benchmark results against a baseline and identifies statistically significant changes.</li>
+<li>The tool enhances developer productivity by automating performance testing.</li>
+<li><code>greentea</code> is open-source and available on GitHub for community contributions.</li>
+</ul>
+</div>
+</div>
+</article>

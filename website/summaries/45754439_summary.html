@@ -1,0 +1,28 @@
+<article>
+    <h2>Raspberry Pi Pico Bit-Bangs 100 Mbit/S Ethernet</h2>
+    <div>
+<div>
+<h2>Summary</h2>
+The article discusses the RP2350, a microcontroller that achieves 100 Mbit Ethernet communication through bit-banging. Bit-banging is a technique where software directly controls the digital signals to implement a communication protocol, instead of relying on dedicated hardware peripherals. The RP2350, despite lacking a built-in Ethernet MAC, uses its dual-core RISC-V architecture and clever programming to generate and interpret Ethernet packets at a speed suitable for 100 Mbit networks.
+
+The article highlights the challenges involved in bit-banging Ethernet, particularly the strict timing requirements of the Ethernet standard. It explains how the RP2350 overcomes these challenges by utilizing both cores of its processor in parallel. One core is dedicated to transmitting Ethernet frames, while the other core handles receiving frames. Precise timing is achieved through careful code optimization and the use of the processor's internal timers. The authors of the implementation emphasize the importance of minimizing interrupt latency and ensuring deterministic execution times.
+
+The achievement is significant because it demonstrates the potential of modern microcontrollers to perform tasks traditionally handled by dedicated hardware. This approach can be particularly useful in applications where cost is a primary concern or where a custom Ethernet implementation is required. The article suggests potential use cases for this technology, such as industrial control systems, embedded networking devices, and IoT applications. Furthermore, the bit-banging Ethernet implementation on the RP2350 serves as a valuable learning resource for developers interested in understanding the intricacies of Ethernet communication and low-level programming techniques.
+
+The article also delves into the technical aspects of the implementation, including the use of RMII (Reduced Media Independent Interface) for connecting to a PHY (Physical Layer) chip. RMII is a simplified version of the MII standard that reduces the number of signals required for Ethernet communication. The article mentions the specific PHY chip used in the project and provides details about the connections between the RP2350 and the PHY.
+
+In conclusion, the article showcases an innovative approach to Ethernet communication using the RP2350 microcontroller. By leveraging the power of its dual-core architecture and employing bit-banging techniques, the developers have successfully implemented a 100 Mbit Ethernet interface without relying on dedicated hardware peripherals. This achievement opens up new possibilities for embedded networking applications and provides a valuable example of the capabilities of modern microcontrollers.
+
+<h2>Key Points</h2>
+<ul>
+  <li>The RP2350 microcontroller achieves 100 Mbit Ethernet communication via bit-banging.</li>
+  <li>Bit-banging involves directly controlling digital signals to implement Ethernet protocols.</li>
+  <li>The RP2350 utilizes its dual-core RISC-V architecture for parallel processing of transmit and receive functions.</li>
+  <li>Precise timing is crucial and achieved through code optimization and internal timers.</li>
+  <li>The implementation uses RMII to connect to a PHY chip.</li>
+  <li>This approach can be useful in cost-sensitive applications or for custom Ethernet implementations.</li>
+  <li>Potential use cases include industrial control, embedded networking, and IoT devices.</li>
+</ul>
+</div>
+</div>
+</article>
