@@ -1,0 +1,33 @@
+<article>
+    <h2>Futurelock: A subtle risk in async Rust</h2>
+    <div>
+<div>
+  <p>This Request for Discussion (RFD) proposes a new approach to managing firmware updates on Oxide's systems, specifically focusing on the Baseboard Management Controller (BMC) and other system firmware. The existing mechanism, based on OpenBMC's update process, is deemed inadequate due to its complexity, lack of transactional guarantees, and poor integration with Oxide's overall system design. The RFD argues for a more declarative and transactional update mechanism tightly integrated with the Helios control plane, Oxide's central management system.</p>
+
+  <p>The core problem identified is the current firmware update process's reliance on ad-hoc scripts and procedures, leading to potential inconsistencies and difficulties in rolling back failed updates. The goal is to achieve reliable, atomic firmware updates that can be easily managed and monitored through Helios. This involves moving away from the image-based update model of OpenBMC to a package-based approach, where firmware components are treated as discrete units with dependencies and versions.</p>
+
+  <p>The proposed solution introduces a new service called the "Firmware Update Agent" (FUA), responsible for orchestrating firmware updates on each node. Helios will manage the desired state of the firmware on each machine, and the FUA will ensure that the system converges to that state. The FUA will use a transactional model, where updates are staged and then atomically applied. This will ensure that the system either fully applies the update or rolls back to the previous known good state.</p>
+
+  <p>The update process involves several key steps. First, Helios determines the required firmware versions for a given node. It then instructs the FUA to update the firmware. The FUA downloads the necessary packages from a central repository and stages them for installation. Before applying the updates, the FUA performs pre-update checks to ensure the system is in a suitable state. If all checks pass, the FUA initiates the update process. If the update fails at any point, the FUA rolls back to the previous state. After a successful update, the FUA reports the new firmware versions to Helios.</p>
+
+  <p>The RFD also emphasizes the importance of observability and monitoring. Helios will track the status of firmware updates on all nodes, providing a centralized view of the system's firmware state. Detailed logs and metrics will be collected to aid in troubleshooting and performance analysis.</p>
+
+  <p>The proposed changes also include modifications to the build and release process. Firmware components will be packaged as individual units with version information and dependencies. This will allow for more granular updates and easier management of dependencies. The build process will generate metadata describing the contents of each firmware package, which will be used by Helios and the FUA to manage updates.</p>
+
+  <p>Finally, the RFD acknowledges that this is a significant undertaking and proposes a phased approach to implementation. The initial phase will focus on implementing the core FUA functionality and integrating it with Helios. Subsequent phases will address more advanced features, such as support for different firmware types and more sophisticated update strategies.</p>
+
+  <h2>Key Points:</h2>
+  <ul>
+    <li><b>Problem:</b> Current OpenBMC-based firmware update mechanism is complex, lacks transactional guarantees, and is poorly integrated with Oxide's overall system design.</li>
+    <li><b>Goal:</b> Achieve reliable, atomic firmware updates managed and monitored through Helios.</li>
+    <li><b>Solution:</b> Introduce a "Firmware Update Agent" (FUA) that orchestrates firmware updates on each node based on the desired state managed by Helios.</li>
+    <li><b>Transactional Updates:</b> Updates are staged and atomically applied, ensuring either full success or rollback to a previous known good state.</li>
+    <li><b>Package-Based Approach:</b> Move from image-based updates to a package-based approach, treating firmware components as discrete units with dependencies and versions.</li>
+    <li><b>Helios Integration:</b> Helios manages the desired firmware state, instructs the FUA, and monitors update status.</li>
+    <li><b>Observability:</b> Detailed logs and metrics are collected to aid in troubleshooting and performance analysis.</li>
+    <li><b>Build Process Changes:</b> Firmware components are packaged as individual units with version information and dependencies.</li>
+    <li><b>Phased Implementation:</b> A phased approach is proposed, starting with core FUA functionality and integration with Helios.</li>
+  </ul>
+</div>
+</div>
+</article>
