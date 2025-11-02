@@ -1,0 +1,48 @@
+<article>
+    <h2>Beginner-friendly, unofficial documentation for Helix text editor</h2>
+    <div>
+<div>
+  <h2>Summary</h2>
+  <p>The article is a basic introduction to using the Helix editor. It focuses on core concepts and how to perform essential tasks within the editor. Helix is described as a modal editor inspired by Vim, but with some key differences, most notably its focus on multiple selections and a more accessible design for new users.
+  </p>
+  <p>
+  The guide starts with the fundamental idea of <em>selection</em> as the primary way to interact with the editor. Instead of verbs (commands) followed by nouns (text objects) like in Vim, Helix emphasizes selecting the text first and then applying actions to that selection.  Basic movement keys (hjkl) are introduced, as well as ways to move by word (w/b), beginning/end of line (0/$), and beginning/end of file (gg/G).  The article describes how to perform text selections using 'v' for selecting characters linewise and 'V' for selecting whole lines. It provides examples of how to extend or shrink selections.
+  </p>
+  <p>
+  The article introduces the concept of <em>multiple selections</em>, where the same command can apply to multiple disjoint sections of the document simultaneously.  It explains how to split selections based on regular expressions or search results ('S'), add selections based on search results ('alt-s'), and keep or remove selections based on matching patterns.
+  </p>
+  <p>
+  The guide explains how to perform basic editing operations: deletion ('d'), insertion ('i'), appending ('A'), replacing ('c'), and yanking/pasting ('y'/'p'). It touches on more advanced editing features like indenting and unindenting (&gt;/&lt;) and joining lines ('J').
+  </p>
+  <p>
+  Searching is covered using '/', with 'n' and 'N' to navigate forward and backward through matches.  Replacing text is discussed, noting that Helix uses the 's' command for simple replacements within selections.
+  </p>
+  <p>
+  The article introduces the built-in Language Server Protocol (LSP) support, explaining that Helix automatically configures LSP for supported languages.  It highlights features like code completion, go-to-definition, find-references, and rename-symbol.  The article also covers formatting code with the '=' key, using the configured LSP server.
+  </p>
+  <p>
+  The article briefly describes how to use the command palette (&lt;space&gt;:), which allows executing commands by name.  Examples include opening files, writing files, quitting, and toggling settings.
+  </p>
+  <p>
+  Finally, the guide mentions working with multiple buffers (files), using tabs to manage them, and the `:buffer-next` and `:buffer-previous` commands to switch between buffers. It briefly touches on splits using `:vsplit` and `:hsplit`.
+  </p>
+
+  <h2>Key Points</h2>
+  <ul>
+    <li>Helix is a modal editor inspired by Vim, but with a focus on multiple selections and more user-friendly design.</li>
+    <li>The primary way to interact with Helix is by making a selection and then applying actions.</li>
+    <li>Basic movement keys are hjkl, along with word (w/b), line (0/$), and file (gg/G) navigation.</li>
+    <li>Selections are made with 'v' (character-wise) and 'V' (line-wise).</li>
+    <li>Multiple selections allow applying the same command to multiple parts of the document.</li>
+    <li>Basic editing operations: delete (d), insert (i), append (A), change (c), yank (y), paste (p).</li>
+    <li>Searching is done with '/', navigating matches with 'n' and 'N'.</li>
+    <li>Replacing text within selections is done with 's'.</li>
+    <li>Helix has built-in LSP support for code completion, go-to-definition, find-references, and renaming.</li>
+    <li>Code formatting is done with '='.</li>
+    <li>The command palette (&lt;space&gt;:) allows executing commands by name.</li>
+    <li>Multiple buffers are managed with tabs, and commands like `:buffer-next` and `:buffer-previous`.</li>
+    <li>Splits can be done with `:vsplit` and `:hsplit`.</li>
+  </ul>
+</div>
+</div>
+</article>

@@ -1,0 +1,23 @@
+<article>
+    <h2>Word2vec-style vector arithmetic on docs embeddings</h2>
+    <div>
+ <div>
+  <p>This article explores the concept of embeddings, particularly focusing on their application in arithmetic operations. It begins by explaining what embeddings are: vector representations of data that capture semantic relationships, allowing machine learning models to understand and process information more effectively. The article highlights that while embeddings are commonly used with text and images, their utility extends to numerical data as well.</p>
+  <p>The core idea revolves around representing numbers as vectors and then performing arithmetic operations like addition, subtraction, multiplication, and division directly on these vectors. The author demonstrates that with proper training and network architecture, the resulting vectors after these operations can be decoded back to numbers that approximate the correct arithmetic results. The key is to train a neural network to learn a mapping between numbers and their vector representations, such that the vector operations mirror the actual arithmetic operations.</p>
+  <p>The article details the process of creating a dataset of arithmetic problems (e.g., "2 + 3 = 5") and training a neural network to predict the answer given the numbers and the operation. An encoder maps the input numbers into an embedding space, and then the specified arithmetic operation is performed on the resulting vectors. The resulting vector, which is meant to represent the answer, is decoded by a decoder, which maps it back to a numerical value. The model is trained using a loss function that penalizes the difference between the predicted answer and the actual answer.</p>
+  <p>The author walks through a practical example using PyTorch, including code snippets to illustrate the crucial parts: creating the dataset, defining the encoder and decoder models, performing vector arithmetic, and training the network. The article demonstrates how to perform operations like addition, subtraction, multiplication, and division within the embedding space. For addition, it describes training a neural network using an encoder and a decoder. The encoder maps two numbers to vectors, these vectors are added together, and the decoder tries to map the result back into the solution of the initial addition. The same methodology is applied for subtraction, multiplication, and division.</p>
+  <p>The article also addresses challenges and limitations. Achieving high accuracy in arithmetic operations using embeddings requires careful tuning of the network architecture, training data, and hyperparameters. The performance can vary based on the complexity of the arithmetic operation and the range of numbers used. Furthermore, the interpretability of the embeddings themselves can be limited; understanding *why* a particular vector represents a specific number is often difficult.</p>
+  <p>In summary, the article showcases a novel application of embeddings: performing arithmetic. It explains the underlying principles, provides a practical implementation, and acknowledges the limitations, offering a comprehensive overview of this intriguing approach.</p>
+  <h2>Key Points:</h2>
+  <ul>
+   <li>Embeddings are vector representations of data that capture semantic relationships.</li>
+   <li>Embeddings can be used to represent numbers, enabling arithmetic operations in vector space.</li>
+   <li>A neural network (encoder-decoder architecture) can be trained to map numbers to vectors and back, such that vector operations approximate arithmetic operations.</li>
+   <li>The process involves creating a dataset of arithmetic problems, encoding numbers into vectors, performing arithmetic operations on the vectors, and decoding the resulting vector back to a number.</li>
+   <li>Practical implementation using PyTorch is demonstrated.</li>
+   <li>Accuracy depends on network architecture, training data, and hyperparameters.</li>
+   <li>Interpretability of numerical embeddings can be challenging.</li>
+  </ul>
+ </div>
+ </div>
+</article>
