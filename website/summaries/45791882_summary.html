@@ -1,0 +1,25 @@
+<article>
+    <h2>At the end you use `git bisect`</h2>
+    <div>
+<div>
+  <p>The article is a tutorial on how to use <code>git bisect</code> to find the commit that introduced a bug. It presents a scenario where a previously working feature in a Git repository has suddenly stopped functioning. The author guides the reader through the process of using <code>git bisect</code> to pinpoint the problematic commit. The article assumes the user knows that the bug wasn't present in a specific, older commit. It begins by initiating the bisect process with <code>git bisect start</code> and then uses <code>git bisect bad</code> to mark the current commit as containing the bug and <code>git bisect good [good_commit]</code> to indicate a known good commit (where <code>[good_commit]</code> is replaced with the actual commit hash). Git then checks out a commit halfway between the good and bad commits.</p>
+
+  <p>The user then tests whether the bug exists in the current checked-out commit. Based on the test result, the user marks the commit as either "good" (bug-free) or "bad" (bug present) using <code>git bisect good</code> or <code>git bisect bad</code> respectively. Git then continues to check out commits, narrowing down the range between the good and bad commits with each iteration. This process repeats until Git identifies the first "bad" commit—the commit that introduced the bug.</p>
+
+  <p>Once the culprit commit is found, Git displays the commit hash and its description. The author then explains how to use <code>git bisect reset</code> to exit the bisecting session and return to the original branch. Finally, the article recommends creating a branch to fix the bug, and then merge it.</p>
+
+  <p><b>Key Points:</b></p>
+  <ul>
+    <li><b>Purpose of <code>git bisect</code>:</b> To efficiently find the commit that introduced a bug by performing a binary search through the commit history.</li>
+    <li><b>Starting the Bisect Process:</b> Use <code>git bisect start</code> to initiate the bisecting session.</li>
+    <li><b>Marking Good and Bad Commits:</b> <code>git bisect bad</code> marks the current commit as containing the bug, and <code>git bisect good [commit]</code> marks a specific commit as bug-free.</li>
+    <li><b>Binary Search:</b> Git automatically checks out commits, narrowing the range between known good and bad commits.</li>
+    <li><b>Testing Commits:</b> Manually test the checked-out commit to determine if the bug is present.</li>
+    <li><b>Iterative Process:</b> Repeat the process of marking commits as "good" or "bad" until Git identifies the first "bad" commit.</li>
+    <li><b>Identifying the Culprit Commit:</b> Git displays the hash and description of the commit that introduced the bug.</li>
+    <li><b>Exiting Bisecting Session:</b> Use <code>git bisect reset</code> to exit the bisecting session and return to the original branch.</li>
+    <li><b>Fixing the Bug:</b> Create a new branch to fix the bug and then merge the branch.</li>
+  </ul>
+</div>
+</div>
+</article>

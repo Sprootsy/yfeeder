@@ -1,0 +1,32 @@
+<article>
+    <h2>Reproducing the AWS Outage Race Condition with a Model Checker</h2>
+    <div>
+<div>
+  <p>The article discusses a method for reproducing a race condition that led to an AWS outage using a model checker. The author details how they reverse-engineered a simplified version of the AWS Key Management Service (KMS) and then used the Spin model checker to verify and reproduce a specific race condition that caused the outage. The core problem stemmed from the interaction between KMS and other AWS services during scaling events. When a service scaled up, new instances would request KMS keys for decryption, but if the KMS cluster was also scaling, a race condition could occur where an instance would attempt to use a key before it was fully available across the KMS cluster.</p>
+
+  <p>The author begins by explaining the background of the AWS outage, focusing on the scaling challenges and the eventual consistency issues within the KMS cluster. They emphasize that while KMS aims for eventual consistency, a race condition arose during rapid scaling events, causing some servers to serve stale data. This stale data manifested as instances being unable to decrypt data, leading to widespread service disruptions.</p>
+
+  <p>To reproduce this, the author created a simplified model of KMS. This involved defining the core components of KMS: clients (representing AWS services requesting keys) and servers (representing KMS instances serving key material). The model captures the key distribution process, where a key is created and then propagated across the KMS cluster. The key aspect is the potential for inconsistency during this propagation, where some servers have the key while others do not.</p>
+
+  <p>The author uses Promela, the input language for the Spin model checker, to describe the behavior of KMS clients and servers. The model includes processes for key creation, key distribution, and client requests for keys. Importantly, it incorporates non-deterministic behavior to simulate the unpredictable timing of events in a distributed system. The model also introduces the possibility of message loss to mimic network issues.</p>
+
+  <p>The Spin model checker is then used to explore all possible execution paths of the KMS model. By specifying a safety property—that a client should never be able to use a key before it's fully available—Spin can detect scenarios where this property is violated, thus revealing the race condition. The author successfully identifies a scenario where a client attempts to decrypt data with a key that has not yet been fully propagated across all KMS servers, mimicking the root cause of the AWS outage.</p>
+
+  <p>The article provides snippets of Promela code illustrating how the KMS model is implemented and how the safety property is defined. It demonstrates how Spin's error traces can be used to understand the exact sequence of events leading to the race condition. This detailed analysis allows for a deep understanding of the problem and potential solutions.</p>
+
+  <p>In conclusion, the article demonstrates a practical approach to understanding and reproducing complex distributed system issues using model checking. By creating a simplified model of the AWS KMS and employing the Spin model checker, the author successfully reproduced the race condition that caused a significant AWS outage, providing valuable insights into the challenges of ensuring consistency in distributed systems.</p>
+
+  <h3>Key Points:</h3>
+  <ul>
+    <li>The article focuses on reproducing an AWS outage caused by a race condition in KMS during scaling events.</li>
+    <li>A simplified model of KMS was created using Promela.</li>
+    <li>The model includes clients (AWS services) and servers (KMS instances).</li>
+    <li>Key distribution and eventual consistency are key aspects of the model.</li>
+    <li>The Spin model checker was used to explore all possible execution paths.</li>
+    <li>A safety property was defined to ensure clients only use fully available keys.</li>
+    <li>The model checker successfully reproduced the race condition where a client uses a key before it's fully propagated.</li>
+    <li>The error traces from Spin provide insights into the sequence of events causing the issue.</li>
+  </ul>
+</div>
+</div>
+</article>
