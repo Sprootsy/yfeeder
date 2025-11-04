@@ -1,0 +1,39 @@
+<article>
+    <h2>A friendly tour of process memory on Linux</h2>
+    <div>
+<div>
+<h2>Summary</h2>
+<p>The article "Linux Process Memory" by 0xkato provides a comprehensive overview of how memory is managed within Linux processes. It delves into the intricacies of the virtual address space, breaking down its various segments and explaining their roles in process execution. The article aims to equip readers with a solid understanding of memory organization, which is crucial for debugging, reverse engineering, and optimizing software performance on Linux systems.</p>
+
+<p>The article begins by introducing the concept of virtual memory and how each process in Linux is given its own isolated virtual address space. This isolation is a fundamental security feature, preventing processes from interfering with each other's memory. The virtual address space is then dissected into several key regions, including the text segment (containing the executable code), the data segment (holding initialized global and static variables), the BSS segment (containing uninitialized global and static variables), the heap (used for dynamic memory allocation), the stack (used for function calls and local variables), and the memory mapping region (used for loading shared libraries and mapping files into memory).</p>
+
+<p>The text segment, also known as the code segment, is typically read-only and contains the machine instructions of the program. The data segment stores initialized global and static variables, while the BSS segment holds uninitialized ones, which are initialized to zero by the kernel when the process starts. The heap is a region of memory that can be dynamically allocated and deallocated using functions like `malloc` and `free`. It grows upwards in memory as more memory is allocated. The stack, on the other hand, grows downwards and is used to store function call information, local variables, and return addresses. Each thread within a process has its own stack.</p>
+
+<p>The memory mapping region is a flexible area used for various purposes, including loading shared libraries (like `libc.so`) and mapping files into memory. Shared libraries allow multiple processes to share the same code, reducing memory usage and improving performance. Memory mapping provides a way to access files as if they were part of the process's memory, which can be more efficient than traditional file I/O operations.</p>
+
+<p>The article also discusses the role of the kernel in managing virtual memory. The kernel maintains page tables, which translate virtual addresses to physical addresses. This translation is essential for memory protection and allows the kernel to allocate physical memory efficiently. The Memory Management Unit (MMU) in the CPU performs this translation, caching frequently used translations in a Translation Lookaside Buffer (TLB) for faster access.</p>
+
+<p>Furthermore, the article touches upon concepts like shared memory, which allows multiple processes to access the same physical memory region. This is a powerful technique for inter-process communication (IPC) but requires careful synchronization to avoid race conditions. It also explains the concept of memory fragmentation, where available memory is broken into small, non-contiguous chunks, making it difficult to allocate large blocks of memory. This can lead to performance degradation.</p>
+
+<p>Finally, the article emphasizes the importance of understanding memory layout for tasks like debugging memory leaks, exploiting vulnerabilities, and optimizing program performance. Tools like `pmap` and debuggers like GDB are mentioned as valuable resources for inspecting a process's memory map and identifying memory-related issues. By understanding how memory is organized and managed, developers can write more efficient and robust software.</p>
+
+<h2>Key Points</h2>
+<ul>
+  <li>Each Linux process has its own isolated virtual address space.</li>
+  <li>The virtual address space is divided into segments: text, data, BSS, heap, stack, and memory mapping region.</li>
+  <li>The text segment contains the program's executable code.</li>
+  <li>The data segment stores initialized global and static variables.</li>
+  <li>The BSS segment stores uninitialized global and static variables.</li>
+  <li>The heap is used for dynamic memory allocation via `malloc` and `free`.</li>
+  <li>The stack stores function call information and local variables.</li>
+  <li>The memory mapping region is used for loading shared libraries and mapping files.</li>
+  <li>The kernel manages virtual memory using page tables.</li>
+  <li>The MMU translates virtual to physical addresses.</li>
+  <li>Shared memory allows multiple processes to access the same memory region.</li>
+  <li>Memory fragmentation can hinder large memory allocations.</li>
+  <li>Understanding memory layout is crucial for debugging and optimization.</li>
+  <li>Tools like `pmap` and GDB are useful for inspecting memory.</li>
+</ul>
+</div>
+</div>
+</article>
