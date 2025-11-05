@@ -1,0 +1,27 @@
+<article>
+    <h2>Patching 68K Software – SimpleText</h2>
+    <div>
+<div>
+<h3>Summary:</h3>
+The article is a detailed guide on how to patch a 68k Macintosh application, specifically SimpleText, using a hex editor. The author, "max", aims to demonstrate the process of modifying an executable to alter its behavior, focusing on practical techniques and explanations rather than theoretical concepts. The process begins with opening the SimpleText application in a hex editor (in this case, HexEdit). The author then searches for specific byte sequences within the application's code to locate the area they want to modify. The specific change being made is to remove the annoying beep SimpleText makes when you try to save a file without any text in it. The author identifies the relevant code section responsible for playing the system beep and modifies the opcodes to effectively "no operation" (NOP), thus disabling the sound. The article explains the importance of understanding 68k assembly language to identify the correct bytes to change. The post also emphasizes the need to save the modified application with a different name to avoid corrupting the original. The author describes the tools they use (HexEdit), the assembly code they are looking for (BEEP opcode), and the steps to apply the patch. The post also includes screenshots of the hex editor, highlighting the original and modified bytes.
+
+<h3>Key Points:</h3>
+<ul>
+<li><b>Objective:</b> To patch a 68k Macintosh application (SimpleText) to disable the beep sound when attempting to save an empty file.</li>
+<li><b>Tools:</b> Hex editor (HexEdit).</li>
+<li><b>Process:</b>
+<ol>
+<li>Open the application (SimpleText) in a hex editor.</li>
+<li>Search for specific byte sequences corresponding to the "BEEP" opcode.</li>
+<li>Modify the identified opcodes to "NOP" (No Operation) to disable the beep.</li>
+<li>Save the modified application under a new name.</li>
+</ol>
+</li>
+<li><b>Importance of 68k Assembly Knowledge:</b> Understanding 68k assembly language is crucial for identifying the correct bytes to modify.</li>
+<li><b>Safety Precaution:</b> Always save the patched application with a different name to avoid overwriting and potentially corrupting the original.</li>
+<li><b>Specific Modification:</b> Changing the opcode for the "BEEP" function to "NOP" effectively disables the sound.</li>
+<li><b>Practical Approach:</b> The guide focuses on practical steps and explanations, making it easy for beginners to understand the patching process.</li>
+</ul>
+</div>
+</div>
+</article>
