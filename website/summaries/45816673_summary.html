@@ -1,0 +1,30 @@
+<article>
+    <h2>Grayskull: A tiny computer vision library in C for embedded systems, etc.</h2>
+    <div>
+<div>
+<h2>Summary</h2>
+<p>Grayskull is a tool designed to create recipes for conda packages. Conda is a package, dependency, and environment management system for any language—Python, R, JavaScript, C, C++, etc. Grayskull simplifies the process of building conda packages by automatically generating the recipe (the meta.yaml file) from various sources, including PyPI (for Python packages), CRAN (for R packages), and even directly from source code repositories like GitHub. This automation streamlines the packaging workflow, making it easier for developers and maintainers to create and distribute their software using conda.</p>
+
+<p>The tool addresses the challenges associated with manually creating conda recipes, which can be time-consuming and error-prone. By automating the recipe generation, Grayskull reduces the effort required to package software, ensures consistency across packages, and lowers the barrier to entry for new contributors. It supports several key features such as:</p>
+
+<ul>
+<li><strong>Automatic recipe generation:</strong> Grayskull analyzes the source code or package metadata from PyPI, CRAN, or other sources to automatically generate a `meta.yaml` file containing the necessary information for building a conda package.</li>
+<li><strong>Dependency resolution:</strong> The tool attempts to identify and declare the dependencies required by the package, ensuring that the resulting conda package will function correctly in the target environment.</li>
+<li><strong>Support for multiple sources:</strong> Grayskull can create recipes from different sources like PyPI, CRAN, local files, and git repositories.</li>
+<li><strong>Customization:</strong> While Grayskull automates the process, it also allows users to customize the generated recipe to fine-tune the packaging process.</li>
+</ul>
+
+<p>The primary goal of Grayskull is to simplify the creation of conda packages. It does this by inspecting existing package information (such as setup.py for Python packages) and automatically creating a `meta.yaml` file, which is the central component of a conda recipe. This file specifies the package's name, version, dependencies, build instructions, and other metadata required by conda to build and install the package correctly. Grayskull significantly reduces the amount of manual effort needed to create these recipes, making it easier to contribute to the conda ecosystem and share software packages with others.</p>
+
+<h2>Key Points</h2>
+<ul>
+<li>Grayskull is a tool for automatically generating conda recipes (meta.yaml files).</li>
+<li>It simplifies the process of creating conda packages from various sources like PyPI, CRAN, and Git repositories.</li>
+<li>The tool automates dependency resolution, identifying and declaring the necessary dependencies for a package.</li>
+<li>It reduces the manual effort required to package software for conda, ensuring consistency and lowering the barrier to entry.</li>
+<li>Grayskull allows for customization of the generated recipes to fine-tune the packaging process.</li>
+<li>The main goal of Grayskull is to make it easier to contribute to the conda ecosystem and share software packages.</li>
+</ul>
+</div>
+</div>
+</article>
