@@ -1,0 +1,36 @@
+<article>
+    <h2>How a devboard works (and how to make your own)</h2>
+    <div>
+<div>
+<h2>Summary</h2>
+The article is a comprehensive guide on building a custom development board, focusing on practical considerations and design choices. It begins by emphasizing the benefits of creating a personalized devboard tailored to specific project needs, contrasting it with the limitations of generic, commercially available boards. The author, Kai, outlines a step-by-step process, starting with defining the project requirements and selecting appropriate components.
+
+The article stresses the importance of choosing a microcontroller (MCU) that aligns with the project's processing power, memory, and peripheral requirements. Different MCU families like STM32, ESP32, and RP2040 are mentioned, each offering distinct advantages. The selection process also involves considering the ease of use, available libraries, and community support for the chosen MCU.
+
+Next, the article delves into power supply design, advocating for a robust and efficient power solution to ensure stable operation. It covers various power supply options, including linear regulators and switching regulators, discussing their trade-offs in terms of efficiency, cost, and complexity. Recommendations are given for incorporating over-voltage and reverse polarity protection to safeguard the board from potential damage.
+
+The core of the article discusses designing the schematic and PCB layout. It emphasizes the importance of clear and organized schematics for maintainability and debugging. Practical advice is provided on component placement, signal routing, and ground plane design to minimize noise and ensure signal integrity. The author recommends using proper decoupling capacitors close to the MCU power pins.
+
+Furthermore, the article explores the integration of essential peripherals. It provides guidelines for connecting common peripherals like buttons, LEDs, displays, and communication interfaces (e.g., UART, SPI, I2C). It advises on incorporating protection circuitry for input/output (I/O) pins to prevent damage from over-voltage or ESD. The author also elaborates on adding debugging interfaces like JTAG or SWD for programming and troubleshooting.
+
+A significant portion of the article is dedicated to firmware development. It encourages readers to set up a proper development environment with appropriate toolchains and libraries. The author recommends starting with simple "blinky" examples to verify the basic functionality of the MCU and peripherals. It covers topics like interrupt handling, timer usage, and communication protocol implementation.
+
+The article also touches on testing and debugging strategies. It stresses the importance of thorough testing to identify and fix potential issues. It recommends using debugging tools like oscilloscopes, logic analyzers, and in-circuit debuggers (ICDs) to analyze signals and step through code. The author also highlights the value of having test points on the board to facilitate debugging.
+
+Finally, the article concludes with advice on enclosure design and aesthetics. It suggests considering factors like size, shape, and material when designing an enclosure. It encourages readers to add labels and markings to the board for easy identification of components and connectors. The author also emphasizes the importance of proper documentation and version control to ensure the project can be easily maintained and replicated.
+
+<h2>Key Points</h2>
+
+*   **Benefits of Custom Devboard:** Tailored to specific project needs, avoids limitations of generic boards.
+*   **MCU Selection:** Choose an MCU based on processing power, memory, peripherals, ease of use, and community support (e.g., STM32, ESP32, RP2040).
+*   **Power Supply Design:** Implement a robust and efficient power solution with over-voltage and reverse polarity protection; consider linear or switching regulators.
+*   **Schematic and PCB Layout:** Create clear and organized schematics; optimize component placement, signal routing, and ground plane design for signal integrity.
+*   **Peripheral Integration:** Connect common peripherals like buttons, LEDs, displays, and communication interfaces (UART, SPI, I2C) with appropriate protection circuitry.
+*   **Debugging Interfaces:** Include JTAG or SWD for programming and troubleshooting.
+*   **Firmware Development:** Set up a proper development environment; start with simple examples; implement interrupt handling, timers, and communication protocols.
+*   **Testing and Debugging:** Thoroughly test the board; use oscilloscopes, logic analyzers, and in-circuit debuggers; include test points for easier debugging.
+*   **Enclosure Design and Aesthetics:** Consider size, shape, and material for the enclosure; add labels and markings for identification.
+*   **Documentation and Version Control:** Properly document the project and use version control to facilitate maintenance and replication.
+</div>
+</div>
+</article>
