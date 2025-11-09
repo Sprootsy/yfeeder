@@ -1,0 +1,25 @@
+<article>
+    <h2>Debugging BeagleBoard USB boot with a sniffer: fixing omap_loader on modern PCs</h2>
+    <div>
+<div>
+<p>The article discusses the challenges of USB booting a Beagleboard, specifically the BeagleBone Black, on modern PCs and provides a solution for debugging and fixing the <code>omap_loader</code> tool. The author encountered issues when trying to use the standard USB boot procedure to flash a new image to the BeagleBone Black, finding that the board would enumerate as a USB device but the flashing process would fail. After investigating various potential causes, including driver problems and hardware malfunctions, the author suspected that the <code>omap_loader</code> tool, which is responsible for sending the bootloader to the BeagleBone Black, was not functioning correctly on newer computers.</p>
+
+<p>To diagnose the issue, the author employed a USB hardware sniffer to analyze the USB traffic between the PC and the BeagleBone Black during the boot process. The sniffer captured the raw USB data, revealing that the <code>omap_loader</code> tool was sending the initial bootloader to the BeagleBone Black, but the board was not responding as expected. By comparing the captured USB traffic with known good captures from older systems, the author identified discrepancies in the USB communication. Specifically, the <code>omap_loader</code> tool was sending certain USB control messages with incorrect parameters or timing, causing the BeagleBone Black to reject the bootloader.</p>
+
+<p>After pinpointing the problem, the author focused on modifying the <code>omap_loader</code> tool to correct the faulty USB communication. Through reverse engineering and careful examination of the source code, the author identified the specific lines of code responsible for generating the incorrect USB messages. By adjusting the parameters and timing of these messages, the author was able to create a patched version of <code>omap_loader</code> that successfully sent the bootloader to the BeagleBone Black on modern PCs.</p>
+
+<p>The article provides detailed instructions on how to use a USB hardware sniffer to capture and analyze USB traffic, as well as specific steps on how to modify the <code>omap_loader</code> source code to fix the USB communication issues. The author also shares the patched version of <code>omap_loader</code>, allowing others to easily overcome the USB boot problems on their BeagleBone Black devices. The corrected tool ensures reliable USB booting and flashing of the BeagleBone Black on modern PCs, resolving a common frustration for developers and hobbyists working with the board.</p>
+
+<h2>Key Points:</h2>
+<ul>
+<li>The article addresses issues with USB booting BeagleBone Black on modern PCs.</li>
+<li>The author debugged the process using a USB hardware sniffer to capture and analyze USB traffic.</li>
+<li>The <code>omap_loader</code> tool was identified as the source of the problem, sending incorrect USB messages.</li>
+<li>The author modified the <code>omap_loader</code> source code to correct the faulty USB communication.</li>
+<li>The patched <code>omap_loader</code> allows reliable USB booting and flashing on modern PCs.</li>
+<li>The article provides instructions on using a USB sniffer and modifying the <code>omap_loader</code> code.</li>
+<li>The author shares the patched version of <code>omap_loader</code> for others to use.</li>
+</ul>
+</div>
+</div>
+</article>

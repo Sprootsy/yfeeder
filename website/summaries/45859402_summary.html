@@ -1,0 +1,44 @@
+<article>
+    <h2>I Want You to Understand Chicago</h2>
+    <div>
+<div>
+  <h2>Summary</h2>
+  <p>
+    The article is a detailed exploration of the Chicago protocol, a distributed consensus protocol designed for transactional databases. It delves into the complexities and nuances of achieving serializable snapshot isolation (SSI) in a distributed environment, emphasizing the importance of understanding the underlying mechanisms to avoid subtle but critical errors. The author, Kyle Kingsbury (Aphyr), meticulously examines the protocol's various components, including writes, reads, clock management, conflict detection, and recovery processes.
+  </p>
+  <p>
+    The article starts by outlining the problem Chicago aims to solve: providing consistent transactions across multiple nodes in a database cluster, even in the face of network partitions and node failures. It contrasts Chicago with other consensus protocols like Paxos and Raft, noting that Chicago is specifically tailored for transactional workloads and focuses on maintaining SSI.
+  </p>
+  <p>
+    Aphyr walks through the process of a write transaction, explaining how clients obtain a timestamp from a central time-stamp oracle (TSO), write to a quorum of nodes, and then inform the TSO of the completion, as well as the other nodes written to. The timestamps are used for conflict resolution and snapshot isolation. The TSO plays a crucial role in ordering transactions and ensuring consistency.
+  </p>
+  <p>
+    Reads are handled by querying a quorum of nodes and selecting the most recent, stable snapshot based on the timestamp. The article highlights the importance of ensuring that reads observe a consistent view of the database, even when transactions are happening concurrently.
+  </p>
+  <p>
+    The discussion of clock management emphasizes the critical role of synchronized clocks. The TSO relies on reasonably accurate clocks to assign timestamps. The article describes the potential problems that can arise from clock skew and how Chicago attempts to mitigate these issues through techniques like clock uncertainty intervals.
+  </p>
+  <p>
+    Conflict detection is a key aspect of maintaining SSI. Chicago uses timestamps to identify conflicts between concurrent transactions. If a conflict is detected, one of the transactions is aborted to preserve consistency. The article explains how these conflicts are detected and managed, which is crucial to isolation guarantees.
+  </p>
+  <p>
+    The article also covers recovery scenarios, detailing how the system recovers from node failures and network partitions. Recovery processes involve replaying transaction logs and ensuring that all nodes are brought to a consistent state. The author emphasizes the complexities of these recovery mechanisms and the importance of careful implementation to avoid data loss or corruption.
+  </p>
+  <p>
+    Throughout the article, Aphyr points out potential pitfalls and edge cases that can compromise the protocol's correctness if not handled properly. He uses examples to illustrate how seemingly minor implementation details can have significant consequences for data consistency.
+  </p>
+
+  <h2>Key Points</h2>
+  <ul>
+    <li>Chicago is a distributed consensus protocol designed for transactional databases aiming to achieve Serialisable Snapshot Isolation (SSI).</li>
+    <li>The protocol uses a centralised Timestamp Oracle (TSO) to assign timestamps to transactions, which are then used for ordering and conflict resolution.</li>
+    <li>Write operations involve writing to a quorum of nodes and informing the TSO upon completion.</li>
+    <li>Read operations involve querying a quorum of nodes to retrieve the latest stable snapshot, ensuring consistent views.</li>
+    <li>Clock synchronisation is crucial for the TSO's operation; clock skew can lead to anomalies.</li>
+    <li>Conflict detection uses timestamps to identify and resolve conflicts between concurrent transactions, aborting transactions as needed.</li>
+    <li>Recovery mechanisms are critical for handling node failures and network partitions, ensuring data consistency by replaying transaction logs and synchronising nodes.</li>
+    <li>Subtle implementation errors can lead to violations of consistency guarantees, making careful design and testing paramount.</li>
+  </ul>
+</div>
+</div>
+</article>
