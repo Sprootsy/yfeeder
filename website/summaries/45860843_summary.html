@@ -1,0 +1,36 @@
+<article>
+    <h2>Ironclad – formally verified, real-time capable, Unix-like OS kernel</h2>
+    <div>
+<div>
+  <p>
+    The Ironclad Operating System (OS) is a novel operating system designed with a strong emphasis on memory safety and security. It aims to eliminate common vulnerabilities such as buffer overflows and use-after-free errors by leveraging a capability-based security model and a custom-built, memory-safe language called Ironclad C. The OS is designed to be minimal and modular, reducing the attack surface and making it easier to verify its correctness.
+  </p>
+  <p>
+    Traditional operating systems, often written in C or C++, are susceptible to a wide range of memory-related vulnerabilities. Ironclad addresses these issues by employing a fundamentally different approach. Capabilities, in this context, are unforgeable tokens that grant specific rights to access resources. Every operation in Ironclad requires a capability, and without the correct capability, access is denied. This fine-grained access control mechanism significantly reduces the impact of potential vulnerabilities.
+  </p>
+  <p>
+    Ironclad C, the language used to write the OS, is a subset of C++ with added restrictions and safety features. It enforces strict memory safety rules at compile time, preventing many common classes of errors before they can occur at runtime. The language also integrates capabilities directly into its type system, further strengthening the security model.
+  </p>
+  <p>
+    The OS architecture is designed for modularity. It's broken down into smaller, independent components that communicate with each other through well-defined interfaces. This modular design simplifies the process of verifying the correctness of each component and makes it easier to update or replace individual parts of the system without affecting the entire OS. The kernel is extremely minimal, delegating as much functionality as possible to user-space services.
+  </p>
+  <p>
+    The project emphasizes formal verification techniques to provide additional assurance of the OS's security. By formally verifying key components, the developers aim to mathematically prove that the code behaves as intended and is free from certain classes of vulnerabilities.
+  </p>
+  <p>
+    Ironclad is open-source and welcomes contributions from the community. The project's website provides documentation, source code, and instructions for building and running the OS. The project is actively seeking contributors to help develop and improve the system.
+  </p>
+
+  <h3>Key Points:</h3>
+  <ul>
+    <li><b>Memory Safety:</b> Ironclad OS is designed with a strong focus on memory safety to prevent vulnerabilities like buffer overflows and use-after-free errors.</li>
+    <li><b>Capability-Based Security:</b> It uses a capability-based security model for fine-grained access control.</li>
+    <li><b>Ironclad C:</b> The OS is written in Ironclad C, a memory-safe language based on C++.</li>
+    <li><b>Modularity:</b> The OS architecture is modular, making it easier to verify and update components.</li>
+    <li><b>Minimal Kernel:</b> The kernel is kept small and delegates functionality to user-space services.</li>
+    <li><b>Formal Verification:</b> Formal verification techniques are used to provide assurance of security.</li>
+    <li><b>Open Source:</b> Ironclad is an open-source project.</li>
+  </ul>
+</div>
+</div>
+</article>

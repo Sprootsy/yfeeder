@@ -1,0 +1,28 @@
+<article>
+    <h2>He Chunhui&#39;s Tiny386 Turns an ESP32-S3 into a Fully-Functional 386-Powered PC</h2>
+    <div>
+<div>
+  <p>He Chunhui has created Tiny386, a project that transforms an ESP32-S3 microcontroller into a functional Intel 80386-based desktop PC. This is achieved through emulation, leveraging the ESP32-S3's Xtensa LX7 dual-core processor to mimic the behavior of the older Intel processor. The project incorporates several key components to provide a realistic PC experience.</p>
+
+  <p>Tiny386 includes a VGA output, PS/2 keyboard and mouse support, and an IDE interface. The VGA output allows for connecting a standard monitor, while the PS/2 support enables the use of traditional keyboard and mouse peripherals. The IDE interface allows the ESP32-S3 to access storage, such as an SD card, which acts as the hard drive for the emulated PC. The system runs DOS and supports various applications and games from that era.</p>
+
+  <p>The project utilizes the FreeRTOS real-time operating system to manage the various tasks involved in emulation and peripheral handling. The VGA output is generated using resistor ladders for the color signals, connected to the ESP32-S3's GPIO pins. PS/2 communication is implemented using interrupt-driven routines, ensuring accurate and responsive keyboard and mouse input.</p>
+
+  <p>The performance of the emulated 386 PC is naturally limited by the capabilities of the ESP32-S3. While it can run many DOS applications and games, more demanding software might experience slowdowns or compatibility issues. However, the project demonstrates the feasibility of emulating legacy hardware on modern microcontrollers.</p>
+
+  <p>Tiny386 showcases the versatility of the ESP32-S3 and its ability to handle complex tasks beyond its typical applications. It offers a unique way to revisit classic computing and explore the capabilities of software and hardware from a bygone era. The project is open source, allowing others to contribute and build upon Chunhui's work.</p>
+
+  <h2>Key Points:</h2>
+  <ul>
+    <li>Tiny386 emulates an Intel 80386 PC on an ESP32-S3 microcontroller.</li>
+    <li>It features VGA output, PS/2 keyboard and mouse support, and an IDE interface.</li>
+    <li>The project runs DOS and supports various DOS applications and games.</li>
+    <li>FreeRTOS is used to manage emulation and peripheral handling.</li>
+    <li>VGA output is generated using resistor ladders connected to GPIO pins.</li>
+    <li>PS/2 communication is interrupt-driven for accurate input.</li>
+    <li>Performance is limited by the ESP32-S3's processing power.</li>
+    <li>The project is open source and available for modification and extension.</li>
+  </ul>
+</div>
+</div>
+</article>
