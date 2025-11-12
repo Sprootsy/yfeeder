@@ -1,0 +1,36 @@
+<article>
+    <h2>A catalog of side effects</h2>
+    <div>
+<div>
+<p>This blog post discusses how compilers can affect program behavior in unexpected ways, focusing on the transformations compilers make and how they can expose or mask bugs. The author uses examples in C and C++ to illustrate these points.</p>
+
+<h3>Summary</h3>
+
+<p>The author begins by highlighting the common misconception that compilers simply translate code directly without altering its functionality. They emphasize that modern compilers perform numerous complex optimizations that can significantly change the way code is executed. These optimizations, while generally aimed at improving performance, can sometimes lead to surprising and undesirable outcomes.</p>
+
+<p>One key concept explored is that compilers operate under certain assumptions about code behavior, based on language standards and common programming practices. When code violates these assumptions (e.g., by exhibiting undefined behavior), the compiler is free to perform transformations that may lead to unexpected results. The author gives examples of undefined behavior, such as signed integer overflow and accessing memory outside the bounds of an array, and shows how compilers can exploit these to produce seemingly bizarre outcomes.</p>
+
+<p>The post explains how compiler optimizations like dead code elimination, loop unrolling, inlining, and vectorization can interact with buggy code to either expose the bugs more readily or, conversely, mask them in certain situations. For example, dead code elimination might remove code that appears to be doing nothing but is actually crucial for triggering a bug under specific conditions. Conversely, inlining a function might eliminate a function call boundary that was previously preventing a bug from manifesting.</p>
+
+<p>The author discusses the impact of optimization levels (e.g., -O0, -O1, -O2, -O3) on program behavior. Higher optimization levels generally enable more aggressive transformations, which can increase the likelihood of exposing or masking bugs related to undefined behavior or subtle errors. The author warns that code that appears to work correctly at lower optimization levels may fail catastrophically when compiled with higher optimizations.</p>
+
+<p>The post also touches on the challenges of debugging optimized code. Compiler optimizations can make it difficult to trace the execution flow of a program, as the code that is actually executed may be quite different from the original source code. The author notes that debuggers may struggle to accurately represent the state of variables and the call stack in optimized code, making it harder to identify the root cause of bugs.</p>
+
+<p>The author emphasizes the importance of writing correct and well-defined code, and making good use of tools like static analyzers and sanitizers to detect potential issues before they cause problems in production. The author also suggests using techniques like unit testing and fuzzing to expose bugs and verify the correctness of code under various conditions.</p>
+
+<p>Finally, the author underscores the need for programmers to understand how compilers work and the types of transformations they perform. This knowledge can help programmers write code that is less prone to compiler-related surprises and more resilient to the effects of optimization.</p>
+
+<h3>Key Points</h3>
+
+<ul>
+  <li>Compilers perform complex optimizations that can significantly alter program behavior.</li>
+  <li>Undefined behavior in code allows compilers to make aggressive transformations, potentially leading to unexpected results.</li>
+  <li>Compiler optimizations can expose or mask bugs depending on the specific circumstances.</li>
+  <li>Higher optimization levels increase the likelihood of encountering compiler-related issues.</li>
+  <li>Debugging optimized code can be challenging due to the transformations performed by the compiler.</li>
+  <li>Writing correct, well-defined code and using static analysis and sanitizers are crucial for avoiding compiler-related problems.</li>
+  <li>Understanding compiler behavior can help programmers write more robust and reliable code.</li>
+</ul>
+</div>
+</div>
+</article>

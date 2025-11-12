@@ -1,0 +1,41 @@
+<article>
+    <h2>Terminal Latency on Windows (2024)</h2>
+    <div>
+<div>
+  <h2>Summary</h2>
+  <p>
+    The article is a detailed exploration of latency issues within the Windows Terminal, specifically focusing on the delays users experience between typing a character and seeing it rendered on the screen. The author, who has a deep understanding of terminal emulators and input handling, investigates the various factors contributing to this latency, going beyond simple input-to-screen time measurements.
+  </p>
+  <p>
+    The author begins by outlining the perceived problem: users report that Windows Terminal feels "slow" or "laggy" compared to other terminal emulators, despite having powerful hardware. They emphasize that while raw throughput (characters per second) might be high, the perceived latency impacts the user experience significantly.
+  </p>
+  <p>
+    The investigation delves into the architecture of Windows Terminal, breaking down the input pipeline into several stages. These stages include: keyboard input processing by Windows, delivery of input to the Terminal application, processing within the Terminal (including command execution, shell interpretation, and application logic), and finally, rendering the output to the screen. Each stage introduces potential delays, and the author meticulously examines them.
+  </p>
+  <p>
+    The author uses a variety of methods to measure and analyze latency, including high-resolution timers, performance profiling tools, and detailed code analysis. They also perform comparative testing against other terminal emulators to establish a baseline and identify areas where Windows Terminal lags behind.
+  </p>
+  <p>
+    One key area of focus is the interaction between Windows Terminal and the underlying console infrastructure (conhost). The article explores how the communication between the terminal and the console host can introduce overhead. The author also examines the impact of different rendering engines (e.g., DirectX vs. software rendering) on latency.
+  </p>
+  <p>
+    The article highlights the challenges of optimizing latency in a complex system like Windows Terminal. There are trade-offs to consider, such as balancing performance with features and compatibility. The author suggests several potential areas for improvement, including optimizing input processing, reducing overhead in the console host communication, and improving the rendering pipeline.
+  </p>
+  <p>
+    The author acknowledges that eliminating latency entirely is impossible, but aims to minimize it to the point where it is no longer a noticeable impediment to the user experience. The author hopes that by shedding light on the sources of latency and suggesting potential solutions, the developers of Windows Terminal can continue to improve its performance and responsiveness.
+  </p>
+
+  <h2>Key Points</h2>
+  <ul>
+    <li>Windows Terminal users perceive input latency as a significant issue affecting usability.</li>
+    <li>The article investigates the various stages of the input pipeline in Windows Terminal to pinpoint sources of latency.</li>
+    <li>The investigation uses high-resolution timers, performance profiling tools, and comparative testing.</li>
+    <li>Communication overhead between Windows Terminal and the underlying console infrastructure (conhost) is a contributing factor.</li>
+    <li>Different rendering engines can have varying impacts on latency.</li>
+    <li>Optimizing latency involves balancing performance with features and compatibility.</li>
+    <li>Potential areas for improvement include input processing, console host communication, and the rendering pipeline.</li>
+    <li>The goal is to minimize latency to the point where it is no longer noticeable.</li>
+  </ul>
+</div>
+</div>
+</article>
