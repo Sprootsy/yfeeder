@@ -1,0 +1,35 @@
+<article>
+    <h2>Heroku Support for .NET 10</h2>
+    <div>
+ <div>
+   <h2>Summary</h2>
+   <p>
+     Heroku's blog post announces the support for .NET 8 LTS on the Heroku platform. It highlights the benefits of .NET 8 LTS, including its long-term support, performance improvements, and new features. The post guides .NET developers on how to deploy .NET 8 applications to Heroku, covering aspects such as setting up the `runtime.txt` file, using a `global.json` file, and creating a `Procfile`.
+   </p>
+   <p>
+     The blog emphasizes the importance of specifying the .NET runtime version in the `runtime.txt` file to ensure the correct environment is used for the application. It also explains how the `global.json` file can be used to specify the .NET SDK version, especially when building the application with a specific SDK version. The `Procfile` is crucial for defining the entry point of the application, which specifies how Heroku should run the .NET application.
+   </p>
+   <p>
+     The post provides practical examples and instructions on how to configure these files correctly. For instance, it shows how to set the .NET runtime to .NET 8 using `dotnet-8.0` in the `runtime.txt` file. It also illustrates how to specify the SDK version in `global.json`. Furthermore, the blog details how to define a web process in the `Procfile` to start the ASP.NET Core application.
+   </p>
+   <p>
+     It acknowledges that developers might encounter issues during deployment and provides troubleshooting tips. These tips include checking the application logs for errors, ensuring that all dependencies are correctly specified, and verifying that the `Procfile` is correctly configured.
+   </p>
+   <p>
+     The announcement aims to enable .NET developers to leverage the latest features and improvements in .NET 8 LTS while benefiting from the Heroku platform's ease of deployment and management. By following the guidelines provided in the post, developers can successfully deploy and run .NET 8 applications on Heroku.
+   </p>
+ 
+   <h2>Key Points</h2>
+   <ul>
+     <li>Heroku now supports .NET 8 LTS.</li>
+     <li>.NET 8 LTS offers long-term support, performance improvements, and new features.</li>
+     <li>The `runtime.txt` file is used to specify the .NET runtime version (e.g., `dotnet-8.0`).</li>
+     <li>The `global.json` file can be used to specify the .NET SDK version.</li>
+     <li>The `Procfile` defines the application's entry point and how Heroku should run the application (e.g., `web: dotnet YourWebApp.dll`).</li>
+     <li>Check application logs for troubleshooting deployment issues.</li>
+     <li>Ensure all dependencies are correctly specified.</li>
+     <li>Verify that the `Procfile` is correctly configured.</li>
+   </ul>
+ </div>
+ </div>
+</article>
