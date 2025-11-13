@@ -1,0 +1,31 @@
+<article>
+    <h2>Human Fovea Detector</h2>
+    <div>
+ <div>
+  <p>This ShaderToy shader creates a visually interesting looping animation of a cellular automata-like pattern. The core of the effect is based on a 2D grid where each cell's state (color) is determined by the states of its neighbors in the previous frame. The shader doesn't store the grid explicitly in memory. Instead, it implicitly calculates the cell states based on their coordinates and the time. </p>
+  <p>The animation relies on a combination of modulo operations, sine waves, and fractional parts of numbers to generate the patterns. The code defines several key functions:</p>
+  <ul>
+   <li><code>hash(p)</code>: This function takes a 2D vector as input and returns a pseudo-random number. It is used to introduce variation and randomness into the cellular automata.</li>
+   <li><code>f(p, t)</code>: This is the core function that defines the cellular automata rule. It takes a 2D vector (representing a cell's coordinates) and time as input. It calculates a value based on the neighboring cells, using the <code>hash</code> function and trigonometric functions.</li>
+  </ul>
+  <p>The <code>mainImage</code> function is the entry point of the shader. It calculates the color of each pixel on the screen. It does this by:</p>
+  <ol>
+   <li>Calculating the UV coordinates (normalized coordinates) of the pixel.</li>
+   <li>Scaling and offsetting the UV coordinates to map them to the grid space of the cellular automata.</li>
+   <li>Calling the <code>f(p, t)</code> function to determine the value of the cell at the calculated coordinates and time.</li>
+   <li>Mapping the value returned by <code>f(p, t)</code> to a color using a simple color gradient.</li>
+  </ol>
+  <p>The animation is driven by the <code>iTime</code> variable, which represents the elapsed time since the shader started. As time progresses, the <code>f(p, t)</code> function generates different patterns, creating the animation. The use of sine waves and fractional parts of numbers ensures that the animation loops smoothly.</p>
+  <p>The specific parameters and functions used in the <code>f(p, t)</code> function determine the exact characteristics of the pattern. By modifying these parameters, the author can create a wide variety of different animations.</p>
+  <p><b>Key Points:</b></p>
+  <ul>
+   <li>Cellular automata-like animation without explicit grid storage.</li>
+   <li>Uses pseudo-random numbers (<code>hash</code>) and trigonometric functions (<code>sin</code>) to define the cellular automata rule (<code>f</code>).</li>
+   <li>The <code>f</code> function calculates cell states based on neighboring cells and time.</li>
+   <li>The <code>mainImage</code> function maps cell states to colors to create the visual output.</li>
+   <li>The animation loops smoothly due to the use of sine waves and fractional parts of numbers.</li>
+   <li>The <code>iTime</code> variable drives the animation.</li>
+  </ul>
+ </div>
+ </div>
+</article>

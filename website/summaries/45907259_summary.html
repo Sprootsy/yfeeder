@@ -1,0 +1,29 @@
+<article>
+    <h2>Homebrew no longer allows bypassing Gatekeeper for unsigned/unnotarized software</h2>
+    <div>
+<div>
+<p>The GitHub issue is a feature request for Homebrew to automatically uninstall older versions of installed packages after an upgrade. The user, <code>fxcoudert</code>, suggests that when a package is upgraded (e.g., from version 1.2.3 to 1.2.4), the older version (1.2.3) should be automatically uninstalled to save disk space and reduce potential conflicts. They note that other package managers, such as those used in Gentoo, Debian, and Nix, offer this functionality. The rationale is that keeping older versions around is often unnecessary for most users and can lead to clutter.</p>
+
+<p>Several commenters respond with varying opinions. Some users agree with the request, citing disk space concerns and the desire for a cleaner system. They mention that manually cleaning up old versions is a tedious task. Others disagree, arguing that keeping older versions can be useful for rolling back to a previous state if the new version introduces issues or breaks compatibility with other software. They also point out that disk space is relatively cheap, and the potential benefits of keeping old versions outweigh the cost.</p>
+
+<p>Some users suggest alternative solutions, such as providing a command or a flag that users can optionally use to uninstall old versions. This would allow users to choose whether or not to keep older versions based on their individual needs. There is also discussion about how Homebrew currently handles versioning and the complexities of managing dependencies. Some point out that Homebrew’s design philosophy leans towards simplicity and avoiding features that might complicate the user experience for the majority of users.</p>
+
+<p>One commenter suggests that Homebrew could provide a command like <code>brew cleanup --old-versions</code> to remove older versions selectively. This approach would allow users to clean up old versions when they choose to, rather than automatically removing them after each upgrade. The discussion also touches on the potential for conflicts between different versions of the same package and the challenges of managing these conflicts.</p>
+
+<p>The Homebrew maintainers acknowledge the feature request but express concerns about the potential drawbacks of automatically removing older versions. They emphasize that Homebrew aims to be a simple and reliable package manager, and adding features that might introduce complexity or unexpected behavior is carefully considered. They also point out that Homebrew already provides a <code>brew cleanup</code> command that can remove old versions, although it removes all old versions of all packages, not just the ones that have been upgraded.</p>
+
+<p>Ultimately, the issue remains open, with no definitive decision made. The Homebrew maintainers are considering the request and weighing the potential benefits against the potential drawbacks. They are also exploring alternative solutions that might address the users' concerns without adding unnecessary complexity to the system.</p>
+
+<h2>Key Points:</h2>
+<ul>
+  <li><b>Feature Request:</b> The issue is a request to automatically uninstall older versions of packages after an upgrade in Homebrew.</li>
+  <li><b>Rationale:</b> The user wants to save disk space and reduce clutter by removing old versions that are no longer needed.</li>
+  <li><b>Opposing Views:</b> Some users agree, citing disk space concerns, while others disagree, arguing that older versions are useful for rollback purposes.</li>
+  <li><b>Alternative Solutions:</b> Suggestions include a command or flag to optionally uninstall old versions, such as <code>brew cleanup --old-versions</code>.</li>
+  <li><b>Homebrew Philosophy:</b> Homebrew maintainers are cautious about adding features that might complicate the user experience or introduce unexpected behavior.</li>
+  <li><b>Existing Functionality:</b> Homebrew already provides a <code>brew cleanup</code> command, but it removes all old versions of all packages.</li>
+  <li><b>Open Issue:</b> The issue remains open, with maintainers considering the request and weighing the potential benefits against the potential drawbacks.</li>
+</ul>
+</div>
+</div>
+</article>

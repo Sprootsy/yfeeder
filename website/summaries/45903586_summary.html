@@ -1,0 +1,38 @@
+<article>
+    <h2>Async and Finaliser Deadlocks</h2>
+    <div>
+<div>
+<p>
+The article discusses potential deadlock scenarios that can arise when using asynchronous operations in conjunction with finalizers (destructors) in programming languages like Python and Rust. It focuses on situations where an object with a finalizer holds a reference to an asynchronous task or resource, and the asynchronous task, in turn, holds a reference back to the object. This circular dependency, combined with the unpredictable timing of garbage collection and asynchronous task execution, can lead to deadlocks where neither the finalizer nor the asynchronous task can complete.
+</p>
+<p>
+The author begins by explaining the general problem of deadlocks in concurrent programming, emphasizing that they occur when two or more processes are blocked indefinitely, each waiting for the other to release a resource. The article then narrows the focus to deadlocks specifically related to asynchronous operations and finalizers.
+</p>
+<p>
+A key point is that finalizers are typically executed by the garbage collector in a separate thread or context, and their execution order is often non-deterministic. This means that one cannot reliably predict when a finalizer will run or in what order finalizers will be executed for different objects. Asynchronous tasks, on the other hand, are executed by an event loop or executor, and their execution is also subject to scheduling and concurrency considerations.
+</p>
+<p>
+The deadlock scenario arises when an object with a finalizer initiates an asynchronous task that needs to access the object before completing. If the garbage collector runs and attempts to finalize the object while the asynchronous task is still running and waiting for the object's resources, the finalizer will block, waiting for the asynchronous task to complete. However, the asynchronous task might also be waiting for the finalizer to release the object's resources, leading to a circular dependency and a deadlock.
+</p>
+<p>
+The article uses examples, potentially in Python or Rust-like syntax (though this is implied rather than explicitly stated), to illustrate the deadlock scenario. These examples involve objects with finalizers that spawn asynchronous tasks or hold references to asynchronous resources. The examples demonstrate how the timing of garbage collection and asynchronous task execution can interact in ways that create deadlocks.
+</p>
+<p>
+The author discusses potential solutions or mitigations for these deadlocks. One approach is to avoid circular dependencies between objects with finalizers and asynchronous tasks. This can be achieved by carefully designing the object model and ensuring that finalizers do not need to interact with asynchronous operations. Another approach is to use techniques like weak references to break the circular dependency, allowing the garbage collector to finalize the object without waiting for the asynchronous task.
+</p>
+<p>
+The article may also touch on the importance of understanding the garbage collection and asynchronous task execution models of the specific programming language being used. Different languages and runtime environments may have different strategies for handling finalizers and asynchronous operations, which can affect the likelihood and severity of deadlocks.
+</p>
+<p><b>Key points:</b></p>
+<ul>
+<li>Deadlocks can occur when asynchronous operations and finalizers interact.</li>
+<li>Circular dependencies between objects with finalizers and asynchronous tasks are a primary cause.</li>
+<li>Finalizers are executed by the garbage collector, and their execution order is non-deterministic.</li>
+<li>Asynchronous tasks are executed by an event loop or executor, subject to scheduling.</li>
+<li>Deadlocks arise when the finalizer waits for an asynchronous task, and the task waits for the finalizer.</li>
+<li>Solutions involve avoiding circular dependencies or using weak references.</li>
+<li>Understanding the language's garbage collection and asynchronous execution model is crucial.</li>
+</ul>
+</div>
+</div>
+</article>
