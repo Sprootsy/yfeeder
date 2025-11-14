@@ -1,0 +1,32 @@
+<article>
+    <h2>650GB of Data (Delta Lake on S3). Polars vs. DuckDB vs. Daft vs. Spark</h2>
+    <div>
+<div>
+  <p>This article details a data engineering project focused on analyzing a 650GB dataset stored as Delta Lake on AWS S3 using Polars, a high-performance DataFrame library. The author outlines the challenges and solutions encountered while striving for efficient data processing and query performance. The project involved analyzing data from a public dataset, specifically focusing on identifying popular URLs and performing aggregations to understand user behavior. The author emphasizes the importance of choosing the right tools and techniques for large-scale data analysis, particularly when dealing with cloud storage and the limitations it can impose.</p>
+
+  <p>The initial approach involved using Spark, a common choice for distributed data processing, but performance was found to be suboptimal, especially for interactive analysis.  The overhead of Spark's distributed execution and JVM-based architecture contributed to the slow response times. The author then explored using DuckDB, an in-process analytical database, but its single-node execution limited its ability to handle the entire dataset efficiently. The final solution leveraged Polars, which offers significant performance advantages due to its use of vectorized query execution and efficient memory management. Polars allowed for faster data loading, filtering, and aggregation compared to Spark and DuckDB.</p>
+
+  <p>The article discusses several key optimizations. Firstly, filtering data early on significantly reduced the amount of data that needed to be processed in subsequent steps. This was crucial for improving performance when working with large datasets on cloud storage where data access can be a bottleneck. The author also employed predicate pushdown, allowing the Delta Lake query engine to filter data at the source, further minimizing the amount of data transferred from S3. Secondly, the choice of data types played a crucial role. Using smaller data types, such as `UInt32` instead of `Int64` where appropriate, reduced memory consumption and improved processing speed. Thirdly, schema evolution was handled using Delta Lake's schema evolution capabilities.  This allowed for changes to the data schema over time without breaking existing queries.  The author shows how to use `allowColumnReordering` and `allowMissingColumns` to handle the addition or reordering of columns.  Finally, the author experimented with different file formats, including Parquet and Arrow. While Delta Lake already uses Parquet as its underlying storage format, the author found that using Arrow data format in Polars could sometimes further improve performance.</p>
+
+  <p>The author highlights the importance of understanding the characteristics of the dataset and the capabilities of the chosen tools. They emphasize that there is no one-size-fits-all solution for data analysis and that experimentation and optimization are crucial for achieving optimal performance. The article provides practical examples of how to use Polars with Delta Lake on S3, including code snippets for loading data, filtering data, performing aggregations, and handling schema evolution.  It also includes snippets showing how to read specific columns, and how to handle changes in the source data such as different datatypes. The author underscores the value of Polars as a powerful tool for data analysis, especially when working with large datasets in cloud environments.</p>
+
+  <p>In conclusion, the article offers valuable insights into the process of analyzing large datasets stored as Delta Lake on S3 using Polars. It demonstrates how careful consideration of data access patterns, data types, and query optimization techniques can significantly improve performance. The author's experience provides a practical guide for data engineers and analysts facing similar challenges.</p>
+
+  <h2>Key Points</h2>
+  <ul>
+    <li><b>Dataset:</b> 650GB dataset stored as Delta Lake on S3.</li>
+    <li><b>Problem:</b> Efficiently analyze the data to identify popular URLs and user behavior.</li>
+    <li><b>Initial Approaches:</b> Spark and DuckDB were explored but found to be suboptimal due to performance limitations. Spark's JVM overhead and DuckDB's single-node limitation.</li>
+    <li><b>Solution:</b> Polars was used to its vectorized query execution and memory management.</li>
+    <li><b>Optimizations:</b>
+      <ul>
+        <li><b>Early Filtering:</b> Reduce data processed by filtering early in the pipeline using predicate pushdown.</li>
+        <li><b>Data Types:</b> Use smaller data types to reduce memory footprint and improve performance.</li>
+        <li><b>Schema Evolution:</b> Leverage Delta Lake's capabilities ( `allowColumnReordering` and `allowMissingColumns` ) to handle evolving schemas.</li>
+        <li><b>File Formats:</b> Experiment with Parquet and Arrow formats.</li>
+      </ul>
+    </li>
+    <li><b>Polars Advantages:</b> Faster data loading, filtering, and aggregation compared to Spark and DuckDB.</li>
+    <li><b>Delta Lake Integration:</b> Seamless integration with Delta Lake on S3 for data management and versioning.</li>
+    <li><b>Practical Examples:</b> The article provides code snippets for</div>
+</article>
