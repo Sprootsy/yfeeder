@@ -1,0 +1,34 @@
+<article>
+    <h2>A race condition in Aurora RDS</h2>
+    <div>
+<div>
+<h3>Summary</h3>
+The article discusses a race condition encountered in an Aurora RDS (Relational Database Service) environment at Hightouch, a company that helps businesses sync data from their data warehouses to various SaaS tools. This race condition led to data inconsistency issues, where changes made to a database table were not always accurately reflected in the synced data.
+
+The problem manifested itself when Hightouch was performing frequent updates to a particular table in their Aurora database, specifically, updating the `updated_at` timestamp column. Simultaneously, their data synchronization process was reading from this same table to update downstream SaaS applications. The race condition occurred because the read operation for data synchronization sometimes captured a row *before* the `updated_at` timestamp had been updated, or *after* the timestamp had been updated but *before* other data changes had been persisted. This resulted in the data sync process using stale or inconsistent data, even though the `updated_at` column was intended to reflect the most recent state.
+
+The investigation began with identifying discrepancies in the data being synced to downstream systems. Initial attempts to diagnose the problem involved scrutinizing the application code, data synchronization logic, and database configurations. However, the intermittent nature of the issue made it difficult to reproduce and pinpoint the root cause.
+
+After extensive debugging and analysis, the team discovered that the issue was related to the inherent behavior of Aurora RDS and the way it handles write operations. Aurora uses a distributed storage system, and while it guarantees ACID (Atomicity, Consistency, Isolation, Durability) properties, the replication and eventual consistency aspects of the system can lead to timing discrepancies, especially under high write concurrency.
+
+Specifically, when a write operation occurs, the `updated_at` timestamp might be updated before the actual data change is fully replicated across all nodes in the Aurora cluster. Consequently, a read operation that occurs immediately after the timestamp update might read the new timestamp value but still retrieve the old data values from a replica that hasn't yet been updated.
+
+To mitigate this race condition, Hightouch implemented a solution that introduced a small delay between the update of the data and the reading of the data for synchronization. This delay, albeit small, gave Aurora sufficient time to propagate the data changes across the cluster, reducing the likelihood of reading inconsistent data. The delay was carefully calibrated to balance the need for data consistency with the acceptable latency for data synchronization.
+
+Additionally, they explored alternative strategies for tracking data changes, such as using change data capture (CDC) mechanisms provided by Aurora. CDC would allow them to capture data changes as they occur and stream them to the data synchronization process in a reliable and consistent manner.
+
+The article emphasizes the importance of understanding the underlying behavior of distributed database systems like Aurora RDS, particularly concerning replication and eventual consistency. It highlights the challenges of debugging race conditions in such environments and the need for careful consideration of timing and concurrency when designing data synchronization processes. It also demonstrates the value of thorough investigation, experimentation, and a deep understanding of the database system's architecture in resolving such issues.
+<h3>Key Points</h3>
+<ul>
+<li><b>Race Condition in Aurora RDS:</b> Hightouch encountered a race condition in Aurora RDS that led to data inconsistency during data synchronization.</li>
+<li><b>`updated_at` Timestamp Issue:</b> The issue involved the `updated_at` timestamp being updated before the actual data changes were fully replicated, causing reads to potentially capture inconsistent data.</li>
+<li><b>Investigation Process:</b> The investigation involved extensive debugging, analysis of application code, and database configurations.</li>
+<li><b>Aurora's Distributed Nature:</b> The root cause was related to Aurora's distributed storage system and eventual consistency, leading to timing discrepancies.</li>
+<li><b>Mitigation Strategy:</b> A small delay was introduced between data updates and data reads for synchronization to allow for data replication.</li>
+<li><b>Alternative Solutions:</b> The use of Change Data Capture (CDC) was considered as an alternative strategy for tracking data changes reliably.</li>
+<li><b>Importance of Understanding Distributed Systems:</b> The article emphasizes the importance of understanding the behavior of distributed database systems like Aurora RDS, especially regarding replication and eventual consistency.</li>
+<li><b>Debugging Challenges:</b> Debugging race conditions in distributed environments is challenging and requires careful consideration of timing and concurrency.</li>
+</ul>
+</div>
+</div>
+</article>

@@ -1,0 +1,26 @@
+<article>
+    <h2>SSL Configuration Generator</h2>
+    <div>
+<div>
+<p>The article at ssl-config.mozilla.org provides guidance and tools for configuring secure HTTPS servers. It focuses on generating configurations for various web servers and applications to achieve different levels of security and compatibility. The goal is to help server administrators implement best practices for SSL/TLS configuration, balancing security with compatibility for different client software.
+</p>
+<p>The configuration generator allows users to select a security level (Modern, Intermediate, or Old) based on their compatibility requirements. The Modern configuration is the most secure, supporting only modern browsers and dropping support for older, less secure clients. The Intermediate configuration offers a balance between security and compatibility, supporting a broader range of clients while still maintaining reasonable security. The Old configuration prioritizes compatibility with very old clients, but at the cost of reduced security.
+</p>
+<p>For each security level, the generator provides configuration snippets for various web servers, including Apache, Nginx, and HAProxy. These snippets include settings for cipher suites, TLS protocols, HTTP Strict Transport Security (HSTS), and other security-related parameters. The article explains the implications of each security level and provides recommendations for choosing the appropriate level based on the target audience.
+</p>
+<p>The configuration generator also provides information on OCSP Stapling, which improves performance and security by allowing the server to provide the revocation status of its certificate, reducing the need for clients to contact the Certificate Authority (CA).
+</p>
+<p>The site emphasizes the importance of keeping server software and TLS libraries up to date to benefit from the latest security patches and protocol improvements. It also recommends testing configurations using tools like SSL Labs' SSL Server Test to verify the implementation and identify potential vulnerabilities.</p>
+<p><b>Key points:</b></p>
+<ul>
+<li>Provides a tool for generating SSL/TLS configurations for web servers.</li>
+<li>Offers three security levels: Modern, Intermediate, and Old, balancing security and compatibility.</li>
+<li>Generates configuration snippets for Apache, Nginx, and HAProxy.</li>
+<li>Includes settings for cipher suites, TLS protocols, and HSTS.</li>
+<li>Recommends OCSP Stapling for improved performance and security.</li>
+<li>Stresses the importance of keeping server software updated.</li>
+<li>Suggests using SSL Labs' SSL Server Test to verify configurations.</li>
+</ul>
+</div>
+</div>
+</article>
