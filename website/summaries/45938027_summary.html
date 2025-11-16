@@ -1,0 +1,27 @@
+<article>
+    <h2>Weighting an average to minimize variance</h2>
+    <div>
+<div>
+<p>
+The article discusses how to find the minimum variance unbiased estimator (MVUE) of a parameter. It explains that if you have an unbiased estimator, you can sometimes reduce its variance by conditioning on a sufficient statistic. The Rao-Blackwell theorem states that if you have an unbiased estimator and a sufficient statistic, conditioning the estimator on the sufficient statistic will produce another estimator that is also unbiased but has a variance no greater than the original estimator.
+</p>
+<p>
+The article provides an example using the exponential distribution. If you have a sample from an exponential distribution and you want to estimate the parameter λ, the reciprocal of the sample mean is an unbiased estimator. However, the sum of the samples is a sufficient statistic for λ. By conditioning the initial estimator (reciprocal of the first sample) on the sufficient statistic (sum of all samples), a new estimator is derived. This new estimator, which is (n-1) divided by the sum of the samples, is the MVUE for λ. It is unbiased, and no other unbiased estimator has a smaller variance.
+</p>
+<p>
+The article mentions that finding a sufficient statistic is key to improving an estimator. It also notes that if a sufficient statistic is also complete, then any estimator based on it is the unique MVUE.
+</p>
+
+<h3>Key Points:</h3>
+<ul>
+<li>The goal is to find the Minimum Variance Unbiased Estimator (MVUE) for a parameter.</li>
+<li>The Rao-Blackwell theorem provides a method for improving an unbiased estimator by conditioning it on a sufficient statistic.</li>
+<li>Conditioning an unbiased estimator on a sufficient statistic creates a new estimator that is also unbiased but has a variance no greater than the original.</li>
+<li>In the exponential distribution example, the reciprocal of the first sample is an unbiased estimator for λ, but the sum of all samples is a sufficient statistic.</li>
+<li>Conditioning the initial estimator on the sufficient statistic yields (n-1) divided by the sum of the samples, which is the MVUE for λ.</li>
+<li>Finding a sufficient statistic is crucial in this process.</li>
+<li>If the sufficient statistic is also complete, then any estimator based on the sufficient statistic is the unique MVUE.</li>
+</ul>
+</div>
+</div>
+</article>
