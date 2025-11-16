@@ -1,0 +1,39 @@
+<article>
+    <h2>Blocking LLM crawlers without JavaScript</h2>
+    <div>
+<div>
+<h3>Summary</h3>
+<p>
+The article discusses methods for blocking web crawlers without relying on JavaScript. It emphasizes that while JavaScript-based blocking might seem effective, it's easily bypassed by sophisticated crawlers that can execute JavaScript. The article explores alternative, more robust methods to prevent unwanted web crawling.
+</p>
+<p>
+The first approach involves using the <code>robots.txt</code> file. This file, located at the root of a website, provides instructions to crawlers about which parts of the site they should or should not access. While compliant crawlers respect these rules, malicious crawlers often ignore them. The article underscores that <code>robots.txt</code> is more of a suggestion than a foolproof solution.
+</p>
+<p>
+Next, the article delves into analyzing server logs to identify and block crawlers. Server logs contain information about every request made to the server, including the user agent string, which identifies the type of browser or crawler making the request. By analyzing these logs, website owners can identify patterns of unwanted crawlers and block their IP addresses or user agents. This method requires careful monitoring and analysis but can be more effective than <code>robots.txt</code>.
+</p>
+<p>
+The article then describes using web server configuration to block crawlers. Web servers like Apache and Nginx provide configuration options to block requests based on various criteria, such as user agent, IP address, or request patterns. This approach allows for more direct and immediate blocking compared to relying solely on server log analysis.
+</p>
+<p>
+Another technique discussed is the use of CAPTCHAs (Completely Automated Public Turing test to tell Computers and Humans Apart). CAPTCHAs present challenges that are easy for humans to solve but difficult for bots, helping to distinguish between legitimate users and crawlers. However, the article acknowledges that CAPTCHAs can negatively impact user experience.
+</p>
+<p>
+The article also touches upon implementing honeypots. Honeypots are traps designed to attract crawlers. They typically involve adding hidden links or form fields that are invisible to regular users but may be followed or filled out by bots. When a crawler interacts with a honeypot, it reveals itself as a bot, allowing the website to block it.
+</p>
+<p>
+Finally, the article emphasizes the importance of combining multiple methods for more effective crawler blocking. A layered approach, using <code>robots.txt</code>, server log analysis, web server configuration, CAPTCHAs, and honeypots, can provide a more comprehensive defense against unwanted crawling. The effectiveness of each method depends on the specific needs and resources of the website owner.
+</p>
+<h3>Key Points</h3>
+<ul>
+<li>JavaScript-based crawler blocking is easily bypassed.</li>
+<li><code>robots.txt</code> provides suggestions for crawlers but is not a foolproof solution.</li>
+<li>Analyzing server logs helps identify and block unwanted crawlers based on user agent or IP address.</li>
+<li>Web server configuration (e.g., Apache, Nginx) allows for direct blocking of crawlers.</li>
+<li>CAPTCHAs differentiate between humans and bots but can impact user experience.</li>
+<li>Honeypots trap crawlers by using hidden links or form fields.</li>
+<li>Combining multiple methods provides a more robust defense against unwanted crawling.</li>
+</ul>
+</div>
+</div>
+</article>
