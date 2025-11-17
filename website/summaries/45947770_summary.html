@@ -1,0 +1,36 @@
+<article>
+    <h2>Supercookie: Browser Fingerprinting via Favicon (2021)</h2>
+    <div>
+<div>
+  <p>
+    The provided text is a GitHub repository README file describing "Supercookie," a privacy concern related to websites being able to track users across different browsers, even when they clear their cookies or use a VPN. The repository provides a proof-of-concept implementation of this tracking method and associated detection tools.
+  </p>
+
+  <p>
+    The Supercookie technique leverages the HTTP cache, specifically the fact that the cache key includes the URL. The exploit works by setting a unique identifier in a URL's query parameter (e.g., `example.com/?supercookie=UNIQUE_ID`).  This identifier isn't directly stored as a cookie; instead, it's embedded in the URL of a cached resource (like an image or a CSS file). When the user visits another website that utilizes the same Supercookie tracking, JavaScript code on that site can probe the browser's cache to see if a particular URL (containing a previously set unique ID) is already cached. By iterating through a range of possible IDs, the website can effectively determine the user's unique identifier. This works even across different browsers on the same machine because they typically share the same HTTP cache. Clearing cookies, using a VPN, or even using private browsing mode doesn't necessarily remove these cached entries, making Supercookies more persistent than regular cookies.
+  </p>
+
+  <p>
+    The repository contains code to demonstrate how Supercookies work and how to detect them. The demonstration involves setting a Supercookie ID, then visiting another domain that can read the Supercookie ID from the cache. The detection tools include methods for listing all cached entries and searching for specific Supercookie patterns.
+  </p>
+
+  <p>
+    The author emphasizes the seriousness of this privacy vulnerability, noting that it allows for cross-browser tracking and circumvents many common privacy protections. The implications include the ability to build persistent profiles of users, even if they are actively trying to avoid tracking.
+  </p>
+
+  <h3>Key Points:</h3>
+  <ul>
+    <li><b>Supercookie</b>: A tracking technique that uses the HTTP cache to store and retrieve unique user identifiers.</li>
+    <li><b>Cross-Browser Tracking</b>:  Supercookies enable tracking users across different web browsers installed on the same machine.</li>
+    <li><b>Cache Exploitation</b>: The technique exploits the browser's HTTP cache mechanism, where URLs are part of the cache key.</li>
+    <li><b>Circumvents Privacy Measures</b>: Supercookies bypass common privacy protections like cookie clearing, VPNs, and private browsing modes.</li>
+    <li><b>Unique ID in URL</b>: A unique identifier is embedded in the URL of a cached resource (e.g., an image) as a query parameter.</li>
+    <li><b>Cache Probing</b>: JavaScript code probes the browser's cache to determine if a specific URL (containing a unique ID) is already cached.</li>
+    <li><b>Persistent Tracking</b>: Cached entries persist even after clearing cookies, making Supercookies more persistent than traditional cookies.</li>
+    <li><b>Proof-of-Concept Implementation</b>: The repository provides code demonstrating how Supercookies work.</li>
+    <li><b>Detection Tools</b>: The repository includes tools for detecting Supercookies by listing cached entries and searching for patterns.</li>
+    <li><b>Privacy Vulnerability</b>: Supercookies represent a significant privacy vulnerability allowing for persistent user profiling.</li>
+  </ul>
+</div>
+</div>
+</article>

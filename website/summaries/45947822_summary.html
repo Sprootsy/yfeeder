@@ -1,0 +1,26 @@
+<article>
+    <h2>Linux mode setting, from the comfort of OCaml</h2>
+    <div>
+<div>
+  <p>The article discusses the author's experience and work on creating an OCaml binding for libdrm, the Direct Rendering Manager library. The author details the challenges encountered, the design decisions made, and the resulting structure of the `ocaml-drm` library. They begin by explaining the role of libdrm as a compatibility layer for interacting with different GPU drivers in the Linux kernel, abstracting away the complexities of ioctl calls and data structures specific to each driver. The author's motivation stemmed from a desire to build an OpenGL-based compositor in OCaml, necessitating direct access to the DRM API.</p>
+
+  <p>The author outlines the process of wrapping the C libdrm library for use in OCaml. They employed the `ctypes` library for this purpose, which allows defining C data structures and functions in OCaml and automatically handles the marshalling of data between the two languages. The article describes the steps involved: locating the C header files, identifying the necessary data structures and functions, and then translating these into OCaml code using `ctypes`. Special attention was given to handling pointers, unions, and bitfields, which required careful management using `ctypes`' features like `ptr`, `structure`, `union`, and `field`. The author provides concrete examples of how these C constructs were represented in OCaml.</p>
+
+  <p>A significant portion of the article is dedicated to illustrating how specific libdrm functions and data structures were wrapped. The author shows how DRM resource structures like `drmModeRes`, `drmModeConnector`, and `drmModeEncoder` were defined as OCaml types using `ctypes`. They also demonstrate how functions such as `drmModeGetResources`, `drmModeGetConnector`, and `drmModeFreeConnector` were bound to OCaml functions. The author emphasizes the importance of memory management, particularly when dealing with resources allocated by the C library, which must be explicitly freed to avoid memory leaks. The use of `Gc.finalise` is mentioned as a mechanism for ensuring that allocated memory is released when the corresponding OCaml object is garbage collected.</p>
+
+  <p>The article also discusses the challenges of handling the ioctl interface, which is central to interacting with the DRM driver. The author explains how ioctl requests, which are essentially system calls with specific command codes and data structures, were wrapped using `ctypes`. They provide an example of the `DRM_IOCTL_MODE_GETRESOURCES` ioctl and how its associated data structure was defined in OCaml. The author notes the difficulty in representing the complex data structures associated with ioctls, especially considering the variations between different DRM drivers (e.g., Intel, AMD, Nvidia). They decided to focus on implementing the ioctls necessary for their specific use case, acknowledging that a complete binding for all possible ioctls would be a significant undertaking.</p>
+
+  <p>The author then briefly touches upon the use of the `ocaml-drm` library in conjunction with OpenGL. They mention the EGL (Embedded-System Graphics Library) API as a means of creating OpenGL contexts and surfaces for rendering. The article suggests that by combining `ocaml-drm` with an EGL binding, it becomes possible to create an OpenGL-based compositor entirely in OCaml.</p>
+
+  <p>Finally, the author concludes by acknowledging the limitations of their work, particularly the incomplete coverage of all libdrm functionalities and ioctls. They express hope that the `ocaml-drm` library can serve as a foundation for others interested in using DRM in OCaml and invite contributions to expand its capabilities. The article emphasizes that while the process of creating the binding was challenging, the resulting library opens up new possibilities for building graphics applications in OCaml.</p>
+
+  <h2>Key Points:</h2>
+  <ul>
+    <li>The article details the creation of `ocaml-drm`, an OCaml binding for the libdrm library.</li>
+    <li>Libdrm provides a hardware-abstraction layer to communicate with GPU drivers in the Linux kernel.</li>
+    <li>The author used `ctypes` to wrap the C libdrm library for use in OCaml.</li>
+    <li>Wrapping involved translating C data structures (e.g., `drmModeRes`, `drmModeConnector`) and functions into OCaml equivalents.</li>
+    <li>Memory management is crucial, requiring explicit freeing of resources allocated by the C library.</li>
+    <li>The ioctl interface, used for communicating with the DRM driver, was wrapped using `ctypes`, focusing on the necessary ioctls for the author's use case.</li>
+    <li>The `ocaml-drm` library, when combined with an EGL binding, enables the creation of OpenGL-based</div>
+</article>
