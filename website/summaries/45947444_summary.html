@@ -1,0 +1,37 @@
+<article>
+    <h2>What if you don&#39;t need MCP at all?</h2>
+    <div>
+<div>
+  <h3>Summary</h3>
+  <p>
+   The article "What if you don't need MCP?" by Mario Zechner explores the possibility of developing robust applications without relying on a Message Channel Platform (MCP). The author argues that while MCPs like Apache Kafka, RabbitMQ, or cloud-based alternatives (e.g., AWS SQS/SNS, Azure Service Bus, Google Pub/Sub) offer valuable features for distributed systems, they are not always necessary and can introduce unnecessary complexity for certain use cases.
+  </p>
+  <p>
+   Zechner begins by outlining the common benefits of using an MCP, such as decoupling services, enabling asynchronous communication, providing buffering and retry mechanisms, and supporting publish-subscribe patterns. These features are particularly useful in microservices architectures where independent services need to interact reliably.  However, he contends that many applications may not require the full suite of capabilities offered by an MCP.
+  </p>
+  <p>
+   The article suggests that simpler solutions might be more appropriate for scenarios with limited scale, low message volume, or tight latency requirements.  Alternatives include direct service-to-service communication using REST APIs or gRPC, especially when strong consistency is desired and the system is relatively small.  For asynchronous tasks, the author proposes using simpler queuing mechanisms like in-memory queues or database-backed queues. These alternatives reduce operational overhead and eliminate the need for managing a separate MCP infrastructure.
+  </p>
+  <p>
+   Zechner highlights the operational complexity associated with MCPs, including the need for monitoring, scaling, and managing potential failure scenarios. He argues that this complexity can outweigh the benefits in scenarios where the system's requirements are not demanding. Furthermore, MCPs introduce latency, which can be a concern for real-time applications.
+  </p>
+  <p>
+   The author emphasizes the importance of carefully evaluating the specific needs of an application before adopting an MCP. He provides a decision-making framework, prompting readers to consider factors such as the level of decoupling required, the volume and velocity of messages, the importance of guaranteed delivery, and the acceptable latency. By thoroughly analyzing these factors, developers can determine whether an MCP is truly necessary or if a simpler, more direct approach would be more efficient and maintainable.
+  </p>
+  <p>
+   The article concludes by advocating for a pragmatic approach to system design, encouraging developers to avoid unnecessary complexity and choose the simplest solution that meets the application's requirements. The author suggests that while MCPs are powerful tools, they should be used judiciously, and simpler alternatives should be considered when appropriate.
+  </p>
+
+  <h3>Key Points</h3>
+  <ul>
+   <li>MCPs (Message Channel Platforms) like Kafka and RabbitMQ provide decoupling, asynchronicity, buffering, and pub-sub patterns for distributed systems.</li>
+   <li>MCPs are not always necessary and can introduce complexity, especially for smaller applications with lower demands.</li>
+   <li>Alternatives to MCPs include direct service-to-service communication (REST/gRPC) and simpler queuing mechanisms (in-memory or database-backed queues).</li>
+   <li>MCPs add operational overhead in terms of monitoring, scaling, and failure management.</li>
+   <li>MCPs introduce latency, which can be a concern for real-time applications.</li>
+   <li>Carefully evaluate application requirements (decoupling, message volume, delivery guarantees, latency) before adopting an MCP.</li>
+   <li>Choose the simplest solution that meets the requirements; avoid unnecessary complexity.</li>
+  </ul>
+</div>
+</div>
+</article>
