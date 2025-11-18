@@ -1,0 +1,29 @@
+<article>
+    <h2>How when AWS was down, we were not</h2>
+    <div>
+<div>
+<h3>Summary</h3>
+The article discusses Authress's strategy for mitigating the impact of AWS outages on its services. It highlights that while AWS is a reliable cloud provider, regional outages can and do occur, which can affect Authress's customers. The core strategy revolves around redundancy and isolation, ensuring that if one AWS region experiences issues, Authress services can continue to operate from other regions.
+
+Authress employs a multi-region architecture, deploying its services across multiple AWS regions. This means that application servers, databases, and other critical components are replicated in different geographic locations. This replication enables Authress to failover to a healthy region in the event of an outage in another.
+
+The article details several key practices implemented to achieve this resilience. First, Authress uses geographically diverse deployments with multiple active regions. This ensures that no single point of failure exists within one region. Second, data replication is crucial. Authress replicates its databases across regions, using technologies like database replication and backups to ensure data consistency and availability. This replication minimizes data loss during a failover. Third, they have automated failover mechanisms. Authress has implemented automated systems that detect outages and automatically switch traffic to healthy regions. This reduces the time required to respond to an outage, minimizing the impact on users. Fourth, monitoring and alerting are essential. Comprehensive monitoring systems are in place to detect potential issues early, allowing Authress to proactively address them before they escalate into full-blown outages. These systems monitor the health of all components across all regions. Fifth, regular testing and drills are performed. Authress conducts regular disaster recovery exercises to validate its failover procedures and ensure that its team is prepared to respond effectively to real-world outages.
+
+The article mentions the importance of regional isolation and how Authress takes steps to avoid cross-regional dependencies where possible. This prevents an issue in one region from cascading to other regions. They also emphasize the need for constant monitoring and refinement of their infrastructure and processes to adapt to the evolving AWS landscape and emerging threats. They also make sure to test their assumptions by performing load tests and chaos engineering experiments, simulating failures to find unexpected issues. The process is constantly improved over time.
+
+By implementing these strategies, Authress aims to minimize the impact of AWS outages on its customers, ensuring high availability and reliability of its services.
+
+<h3>Key Points</h3>
+<ul>
+<li><b>Multi-Region Architecture:</b> Authress deploys its services across multiple AWS regions for redundancy.</li>
+<li><b>Data Replication:</b> Databases and other critical data are replicated across regions to ensure data consistency and availability.</li>
+<li><b>Automated Failover:</b> Automated systems detect outages and switch traffic to healthy regions.</li>
+<li><b>Monitoring and Alerting:</b> Comprehensive monitoring systems detect potential issues early.</li>
+<li><b>Regular Testing and Drills:</b> Disaster recovery exercises validate failover procedures.</li>
+<li><b>Regional Isolation:</b> Cross-regional dependencies are minimized to prevent cascading failures.</li>
+<li><b>Continuous Improvement:</b> Infrastructure and processes are constantly refined based on monitoring and testing.</li>
+<li><b>Geographically Diverse Deployments:</b> Services are deployed in multiple active regions.</li>
+</ul>
+</div>
+</div>
+</article>

@@ -1,0 +1,27 @@
+<article>
+    <h2>Compiling Ruby to machine language</h2>
+    <div>
+<div>
+  <p>The article discusses the possibility of compiling Ruby code directly to machine language, potentially resulting in significant performance improvements. The author explores the challenges and benefits of such an approach, drawing parallels with existing compilers for other dynamic languages like JavaScript. The article also examines the current state of Ruby's execution models, including interpreters like CRuby and JIT compilers like YJIT, and considers how a full ahead-of-time (AOT) compiler might fit into the Ruby ecosystem.</p>
+
+  <p>The author starts by highlighting the inherent performance limitations of interpreted languages, where code is translated and executed line by line at runtime. This contrasts with compiled languages, which are translated into machine code before execution, leading to faster performance. The article then delves into the complexities of compiling dynamic languages like Ruby, where the type of a variable can change during runtime. This makes it difficult for the compiler to make assumptions and optimizations ahead of time.</p>
+
+  <p>Despite these challenges, the author argues that compiling Ruby to machine code is feasible, drawing on examples from the JavaScript world where compilers like V8 have achieved impressive performance gains. The key is to use techniques like type inference and speculative optimization, where the compiler makes educated guesses about the types of variables and generates specialized code based on those guesses. If the guesses turn out to be wrong at runtime, the code can be deoptimized and recompiled.</p>
+
+  <p>The article also discusses the trade-offs involved in compiling Ruby to machine code. One major challenge is dealing with Ruby's dynamic features, such as metaprogramming, which allow code to be modified at runtime. These features can make it difficult for the compiler to reason about the behavior of the code and generate efficient machine code. Another challenge is the potential increase in compilation time, which could slow down the development process.</p>
+
+  <p>The author also touches upon the existing JIT compilers for Ruby, such as YJIT. JIT compilers dynamically compile parts of the Ruby code during runtime. AOT compilation would allow potentially even more aggressive optimization than JIT since it can analyze the entire program, but comes with its own set of challenges. The article explores the possibility of combining JIT and AOT compilation, where the AOT compiler handles the static parts of the code and the JIT compiler handles the dynamic parts.</p>
+
+  <p>In conclusion, the article presents a compelling case for compiling Ruby to machine language, while acknowledging the significant technical challenges involved. The author suggests that such an approach could lead to substantial performance improvements, but would require careful consideration of the trade-offs between performance, compilation time, and compatibility with Ruby's dynamic features.</p>
+
+  <h2>Key Points:</h2>
+  <ul>
+    <li>Compiling Ruby to machine language has the potential to significantly improve performance.</li>
+    <li>Dynamic typing and metaprogramming in Ruby pose challenges for ahead-of-time (AOT) compilation.</li>
+    <li>Techniques like type inference and speculative optimization can be used to overcome these challenges.</li>
+    <li>Trade-offs exist between performance, compilation time, and compatibility with Ruby's dynamic features.</li>
+    <li>AOT compilation can be potentially combined with JIT compilation to achieve optimal performance across dynamic and static code segments.</li>
+  </ul>
+</div>
+</div>
+</article>
