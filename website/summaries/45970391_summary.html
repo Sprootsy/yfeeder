@@ -1,0 +1,30 @@
+<article>
+    <h2>OrthoRoute – GPU-accelerated autorouting for KiCad</h2>
+    <div>
+<div>
+<p>The article describes OrthoRoute, a method for generating orthogonal (right-angled) routes on a grid. It focuses on pathfinding in environments like printed circuit boards (PCBs) or city layouts where movements are restricted to horizontal and vertical directions.</p>
+
+<p>The core of OrthoRoute is based on Dijkstra's algorithm, a well-known algorithm for finding the shortest path between two nodes in a graph. However, OrthoRoute modifies Dijkstra's algorithm to prioritize paths with fewer bends (turns). The article explains that in many real-world applications, the number of bends is often more important than the absolute path length. For instance, in PCB routing, fewer bends translate to lower inductance and better signal integrity.</p>
+
+<p>The standard Dijkstra's algorithm uses a priority queue ordered by the path length (cost) from the starting node. OrthoRoute introduces a secondary sorting criterion: the number of bends. This means that when two paths have the same length, the path with fewer bends is preferred. To implement this, the article describes using a tuple (length, bends) as the priority key. The algorithm first compares the lengths and only compares the number of bends if the lengths are equal.</p>
+
+<p>The article outlines the implementation details of the OrthoRoute algorithm.  Each node in the grid stores the minimum length and minimum number of bends to reach that node from the starting point.  The algorithm iteratively explores neighboring nodes, updating their length and bend counts if a shorter or less bendy path is found. A key part of the update process involves checking the direction of the incoming path to determine if a new bend is introduced when moving to a neighbor.</p>
+
+<p>The article also discusses techniques to optimize the algorithm's performance. It emphasizes the importance of using an efficient priority queue implementation, such as a binary heap, to manage the nodes to be explored. It also mentions potential improvements like using A* search, a variant of Dijkstra's algorithm that incorporates a heuristic to guide the search towards the destination, which can further reduce the search space and improve speed.</p>
+
+<p>The article provides a Python implementation of the OrthoRoute algorithm, demonstrating how to represent the grid, obstacles, and the algorithm itself. The code includes functions for performing the pathfinding and visualizing the resulting route.</p>
+
+<p>In summary, OrthoRoute is a modification of Dijkstra's algorithm optimized for finding orthogonal paths with a minimal number of bends. This is particularly useful in applications where the direction changes are more significant than the total path length.</p>
+
+<h2>Key Points:</h2>
+<ul>
+<li>OrthoRoute is a pathfinding algorithm for orthogonal grids, prioritizing paths with fewer bends.</li>
+<li>It's based on Dijkstra's algorithm but modifies the priority queue to consider both path length and number of bends.</li>
+<li>The algorithm uses a tuple (length, bends) as the priority key, sorting primarily by length and secondarily by bends.</li>
+<li>The article provides a Python implementation of the algorithm.</li>
+<li>The algorithm is applicable to scenarios like PCB routing and city planning where right-angled movements are common.</li>
+<li>Optimization techniques, such as using efficient priority queues and A* search, can improve performance.</li>
+</ul>
+</div>
+</div>
+</article>

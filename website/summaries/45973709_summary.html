@@ -1,0 +1,24 @@
+<article>
+    <h2>Cloudflare outage on November 18, 2025 post mortem</h2>
+    <div>
+ <div>
+  <p>On November 18, 2025, Cloudflare experienced a significant outage that impacted a large portion of its services and customer websites. The root cause was a previously undiscovered software bug in Cloudflare's core network traffic management system, specifically within the custom BPF (Berkeley Packet Filter) rules engine. This engine is responsible for filtering and directing network traffic across Cloudflare's global network. The bug, triggered by a specific, unusual traffic pattern related to a new internet protocol gaining traction, caused the BPF engine to enter a recursive loop, consuming excessive CPU resources on a critical subset of Cloudflare's servers. As these servers became overloaded, they were unable to process legitimate traffic, leading to widespread service disruption.</p>
+  <p>The outage began with a gradual increase in CPU utilization on the affected servers, followed by a rapid escalation that triggered automated failover mechanisms. However, due to the nature of the bug, the failover systems were unable to effectively mitigate the problem, as the issue replicated across backup systems. Cloudflare's engineering teams were alerted and immediately began investigating the anomaly. Initial efforts focused on identifying potential DDoS attacks or misconfigurations, but these avenues quickly proved fruitless. As the scope of the outage became clear, engineers pivoted to examining the network traffic management system.</p>
+  <p>The breakthrough came when an engineer identified a correlation between the CPU spikes and the unusual traffic patterns associated with the nascent internet protocol. By isolating and analyzing the specific BPF rules that were being triggered by this traffic, they discovered the recursive loop. A temporary fix was implemented by disabling the problematic BPF rules, which immediately restored service to the affected areas. Following the immediate recovery, Cloudflare engineers worked to develop and deploy a permanent patch that addressed the underlying bug in the BPF engine while maintaining the functionality of the traffic management system.</p>
+  <p>A comprehensive post-mortem analysis revealed several contributing factors to the outage. Firstly, the specific code path containing the bug had not been adequately tested with the types of traffic patterns that triggered the issue. Secondly, the monitoring and alerting systems, while effective in detecting CPU overloads, did not provide sufficient granularity to quickly pinpoint the root cause. Thirdly, the failover mechanisms, while designed to handle localized failures, were not robust enough to cope with a widespread issue affecting the core network traffic management system. As a result of the incident, Cloudflare implemented several changes, including enhanced testing procedures, improved monitoring and alerting capabilities, and modifications to the failover system to better handle similar events in the future. Cloudflare also committed to increased transparency and communication with its customers during and after any future incidents.</p>
+  <p><b>Key Points:</b></p>
+  <ul>
+   <li>Outage occurred on November 18, 2025.</li>
+   <li>Root cause: A software bug in Cloudflare's BPF rules engine within the network traffic management system.</li>
+   <li>The bug was triggered by unusual traffic patterns related to a new internet protocol.</li>
+   <li>The bug caused a recursive loop, consuming excessive CPU resources and leading to server overload.</li>
+   <li>Automated failover mechanisms were ineffective due to the nature of the bug.</li>
+   <li>Engineers identified the problematic BPF rules and implemented a temporary fix by disabling them.</li>
+   <li>A permanent patch was developed and deployed to address the underlying bug.</li>
+   <li>Contributing factors: inadequate testing, insufficient monitoring granularity, and limitations in the failover system.</li>
+   <li>Cloudflare implemented changes to improve testing, monitoring, and failover capabilities.</li>
+   <li>Cloudflare committed to increased transparency in future incidents.</li>
+  </ul>
+ </div>
+ </div>
+</article>
