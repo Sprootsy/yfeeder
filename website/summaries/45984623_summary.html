@@ -1,0 +1,38 @@
+<article>
+    <h2>Racing karts on a Rust GPU kernel driver</h2>
+    <div>
+<div>
+  <h3>Summary</h3>
+  <p>
+    The article discusses the development of a Rust-based GPU kernel driver by Collabora, focusing on its use in a real-time graphics application: a racing kart dashboard. The driver leverages the Rust programming language for its memory safety and modern features, addressing the challenges associated with traditional C-based kernel drivers. The project aims to demonstrate the feasibility and advantages of using Rust for low-level graphics programming, particularly in safety-critical and embedded systems.
+  </p>
+  <p>
+    The article explains the motivation behind creating a new GPU kernel driver, citing issues with the existing, proprietary drivers, such as their complexity, lack of transparency, and potential security vulnerabilities. Rust's strong memory safety guarantees and modern language features are presented as a solution to these problems, offering improved reliability and maintainability.
+  </p>
+  <p>
+    The racing kart dashboard application serves as a practical use case for the Rust GPU kernel driver. The dashboard displays real-time data from the kart, such as speed, RPM, and lap times, rendered using OpenGL. This requires low-latency and reliable graphics processing, making it a suitable testbed for the new driver. The author highlights the integration of the Rust driver with the existing graphics stack, including Mesa for OpenGL support.
+  </p>
+  <p>
+    The development process involved creating a minimal GPU kernel driver that can handle basic graphics operations, such as buffer allocation and command submission. The driver is designed to be modular and extensible, allowing for the addition of new features and support for different hardware platforms. The article also mentions the challenges encountered during the development, such as debugging kernel code and interfacing with existing C-based libraries.
+  </p>
+  <p>
+    The article describes the architecture of the Rust GPU kernel driver, including its different components and their interactions. It explains how the driver manages memory, handles interrupts, and communicates with the user-space graphics stack. The author emphasizes the importance of careful design and testing to ensure the driver's stability and performance.
+  </p>
+  <p>
+    The author concludes by highlighting the potential benefits of using Rust for GPU kernel driver development, including improved security, reliability, and maintainability. They also discuss the future directions of the project, such as adding support for more advanced graphics features and targeting other embedded platforms. The racing kart dashboard demo is presented as a successful proof-of-concept, demonstrating the viability of Rust for low-level graphics programming.
+  </p>
+
+  <h3>Key Points</h3>
+  <ul>
+    <li>Collabora developed a GPU kernel driver in Rust.</li>
+    <li>The driver is used in a real-time racing kart dashboard application.</li>
+    <li>Rust's memory safety and modern features address issues with traditional C-based drivers.</li>
+    <li>The project demonstrates the feasibility of using Rust for low-level graphics programming.</li>
+    <li>The driver integrates with Mesa for OpenGL support.</li>
+    <li>The architecture of the driver includes memory management and interrupt handling.</li>
+    <li>The project aims for improved security, reliability, and maintainability compared to C-based drivers.</li>
+    <li>The racing kart dashboard serves as a successful proof-of-concept.</li>
+  </ul>
+</div>
+</div>
+</article>

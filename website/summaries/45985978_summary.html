@@ -1,0 +1,34 @@
+<article>
+    <h2>Tailscale Down</h2>
+    <div>
+<div>
+  <h2>Summary</h2>
+  <p>
+    On May 16, 2024, Tailscale experienced an incident that caused packet loss and timeouts for users on several Tailscale versions and platforms. The issue stemmed from a bug in the coordination server (control plane) that caused it to incorrectly compute direct routes between nodes. This resulted in some traffic being misrouted, leading to connectivity problems.
+  </p>
+  <p>
+    The incident began at 16:23 UTC and was mitigated by 17:13 UTC. During this period, affected users experienced a noticeable degradation in network performance, including packet loss and connection timeouts.
+  </p>
+  <p>
+    The root cause was traced to a recently deployed change to the coordination server. This change introduced a bug that affected the logic for determining direct routes between nodes. Specifically, the server was failing to properly account for certain network configurations, leading to the miscalculation of routes.
+  </p>
+  <p>
+    The mitigation involved reverting the problematic change to the coordination server. Once the change was reverted, the coordination server began correctly computing routes again, and connectivity was restored for affected users.
+  </p>
+  <p>
+    Tailscale is taking several steps to prevent similar incidents in the future. These include improving testing and validation procedures for changes to the coordination server, enhancing monitoring and alerting systems to detect routing anomalies more quickly, and implementing more robust rollback mechanisms.
+  </p>
+
+  <h2>Key Points</h2>
+  <ul>
+    <li><b>Incident:</b> Packet loss and timeouts for Tailscale users.</li>
+    <li><b>Date:</b> May 16, 2024.</li>
+    <li><b>Time:</b> Started at 16:23 UTC, mitigated by 17:13 UTC.</li>
+    <li><b>Cause:</b> Bug in the coordination server (control plane) causing incorrect direct route calculations.</li>
+    <li><b>Impact:</b> Misrouted traffic, packet loss, and connection timeouts for some users.</li>
+    <li><b>Mitigation:</b> Reverted the problematic change to the coordination server.</li>
+    <li><b>Prevention:</b> Improved testing, enhanced monitoring, and robust rollback mechanisms.</li>
+  </ul>
+</div>
+</div>
+</article>
