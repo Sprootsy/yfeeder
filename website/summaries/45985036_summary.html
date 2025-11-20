@@ -1,0 +1,23 @@
+<article>
+    <h2>Researchers discover security vulnerability in WhatsApp</h2>
+    <div>
+<div>
+<h3>Summary</h3>
+<p>Researchers at the University of Vienna have discovered a significant security vulnerability in WhatsApp that could allow unauthorized individuals to access and potentially manipulate encrypted group chat communications. The vulnerability stems from WhatsApp's implementation of the group invitation mechanism and its reliance on the server to manage group membership. The attack, dubbed "group hijacking", exploits the fact that group administrators do not explicitly authorize new members. Instead, the WhatsApp server adds the new member to the group without validating an acceptance message from the invitee. A malicious actor who controls the WhatsApp server could therefore add individuals to a group chat without their knowledge or consent. </p>
+
+<p>The researchers presented their findings at the Real World Crypto Symposium. They demonstrated how an attacker, having compromised the WhatsApp server or having an insider position, can effectively bypass the end-to-end encryption of group chats. Although the attacker cannot read past messages (due to end-to-end encryption), they can read all future messages after being added to the group. This unauthorized access could have significant privacy implications, as sensitive information shared within the group would become accessible to the attacker. The researchers highlight the vulnerability's potential for misuse, including spreading misinformation, conducting surveillance, or engaging in other malicious activities within private group conversations. They proposed potential countermeasures to mitigate the risk, such as requiring explicit authorization from invitees before adding them to a group.</p>
+
+<p>WhatsApp has acknowledged the issue, clarifying that the reported scenario would only be possible if WhatsApp's server was compromised. They contend that because the server would need to be compromised for this attack, this isn't a weakness in the end-to-end encryption. They have said that they have no indication that this vulnerability has been exploited in the past.</p>
+
+<h3>Key Points</h3>
+<ul>
+<li>Researchers at the University of Vienna discovered a security vulnerability in WhatsApp group chats.</li>
+<li>The vulnerability allows unauthorized individuals to be added to group chats without their consent, potentially exposing future messages.</li>
+<li>The attack exploits the server-side management of group membership.</li>
+<li>An attacker could read all future messages within the group after being added.</li>
+<li>The researchers presented their findings at the Real World Crypto Symposium.</li>
+<li>WhatsApp acknowledged the issue and stated it requires compromising their server.</li>
+</ul>
+</div>
+</div>
+</article>
