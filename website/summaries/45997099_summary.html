@@ -1,0 +1,19 @@
+<article>
+    <h2>OOP is shifting between domains, not disappearing</h2>
+    <div>
+<div>
+  <p>This article introduces the Actor Model as a concurrency paradigm, contrasting it with traditional shared-state concurrency. It explains that the Actor Model revolves around independent "actors" that encapsulate state and behavior, communicating exclusively through asynchronous messages. The author, JS Barretto, emphasizes the benefits of this approach, including simplified concurrency management, increased resilience, and improved scalability. The article breaks down the core principles of the Actor Model: each actor has a mailbox for incoming messages, processes messages sequentially, and can create new actors, send messages, or change its internal state in response to a message. A key advantage of the Actor Model is its inherent isolation; actors do not share memory, eliminating the need for locks and other synchronization primitives that often lead to deadlocks and race conditions in shared-state concurrency. The asynchronous message-passing mechanism allows actors to operate independently, improving fault tolerance. If one actor fails, it doesn't necessarily bring down the entire system, as other actors can continue processing messages. The article also discusses the hierarchical structure that actors can form. Actors can create child actors, forming a supervision hierarchy where parent actors can monitor and manage their children. This hierarchical structure aids in error handling and system management. If a child actor fails, the parent can decide to restart it, terminate it, or escalate the failure to its own parent, providing a robust fault-tolerance mechanism. Furthermore, the article touches upon the scalability benefits of the Actor Model. Because actors are independent and communicate asynchronously, they can be distributed across multiple cores, machines, or even geographical locations. This distributed nature allows applications built on the Actor Model to scale horizontally to handle increased workloads. The author contrasts this with the difficulties of scaling shared-state concurrency, which often requires complex locking mechanisms and can be limited by memory bandwidth. The Actor Model is particularly well-suited for building concurrent and distributed systems, such as real-time applications, message queues, and distributed databases. The article gives an overview of the Actor Model, highlighting its advantages over shared-state concurrency, including simplified concurrency management, improved fault tolerance, and enhanced scalability, making it a powerful tool for building robust and scalable applications.</p>
+
+  <h3>Key Points:</h3>
+  <ul>
+    <li>The Actor Model is a concurrency paradigm based on independent "actors" that communicate through asynchronous messages.</li>
+    <li>Actors encapsulate state and behavior, avoiding shared memory and the need for locks.</li>
+    <li>Each actor has a mailbox, processes messages sequentially, and can create actors, send messages, or change state.</li>
+    <li>Asynchronous message passing improves fault tolerance; actor failure doesn't necessarily impact the entire system.</li>
+    <li>Actors can form hierarchical structures for supervision and error handling.</li>
+    <li>The Actor Model allows for horizontal scalability across multiple cores, machines, or locations.</li>
+    <li>It's well-suited for concurrent and distributed systems, offering advantages over shared-state concurrency.</li>
+  </ul>
+</div>
+</div>
+</article>
