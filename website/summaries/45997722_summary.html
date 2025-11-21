@@ -1,0 +1,25 @@
+<article>
+    <h2>Run Docker containers natively in Proxmox 9.1 (OCI images)</h2>
+    <div>
+<div>
+<h2>Summary</h2>
+The article is a comprehensive guide on how to natively run Docker containers within Proxmox 9.1 without relying on nested virtualization or full virtual machines. It addresses the challenges and inefficiencies of running Docker inside VMs, such as increased resource consumption and management overhead. The guide advocates for using systemd-nspawn containers, which provide a lightweight, isolated environment suitable for running Docker.
+The author details the necessary steps for setting up such an environment. This involves creating a Proxmox container (LXC), configuring the container's settings to allow for Docker to function correctly, and then installing Docker inside the container. The configuration steps are crucial and include enabling specific key features and nesting options within the Proxmox container configuration file.
+The guide provides a step-by-step approach, beginning with the creation of an unprivileged LXC container based on Debian 12. It then walks through the process of editing the container's configuration file to enable features like keyctl, nesting, and specific cgroup versions. This configuration is essential for Docker to manage its own containers effectively within the LXC environment.
+Following the configuration, the article outlines the installation of Docker within the container, along with Docker Compose. It also covers the installation of Portainer, a web UI, to help manage Docker containers. Finally, the author provides tips for common problems encountered during the setup, such as issues with systemd and network configuration and suggests various troubleshooting steps and solutions.
+The goal of this guide is to provide a more efficient and resource-friendly method for running Docker containers within Proxmox.
+<h2>Key Points</h2>
+<ul>
+<li><b>Problem:</b> Running Docker inside full VMs in Proxmox is resource-intensive and inefficient.</li>
+<li><b>Solution:</b> Use systemd-nspawn containers (LXC) for a lightweight, isolated Docker environment.</li>
+<li><b>Initial Setup:</b> Create an unprivileged LXC container based on Debian 12 in Proxmox.</li>
+<li><b>Configuration File:</b> Modify the container's configuration file (/etc/pve/lxc/CONTAINERID.conf) to enable keyctl, nesting=1, and specific cgroup versions (cgroup2).</li>
+<li><b>Docker Installation:</b> Install Docker and Docker Compose inside the LXC container.</li>
+<li><b>Portainer:</b> Provides a web UI to simplify Docker container management (optional).</li>
+<li><b>Troubleshooting:</b> Address potential issues related to systemd and network configuration within the container.</li>
+<li><b>Benefits:</b> Reduced resource consumption and improved management compared to running Docker in full VMs.</li>
+<li><b>Nesting:</b> Enabling nesting is crucial for Docker to manage its own containers within the LXC environment.</li>
+</ul>
+</div>
+</div>
+</article>

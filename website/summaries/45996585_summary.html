@@ -1,0 +1,36 @@
+<article>
+    <h2>Data-at-Rest Encryption in DuckDB</h2>
+    <div>
+<div>
+<p>
+The article discusses the new encryption features coming to DuckDB in the near future. DuckDB is adding encryption to address use cases where data at rest or in transit needs to be protected. The new encryption capabilities will consist of database encryption, client-to-server encryption, and data-in-transit encryption.
+</p>
+<p>
+<strong>Database Encryption</strong>: DuckDB will encrypt the database files on disk using AES-256 in XTS mode. A user-provided encryption key is required to read or write to the database. If no key is provided, the database operates unencrypted, maintaining backward compatibility. Encryption is enabled by providing an encryption key during database creation or attachment, specified either as a hexadecimal string or read from a file. The encryption key can be changed, however, this process requires rewriting the entire database, which can be time-consuming.
+</p>
+<p>
+<strong>Client-to-Server Encryption</strong>: For scenarios where DuckDB is used as a client connecting to a server (e.g., DuckDB connecting to Postgres), DuckDB will support encrypting client-to-server communication. This is implemented using TLS, ensuring that data transmitted between the client and the server is protected from eavesdropping. Certificates are required for secure authentication.
+</p>
+<p>
+<strong>Data-in-Transit Encryption</strong>: For connections between DuckDB instances, data-in-transit encryption will be supported, using TLS. Both the client and server can authenticate using certificates. This feature will allow secure communication between DuckDB instances.
+</p>
+<p>
+The article provides examples of how these features can be used. The database encryption feature is demonstrated with commands for creating and attaching to encrypted databases, changing encryption keys, and handling errors. The client-to-server and data-in-transit encryption features are outlined, mentioning the use of TLS and certificates for secure connections, but without detailed examples.
+</p>
+<p>
+Overall, the introduction of encryption capabilities in DuckDB aims to expand the applicability of DuckDB to security-sensitive environments, providing necessary tools to protect data both at rest and in transit.
+</p>
+
+<h2>Key Points:</h2>
+<ul>
+<li>DuckDB is adding encryption features for data at rest and in transit.</li>
+<li>Database encryption uses AES-256 in XTS mode and requires a user-provided key.</li>
+<li>Client-to-server encryption uses TLS to secure communication between a DuckDB client and a server (e.g., Postgres).</li>
+<li>Data-in-transit encryption uses TLS to secure communication between DuckDB instances.</li>
+<li>Encryption is enabled by providing an encryption key or configuring TLS certificates.</li>
+<li>Changing the encryption key requires rewriting the entire database.</li>
+<li>The new features are designed to enhance security and broaden the use cases for DuckDB in security-conscious environments.</li>
+</ul>
+</div>
+</div>
+</article>
