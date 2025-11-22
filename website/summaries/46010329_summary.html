@@ -1,0 +1,40 @@
+<article>
+    <h2>How I learned Vulkan and wrote a small game engine with it (2024)</h2>
+    <div>
+<div>
+<h2>Summary:</h2>
+
+This article provides a comprehensive introduction to Vulkan, a modern, low-overhead graphics API, contrasting it with OpenGL. It emphasizes Vulkan's explicit control over the GPU, which offers greater performance potential but also increased complexity. The article walks the reader through the fundamental concepts and steps required to set up a basic Vulkan application.
+
+The initial sections highlight the differences between OpenGL and Vulkan, explaining how OpenGL abstracts away much of the underlying hardware, whereas Vulkan demands explicit management of GPU resources and operations. This explicitness allows for fine-grained optimization but requires a deeper understanding of the GPU architecture.
+
+The article then outlines the foundational steps for creating a Vulkan application. It starts with instance and device creation, which involves selecting a suitable Vulkan implementation and physical device (GPU). This selection process considers factors such as supported Vulkan versions and available device extensions.
+
+Next, the article discusses the creation of a logical device, which represents an interface to a specific physical device. This involves specifying queue families to be used, enabling required device features, and creating command pools and command buffers for submitting rendering commands.
+
+The article delves into surface creation and swapchain management, crucial for presenting rendered images to the screen. This includes querying surface capabilities, choosing appropriate surface formats and present modes, and creating the swapchain itself. Image views are then created to access the swapchain images.
+
+Pipeline creation is also covered, which involves defining the rendering process, including vertex input, shader stages (vertex and fragment shaders), rasterization, and color blending. Descriptor sets and layouts are introduced for passing data to shaders.
+
+The rendering process is explained, involving recording commands into command buffers, submitting them to the graphics queue, and presenting the rendered image to the screen using the swapchain. Synchronization primitives, such as semaphores and fences, are discussed for managing dependencies between CPU and GPU operations.
+
+The article highlights the importance of proper resource management in Vulkan, emphasizing the need to explicitly allocate and free memory for buffers, images, and other GPU resources. This contrasts with OpenGL's automatic memory management, which can lead to performance overhead.
+
+Finally, the article touches on error handling and validation layers, which are essential for debugging Vulkan applications. Validation layers provide detailed error messages and warnings, helping developers identify and fix issues early in the development process.
+
+Throughout the article, there's a strong emphasis on understanding the underlying concepts and principles of Vulkan, rather than simply providing a set of copy-and-paste code snippets. The author stresses the importance of reading the Vulkan specification and utilizing validation layers to gain a deeper understanding of the API.
+
+<h2>Key Points:</h2>
+
+*   **Vulkan's Low-Overhead Design:** Vulkan offers more control over the GPU than OpenGL, leading to potentially better performance.
+*   **Explicit Resource Management:** Vulkan requires manual allocation and deallocation of GPU resources, unlike OpenGL's automatic memory management.
+*   **Instance and Device Creation:** The initial steps involve selecting a Vulkan implementation and physical device, then creating a logical device.
+*   **Swapchain Management:**  A swapchain is created to present rendered images to the screen, requiring careful selection of surface formats and present modes.
+*   **Pipeline Creation:**  Pipelines define the rendering process, including vertex input, shader stages, rasterization, and color blending.
+*   **Command Buffers and Queues:** Rendering commands are recorded into command buffers and submitted to the graphics queue.
+*   **Synchronization Primitives:** Semaphores and fences manage dependencies between CPU and GPU operations.
+*   **Validation Layers:** Validation layers provide detailed error messages and warnings for debugging Vulkan applications.
+*   **Importance of Understanding:** The article emphasizes understanding the underlying concepts of Vulkan and utilizing the specification and validation layers.
+</div>
+</div>
+</article>
