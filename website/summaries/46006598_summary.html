@@ -1,0 +1,73 @@
+<article>
+    <h2>Solving Fizz Buzz with Cosines</h2>
+    <div>
+ <div>
+  <p>
+   The article explores an unusual solution to the classic Fizz Buzz programming problem, using cosine functions. The traditional Fizz Buzz challenge involves iterating through a range of numbers and printing "Fizz" for multiples of 3, "Buzz" for multiples of 5, and "FizzBuzz" for multiples of both. Numbers not divisible by either 3 or 5 are printed as they are.
+  </p>
+  <p>
+   The author presents a method that avoids conditional statements (if-else) and modulo operations, which are typically used to determine divisibility. Instead, it leverages the properties of cosine waves and their behavior around multiples of π.
+  </p>
+  <p>
+   The core idea is that cos(nπ) equals 1 when n is an even integer, -1 when n is an odd integer, and a value between -1 and 1 otherwise. The approach defines two functions based on cosine:
+  </p>
+  <ul>
+   <li>
+    f(n) = cos(nπ/3). If n is a multiple of 3, then nπ/3 is a multiple of π. If n is even, f(n) is 1. If n is odd, f(n) is -1.
+   </li>
+   <li>
+    g(n) = cos(nπ/5). If n is a multiple of 5, then nπ/5 is a multiple of π. If n is even, g(n) is 1. If n is odd, g(n) is -1.
+   </li>
+  </ul>
+  <p>
+   Then, the article uses these properties to construct expressions that evaluate to specific values based on divisibility by 3 and 5. It introduces the following:
+  </p>
+  <ul>
+   <li>
+    Fizz condition: abs(cos(nπ/3)) = 1 if n is a multiple of 3 and not zero.
+   </li>
+   <li>
+    Buzz condition: abs(cos(nπ/5)) = 1 if n is a multiple of 5 and not zero.
+   </li>
+  </ul>
+  <p>
+   The author ingeniously uses these cosine-based conditions to create strings "Fizz" and "Buzz" that are either present or empty depending on whether the number meets the divisibility criteria. These strings are then concatenated to produce the desired output. When neither "Fizz" nor "Buzz" is generated, the original number is printed.
+  </p>
+  <p>
+   The author then moves on to show how the solution could be golfed, meaning shortened.
+  </p>
+  <p>
+   The article showcases the surprising ways mathematical functions can be applied to solve programming problems, even seemingly simple ones like Fizz Buzz. The approach demonstrates an alternative to conventional conditional logic, offering a unique perspective on problem-solving.
+  </p>
+  <p>
+   <strong>Key Points:</strong>
+  </p>
+  <ul>
+   <li>
+    Presents a Fizz Buzz solution using cosine functions instead of conditional statements or modulo operators.
+   </li>
+   <li>
+    Leverages the property that cos(nπ) equals 1 or -1 when n is an integer.
+   </li>
+   <li>
+    Uses cos(nπ/3) and cos(nπ/5) to determine divisibility by 3 and 5, respectively.
+   </li>
+   <li>
+    Constructs "Fizz" and "Buzz" strings based on the absolute values of the cosine functions.
+   </li>
+   <li>
+    Concatenates "Fizz" and "Buzz" to generate the appropriate output.
+   </li>
+   <li>
+    Prints the original number if it's not divisible by 3 or 5.
+   </li>
+   <li>
+    Demonstrates a creative application of mathematical concepts in programming.
+   </li>
+   <li>
+    The solution is then golfed, or shortened.
+   </li>
+  </ul>
+ </div>
+ </div>
+</article>
