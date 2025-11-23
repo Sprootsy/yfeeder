@@ -1,0 +1,35 @@
+<article>
+    <h2>Show HN: Build the habit of writing meaningful commit messages</h2>
+    <div>
+<div>
+<h2>Summary</h2>
+
+<p>The article is about SmartCommit, a command-line interface (CLI) tool designed to streamline and enhance the Git commit process. SmartCommit automates several tasks typically performed manually by developers, aiming to improve code quality, consistency, and overall workflow efficiency. It supports features like automatic code formatting using tools like Black (for Python), automatic checking for secrets using tools like detect-secrets, and commit message generation using OpenAI's GPT models.</p>
+
+<p>SmartCommit's primary goal is to reduce the cognitive load on developers during commits and enforce coding standards consistently across a project. It achieves this by providing pre-commit hooks that automatically run the configured checks and formatting tools before a commit is allowed. This ensures that all committed code adheres to the project's style guidelines and is free from common issues like exposed secrets.</p>
+
+<p>The tool leverages AI to generate commit messages based on the changes made in the staged files. By integrating with OpenAI's GPT models, SmartCommit can analyze the code diff and create descriptive and informative commit messages. This is particularly useful for larger or more complex changes where manually writing a detailed commit message can be time-consuming.</p>
+
+<p>SmartCommit offers a configuration file (`.smartcommit.yaml`) where users can customize its behavior. This configuration allows specifying which files should be included or excluded from formatting, the list of tools to use for checks, and the desired behavior for AI-powered commit message generation. The configuration file supports advanced features like including and excluding files, overriding default settings and defining custom tools to run.</p>
+
+<p>The article also describes the installation process using pip, basic usage with the `smartcommit run` command, and the functionality to review and approve automatically generated commit messages before finalizing the commit. It outlines the use of configurations and the capabilities they provide. SmartCommit supports multiple AI models (e.g., `gpt-3.5-turbo`, `gpt-4`) and allows for customization of the AI prompt.</p>
+
+<p>In essence, SmartCommit serves as an intelligent assistant during the commit process, automating formatting, secret detection, and commit message generation to save time, enforce standards, and improve the overall quality of the codebase.</p>
+
+<h2>Key Points</h2>
+
+<ul>
+    <li><b>Automated Code Formatting:</b> Automatically formats code using tools like Black, ensuring consistent code style.</li>
+    <li><b>Secrets Detection:</b> Integrates with tools like detect-secrets to prevent accidental commit of sensitive information.</li>
+    <li><b>AI-Powered Commit Messages:</b> Uses OpenAI's GPT models to generate descriptive and informative commit messages based on code changes.</li>
+    <li><b>Customizable Configuration:</b> Utilizes a `.smartcommit.yaml` file for flexible configuration of formatting rules, secret detection tools, and AI behavior.</li>
+    <li><b>Pre-Commit Hooks:</b> Enforces checks and formatting before commits, maintaining code quality and preventing errors.</li>
+    <li><b>CLI Tool:</b> Operates as a command-line interface, easily integrated into existing Git workflows.</li>
+    <li><b>Review and Approve:</b> Allows users to review and approve AI-generated commit messages before committing.</li>
+    <li><b>Multiple AI Models:</b> Supports different AI models (e.g., GPT-3.5-turbo, GPT-4) and custom prompt engineering.</li>
+    <li><b>Improved Workflow:</b> Streamlines the commit process, reducing manual effort and cognitive load on developers.</li>
+    <li><b>Easy Installation:</b> Installs easily using pip.</li>
+</ul>
+</div>
+</div>
+</article>
