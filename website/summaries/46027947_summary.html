@@ -1,0 +1,38 @@
+<article>
+    <h2>A desktop app for isolated, parallel agentic development</h2>
+    <div>
+<div>
+  <p>Mux is a self-hosted platform designed to provide a complete development environment within a containerized setup. It aims to offer a consistent and reproducible coding experience, similar to products like GitHub Codespaces or Gitpod, but with the flexibility of being self-hosted on your own infrastructure. Mux supports various Integrated Development Environments (IDEs) such as VS Code, JetBrains IDEs, and web-based editors, allowing developers to connect to their development environments from anywhere.
+</p>
+<p>
+The platform is built on several key components, including a control plane (muxd) that manages the lifecycle of development environments, a web application (mux-ui) that provides a user interface for interacting with Mux, and a command-line interface (mux) for managing environments from the terminal. Mux environments are defined using Dockerfiles and Devcontainer configurations, ensuring consistency across different development setups.
+</p>
+<p>
+Mux offers features such as automatic environment creation based on Git repositories, support for multiple IDEs, and the ability to customize development environments using Dockerfiles and Devcontainer configurations. It integrates with various cloud providers like AWS, GCP, and Azure, as well as self-hosted Kubernetes clusters, allowing users to deploy Mux on their preferred infrastructure. The platform also focuses on security, providing features like environment isolation and secure access controls.
+</p>
+<p>
+The architecture of Mux involves a central control plane (muxd) that orchestrates the creation, management, and deletion of development environments. When a user requests a new environment, muxd provisions a container based on the specified Dockerfile and Devcontainer configuration, configures networking and security settings, and provides access to the environment through the chosen IDE. The platform uses a combination of containerization technologies (like Docker), orchestration tools (like Kubernetes), and networking solutions to ensure a scalable and reliable development environment.
+</p>
+<p>
+Mux supports features like port forwarding, allowing developers to access services running within the development environment from their local machine. It also offers features for collaboration, enabling multiple developers to work on the same environment simultaneously. The platform is designed to be extensible, with APIs and SDKs that allow developers to integrate Mux with other tools and services in their development workflow.
+</p>
+<p>
+Overall, Mux aims to provide a flexible, secure, and self-hosted alternative to cloud-based development environments, giving developers greater control over their development infrastructure while still offering a streamlined and consistent coding experience.
+</p>
+
+<h2>Key Points:</h2>
+<ul>
+  <li>Mux is a self-hosted development environment platform.</li>
+  <li>It aims to replicate the functionality of GitHub Codespaces/Gitpod, but self-hosted.</li>
+  <li>Supports VS Code, JetBrains IDEs, and web-based editors.</li>
+  <li>Built on Dockerfiles and Devcontainer configurations.</li>
+  <li>Includes a control plane (muxd), a web UI (mux-ui), and a CLI (mux).</li>
+  <li>Supports automatic environment creation from Git repositories.</li>
+  <li>Can be deployed on AWS, GCP, Azure, and Kubernetes.</li>
+  <li>Focuses on environment isolation and secure access controls.</li>
+  <li>Offers features like port forwarding and collaborative development.</li>
+  <li>Provides APIs and SDKs for integration with other tools.</li>
+</ul>
+</div>
+</div>
+</article>
