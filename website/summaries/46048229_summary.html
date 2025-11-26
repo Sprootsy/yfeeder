@@ -1,0 +1,35 @@
+<article>
+    <h2>It is ok to say &#34;CSS variables&#34; instead of &#34;custom properties&#34;</h2>
+    <div>
+<div>
+  <p>The article is a comprehensive guide to CSS variables (also known as custom properties), detailing their syntax, usage, and capabilities. It begins by explaining the fundamental syntax for declaring and using CSS variables, highlighting the importance of the double hyphen prefix (<code>--</code>) for variable names and the <code>var()</code> function for accessing their values. The article emphasizes that CSS variables are subject to cascading and inheritance, which allows for dynamic updates based on the element to which they are applied, or inherited from the parent element.
+
+  The author explains the concept of variable scope, demonstrating how variables defined at the <code>:root</code> level can be used globally, while those defined within specific selectors are limited to those elements and their descendants. It covers how to define fallback values within the <code>var()</code> function to handle cases where a variable is not defined.
+
+  The article delves into the dynamic nature of CSS variables, showcasing how they can be modified using JavaScript to create interactive and responsive designs. It provides examples of how to read and set CSS variable values using JavaScript's <code>getPropertyValue()</code> and <code>setProperty()</code> methods. It notes that changes made to CSS variables via JavaScript will trigger updates in the browser, reflecting the new values in real-time.
+
+  The guide touches on using CSS variables within media queries, allowing for adaptive styling based on screen size or other media features. It explores the use of CSS variables in complex calculations with <code>calc()</code>, enabling dynamic adjustments of sizes, positions, and other properties based on variable values.
+
+  The article also discusses the limitations of CSS variables, particularly that they can only hold property values, not selectors or media queries. It mentions browser compatibility for CSS variables, which is generally good across modern browsers, but advises checking for older browser support.
+
+  The author also explains the use of CSS variables with the cascade, inheritance and specificity to ensure values are applied correctly. It demonstrates how a variable can be overridden at a more specific level, or inherited from a parent if not defined locally.
+
+  Finally, the article showcases practical applications of CSS variables, such as theming (light vs. dark mode) and component styling, where variables can be used to customize the appearance of UI elements. It emphasizes the power of CSS variables in creating maintainable, scalable, and dynamic stylesheets.</p>
+
+  <h2>Key Points:</h2>
+  <ul>
+    <li>CSS variables are declared with <code>--variable-name: value;</code> and used with <code>var(--variable-name, fallback-value);</code>.</li>
+    <li>They are subject to cascading and inheritance, allowing dynamic updates.</li>
+    <li>Variable scope determines where a variable can be accessed (<code>:root</code> for global, selector-specific for local).</li>
+    <li>Fallback values in <code>var()</code> handle cases where a variable is not defined.</li>
+    <li>CSS variables can be manipulated with JavaScript using <code>getPropertyValue()</code> and <code>setProperty()</code>.</li>
+    <li>They can be used within media queries for responsive design.</li>
+    <li>CSS variables are compatible with <code>calc()</code> for dynamic calculations.</li>
+    <li>They can only hold property values, not selectors or media queries.</li>
+    <li>Browser compatibility is generally good across modern browsers.</li>
+    <li>CSS variables can be overridden based on cascade, inheritance, and specificity.</li>
+    <li>CSS variables can be used to create scalable, maintainable and dynamic stylesheets through features like theming.</li>
+  </ul>
+</div>
+</div>
+</article>
