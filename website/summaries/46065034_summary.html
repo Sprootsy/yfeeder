@@ -1,0 +1,35 @@
+<article>
+    <h2>DIY NAS: 2026 Edition</h2>
+    <div>
+ <div>
+ <h3>Summary</h3>
+ <p>Brian Moses' blog post, "DIY NAS: 2026 Edition," is a comprehensive guide to building a DIY Network Attached Storage (NAS) system in 2026, reflecting advancements in hardware and software since his previous guides. The article emphasizes that while cloud storage is prevalent, a local NAS offers benefits like privacy, control, and potentially lower long-term costs, especially for large storage needs. Moses focuses on a balanced approach, prioritizing reliability, performance, and ease of use.</p>
+ 
+ <p>The article starts by outlining the core components: the CPU, motherboard, RAM, storage drives, case, and power supply unit (PSU). For the CPU, he suggests considering AMD Ryzen processors for their performance and integrated graphics, which can be useful for transcoding media. The motherboard choice should align with the CPU and offer sufficient SATA ports, M.2 slots for NVMe drives (used for caching or faster storage), and adequate connectivity. ECC RAM is recommended for data integrity, especially for critical data storage.</p>
+ 
+ <p>Storage is a crucial aspect, and the article distinguishes between HDDs (Hard Disk Drives) and SSDs (Solid State Drives). HDDs are favored for bulk storage due to their lower cost per terabyte, while SSDs, particularly NVMe drives, are recommended for caching to improve performance. The author stresses the importance of using NAS-specific HDDs like WD Red Pro or Seagate IronWolf Pro for their reliability and vibration resistance. RAID (Redundant Array of Independent Disks) configurations are discussed as a means to provide redundancy and protect against data loss. Options like RAID 5, RAID 6, and RAID 10 are evaluated, with a preference for RAID 6 or similar configurations that offer better protection against multiple drive failures.  ZFS is also mentioned as a software solution.</p>
+ 
+ <p>The case selection should consider the number of drives, cooling, and noise levels. A case with good airflow is vital to keep the drives cool and extend their lifespan. The PSU should be of high quality and provide sufficient power for all components, with some headroom for future expansion.</p>
+ 
+ <p>On the software side, the article recommends TrueNAS as a robust and feature-rich NAS operating system. TrueNAS offers ZFS file system support, RAID management, and various services like SMB/CIFS for file sharing, Plex for media streaming, and Docker for running other applications. The author also touches upon the importance of backups, advocating for the "3-2-1" backup strategy: three copies of data on two different media, with one copy offsite.</p>
+ 
+ <p>Networking is another important area. The article advises using a Gigabit Ethernet connection at a minimum, but suggests considering 2.5GbE or 10GbE for improved performance, especially when dealing with large files or multiple users. The network switch and other network infrastructure should be upgraded accordingly to support these faster speeds.</p>
+ 
+ <p>Finally, the article briefly discusses power management, recommending the use of a UPS (Uninterruptible Power Supply) to protect the NAS from power outages and surges. Regular maintenance, including monitoring drive health and updating the operating system, is also emphasized.</p>
+ 
+ <h3>Key Points</h3>
+ <ul>
+  <li><b>DIY NAS Benefits:</b> Privacy, control, and cost-effectiveness for large storage needs compared to cloud solutions.</li>
+  <li><b>CPU:</b> AMD Ryzen processors are recommended for their performance and integrated graphics.</li>
+  <li><b>Motherboard:</b> Choose a motherboard with sufficient SATA ports, M.2 slots, and connectivity.</li>
+  <li><b>RAM:</b> ECC RAM is recommended for data integrity.</li>
+  <li><b>Storage:</b> NAS-specific HDDs (e.g., WD Red Pro, Seagate IronWolf Pro) for bulk storage; NVMe SSDs for caching.</li>
+  <li><b>RAID:</b> RAID 6 or similar configurations are preferred for redundancy against multiple drive failures.</li>
+  <li><b>Case:</b> Select a case with good airflow and sufficient drive bays.</li>
+  <li><b>PSU:</b> Use a high-quality PSU with enough power for all components and future upgrades.</li>
+  <li><b>Operating System:</b> TrueNAS is recommended for its robust features and ZFS support.</li>
+  <li><b>Backup Strategy:</b> Implement a "3-2-1" backup strategy for data protection.</li>
+  <li><b>Networking:</b> Consider 2.5GbE or 10GbE for faster network speeds.</li>
+  <li><b>Power Management:</b> Use a UPS to protect against power outages.</li>
+  <li><b>Maintenance:</b> Regularly monitor drive health and update the operating</div>
+</article>

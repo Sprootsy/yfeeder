@@ -1,0 +1,80 @@
+<article>
+    <h2>Fara-7B: An efficient agentic model for computer use</h2>
+    <div>
+<div>
+  <p>
+    The article describes Fara, a research project by Microsoft, which is a
+    framework designed for distributed machine learning training with a focus on
+    fault tolerance, high resource utilization, and elastic resource
+    management. It addresses the challenges of training large machine learning
+    models, particularly in distributed environments where failures are common
+    and resource efficiency is crucial. Fara aims to provide a more robust and
+    efficient solution compared to existing distributed training frameworks.
+  </p>
+  <p>
+    Fara is designed to handle various types of failures, including machine
+    failures, network disruptions, and straggler tasks, without requiring a
+    complete restart of the training job. It uses techniques such as
+    checkpointing, task replication, and dynamic scheduling to mitigate the
+    impact of failures. The framework allows for elastic resource management,
+    enabling training jobs to dynamically adjust their resource allocation based
+    on availability and demand, leading to improved resource utilization and
+    reduced training times.
+  </p>
+  <p>
+    The framework is built on a layered architecture that separates concerns and
+    allows for modularity and extensibility. The core components include a
+    scheduler, a fault tolerance manager, and a resource manager. The scheduler
+    is responsible for assigning tasks to available resources, while the fault
+    tolerance manager monitors the progress of tasks and takes corrective
+    actions in case of failures. The resource manager handles the allocation and
+    deallocation of resources based on the requirements of the training job and
+    the overall system load.
+  </p>
+  <p>
+    Fara supports various machine learning frameworks, such as TensorFlow and
+    PyTorch, and can be deployed on different infrastructure platforms, including
+    on-premises clusters and cloud environments. The framework provides a set of
+    APIs and tools that simplify the process of developing and deploying
+    distributed training jobs. The design prioritizes ease of use, making it
+    accessible to both experienced machine learning engineers and those new to
+    distributed training.
+  </p>
+  <p><b>Key Points:</b></p>
+  <ul>
+    <li>
+      Fara is a distributed machine learning training framework developed by
+      Microsoft Research.
+    </li>
+    <li>
+      It focuses on fault tolerance, high resource utilization, and elastic
+      resource management.
+    </li>
+    <li>
+      Fara handles machine failures, network disruptions, and straggler tasks
+      without requiring complete job restarts.
+    </li>
+    <li>
+      It uses checkpointing, task replication, and dynamic scheduling for fault
+      tolerance.
+    </li>
+    <li>
+      Elastic resource management allows jobs to dynamically adjust resource
+      allocation.
+    </li>
+    <li>
+      Fara has a layered architecture with a scheduler, fault tolerance manager,
+      and resource manager.
+    </li>
+    <li>
+      It supports TensorFlow and PyTorch and can be deployed on various
+      infrastructure platforms.
+    </li>
+    <li>
+      Fara provides APIs and tools for simplified development and deployment of
+      distributed training jobs.
+    </li>
+  </ul>
+</div>
+</div>
+</article>
