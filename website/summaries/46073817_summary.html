@@ -1,0 +1,25 @@
+<article>
+    <h2>A programmer-friendly I/O abstraction over io_uring and kqueue (2022)</h2>
+    <div>
+<div>
+  <p>The article discusses the challenges of using low-level asynchronous I/O interfaces like io_uring (Linux) and kqueue (BSD/macOS) directly in application code, and introduces a new C++ library, &lt;simdনীয়&gt;, designed to provide a more user-friendly abstraction over these interfaces. The author highlights the complexity and platform-specific nature of io_uring and kqueue, which involve managing submission queues, completion queues, and dealing with memory ownership issues. The &lt;simdনীয়&gt; library aims to simplify asynchronous I/O programming by offering a consistent API across different operating systems and handling the underlying complexities of io_uring and kqueue.</p>
+
+  <p>The article explains that io_uring and kqueue are powerful mechanisms for performing asynchronous I/O operations, allowing applications to initiate I/O without blocking the calling thread. This can lead to significant performance improvements, especially in I/O-bound applications. However, the direct use of these interfaces requires careful management of resources and a deep understanding of their intricacies. For example, with io_uring, the application must allocate and manage the memory used for I/O buffers, and ensure that these buffers remain valid until the I/O operation completes. Similarly, kqueue requires the application to register events of interest and handle the resulting notifications. The author emphasizes that these low-level details can make asynchronous I/O programming difficult and error-prone.</p>
+
+  <p>&lt;simdনীয়&gt; seeks to address these challenges by providing a higher-level abstraction that simplifies the process of initiating and managing asynchronous I/O operations. It offers a consistent API across different platforms, hiding the platform-specific details of io_uring and kqueue. The library handles memory management, event registration, and other low-level tasks, allowing developers to focus on the application logic rather than the intricacies of the underlying I/O interfaces. The author illustrates how &lt;simdনীয়&gt; can be used to perform common I/O operations, such as reading and writing files, in a more straightforward and less error-prone manner. The library provides features like automatic buffer management and error handling, further simplifying asynchronous I/O programming. By using &lt;simdনীয়&gt;, developers can write asynchronous I/O code that is both more readable and easier to maintain, while still benefiting from the performance advantages of io_uring and kqueue.</p>
+
+  <p>Furthermore, the article touches upon the design principles behind &lt;simdনীয়&gt;, emphasizing its focus on simplicity and ease of use. The library is designed to be lightweight and efficient, minimizing overhead and maximizing performance. It also provides a flexible and extensible architecture, allowing developers to customize its behavior to meet specific application requirements. The author also discuss the benefits of using a well-designed abstraction layer, such as reduced code complexity, improved code portability, and increased developer productivity. By encapsulating the complexities of io_uring and kqueue, &lt;simdনীয়&gt; enables developers to write asynchronous I/O code more quickly and with less effort.</p>
+
+  <p>Finally, the article concludes by highlighting the potential benefits of using &lt;simdনীয়&gt; in a variety of applications, including network servers, storage systems, and other I/O-intensive applications. By providing a user-friendly abstraction over io_uring and kqueue, &lt;simdনীয়&gt; makes it easier for developers to leverage the performance benefits of asynchronous I/O, while minimizing the associated complexity. The author encourages developers to explore the library and provide feedback, with the goal of further improving its functionality and usability.</p>
+
+  <h2>Key Points:</h2>
+  <ul>
+    <li>io_uring and kqueue are powerful asynchronous I/O interfaces but are complex to use directly.</li>
+    <li>&lt;simdনীয়&gt; is a C++ library that provides a user-friendly abstraction over io_uring and kqueue.</li>
+    <li>&lt;simdনীয়&gt; simplifies asynchronous I/O programming by handling memory management, event registration, and other low-level details.</li>
+    <li>The library offers a consistent API across different operating systems, hiding platform-specific complexities.</li>
+    <li>&lt;simdনীয়&gt; aims to improve code readability, portability, and developer productivity.</li>
+  </ul>
+</div>
+</div>
+</article>

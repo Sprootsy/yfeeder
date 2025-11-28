@@ -1,0 +1,38 @@
+<article>
+    <h2>The input stack on Linux: An end-to-end architecture overview</h2>
+    <div>
+<div>
+<h3>Summary</h3>
+<p>
+The article "Input Devices on Linux" by venam provides a comprehensive overview of how input devices function within the Linux operating system. It delves into the layers of abstraction that handle input, starting from the physical devices themselves and progressing up to the applications that ultimately receive and interpret the input.
+</p>
+<p>
+The article begins by describing the hardware aspects of input devices such as keyboards, mice, and touchscreens, emphasizing that these devices generate signals that need to be processed by the system. It then moves to the kernel level, explaining the role of device drivers in translating raw hardware signals into standardized input events. The kernel's input subsystem is highlighted as a crucial component responsible for managing these events.
+</p>
+<p>
+A significant portion of the article is dedicated to explaining the `evdev` interface, which is the primary mechanism for user-space programs to receive input events from the kernel. The author details how `evdev` presents input devices as character devices in the `/dev/input/` directory, allowing applications to read and interpret the stream of events. The structure of input events, including their types and codes, is also described.
+</p>
+<p>
+The article further elaborates on higher-level libraries and tools that simplify input handling for application developers. Libraries such as libinput are discussed, which provide a more abstract and convenient way to access input devices compared to directly interacting with `evdev`. The author also mentions the X Window System (X11) and Wayland, which are display servers that handle input events and distribute them to client applications. These systems add another layer of abstraction, managing focus, keyboard layouts, and other complexities.
+</p>
+<p>
+The author goes into detail on how to use tools like `evtest` and `libinput` to debug input problems, such as detecting if an input is being correctly captured by the system or to diagnose why a particular keyboard key is not working.
+</p>
+<p>
+The article concludes by discussing the challenges and complexities involved in managing input devices on Linux, including dealing with different device capabilities, handling hotplugging (dynamically adding or removing devices), and ensuring consistent behavior across different hardware and software configurations. The author also touches upon future trends and potential improvements in the Linux input stack.
+</p>
+
+<h3>Key Points</h3>
+<ul>
+<li><b>Hardware Abstraction:</b> Input devices generate raw signals that are translated into standardized events by device drivers within the Linux kernel.</li>
+<li><b>Kernel Input Subsystem:</b> The kernel's input subsystem is responsible for managing input events from various devices.</li>
+<li><b>evdev Interface:</b> `evdev` is the primary interface for user-space programs to receive input events from the kernel, presenting devices as character devices in `/dev/input/`.</li>
+<li><b>Input Event Structure:</b> Input events have specific types and codes that define the nature of the event (e.g., key press, mouse movement).</li>
+<li><b>Higher-Level Libraries:</b> Libraries like libinput provide a more abstract and convenient way to access input devices compared to directly using `evdev`.</li>
+<li><b>Display Servers:</b> X11 and Wayland are display servers that handle input events and distribute them to client applications, managing focus and keyboard layouts.</li>
+<li><b>Debugging Tools:</b> Tools like `evtest` and `libinput` can be used to debug input-related issues.</li>
+<li><b>Challenges:</b> Managing input devices on Linux involves complexities such as handling diverse device capabilities, hotplugging, and ensuring consistent behavior.</li>
+</ul>
+</div>
+</div>
+</article>
