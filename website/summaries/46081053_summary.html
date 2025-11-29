@@ -1,0 +1,27 @@
+<article>
+    <h2>28M Hacker News comments as vector embedding search dataset</h2>
+    <div>
+<div>
+  <p>The ClickHouse documentation provides a guide on how to use ClickHouse for vector search using the Hacker News dataset. The dataset consists of Hacker News stories and comments enriched with vector embeddings, which were generated using OpenAI's text embedding models. The guide outlines the steps to set up a ClickHouse instance, load the Hacker News dataset, create vector indices, and perform similarity searches. It also explains how to use different distance functions for vector comparison, such as cosine distance and Euclidean distance.</p>
+
+  <p>The dataset is available in both Parquet and CSV formats, with approximately 60 million rows of Hacker News stories and comments. Each entry includes the text of the story or comment, metadata, and a 1536-dimensional vector embedding. The guide highlights how to use ClickHouse's vector functions and indexing capabilities to efficiently search for similar content based on the vector embeddings. This allows users to perform semantic searches, finding content that is conceptually similar even if it doesn't share the same keywords. It provides practical examples of creating tables, ingesting data, creating vector indices using the `hnsw` algorithm, and performing k-nearest neighbor (k-NN) searches using SQL queries. The guide also touches on optimizing query performance and provides links to additional resources for further exploration of vector search with ClickHouse.</p>
+
+  <h3>Key Points:</h3>
+  <ul>
+    <li><b>Dataset:</b> Hacker News stories and comments with associated vector embeddings.</li>
+    <li><b>Vector Embeddings:</b> Generated using OpenAI's text embedding models.</li>
+    <li><b>Data Format:</b> Available in Parquet and CSV formats.</li>
+    <li><b>Data Size:</b> Approximately 60 million rows.</li>
+    <li><b>Vector Dimension:</b> 1536-dimensional vectors.</li>
+    <li><b>Objective:</b> Demonstrate vector search capabilities using ClickHouse.</li>
+    <li><b>Setup:</b> Instructions on setting up a ClickHouse instance.</li>
+    <li><b>Data Loading:</b> Instructions on loading the Hacker News dataset into ClickHouse.</li>
+    <li><b>Vector Indexing:</b> Creating vector indices using the `hnsw` algorithm.</li>
+    <li><b>Distance Functions:</b> Examples of using cosine distance and Euclidean distance for vector comparison.</li>
+    <li><b>k-NN Search:</b> Performing k-nearest neighbor searches using SQL queries.</li>
+    <li><b>Semantic Search:</b> Finding conceptually similar content based on vector embeddings.</li>
+    <li><b>Optimization:</b> Tips on optimizing query performance.</li>
+  </ul>
+</div>
+</div>
+</article>

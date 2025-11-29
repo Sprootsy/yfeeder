@@ -1,0 +1,41 @@
+<article>
+    <h2>A first look at Django&#39;s new background tasks</h2>
+    <div>
+<div>
+  <h2>Summary</h2>
+  <p>
+    The article provides a first look at Django's new built-in background tasks feature, introduced in Django 5.1. It highlights that background tasks have long been a common requirement for Django projects, often addressed with third-party libraries like Celery or django-background-tasks. Django 5.1 aims to simplify this by offering a native solution.
+  </p>
+  <p>
+    The new feature involves a decorator, <code>@task</code>, to register functions as background tasks.  These tasks are defined within the Django project and are executed outside the request/response cycle.  The article demonstrates how to define a simple task, such as sending a welcome email, using the <code>@task</code> decorator.  It emphasizes that the decorated function must accept positional arguments and keyword arguments.
+  </p>
+  <p>
+    The article explains how to schedule these tasks. Tasks can be scheduled directly using the `.delay()` method on the decorated function.  This enqueues the task for execution by a background worker.
+  </p>
+  <p>
+    The article also touches upon how to run the background worker process. It instructs readers to use the <code>runworker</code> management command, which consumes tasks from the queue and executes them.  The <code>runworker</code> command needs to be run in a separate terminal or process.
+  </p>
+  <p>
+    The article briefly mentions that the implementation uses a database queue to store tasks, and the task execution is handled by a worker process. It outlines that while this built-in solution offers a simplified approach for basic background tasks, it might not be suitable for complex scenarios requiring advanced features like task retries, periodic tasks, or complex routing, where Celery might still be a better choice.
+  </p>
+  <p>
+    The author also mentions a setting <code>DJANGO_BACKGROUND_TASKS_RUN_ASYNC</code> that would enable running background tasks in threads instead of a separate worker, but discouraged its use.
+  </p>
+  <p>
+    The author concludes by expressing optimism about the addition of built-in background tasks to Django, considering it a welcome simplification for many common use cases and lowers the barrier to entry for incorporating asynchronous operations into Django projects.
+  </p>
+
+  <h2>Key Points</h2>
+  <ul>
+    <li>Django 5.1 introduces built-in background tasks.</li>
+    <li>The <code>@task</code> decorator registers functions as background tasks.</li>
+    <li>Tasks are scheduled using the <code>.delay()</code> method.</li>
+    <li>The <code>runworker</code> management command executes tasks from the queue.</li>
+    <li>Uses a database queue for task storage.</li>
+    <li>Suitable for simple background tasks, but Celery may be better for complex scenarios.</li>
+    <li>Discouraged <code>DJANGO_BACKGROUND_TASKS_RUN_ASYNC</code>.</li>
+    <li>Simplifies asynchronous operations in Django projects.</li>
+  </ul>
+</div>
+</div>
+</article>
