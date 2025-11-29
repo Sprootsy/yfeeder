@@ -1,0 +1,28 @@
+<article>
+    <h2>JSON Schema Demystified: Dialects, Vocabularies and Metaschemas</h2>
+    <div>
+ <div>
+  <p>This article, "JSON Schema Demystified," provides a comprehensive guide to understanding and utilizing JSON Schema for data validation. It begins by explaining what JSON Schema is: a vocabulary that allows you to annotate and validate JSON documents. It emphasizes that JSON Schema is not a data type or a validation tool itself, but rather a standard way to describe the expected structure and content of JSON data.</p>
+  <p>The article outlines the benefits of using JSON Schema, including data validation, automated testing, documentation, and code generation. Data validation ensures that the JSON data conforms to the expected format, preventing errors and inconsistencies. Automated testing becomes easier because you can programmatically validate JSON data against the schema. Documentation is enhanced by providing a clear and machine-readable description of the JSON structure. Code generation tools can use JSON Schema to automatically create code that handles the data.</p>
+  <p>The author then delves into the core concepts of JSON Schema, starting with basic types such as `string`, `number`, `integer`, `boolean`, `null`, `array`, and `object`. Each type has its own set of validation keywords. For example, strings can be validated using keywords like `minLength`, `maxLength`, and `pattern` (for regular expressions). Numbers and integers can be validated using `minimum`, `maximum`, `exclusiveMinimum`, and `exclusiveMaximum`. Arrays can be validated using `minItems`, `maxItems`, `uniqueItems`, and `contains`. Objects are validated using `properties`, `required`, `additionalProperties`, `minProperties`, and `maxProperties`.</p>
+  <p>The article also covers advanced concepts such as combining schemas using keywords like `allOf`, `anyOf`, `oneOf`, and `not`. These keywords allow you to create complex validation rules by combining multiple schemas. `allOf` requires that the JSON data is valid against all of the specified schemas. `anyOf` requires that the data is valid against at least one of the schemas. `oneOf` requires that the data is valid against exactly one of the schemas. `not` requires that the data is not valid against the specified schema.</p>
+  <p>Furthermore, the article discusses how to define reusable schemas using `$defs` (formerly known as `definitions` in older versions of JSON Schema). This allows you to define common schema components that can be referenced from other parts of the schema, promoting consistency and reducing redundancy. The `$ref` keyword is used to reference these reusable schemas.</p>
+  <p>The use of `$id` to define a base URI for the schema and how it affects resolving relative `$ref` URIs is also explained. This is crucial for modularizing and distributing schemas across different files or locations.</p>
+  <p>The article then explores how to handle more complex scenarios, such as validating nested objects and arrays, and validating data based on conditions (using `if`, `then`, and `else`). It also touches upon the use of formats to validate specific string formats like dates, emails, and URIs. It is highlighted that while formats can be useful, their implementations can vary between different validators and should be used with caution.</p>
+  <p>The article also covers custom validation with `format` and custom keywords and provides examples for implementations in different languages. It is, however, specified that some tools and libraries might not support custom keywords.</p>
+  <p>Finally, the article emphasizes the importance of choosing the right JSON Schema validator for your specific needs. It mentions several popular validators available in different programming languages and provides tips on how to integrate them into your applications. The article recommends testing your schema thoroughly to ensure that it behaves as expected and covers all the necessary validation rules.</p>
+  <p><b>Key Points:</b></p>
+  <ul>
+   <li>JSON Schema is a vocabulary for annotating and validating JSON documents.</li>
+   <li>Benefits of using JSON Schema include data validation, automated testing, documentation, and code generation.</li>
+   <li>JSON Schema defines several basic data types (string, number, integer, boolean, null, array, object) with associated validation keywords.</li>
+   <li>Schemas can be combined using `allOf`, `anyOf`, `oneOf`, and `not` for complex validation rules.</li>
+   <li>Reusable schemas can be defined using `$defs` and referenced with `$ref`.</li>
+   <li>`$id` defines a base URI for resolving `$ref` URIs.</li>
+   <li>JSON Schema supports conditional validation using `if`, `then`, and `else`.</li>
+   <li>Formats can be used to validate specific string formats, but implementations vary.</li>
+   <li>Choose the right JSON Schema validator for your needs and test your schema thoroughly.</li>
+  </ul>
+ </div>
+ </div>
+</article>
