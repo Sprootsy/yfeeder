@@ -1,0 +1,32 @@
+<article>
+    <h2>Be Like Clippy</h2>
+    <div>
+<div>
+<h2>Summary</h2>
+<p>The article on be-clippy.com is a comprehensive guide to using Clippy, a linter for Rust code. Clippy helps developers write more idiomatic, efficient, and safe Rust code by providing suggestions and warnings based on a wide range of checks. The article covers various aspects of Clippy, starting from its installation and usage to advanced configuration and custom lint creation.</p>
+
+<p>The article begins by explaining what Clippy is and why it's valuable for Rust developers. It emphasizes Clippy's role in catching common mistakes, enforcing best practices, and improving code quality. It highlights that Clippy acts as a valuable assistant during development, helping to prevent potential bugs and performance issues.</p>
+
+<p>The guide then walks through the process of installing Clippy, typically involving adding it as a component to the Rust toolchain using `rustup`. It describes how to run Clippy on a Rust project using the `cargo clippy` command, which analyzes the code and reports any lint violations. The article clarifies how to integrate Clippy into the development workflow, such as running it as part of a continuous integration (CI) pipeline to ensure code quality is maintained.</p>
+
+<p>A significant portion of the article is dedicated to explaining Clippy's different lint categories (pedantic, nursery, restriction, correctness, style, perf, complexity). Each category represents a different level of strictness and focuses on various aspects of code quality. The guide provides examples of specific lints within these categories, illustrating how Clippy can identify issues like unnecessary allocations, inefficient code patterns, and potential logical errors.</p>
+
+<p>The article also explains how to configure Clippy to suit specific project needs. It covers how to enable or disable individual lints or entire categories using the `#[warn]`, `#[allow]`, `#[deny]`, and `#[forbid]` attributes. The guide also discusses the use of a `clippy.toml` configuration file to manage lint settings at the project level, allowing developers to customize Clippy's behavior and tailor it to their coding style and project requirements.</p>
+
+<p>Furthermore, the article touches on advanced topics such as writing custom lints for Clippy. This involves using the Rust compiler's procedural macro system to analyze the code's abstract syntax tree (AST) and identify specific patterns or issues. The article explains the basic steps involved in creating a custom lint, from defining the lint's metadata to implementing the analysis logic.</p>
+
+<p>Finally, the article emphasizes the importance of keeping Clippy up-to-date to benefit from the latest lint rules and improvements. It recommends regularly updating the Rust toolchain to ensure that Clippy is using the most recent version. The guide also encourages developers to contribute to Clippy by reporting bugs, suggesting new lints, or contributing code.</p>
+
+<h2>Key Points</h2>
+<ul>
+<li>Clippy is a linter for Rust that helps improve code quality, catch common mistakes, and enforce best practices.</li>
+<li>It can be installed via `rustup` and run using `cargo clippy`.</li>
+<li>Clippy has different lint categories, including pedantic, nursery, restriction, correctness, style, perf, and complexity.</li>
+<li>Lints can be enabled, disabled, or configured using attributes like `#[warn]`, `#[allow]`, `#[deny]`, `#[forbid]` and the `clippy.toml` file.</li>
+<li>Custom lints can be created using Rust's procedural macro system.</li>
+<li>Regularly update Clippy by updating the Rust toolchain.</li>
+<li>Contributing to Clippy by reporting bugs or suggesting new lints is encouraged.</li>
+</ul>
+</div>
+</div>
+</article>
