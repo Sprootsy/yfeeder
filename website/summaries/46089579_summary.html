@@ -1,0 +1,28 @@
+<article>
+    <h2>An update on the Farphone&#39;s battery</h2>
+    <div>
+<div>
+<h2>Summary</h2>
+<p>The article discusses the author's experience with the battery life of their Framework Laptop 13 (AMD Ryzen 7040 Series). Initially, after receiving the laptop in August, the battery life was disappointing, lasting only around 3 to 4 hours with light usage. The author experimented with various settings, including disabling CPU boost, which improved battery life to approximately 5 to 6 hours. However, the performance was noticeably degraded. The author then explored different Linux distributions and kernels, but none offered a significant improvement in battery life.</p>
+
+<p>The article describes the author's detailed investigation into power consumption using tools like `powertop` and `Power Statistics`. This revealed that the AMD Ryzen 7840U processor was consuming a significant amount of power even when idle, ranging from 7 to 10 watts. Further investigation suggested that the iGPU (integrated GPU) was a major contributor to this power draw. The author found that the iGPU was stuck in a higher power state (P-State) due to the display remaining active even when the lid was closed and the machine was suspended to RAM (S3 sleep). This was attributed to the laptop's firmware, which was not fully putting the display to sleep when closed.</p>
+
+<p>The author discovered a workaround by using a custom systemd service to force the iGPU to a lower power state upon lid close. This significantly reduced idle power consumption to around 3 to 4 watts, extending battery life to 8 to 10 hours with light usage. However, this workaround had a drawback: it caused the display to flicker upon waking from sleep. The author found a solution to this flicker by adding a small delay to the systemd service, allowing the display to properly initialize before the iGPU was fully powered up.</p>
+
+<p>The author also notes that future kernel updates or firmware improvements might address the underlying issue, potentially eliminating the need for the workaround. They emphasize the importance of monitoring power consumption and experimenting with different settings to optimize battery life on the Framework Laptop 13 (AMD Ryzen 7040 Series).</p>
+
+<h2>Key Points</h2>
+<ul>
+  <li>Initial battery life on the Framework Laptop 13 (AMD Ryzen 7040 Series) was poor (3-4 hours).</li>
+  <li>Disabling CPU boost improved battery life but reduced performance.</li>
+  <li>The iGPU was identified as a major source of idle power consumption (7-10 watts).</li>
+  <li>The iGPU was stuck in a high power state due to the display remaining active during S3 sleep.</li>
+  <li>A custom systemd service was created to force the iGPU to a lower power state on lid close.</li>
+  <li>This workaround reduced idle power consumption to 3-4 watts and improved battery life to 8-10 hours.</li>
+  <li>The initial workaround caused screen flickering upon wake.</li>
+  <li>A delay was added to the systemd service to resolve the screen flickering issue.</li>
+  <li>Future updates may resolve the underlying issue.</li>
+</ul>
+</div>
+</div>
+</article>

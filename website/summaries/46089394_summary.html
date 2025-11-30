@@ -1,0 +1,25 @@
+<article>
+    <h2>Zero knowlege proof of compositeness</h2>
+    <div>
+<div>
+  <p>The article discusses Zero-Knowledge Proofs (ZKPs) and how to create a ZKP for a composite statement built from simpler statements. It explains that a ZKP allows someone to prove they know something without revealing what they know. The post focuses on how to combine ZKPs for individual statements to create a ZKP for a more complex statement made up of those individual statements. It outlines two main ways to combine ZKPs: the AND construction and the OR construction.</p>
+
+  <p>The AND construction allows a prover to demonstrate that they know the truth of multiple statements simultaneously, without revealing information about any one of them individually. The process involves running each ZKP for the individual statements and presenting all the proofs together. A verifier then verifies each proof independently. If all proofs are valid, the verifier is convinced that the prover knows the truth of all the statements. The article notes that this construction requires care to ensure that the ZKPs are independent, meaning that the proof of one statement doesn't inadvertently reveal information about another. This can be achieved by using different random challenges for each ZKP or by hashing the statements together before generating the challenges.</p>
+
+  <p>The OR construction allows a prover to demonstrate that they know the truth of at least one of several statements, without revealing which one. This is a bit more complex. Suppose there are two statements, A and B, and the prover wants to show that they know either A or B is true. The prover knows a proof for either A or B. The prover creates a fake proof for the statement they don't know how to prove. Then the prover adjusts the real proof so that both proofs, the real one and the fake one, add up to a known value. The verifier then checks that the combined proofs are valid. The article uses an analogy to a magician's trick to explain how this works.</p>
+
+  <p>The article also touches on more complex composite statements involving both AND and OR constructions. It emphasizes that while the fundamental principles remain the same, the construction can become more intricate.</p>
+
+  <p>In summary, the article provides a high-level overview of how to construct ZKPs for composite statements by combining ZKPs for simpler statements using AND and OR constructions. It underscores the importance of independence in AND constructions and explains the process of creating fake proofs and adjusting real proofs in OR constructions.</p>
+
+  <h2>Key Points:</h2>
+  <ul>
+    <li><b>Zero-Knowledge Proofs (ZKPs):</b> Allow proving knowledge without revealing the knowledge itself.</li>
+    <li><b>Composite Statements:</b> Complex statements built from simpler statements.</li>
+    <li><b>AND Construction:</b> Proving knowledge of multiple statements simultaneously. Requires independence between the proofs.</li>
+    <li><b>OR Construction:</b> Proving knowledge of at least one statement out of several, without revealing which one. Involves creating a fake proof and adjusting the real proof.</li>
+    <li><b>Combining AND and OR:</b> More complex composite statements can be created using combinations of AND and OR constructions.</li>
+  </ul>
+</div>
+</div>
+</article>
