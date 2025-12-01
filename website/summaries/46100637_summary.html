@@ -1,0 +1,33 @@
+<article>
+    <h2>Ty – A fast Python type checker, written in Rust</h2>
+    <div>
+<div>
+  <p>Ty is a static type checker designed for Python. It distinguishes itself by aiming for both speed and accuracy, offering a fast type-checking experience without compromising on the correctness of its analysis. It is designed to be a "drop-in" replacement for existing type checkers.</p>
+
+  <p>Ty supports a wide range of Python versions, from Python 3.7 up to the latest releases, ensuring compatibility with diverse projects. Its adoption is facilitated through a simple installation process using `pip`, and it integrates with existing workflows by generating reports in common formats like those used by mypy, making it easy to incorporate into continuous integration systems.</p>
+
+  <p>The tool is designed around the idea of minimal configuration. By default, Ty enforces strict type checking but offers options to relax certain checks. The configuration can be managed through a `pyproject.toml` file, allowing for project-specific customization. Specifically, Ty enables control over error severities, enabling users to downgrade specific errors to warnings or ignore them entirely.</p>
+
+  <p>One of Ty's design principles is "soundness" which means that ideally if Ty doesn't find any errors, the code should be type-safe. It achieves this by combining ideas of gradual typing (allowing both typed and untyped code) with ideas of static analysis. It performs whole-program analysis to infer types, even in the absence of type annotations, and to validate type constraints across an entire codebase.</p>
+
+  <p>The documentation highlights several key features, including its ability to infer types in many common patterns. It supports features like type narrowing via isinstance checks, truthiness checks, and exception handling. Ty can also handle complex scenarios like inferring generic types, understanding protocols, and correctly analyzing context managers, decorators, and dataclasses.</p>
+
+  <p>The documentation also outlines certain limitations. Support for plugins is still under development, and some advanced typing features like `TypeGuard` and `ParamSpec` are not yet fully supported. Additionally, while Ty aims for comprehensive coverage, it might still have gaps in understanding certain complex typing patterns.</p>
+
+  <p>Ty aims to improve the developer experience by providing detailed and actionable error messages. The documentation includes examples of common errors and their corresponding resolutions, helping users understand and address type-related issues efficiently.</p>
+
+  <p><b>Key Points:</b></p>
+  <ul>
+    <li><b>Fast and Accurate:</b> Ty balances speed and correctness in static type checking for Python.</li>
+    <li><b>Wide Compatibility:</b> Supports Python 3.7 and later.</li>
+    <li><b>Easy Integration:</b> Installs via `pip` and reports errors in standard formats.</li>
+    <li><b>Minimal Configuration:</b> Uses `pyproject.toml` for project-specific settings.</li>
+    <li><b>Soundness:</b> Aims to ensure type safety when no errors are reported.</li>
+    <li><b>Whole-Program Analysis:</b> Infers types and validates constraints across the entire codebase.</li>
+    <li><b>Feature-Rich:</b> Supports type narrowing, generic types, protocols, context managers, decorators, and dataclasses.</li>
+    <li><b>Ongoing Development:</b> Plugin support and some advanced typing features are still under development.</li>
+    <li><b>Helpful Error Messages:</b> Provides detailed explanations and resolutions for type errors.</li>
+  </ul>
+</div>
+</div>
+</article>
