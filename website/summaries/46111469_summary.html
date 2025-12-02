@@ -1,0 +1,40 @@
+<article>
+    <h2>Why I stopped using JSON for my APIs</h2>
+    <div>
+<div>
+<h2>Summary</h2>
+<p>The article "Better Than JSON" by Aloïs Deniel explores alternatives to JSON (JavaScript Object Notation) for data serialization, highlighting its limitations and proposing more efficient and feature-rich options. While JSON has become a ubiquitous standard due to its simplicity and widespread support, the author argues that its design choices can lead to inefficiencies, especially when dealing with large datasets or complex data structures.</p>
+
+<p>The article begins by acknowledging JSON's strengths: its human-readable text format, ease of parsing, and native support in JavaScript. However, it quickly delves into its shortcomings. One major issue is JSON's verbosity. Because it's a text-based format, it includes a lot of redundant characters, like quotes and commas, which increase the size of the data. This overhead is particularly problematic when transmitting large amounts of data over a network, as it consumes more bandwidth and increases latency.</p>
+
+<p>Another limitation of JSON is its lack of built-in support for certain data types. JSON only natively supports strings, numbers, booleans, null, arrays, and objects. This means that more complex data types, such as dates, binary data, or custom data structures, must be encoded as strings, which adds complexity to both the serialization and deserialization processes. Furthermore, it can lead to ambiguity, as the type information is not explicitly encoded in the JSON data itself.</p>
+
+<p>The article then introduces several alternatives to JSON, focusing on binary serialization formats. Binary formats are generally more compact and efficient because they represent data in a machine-readable format, avoiding the overhead of text-based encodings. Some of the alternatives discussed include:</p>
+
+<ul>
+<li><strong>MessagePack:</strong> A binary serialization format that aims to be as compact and fast as possible. It supports a wider range of data types than JSON and is designed to be easy to implement and use.</li>
+<li><strong>Protocol Buffers (protobuf):</strong> Developed by Google, Protocol Buffers are a language-neutral, platform-neutral, extensible mechanism for serializing structured data. They require a schema definition, which allows for strong typing and efficient encoding.</li>
+<li><strong>Avro:</strong> Another data serialization system, Avro provides rich data structures and a compact binary data format. It also relies on schemas, which enable schema evolution and compatibility.</li>
+<li><strong>CBOR (Concise Binary Object Representation):</strong> Designed for constrained environments, CBOR is a binary data serialization format that is similar to JSON but more compact.</li>
+</ul>
+
+<p>For each alternative, the author discusses its key features, advantages, and potential use cases. The article emphasizes that the choice of serialization format depends on the specific requirements of the application, such as data size, performance, compatibility, and complexity. While JSON may be sufficient for simple use cases, binary formats offer significant advantages in terms of efficiency and expressiveness for more demanding applications.</p>
+
+<p>In conclusion, the article advocates for considering alternatives to JSON when performance and data size are critical factors. By adopting a more efficient serialization format, developers can optimize their applications for speed and reduce bandwidth consumption, leading to a better user experience.</p>
+
+<h2>Key Points</h2>
+<ul>
+<li>JSON is a widely used text-based data serialization format known for its simplicity and JavaScript support.</li>
+<li>JSON's verbosity leads to larger data sizes compared to binary formats, impacting network transfer and storage efficiency.</li>
+<li>JSON lacks native support for complex data types like dates and binary data, requiring string encoding and custom parsing logic.</li>
+<li>Alternatives to JSON include binary serialization formats like MessagePack, Protocol Buffers, Avro, and CBOR.</li>
+<li>MessagePack is a compact and fast binary format supporting a wider range of data types.</li>
+<li>Protocol Buffers (protobuf) offer language-neutral, schema-based serialization with strong typing and efficient encoding.</li>
+<li>Avro provides rich data structures, a compact binary format, and schema evolution capabilities.</li>
+<li>CBOR is designed for constrained environments, offering a compact binary representation similar to JSON.</li>
+<li>The choice of serialization format depends on factors like data size, performance needs, compatibility requirements, and complexity.</li>
+<li>Binary formats offer significant advantages in efficiency and expressiveness for demanding applications compared to JSON.</li>
+</ul>
+</div>
+</div>
+</article>

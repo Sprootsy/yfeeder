@@ -1,0 +1,35 @@
+<article>
+    <h2>Beej&#39;s Guide to Learning Computer Science</h2>
+    <div>
+<div>
+  <p>This article is a comprehensive guide to network programming using sockets in C, primarily focused on Internet sockets. It begins by explaining the client-server model, where servers listen for incoming connections and clients initiate those connections. The guide then introduces the concept of sockets as endpoints for communication, detailing the difference between connection-oriented (TCP) and connectionless (UDP) sockets.</p>
+
+  <p>The author emphasizes the importance of understanding IP addresses and ports for identifying network connections. It explains how IP addresses uniquely identify hosts on a network, while port numbers specify particular applications or services running on those hosts. The guide also covers domain name resolution, showing how hostnames are translated into IP addresses using the Domain Name System (DNS).</p>
+
+  <p>The core of the guide delves into the practical aspects of socket programming. It outlines the steps for creating, binding, listening, and accepting connections on the server side. The client side focuses on creating a socket and connecting to a server. The guide provides detailed code examples for both TCP and UDP protocols, illustrating how to send and receive data using functions like `send()`, `recv()`, `sendto()`, and `recvfrom()`. The code includes robust error checking and explains how to handle common issues such as interrupted system calls and partial sends.</p>
+
+  <p>Furthermore, the article covers important data manipulation techniques needed when working with network data. It explains the need for converting between host byte order and network byte order using functions like `htonl()`, `htons()`, `ntohl()`, and `ntohs()` to ensure consistent data interpretation across different systems. It also describes how to convert IP addresses between human-readable dotted decimal notation and binary format using functions like `inet_pton()` and `inet_ntop()`.</p>
+
+  <p>Advanced topics include handling multiple connections using techniques like `select()` and `poll()`, which allow a server to monitor multiple sockets for activity. The guide also touches on IPv6 addressing, explaining how to work with IPv6 addresses and make code compatible with both IPv4 and IPv6 using address-independent code. This involves using `struct sockaddr_storage` and related functions to handle both address families.</p>
+
+  <p>Throughout the guide, there is a strong emphasis on error handling and security. The author stresses the importance of validating input, handling errors gracefully, and being aware of potential security vulnerabilities such as buffer overflows. The guide also provides practical advice on debugging network applications and using tools like `netcat` to test client-server interactions.</p>
+
+  <p>The guide concludes by summarizing best practices for socket programming, reinforcing the importance of clear code, proper error handling, and understanding the underlying network protocols. It serves as a comprehensive resource for anyone looking to learn network programming in C using sockets.</p>
+
+  <h2>Key Points:</h2>
+  <ul>
+    <li><b>Client-Server Model:</b> Servers listen for connections, and clients initiate connections.</li>
+    <li><b>Sockets:</b> Endpoints for network communication, can be connection-oriented (TCP) or connectionless (UDP).</li>
+    <li><b>IP Addresses and Ports:</b> IP addresses identify hosts; ports identify specific applications/services.</li>
+    <li><b>Domain Name System (DNS):</b> Translates hostnames to IP addresses.</li>
+    <li><b>Socket Functions:</b> <code>socket()</code>, <code>bind()</code>, <code>listen()</code>, <code>accept()</code>, <code>connect()</code>, <code>send()</code>, <code>recv()</code>, <code>sendto()</code>, <code>recvfrom()</code>.</li>
+    <li><b>Byte Order Conversion:</b> Use <code>htonl()</code>, <code>htons()</code>, <code>ntohl()</code>, <code>ntohs()</code> to handle network byte order.</li>
+    <li><b>Address Conversion:</b> Use <code>inet_pton()</code> and <code>inet_ntop()</code> to convert between IP address formats.</li>
+    <li><b>Handling Multiple Connections:</b> Use <code>select()</code> or <code>poll()</code> to monitor multiple sockets.</li>
+    <li><b>IPv6:</b> Use <code>struct sockaddr_storage</code> for address-independent code to support both IPv4 and IPv6.</li>
+    <li><b>Error Handling:</b> Crucial for robust and reliable network applications.</li>
+    <li><b>Security:</b> Be aware of potential vulnerabilities like buffer overflows and validate input.</li>
+  </ul>
+</div>
+</div>
+</article>
