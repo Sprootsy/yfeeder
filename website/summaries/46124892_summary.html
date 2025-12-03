@@ -1,0 +1,31 @@
+<article>
+    <h2>Cursed circuits: charge pump voltage halver</h2>
+    <div>
+<div>
+  <h2>Summary: Cursed Circuits: Charge-Pump Voltage Multipliers</h2>
+  <p>The article by lcamtuf delves into the intricacies and potential pitfalls of charge-pump voltage multipliers, a type of circuit used to generate voltages higher or lower than the available supply voltage. It emphasizes the often-overlooked quirks and potential for failure in these seemingly simple circuits, particularly when implemented with discrete components or in less-than-ideal conditions.</p>
+
+  <p>The author starts by explaining the basic principle of charge pumps, highlighting their dependence on capacitors to store and transfer charge. He then points out that while the fundamental concept is straightforward, real-world implementations can suffer from various issues. One major concern is the impedance of the circuit which involves the impedance of capacitors which decreases with the increase of frequency, and the impedance of the MOSFETs, which varies depending on the gate voltage. The result is a sensitivity to the ESR (Equivalent Series Resistance) of the capacitors used, and the on-resistance of the MOSFETs used as switches. Higher ESR and on-resistance leads to significant voltage drops and reduced efficiency, negating the benefits of the voltage multiplication. As the current draw increases, the output voltage will tend to diminish. Also the parasitic inductance becomes significant.</p>
+
+  <p>Another critical aspect discussed is the charge pump's sensitivity to the switching frequency. While higher frequencies might seem desirable for smaller capacitor sizes, they also exacerbate losses due to gate drive requirements of the MOSFETs and the limited switching speed of the diodes (in some designs). Moreover, the article highlights the importance of carefully selecting components with low forward voltage drop and fast switching times to minimize losses and maximize efficiency.</p>
+
+  <p>The author also touches on the impact of layout and parasitic effects. Poor layout can introduce unwanted inductance and capacitance, further degrading performance and potentially leading to instability or oscillations. He underscores the importance of minimizing trace lengths and using proper grounding techniques to mitigate these issues. Furthermore, the temperature also affects the performance. In low temperatures, the on-resistance of MOSFETs will increase, as well as the forward voltage of the diodes.</p>
+
+  <p>The article warns against relying solely on simulations without considering real-world component limitations. Simulations often assume ideal components and neglect parasitic effects, which can lead to inaccurate predictions and unexpected behavior in the actual circuit. The author suggests thorough testing and characterization of the charge pump under various operating conditions to identify potential weaknesses and ensure reliable performance.</p>
+
+  <p>Finally, the author briefly discusses the use of integrated charge-pump ICs, which offer advantages such as smaller size, higher efficiency, and built-in protection features. However, he cautions that even these integrated solutions are not foolproof and still require careful consideration of component selection and layout to achieve optimal results. The author concludes by emphasizing the importance of a thorough understanding of the underlying principles and potential pitfalls of charge pumps to avoid common mistakes and design reliable and efficient voltage multipliers.</p>
+
+  <h2>Key Points:</h2>
+  <ul>
+    <li>Charge-pump voltage multipliers use capacitors to store and transfer charge, creating voltages higher or lower than the input.</li>
+    <li>Real-world implementations suffer from losses due to capacitor ESR and MOSFET on-resistance.</li>
+    <li>Switching frequency affects efficiency; higher frequencies can increase losses.</li>
+    <li>Component selection (low forward voltage drop, fast switching diodes/MOSFETs) is crucial.</li>
+    <li>Poor layout introduces inductance and capacitance, degrading performance.</li>
+    <li>Simulations alone are insufficient; real-world testing is essential.</li>
+    <li>Integrated charge-pump ICs offer advantages but still require careful design considerations.</li>
+    <li>Temperature affects the on-resistance of MOSFETs and the forward voltage of diodes, impacting performance.</li>
+  </ul>
+</div>
+</div>
+</article>
