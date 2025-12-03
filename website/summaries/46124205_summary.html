@@ -1,0 +1,37 @@
+<article>
+    <h2>100k TPS over a billion rows: the unreasonable effectiveness of SQLite</h2>
+    <div>
+<div>
+  <p>
+    The article discusses the surprising effectiveness of SQLite in handling high transaction rates and large datasets, specifically demonstrating its ability to achieve 100,000 transactions per second (TPS) on a database with over a billion rows. The author challenges the common perception that SQLite is only suitable for small or simple applications, arguing that it can be a powerful and efficient solution for many real-world scenarios.
+  </p>
+  <p>
+    The author begins by noting the prevailing industry trend towards complex, distributed database systems, often involving sharding, replication, and sophisticated caching mechanisms. While acknowledging the necessity of such architectures for extreme scale, the author suggests that many applications are over-engineered and could benefit from the simplicity and performance of SQLite. The article highlights several factors contributing to SQLite's surprising performance: its minimal overhead, efficient storage format, and ability to leverage operating system-level caching. By keeping the entire database within a single file, SQLite avoids the network latency and complexity associated with distributed systems.
+  </p>
+  <p>
+    To illustrate SQLite's capabilities, the author describes a series of benchmark tests performed on a database containing over a billion rows of data. The tests simulated a high-volume transaction workload, including both read and write operations. The results demonstrated that SQLite could consistently achieve 100,000 TPS on a single machine. The author attributes this performance to several optimizations, including the use of WAL (Write-Ahead Logging) mode, appropriate indexing strategies, and careful tuning of database parameters.
+  </p>
+  <p>
+    The article also emphasizes the importance of understanding the specific workload and data access patterns when choosing a database system. While SQLite may not be suitable for all applications, it can be an excellent choice for read-heavy workloads, applications with moderate write volumes, and scenarios where simplicity and ease of deployment are paramount. The author cautions against blindly adopting complex database architectures without first considering whether a simpler solution like SQLite might suffice.
+  </p>
+  <p>
+    Furthermore, the author addresses concerns about SQLite's scalability and concurrency limitations. While SQLite is not designed to handle massive concurrent write operations, the article notes that it can effectively support a large number of concurrent readers. For write-intensive workloads, the author suggests using techniques such as write coalescing or queuing to reduce contention and improve performance. The author points out SQLite is often used as an edge cache in front of other databases.
+  </p>
+  <p>
+    In conclusion, the article advocates for a more pragmatic approach to database selection, urging developers to carefully evaluate their requirements and consider SQLite as a viable option for a wider range of applications. By leveraging its simplicity, efficiency, and surprising scalability, SQLite can provide a compelling alternative to more complex and resource-intensive database systems.
+  </p>
+
+  <h3>Key Points:</h3>
+  <ul>
+    <li>SQLite can achieve 100,000 TPS on a database with over a billion rows.</li>
+    <li>SQLite's simplicity and efficiency make it a viable alternative to complex database systems.</li>
+    <li>Operating system-level caching contributes to SQLite's performance.</li>
+    <li>WAL mode, indexing strategies, and database parameter tuning are crucial for optimizing SQLite performance.</li>
+    <li>SQLite is well-suited for read-heavy workloads and applications with moderate write volumes.</li>
+    <li>SQLite is limited in concurrent write operations, but can support many concurrent readers.</li>
+    <li>Developers should carefully evaluate their requirements before choosing a database system.</li>
+    <li>SQLite can be used as an edge cache in front of other databases.</li>
+  </ul>
+</div>
+</div>
+</article>
