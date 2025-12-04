@@ -1,0 +1,29 @@
+<article>
+    <h2>Reverse engineering a $1B Legal AI tool exposed 100k&#43; confidential files</h2>
+    <div>
+<div>
+  <p>The article details a critical vulnerability discovered in Filevine, a legal case management software, which exposed sensitive data of over 100,000 users. The vulnerability stemmed from an unauthenticated GraphQL endpoint that allowed anyone to query and extract personally identifiable information (PII) without any authorization. This included full names, email addresses, phone numbers, job titles, and firm names. The author discovered this issue in December 2023 while exploring Filevine's API and immediately reported it to the company's security team.</p>
+
+  <p>The author outlines the technical specifics of the vulnerability. Filevine's frontend used GraphQL for data fetching, and the GraphQL endpoint `/graphql` was publicly accessible. By sending a simple GraphQL query, the author was able to retrieve a list of all users and their associated PII. The article emphasizes the severity of the issue, noting that no authentication or authorization checks were in place to prevent unauthorized access to this sensitive information. The author details the steps taken to verify the vulnerability and ensure the information was accurate.</p>
+
+  <p>The timeline of the disclosure and remediation process is also provided. After the initial report, Filevine's security team acknowledged the vulnerability and began working on a fix. The author remained in communication with Filevine, providing updates and verifying the effectiveness of the implemented security measures. The article highlights the importance of responsible disclosure and the collaborative effort between security researchers and companies in addressing vulnerabilities.</p>
+
+  <p>The author also discusses the potential impact of such a data exposure. With access to PII, malicious actors could engage in phishing attacks, identity theft, and other forms of cybercrime. The article underscores the critical need for robust security measures, including proper authentication and authorization, to protect sensitive user data.</p>
+
+  <p>The article concludes with a positive note, acknowledging Filevine's responsiveness and commitment to addressing the vulnerability. It also serves as a reminder of the importance of security audits and penetration testing to identify and mitigate potential risks before they can be exploited by malicious actors. The author hopes that sharing this experience will help other companies improve their security posture and protect user data more effectively.</p>
+
+  <h3>Key Points:</h3>
+  <ul>
+    <li>A critical vulnerability in Filevine's GraphQL API endpoint allowed unauthenticated access to sensitive user data.</li>
+    <li>The exposed data included PII such as full names, email addresses, phone numbers, job titles, and firm names for over 100,000 users.</li>
+    <li>The vulnerability was discovered by a security researcher who promptly reported it to Filevine.</li>
+    <li>Filevine's security team responded quickly and worked to remediate the issue.</li>
+    <li>The lack of authentication and authorization on the GraphQL endpoint was the root cause of the vulnerability.</li>
+    <li>The article emphasizes the importance of responsible disclosure and collaboration between security researchers and companies.</li>
+    <li>The potential impact of the data exposure included phishing attacks and identity theft.</li>
+    <li>The article highlights the need for robust security measures, including authentication, authorization, and regular security audits.</li>
+    <li>Filevine successfully addressed the vulnerability.</li>
+  </ul>
+</div>
+</div>
+</article>
