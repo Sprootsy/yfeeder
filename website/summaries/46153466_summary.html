@@ -1,0 +1,30 @@
+<article>
+    <h2>Thoughts on Go vs. Rust vs. Zig</h2>
+    <div>
+<div>
+<h2>Summary</h2>
+The article is a comparison of Go, Rust, and Zig, three popular programming languages, from the perspective of the author's experiences at Sinclair Target, likely a software development company. It reflects on the suitability of each language for systems programming tasks and offers insights into their strengths and weaknesses based on practical application.
+
+The author starts by acknowledging that the choice of a programming language is often subjective and dependent on the specific project requirements and team expertise. However, they outline their general preferences based on experience.
+
+Go is described as a language that excels in simplicity and ease of use. Its automatic memory management (garbage collection), straightforward syntax, and excellent tooling make it a good choice for rapidly building networked services and applications. The author notes Go's fast compilation times and large standard library as additional benefits. However, they also point out its limitations, particularly the performance overhead introduced by garbage collection and the lack of fine-grained control over memory management. This can be a significant drawback in performance-critical systems programming scenarios. They also critique the lack of generics (at the time of writing, before their introduction to Go), which forced the use of code generation or interface-based programming that lacked type safety.
+
+Rust is presented as a language designed for safety and performance. Its ownership and borrowing system allows for memory safety without garbage collection, and its zero-cost abstractions enable writing high-performance code. The author appreciates Rust's ability to prevent common programming errors at compile time, resulting in more reliable and maintainable code. However, the steep learning curve associated with Rust's ownership system is acknowledged as a significant barrier to entry. The complexity of the language and the time required to master it can slow down development, especially in the initial stages. The author mentions that while the initial learning curve is steep, the long-term benefits in terms of code quality and performance often outweigh the initial investment.
+
+Zig is positioned as a lower-level language that offers more control over hardware and memory than Go or Rust. It is described as having a simpler and more predictable memory model compared to Rust, making it easier to reason about performance. Zig's features, such as compile-time execution and comptime reflection, are highlighted as powerful tools for metaprogramming and code generation. The author also notes Zig's lack of a runtime, which makes it suitable for embedded systems and other resource-constrained environments. However, Zig is also described as a relatively new language with a smaller ecosystem and fewer libraries compared to Go and Rust. This can make development more challenging, especially when dealing with complex tasks that require external dependencies. The author sees Zig as a promising language for specific niches, such as embedded systems and high-performance computing, but it may not be as well-suited for general-purpose development as Go or Rust, due to its immaturity and smaller ecosystem.
+
+The author concludes by reiterating that the best language for a given project depends on the specific requirements and constraints. Go is a good choice for rapid development of networked services, Rust is suitable for projects where safety and performance are paramount, and Zig is a promising option for low-level systems programming and embedded systems. The experience at Sinclair Target has likely involved evaluating these trade-offs in various contexts.
+
+<h2>Key Points</h2>
+<ul>
+  <li><b>Go:</b> Simple, easy to learn, fast compilation, large standard library, good for networked services, but suffers from garbage collection overhead and lacked generics (at the time of writing).</li>
+  <li><b>Rust:</b> Safe, high-performance, memory safety without garbage collection, prevents common errors at compile time, but has a steep learning curve due to its ownership system.</li>
+  <li><b>Zig:</b> Lower-level, more control over hardware and memory, simpler memory model than Rust, compile-time execution and comptime reflection, no runtime, but has a smaller ecosystem.</li>
+  <li>Language choice is subjective and depends on project requirements and team expertise.</li>
+  <li>Go is good for rapid development of networked services.</li>
+  <li>Rust is suitable for projects where safety and performance are critical.</li>
+  <li>Zig is promising for low-level systems programming and embedded systems, although more niche.</li>
+</ul>
+</div>
+</div>
+</article>
