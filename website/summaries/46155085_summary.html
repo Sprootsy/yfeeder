@@ -1,0 +1,21 @@
+<article>
+    <h2>Trick users and bypass warnings – Modern SVG Clickjacking attacks</h2>
+    <div>
+<div>
+  <p><strong>Summary:</strong></p>
+  <p>The article "SVG Clickjacking" discusses a novel clickjacking vulnerability that exploits the behavior of SVG (Scalable Vector Graphics) images to trick users into performing unintended actions on a web page. Traditional clickjacking involves overlaying a transparent or semi-transparent iframe over a legitimate website, making users believe they are clicking on elements of the real page when, in fact, they are interacting with the hidden iframe. This new technique leverages the fact that SVG images can contain interactive elements, such as links, and can be styled using CSS, including properties like opacity. The vulnerability arises when a malicious SVG image, containing a carefully positioned and styled interactive element (e.g., a link), is overlaid on top of a legitimate website element. The SVG image is made nearly invisible using CSS opacity settings.</p>
+  <p>The attacker crafts the SVG in such a way that the interactive element within the SVG aligns perfectly with a button or link on the target website. When a user clicks what appears to be the legitimate button, they are actually clicking the transparent link within the SVG. This link then redirects the user to a URL controlled by the attacker, potentially leading to phishing attacks, malware downloads, or other malicious activities. The article demonstrates how this clickjacking can bypass standard defenses like frame busting scripts. These defenses typically focus on preventing iframes from embedding a site, but this SVG-based attack circumvents that protection because the SVG is embedded directly within the page's HTML (e.g., via an &lt;img&gt; tag or as a background image) rather than within an iframe.</p>
+  <p>The author provides a proof-of-concept example to illustrate the vulnerability, showcasing how an SVG image can be constructed to overlay a "Delete Account" button on a hypothetical website. By setting the SVG's opacity to a very low value, the SVG becomes nearly invisible. When the user clicks what they believe is the "Delete Account" button, they are instead clicking a link within the SVG, which redirects them to an attacker-controlled page. The article highlights that this technique is particularly dangerous because it is difficult to detect and can be used to target a wide range of actions, including changing account settings, making purchases, or granting permissions to malicious applications. The piece emphasizes that while SVG images offer many advantages for web development, they also introduce new security risks that developers need to be aware of and mitigate. The article concludes by suggesting potential mitigation strategies. These include using Content Security Policy (CSP) to restrict the sources from which SVG images can be loaded, implementing server-side checks to validate user actions, and employing visual cues to help users distinguish between legitimate and potentially malicious interactive elements.</p>
+  <p><strong>Key Points:</strong></p>
+  <ul>
+    <li>A novel clickjacking vulnerability using SVG images is presented.</li>
+    <li>The attack involves overlaying a transparent SVG image containing an interactive element (link) on top of legitimate website elements.</li>
+    <li>Users are tricked into clicking the SVG link instead of the intended element on the page.</li>
+    <li>This technique bypasses traditional frame-busting defenses.</li>
+    <li>A proof-of-concept demonstrates how an SVG can be crafted to hijack a "Delete Account" button.</li>
+    <li>The vulnerability is difficult to detect and can be used for various malicious purposes.</li>
+    <li>Mitigation strategies include using CSP, server-side validation, and visual cues for users.</li>
+  </ul>
+</div>
+</div>
+</article>
