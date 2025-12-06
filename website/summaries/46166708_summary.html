@@ -1,0 +1,25 @@
+<article>
+    <h2>Fizz Buzz in CSS</h2>
+    <div>
+<div>
+  <p>
+    The article "Fizz Buzz in CSS" by Susam Pal outlines an implementation of the Fizz Buzz programming challenge using only CSS. Fizz Buzz typically involves iterating through a sequence of numbers and printing "Fizz" for multiples of 3, "Buzz" for multiples of 5, and "FizzBuzz" for multiples of both 3 and 5. The author demonstrates how to achieve this purely through CSS, leveraging CSS counters, generated content, and the `calc()` function to determine the output for each number.
+  </p>
+  <p>
+    The CSS code begins by setting up a counter named `n` and incrementing it for each list item (`li`). Generated content (using `::before`) is then used to display the counter's value. The core logic involves using the modulo operator (which is emulated using `calc()` and integer division) to check for divisibility by 3 and 5. If a number is divisible by 3, the content "Fizz" is added using `::before`. Similarly, if a number is divisible by 5, the content "Buzz" is added using `::before`. If a number is divisible by both 3 and 5, both "Fizz" and "Buzz" are displayed. The article includes some helper functions or mixins that make it easier to check if a number is a multiple of another number. If a number is not divisible by either 3 or 5, the number itself will be shown.
+  </p>
+  <p>
+    The author explains the CSS techniques used to perform the Fizz Buzz logic without relying on JavaScript or any other scripting language. The article also mentions the limitations of this CSS-only approach.
+  </p>
+  <p><b>Key Points:</b></p>
+  <ul>
+    <li>Fizz Buzz implemented using only CSS.</li>
+    <li>CSS counters are used to generate a sequence of numbers.</li>
+    <li>Generated content (`::before`) displays the output ("Fizz", "Buzz", "FizzBuzz", or the number itself).</li>
+    <li>`calc()` function emulates the modulo operator to check for divisibility.</li>
+    <li>CSS is used to conditionally display "Fizz" for multiples of 3, "Buzz" for multiples of 5, and "FizzBuzz" for multiples of both.</li>
+    <li>The article explores the possibilities and limitations of CSS in performing computational tasks.</li>
+  </ul>
+</div>
+</div>
+</article>
