@@ -1,0 +1,43 @@
+<article>
+    <h2>Why we built Lightpanda in Zig</h2>
+    <div>
+<div>
+<p>
+The article discusses the rationale behind choosing the Zig programming language for building Lightpanda, an open-source Data Loss Prevention (DLP) solution. It begins by highlighting the importance of DLP in today's data-sensitive environment, where organizations need to protect sensitive information from unauthorized access and leakage.
+</p>
+<p>
+The authors initially considered Go for its speed, wide adoption, and rich ecosystem. However, they encountered challenges related to Go's garbage collection (GC) and its impact on performance predictability. Specifically, they needed a language that offered more fine-grained control over memory management to avoid unpredictable pauses that could disrupt the real-time analysis of data streams, a core requirement for Lightpanda.
+</p>
+<p>
+Rust was also considered for its memory safety and performance capabilities. However, the steep learning curve and the complexity associated with Rust's ownership and borrowing system were deemed too high for the project's timeline and the team's expertise.
+</p>
+<p>
+Ultimately, Zig was chosen as the ideal language for Lightpanda due to its combination of performance, control over memory management, and simplicity. The article emphasizes Zig's key features that made it a suitable choice. First, Zig has no hidden control flow or hidden memory allocations. This explicitness allows developers to have a clear understanding of what the code is doing, facilitating debugging and optimization. Second, Zig's manual memory management provides the granular control necessary for predictable performance and avoidance of GC-related pauses. Third, Zig offers excellent support for low-level programming, which is crucial for tasks such as parsing binary data and efficiently handling network packets. Fourth, Zig's cross-compilation capabilities are highly regarded, making it easy to build Lightpanda for different platforms.
+</p>
+<p>
+The article also points out that Zig's standard library is relatively small, which initially seemed like a disadvantage. However, the authors found that this minimalism encouraged them to build exactly what they needed, resulting in a more lean and efficient codebase. They also appreciate the Zig community's focus on quality over quantity, prioritizing well-designed and reliable libraries.
+</p>
+<p>
+Finally, the article concludes by stating that while Zig is still a relatively new language, its strengths in performance, control, and simplicity make it a compelling choice for building systems software like Lightpanda. The authors express confidence that Zig will continue to gain popularity as more developers recognize its advantages.
+</p>
+
+<h2>Key Points:</h2>
+<ul>
+<li>Lightpanda is an open-source Data Loss Prevention (DLP) solution.</li>
+<li>Go was initially considered but rejected due to garbage collection issues impacting performance predictability.</li>
+<li>Rust was considered but deemed too complex due to its steep learning curve.</li>
+<li>Zig was chosen for its combination of performance, control over memory, and simplicity.</li>
+<li>Zig's key advantages include:
+    <ul>
+        <li>No hidden control flow or memory allocations.</li>
+        <li>Manual memory management for predictable performance.</li>
+        <li>Excellent low-level programming support.</li>
+        <li>Cross-compilation capabilities.</li>
+    </ul>
+</li>
+<li>Zig's small standard library encourages developers to build lean and efficient code.</li>
+<li>The authors believe Zig is a strong choice for systems software development and expect its popularity to grow.</li>
+</ul>
+</div>
+</div>
+</article>

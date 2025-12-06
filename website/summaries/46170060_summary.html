@@ -1,0 +1,34 @@
+<article>
+    <h2>I cracked a $200 software protection with xcopy</h2>
+    <div>
+ <div>
+  <h2>Summary:</h2>
+  <p>
+   The article is a detailed analysis of the Enigma Protector software, a tool used to protect Windows applications from reverse engineering and unauthorized modification. The analysis focuses on the software's anti-debugging and virtualization techniques.
+  </p>
+  <p>
+   The author begins by introducing Enigma Protector and its purpose: to make software harder to crack by employing various protection methods. The article then delves into specific techniques used by Enigma Protector, primarily focusing on its anti-debugging and virtualization features.
+  </p>
+  <p>
+   The anti-debugging section explores how Enigma Protector detects and thwarts debugging attempts. It describes the various methods used, such as checking for the presence of debuggers, detecting breakpoints, and interfering with the debugger's functionality. The article specifically mentions techniques like IsDebuggerPresent checks, NtGlobalFlag checks, and the use of exceptions to disrupt debugging. It details how Enigma Protector modifies system structures to make debugging more difficult and how it uses timing-based checks to detect if the application is running under a debugger. Additionally, the author discusses the use of API hooking and other advanced techniques to further complicate the debugging process.
+  </p>
+  <p>
+   The virtualization section examines how Enigma Protector virtualizes parts of the original code. This involves transforming the original x86 instructions into a custom bytecode that is then interpreted by a virtual machine within the protected application. The author describes the process of reverse engineering the virtual machine, focusing on how the custom bytecode instructions are decoded and executed. The analysis involves identifying the virtual machine's dispatch loop and the handlers for each bytecode instruction. The article details the structure of the virtualized code, including how data is accessed and manipulated within the virtual machine.
+  </p>
+  <p>
+   The author presents their reverse engineering efforts, detailing the tools and techniques used to understand the anti-debugging and virtualization mechanisms. This includes using debuggers, disassemblers, and decompilers to analyze the code and identify the protection techniques. The article provides specific examples of code snippets and data structures used by Enigma Protector, along with explanations of their function.
+  </p>
+  <p>
+   Finally, the article concludes by summarizing the protection mechanisms employed by Enigma Protector and discussing the challenges involved in reverse engineering such protected applications.
+  </p>
+  <h2>Key Points:</h2>
+  <ul>
+   <li>Enigma Protector is a software protection tool designed to prevent reverse engineering and unauthorized modification of Windows applications.</li>
+   <li>It uses various anti-debugging techniques to detect and hinder debugging attempts. These techniques include checking for debuggers, detecting breakpoints, and interfering with debugger functionality through API hooking and system structure modification.</li>
+   <li>Enigma Protector virtualizes parts of the application's code by transforming x86 instructions into custom bytecode executed by a virtual machine.</li>
+   <li>Reverse engineering Enigma Protector involves analyzing the anti-debugging techniques and the virtual machine's architecture, including its dispatch loop and bytecode handlers.</li>
+   <li>The analysis requires using tools like debuggers, disassemblers, and decompilers to understand the complex protection mechanisms implemented by the software.</li>
+  </ul>
+ </div>
+ </div>
+</article>
